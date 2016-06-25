@@ -1,0 +1,178 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="index.html" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">活动报名</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="act-order" class="page page-order tmm-my-order-detail-page">
+    <div class="page-content tmm-order-detail tmm-order tmm-order-line">
+      <div class="content-block-title tmm-content-title">出游日期</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row">
+          出游日期：{{orderInfo.go_time.value}}
+        </div>
+      </div>
+      <div class="content-block-title tmm-content-title">出游人数</div>
+      <div class="list-block tmm-require tmm-retinue-top-border tmm-retinue-bottom-border">
+        {{#each orderInfo.OrderItemsFare}}
+        <div class="item-type tmm-order-act-addsub">
+          <span class="type-tit">{{info}}</span>
+          <span class="fare-item item-num"><span data-info="{{info}}" data-room="{{is_room}}" class="sub-num"></span><span class="num">{{number}}</span><span data-info="{{info}}" data-room="{{is_room}}" class="add-num"></span></span>
+        </div>
+        {{/each}}
+      </div>
+<!--       <div class="content-block-title tmm-content-title">项目列表</div>
+      {{#each orderInfo.dot_list}}
+      <div class="day-time">{{showDay @key}}</div>
+    
+      {{#each this}} {{#each this}}
+      <div class="list-block tmm-list-block tmm-retinue-top-border tmm-retinue-bottom-border">
+      
+        {{#each this}}
+        <ul class="tmm-order-ul-before">
+      
+          <li class="tmm-item-li clearfix">
+            <div class="tmm-item-title">
+              {{name}}
+            </div>
+            {{#each fare}}
+            <div class="tmm-order-item-content">
+              <div class="tmm-item-fare">
+                <div class="fare-item">{{name}}</div>
+                {{#js_compare "this.room_number == 0"}}
+                <div class="fare-item">{{info}}</div>
+                {{/js_compare}}
+
+                {{#js_compare "this.room_number !=0"}}
+                <div class="fare-item">{{room room_number}}</div>
+                {{/js_compare}}
+
+                <div class="fare-item">￥{{price}}</div>
+                <div fare-item-type="{{info}}" fare-item-room="{{room_number}}" class="fare-item fare-item-num">{{number}}</div>
+              </div>
+              {{/each}}
+            </div>
+          </li>
+        </ul>
+        {{/each}}
+      </div>
+      {{/each}} {{/each}} {{/each}} -->
+      <div class="content-block-title tmm-content-title">项目列表</div>
+      {{#each orderInfo.dot_list}}
+      <div class="day-time">{{showDay @key}}</div>
+      <!-- 点的列表 -->
+      {{#each this}} {{#each this}}
+      <div class="list-block tmm-list-block">
+        <!-- 项目列表 -->
+        {{#each this}}
+        <ul class="tmm-order-ul-before">
+          <!-- 项目下面的商品列表 -->
+          <li class="tmm-item-li clearfix">
+            <div class="tmm-item-title {{#js_compare "this.free_status.value =='0'"}}clear-before{{/js_compare}}">
+              {{#js_compare "this.classliy.value =='3'"}}
+              <i class="icon tmm-type-icon ticon-play"></i>
+              {{/js_compare}}
+              {{#js_compare "this.classliy.value =='1'"}}
+              <i class="icon tmm-type-icon ticon-eat"></i>
+              {{/js_compare}}
+              {{#js_compare "this.classliy.value =='2'"}}
+              <i class="icon tmm-type-icon ticon-live"></i>
+              {{/js_compare}}
+              {{name}}
+              {{#js_compare "this.free_status.value =='0'"}}<span style="position:absolute;right:16px;top:50%;line-height:20px;margin-top:-10px;">此项目免费</span>{{/js_compare}}
+            </div>
+
+          {{#js_compare "this.free_status.value !='0'"}}
+            {{#each fare}}
+            <div class="tmm-order-item-content">
+              <div class="tmm-item-fare">
+                <div class="fare-item">{{name}}</div>
+                {{#js_compare "this.room_number == 0"}}
+                <div class="fare-item">{{info}}</div>
+                {{/js_compare}}
+
+                {{#js_compare "this.room_number !=0"}}
+                <div class="fare-item">{{room room_number}}</div>
+                {{/js_compare}}
+  
+                <div class="fare-item">￥{{price}}</div>
+                <div fare-item-type="{{info}}" fare-item-room="{{room_number}}" class="fare-item fare-item-num">{{number}}</div>
+              </div>
+              {{/each}}
+
+            </div>
+            {{/js_compare}}
+          </li>
+        </ul>
+        {{/each}}
+      </div>
+      {{/each}} {{/each}} {{/each}}
+  
+      <!-- 服务费用 -->
+      <div class="content-block-title tmm-content-title">服务费用</div>
+      <div class="list-block tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row  tmm-order-status tmm-order-fare-item">
+          <span class="fare-item w_30">{{orderInfo.price.name}}</span>
+          <span class="fare-item w_40">单价：{{orderInfo.price.value}}元</span>
+          <span class="fare-item w_30"><span class="tmm-service-num">0</span>份</span>
+        </div>
+      </div>
+
+      <!--项目列表-->
+      <div class="content-block-title tmm-content-title">主要联系人</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status" id="tmm-order-mainretinue-list">
+          {{#if userInfo.main_retinueInfo.list}}
+          <div>{{userInfo.main_retinueInfo.list[0].name}}</div>
+          {{else}}
+          <div id="orderAddMainRetinue" data-phone="{{userInfo.userInfo.phone}}" class="red">添加</div>
+          {{/if}}
+        </div>
+      </div>
+      <div class="content-block-title tmm-content-title">随行人员</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status" id="tmm-order-retinue-list">
+          <span id="orderActAddRetinue" data-type="2" class="w_33 red">选择</span>
+        </div>
+      </div>
+      
+
+
+      <!-- <div class="content-block-title tmm-content-title">保险费用</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row  tmm-order-status tmm-order-fare-item">
+          <span class="order-fare-item">大梅沙线路玩耍</span>
+          <span class="order-fare-item">单价：10元</span>
+          <span class="order-fare-item">10份</span>
+        </div>
+      </div> -->
+
+      <!-- <div class="content-block-title tmm-content-title">合计价格</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status">
+          <div>订单总价<span class="tmm-total-price">￥0</span></div>
+        </div>
+      </div> -->
+      <div class="content-block-title tmm-content-title">支付方式</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border" style="height: 45px;line-height: 45px;padding: 0 15px; margin-bottom:114px;">
+        <div class="fl"><img style="width: 28px;height: 28px;vertical-align:middle;" src="../../styles/images/zifubao.png"></div>
+        <div class="fr">请使用支付宝支付</div>
+      </div>
+      <!-- <div class="tmm-border-btn">
+        <span class="tmm-order-detail-confirm-btn">等待确认</span>
+      </div> -->
+      
+    </div>
+    <div class="tmm-border-btn tmm-retinue-top-border tmm-retinue-bottom-border">
+        <span class="tmm-total-price price">￥<span id="tmm-order-total-price">0.00</span></span>
+        <a class="tmm-order-detail-confirm-btn-active" id="submitActOrderBtn">提交订单</a>
+      </div>
+  </div>
+</div>

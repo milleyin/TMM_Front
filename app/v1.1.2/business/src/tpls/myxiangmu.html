@@ -1,0 +1,30 @@
+  <div id="myproject">
+    <h1 class="top-nav">我的项目</h1>
+    <div class="content"  when-scrolled="showMore()">
+      <div class="content_media">
+	      <div class="media" ng-repeat="attr in list_data">
+	      	<a ng-click="goDetailPage(attr.classliy.value,attr.link)">
+  	        <div class="pull-left" href="#">
+  	          <img class="media-object" ng-src="{{attr.item_litimg}}" alt="{{attr.name}}">
+  	        </div>
+  	        <div class="media-body">
+  	          <h5 class="media-heading">{{attr.name}}</h5>
+  	        </div>
+	        </a>
+	      </div> 
+	      
+	      <div class="load6">
+				  <div class="bounce1"></div>
+				  <div class="bounce2"></div>
+				  <div class="bounce3"></div>
+				</div>
+      </div>
+    </div>
+
+    <nav class="bar-tab">
+      <a ng-href="#/myorder"><i class="iconfont">&#xe616;</i><span>我的订单</span></a>
+      <a class="active"><i class="iconfont">&#xe61b;</i><span>我的项目</span></a>
+      <a ng-href="#/wodeshouru"><i class="iconfont">&#xe613;</i><span>我的收入</span></a>
+      <a ng-href="#/my"><i class="iconfont">&#xe624;</i><span>我的</span></a>
+    </nav>
+  </div>

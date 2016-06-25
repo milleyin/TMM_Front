@@ -1,0 +1,64 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="index.html" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center tmm-sou-center">
+    	<form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init tmm-seek-searchbar">
+		    <div class="searchbar-input">
+          <i class="icon ticon-search tmm-searchbar-search"></i>
+		      <input type="search" placeholder="搜索" class="tmm-seek-searchbar-input"><a href="#" class="searchbar-clear"></a>
+		    </div><!-- <a href="#" class="searchbar-cancel tmm-searchbar-cancel">取消</a> -->
+		  </form>
+    </div>
+    <div class="right tmm-sou-right">
+      <!-- <a href="javascript:;" class="link tmm-seek-search-test">
+        <span>搜索</span>
+      </a> -->
+    </div>
+  </div>
+</div>
+
+<div class="pages">
+  <div data-page="search" class="page" id="seekSearch">
+
+  	<div class="searchbar-overlay"></div>
+    <div data-distance="50" class="page-content infinite-scroll tmm-seek-search-page-content">
+      <!-- 默认的下拉刷新层 -->
+      <div class="pull-to-refresh-layer">
+        <div class="preloader"></div>
+        <div class="pull-to-refresh-arrow"></div>
+      </div>
+
+      <!---test-->
+      <div class="tmm-sou-list-block">
+      <div class="list-block list-block-search searchbar-found tmm-list-search-block">
+        <div class="tmm-sou-tit tmm-search-bottom-border">搜索历史</div>
+        <div class="tmm-sou-row-scroll">
+          <ul class="tmm-sou-list">
+            {{#each seekSearchHistory}}
+            <li class="item-content tmm-sou-list-title">
+              <div class="item-inner tmm-item-inner tmm-search-item-inner">
+                <div class="item-title  tmm-sou-item-title">{{this}}</div>
+              </div>
+            </li>
+          {{/each}}
+          </ul>
+        </div>
+        <div class="tmm-sou-clear tmm-search-top-border tmm-search-bottom-border">清空历史记录</div>
+      </div>
+      </div>
+      <!---test-->
+
+      <div class="tmm-list-block">
+        <ul class="tmm-seekSearch-ul-list">
+          
+        </ul>
+         <div id="no-more" style="display:none"></div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+angular.module('wallet', [])
+
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.wallet', {
+      url: '/wallet',
+
+      views: {
+        'tab-my': {
+          templateUrl: 'app/wallet/templates/my-wallet.html',
+          controller: 'WalletCtrl',
+        }
+
+      }
+
+    });
+
+}])
+
+.controller('WalletCtrl', function($scope, $http, Resource) {
+ 
+});

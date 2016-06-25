@@ -1,0 +1,20 @@
+.qrcode {
+  img {
+    display: block;
+    width: 258px;
+    height: 258px;
+    margin: 10px auto 20px;
+  }
+
+  .txt {
+    font-size: 13px;
+    line-height: 18px;
+    padding: 0 14px;
+  }
+
+  .title {
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+  }
+}

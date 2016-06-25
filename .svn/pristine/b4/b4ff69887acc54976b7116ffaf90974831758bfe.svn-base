@@ -1,0 +1,49 @@
+.tmm-menu {
+    font-size: 0;
+    .menu-item {
+        width: 33.3%;
+        padding: 15px 0 5px;
+        display: inline-block;
+        font-size: 12px;
+        text-align: center;
+        @extend %border-bottom;
+        .txt {
+            line-height: 12px;
+            margin-top: 5px;
+        }
+        &:nth-child(3n-1) {
+            @include hairline(leftRightBottom);
+        }
+    }
+}
+
+.tmm-login-item {
+    line-height: 68px;
+    font-size: 17px;
+    @extend %border-bottom;
+    background-color: #ff595f;
+    color: #fff;
+    text-align: center;
+}
+
+.tmm-logined-item {
+    display: flex;
+    padding: 0 16px;
+    line-height: 68px;
+    font-size: 17px;
+    @extend %border-bottom;
+    background-color: #f0f2f0;
+    .logo {
+        width: 40px;
+        height: 40px;
+        margin-top: 14px;
+        margin-right: 15px;
+    }
+    .phone {
+        flex: 1;
+    }
+    .exit {
+        color: #5fb336;
+        font-size: 14px;
+    }
+}

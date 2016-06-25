@@ -1,0 +1,166 @@
+@charset "UTF-8";
+.tmm-act-pay-type .pay-type-pos {
+  margin: 10px 0px;
+  height: 240px;
+  background: #fff; }
+  .tmm-act-pay-type .pay-type-pos .pay-cir {
+    font-weight: bold;
+    font-size: 30px;
+    color: #fff;
+    height: 85px;
+    width: 85px;
+    line-height: 85px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    top: 45px;
+    position: relative; }
+  .tmm-act-pay-type .pay-type-pos .pay-cir-all {
+    background-color: #faa64b; }
+  .tmm-act-pay-type .pay-type-pos .pay-cir-aa {
+    background-color: #53de8a; }
+  .tmm-act-pay-type .pay-type-pos .pay-cir-aa-small {
+    font-size: 30px; }
+  .tmm-act-pay-type .pay-type-pos .pay-info {
+    font-size: 14px;
+    padding: 16px;
+    margin-top: 45px;
+    color: #191a19;
+    text-align: center; }
+
+/* 活动-》填写信息 */
+.tmm-launch-act-info {
+  font-size: 14px; }
+  .tmm-launch-act-info .launch-act-info {
+    background-size: 0;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 16px;
+    margin: 10px 0px;
+    display: flex;
+    background: #fff; }
+    @media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      .tmm-launch-act-info .launch-act-info {
+        border: none;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(180deg, #d7d9d7, #d7d9d7 50%, transparent 50%), linear-gradient(0deg, #d7d9d7, #d7d9d7 50%, transparent 50%);
+        background-position: top, bottom;
+        background-size: 100% 1px, 100% 1px; } }
+    .tmm-launch-act-info .launch-act-info .launch-info-title {
+      color: #727372;
+      float: left; }
+    .tmm-launch-act-info .launch-act-info .launch-info-content {
+      display: inline-block;
+      float: left; }
+      .tmm-launch-act-info .launch-act-info .launch-info-content .conten-txt {
+        text-align: center;
+        color: #727372;
+        line-height: 30px;
+        height: 30px;
+        border: none; }
+      .tmm-launch-act-info .launch-act-info .launch-info-content .launch-open-check {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #c0c2c0;
+        border-radius: 50%;
+        display: inline-block; }
+      .tmm-launch-act-info .launch-act-info .launch-info-content .lab-check input[type="checkbox"]:checked + i.launch-open-check {
+        background-color: #53de8a; }
+    .tmm-launch-act-info .launch-act-info .launch-info-time {
+      position: absolute;
+      right: 16px; }
+  .tmm-launch-act-info .launch-intr {
+    font-size: 12px;
+    padding: 0 16px; }
+    .tmm-launch-act-info .launch-intr .intr-cont {
+      color: #727372; }
+
+.tmm-card-btn {
+  margin: 30px 0;
+  width: 100%; }
+  .tmm-card-btn .card-btn {
+    display: block;
+    text-align: center;
+    background-color: #fe686d;
+    border-radius: 2px;
+    line-height: 35px;
+    color: #fff;
+    font-size: 16px;
+    border: 1px solid transparent;
+    margin: 16px; }
+
+.tmm-edit-act .edit-title {
+  margin-top: 34px; }
+  .tmm-edit-act .edit-title .content-txt {
+    color: #727372;
+    line-height: 45px;
+    height: 45px;
+    border: none;
+    text-align: center;
+    border-radius: 2px; }
+  .tmm-edit-act .edit-title .title-width {
+    width: 90%; }
+  .tmm-edit-act .edit-title .num-width {
+    margin-left: 42px;
+    width: 60%; }
+.tmm-edit-act .edit-tit-name {
+  text-align: center; }
+.tmm-edit-act .card-btn {
+  display: block;
+  text-align: center;
+  background-color: #ff4c52;
+  border-radius: 2px;
+  line-height: 45px;
+  color: #fff;
+  font-size: 16px;
+  border: 1px solid transparent;
+  margin: 42px; }
+
+.tmmAPP-pay {
+  margin: 0px;
+  border-radius: 0; }
+  .tmmAPP-pay .color-payYellow {
+    color: #faa64b; }
+  .tmmAPP-pay .color-payGreen {
+    color: #53de8a; }
+  .tmmAPP-pay .color-title {
+    line-height: 50px;
+    height: 50px;
+    text-align: left;
+    color: #8d8f8d;
+    font-size: 18px;
+    padding-left: 16px; }
+  .tmmAPP-pay .actions-modal-button:last-child, .tmmAPP-pay .actions-modal-button:first-child {
+    border-radius: 0; }
+
+.tmm-seekfun-btn {
+  background-size: 0;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  font-size: 16px;
+  line-height: 44px;
+  text-align: center;
+  z-index: 1;
+  background-color: #fff; }
+  @media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .tmm-seekfun-btn {
+      border: none;
+      background-repeat: no-repeat;
+      background-image: linear-gradient(180deg, #d7d9d7, #d7d9d7 50%, transparent 50%);
+      background-position: top;
+      background-size: 100% 1px; } }
+  .tmm-seekfun-btn .outline-button {
+    color: #727372;
+    margin-top: 7px;
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 25px;
+    border-radius: 2px;
+    border: 1px solid #c0c2c0;
+    margin-left: 8px; }
+
+label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-checkbox {
+  background-color: red; }

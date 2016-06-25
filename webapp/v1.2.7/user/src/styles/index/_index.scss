@@ -1,0 +1,234 @@
+@charset "UTF-8";
+.index {
+  $margin: 10px;
+  // background-color: #f2eee4;
+  .banner {
+    position: relative;
+    white-space: nowrap;
+    font-size: 0;
+    overflow-x: hidden;
+    z-index: -1;
+    .img-wrap {
+      width: 100%;
+      height: 100%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 27px;
+    padding: 0 10px;
+    .tit {
+      font-size: 18px;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 3px;
+        height: 14px;
+        background-color: #ff1a22;
+        margin-right: 6px;
+      }
+    }
+    .disc {
+      font-size: 11px;
+      color: #666;
+      margin-left: 13px;
+    }
+    .more {
+      font-size: 15px;
+    }
+  }
+  .fresh-img {
+    position: relative;
+    height: 500px;
+    canvas {
+      position: absolute;
+      border-radius: 5px;
+      box-shadow: 0 0 1px #ccc;
+    }
+  }
+  .hotactlist {
+    padding-bottom: 10px !important;
+    .box-img {
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+  .hotselllist {
+    .box-img {
+      padding-bottom: 10px;
+    }
+  }
+  .hotsellpos {
+    position: relative;
+  }
+  // 当季热销
+  .hotsell {
+    .title .tit:before {
+      background-color: #ff1a22;
+    }
+    .box-img {
+      overflow: hidden;
+    }
+    .box-item {
+      position: relative;
+      box-sizing: border-box;
+      padding-top: 10px;
+      padding-bottom: 0;
+      float: left;
+      width: 50%;
+      &:nth-child(2n-1) {
+        padding-left: 10px;
+        padding-right: 5px;
+      }
+      &:nth-child(2n) {
+        padding-left: 5px;
+        padding-right: 10px;
+      }
+    }
+    .hot-img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 5px;
+      box-shadow: 0 0 1px #999;
+      // border: 1px solid #999;
+    }
+  }
+  // 觅趣活动
+  .hotact,
+  .circumtour {
+    padding: 0 10px;
+    .title {
+      padding: 0px;
+    }
+    .title .tit:before {
+      background-color: #ff812d;
+    }
+    .box-img {
+      position: relative;
+      margin: 10px 0;
+      border-radius: 5px;
+      box-shadow: 0 0 1px #999;
+      overflow: hidden;
+      .img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .intro {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+      }
+      .tit {
+        margin-bottom: 10px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .txt {
+        font-size: 15px;
+      }
+    }
+  }
+  .circumtour {
+    padding: 0 10px;
+    .title .tit:before {
+      background-color: #39ab53;
+    }
+  }
+}
+
+// 列表页卡片
+.index-list {
+  .empty {
+    height: 10px;
+  }
+}
+
+.media-card {
+  margin: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 1px #aaa;
+  position: relative;
+  .img {
+    display: block;
+    width: 100%;
+  }
+  canvas {
+    transition: opacity 0.5s;
+  }
+  .intro {
+    padding: 10px 0 10px 10px;
+  }
+  .tit {
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 15px;
+    color: #333;
+  }
+  .info {
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 13px;
+    color: #999;
+  }
+  .txt {
+    font-size: 12px;
+    line-height: 18px;
+    color: #666;
+    white-space: nowrap;
+    span {
+      margin-right: 12px;
+      &:nth-child(3) {
+        margin-right: 0;
+      }
+      i {
+        vertical-align: -2px;
+        margin-right: 3px;
+      }
+    }
+  }
+  .state {
+    position: absolute;
+    bottom: 53px;
+    right: 10px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    border-radius: 2px;
+    padding: 0px 5px 2px 5px;
+    text-align: center;
+  }
+  .brown {
+    background-color: #bda08c;
+  }
+  .orange {
+    background-color: #ff812d;
+  }
+}
+
+.index-search.icon-r-search {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  z-index: 1;
+}
+
+.tabbar-empty {
+  height: 50px;
+}

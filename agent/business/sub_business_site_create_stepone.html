@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>新增子商家</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/breadcrumbs.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/step.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/form.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/box.css"> 
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/subbusiness.css"> 
+  <script src="../css/agent/script/jquery-1.11.3.min.js"></script>
+  <!--[if lt IE 9]>
+  <script src="dist/js/html5.js"></script>
+  <script src="dist/js/respond.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="content_box">
+  <div class="breadcrumbs title">
+   <a href="sub_business_site_accmanger.html">商家子账号</a> 
+   &frasl;
+   <span>新增商家子账号</span>
+  </div>  <!--.title-->
+  <div class="create_nav create_sub_business_nav">
+      <div class="create_steap_one">       
+        <a class="done">1</a>
+        <span class="text_done">选择归属商家</span>
+        <div class="line line_first done"></div>
+      </div>
+      <div class="create_steap_two">
+        <a class="undone">2</a>
+        <span class="text_undone">填写账号信息</span>
+        <div class="line undone"></div>
+      </div>
+      <div class="create_steap_five">
+        <a class="undone">3</a>
+        <span class="text_undone">完成</span>
+        <div class="line line_last undone"></div>
+      </div>
+  </div>    <!-- .create_nav -->
+  <div class="content create_business_content">
+    <div class="content_one">
+      <div class="box_div">
+      <div class="choose">
+        <label>选择归属商家：</label>
+        <select>
+          <option>云谷有限公司</option>
+          <option>动态集团</option>
+        </select>
+      </div>
+      <div class="box">
+          <div class="choose_business_table">
+          <table border="0" class="choose_business">
+           <tbody>
+             <tr> 
+               <td>登陆手机号：</td>
+               <td>13922831369</td>
+             </tr>
+             <tr>
+               <td>公司名称：</td>
+               <td>云谷科技有限公司</td>
+             </tr>
+             <tr>
+               <td>公司地址：</td>
+               <td class="address">深圳市南山区科技园特发信息港B栋301</td>
+             </tr>
+             <tr>
+               <td>公司电话：</td>
+               <td>0755 - 3321211</td>
+             </tr>
+             <tr>
+               <td>公司邮编：</td>
+               <td>518000</td>
+             </tr>
+             <tr>       
+               <td>剩余可建子账号数：</td>
+               <td>1</td>
+             </tr>
+           </tbody>        
+           </table>
+            </div>
+          </div>
+       </div>   <!-- .box_div -->
+        <div class="row enter">
+          <input type="submit" value="下一步" id="choose_business">
+        </div>
+    </div>  <!-- .content_one -->
+  </div>   <!--  .content -->
+  
+  <div class="copyright">
+    <span>Copyright &copy; TMM365.com All Rights Reserved</span>
+  </div>  <!--.copyright--> 
+</div>  <!--.content_box-->
+
+<script src="../css/agent/script/functions.js"></script>
+<script type="text/javascript">
+  $(function(){   
+    //选择归属商家
+    $("#choose_business").click(function(){
+     window.location.href="sub_business_site_create_steptwo.html";
+     window.event.returnValue=false;
+    })
+  })
+</script>
+</body>
+</html>

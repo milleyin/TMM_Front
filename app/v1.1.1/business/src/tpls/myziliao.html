@@ -1,0 +1,152 @@
+<div id="myinfo">
+  <h1 class="top-nav">我的资料
+      <a href="javascript:history.back(-1);"><i class="iconfont h_left h_pic">&#xe61f;</i></a>
+    </h1>
+  <div class="m_content z_content">
+    <section class="z_info">
+      <a ng-href="#/modifi_pwd">
+        <p>
+          修改密码
+          <span class="xiougai">{{setPassw}}</span>
+          <i class="iconfont h_right jiantou">&#xe634;</i>
+        </p>
+      </a>
+      <div class="line"></div>
+      <a ng-href="#/set_phone">
+        <p>修改手机号
+          <span class="xiougai">{{json.store_info.phone}}</span>
+          <i class="iconfont h_right jiantou">&#xe634;</i>
+        </p>
+      </a>
+    </section>
+    <div ng-if="json.store_info.is_main">
+      <h2>归属代理</h2>
+      <section class="z_info">
+        <p>
+          代理商公司名称
+          <span class="z_shuoming">{{json.agent_info.agent_name}}</span>
+        </p>
+        <div class="line"></div>
+        <p>
+          代理商公司电话
+          <span class="z_shuoming">{{json.agent_info.agent_phone}}</span>
+        </p>
+      </section>
+    </div>
+    <div ng-if="json.store_info.is_main">
+      <h2>公司信息</h2>
+      <section class="z_info">
+        <p>
+          公司名称
+          <span class="z_shuoming">{{json.frm_info.name}}</span>
+        </p>
+        <div class="line"></div>
+        <p class="address">
+          <i class="z_address">公司地址<i></i></i>
+          <i class="z_shuoming z_shouming_address">{{json.frm_info.address}}</i>
+        <div class="line"></div>
+        <p>
+          公司电话
+          <span class="z_shuoming">{{json.frm_info.store_tel}}</span>
+        </p>
+        <div class="line"></div>
+        <p>
+          营业执照原件
+          <span class="z_img"><img ng-src="{{json.frm_info.bl_img}}" alt="..."></span>
+        </p>
+        <div class="line"></div>
+        <p>
+          企业法人姓名
+          <span class="z_shuoming">{{json.frm_info.com_contacts}}</span>
+        </p>
+        <div class="line"></div>
+        <p>
+          企业法人身份证号码
+          <span class="z_shuoming">{{json.frm_info.com_identity}}</span>
+        </p>
+        <div class="line"></div>
+        <p>
+          企业法人联系电话
+          <span class="z_shuoming">{{json.frm_info.com_phone}}</span>
+        </p>
+      </section>
+    </div>
+    <!-- 
+      真实姓名 手机号码 身份证号码 身份证扫描件 联系人手持身份证照片
+      小飞龙 440510199912290011 13358741562
+       -->
+    <div ng-if="json.store_info.is_main">
+      <h2>联系人信息</h2>
+      <section class="z_info">
+        <p>
+          真实姓名
+          <span class="z_shuoming">{{json.contact_info.lx_contacts}}</span>
+        </p>
+        <div class="line"></div>
+        <p>
+          手机号码
+          <span class="z_shuoming">{{json.contact_info.lx_phone}}</span>
+        </p>
+        <div class="line"></div>
+        <p>
+          身份证号码
+          <span class="z_shuoming">{{json.contact_info.lx_identity_code}}</span>
+        </p>
+        <div class="line"></div>
+        <p>
+          身份证正面扫描件
+          <span class="z_img"><img ng-src="{{json.contact_info.identity_before}}" alt="..."></span>
+        </p>
+        <div class="line"></div>
+        <p>
+          身份证反面扫描件
+          <span class="z_img"><img ng-src="{{json.contact_info.identity_after}}" alt="..."></span>
+        </p>
+        <div class="line"></div>
+        <p>
+          联系人手持身份证照片
+          <span class="z_img"><img ng-src="{{json.contact_info.identity_hand}}" alt="..."></span>
+        </p>
+      </section>
+    </div>
+    <div ng-if="json.store_info.is_main">
+      <h2>财务信息 
+        <a ng-href="#/newbank" ng-if='!json.bank_info.length'>
+          <span class="h2_tianjia" >添加</span>
+        </a>
+        <button id="edit"  ng-if='json.bank_info.length'>
+          <span class="h2_tianjia" ng-click="edit()">申请编辑</span>
+        </button>
+      </h2>
+      <section ng-repeat="attr in json.bank_info" class="z_info">
+        <p>
+          开户行
+          <span class="z_shuoming">{{attr.bank_value}}</span>
+        </p>
+        <div class="line"></div>
+        <p>
+          开户名
+          <span class="z_shuoming">{{attr.bank_name}}</span>
+        </p>
+        <div class="line"></div>
+        <p>
+          对公银行账号
+          <span class="z_shuoming">{{attr.bank_code}}</span>
+        </p>
+      </section>
+    </div>
+    <div ng-if="json.store_info.is_main">
+      <h2 class="noborder">子账号信息</h2>
+      <div class="header {{$last?'last':''}}" ng-repeat="zh in json.son_info">
+        <a ng-href="#/subaccount/{{zh.value}}" ng-click="showSub({{zh.value}})">
+          <div class="header_img"><img ng-src="images/header.png" src="images/header.png" alt="..."></div>
+          <div class="header_txt">
+            <h3>{{zh.name}}</h3>
+            <p>{{zh.phone}}</p>
+          </div>
+          <i class="iconfont h_right jiantou">&#xe634;</i>
+      </div>
+      </a>
+    </div>
+  </div>
+</div>

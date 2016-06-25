@@ -1,0 +1,124 @@
+<div class="navbar tmm-navbar">
+	<div class="navbar-inner">
+		<div class="left">
+			<a href="#" class="back link">
+				<i class="icon ticon-arrow-back"></i>
+			</a>
+		</div>
+		<div class="center sliding">{{name}}</div>
+		<div class="right">
+		</div>
+	</div>
+</div>
+
+<!--更多活动信息-->
+<div class="pages">
+	<div data-page="myinfo" class="page">
+		<div class="page-content tmm-add-retinue-page-contnet">
+
+			<div class="tmm-project-canter">
+				<div class="tmm-mor-con">
+					<div class="list-block tmm-canter-li tmm-mor-bacgcolor">
+	
+						{{#if actives_info.actives_no}}
+						<ul>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">活动编号</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title tmm-item-title-color">{{actives_info.actives_no}}</div>
+								</div>
+							</li>
+						</ul>
+						{{/if}}
+
+						<ul>
+							<li class="item-content ">
+								<div class="item-inner">
+									<div class="item-title">活动参与人数</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title tmm-item-title-color">{{js "this.actives_info.number.value - this.actives_info.order_number.value"}}/{{actives_info.number.value}}</div>
+								</div>
+							</li>
+						</ul>
+
+
+						<ul>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">服务费</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title tmm-item-title-color">{{actives_info.tour_price.value}}元/人</div>
+								</div>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">创建日期</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title tmm-item-title-color">{{actives_time.add_time}}</div>
+								</div>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">活动报名日期</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title tmm-item-title-color">{{actives_time.start_time}} 至 {{actives_time.end_time}}</div>
+								</div>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">出发日期</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title tmm-item-title-color">{{actives_time.go_time}}</div>
+								</div>
+							</li>
+						</ul>
+
+
+
+						<ul>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">活动简介</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="brief-introduction tmm-item-title-color">
+						{{actives_info.remark}}
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

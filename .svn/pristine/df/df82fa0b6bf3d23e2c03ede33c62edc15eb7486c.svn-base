@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>荔枝节</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body class="buylz">
+  <div class="item-info">
+    <div class="left">
+      <img class="img" src="images/iteminfoimg.png">
+      <div class="date">使用日期：2016/6/20至2016/7/10</div>
+    </div>
+    <div class="right">
+      <div class="title">桂味·大宗提货券</div>
+      <div class="price">￥38</div>
+      <dl>
+        <dt>包含：</dt>
+        <dd>•桂味荔枝25kg</dd>
+        <dd>•随赠5kg桂味荔枝</dd>
+        <dd>•3张桂味园区门票</dd>
+        <dd>•1张10元优惠券</dd>
+      </dl>
+    </div>
+    <a href="###" class="button">购买</a>
+  </div>
+  <div class="item-wrap">
+    <div class="item type1">
+      <a class="item-box" href="###">
+        <img src="images/buyitembg1.png">
+      </a>
+    </div>
+    <div class="item type2">
+      <a class="item-box" href="###">
+        <img src="images/buyitembg2.png">
+      </a>
+    </div>
+    <div class="item type3">
+      <a class="item-box" href="###">
+        <img src="images/buyitembg3.png">
+      </a>
+    </div>
+  </div>
+  <div class="prompt">
+    <div class="title"><span>温馨提示</span></div>
+    <ul class="txt">
+      <li>1. 提货券需以手机号码或券号验证，一经验证，即失效。</li>
+      <li>2. 荔枝预售自6月10日开始发货。</li>
+      <li>3. 提货券提货地址：天美荔枝南科大／宝石路基地。</li>
+      <li>4. 提货券在指定日期内使用，逾期失效，不予退票。</li>
+      <li>5. 提货券一经售出，不予退票；所有预售订单一经生成，取消不退款。</li>
+      <li>6. 最终解释权归天美农业服务公司所有。</li>
+      <li>7. 提货券对应商品若需快递，自行承担快递费用，咨询电话：400-820-0628。</li>
+    </ul>
+  </div>
+</body>
+
+</html>

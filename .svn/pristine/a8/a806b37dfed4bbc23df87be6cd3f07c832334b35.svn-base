@@ -1,0 +1,408 @@
+html,
+body {
+  height: 100%;
+}
+
+body,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  background-image: url(../img/bg.png);
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+
+.header {
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.header .video {
+  float: left;
+  width: 494px;
+  height: 278px;
+  background-color: black;
+  margin-left: 48px;
+  margin-right: 20px;
+}
+
+.header .banner {
+  float: left;
+  width: 452px;
+  height: 278px;
+  margin-left: 20px;
+  overflow: hidden;
+}
+
+.header .video video {
+  width: 100%;
+  height: 100%;
+}
+
+.header .banner .banner-wrap {
+  white-space: nowrap;
+  transition: -webkit-transform .25s;
+  transition: transform .25s;
+  transition: transform .25s, -webkit-transform .25s;
+  font-size: 0;
+}
+
+.header .banner img {
+  width: 452px;
+  height: 278px;
+}
+
+.header .banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  height: 856px;
+}
+
+.ly-plate {
+  margin: 80px auto 0;
+  position: relative;
+  width: 776px;
+  height: 786px;
+  background-image: url(../img/ly-plate-bg.png)
+}
+
+.ly-dot {
+  width: 740px;
+  height: 740px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  background: url(../img/dot.png) no-repeat 0 0;
+  /*  -webkit-animation: dot-in 250ms steps(1) infinite 0s;
+  animation: dot-in 250ms steps(1) infinite 0s;*/
+}
+
+.ly-dot.dot1 {
+  background-image: url(../img/dot1.png);
+}
+
+.ly-dot.dot2 {
+  background-image: url(../img/dot2.png);
+}
+
+#lotteryBtn {
+  position: absolute;
+  left: 54px;
+  top: 54px;
+  width: 664px;
+  height: 664px;
+}
+
+#lotteryBtn img {
+  display: block;
+  width: 664px;
+  height: 664px;
+}
+
+.lottery-star {
+  position: absolute;
+  left: 50%;
+  top: 190px;
+  margin-left: -152px;
+  width: 302px;
+  height: 360px;
+  background-image: url(../img/rotate-static.png);
+  background-size: 100% 100%;
+  text-align: center;
+}
+
+.lottery-star .start {
+  margin-top: 150px;
+}
+
+.lottery-star .surplus {
+  margin-top: 10px;
+  font-size: 26px;
+  color: #ff0000;
+}
+.lottery-star .name {
+  font-size: 24px;
+}
+.count-box {
+  display: none;
+}
+
+.content .txt {
+  text-align: center;
+  margin-top: -10px;
+  position: relative;
+}
+
+.winning {
+  position: absolute;
+  left: 20px;
+  bottom: 30px;
+  width: 360px;
+  height: 144px;
+  background-image: url(../img/phone-box.png);
+}
+
+.winning .top {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 34px;
+  font-weight: bold;
+}
+
+.winning .con-items {
+  position: relative;
+  height: 105px;
+  overflow: hidden;
+}
+
+.winning .con-items ul {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.winning .con-items li {
+  transition: all .25s;
+}
+
+.winning .con-items li {
+  font-size: 18px;
+  color: #fff;
+  line-height: 36px;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer {
+  position: absolute;
+  padding-bottom: 10px;
+  height: 606px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../img/bg-bottom.png) no-repeat center bottom;
+
+}
+
+.footer .slider {
+  width: 100%;
+  /*overflow: hidden;*/
+  overflow-x: auto;
+  font-size: 0;
+  white-space: nowrap;
+}
+
+.footer .slider ul {
+  padding: 0 12px;
+  margin: 0 auto;
+}
+
+.footer .slider .item {
+  width: 315px;
+  height: 606px;
+  padding: 0 12px;
+  display: inline-block;
+}
+
+.footer .slider .item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.award-alert {
+  position: absolute;
+  display: none;
+  top: 550px;
+  left: 50%;
+  margin-left: -335px;
+  width: 668px;
+  /*height: 400px;*/
+  background-color: rgba(26, 41, 43, 0.95);
+  border: 1px solid #4fbfc7;
+  padding-bottom: 20px;
+}
+
+.award-alert .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 90px;
+  background: url(../img/close.png) no-repeat center center;
+}
+
+.award-alert .tit {
+  margin-top: 40px;
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+}
+
+.award-alert .txt {
+  margin-top: 45px;
+  font-size: 34px;
+  color: #66f5ff;
+  text-align: center;
+}
+
+.award-alert .btn {
+  width: 330px;
+  height: 60px;
+  font-size: 30px;
+  line-height: 60px;
+  text-align: center;
+  color: #1a292b;
+  margin: 75px auto 0;
+  background-color: #66f5ff;
+}
+
+.award-alert .rule {
+  font-size: 25px;
+  text-align: left;
+  padding: 0 50px;
+  color: #fff;
+  margin-top: 20px;
+  min-height: 280px;
+}
+
+.award-alert .attention {
+  margin-top: 45px;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+}
+
+.award-enter {
+  display: inline-block;
+  -webkit-animation: bounce-in .5s;
+  animation: bounce-in .5s;
+}
+
+#qr-code {
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  padding: 10px;
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  margin-left: -70px;
+}
+
+.qr-txt {
+  margin-top: 260px;
+  font-size: 20px;
+}
+
+#qr-url {
+  width: 180px;
+  height: 180px;
+  padding: 10px;
+  background-color: #fff;
+  margin: 30px auto;
+}
+
+.auto-rotate {
+  -webkit-animation: rotate 2s infinite linear;
+          animation: rotate 2s infinite linear;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes bounce-in {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+
+/*@-webkit-keyframes dot-in {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: -708px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes dot-in {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: -708px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}*/

@@ -1,0 +1,54 @@
+.disposit {
+  .cell {
+    min-height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title,
+    .info {
+      display: block;
+    }
+    &.main {
+      @extend %border-top-bottom;
+      padding: 0 14px;
+      font-size: 16px;
+      background-color: #fff;
+    }
+  }
+  .list-tit {
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #666666;
+  }
+  .group {
+    background-color: #fff;
+    padding-left: 14px;
+    @extend %border-top-bottom;
+  }
+  .item-cell {
+    padding: 10px 14px 10px 0;
+    @extend %border-bottom;
+    .title {
+      margin-right: 30px;
+      font-size: 16px;
+    }
+    .num,
+    .reason {
+      display: block;
+      text-align: right;
+    }
+    .num {
+      font-size: 16px;
+    }
+    .reason {
+      font-size: 12px;
+    }
+
+    .red {
+      color: $red;
+    }
+    .green {
+      color: $green;
+    }
+  }
+}

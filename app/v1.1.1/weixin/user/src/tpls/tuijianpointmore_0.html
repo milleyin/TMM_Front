@@ -1,0 +1,51 @@
+<div id="tuijianmore">
+  <header class="t_bar">
+    <h1>{{info.name}}</h1>
+    <a class="iconfont h_left h_20" href="javascript:history.back(-1);">&#xe61f;</a>  
+  </header>
+  <div class="content">
+      <div class="banner">
+        <ul>
+          <li><img ng-src="{{info.img}}"></li>
+        </ul>
+      </div>
+      <div class="info">
+        <table>
+          <tr>
+            <td class="t_tit">开放时间</td>
+            <td>{{info.start_work}} - {{info.end_work}}</td>
+          </tr>
+          <tr>
+            <td class="t_tit">联系电话</td>
+            <td>{{info.phone}}</td>
+          </tr>
+          <tr>
+            <td class="t_tit">微信号</td>
+            <td>{{info.weixin}}</td>
+          </tr>
+          <tr>
+            <td class="t_tit">地址</td>
+            <td class="t_address"><span class="address">{{info.address}}</span><span ng-click="showAddress(info.address)" class="chakan">查看</span></td>
+          </tr>
+          <tr class="noborder" >
+            <td class="t_tit">内容</td>
+            <td>
+              <div ng-repeat="attr in info.fare">
+                <p class="p_fare"><span>{{attr.name}}</span><span>{{attr.info}}</span><span>{{attr.price==0?'——': attr.price+'元'}}</span></p>
+                <hr class="{{$last ? 'no_hr' : ''}}">
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="edit_content" data-ng-bind-html="contentHTML"></div>
+  </div>
+
+  <div class="tuijianmore_map" ng-show="showMap">
+    <div class="tuijianmore_title">{{info.address}}</div>
+    <img ng-src="{{info.map}}">
+  </div>
+  <div class="bg_mask" ng-click="showMap=false" ng-show="showMap"></div>
+</div>
+
+

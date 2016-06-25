@@ -1,0 +1,65 @@
+angular.module('disposit', [])
+
+
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.disposit', {
+      url: '/disposit',
+      views: {
+        'tab-my': {
+          templateUrl: 'app/wallet/templates/disposit.html',
+          controller: 'dispositCtrl',
+        }
+      }
+    });
+}])
+
+.controller('dispositCtrl', function($scope, Resource) {
+  $scope.model = {};
+
+  function getData() {
+
+    Resource.getDispoit().then(function(data) {
+
+      $scope.model = data;
+      $scope.model.nextPage = data.page.next;
+      $scope.$broadcast('scroll.refreshComplete');
+    }, function(data){
+      $scope.$broadcast('scroll.refreshComplete');
+    });
+    
+  }
+
+  function getNewData() {
+    Resource.getDispoit().then(function(data) {
+      $scope.model.list_data = data.list_data;
+      $scope.model.nextPage = data.page.next;
+      $scope.$broadcast('scroll.refreshComplete');
+    }, function(data) {
+      $scope.$broadcast('scroll.refreshComplete');
+    });
+  }
+
+  function loadMoreData() {
+    if (!$scope.model.nextPage) return;
+    Resource.get($scope.model.nextPage).then(function(data) {
+      $scope.model.nextPage = data.page.next;
+      $scope.model.list_data = $scope.model.list_data.concat(data.list_data);
+      $scope.$broadcast("scroll.infiniteScrollComplete");
+    }, function(data) {
+      $scope.$broadcast("scroll.infiniteScrollComplete");
+    });
+  }
+
+  getNewData();
+
+  $scope.doRefresh = function() {
+    getNewData();
+  };
+
+  $scope.loadMore = function() {
+    loadMoreData();
+   
+  };
+
+})

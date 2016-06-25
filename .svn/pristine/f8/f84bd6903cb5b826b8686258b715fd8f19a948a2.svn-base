@@ -1,0 +1,84 @@
+<!-- 点的详情页面 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">{{itemObj.name}}</div>
+    <div class="right">
+     <!--  <a href="#">
+        <i class="icon ticon-praise"></i>
+      </a> -->
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, "data-page" contains page name -->
+  <div data-page="item-hotel-detail" class="page tmm-item-detail" id="item-hotel-detail-map">
+    <div class="page-content">
+      <div class="banner">
+        <ul>
+          <li><img class="lazy" data-src="{{itemObj.img}}"></li>
+        </ul>
+      </div>
+      <div class="info">
+        <div class="info-list"><span class="tit">开放时间</span><span class="txt">{{itemObj.start_work}} - {{itemObj.end_work}}</span></div>
+        <div class="info-list"><span class="tit">联系电话</span><span class="txt">{{itemObj.phone}}</span></div>
+        <div class="info-list"><span class="tit">微信号</span><span class="txt">{{itemObj.weixin}}</span></div>
+        <div class="info-list address"><span class="tit">地址</span><span class="txt">{{itemObj.address}}</span><a href="#" class="showmore" id="showmoreMap" data-address="{{itemObj.address}}" data-city="{{itemObj.address_arr.city}}"><i class="icon ticon-map"></i></a>
+        <!-- <a href="#" class="showmore open-popover" data-popover=".popover-about">查看</a> --></div>
+        <div class="info-list item-con-live">
+          <div class="tit">内容</div>
+          <div class="txt">
+         
+        {{#each itemObj.fare}}
+          <p class="item-list">
+            <span class="item-name hotel-name">{{name}}</span>
+            
+            <span class="item-info hotel-info">{{room number}}</span>
+
+    
+            <span class="item-squre hotel-squre">{{info}} m<sup>2</sup></span>
+       
+            <span class="item-price hotel-price">{{price}} 元</span>
+          </p>
+        {{/each}}
+
+          </div>
+        </div>
+        <div class="info-list"><span class="tit">酒店服务</span>
+        {{#each itemObj.wifi}}
+        <span class="service">{{name}}</span>
+        {{/each}}
+        </div>
+      </div>
+
+      <!-- 内容添加 -->
+      <div class="edit_content">
+        {{itemObj.content}}
+      </div>
+    </div>
+
+    <!-- <div class="popover popover-about">
+      <div class="popover-angle"></div>
+      <div class="popover-inner">
+        <div class="content-block">
+          <p>{{itemObj.address}}</p>
+          <div>
+            <img src="{{itemObj.map}}">
+          </div>
+        </div>
+      </div>
+    </div> -->
+     <div class="tmm-more-map" id="tmm-hotel-map" style="display:none">
+      <div class="tmm-more-title">{{itemObj.address}}</div>
+      <img src="{{itemObj.map}}">
+    </div>
+    <div class="tmm-bg-mask" id="tmm-hotel-mask" style="display:none"></div>
+
+  </div>
+</div>
+
+

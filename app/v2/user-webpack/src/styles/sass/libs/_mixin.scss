@@ -1,0 +1,180 @@
+@mixin day-line($aHeight:30px, $bHeight:$aHeight) {
+  display: inline-block;
+  padding: 4px 6px;
+  background-color: $green;
+  color: #fff;
+  font-size: 11px;
+  line-height: 11px;
+  position: relative;
+  margin: $aHeight 0 $bHeight;
+  &:before {
+    content: "";
+    height: $aHeight;
+    position: absolute;
+    width: 1px;
+    bottom: 100%;
+    left: 50%;
+    background-color: #61cc13;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+  }
+  &:after {
+    content: "";
+    height: $bHeight;
+    position: absolute;
+    width: 1px;
+    top: 100%;
+    left: 50%;
+    background-color: #61cc13;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+  }
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
+
+@mixin button($color: transparent, $bg-color: transparent) {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid $color;
+  background-color: $bg-color;
+  white-space: nowrap;
+}
+
+@mixin hareline($type, $color: $gray-light) {
+  position: relative;
+  @if $type==top {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: auto;
+      right: auto;
+      height: 1px;
+      width: 100%;
+      background-color: $color;
+      display: block;
+      @include transform-origin(50% 0%);
+      html.pixel-ratio-2 & {
+        @include transform(scaleY(0.5));
+      }
+      html.pixel-ratio-3 & {
+        @include transform(scaleY(0.33));
+      }
+    }
+  }
+  @else if $type==bottom {
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: auto;
+      top: auto;
+      height: 1px;
+      width: 100%;
+      background-color: $color;
+      display: block;
+      @include transform-origin(50% 100%);
+      html.pixel-ratio-2 & {
+        @include transform(scaleY(0.5));
+      }
+      html.pixel-ratio-3 & {
+        @include transform(scaleY(0.33));
+      }
+    }
+  }
+  @else if $type==left {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      width: 1px;
+      background-color: $color;
+      display: block;
+      @include transform-origin(0% 50%);
+      html.pixel-ratio-2 & {
+        @include transform(scaleX(0.5));
+      }
+      html.pixel-ratio-3 & {
+        @include transform(scaleX(0.33));
+      }
+    }
+  }
+  @else if $type==right {
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background-color: $color;
+      display: block;
+      @include transform-origin(100% 50%);
+      html.pixel-ratio-2 & {
+        @include transform(scaleX(0.5));
+      }
+      html.pixel-ratio-3 & {
+        @include transform(scaleX(0.33));
+      }
+    }
+  }
+}
+
+@mixin transform($t) {
+  -webkit-transform: $t;
+  transform: $t;
+}
+
+@mixin transform-origin($to) {
+  -webkit-transform-origin: $to;
+  transform-origin: $to;
+}
+
+// Flexbox Mixins
+@mixin display-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+  -webkit-box-flex: $fg;
+  -webkit-flex: $fg $fs $fb;
+  -moz-box-flex: $fg;
+  -moz-flex: $fg $fs $fb;
+  -ms-flex: $fg $fs $fb;
+  flex: $fg $fs $fb;
+}
+
+// Box sizing
+// --------------------------------------------------
+@mixin box-sizing($boxmodel: border-box) {
+  -webkit-box-sizing: $boxmodel;
+  -moz-box-sizing: $boxmodel;
+  box-sizing: $boxmodel;
+}

@@ -1,0 +1,22 @@
+<div id="xuanzeluxian">
+    <header class="t_bar">
+        <h1>{{title}}<a href="javascript:history.back(-1);"><i class="iconfont h_left h_20">&#xe61f;</i></a></h1>
+    <nav class="sub_bar_dian">
+    </nav>
+    </header>
+
+    <div class="content">       
+
+        <div class="media_box" ng-repeat="attr in info.list_data" ng-click="goToDetail(attr.link)">
+            <div class="media">
+                <div class="media_pic"><img ng-src="{{attr.image}}"></div>
+                    <div class="media_txt">
+                        <p class="media_tit">{{attr.name}}</p>
+                        <p><span class="media_min_txt1">{{attr.info}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

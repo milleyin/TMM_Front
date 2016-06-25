@@ -1,0 +1,17 @@
+{{#each recommend}}
+<li class="tmm-item-content">
+  <div class="pic">
+    <a href="javascript:;" data-type="{{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}" data-link="{{link}}" class="tmm-recommend-detail"><img data-src="{{image}}" class="lazy lazy-fadein"></a>
+  </div>
+  <div class="txt">
+    <div class="title">{{name}}</div>
+    <div class="intro">{{info}}</div>
+    <span class="type {{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}">
+                {{js " this.classliy.value==1 ? '景点' : this.classliy.value==2 ? '线路' : '活动' "}}
+              </span>
+    <span class="praise"><i class="icon ticon-praise"></i>
+    <span class="num" id="recommend_{{value}}">{{collect_count}}</span>
+    </span>
+  </div>
+</li>
+{{/each}}

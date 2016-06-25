@@ -1,0 +1,42 @@
+<ion-view view-title="我的订单">
+  <div class="sub-nav" style="margin-top: 44px;">
+    <span class="sub-btn" ng-class="{'active':type === 1}" ng-click="changeData(1)">觅镜</span>
+    <span class="sub-btn" ng-class="{'active':type === 2}" ng-click="changeData(2)">觅趣</span>
+  </div>
+  <ion-content class="subnav-padding" delegate-handle="order-content">
+    <ion-refresher pulling-text="下拉刷新数据" pulling-icon="arrow-down" on-refresh="doRefresh()" spinner="android">
+    </ion-refresher>
+
+
+
+    <div ng-if="type === 1">
+    <div ng-repeat="item in model.list_data" class="media-cell">
+      <div class="cell-body">
+        <div class="media">
+          <img ng-src="{{ item.shops_list_img }}">
+        </div>
+        <div class="describe">
+          <p class="tit">{{ item.shops_name }}</p>
+          <p class="txt">数量 {{ item.items_count }}　　收入：<span class="stress">￥{{ item.order_price }}</span></p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div ng-if="type === 2">
+    <div ng-repeat="item in model.list_data" class="media-cell">
+      <div class="cell-body">
+        <div class="media">
+          <img ng-src="{{ item.shops_list_img }}">
+        </div>
+        <div class="describe">
+          <p class="tit">{{ item.actives_name }}</p>
+          <p class="txt">出游时间：{{ go_time }}</p>
+          <p class="txt">数量 {{ item.items_count }}　　收入：<span class="stress">￥{{ item.order_price }}</span></p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <ion-infinite-scroll ng-if="model.nextPage" on-infinite="loadMore()" distance="10%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

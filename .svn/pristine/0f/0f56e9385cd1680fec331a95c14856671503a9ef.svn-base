@@ -1,0 +1,80 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">我的信息</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="myInfo" class="page">
+    <div class="page-content tmm-myinfo-page-contnet">
+      <div class="list-block tmm-myinfo-item-info">
+        <ul>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">昵称</div>
+              <div class="item-after changeNickname">
+                <span class="side_txt changeNickname" id="nickname">{{userInfo.nickname}}</span>
+                <i class="icon ticon-arrow-right"></i>
+
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">性别</div>
+              <div class="item-after changeGender">
+                <span class="side_txt" id="gender">{{js "this.userInfo.gender==0 ? '保密' : this.userInfo.gender==1?'男':'女'"}}</span>
+                <i class="icon ticon-arrow-right"></i>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <a class="item-inner" href="javascript:;" id="modify-phone">
+              <div class="item-title">手机号码</div>
+              <div class="item-after">
+                <span class="side_txt side_ok">{{userInfo.phone}}</span>
+                <i class="icon ticon-arrow-right"></i>
+              </div>
+            </a>
+          </li>
+          <li class="item-content">
+            <a class="item-inner" href="#" class="link" id="modify_pwd">
+              <div class="item-title">密码</div>
+              <div class="item-after">
+                <span class="side_txt">{{js "this.userInfo.is_set?'修改密码':'设置密码'"}}</span>
+                <i class="icon ticon-arrow-right"></i>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="content-block-title myinfo-block-title">主要联系人</div>
+      <div class="list-block tmm-myinfo-item-mainretinue">
+        <ul>
+          <li class="item-content">
+            <div class="item-inner">
+              {{#unless this.main_retinueInfo}}
+              <span data-type="4" data-phone="{{userInfo.phone}}" class="myinfo-retinue red_txt">添加</span> {{/unless}} {{#each main_retinueInfo}}
+              <span data-type="3" data-link="{{view_link}}" class="myinfo-retinue item-title item-title-name">{{name}}</span>
+              {{/each}}
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="content-block-title myinfo-block-title">随行联系人</div>
+      <div class="content-block tmm-myinfo-content-otherretinue">
+        <div class="content-block-inner">
+          {{#if this.retinueInfo}} {{#each retinueInfo}}
+          <span data-link="{{view_link}}" data-type="1" class="txt myinfo-retinue">{{name}}</span> {{/each}} {{/if}}
+          <span data-type="2" class="myinfo-retinue red_txt">添加</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

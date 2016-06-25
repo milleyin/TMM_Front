@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>荔枝节</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body class="payForm">
+  <div class="headerbg"></div>
+  <div class="payCard">
+    <div class="title">天美品荔券·妃子笑</div>
+    <div class="txt">入园门票1张</div>
+    <div class="price">￥3811</div>
+  </div>
+  
+  <div class="form">
+    <div class="paynum">
+      购买数量
+      <span class="computerbox"><span class="sub"></span><span class="num">2</span><span class="add"></span></span>
+    </div>
+    <div class="input"><input type="tel" placeholder="联系手机号"><a class="getCode">获取验证码</a></div>
+    <div class="input"><input type="tel" placeholder="填写短信验证码"></div>
+
+    <div class="totalprice">
+      总额： ￥<span class="price">78</span>
+    </div>
+
+    <button class="submit" type="submit">确认支付</button>
+  </div>
+</body>

@@ -1,0 +1,55 @@
+<div id="wodeshouru">
+  <h1 class="top-nav">我的收入
+    <div ng-click="getCode()" class="tmm-saom-tu"><img src="images/saoma.png" ></div>
+	</h1>
+  <div class="m_content incomeContent pages">
+    <!--更改为列表 -->
+    <div data-page="trade-record" class="tmm-trade-record-page page-content" when-scrolled="showMore()">
+      <div class="list-block  tmm-trade-record-list-block list-block-bottom">
+        <!-- 有交易记录并且为主账号登录 -->
+        <div class="list-block tmm-zongs">
+				  <ul>
+				    <li class="item-content">
+			        <div class="item-inner-new">
+				        <div class="item-title">总收入</div>
+				        <div class="item-after tmm-jine">{{info.format_money_count}}元</div>
+				      </div>
+				    </li>
+					</ul>
+				</div>
+				<div ng-if="!no_data" ng-repeat="attr in list_data">
+					<div class="tmm-ge">{{attr.name}}</div>
+					<div class="list-block tmm-zong tmm-cl">
+					  <ul id="tmm-trade-record-ul" ng-if="is_main">
+					    <li class="item-content" ng-repeat="ls in attr.value">
+				        <div class="item-inner">
+					        <div class="item-title">{{ls.add_time}}</div>
+					        <div class="item-after">{{ls.format_money}}元 
+					        	<p class="tmm-mode">营业额</p>
+					        </div>
+					      </div>
+					    </li>
+						</ul>
+					</div>
+        </div>
+
+        <!-- 无交易记录 -->
+        <ul id="tmm-trade-record-ul" class="tmm-record-conNo-ul" ng-if="no_data">
+          <li class="tmm-record-content tmm-record-conNo">
+            当前没有相关数据!
+          </li>
+        </ul>
+        <div class="load" style="display:none;">正在加载...</div>
+      </div>
+    </div>
+    <!--更改为列表 -->
+
+  </div>
+  <nav class="bar-tab">
+    <a ng-href="#/myorder"><i class="iconfont">&#xe616;</i><span>我的订单</span></a>
+    <a ng-href="#/myxiangmu"><i class="iconfont">&#xe61b;</i><span>我的项目</span></a>
+    <a class="active"><i class="iconfont">&#xe613;</i><span>我的收入</span></a>
+    <a ng-href="#/my"><i class="iconfont">&#xe624;</i><span>我的</span></a>
+  </nav>
+</div>
+

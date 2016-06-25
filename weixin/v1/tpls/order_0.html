@@ -1,0 +1,173 @@
+<div id="pagethree">
+    <header class="t_bar">
+        <h1>订单预订</h1>
+        <a ng-click="clearItem()" href="javascript:history.back(-1);" class="iconfont h_left h_20">&#xe61f;</a>
+        <a ng-click="addItem()" class="iconfont h_right h_20">&#xe62a;</a>
+    </header>
+
+    <div class="content">
+<form>        
+
+        <h2 class="no_t_border">出发时间</h2>
+        <section class="time">
+            <div class="info">
+            <label>设置：
+                <input ng-model="goTime" type="date" style="padding-right: 5px;">
+            </label>
+            </div>
+        </section>
+
+
+<!--         <h2>主要需求</h2>
+        <section class="order_require">
+            <div class="info">
+                <p>成人
+                    <span class="jisuan"><span class="icon_jia icon_jia_h"></span><span class="num">1</span><span class="icon_jian"></span></span>
+                </p>
+                <div class="line"></div>
+                <p>儿童
+                    <span class="jisuan"><span class="icon_jia icon_jia_h"></span><span class="num">1</span><span class="icon_jian"></span></span>
+                </p>
+                <div class="line"></div>
+                <p>房间数
+                    <span class="jisuan"><span class="icon_jia icon_jia_h"></span><span class="num">1</span><span class="icon_jian"></span></span>
+                </p>
+            </div>
+        </section>
+ -->
+    
+<!-- 
+        <h2>主要选项</h2>
+        <section class="list" ng-repeat="attr in saveDotItem" ng-init="wrapIndex=$index" ng-class="$first? '': 't_border'">
+            <div ng-class="$last? 'list_sec':'list_sec b_border'" ng-repeat="attr1 in attr.items_fare" ng-init="outerIndex=$index">
+                <div class="list_title">{{attr1.name}}</div>
+                <div class="list_info">
+                    <p ng-class="$last? '':'b_border'" ng-repeat="attr2 in attr1.fare" ng-init="innerIndex=$index"><span class="w_30">{{attr2.name}}</span><span class="w_30" style="text-align:center;">￥{{attr2.price}}</span><span class="jisuan w_40"><span ng-click="jiaNumber(wrapIndex,outerIndex,innerIndex)" class="icon_jia icon_jia_h"></span><span class="num">{{attr2.number}}</span><span ng-click="jianNumber(wrapIndex,outerIndex,innerIndex)" class="icon_jian"></span></span></p>
+                </div>
+            </div>  
+
+        </section> -->
+
+        <h2>主要选项</h2>
+        <section class="list" ng-repeat="attr in saveDotItem" ng-init="wrapIndex=$index" ng-class="$first? '': 't_border'">
+            <div ng-class="$last? 'list_sec':'list_sec b_border'" ng-repeat="attr1 in attr.items_fare" ng-init="outerIndex=$index">
+                <div class="list_title">{{attr1.name}}</div>
+                <div class="list_info">
+                    <p ng-class="$last? '':'b_border'" ng-repeat="attr2 in attr1.fare" ng-init="innerIndex=$index"><span class="w_30 length">{{attr2.name}}</span><span class="w_20">{{attr1.classliy.value==2?attr2.room_number==1?'单人间':'双人间':attr2.info}} </span><span class="w_15" style="text-align:center;">{{attr2.price==0?'——':'￥' + attr2.price}}</span><span ng-if="attr2.price != 0" class="jisuan w_30"><span ng-click="jiaNumber(wrapIndex,outerIndex,innerIndex)" class="icon_jia icon_jia_h"></span><span class="num">{{attr2.number}}</span><span ng-click="jianNumber(wrapIndex,outerIndex,innerIndex)" class="icon_jian"></span></span></p>
+                </div>
+            </div>  
+
+        </section>
+
+         <h2 class="h2_tit">主要成员</h2>
+         <div class="retinue">
+             <p class="p_list">
+                 <span ng-click="updateRetinue(attr.value,3)" ng-repeat="attr in user.main_retinueInfo.list" ng-class="$index==0 ? 'l_txt':$index==1 ? 'c_txt' : 'r_txt'">{{attr.name}}</span>
+                 <span ng-click="addRetinue(1)" ng-if="!user.main_retinueInfo.list.length" class="tianjia_tag">添加</span>
+             </p>
+         </div>
+
+        <h2>随行人员</h2>     
+        <div class="retinue">
+           <p class="p_list">
+                <span ng-repeat="attr in selectedRetinues" ng-click="updateRetinue(attr.value,2)" ng-class="$index%3==0 ? 'l_txt':$index%3==1 ? 'c_txt' : 'r_txt'">{{attr.name}}</span><span ng-click="showRetinues()" ng-class="selectedRetinues.list.length%3==0 || !selectedRetinues.list.length ? 'l_txt tianjia_tag':selectedRetinues.list.length%3==1 ? 'c_txt tianjia_tag' : 'r_txt tianjia_tag'">添加</span>
+                
+            </p>
+        </div>
+        
+        <h2>支付方式</h2>
+        <section class="payment">
+            <div class="info">
+                <p><span class="l_txt"><img src="images/zifubao.png" alt="支付宝" width="28" height="28"></span><span class="r_txt">请使用支付宝付款</span></p>
+            </div>
+        </section>
+
+        <footer class="f_bar" style="position:relative;margin-top:35px;">
+            <span class="price">￥{{totPrice}}</span>
+            <button ng-click="submit()" class="zhifu">确认订单</button>
+            <!-- <button class="yulan">预览订单</button> -->
+        </footer>
+    </div>
+
+
+    
+</form>
+    <!-- 遮罩层 -->
+    <div class="bg_mask" ng-show="showMask"></div>
+
+    <!-- 添加随行人员表单 -->
+    <div class="tianjia_form" ng-show="showForm">
+
+        <form name="tianjiaRetinue" novalidate ng-submit="submitTianjia(tianjiaType)">
+            <div class="f_top">{{tianjiaTit}}<i ng-click="deleteRetinue()" ng-if="tianjiaType==2" class="iconfont delete">&#xe62d;</i></div>
+            <p class="tip_msg">{{msg}}</p>
+            <div class="f_con">
+                <p>
+                    <span>姓名</span>
+                    <input type="text" 
+                    name="name"
+                    ng-focus="clearMsg()"
+                    required
+                    ng-model="tianjia.name" 
+                    placeholder="必填">
+                </p>
+                <div class="line"></div>
+                <p>
+                    <span>身份证</span>
+                    <input type="text"
+                    name="identity"
+                    ng-focus="clearMsg()"
+                    required
+                    ng-model="tianjia.identity" 
+                    placeholder="必填">
+                </p>
+                <div class="line"></div>
+                <p>
+                    <span>手机号码</span>
+                    <input ng-readonly="(tianjiaType==1 || tianjiaType==3)?true:false" type="tel" 
+                    name="phone"
+                    ng-focus="clearMsg()"
+                    required
+                    ng-model="tianjia.phone" 
+                    placeholder="必填">
+                </p>
+                <div class="line"></div>
+              <!--   <p class="b_border" ng-if="showAddress">
+                  <span>地址</span>
+                  <select ng-model="tianjia.addressSheng" ng-change="selectedAddress()">
+                      <option value="m" ng-selected="tianjia.addressSheng=='m'">Male</option>
+                      <option value="f" ng-selected="tianjia.addressSheng=='f'">Fmale</option>
+                  </select>
+                  <select ng-model="updateForm.code">  
+                    <option value="">--选择市--</option>  
+                    <option ng-repeat="v in codeList" ng-selected="updateForm.code == v.code">{{v.code}}</option>  
+                  </select> 
+              </p> -->
+
+                <p>
+                    <span>邮箱</span>
+                    <input type="email"
+                    name="email"
+                    ng-focus="clearMsg()"
+                    ng-model="tianjia.email" 
+                    placeholder="选填">
+                </p>
+            </div>
+            <div class="f_bottom">
+                <button class="sub_active" type="submit">确认</button>
+            </div>
+            <span class="icon_close" ng-click="showForm=false;showMask=false"></span>
+        </form>
+    </div>
+
+    <div ng-show="isShowRetinues" class="set_retinue">
+        <div class="set_retinue_header">添加随行人员 <span ng-click="addRetinueName()" class="tianjia_retinues">添加</span></div>
+        <div class="set_retinue_con">
+            <p ng-click="addRetinues($index,attr)" ng-class="$last? 'no_b_border retinue':'retinue'" ng-repeat="attr in notSelectedRetinues"><i ng-class=" attr.isSelected ? 'iconfont h_left h_20 selected' : 'iconfont h_left h_20'">&#xe630;</i><span>{{attr.name}}</span></p>
+        </div>
+
+        <div class="bg_btn"><a ng-click="isShowRetinues=false;showMask=false" class="sub_btn">确认</a></div>
+
+    </div>
+
+</div>

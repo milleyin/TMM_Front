@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>新增商家</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/breadcrumbs.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/step.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/form.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/box.css">  
+   <link rel="stylesheet" type="text/css" href="../css/agent/css/business.css">
+  <script src="../css/agent/script/jquery-1.11.3.min.js"></script>
+  <!--[if lt IE 9]>
+  <script src="dist/js/html5.js"></script>
+  <script src="dist/js/respond.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="content_box">
+  <div class="breadcrumbs title">
+   <a href="business_site_accmangr.html">商家账号管理</a>
+   &frasl;
+   <span>新增商家</span>
+  </div>  <!--.title-->
+  <div class="create_nav create_business_nav">
+      <div class="create_steap_one">
+        <a class="done">1</a>
+        <span class="text_done">账号信息</span>
+        <div class="line line_first done"></div>
+      </div>
+      <div class="create_steap_two">
+        <a class="done">2</a>
+        <span class="text_done">公司信息</span>
+        <div class="line done"></div>
+      </div>
+      <div class="create_steap_three">
+        <a class="undone">3</a>
+        <span class="text_undone">证照上传</span>
+        <div class="line undone"></div>
+      </div>
+      <div class="create_steap_four">
+        <a class="undone">4</a>
+        <span class="text_undone">添加标签</span>
+        <div class="line undone"></div>
+      </div>
+      <div class="create_steap_five">
+        <a class="undone">5</a>
+        <span class="text_undone">提交审核</span>
+        <div class="line line_last undone"></div>
+      </div>
+  </div>    <!-- .create_nav -->
+  <div class="content create_business_content">
+    <div class="content_two">
+       <form method="post" method="post" action="" class="business_info_form">
+        <div class="row content_bname">
+         <label>公司名称：</label>
+         <input type="text" class="bname" value=""> 
+         <div class="errorMessage">不可为空</div> 
+         </div>
+        <div class="row content_baddress">
+          <label>公司地址：</label>  
+          <select class="province">
+            <option selected>省</option>
+            <option>广东省</option>
+            <option>山西省</option>
+            <option>安徽省</option>
+          </select>
+          <select class="city">
+            <option selected>市</option>
+            <option>深圳市</option>
+            <option>广州市</option>
+          </select>
+          <select class="area">
+            <option selected>区/县</option>
+            <option>福田区</option>
+            <option>南山区</option>
+          </select>
+          <input type="text" class="address" value=""> 
+          <div class="errorMessage">不可为空</div>
+        </div>
+        <div class="row content_bphone" >
+          <label>公司电话：</label>  
+          <input type="text" class="bphone" value="">
+          <div class="errorMessage">不可为空</div>
+        </div>
+        <div class="row content_bemail" >
+          <label>公司邮编：</label>  
+          <input type="text" class="bemail" value="">
+          <div class="errorMessage">不可为空</div>
+        </div>
+        <div class="row" >
+          <label>营业执照编号：</label>  
+          <input type="text" value="">
+          <div class="errorMessage">不可为空</div>
+        </div>
+        <div class="row" >
+          <label>公司法人姓名：</label>  
+          <input type="text" value="">
+          <div class="errorMessage">不可为空</div>
+        </div>
+        <div class="row" >
+          <label>法人身份证号：</label>  
+          <input type="text" value="">
+          <div class="errorMessage">不可为空</div>
+        </div>
+        <div class="row" >
+          <label>法人联系电话：</label>  
+          <input type="text" value="">
+          <div class="errorMessage">不可为空</div>
+        </div>
+        <div class="row" >
+          <label>公司负责人姓名：</label>  
+          <input type="text" value="">
+          <div class="errorMessage">不可为空</div>
+        </div>
+        <div class="row" >
+          <label>公司负责人身份证号：</label>  
+          <input type="text" value="">
+          <div class="errorMessage">不可为空</div>
+        </div>
+        <div class="row" >
+          <label>公司负责人联系电话：</label>  
+          <input type="text" value="">
+          <div class="errorMessage">不可为空</div>
+        </div>        
+        <div class="row enter">
+          <input type="submit" value="下一步" id="business_info">
+        </div>
+      </form> 
+    </div>  <!-- .content_two -->
+  </div>   <!--  .content -->
+  
+  <div class="copyright">
+    <span>Copyright &copy; TMM365.com All Rights Reserved</span>
+  </div>  <!--.copyright--> 
+</div>  <!--.content_box-->
+
+<script src="../css/agent/script/functions.js"></script>
+<script type="text/javascript">
+  $(function(){   
+    //公司信息
+    $("#business_info").click(function(){
+     window.location.href="business_site_accmangr_create_stepthree.html";
+     window.event.returnValue=false; 
+    })
+});
+</script>
+</body>
+</html>

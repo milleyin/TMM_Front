@@ -1,0 +1,1067 @@
+.b-border {
+  position: relative;
+}
+.b-border:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #d7d9d7;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.tmm-act-detail-banner{
+	width: 100%;
+  position: relative;
+}
+.tmm-act-detail-img{
+  width: 100%;
+  vertical-align: middle;
+  height: auto;
+}
+.tmm-act-detail-mask {
+  position: absolute;
+  bottom: 0px;
+  display: inline-block;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  height: 50px;
+}
+.tmm-praise{
+  padding-top:3px;
+  width: 33%;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+}
+.tmm-praise-pos-img{
+	margin-left: auto;
+  margin-right: auto;
+}
+.tmm-praise-pos-call{
+  position:absolute;
+}
+.tmm-praise-pos-share{
+  float:right;
+}
+.tmm-praise-img{
+  position: relative;
+  vertical-align: middle;
+  width:26px !important;
+  height:32px;
+}
+.tmm-praise-tit{
+  font-size: 10px;
+  line-height: 1px;
+  margin-top: 2px;
+  display: block;
+  color: #fff;
+  text-align: center;
+}
+
+.tmm-act-info {
+  color: #666666;
+  background: #FFFFFF;
+}
+.tmm-act-info .tmm-act-border-right {
+  position: relative;
+  width: 50%;
+}
+.tmm-act-info .tmm-act-border-right:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #d7d9d7;
+  display: block;
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+.tmm-act-info .tmm-col-fish{
+  height: 80px;
+  line-height: 80px;
+  font-size: 0;
+  padding-left: 16px;
+  float: left;
+}
+.tmm-act-info .tmm-col-fish-content{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 24px;
+}
+.tmm-act-info .tmm-col-fish-content .title{
+  font-size: 15px;
+  color: #000000;
+  font-weight: bold;
+  line-height: 15px;
+  margin-bottom: 10px;
+}
+.tmm-act-info .tmm-col-fish-content .txt{
+  font-size: 13px;
+  color: #666666;
+  line-height: 13px;
+}
+.clears {
+  clear: both;
+}
+.tmm-act-detail-accordion{
+  padding-bottom: 30px;
+  min-height: 151px;
+}
+.tmm-act-detail-accordion-left{
+  padding-left: 15px;
+}
+.tmm-act-detail-accordion .title{
+  line-height: 48px;
+  font-size: 15px;
+  color: #000;
+  font-weight: bold;
+}
+.tmm-act-content-height {
+  height:auto;
+}
+.tmm-act-toggle{
+  margin-left: auto;
+  margin-right: auto;
+}
+/**
+ * 活动详情内容css
+ */
+.wrap{
+  padding: 0 16px;
+  text-align: center;
+}
+.wrap .info{
+  text-align: center;
+  padding-bottom: 26px;
+}
+.wrap .schedule{
+  margin-top: 30px;
+  position: relative;
+  font-size: 16px;
+  padding-bottom: 10px;
+  color: #616466;
+  word-wrap: break-word;
+}
+.wrap .bracket {
+  font-size: 16px;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-width: 0.5px;
+  text-fill-color: white;
+  text-stroke-color: #000;
+  text-stroke-width: 0.5px;
+  font-style: initial;
+}
+.wrap .schedule-detail{
+  position: relative;
+}
+.wrap .schedule-detail .bg {
+  height: 86px;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+}
+.wrap .bg .bg_o {
+  margin: 0 auto;
+  width: 6px;
+  height: 6px;
+  border: 1px solid #3b9edb;
+  border-radius: 8px;
+}
+.wrap .bg .bg_l {
+  position: absolute;
+  left: 50%;
+  height: 78px;
+  width: 1px;
+  background-color: #3b9edb;
+  margin: 0 auto;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+}
+.wrap .schedule-detail .day {
+  height: 60px;
+  padding-top: 34px;
+  position: relative;
+  z-index: 1;
+}
+.wrap .day .day-content{
+  padding: 4px 6px;
+  background-color: #3b9edb;
+  color: #fff;
+  font-size: 11px;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 11px;
+}
+.wrap .tmm-ticon-point {
+  position: absolute;
+  margin-left: -3px;
+  margin-top: 6px;
+  left: 50%;
+}
+.wrap .tmm-ticon-point:before {
+  border-top-color: #3b9edb;
+  bottom: -1px;
+}
+.wrap .tmm-ticon-point:after, .wrap .tmm-ticon-point:before {
+  border: 3px solid transparent;
+  border-top: 3px solid #fff;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  bottom: -0px;
+  content: ' ';
+}
+.wrap .tmm-ticon-point:before {
+  border-top-color: #3b9edb;
+  bottom: -1px;
+}
+.wrap .tmm-content-pos-top{
+  margin-top: 30px; 
+  padding-bottom: 26px;
+  border-bottom: 1px solid #d7d9d7;
+}
+.wrap .tmm-img-pos {
+  position: relative;
+  background-repeat: no-repeat;
+  margin: 10px auto;
+}
+.wrap .tmm-schedule-detail-title {
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 15px 0px 0px;
+  font-weight: bold;
+  color: #000000;
+}
+.wrap .tmm-line-address {
+  font-size: 14px;
+  color: #666666;
+  word-break: break-word;
+}
+.wrap .tmm-showmore {
+  display: inline-block;
+  margin: 20px 0px 25px 0px;
+  font-size: 8px;
+  background-color: #fff;
+  color: #ff595f;
+  height: 8px;
+  line-height: 8px;
+}
+.wrap .tmm-showmore span:nth-child(2) {
+    padding: 0px 5px;
+}
+.wrap .img{ width: 100%; vertical-align: middle;  }
+
+
+/**
+ * 点详情
+ */
+.tmm-items-info .tmm-item-dot-list-title{
+  color: #000;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: left;
+  padding: 16px 15px;
+}
+.tmm-items-info .tmm-item-divider{
+  min-height: 16px !important;
+}
+/*点详情按钮样式*/
+.tmm-go-item {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+  opacity: 0.9;
+  z-index: 1;
+}
+.tmm-dot-act-item {
+  background-color: #13b0cc;
+}
+.tmm-line-act-item {
+  background-color: #39ab53;
+}
+.tmm-activity-act-item {
+  background-color: #3b9edb;
+}
+.tmm-dot-cannt-item {
+  background-color: rgba(75,75,75,0.9);
+}
+.tmm-button{color: #fff;}
+
+/*拨打电话的样式*/
+.tmm-call-button-color .button,.tmm-call-button-color .button.activat, .tmm-call-button-color .button.activated {
+  color: #000;
+}
+.tmm-call-button-color .action-sheet{margin-left: 0; margin-right: 0;}
+.tmm-call-button-color .action-sheet-group{margin-bottom: 0;}
+.tmm-call-popup .popup-head{border-bottom: none;}
+.tmm-call-popup .popup-body{text-align: center;}
+.tmm-call-popup .popup{border-radius: 10px;}
+/********************************************/
+
+/**
+ * 预订须知
+ */
+.tmm-shop-book-info-content{
+  padding-top: 20px;
+  background-color: #efeff4;
+}
+.tmm-booking {
+    margin-bottom: 10px;
+}
+.tmm-booking:before {
+  content: '';
+  height: 1px;
+  width: 100%;
+  background-color: #d7d9d7;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.tmm-booking:after {
+  content: '';
+  height: 1px;
+  width: 100%;
+  background-color: #d7d9d7;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.tmm-booking .booking-title {
+  padding: 0 16px;
+  background-color: #fff;
+  margin-bottom: 1px;
+  line-height: 45px;
+  color: #000;
+  font-size: 15px;
+}
+.tmm-booking .booking-con {
+  padding: 8px 16px;
+  background-color: #fff;
+  line-height: 24px;
+  font-size: 13px;
+  color: #666666;
+}
+
+/********************************************/
+
+/**
+ * 我的钱包
+ */
+.tmm-wallet-header { 
+  color: #fff;
+  font-size: 18px;
+  height: 44px;
+  width: 100%;
+  line-height: 44px;
+  background-color: #403a39;
+  display: inline-flex;
+}
+.tmm-my-wallet { background-color: #f0f1f2;}
+.tmm-hearder-width { width: 45px;}
+.tmm-header-left {
+  font-size: 30px;
+  margin-left: 15px;
+  color: #fff;
+}
+.tmm-header-content {
+  left:45px;
+  right:45px;
+  text-align:center;
+  width: 100%;
+}
+.tmm-wallet-content {
+  width: 100%;
+  height: 145px;
+  background-color: #403a39;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  padding-top: 30px;
+  text-align: center;
+}
+.tmm-wallet-content .tmm-conter-balance {
+  color: #ffffff;
+  font-size: 30px;
+}
+.tmm-wallet-content .tmm-balance-up {
+  color: #888484;
+  font-size: 12px;
+}
+.tmm-wallet-img{
+  width: 25px;
+  vertical-align:middle;
+  margin-right: 10px;
+}
+.tmm-ion-list .item{
+  font-size: 15px;
+  color: #000;
+}
+.tmm-ion-list .item-content, .tmm-ion-list .item{
+  padding: 10px 49px 10px 16px;
+}
+.tmm-list-top{
+  width: 100%;
+  margin-top: 8px;
+  position: absolute;
+}
+
+/**
+ * 我的钱包 ---》提现
+ */
+.tmm-my-withdraw-content, .tmm-my-drawmoneymessage-content{
+  height: 100% !important;
+}
+.tmm-withdraw-left{
+  color: #000;
+}
+.tmm-withdraw-right {
+  font-size: 15px;
+  line-height: 30px;
+}
+.tmm-my-withdraw-top {
+  padding-top: 45px;
+}
+.tmm-withdraw-list .item{
+  display: inline-flex;
+  width: 100%;
+  padding-left: 0;
+  border-left: none;
+  border-right: none;
+}
+.tmm-withdraw-list .item:first-child{
+  border-top: none;
+}
+.tmm-withdraw-list .item:last-child{
+  border-bottom: none;
+}
+.tmm-withdraw-title{
+  display: inline-block;
+  width: 80px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  margin-right: 10px;
+}
+.tmm-withdraw-list .list {
+  padding-left: 15px;
+  background-color: #fff;
+}
+.tmm-withdraw-list .list:first-child {
+  padding-top: 0;
+}
+.tmm-withdraw-input, .tmm-my-withdraw-content input {
+  height: auto !important;
+}
+.tmm-codeWidth{ width: 180px;}
+.tmm-withdraw-tip {
+  color: #999999;
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/**
+ * 我的钱包--->提现申请记录
+ */
+.tmm-record-list .list:first-child {
+  padding-top: 0;
+}
+.tmm-record-list .tmm-record-item {
+  display: flex;
+}
+.tmm-record-item .tmm-record-time {
+  color: #8e8e93;
+  font-size: 12px;
+  white-space: normal;
+  margin-left: 0;
+  line-height: 25px;
+}
+.tmm-record-item .tmm-record-money {
+  display: inline-block;
+  max-height: inherit;
+  color: black;
+  text-align: right;
+  font-size: 18px;
+  line-height: 20px;
+  position: absolute;
+  right: 16px;
+}
+.tmm-record-item .tmm-record-money p { font-size: 10px; }
+.tmm-record-item .tmm-record-money .fail { color: #ff3333 !important; }
+.tmm-record-item .tmm-record-money .suc { color: #39ab53 !important; }
+.tmm-record-list .tmm-record-reason{
+  color: #000;
+  font-size: 12px;
+  white-space: normal;
+  height: auto;
+  line-height: 21px;
+  position: relative;
+  overflow: hidden;
+  word-break: break-all;
+}
+.tmm-record-conNo {
+  padding-top: 35px;
+  text-align: center;
+  line-height: 48px;
+  color: #403a39;
+}
+
+/**
+ * 我的钱包--->提现短信
+ */
+.tmm-message-info {
+  margin-top: 35px;
+  font-size: 13px;
+  color: #999999;
+  padding: 0 0 0 18px;
+}
+.tmm-message-content {
+  margin: 35px 18px 50px 18px;
+  font-size: 12px;
+}
+.tmm-message-code {
+  margin: 35px 0 10px 0;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 0 16px;
+  line-height: 48px;
+}
+.tmm-message-code input{
+  border: none;
+  width: 50%;
+  line-height: 34px;
+  padding: 0 3px;
+  font-size: 14px;
+  outline: none;
+}
+.tmm-get-code {
+  display: block;
+  width: 107px;
+  height: 30px;
+  float: right;
+  font-size: 14px;
+  margin-top: 9px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+}
+.get-code{
+  background: #4bb262;
+}
+.get-code-active{
+  background: #cdd2d4;
+}
+
+a {
+  text-decoration: none;
+}
+.tmm-message-button{
+  margin: 32px 0 64px;
+  padding: 0px 16px;
+}
+.tmm-message-sub{
+  border: none;
+  text-align: center;
+  width: 100%;
+  border-radius: 2px;
+  line-height: 44px;
+  color: #fff;
+  font-size: 16px;
+  display: block;
+}
+.tmm-message-sub-act {  background-color: #4bb262;}
+
+/**
+ * 我的钱包--->提现成功提示
+ */
+.tmm-drawmoney-label {
+  text-align: left;
+  margin: 10px 0 35px;
+  padding: 0 15px;
+  font-size: 12px;
+  color: #8f8f94;
+}
+.tmm-drawmoney-button{
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  background: #ffffff;
+  padding: 10px 16px;
+}
+
+.tmm-my-drawmoneyinfo-content .scroll{
+  height: 100%;
+}
+
+/**
+ * 我的钱包--->银行卡管理
+ */
+.tmm-card-top {
+  padding: 35px 0px;
+  text-align: center;
+}
+.tmm-card-top img{
+  width: 120px;
+}
+.tmm-bankcard-list .item {
+  padding: 11px;
+}
+.tmm-bankcard-title {
+  display: inline-block; 
+  font-size: 16px;
+  white-space: nowrap;
+  color: #8e8e93;
+  margin-right: 10px;
+}
+.tmm-bankcard-content{
+  right: 16px;
+  position: absolute;
+}
+.tmm-bankcard-btnbg{
+  background-color: #fe686d;
+}
+
+/**
+ * 我的钱包--->更换银行卡
+ */
+.tmm-bankcard-protocol {
+  margin-top: 20px;
+  margin-left: 16px;
+  color: #403a39;
+  font-size: 14px;
+}
+.tmm-bankcard-protocol .chkleft{
+  margin-right: 3px;
+}
+.tmm-bankcard-protocol .bankcard-protocol{color: #5089d1;}
+
+/**
+ * 我的钱包--->银行卡管理协议
+ */
+.tmm-bank-protocol-content {
+  padding: 0 16px 30px 16px;
+  line-height: 24px;
+  font-size: 13px;
+  color: #666666;
+}
+.tmm-bank-protocol-content div:first-child {
+  padding-top: 11px;
+  margin-top: 0;
+}
+.tmm-bank-protocol-content div {
+  margin-top: 10px;
+}
+.tmm-bank-protocol-content .bold {
+  font-weight: bold;
+}
+
+/**
+ * 我的钱包--->交易记录
+ */
+.tmm-my-traderecord-content .item { padding-top: 11px; padding-bottom: 5px;}
+/********************************************/
+
+
+
+/**
+ * 项目详情--->吃，玩详情页
+ */
+.tmm-edit-content {
+  word-break: break-all;
+  padding: 15px 16px;
+  background: #fff;
+  overflow: hidden;
+  text-align: justify;
+}
+.tmm-edit-content img {
+  width: 100% !important;
+  height: auto !important;
+}
+.icon-infor-top{
+  margin-top: 5px;
+}
+
+.tmm-eat-detail-popover {
+  position: fixed !important;
+  left: 16px !important;
+  top: 60px !important;
+  bottom: 60px !important;
+  background: #fff !important;
+  border-radius: 10px !important;
+  z-index: 101 !important;
+  right: 16px !important;
+  height: auto !important;
+  width: auto !important;
+  border-radius: 10px !important;
+  overflow: auto !important;
+  max-height: 80% !important;
+  margin-top: 0px;
+}
+.tmm-eat-popover-top{
+  top: 0;
+  margin: -1px 0 !important;
+}
+.tmm-detail-phone {
+  width: 15px;
+  height: 15px;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+
+.tmm-eat-detail-list .item{
+  display: inline-flex;
+  width: 100%;
+  padding-left: 0;
+  border-left: none;
+  border-right: none;
+  padding-left: 15px;
+}
+.tmm-eat-detail-list .item:first-child{
+  border-top: none;
+}
+.tmm-eat-detail-list .item:last-child{
+  border-bottom: none;
+}
+.tmm-eat-detail-title{
+  display: inline-block;
+  width: 25%;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+}
+.tmm-eat-list-content{
+  font-size: 14px;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  width: 75%;
+}
+.tmm-eat-detail-list .list:first-child {
+  padding-top: 0;
+}
+/*图片滑动样式*/
+.tmm-images-header{
+  padding: 0;
+  height: 194px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.tmm-images-header img {
+  position: absolute;
+  height: 194px;
+  width: 100%;
+}
+/*费用*/
+.tmm-fee{
+  display: inline-block;
+  margin: 5px 0px 17px 0;
+  text-align: left;
+  font-size: 14px;
+  color: #000;
+  width: 75%;
+  white-space: normal;
+}
+.tmm-fee-content{
+  border: 1px solid #000;
+  width: 90px;
+  height: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.tmm-closeDeleteModal {
+  background-image: url(../../images/X1.png);
+  z-index: 102;
+  width: 24px;
+  height: 24px;
+  background-repeat: repeat-x;
+  background-size: 24px;
+  right: 6px;
+  position: absolute;
+  top: 50px;
+}
+
+.tmm-hotel-content{
+  text-align: left;
+  display: inline-block;
+  margin: 0px 25px 17px 0;
+}
+/********************************************/
+
+/**
+ * 搜索样式
+ */
+.tmm-search-img { top: 10px;}
+.tmm-search-left { z-index: 10;}
+.tmm-item-input-inset {
+  margin-left: 45px;
+  width: 100%;
+}
+.tmm-search-input { width: 100%;}
+.tmm-search-content { background: #fff;}
+.tmm-button-clear { font-size: 15px; }
+.tmm-search-list { 
+  margin-left: 16px; 
+  margin-top: -1px;
+  margin-bottom: 0px;
+}
+.tmm-search-item{ 
+  padding: 10px 0px; 
+  font-size: 15px; 
+  color: #565a5c;
+  border-left: 0;
+}
+.tmm-history{
+  font-size: 13px;
+  color: #8f8585;
+}
+.tmm-history-li {
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.tmm-search-clear{ 
+  padding: 10px 0px; 
+  font-size: 13px; 
+  color: #ff595f;
+  border-left: 0;
+  text-align: center;
+}
+/********************************************/
+
+/**
+ * 点订单预订
+ */
+.tmm-order-book-title {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #6d6d72;
+  margin: 35px 15px 10px;
+}
+.tmm-order-book-time {
+  margin:10px 0 35px 0;
+  background-color: #FFFFFF;
+  font-size: 15px;
+  line-height: 25px;
+  color: #565a5c;
+  padding: 10px 15px;
+}
+.tmm-list{
+  margin-bottom: 10px;
+}
+.tmm-orderbook-list .list {
+  padding-left: 15px;
+  background-color: #fff;
+}
+
+.tmm-orderbook-list .item { 
+  padding-left: 0;
+  border-left: none;
+  border-right: none;
+}
+.tmm-orderbook-item{
+  display: inline-flex;
+  width: 100%;
+}
+.tmm-orderbook-list .item:first-child {
+  border-top: none;
+}
+.tmm-orderbook-list .item:last-child {
+  border-bottom: none;
+}
+.tmm-orderbook-item-title {
+  color: #565a5c;
+  font-size: 15px;
+}
+.tmm-orderbook-item-content{
+  font-size: 14px;
+  color: #858b8f;
+}
+.tmm-orderbook-item-content .tmm-item-element {
+  vertical-align: middle;
+}
+.tmm-orderbook-item-content .tmm-item-element:nth-child(1){
+  width: 30%;
+  word-break: break-all;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: inline-block;
+} 
+.tmm-orderbook-item-content .tmm-item-element:nth-child(2){
+  width: 15%;
+  text-align: center;
+} 
+.tmm-orderbook-item-content .tmm-item-element:nth-child(3){
+  width: 25%;
+  text-align: center;
+} 
+.tmm-orderbook-item-content .tmm-item-element:nth-child(4){
+  width: 30%;
+  text-align: right;
+} 
+.tmm-sub-num {
+  display: inline-block;
+  vertical-align: middle;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  border: 1px solid #d7d9d7;
+  border-radius: 24px;
+}
+.tmm-sub-num:before {
+  content: '';
+  height: 2px;
+  width: 12px;
+  display: block;
+  background: #d7d9d7;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+.tmm-add-num {
+  display: inline-block;
+  vertical-align: middle;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  border: 1px solid #d7d9d7;
+  border-radius: 24px;
+}
+.tmm-add-num:before {
+  content: '';
+  height: 2px;
+  width: 12px;
+  display: block;
+  background: #ff595f;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+.tmm-add-num:after {
+  content: '';
+  height: 12px;
+  width: 2px;
+  top: 5px;
+  left: 10px;
+  display: block;
+  background: #ff595f;
+  position: absolute;
+}
+.tmm-order-hoteltime {
+  height: 23px !important;
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+.tmm-order-retinue { 
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -webkit-justify-content: space-between; 
+  justify-content: space-between; 
+  bottom: 35px;
+  position: relative;
+}
+.tmm-w-33 {
+  width: 33.3%;
+}
+.tmm-retinue-sel{
+  color: #ff595f;
+}
+.tmm-order-btn {
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  z-index: 100;
+}
+.tmm-order-price {
+  color: #ff595f;
+  font-size: 20px;
+  float: left;
+  margin-left: 11px;
+}
+.tmm-order-confirm-btn {
+  display: inline-block;
+  width: 160px;
+  height: 33px;
+  font-size: 15px;
+  color: #fff;
+  line-height: 33px;
+  border-radius: 2px;
+  background: #ff595f;
+  float: right;
+  margin-top: 8px;
+  margin-right: 16px;
+}
+/**
+ * 线订单预订
+ */
+.tmm-order-addsub {
+  display: flex;
+}
+.tmm-order-addsub div { width: 50%;}
+.tmm-addsub-pos {text-align: right;}
+.tmm-type-icon {
+  font-size: 20px;
+  margin-right: 12px;
+}
+.tmm-day-time {
+  height: 45px;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+}
+.tmm-day-list-title {
+  margin-left: -15px;
+}
+/********************************************/

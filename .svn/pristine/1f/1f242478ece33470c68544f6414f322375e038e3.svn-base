@@ -1,0 +1,80 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+input[class=info]:focus {
+  border: 2px solid #fff;
+  border-radius: 12px;
+}
+*:focus {outline: none;} 
+.login-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  margin: 0;
+}
+.logo {
+  text-align: center;
+  padding-top: 176px;
+  padding-bottom: 176px;
+}
+.logo-img {
+  width: 314px;
+  height: 116px;
+}
+.login-form {
+  margin-left: 164px;
+  margin-right: 164px;
+}
+
+.login-form .info {
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  font-size: 36px;
+  height: 100px;
+  line-height: 100px;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  padding-left: 20px;
+}
+.login-form .info:first-child {
+  margin-bottom: 52px;
+}
+.login-form .info:nth-child(2) {
+  margin-bottom: 92px;
+}
+.login-form .login {
+  display: block;
+  width: 100%;
+  height: 110px;
+  line-height: 110px;
+  background-color: #fff;
+  border: none;
+  border-radius: 12px;
+  color: #286c74;
+  font-size: 48px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.intro {
+  width: 100%;
+  position: fixed;
+  bottom: 126px;
+  color: #fff;
+  text-align: center;
+}
+.intro .ver {
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 50px;
+}
+.intro .company {
+  font-size: 30px;
+  line-height: 30px;
+}

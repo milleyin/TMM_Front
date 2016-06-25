@@ -1,0 +1,57 @@
+<div id="myinfo">
+  <h1 class="top-nav">子账号{{subInfo.store_info.phone}}
+      <a href="javascript:history.back(-1);"><i class="iconfont h_left h_pic">&#xe61f;</i></a>
+    </h1>
+  <div class="m_content z_content">
+    <section class="z_info">
+      <a ng-href="#/modifi_pwd">
+        <p>
+          修改密码
+          <span class="xiougai">{{setPassw}}</span>
+          <i class="iconfont h_right jiantou">&#xe634;</i>
+        </p>
+      </a>
+      <div class="line"></div>
+      <a ng-href="#/set_phone">
+        <p>修改手机号
+          <span class="xiougai">{{subInfo.store_info.phone}}</span>
+          <i class="iconfont h_right jiantou">&#xe634;</i>
+        </p>
+      </a>
+    </section>
+    <div ng-if="json.store_info.is_main">
+      <h2>联系人信息</h2>
+      <section class="z_info">
+        <p>
+          真实姓名
+          <span class="z_shuoming">{{subInfo.contact_info.lx_contacts}}</span>
+        </p>
+        <div class="line"></div>
+        <p>
+          手机号码
+          <span class="z_shuoming">{{subInfo.contact_info.lx_phone}}</span>
+        </p>
+        <div class="line"></div>
+        <p>
+          身份证号码
+          <span class="z_shuoming">{{subInfo.contact_info.lx_identity_code}}</span>
+        </p>
+        <div class="line"></div>
+        <p>
+          身份证正面扫描件
+          <span class="z_img"><img ng-src="{{subInfo.contact_info.identity_before}}" alt="..."></span>
+        </p>
+        <div class="line"></div>
+        <p>
+          身份证反面扫描件
+          <span class="z_img"><img ng-src="{{subInfo.contact_info.identity_after}}" alt="..."></span>
+        </p>
+        <div class="line"></div>
+        <p>
+          联系人手持身份证照片
+          <span class="z_img"><img ng-src="{{subInfo.contact_info.identity_hand}}" alt="..."></span>
+        </p>
+      </section>
+    </div>
+  </div>
+</div>

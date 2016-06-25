@@ -1,0 +1,204 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.content_box{
+  font-size: 9px;
+  margin: 0 auto;
+  margin-top: 72px;
+  margin-left: 20px;
+  position: relative; /* 弹出层 */
+  z-index: 100;
+}
+.table_boxs{
+	/*border: solid;*//*div边框*/
+	width: 26%;
+	margin-left: 80px;
+	margin-top: 50px;
+	padding-top: 75px;
+	padding-left: 50px;
+	line-height:30px;/*字体之间的行距*/
+	float: left;
+}
+.title,.title a,.title a:hover,.title a:visited{
+  color: #403a39;
+  font-size: 16px;
+}
+.title a:hover,.title a:visited{
+  font-weight: bold;
+}
+a:link,a:visited,a:active,a:hover {
+	text-decoration: none;/*清除超链接下划线*/
+}
+.state_normal{
+	color: #159300 !important;/*!important用来解决浏览器兼容的*/
+}
+/*设置第一个td的字体靠右*/
+.de td:first-child{
+	text-align: right;
+}
+.de1 table{
+	text-align: center;
+	margin-left: 25px;
+}
+/*已选商品的虚线框*/
+.box {
+	margin-top: 0px;
+    width: 140%;
+    border: 1px dashed #d0860e;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+#zhu{
+	margin: -45px;
+	width: 32%;
+	color: #F5F5F5;
+	text-align: left;
+	background: #ff9554;
+	padding-left: 10px;
+	width: 23px;
+	height: 25px;
+	line-height: 25px;/**/
+	margin-right: 10px;
+	display: inline-block;/*元素不换行*/
+}
+
+.de1{
+	width: 50%;
+	margin-right: 10px;
+	margin-top: 140px;
+	padding: 20px;
+	border-radius:10px;/*边框为圆角*/
+	border:1px dashed #F89406;/*边框为虚线*/
+	line-height:25px;/*字体之间的行距*/
+	float: right;
+}
+.de1 span{
+	text-align: left;
+	
+}
+.clear{
+	clear:both;
+}
+/*渐变线*/
+.charts .line{
+	width: 100%;
+	height: 1px;
+	margin-top:0;
+	/* 底色 */
+	background-color: #403a39;
+	/* ie6 7  */
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr='#403a39',endcolorstr='#fcf1df',gradientType=1);
+	/* ie8 + */
+	-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#403a39',endColorstr='#fcf1df',grandientType=1);
+	/* ie9、10 */
+	background: -ms-linear-gradient(#403a39 0%,#fcf1df 100%);
+	/* 火狐 */
+	background: -moz-linear-gradient(left, #403a39, #fcf1df);
+	/* opera */
+	background: -o-linear-gradient(left,#403a39, #fcf1df);
+	/* chrome */
+	background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(#403a39), to(#fcf1df));
+}
+.box_div {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    margin-top: 20px;
+}
+.box_div .title2{
+  position: absolute; /*绝对定位*/
+  top:0px;  
+  left:30px;/*已选商品框向左移动*/ 
+  z-index: 103;
+  width: 70px;
+  height: 18px;
+  font-size: 9px;
+  color: #403a39;
+  border: 1px dashed #d0860e;
+  background: #fcf1df;
+  text-align: center;
+  padding-top: 6px;/*调整里面的字*/
+}
+.gou{
+	width: 99.5%;
+	margin-top:4%; 
+}
+/* 已购买的我的项目 */
+.gou .title{
+	margin: 0 0;
+	height: 14px;
+	width: 102px;
+	background: #403a39;
+	text-align: center;
+	padding: 10px 10px;
+	color: #fefcf9;
+	font-size: 11px;
+}
+.de2{
+	width: 100%;
+	margin: 40px;
+	font-size: 9px;
+}
+.de2 p{
+	font-size: 18px;
+}
+.de2 hr{
+	width: 90%;
+	border: 1px solid black;
+}
+.gou_top{
+	margin-top: 20px;
+}
+
+.gou_chi_1{
+	width: 34%;
+	float: left;
+}
+.gou_top ul li{
+	list-style-type: none;
+	font-size: 9px;
+	margin-left: 45px;
+	line-height:25px;/*字体之间的行距*/
+}
+.gou_top ul li:first-child{
+	font-size: 15px;
+}
+.box_div ul li{
+	margin-left: 50px;
+	margin-top: 20px;
+	
+}
+.box_div ul li span{
+	margin:0 15px;/*span与span之间的距离*/
+}
+.gou_chi_2{
+	margin-left: 18%;
+	float: left;
+	width: 27%;
+}
+.tutu{
+	border-radius:50%;/*边框为圆角*/
+	background: #403a39;
+	padding: 10px;
+	float: left;
+	color: #FFFFFF;
+	font-size: 11px;
+	text-align: center;
+	width: 10px;
+	height: 10px;
+	margin-top: 40px;
+}
+.div{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+

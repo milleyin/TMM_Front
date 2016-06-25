@@ -1,0 +1,48 @@
+<ion-view view-title="我的资料" hide-tabs >
+  <ion-nav-buttons side="left">
+    <i class="tmm-ion-left icon icon-arrow-back" nav-back></i>
+  </ion-nav-buttons>
+
+  <ion-content class="myInfo">
+    <div class="group">
+      <div class="cell" ui-sref="tab.modifypwd"><span class="left-span">修改密码</span><span class="right-span"><i class="icon icon-arrow-right"></i></span></div>
+      <div class="cell" ui-sref="tab.modifyPhone"><span class="left-span">修改手机号</span><span class="right-span">{{user.phone}}<i class="icon icon-arrow-right"></i></span></div>
+    </div>
+
+
+    <div class="main-title" ng-if="model.store_info.is_main">
+      归属代理
+    </div>
+    <div class="group" ng-if="model.store_info.is_main">
+      <div class="cell"><span class="left-span">代理商公司名称</span><span class="right-span">{{model.agent_info.agent_name}}</span></div>
+      <div class="cell"><span class="left-span">代理商公司电话</span><span class="right-span">{{model.agent_info.agent_phone}}</span></div>
+    </div>
+
+
+    <div class="main-title" ng-if="model.store_info.is_main">
+      公司信息
+    </div>
+    <div class="group" ng-if="model.store_info.is_main">
+      <div class="cell"><span class="left-span">公司名称</span><span class="right-span">{{model.frm_info.name}}</span></div>
+      <div class="cell"><span class="left-span">公司地址</span><span class="right-span">{{model.frm_info.address}}</span></div>
+      <div class="cell"><span class="left-span">营业执照原件</span><span class="right-span"><img class="right-img" ng-src="{{model.frm_info.bl_img}}"></span></div>
+      <div class="cell"><span class="left-span">企业法人姓名</span><span class="right-span">{{model.frm_info.com_contacts}}</span></div>
+      <div class="cell"><span class="left-span">企业法人身份证号码</span><span class="right-span">{{model.frm_info.com_identity}}</span></div>
+      <div class="cell"><span class="left-span">企业法人联系电话</span><span class="right-span">{{model.frm_info.com_phone}}</span></div>
+    </div>
+
+    <div class="main-title" ng-if="model.store_info.is_main">
+      联系人信息
+    </div>
+    <div class="group" ng-if="model.store_info.is_main">
+      <div class="cell"><span class="left-span">真实姓名</span><span class="right-span">{{model.contact_info.lx_contacts}}</span></div>
+      <div class="cell"><span class="left-span">手机号码</span><span class="right-span">{{model.contact_info.lx_phone}}</span></div>
+      <div class="cell"><span class="left-span">身份证号码</span><span class="right-span">{{model.contact_info.lx_identity_code}}</span></div>
+      <div class="cell"><span class="left-span">身份证正面扫描件</span><span class="right-span"><img class="right-img" ng-src="{{model.contact_info.identity_before}}"></span></div>
+      <div class="cell"><span class="left-span">身份证反面扫描件</span><span class="right-span"><img class="right-img" ng-src="{{model.contact_info.identity_after}}"></span></div>
+      <div class="cell"><span class="left-span">联系人手持身份证照片</span><span class="right-span"><img class="right-img" ng-src="{{model.contact_info.identity_hand}}"></span></div>
+    </div>
+
+    <div class="empty"></div>
+  </ion-content>
+</ion-view>

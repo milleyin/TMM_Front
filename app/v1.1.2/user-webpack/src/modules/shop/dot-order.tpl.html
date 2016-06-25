@@ -1,0 +1,112 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link" id="dot-order-back" data-dotid="{{orderInfo.value}}">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">点订单预定</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="dot-order" class="page tmm-my-order-detail-page tmm-create-dot-order">
+    <div class="page-content tmm-order-detail tmm-order">
+      <div class="content-block-title tmm-content-title">出发时间</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status">
+          <div><input type="text" placeholder="请选择出发时间" readonly id="calendar-gotime"></div>
+        </div>
+      </div>
+      <div class="content-block-title tmm-content-title">项目列表</div>
+      <!-- 点的列表 -->
+      <div class="list-block tmm-list-block">
+        <!-- 项目列表 -->
+        {{#each orderInfo.items_fare}}
+        <ul>
+          <!-- 项目下面的商品列表 -->
+          <li class="tmm-item-li clearfix">
+            <div class="tmm-item-title" data-itemsort="{{@index}}">
+              {{name}}
+            </div>
+            <div class="tmm-item-content">
+            {{#each fare}}
+              <div class="tmm-item-fare">
+                <div class="fare-item">{{name}}</div>
+                {{#js_compare "this.room_number ==0"}}
+                <div class="fare-item">{{info}}</div>
+                {{/js_compare}}
+                {{#js_compare "this.room_number !=0"}}
+                <div class="fare-item">{{room room_number}}</div>
+                {{/js_compare}}
+     
+                <div class="fare-item price">￥{{price}}</div>
+                <div class="fare-item item-num">
+                  <span class="sub-num"
+                  data-dotsort="0"
+                  data-dotid="{{../../orderInfo.value}}"
+                  data-itemid="{{../value}}"
+                  data-faresort="{{@index}}"
+                  data-fareid="{{value}}"
+                  data-price="{{price}}"
+                  data-number="0"
+                  data-count="0">
+                    
+                  </span>
+                  <span class="num">{{number}}</span>
+                  <span class="add-num" 
+                  data-dotsort="0"
+                  data-dotid="{{../../orderInfo.value}}"
+                  data-itemid="{{../value}}"
+                  data-faresort="{{@index}}"
+                  data-fareid="{{value}}"
+                  data-price="{{price}}"
+                  data-number="0"
+                  data-count="0">
+                  </span>
+                </div>
+           
+              </div>
+            {{/each}}  
+            </div>
+          </li>
+        </ul>
+        {{/each}}
+      </div>
+      <!--项目列表-->
+      <div class="content-block-title tmm-content-title">主要联系人</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status" id="tmm-order-mainretinue-list">
+          {{#if userInfo.main_retinueInfo.list}}
+          <div>{{userInfo.main_retinueInfo.list[0].name}}</div>
+          {{else}}
+          <div id="orderAddMainRetinue" data-phone="{{userInfo.userInfo.phone}}" class="red">添加</div>
+          {{/if}}
+        </div>
+      </div>
+      <div class="content-block-title tmm-content-title">随行人员</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row  tmm-order-status" id="tmm-order-retinue-list">
+          <span id="orderAddRetinue" data-type="2" class="w_33 red">选择</span>
+        </div>
+      </div>
+      <div class="content-block-title tmm-content-title">合计价格</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status">
+        <div>订单总价<span class="tmm-total-price">￥<span id="tmm-order-total-price">0.00</span></span></div>
+        </div>
+      </div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border" style="height: 45px;line-height: 45px;padding: 0 15px;">
+        <div class="fl"><img style="width: 28px;height: 28px;vertical-align:middle;" src="../../styles/images/zifubao.png"></div>
+        <div class="fr">请使用支付宝支付</div>
+      </div>
+      <!-- <div class="tmm-border-btn">
+        <span class="tmm-order-detail-confirm-btn">等待确认</span>
+      </div> -->
+      <div class="tmm-border-btn tmm-retinue-top-border tmm-retinue-bottom-border">
+        <span class="tmm-order-detail-confirm-btn-active" id="submitDotOrder" data-dotid="{{orderInfo.value}}">提交订单</span>
+      </div>
+    </div>
+  </div>
+</div>

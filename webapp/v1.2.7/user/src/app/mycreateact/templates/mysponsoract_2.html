@@ -1,0 +1,41 @@
+<ion-view hide-tabs="true">
+  <navbar title="{{isReplaceStroke?'更换行程':'选择行程'}}" back>
+    <div class="right">
+      <i class="icon-back-reverse" ng-click="nextStep(1)" ng-if="!isReplaceStroke"></i>
+    </div>
+    
+  </navbar>
+  <div class="act-indicator"><span class="active"></span><span class="active"></span><span></span><span></span></div>
+  <div class="subnav">
+    <div class="tit" ui-sref="tab.destination" ng-click="selectLeft = true" ng-class="{'active': selectLeft}"><span>{{model.orientation.value ? model.orientation.value.address_info.name : (model.location.value ? model.location.value.address_info.name : '选择')}}</span></div>
+    <div class="tit" ng-class="{'active': !selectLeft}" ng-click="selectPopular($event)"><span>{{selectType}}</span></div>
+  </div>
+  <ion-content class="mysponsoract select-tour" delegate-handle="journey-content"  overflow-scroll="false">
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()" spinner="ios">
+    </ion-refresher>
+
+    <div ng-if="noData" class="noDataMsg">没有数据哦！</div>
+
+    
+  
+    <div class="cellcard"  ng-repeat="item in model.list_data" ng-init="item.isSelected = false">
+      <div class="innerbody">
+        <div class="img" ui-sref="tab.shop{{item.classliy.value}}({link:item.link, type:item.classliy.value, hasSub: 1})"><img ng-src="{{item.share_image ? item.share_image : item.image}}"></div>
+        <div class="intro" ui-sref="tab.shop{{item.classliy.value}}({link:item.link, type:item.classliy.value, hasSub: 1})">
+          <div class="tit">{{item.name}}</div>
+          <div class="txt">￥{{item.price}}起/人 {{item.day_num}}天行程</div>
+          <div class="txt">{{isDistance ? '距离：' + item.distance : '人气：' + item.brow}}</div>
+        </div>
+        <label class="checkbox"><input type="radio" ng-click="selectItem(item.value)" name="select"></label>
+      </div>
+    </div>
+
+    <div>{{checkedItem}}</div>
+
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="model.nextPage" distance="1%" spinner="ios">
+    </ion-infinite-scroll>
+  </ion-content>
+  <div  class="tmm-act-btn" ng-if='isReplaceStroke == "replaceStroke"'>
+    <span ng-click="changeLine()">确认更换行程</span>
+  </div>
+</ion-view>

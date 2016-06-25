@@ -1,0 +1,227 @@
+@charset "UTF-8";
+.mallingForm {
+  background-color: #edf2ee;
+  .headerbg {
+    height: 65px;
+    background-color: #000;
+  }
+  .mallingCard {
+    $width: 482px/2;
+    $height: 220px/2;
+    position: absolute;
+    top: 44px;
+    left: 50%;
+    margin-left: -$width/2;
+    width: $width;
+    height: $height;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #ccc;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 58px;
+      height: 38px;
+      background-image: url("../images/iteminfoimg.png");
+      background-size: 58px 38px;
+      right: 8px;
+      top: 18px;
+      border: 1px solid #cfcfcf;
+      border-radius: 3px;
+    }
+    .title {
+      font-size: 18px;
+      line-height: 18px;
+      margin-top: 16px;
+      margin-left: 14px;
+    }
+    .txt {
+      font-size: 10px;
+      line-height: 10px;
+      margin-top: 10px;
+      margin-left: 14px; 
+      margin-bottom: 15px;
+    }
+    .ticket {
+      margin-left: 14px;
+      color: #fff;
+      font-size: 15px;
+      background-color: #000;
+      padding:3px 5px;
+      height: 23px;
+      line-height: 23px;
+    }
+  }
+  .conForm {
+    background-color: #1e1f24;
+    padding-top: 120px;
+    padding-bottom: 45px;
+    .specification {
+      color: #a4adff;
+      font-size: 18px;
+      line-height: 18px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .boxes {
+      display: flex;
+      height: 130px;
+      color: #a4adff;
+      .item {
+        flex: 50%;
+        display: block;
+        &:first-child {
+          text-align: right;
+          padding-right:30px;
+        }
+        &:last-child {
+          text-align: left;
+          padding-left:30px;
+        }
+        .divLeftImg {
+          width: 100%;
+          height: 100px;
+          background-image: url("../images/boxes6.png");
+          background-position: right;
+          background-repeat: no-repeat;
+          background-size: 100px 100px;
+        }
+        .divRightImg {
+          width: 100%;
+          height: 100px;
+          background-image: url("../images/boxes10.png");
+          background-position: left;
+          background-repeat: no-repeat;
+          background-size: 100px 100px;
+        }
+        .divImg {
+          width: 100%;
+          height: 100px;
+          background-image: url("../images/boxes6.png");
+          background-position: right;
+          background-repeat: no-repeat;
+          background-size: 100px 100px;
+        }
+        img {
+          height: 100px;
+          width: 100px;
+          opacity: 0.8;
+        }
+        .divLeft {
+          padding-right: 15px;
+          font-size: 15px;
+          line-height: 15px;
+          margin-top: 10px;
+        }
+        .divRight {
+          padding-left: 15px;
+          font-size: 15px;
+          line-height: 15px;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  .triangle {
+    margin-left: 76px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid #1e1f24;
+  }
+  .divBtn {
+    text-align: center;
+    width:100%;
+    margin-top: 92px;
+    margin-bottom: 15px;
+    .submit {
+      width: 90%;
+      height: 40px;
+      font-size: 18px;
+      line-height: 40px;
+      background-color: #464646;
+      color: #fff;   
+    }
+  }
+
+  .addr {
+    margin-top: 30px;
+    .receiver {
+      font-size: 13px;
+      line-height: 13px;
+      color: #000;
+      margin-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .con {
+      background-color: #fff;
+      @include hairline(topBottom);
+      .row {
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 16px;
+        @include hairline(bottom);
+        .tit {
+          color: #000;
+          width: 70px;
+        }
+        .num {
+          color: #a4adff;
+        }
+        input, select, textarea {
+          color: #999;
+          display: block;
+          -webkit-box-flex: 1;
+          -webkit-flex: 1;
+          flex: 1;
+          width: 0;
+          height: 30px;
+          line-height: 30px;
+          padding: 0 10px;
+          font-size: 15px;
+          margin-left: 15px;
+          border: none;
+        }
+        .detialAddr {
+          height: 50px;
+          line-height: 25px;
+          margin-top: 10px;
+        }
+      }
+      .rowarea {
+        align-items:inherit;
+        height: 66px;
+      }  
+    }
+  }
+
+  .btnAdd {
+    margin-top: 20px;
+    text-align: center;
+    .add {
+      border: 1px solid #0a0a0a;
+      color: #0a0a0a;
+      padding: 5px 20px;
+      border-radius: 5px;
+    }
+  }
+  /* textarea::-webkit-input-placeholder {
+    padding-top: 15px;
+  }
+  textarea:-moz-placeholder {
+    padding-top: 15px;
+  }
+  textarea::-moz-placeholder {
+    padding-top: 15px;
+  }
+  textarea:-ms-input-placeholder {
+    padding-top: 15px;
+  }  */  
+}

@@ -1,0 +1,286 @@
+<ion-view title="觅趣详情" hide-tabs="true">
+  <ion-nav-buttons side="left">
+    <i class="icon-back" nav-back="back"></i>
+  </ion-nav-buttons>
+
+  <ion-content class="tmm-createact-detail">
+    <div class="page-content">
+      <div class="seekfun-banner">
+        <img ng-src="{{model.image}}" ng-if="model.image != ''" class="commond_bg">
+        <img src="../../../images/defaultbig.jpg" ng-if="model.image == ''" class="commond_bg">
+        <div class="seekfun-tabs">
+          <span class="tab-item journery" ng-class="{'active':selType == 1}" ng-click="showTabs(1)">行程</span>
+          <span class="tab-item join" ng-class="{'active':selType == 2}"  ng-click="showTabs(2)">参与人</span>
+          <span class="tab-item intro" ng-class="{'active':selType == 3}"  ng-click="showTabs(3)">概要</span>
+        </div>
+      </div>
+      
+      <!-- 行程 -->
+      <div ng-if="selType === 1">
+        <div class="journery-block">
+          <div class="seekfun-item">
+            <div class="day-tit" ng-repeat-start="(key,value) in model.items_fare"  ng-if="key%2">
+              <div class="tit">{{key | formatDay}}</div>
+            </div>
+            <div  class="day-list" ng-repeat-end ng-repeat="list in value">
+              <div  class="day-con" ng-repeat="(key2, attr) in list">
+                <div class="day-item" ng-repeat="attr1 in attr.fare">
+                  <span class="img">
+                    <i ng-class="{'icon-order-eat': attr.classliy.value==1, 'icon-order-live':attr.classliy.value==2, 'icon-order-play':attr.classliy.value==3}"></i>
+                  </span>
+                  <div class="describe">
+                    <div class="tit">{{attr.name}}</div>
+                    <div class="txt">{{attr1.name}} 　{{attr.classliy.value==2?(attr1.room_number | room):attr1.info}}　￥{{attr1.price}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="join-block" >
+          <p style="text-align: center;margin-top: 20px;">您还没有参与人哦！</p>
+        </div>
+      </div>
+      
+      <!-- 参与人 -->
+      <div ng-if="selType == 2">
+        <div ng-if="participantNum == 1">
+          <div class="join-first-item">
+            <!-- 代付 AA -->
+            <p class="txt" ng-if="model.actives_pay_type.value == '1'">已参与人数：<span>{{orderModel.people}}成人  {{orderModel.children}}儿童</span></p>
+            
+            <!-- 自费 AA -->
+            <div  ng-if="model.actives_pay_type.value == '0'">
+              <p class="txt">已参与人数：<span>{{model.actives_info.number.value - model.actives_info.order_number.value}}/{{model.actives_info.number.value}}</span></p>
+              <p class="txt">费用总额：<span>{{model.actives_info.total.value}}元</span></p>
+            </div>
+            <span ng-click="shareFriend()" class="share-invite invite">邀请好友参加</span>
+          </div>
+          <!-- 代付 A -->
+          <div ng-if="model.actives_pay_type.value == '1'">
+            <div class="join-list">
+              <div ng-repeat="participant in orderListModel track by $index">
+                <!-- 主要联系人 -->
+                <div ng-if="participant.is_main == 1">
+                  <div class="join-item" style="margin:0px;">
+                    <div class="item-top item-pepole">
+                      <span class="time">主要联系人</span>
+                    </div>
+                    <div class="item-inner">
+                      <p class="tit"><span class="name">{{participant.name}}</span></p>
+                      <p class="describe"><span class="join-num">手机：{{participant.phone}}</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- 联系人列表 -->
+                <div ng-if="participant.is_main == 0">
+                  <div class="join-item" style="margin:0px;">
+                    <div class="item-top item-pepole">
+                      <span class="time">{{participant.add_time}}</span><span class="delete-join-people" ng-click="deletePepole(participant.deletelink, $index)">删除</span>
+                    </div>
+                    <div class="item-inner">
+                      <p class="tit">
+                        <span class="name">{{participant.name}}</span>
+                        <span class="phone">{{participant.phone}}</span>
+                      </p>
+                      <p class="describe">
+                        <span class="join-num">参与人数：{{participant.people}}成人</span>
+                        <span class="order-price" ng-if="participant.number - participant.people > '0'">{{participant.number - participant.people}}儿童</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 自费 AA -->
+          <div ng-if="model.actives_pay_type.value =='0'">
+            <div class="join-list">
+              <div ng-repeat="participant in orderListModel">
+                <div class="join-item">
+                  <div class="item-top item-pepole">
+                    <span class="time">{{participant.add_time}}</span><span class="status green">{{participant.status.order_status.name}}</span>
+                  </div>
+                  <div class="item-inner">
+                    <p class="tit">
+                      <span class="name">{{participant.main_retinue.name}}</span><span class="phone">{{participant.main_retinue.phone}}</span>
+                    </p>
+                    <p class="describe">
+                      <span class="join-num">参与人数：{{participant.user_go_count}}人</span>
+                      <span class="order-price">订单金额：{{participant.order_price}}元</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="loadmore" ng-show="loadmore" ng-click="loadMoreParticipant()">点击加载更多</div>
+        </div>
+        <p ng-if="participantNum == 0" class="noParticipant">您还没有参与人哦！</p>
+      </div>
+      <!-- 概要 -->
+      <div ng-if="selType == 3">
+        <!-- 可以编辑 -->
+        <div class="intro-block" ng-if="model.audit_status.value == '-2' || model.audit_status.value == '-1'">
+          <div class="normal-group">
+            <div class="normal-cell">
+              觅趣名称
+            </div>
+            <div class="normal-cell" ui-sref="tab.editactname({actname:model.name, actid:model.actives_id})">
+              <span id="editactname">{{model.name}}</span> <span class="right-arrow"><i class="icon-right-arrow"></i></span>
+            </div>
+          </div>
+          <div class="normal-group tmmGoTime">
+            <div class="normal-cell">
+              出游日期
+            </div>
+            <div class="normal-cell" ng-click="setActGoTime()">
+              {{model.actives_time.go_time}} <span class="right-arrow"><i class="icon-right-arrow"></i></span>
+            </div>
+          </div>
+          <div class="normal-group">
+            <div class="normal-cell">
+              付款方式
+            </div>
+            <div class="normal-cell" ng-click="editPayType()">
+              {{model.actives_pay_type.value == '1'?'代付':'自费'}} <span class="right-arrow"><i class="icon-right-arrow"></i></span>
+            </div>
+          </div>
+          <div class="normal-group">
+            <div class="normal-cell">
+              觅趣报名日期
+            </div>
+            <div class="normal-cell" ng-click="editEnrolldate()">
+              {{model.actives_time.start_time}} 至 {{model.actives_time.end_time}} <span class="right-arrow"><i class="icon-right-arrow"></i></span>
+            </div>
+          </div>
+          <div class="normal-group">
+            <div class="normal-cell">
+              觅趣参与人数
+            </div>
+            <div class="normal-cell" ui-sref="tab.editactnum({actnum:model.actives_info.number.value, actid:model.actives_id})">
+              {{model.actives_info.number.value}}人 <span class="right-arrow"><i class="icon-right-arrow"></i></span>
+            </div>
+          </div>
+
+          <div class="normal-group" ng-if="userInfo.is_organizer == 1 && userInfo.organizer.status != 0">
+            <div class="normal-cell">
+              服务费（交通、导服及其他）
+            </div>
+            <div class="normal-cell" ui-sref="tab.edittourprice({tourprice:model.actives_info.tour_price.value, actid:model.actives_id})">
+              {{model.actives_info.tour_price.value}}元/人 <span class="right-arrow"><i class="icon-right-arrow"></i></span>
+            </div>
+          </div>
+
+          <div class="normal-group">
+            <div class="normal-cell">
+              觅趣公开性
+            </div>
+            <div class="normal-cell" ng-click="editActOpen()">
+              {{model.actives_is_open.value == '1' ? '公开':'私密'}} <span class="right-arrow"><i class="icon-right-arrow"></i></span>
+            </div>
+          </div>
+          <div class="normal-group">
+            <div class="normal-cell">
+              创建日期
+            </div>
+            <div class="normal-cell">
+              {{model.actives_time.add_time}}
+            </div>
+          </div>
+          <div class="normal-group">
+            <div class="normal-cell">
+              觅趣简介
+            </div>
+            <div class="editer-con">
+              {{model.actives_info.remark}}
+            </div>
+          </div>
+        </div>
+        <!-- 可以编辑完成 -->
+
+        <!-- 不可以编辑 -->
+        <div class="intro-block" ng-if="model.audit_status.value != '-2' && model.audit_status.value != '-1'">
+          <div class="normal-group">
+            <div class="normal-cell">
+              觅趣名称
+            </div>
+            <div class="normal-cell">
+              {{model.name}}
+            </div>
+          </div>
+          <div class="normal-group">
+            <div class="normal-cell">
+              出游日期
+            </div>
+            <div class="normal-cell">
+              {{model.actives_time.go_time}}
+            </div>
+          </div>
+          <div class="normal-group">
+            <div class="normal-cell">
+              付款方式
+            </div>
+            <div class="normal-cell">
+              {{model.actives_pay_type.value == '1'?'代付':'自费'}}
+            </div>
+          </div>
+          <div class="normal-group">
+            <div class="normal-cell">
+              觅趣报名日期
+            </div>
+            <div class="normal-cell">
+              {{model.actives_time.start_time}} 至 {{model.actives_time.end_time}}
+            </div>
+          </div>
+          <div class="normal-group">
+            <div class="normal-cell">
+              觅趣参与人数
+            </div>
+            <div class="normal-cell">
+              {{model.actives_info.number.value - model.actives_info.order_number.value}}/{{model.actives_info.number.value}}人
+            </div>
+          </div>
+
+          <div class="normal-group" ng-if="userInfo.is_organizer == 1 && userInfo.organizer.status != 0">
+            <div class="normal-cell">
+              服务费（交通、导服及其他）
+            </div>
+            <div class="normal-cell">
+              {{model.actives_info.tour_price.value}}元/人
+            </div>
+          </div>
+
+          <div class="normal-group">
+            <div class="normal-cell">
+              觅趣公开性
+            </div>
+            <div class="normal-cell">
+              {{model.actives_is_open.value == '1' ? '公开':'私密'}}
+            </div>
+          </div>
+          <div class="normal-group">
+            <div class="normal-cell">
+              创建日期
+            </div>
+            <div class="normal-cell">
+              {{model.actives_time.add_time}}
+            </div>
+          </div>
+          <div class="normal-group">
+            <div class="normal-cell">
+              觅趣简介
+            </div>
+            <div class="editer-con" data-ng-bind-html="model.actives_info.remark">
+            </div>
+          </div>
+        </div>
+        <!-- 不可以编辑完成 -->
+      </div>
+    </div>
+  </ion-content>
+  <div class="tmm-act-btn" ng-if="(model.audit_status.value =='-1' && model.actives_status.value =='0' && model.shops_status.value =='0') || (model.audit_status.value =='-1' && model.actives_status.value =='' && model.shops_status.value =='0')">
+    <span ui-sref="tab.mysponsoract_2({type:'replaceStroke', 'actId':model.actives_id, 'actDetailLink': detailLink})">更换行程</span>
+    <span ng-click="reviewAct()">提交审核</span>
+  </div>
+</ion-view>

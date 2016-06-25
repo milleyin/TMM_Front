@@ -1,0 +1,28 @@
+<div id="orderlist">
+  <h1 class="top-nav">
+        <div class="title {{state=='02'?'title2':''}}">订单列表</div>
+        <div class="zizhanghao" ng-if="state=='01'">子帐号{{json.sId}}</div>
+        <a href="##"><i class="iconfont h_left h_pic">&#xe61f;</i></a>
+        <a href="#/index"><i class="iconfont h_right h_pic">&#xe62c;</i></a> 
+    </h1>
+  <div class="m_content">
+    <div class="panel panel-default" ng-repeat="data in json.data">
+      <div class="panel-heading">订单编号: {{data.orderId}}</div>
+      <div class="panel-body">
+        <a href="#/orderlistdetail" class="media">
+          <span class="pull-left" href="#">
+            <img class="media-object" src="" alt="...">
+          </span>
+          <div class="media-body">
+            <h5 class="media-heading">{{data.name}}</h5>
+            <div>
+              <span class="info_count">数量: {{data.num}}</span>
+              <span class="info_shouru">收入￥{{data.money}}</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <img class="tip" src="images/xiaofei.png" style="" alt="已消费">
+    </div>
+  </div>
+</div>

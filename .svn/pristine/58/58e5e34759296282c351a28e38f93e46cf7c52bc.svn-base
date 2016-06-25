@@ -1,0 +1,147 @@
+* { 
+	margin: 0; 
+	padding: 0;
+}
+a:link{
+	text-decoration:none; 
+}
+img{
+	border: 0;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+     background-color:transparent; /* input 背景透明 */
+     border:1px solid #c8a063;
+     height: 30px;
+ 		 margin: 0 0;
+ 		 border-radius: 4px; 
+ 		 padding: 0 0 0 6px;
+ 		 color: #fff;
+     line-height: 30px;
+}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s; 
+	border-color:rgb(242,150,10); 
+	-webkit-box-shadow:0 0 10px rgb(216,200,175);
+}
+form .row-fluid,form .row{
+  min-height:60px;
+  height:auto !important;
+	height: 60px;
+}
+form label,label{
+	display: inline-block;
+	/* width: 100px; */
+	text-align: right;
+	font-size: 16px;
+	color: #000;
+}
+input:focus, textarea:focus{
+	outline: none !important;
+}
+input::-ms-clear {  
+	display: none;
+}
+/*重置input*/
+input{
+	padding-left:10px; 
+	color: #fff;
+	font-size: 16px;
+	z-index:1000;
+	padding: 0;
+	
+}
+input[type="submit"],button{ 
+	width: 80px;
+	height: 30px;
+	background: #655a58;
+	color:#fff;
+	text-align: center;
+	border-radius: 4px;
+	border: 1px solid #181515;
+	cursor: pointer;
+	line-height: 30px;
+}
+input[type="submit"]:hover,button:hover{
+  color: #005580;
+}
+form a{
+	height:30px;
+	display: inline-block; 
+	border-radius: 4px;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	background: #259f00;
+}
+form a:hover,form a:visited{
+  background: #1f8500;
+}
+select{
+  width: 100px;
+  height: 30px;
+  line-height: 40px;
+  background: #877674;
+  border: 1px solid #322e2d;
+  font-size: 16px;
+  padding-left: 2px;
+  color: #fff8ec;
+  /* margin-right: 10px; */
+  border-radius: 2px;
+}
+
+.errorMessage{
+	height: 25px;
+	/* padding: 4px 6px; */
+	font-size: 12px;
+	color: red;		
+	display:block;
+}
+.success{
+	position: relative;
+	width: auto;
+}
+.success input{
+	position: relative;
+}
+.success .check_icon{
+	background:url(../images/right.png) no-repeat;
+	position: absolute;
+	top: 1px;
+  right: 10%;
+	z-index: 103;
+	width: 30px;
+  height: 30px;
+}
+.success .errorMessage{
+	display: none;
+}
+.success input[type="file"]{
+  border:none;
+  background: #E6EFC2;
+  color: #555555;
+}
+.error{
+	position: relative;
+}
+.error input{
+	border:1px solid red;
+}
+.error .check_icon{
+	background:url(../images/wrong.png) no-repeat;
+	position: absolute;
+	top: 1px;
+  right: 10%;
+	z-index: 103;
+  width: 30px;
+  height: 30px;
+}
+.error .errorMessage{
+	display: block;
+}
+.error input[type="file"]{
+  border:none;
+  background: #EDE6E6;
+  color: #555555;
+}
+
+ 

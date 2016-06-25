@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>荔枝节</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body class="mallingForm">
+  <div class="headerbg"></div>
+  <div class="mallingCard">
+    <div class="title">桂味·大宗提货券</div>
+    <div class="txt">桂味荔枝25kg+随赠5kg</div>
+    <span class="ticket">卡券号：7845 9247</span>
+  </div>
+  
+  <div class="conForm">
+    <div class="specification">选择包装规格</div>
+    <div class="boxes">
+      <div class="item">
+        <div class="divLeftImg">
+          <img src="images/selboxes.png"/>
+        </div>
+        <div class="divLeft">6箱 x 5kg</div>
+      </div>
+      <div class="item">
+        <div class="divRightImg">
+          <img src="images/selboxes.png" style="display:none"/>
+        </div>
+        <div class="divRight">10箱 x 3kg</div>
+      </div>
+    </div>
+  </div>
+  <div class="triangle"></div>
+  
+  <div class="addr">
+    <div class="receiver">
+      <div>收货人1</div>
+    </div>
+    <div class="con">
+      <div class="row">
+        <div class="tit">姓名</div>
+        <input type="text" placeholder="收货人真实姓名">
+      </div>
+      <div class="row">
+        <div class="tit">手机号码 </div>
+        <input type="tel" placeholder="手机号或电话">
+      </div>
+      <div class="row">
+        <div class="tit">邮寄箱数</div>
+        <!-- <input type="text" class="num" value="6箱" readonly="readonly"> -->
+        <select class="num">
+          <option value="1" name="isDefault">1</option>
+          <option value="2" name="isDefault">2</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="tit">选择省份</div>
+        <select>
+          <option value="" name="isDefault">请选择省份</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="tit">选择城市</div>
+        <select>
+          <option value="" name="isDefault">请选择城市</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="tit">选择地区</div>
+        <select>
+          <option value="" name="isDefault">请选择地区</option>
+        </select>
+      </div>
+      <div class="row rowarea">
+        <div class="tit">详细地址</div>
+        <textarea rows="2" class="detialAddr" placeholder="请详细到门牌号"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="addr">
+    <div class="receiver">
+      <div>收货人2</div>
+      <div>删除</div>
+    </div>
+    <div class="con">
+      <div class="row">
+        <div class="tit">姓名</div>
+        <input type="text" placeholder="收货人真实姓名">
+      </div>
+      <div class="row">
+        <div class="tit">手机号码 </div>
+        <input type="tel" placeholder="手机号或电话">
+      </div>
+      <div class="row">
+        <div class="tit">邮寄箱数</div>
+        <!-- <input type="text" class="num" value="6箱" readonly="readonly"> -->
+        <select class="num">
+          <option value="1" name="isDefault">1</option>
+          <option value="2" name="isDefault">2</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="tit">选择省份</div>
+        <select>
+          <option value="" name="isDefault">请选择省份</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="tit">选择城市</div>
+        <select>
+          <option value="" name="isDefault">请选择城市</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="tit">选择地区</div>
+        <select>
+          <option value="" name="isDefault">请选择地区</option>
+        </select>
+      </div>
+      <div class="row rowarea">
+        <div class="tit">详细地址</div>
+        <textarea rows="2" class="detialAddr" placeholder="请详细到门牌号"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="btnAdd"><span class="add">添加收货人</span></div>
+  <div class="divBtn"> 
+    <button class="submit" type="submit">确认收货地址</button>
+  </div>
+</body>

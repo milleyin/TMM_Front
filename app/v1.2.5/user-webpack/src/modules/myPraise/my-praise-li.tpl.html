@@ -1,0 +1,20 @@
+{{#each myPraiseList}}
+<li class="tmm-item-content">
+  <div class="pic">
+  {{#js_compare "this.classliy.value !=3"}}  
+    <a href="javascript:;" data-type="{{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}" data-link="{{link}}"  class="tmm-shops-detail"><img data-src="{{image}}" class="lazy lazy-fadein"></a>
+  {{/js_compare}} 
+  {{#js_compare "this.classliy.value ==3"}}  
+    <a href="javascript:;" data-type="{{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}" data-link="{{link}}" data-acttype="{{this.actives.actives_type.value}}" class="tmm-shops-detail"><img data-src="{{image}}" class="lazy lazy-fadein"></a>
+  {{/js_compare}} 
+    <div class="conColor">
+      <i class="icon ticon-praise"></i>
+    </div>
+  </div>
+  <div class="txt">
+    <div class="title">{{name}}</div>
+    <div class="intro">{{info}}</div>
+    <span class="type {{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}"> {{this.type.name}}</span>
+  </div>
+</li>
+{{/each}}

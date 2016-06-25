@@ -1,0 +1,337 @@
+
+.de{
+	margin: 50px 0px 0px 60px;
+    padding-bottom: 0px;
+    font-size: 11px;
+	line-height:30px;/*字体之间的行距*/
+}
+.top span{
+	margin-bottom: 50px;
+	display: inline-block;/*元素在同一行，可以设置高和宽*/
+}
+.top{
+	vertical-align: top;/*元素与顶端对齐*/
+	margin-top: 10px;
+}
+.photo img{
+	border-radius: 10px;
+	margin-top: 10px;
+	border: 2px solid #d0860e;
+}
+.text{
+	margin-left: 120px;
+}
+/*已选商品的虚线框*/
+.box1 {
+	margin-top: 0px;
+    width: 99%;
+    border: 1px dashed #d0860e;
+    padding-top: 10px;
+    padding-bottom: 60px;
+    position: relative;
+}
+.top img{
+	width:80%;
+}
+hr{
+	border: 1px solid #403a39;
+	width: 98%;
+	margin-top: 20px;
+	position: relative;
+}
+.top1 span{
+	position: absolute;
+	border: 2px solid #403a39;
+	width: 160px;
+	margin-top: 35px;
+	left: 0;
+	display: inline-block;/*元素换行*/
+}
+.top2 span{
+	position: absolute;
+	border: 2px solid #403a39;
+	width: 160px;
+	margin-top: 35px;
+	margin-left: -115px;
+	display: inline-block;/*元素换行*/
+}
+.top3 span{
+	position: absolute;
+	border: 2px solid #403a39;
+	width: 160px;
+	margin-top: 35px;
+	margin-left: -99px;
+	display: inline-block;/*元素换行*/
+}
+.content_top a{
+	color: black;
+}
+.content_top {
+    margin:50px 0px;
+    
+}
+.content_top ul li{
+	list-style: none;
+	float: left;
+	font-size: 16px;
+	margin:0 50px;/*span与span之间的距离*/
+}
+.content_up{
+	margin: 55px;
+	font-size: 11px;
+	line-height:25px;/*字体之间的行距*/
+	text-align: left;
+}
+.content_up1{
+	margin: 55px;
+	font-size: 12px;
+	line-height:25px;/*字体之间的行距*/
+}
+/*.content_frame table{
+	margin-left:20px;
+}*/
+.money{
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+.grid-view .pager{
+  margin-right: 2%;
+}
+.grid-view table.items{
+  width: 98% !important;
+}
+.content_up table td:first-child{
+	text-align: right;
+}
+.content_up1 table td:first-child{
+	text-align: right;
+}
+.content_up1 table{
+	margin-left: 30px;
+	margin-top: 18px;
+}
+.tt{
+	display: inline-block;/*元素换行*/
+	margin: 0px 0px 0px 40px;
+	/*color: blue;*/
+}
+.up a{
+	color: #0912ff;
+}
+.cantent{
+	font-size: 12px;
+	margin: 58px;
+	line-height:40px;/*字体之间的行距*/
+}
+.cantent input{
+	margin-right: 10px;
+	border: 1px solid #c8a063;
+	border-radius:4px;/*边框为圆角*/
+	width: 120px;
+	height: 30px;
+}
+.cantent a{
+	background:  #36B000;
+	color: #EDEDED;
+	font-size: 11px;
+	width: 90px;
+	
+    display: inline-block;
+    border-radius: 4px;
+    text-align: center;
+    
+}
+.cantent img{
+	margin-bottom: -11px;
+	width: 100px;
+	height: 30px;
+}
+.xia input{
+	width: 100px !important;
+	height: 35px;
+	margin-left: 75px;
+	margin-top: 20px;
+	border-radius:0px;/*边框为圆角*/
+	border: 1px solid #1b1818;
+	background: #655a58;
+	color: #fcf1df;
+}
+/*.xia{
+	width: 100px;
+	height: 35px;
+	margin-left: 75px;
+	margin-top: 20px;
+	border: 1px solid #1b1818;
+	background: #655a58;
+	
+}
+.xia a{
+	margin-left: 31px;
+	font-size: 15px;
+	color: #fcf1df;
+}*/
+/*.cantent table td:first-child{
+	text-align: right;
+}*/
+.cantent form input{
+	width: 180px;
+	height: 30px;
+	border-radius:0px;/*边框为圆角*/
+}
+.select{
+	float: left;
+}
+.select input{
+	margin-left: -7px;
+	width: 120px!important;/*!important优先级*/
+}
+.select select{
+	height: 34px;
+	width: 140px;
+	padding-left: 15px;
+	background: #877674;
+	color: #fcf1df;
+}
+
+
+/*弹出框的样式*/
+.popup_div{
+	position:absolute;
+	top: 280px;
+	left: 300px;
+	/*边框阴影*/
+	border: 1px solid rgb(178,178,178);
+	-moz-box-shadow:0px 0px 10px #BFBFBF; /* For Firefox3.6+ */ 
+	-webkit-box-shadow:0px 0px 10px #BFBFBF; /* For Chrome5+, Safari5+ */ 
+	box-shadow:0px 0px 10px #BFBFBF; 
+	/*边框阴影*/
+	width: 400px;
+	height: 300px;
+	margin:0px 0px 50px 0px;/*上，右，下，左*/
+	z-index: 99;
+	/*display: none;/*div隐藏*/*/
+}
+.popup_content{
+	margin:60px 0px 0px 90px;/*上，右，下，左*/
+	font-size: 16px;
+	margin-bottom: 0px;
+}
+.small{
+	font-size: 12px;
+	margin-top: 20px;
+	margin-bottom: 55px;
+}
+.small2{
+	font-size: 12px;
+	margin-top: 20px;
+	margin-bottom: 110px;
+}
+.popup_content input{
+	font-size: 11px;
+	width: 90px;
+	height: 32px;
+	margin: 0px 8px 0px 0px;/*按钮之间的间隙*/
+	border: 1px solid #1b1818;
+	background: #655a58;
+	color: #fcf1df;
+}
+/*弹出框的样式*/
+
+.hao input{
+	width: 220px;
+}
+.hao1{
+	margin-left: 12px;
+}
+.cantent span{
+	margin-left: -12px;
+}
+.cantent1{
+	font-size: 12px;
+	margin: 58px 0px 0px 40px;
+	line-height:40px;/*字体之间的行距*/
+}
+.cantent1 input{
+	margin-right: 10px;
+	border: 1px solid #c8a063;
+	border-radius:4px;/*边框为圆角*/
+	width: 200px;
+	height: 25px;
+}
+.xia1 input{
+	width: 100px;
+	height: 35px;
+	margin-left: 75px;
+	margin-top: 20px;
+	border-radius:0px;/*边框为圆角*/
+	border: 1px solid #1b1818;
+	background: #655a58;
+	color: #fcf1df;
+}
+
+/*div--区域权限详情--div*/
+.query1{
+	margin-top: 30px;
+}
+.query1 input{
+	color: white;
+	width: 80px;
+	margin-left: 30px;
+}
+
+
+/*div--from表单--div*/
+form .row-fluid,form .row{
+  min-height:65px;
+  height:auto !important;
+	height: 60px;
+}
+.bark{
+	/*display: inline-block;*/
+	float: left;
+}
+.errorMessage{
+	height: 25px;
+	/* padding: 4px 6px; */
+	font-size: 12px;
+	color: red;		
+	display:block;
+	margin-top: -12px;
+	margin-left: 80px;
+}
+.success .errorMessage{
+	display: none;
+}
+.error .errorMessage{
+	display: block;
+}
+.success{
+	position: relative;
+	width: auto;
+}
+.success input{
+	position: relative;
+}
+.success .check_icon{
+	background:url(../images/right.png) no-repeat;
+	position: absolute;
+	top: 5px;
+  right: 10%;
+	z-index: 103;
+	width: 30px;
+  height: 30px;
+}
+.success input[type="file"]{
+  border:none;
+  background: #E6EFC2;
+  color: #555555;
+}
+form table td:first-child{
+	display: inline-block;/*元素在同一行，可以设置高和宽*/
+}
+
+
+
+
+
+

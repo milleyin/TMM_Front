@@ -1,0 +1,254 @@
+<!-- 觅趣详情 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="seekfun-detail-back link" data-type="{{type}}">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">觅趣详情</div>
+  </div>
+</div>
+<div class="pages navbar-through">
+  <div data-page="seekfun-detail-create infinite-scroll" class="page seekfun-detail-page" id="seekfun-detail">
+    <div class="page-content">
+      <div class="seekfun-banner">
+        {{#if image}}
+        <img src="{{image}}" class="commond_bg">
+        {{else}}
+        <img src="../../styles/images/defaultbig.jpg">
+        {{/if}}
+        <div class="seekfun-tabs">
+          <span class="tab-item journery active">行程</span>
+          <span class="tab-item join">参与人</span>
+          <span class="tab-item intro">概要</span>
+        </div>
+      </div>
+
+      <!-- 行程 -->
+      <div class="journery-block">
+      {{#each items_fare}}
+        <div class="seekfun-item">
+
+          {{#if @key%2}}
+          <div class="day-tit">
+            <div class="tit" style="margin-top: 20px;margin-left: -10px;">{{mergeDay @key}}</div>
+          </div>
+          {{/if}}
+
+          {{#each this}}
+            {{#each this}}
+              {{#each fare}}
+              <div class="day-item">
+                <span class="img">
+                  <i class="icon ticon-type{{../classliy.value}}"></i>
+                </span>
+                <div class="describe">
+                  <div class="tit">{{../name}}</div>
+                  {{#js_compare "this.room_number != '0'"}}
+                  <div class="txt">{{name}} 　{{room_number}}人间　￥{{price}}</div>
+                  {{/js_compare}}
+                  {{#js_compare "this.room_number == '0'"}}
+                  <div class="txt">{{name}} 　{{info}}　￥{{price}}</div>
+                  {{/js_compare}}
+                </div>
+              </div>
+              {{/each}}
+            {{/each}}
+          {{/each}}
+        </div>
+        {{/each items_fare}}
+        </div>
+      <!-- 参与人 -->
+      <div class="join-block" >
+        <p style="text-align: center;margin-top: 20px;">您还没有参与人哦！</p>
+      </div>
+      <!-- 概要 -->
+      <!-- 可以编辑 -->
+      {{#js_compare "this.audit_status.value == '-2' || this.audit_status.value == '-1'"}}
+      <div class="intro-block">
+        <div class="normal-group">
+          <div class="normal-cell">
+            觅趣名称
+          </div>
+          <div class="normal-cell">
+            <div class="arrow-cell" id="tmm-edit-act-name">
+            {{name}}
+            </div>
+            <!-- <i class="icon ticon-arrow-right arrow"></i> -->
+          </div>
+        </div>
+        <div class="normal-group tmm-goTime">
+          <div class="normal-cell">
+            出游日期
+          </div>
+          <div class="normal-cell">
+            <div class="arrow-cell tmm-set-act-date" id="tmm-edit-act-goDate" name="tmm-set-act-date" data-id="{{shops.value}}" data-link="{{set_go_time.link}}">
+              {{actives_time.go_time}}
+            </div>
+          </div>
+        </div>
+        <div class="normal-group">
+          <div class="normal-cell">
+            付款方式
+          </div>
+          <div class="normal-cell">
+            <div class="arrow-cell" id="tmm-edit-act-pay">
+              {{#js_compare "this.actives_pay_type.value == '1'"}} 代付 {{/js_compare}} {{#js_compare "this.actives_pay_type.value == '0'"}} 自费 {{/js_compare}}
+            </div>
+          </div>
+        </div>
+        <div class="normal-group">
+          <div class="normal-cell">
+            觅趣报名日期
+          </div>
+          <div class="normal-cell">
+            <div class="arrow-cell" id="tmm-edit-act-enroll">
+              {{actives_time.start_time}} 至 {{actives_time.end_time}}
+            </div>
+          </div>
+        </div>
+        <div class="normal-group">
+          <div class="normal-cell">
+            觅趣参与人数
+          </div>
+          <div class="normal-cell">
+            <div class="arrow-cell" id="tmm-edit-act-num">
+              {{actives_info.number.value}}人
+              <!-- <i class="icon ticon-arrow-right arrow"></i> -->
+            </div>
+          </div>
+        </div>
+        {{#js_compare "this.userInfo.is_organizer == 1 && this.userInfo.organizer_status != 0"}}
+        <div class="normal-group">
+          <div class="normal-cell">
+            服务费（交通、导服及其他）
+          </div>
+          <div class="normal-cell">
+            <div class="arrow-cell" id="tmm-edit-act-tour-price">
+              {{actives_info.tour_price.value}}元/人
+              <!-- <i class="icon ticon-arrow-right arrow"></i> -->
+            </div>
+          </div>
+        </div>
+        {{/js_compare}}
+        <div class="normal-group">
+          <div class="normal-cell">
+            觅趣公开性
+          </div>
+          <div class="normal-cell">
+            <div class="arrow-cell" id="tmm-edit-act-open">
+              {{#js_compare "this.actives_is_open.value == '1'"}} 公开 {{/js_compare}} {{#js_compare "this.actives_is_open.value == '0'"}} 私密 {{/js_compare}}
+            </div>
+          </div>
+        </div>
+        <div class="normal-group">
+          <div class="normal-cell">
+            创建日期
+          </div>
+          <div class="normal-cell">
+            {{actives_time.add_time}}
+          </div>
+        </div>
+        <div class="normal-group">
+          <div class="normal-cell">
+            觅趣简介
+          </div>
+          <div class="editer-con" id="tmm-edit-act-intro">
+            {{actives_info.remark}}
+          </div>
+        </div>
+      </div>
+      {{/js_compare}}
+      <!-- 可以编辑完成 -->
+      <!-- 不可以编辑 -->
+      {{#js_compare "this.audit_status.value != '-2' && this.audit_status.value != '-1'"}}
+      <div class="intro-block">
+        <div class="normal-group">
+          <div class="normal-cell">
+            觅趣名称
+          </div>
+          <div class="normal-cell">
+            {{name}}
+          </div>
+        </div>
+        <div class="normal-group tmmGoTime">
+          <div class="normal-cell">
+            出游日期
+          </div>
+          <div class="normal-cell tmm-set-act-date" data-id="{{shops.value}}" name="tmm-set-act-date" data-link="{{set_go_time.link}}">
+            {{actives_time.go_time}}
+          </div>
+        </div>
+        <div class="normal-group">
+          <div class="normal-cell">
+            付款方式
+          </div>
+          <div class="normal-cell">
+            {{#js_compare "this.actives_pay_type.value == '1'"}} 代付 {{/js_compare}} {{#js_compare "this.actives_pay_type.value == '0'"}} 自费 {{/js_compare}}
+          </div>
+        </div>
+        <div class="normal-group">
+          <div class="normal-cell">
+            觅趣报名日期
+          </div>
+          <div class="normal-cell">
+            {{actives_time.start_time}} 至 {{actives_time.end_time}}
+          </div>
+        </div>
+        <div class="normal-group">
+          <div class="normal-cell">
+            觅趣参与人数
+          </div>
+          <div class="normal-cell">
+            {{js "this.actives_info.number.value - this.actives_info.order_number.value"}}/{{actives_info.number.value}}人
+          </div>
+        </div>
+        {{#js_compare "this.userInfo.is_organizer == 1 && this.userInfo.organizer_status != 0"}}
+        <div class="normal-group">
+          <div class="normal-cell">
+            服务费（交通、导服及其他）
+          </div>
+          <div class="normal-cell">
+            {{actives_info.tour_price.value}}元/人
+          </div>
+        </div>
+        {{/js_compare}}
+        <div class="normal-group">
+          <div class="normal-cell">
+            觅趣公开性
+          </div>
+          <div class="normal-cell">
+            {{#js_compare "this.actives_is_open.value == '1'"}} 公开 {{/js_compare}} {{#js_compare "this.actives_is_open.value == '0'"}} 私密 {{/js_compare}}
+          </div>
+        </div>
+        <div class="normal-group">
+          <div class="normal-cell">
+            创建日期
+          </div>
+          <div class="normal-cell">
+            {{actives_time.add_time}}
+          </div>
+        </div>
+        <div class="normal-group">
+          <div class="normal-cell">
+            觅趣简介
+          </div>
+          <div class="editer-con">
+            {{actives_info.remark}}
+          </div>
+        </div>
+      </div>
+      {{/js_compare}}
+      <!-- 不可以编辑完成 -->
+    </div>
+
+    <!--审核不通过 觅趣未开始 下线-->
+    {{#js_compare "(this.audit_status.value =='-1' && this.actives_status.value =='0' && this.shops_status.value =='0') || (this.audit_status.value =='-1' && this.actives_status.value =='' && this.shops_status.value =='0')"}}
+      <div class="tmm-examine tmm-seekfun-btn">
+        <span class="outline-button tmm-seekfun-changeLine" data-id="{{actives_id}}">更换行程</span><span class="outline-button tmm-examine-status">提交审核</span>
+      </div>
+    {{/js_compare}}
+
+  </div>
+</div>

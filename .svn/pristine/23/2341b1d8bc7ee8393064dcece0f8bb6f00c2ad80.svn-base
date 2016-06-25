@@ -1,0 +1,58 @@
+<div id="my">
+    <header class="t_bar">
+        <h1>我的<!-- <a href="shezhi.html" class="iconfont h_right h_20">&#xe626;</a> --></h1>
+    </header>
+
+    <div class="content">
+
+        
+        <!-- 登录部分 -->
+        <div ng-if="!isLogin" ng-click="toLogin()" class="my_login">
+            <span>请登录帐号</span>
+            <i class="iconfont icon_l">&#xe638;</i>
+        </div>
+
+        <!-- 登录成功部分 -->
+        <div ng-if="isLogin" class="wode">
+            
+            <div class="wode_img"><a ng-href="#/myinfo"><img ng-src="images/header.png"></a></div>
+            <div class="wode_txt">
+                <h3>{{user.userInfo.phone}}</h3>
+            </div>
+            <!-- <i class="iconfont h_right h_14">&#xe634;</i> -->
+            <div ng-click="showBar()" class="h_right h_14" style="color: #565a5c">退出</div>
+            
+        </div>
+
+        <section class="dingdan">
+            <p ng-click="goPage('myorder')" class="p_list"><span class="side_tit">我的订单</span><i class="iconfont sec_l">&#xe627;</i><i class="iconfont sec_r">&#xe634;</i></p>
+            <div class="line"></div>
+            <p ng-click="goPage('myjoinact')" class="p_list"><span class="side_tit">我参加的活动</span><i class="iconfont sec_l">&#xe629;</i><i class="iconfont sec_r">&#xe634;</i></p>
+        </section>
+
+        <section class="jilu">
+            <p ng-click="goPage('wodezan')" class="p_list"><span class="side_tit">我的赞</span><img class="sec_l" style="height: 20px;position:absolute;top:10px;" src="images/zan_red_2.png" alt=""><i class="iconfont sec_r">&#xe634;</i></p>
+        </section>
+
+    </div>
+
+    <footer class="f_bar">
+        <a ng-href="#/tuijian">
+            <i class="iconfont">&#xe619;</i>
+            <span>推荐</span>
+        </a>
+        <a ng-href="#/tansuo">
+            <i class="iconfont">&#xe614;</i>
+            <span>觅镜</span>
+        </a>
+        <a ng-href="#/mixian">
+            <i class="ticon icon-mixiantubiao"></i>
+            <span>觅鲜</span>
+        </a>
+        <a class="active" ng-href="#/my">
+            <i class="iconfont">&#xe61d;</i>
+            <span>我的</span>
+        </a>
+    </footer>
+    
+</div>

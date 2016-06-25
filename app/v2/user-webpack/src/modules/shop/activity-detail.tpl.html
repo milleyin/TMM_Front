@@ -1,0 +1,184 @@
+<!-- 觅趣的详情页面 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">{{actObj.name}}</div>
+    <div class="right">
+      <!-- <a href="#" class="tmm-praise-shop" data-shop-id="{{actObj.actives_id}}">
+        {{#if isActPraise}}
+          <i class="icon ticon-praise"></i>
+        {{else}}
+          <i class="icon ticon-praise gray"></i>
+        {{/if}}
+      </a> -->
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, "data-page" contains page name -->
+  <div data-page="act-detail" class="page tmm-dot-detail tmm-line-detail">
+    <div class="page-content act-detail-page-content">
+      <div class="banner">
+        <div>
+          <img class="lazy" data-src="{{actObj.page_img}}">
+        </div>
+        <div class="mask">
+          <a href="#" class="tmm-praise-shop" data-shop-id="{{actObj.actives_id}}">
+            {{#if isActPraise}}
+              <i class="icon ticon-praise"></i>
+              <span>{{actObj.praise}}</span>
+            {{else}}
+              <i class="icon ticon-praise gray"></i>
+              <span class="gray">{{actObj.praise}}</span>
+            {{/if}}
+          </a>
+          <a href="#" class="tmm-phone" data-type="act"  data-manage-phone="{{actObj.manage_phone}}" data-tmm-phone="{{actObj.tmm_phone}}">
+            <div><img src="../../styles/images/phone.png" /></div>
+            <span>联系</span>
+          </a>
+          <a href="#" class="tmm-share">
+            <i class="icon ticon-share" data-tit="{{actObj.name}}" data-id="{{actObj.actives_id}}" data-con="{{actObj.list_info}}" data-link="{{#if actObj.share_image}}{{actObj.share_image}}{{else}}{{actObj.list_img}}{{/if}}"></i>
+            <span>分享</span>
+          </a>
+        </div>
+      </div>
+      <div class="act-info">
+        <div class="tmm-con-icon">
+          <div class="tmm-col-fish border-right">
+            <div>
+              <p class="title">参与人数</p>
+              <p class="txt">{{actObj.actives_info.order_number.sign}} / {{actObj.actives_info.number.value}}</p>
+            </div>
+          </div>
+          <div class="tmm-col-fish">
+            <div>
+              <p class="title">觅趣状态</p>
+              <p class="txt">{{actObj.actives_status.name}}</p>
+            </div>
+          </div>
+          <div class="clears"></div>
+          <div class="b-border"></div>
+          <div class="tmm-col-fish border-right">
+            <div>
+              <p class="title">报名时间</p>
+              <p class="txt">{{actObj.actives_time.start_time}} / {{actObj.actives_time.end_time}}</p>
+            </div>
+          </div>
+          <div class="tmm-col-fish">
+            <div>
+              <p class="title">出游日期</p>
+              <p class="txt">{{actObj.actives_time.go_time}}</p>
+            </div>
+          </div>
+          <div class="clears"></div>
+          <div class="b-border"></div>
+          <div class="col-100 b-border accordion-item accordion-item-expanded">
+            <p class="title">觅趣简介</p>
+           <div class="act-info-remark">
+              {{actObj.actives_info.remark}}
+            </div>
+            <div class="icon ticon-expand"></div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        {{#each actObj.list}}
+        <div class="line-day detail-b-border">
+          <!-- 日程亮点 -->
+          <div class="line-day-tit">
+            <div class="bright act-bright"><i class="bracket">&lceil;</i>{{day_content}}<i class="bracket">&rfloor;</i></div>
+            <div class="day act-day">{{descript_day}}</div>
+          </div>
+          <span class="tmm-ticon-point tmm-activity-ticon-point">&nbsp;</span> {{#each dot_list}} {{#each day_item}}
+          <!-- 项目类容 -->
+          <section class="info">
+            <i class="icon tmm-type-icon {{js " this.item_type.value==1 ? 'ticon-eat' : (this.item_type.value==2 ? 'ticon-live' : 'ticon-play') "}}"></i>
+            <h2 class="tit tmm-img-showmore" data-type="{{js " this.item_type.value==1 ? 'eat' : (this.item_type.value==2 ? 'hotel' : (this.item_type.value==3 ? 'play' : (this.item_type.value==3 ? 'farm' : 'farmOuter'))) "}}" data-link="{{item_link}}">{{item_name}}</h2>
+            <div class="state tmm-img-showmore" data-type="{{js " this.item_type.value==1 ? 'eat' : (this.item_type.value==2 ? 'hotel' : (this.item_type.value==3 ? 'play' : (this.item_type.value==3 ? 'farm' : 'farmOuter'))) "}}" data-link="{{item_link}}">{{address}}</div>
+            <a href="javascript:;" data-type="{{js " this.item_type.value==1 ? 'eat' : (this.item_type.value==2 ? 'hotel' : (this.item_type.value==3 ? 'play' : 'farm')) "}}" data-link="{{item_link}}" class="showmore"><span>●</span><span>●</span><span>●</span></a>
+            <div class="img">
+              <a class="tmm-img-showmore" href="javascript:;" data-type="{{js " this.item_type.value==1 ? 'eat' : (this.item_type.value==2 ? 'hotel' : (this.item_type.value==3 ? 'play' : (this.item_type.value==3 ? 'farm' : 'farmOuter'))) "}}" data-link="{{item_link}}">
+                <img class="lazy lazy-fadein" data-src="{{item_img}}">
+              </a>
+            </div>
+          </section>
+          {{/each}} {{/each}}
+        </div>
+        {{/each}}
+      </div>
+      <!-- 回到顶部 -->
+      <div class="go_top">
+        <a href="#" class="goTop" data-view="act-detail"><img src="../../styles/images/go_top.png" class="icon"></a>
+      </div>
+    </div>
+
+    <!-- 审核可卖的状态 -->
+    {{#js_compare "this.actObj.is_sale.value ==1"}}
+        <!-- 判断报名时间有没有开始 -->
+        {{#js_compare "this.actObj.actives_status.value ==0"}}
+        <div class="cannt-item"><a class="tmm-button" href="javascript:;">报名时间还未开始</a></div>
+        {{/js_compare}}
+
+         <!-- 报名时间已经开始 -->
+        {{#js_compare "this.actObj.actives_status.value == 1"}}
+            <!-- 判断报名人数是否已满 -->
+            {{#js_compare "this.actObj.actives_info.order_number.value == 0"}}
+            <div class="cannt-item"><a class="tmm-button" href="javascript:;">报名人数已满</a></div>
+            {{/js_compare}}
+
+            <!-- 报名人数还有空余 -->
+            {{#js_compare "this.actObj.actives_info.order_number.value > 0"}}
+
+                
+                      
+                    <!-- A 支付 -->
+                    {{#js_compare "this.actObj.actives_pay_type.value == 1"}}
+                    <div class="go-item act-go-item payment-act-A-type" data-actId="{{actObj.actives_id}}" data-actOpen="{{actObj.actives_is_open.value}}">
+                      <a class="tmm-button" href="javascript:;">
+                        {{#js_compare "this.actObj.actives_time.value == 0"}}我也要报名{{/js_compare}}{{#js_compare "this.actObj.actives_time.value == 1"}}我也想去{{/js_compare}}
+                      </a>
+                    </div>
+                    {{/js_compare}}
+
+
+                    
+                    <!-- AA支付 -->
+                    {{#js_compare "this.actObj.actives_pay_type.value == 0"}}
+                      <!-- 判读自己有没有报名（没有有报名） -->
+                      {{#js_compare "this.actObj.order_actives.value == -1"}} 
+                      <div class="go-item act-go-item" data-shop-type="{{actObj.c_id}}" data-acttype="{{actObj.actives.value}}" data-shop-id="{{actObj.actives_id}}">
+                        <a class="tmm-button" href="javascript:;">{{#js_compare "this.actObj.actives_time.value == 0"}}我也要报名{{/js_compare}}{{#js_compare "this.actObj.actives_time.value == 1"}}我也想去{{/js_compare}}</a>
+                      </div>
+                      {{/js_compare}} 
+                      <!-- 判读自己有没有报名（没有有报名） -->
+                      <!-- 判读自己有没有报名（有报名） -->
+                      {{#js_compare "this.actObj.order_actives.value != -1"}}
+                      <div class="cannt-item"><a class="tmm-button" href="javascript:;">已报名</a></div>
+                      {{/js_compare}} 
+                      <!-- 判读自己有没有报名（有报名） -->
+                    {{/js_compare}}
+
+
+      
+
+            {{/js_compare}} 
+        {{/js_compare}}
+
+
+        <!-- 觅趣结束 -->
+        {{#js_compare "this.actObj.actives_status.value ==2"}}
+        <div class="cannt-item"><a class="tmm-button" href="javascript:;">报名结束</a></div>
+        {{/js_compare}} 
+    {{/js_compare}} 
+
+
+    <!-- 不能下单 -->
+    {{#js_compare "this.actObj.is_sale.value !=1"}}
+    <div class="cannt-item"><a class="tmm-button" href="javascript:;">此点正在开发中，敬请期待</a></div>
+    {{/js_compare}}
+  </div>
+</div>

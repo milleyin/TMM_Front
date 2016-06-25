@@ -1,0 +1,164 @@
+<!-- 点的详情页面 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">{{itemObj.name}}</div>
+    <div class="right">
+       <a href="#" class="tmm-infor-top" id="tmm-infor-top">
+        <img src="../../styles/images/infor.png" />
+      </a> 
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, "data-page" contains page name -->
+  <div data-page="item-detail" class="page tmm-item-detail">
+  	
+  <!--分享项目-->
+      <a id="tmm-item-share">
+	      <div class="tmm-deta-share" data-id="{{itemObj.value}}" data-type="{{itemObj.item_type.value}}" data-title="{{itemObj.name}}" data-img="{{itemObj.img}}" data-desc="{{itemObj.address}}">
+	      	<div class="tmm-item-can">
+		  			<div class="share-img"><img src="../../styles/images/share.png" /></div>
+		  		  <div class="share-font">分享项目</div>
+	      	</div>
+	      </div>
+      </a>
+  
+    <div class="page-content tmm-item-on-scroll">
+    	<!--
+        	作者：1397522529@163.com
+        	时间：2015-12-01
+        	描述：
+      -->
+      <div id="tmm-banner-detail-content" style="display:none">
+        <!--添加的内容-->  
+            <div class="tmm-common-detail-cards">
+              <div class="card-detail demo-card-header-pic">
+                <div class="card-header color-white no-border">
+                  <!--图片滚动-->
+                  <div data-pagination=".swiper-pagination" class="swiper-container">
+                    <div class="swiper-pagination tmm-swiper-pagination"></div>
+                    <div class="swiper-wrapper">
+                      {{#each itemObj.img_arr}}
+                        <div class="swiper-slide">
+                          <img data-src="{{this}}" src="{{this}}"  class="bg">
+                        </div>
+                      {{/each}}
+                    </div>
+                  </div>
+                 <!--图片滚动-->
+                </div>
+                <div class="card-content">
+                  <div class="list-block media-list">
+                    <ul>
+                      <li class="item-content">
+                        <div class="item-inner">
+                          <div class="div_name">
+                            <div class="name">开放时间</div>
+                          </div>
+                          <div class="div_content">
+                            <div class="content">{{itemObj.start_work}} - {{itemObj.end_work}}</div>
+                          </div> 
+                        </div>
+                      </li>
+                      <li class="item-content">
+                        <div class="item-inner">
+                          <div class="div_name">
+                            <div class="name">地址</div>
+                          </div>
+                          <div class="div_content">
+                            <div class="content">
+                              {{itemObj.address}}
+                              {{#if this.itemObj.distance}}
+                                <div class="location" id="showmoreMap" data-lng="{{itemObj.lng}}" data-lat="{{itemObj.lat}}" data-address="{{itemObj.address}}" data-city="{{itemObj.address_arr.city}}">
+                                  <img src="../../styles/images/location.png">
+                                  <span>{{itemObj.distance}}</span>
+                                </div>
+                              {{/if}}
+                            </div>
+                          </div> 
+                        </div>
+                      </li>
+                      <li class="item-content">
+                        <div class="item-inner">
+                          <div class="div_name">
+                            <div class="name">联系电话</div>
+                          </div>
+                          <div class="div_content tmm-div-content-phone"  data-phone="{{itemObj.phone}}">
+                            <div class="content">
+                              <img src="../../styles/images/detailPhone.png" class="tmm-detail-phone">
+                              <span class="tmm-detail-phone-txt">{{itemObj.phone}}</span>
+                            </div>
+                          </div> 
+                        </div>
+                      </li>
+                      <li class="item-content">
+                        <div class="item-inner">
+                          <div class="div_name">
+                            <div class="name">微信</div>
+                          </div>
+                          <div class="div_content">
+                            <div class="content">{{itemObj.weixin}}</div>
+                          </div> 
+                        </div>
+                      </li>
+                      <!-- 免费 -->
+                      {{#js_compare "this.itemObj.free_status.value =='0'"}}
+                      <li class="item-content">
+                        <div class="item-inner">
+                          <div class="div_name">
+                            <div class="name">费用</div>
+                          </div>
+                          <div class="div_content">
+                            <div class="content">免费</div>
+                          </div> 
+                        </div>
+                      </li>
+                      {{/js_compare}}
+                      <!-- 收费 -->
+                      {{#js_compare "this.itemObj.free_status.value =='1'"}}
+                      <li class="item-content">
+                        <div class="item-inner">
+                          <div class="div_name">
+                            <div class="name">费用</div>
+                          </div>
+                          <div class="div_content">
+                            <div class="content">
+                              {{#each itemObj.fare}}
+                              <div class="fee">
+                                <ul>
+                                  <li>{{name}}</li>
+                                  <li>{{info}}</li>
+                                  <li>{{price}} 元</li>
+                                </ul>
+                              </div>
+                              {{/each}}
+                            </div>
+                          </div> 
+                        </div>
+                      </li>
+                      {{/js_compare}}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!--添加的内容-->
+      </div>
+
+      <!-- 内容添加 -->
+      <div class="edit_content">
+        {{itemObj.content}}
+      </div>
+    </div>
+    <div class="tmm-more-map" id="tmm-hotel-map" style="display:none">
+      <div class="tmm-more-title">{{itemObj.address}}</div>
+      <img src="{{itemObj.map}}">
+    </div>
+    <div class="tmm-bg-mask" id="tmm-hotel-mask" style="display:none"></div>
+  </div>
+</div>

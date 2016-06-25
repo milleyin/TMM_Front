@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>田觅觅</title>
+  <meta name="baidu-site-verification" content="H5sB6yh88E" />
+  <meta name="360-site-verification" content="3a269a4d0f78a7af62a970a7bae62a17" />
+  <meta name="sogou_site_verification" content="JJLR5mePvx" />
+  <meta name="keywords" content="田觅觅 农旅一体化 O2O 农产品 旅游 美食 田园 甜蜜蜜 觅境 觅趣 觅鲜 觅友 觅食 寻觅" />
+  <meta name="description" content="田觅觅，农旅一体化互联网平台，把农产品送到城里来，把城里人带到农村去 田觅觅帮你解决周边玩的问题，让你享受轻松优雅的生活。" />
+  <meta property="og:type" content="news" />
+  <meta property="og:title" content="田觅觅" />
+  <meta property="og:description" content="田觅觅，农旅一体化互联网平台，把农产品送到城里来，把城里人带到农村去 田觅觅帮你解决周边玩的问题，让你享受轻松优雅的生活。" />
+  <meta property="og:image" content="http://www.365tmm.com/images/logo.png" />
+  <link rel="stylesheet" type="text/css" href="styles/sprites.css" />
+  <link rel="stylesheet" type="text/css" href="styles/main.css" />
+   
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-wrap">
+      <h1 class="logo">田觅觅<img src="images/logo.png" alt="田觅觅"></h1>
+      <ul class="navbar">
+        <li class="list" data-showSub="0"><a class="list-link" href="index.html">首页</a></li>
+        <li class="list" data-showSub="1">
+          <a class="list-link">产品介绍</a>
+          <div class="subnav">
+            <div class="sub-bg"></div>
+            <div class="sub-list product">
+              <a href="./user.html"><i class="icon-mobile"></i>用户端 APP</a>
+              <a href="./store.html"><i class="icon-mobile"></i>商家端 APP</a>
+              <a style="margin-right: 180px;" href="mon.html"><i class="icon-pc"></i>运营商平台</a>
+            </div>
+          </div>
+        </li>
+        <li class="list" data-showSub="2">
+          <a class="list-link">招商入驻</a>
+          <div class="subnav">
+            <div class="sub-bg"></div>
+            <div class="sub-list merchant">
+              <a href="supplier.html">供应商入驻</a>
+              <a style="margin-right: 350px;" href="operators.html">运营商入驻</a>
+            </div>
+          </div>
+        </li>
+        <li class="list selected" data-showSub="3"><a class="list-link" href="news.html">新闻动态</a></li>
+        <li class="list" data-showSub="3"><a class="list-link" href="about.html">关于我们</a></li>
+        <li class="list" data-showSub="3"><a class="list-link" href="join.html">加入我们</a></li>
+        <span class="slider-box"></span>
+      </ul>
+    </div>
+  </div>
+  <div class="banner">
+    <div class="big-img img8"></div>
+  </div>
+  <div class="content con-news">
+    <div class="article">
+      <h2><span class="tag"><span>行业动态</span></span><a href="newsdetail.html">国家旅游局拟多项举措促乡村旅游发展国家旅游局拟多项举措促乡村旅游发展国家旅游局拟多项举措促乡村旅游发展</a></h2>
+      <div class="desc"><span class="author">发布者：田觅觅</span><span class="date">2016-01-05</span>
+        <!-- JiaThis Button BEGIN -->
+        <div class="jiathis_style_32x32" style="display:inline-block;vertical-align:middle;margin-left: 50px;">
+          <a class="jiathis_button_qzone"></a>
+          <a class="jiathis_button_tsina"></a>
+          <a class="jiathis_button_weixin"></a>
+          <a class="jiathis_button_cqq"></a>
+        </div>
+        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+        <!-- JiaThis Button END -->
+      </div>
+
+      <div class="article-content">
+          <em>8月8-9日，田觅觅工作小组在九州田</em>园张德林董事长和中华永续城市发展教育基金会、广东省海峡两岸交流促进会农<strong>业委员会常务副会</strong>长何培才老师的陪同下，踏访了客家文化之乡、金柚之乡——梅州市的大埔县和平远县。
+       广东土围楼中规模最大、设计最精美、保存最完整的民居古建筑花萼楼、“华侨之乡”百侯镇、有梅州市第二个客天下之称的双髻山森林公园、大东梯田、金穗休闲养生旅游产业园等都在本次的踏访名单内。
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="link">友情链接： <a href="http://m.kuaidi100.com" target="_blank">快递查询</a></p>
+    <p class="copyright">Copyright © 2016 深圳市田觅觅信息科技有限公司&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备14093215号-2</a></p>
+  </div>
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

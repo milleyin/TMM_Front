@@ -1,0 +1,89 @@
+<!-- 我发起的活动 -->
+<ion-view view-title="增加活动设置" cache-view="false" hide-tabs>
+  <ion-nav-buttons>
+    <i class="tmm-ion-left ion-android-arrow-back" ui-sref="tab.launch-act-seldot-schedule" nav-direction="back"></i>
+  </ion-nav-buttons>
+
+  <form name="signup_form" novalidate ng-submit="signupForm()">
+  <ion-content class="tmm-my-withdraw-content tmm-my-wallet">
+    <div class="tmm-my-withdraw-top">
+    	<ion-list class="tmm-withdraw-list">
+        <ion-item>
+          <div class="tmm-addact-title">活动名称</div>
+          <div>
+            <input type="text" name=""
+            required 
+            ng-model=""
+            autocomplete="off">
+          </div>
+        </ion-item>
+        <ion-item>
+          <div class="tmm-addact-title">报名开始日期</div>
+          <div>
+            <input type="text" name=""
+            required 
+            ng-model="regText.subbranch" 
+            placeholder="请选择报名开始日期" 
+            autocomplete="off">
+          </div>
+        </ion-item>
+        <ion-item>
+          <div class="tmm-addact-title">报名结束日期</div>
+          <div>
+            <input type="text" name=""
+            required 
+            ng-model="regText.subbranch" 
+            placeholder="请选择报名结束日期" 
+            autocomplete="off">
+          </div>
+        </ion-item>
+        <ion-item>
+          <div class="tmm-addact-title">出游日期</div>
+          <div>
+            <input type="text" name=""
+            required 
+            ng-model="regText.subbranch" 
+            placeholder="请选择出游日期" 
+            autocomplete="off">
+          </div>
+        </ion-item>
+        <ion-item>
+          <div class="tmm-addact-title">活动参与人数</div>
+          <div class="tmm-addact-info">
+            <input type="text" name=""
+            required 
+            ng-model=""
+            autocomplete="off">人
+          </div>
+        </ion-item>
+        <ion-item>
+          <div class="tmm-addact-title">服务费</div>
+          <div class="tmm-addact-info">
+            <input type="text" name=""
+            required 
+            ng-model=""
+            autocomplete="off">元/人
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="tmm-beizhu">
+      <ion-list class="tmm-withdraw-list">
+        <ion-item>
+          <div class="tmm-addact-title">活动简介</div>
+          <div>
+            <textarea id="remark" rows="5" name="remark" required="" class="tmm-beizhu-textarea"></textarea>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="tmm-message-button" ui-sref="tab.launch-act-seldot-addact-info">
+      <button class="tmm-message-sub tmm-message-sub-act" type="submit">创建此线路活动</button>
+    </div>
+
+  </ion-content>
+  </form>
+</ion-view>
+
+

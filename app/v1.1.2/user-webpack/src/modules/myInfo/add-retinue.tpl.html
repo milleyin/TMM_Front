@@ -1,0 +1,64 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">{{title}}</div>
+    <div class="right">
+      {{#if canDelete}}
+      <a href="#" id="deleteRetinue">
+        <i class="icon ticon-delete"></i>
+      </a>
+      {{/if}}
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="add-retinue" class="page">
+    <div class="page-content tmm-add-retinue-page-contnet">
+      <!-- 添加随行人员表单 -->
+      <form class="list-block inset tmm-myinfo-item-addform">
+        <ul>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">姓名</div>
+
+                <input type="text" name="name" placeholder="必填" class="add_input" id="retinueName" value="{{name}}">
+  
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">身份证</div>
+              
+                <input type="text" name="identity" placeholder="必填" class="add_input" id="retinueIdentity" value="{{identity}}">
+              
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">手机号码</div>
+              
+                <input type="tel" name="phone" placeholder="必填" class="add_input" id="retinuePhone" {{#if readonly}}readonly{{/if}} value="{{phone}}">
+              
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">邮箱</div>
+                
+               <!--  <input type="text" name="email" placeholder="选填" class="add_input" id="retinueEmail" value="{{email}}"> -->
+                <input type="text" name="email" placeholder="{{emailTxt}}" class="add_input" id="retinueEmail" value="{{email}}">
+              
+            </div>
+          </li>
+        </ul>
+        <div class="f_bottom">
+          <span id="submitRetinue" class="sub_active">确认</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

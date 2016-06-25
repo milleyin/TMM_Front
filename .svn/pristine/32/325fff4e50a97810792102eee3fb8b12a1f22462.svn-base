@@ -1,0 +1,95 @@
+angular.module('resources', [])
+
+.factory('Resource', function(ENV, $http, $q, $log, $ionicLoading) {
+
+    var api = ENV.apiEndpoint;
+
+
+    var thenFactoryMethod = function(httpPromise) {
+
+        return httpPromise.then(function(response) {
+            $log.debug('debug: ', response);
+
+            if (response.data.status === 1) {
+                var result = new Resource(response.data.data);
+                return result;
+            } else {
+                return $q.reject({
+                    data: response.data.form,
+                    code: '0',
+                    msg: '没有相关数据'
+                });
+            }
+
+        }, function(response) {
+
+            return $q.reject({
+                code: '-1',
+                msg: '网络连接错误'
+            });
+        });
+    };
+
+    var Resource = function(data) {
+        angular.extend(this, data);
+    };
+
+    Resource.get = function(url) {
+        var httpPromise = $http.get(url);
+        return thenFactoryMethod(httpPromise);
+    };
+
+    Resource.post = function(url, data) {
+        return $http.get(url + '&csrf=csrf').then(function(dataRes) {
+            data.TMM_CSRF = dataRes.data.data.csrf.TMM_CSRF;
+            var httpPromise = $http.post(url, data);
+            return thenFactoryMethod(httpPromise);
+        }, function(dataRes) {
+
+        });
+    };
+
+    Resource.getMirror = function() {
+        return this.get(api + '/index.php?r=store/store_order/index&type=order_dot_thrand');
+    };
+    Resource.getFun = function() {
+        return this.get(api + '/index.php?r=store/store_order/index&type=actives_tour');
+    };
+    Resource.getItem = function() {
+        return this.get(api + '/index.php?r=store/store_items/index');
+    };
+
+    //获取账号密码的csrf
+    Resource.showAccCode = function() {
+        return this.get(api + '/index.php?r=store/store_login/index&csrf=csrf');
+    };
+
+    //账号密码登录
+    Resource.accLogin = function(data) {
+        var accLoginUrl = api + '/index.php?r=store/store_login/index';
+        return this.post(accLoginUrl, data);
+    };
+
+    //获取快捷方式登录的csrf
+    Resource.showMobCode = function() {
+        return this.get(api + '/index.php?r=store/store_login/login_sms&csrf=csrf');
+    };
+
+    //获取快捷方式短信验证码
+    Resource.getMobCode = function(data) {
+        var mobLoginUrl = api + '/index.php?r=store/store_login/captcha_sms';
+        return $http.post(mobLoginUrl, data);
+    };
+
+    //快捷方式登录
+    Resource.mobLogin = function(data) {
+        var accLoginUrl = api + '/index.php?r=store/store_login/login_sms';
+        return this.post(accLoginUrl, data);
+    };
+
+    //得到我的收入
+    Resource.getAccount = function() {
+        return this.get(api + '/index.php?r=store/store_accountLog/count');
+    };
+    return Resource;
+});

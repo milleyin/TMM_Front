@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>奖品邮寄</title>
+  <link rel="stylesheet" type="text/css" href="css/mailingPrize.css">
+</head>
+<body class="prizeMallingForm">
+  <div class="addr">
+    <div class="row">
+      <div class="tit">收货人</div>
+      <input type="text" placeholder="收货人真实姓名">
+    </div>
+    <div class="row">
+      <div class="tit">联系电话</div>
+      <input type="tel" placeholder="收货人手机号或电话">
+    </div>
+    <div class="row">
+      <div class="tit">选择省份</div>
+      <select>
+        <option value="" name="isDefault">请选择省</option>
+      </select>
+    </div>
+    <div class="row">
+      <div class="tit">选择城市</div>
+      <select>
+        <option value="" name="isDefault">请选择市</option>
+      </select>
+    </div>
+    <div class="row">
+      <div class="tit">选择地区</div>
+      <select>
+        <option value="" name="isDefault">请选择区/县</option>
+      </select>
+    </div>
+    <div class="row rowarea">
+      <div class="tit">详细地址</div>
+      <textarea rows="2" class="detialAddr" placeholder="请详细到门牌号"></textarea>
+    </div>
+  </div>
+
+  <a href="#" class="mailing-btn">确认收货地址</a>
+</body>

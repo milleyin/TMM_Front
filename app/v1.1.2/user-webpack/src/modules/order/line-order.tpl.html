@@ -1,0 +1,107 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">订单详情</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="order-detail" class="page tmm-my-order-detail-page" id="tmm-order-line-detail">
+    <div class="page-content tmm-order-detail">
+
+      <div class="content-block-title tmm-content-title">出发时间</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status">
+          <div>{{orderObj.go_time}}</div>
+        </div>
+      </div>
+
+      <!--项目列表-->
+      <div class="content-block-title tmm-content-title">项目列表</div>
+
+      <div class="list-block tmm-list-block">
+    {{#each orderObj.items_fare}}
+        <div class="tmm-day-num">{{showDay @key}}</div>
+        {{#each this}}
+          {{#each this}}
+        <ul>
+          <li class="tmm-item-li clearfix b-border">
+            <div class="tmm-item-title">
+              {{name}}
+              <i class="icon ticon-qr-code {{#js_compare "this.barcode.is_barcode !='1' "}}gray{{/js_compare}}" data-sq="{{barcode.is_barcode}}" data-link="{{barcode.link}}"></i>
+            </div>
+            <div class="tmm-item-content">
+            {{#each fare}}
+              {{#js_compare "this.number != '0' "}}
+              <div class="tmm-item-fare">
+                <span class="tmm-fare-first w_40">{{name}}</span>
+
+                <span class="w_20">{{info}}</span>
+                <span class="w_10">{{number}}</span>
+                <span class="w_20">￥{{count}}</span>
+              </div>
+              {{/js_compare}}
+            {{/each}}
+            </div>
+          </li>
+        </ul>
+          {{/each}}
+        {{/each}}
+    {{/each}}   
+      </div>
+
+      <!--项目列表-->
+      <div class="content-block-title tmm-content-title">主要联系人</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status">
+      {{#each orderObj.retinue}}
+        {{#js_compare "this.is_main == 1 "}}
+          <div>{{name}}</div>
+        {{/js_compare}}
+      {{/each}}  
+        </div>
+      </div>
+      <div class="content-block-title tmm-content-title">随行人员<!-- （{{js " this.orderObj.user_go_count.value - 1  "}}人） --></div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row  tmm-order-status">
+
+      {{#each orderObj.retinue}}
+        {{#js_compare "this.is_main == 0 "}}
+          <div class="w_33">{{name}}</div>
+        {{/js_compare}}
+      {{/each}}
+
+        </div>
+      </div>
+      <div class="content-block-title tmm-content-title">合计价格</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status">
+          <div>订单总价<span class="tmm-total-price">￥{{orderObj.order_price.value}}</span></div>
+        </div>
+      </div>
+      <div class="content-block-title tmm-content-title">订单状态</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status">
+          <div>订单编号：{{orderObj.order_no}}</div>
+        </div>
+      </div>
+
+      <p class="require phone tmm-retinue-top-border tmm-retinue-bottom-border">索取发票请拨打电话：400-019-7090</p>
+      {{#js_compare "this.orderObj.status.order_status.value =='0'"}}
+      <div class="tmm-border-btn">
+        <span class="tmm-order-detail-confirm-btn">等待确认</span>
+      </div>
+      {{/js_compare}}
+      {{#js_compare "this.orderObj.status.order_status.value =='1'"}}
+      <div class="tmm-border-btn tmm-retinue-top-border tmm-retinue-bottom-border">
+        <span class="tmm-order-detail-confirm-btn-active tmm-order-detail-confirm-pay" data-id="{{orderObj.value}}" data-type="{{orderOwn.type}}" data-link="{{orderOwn.url}}">确认支付</span>
+      </div>
+      {{/js_compare}}
+    </div>
+  </div>
+</div>

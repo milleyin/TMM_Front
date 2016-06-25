@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>商家账号管理</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="../css/agent/css/breadcrumbs.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../css/agent/css/query.css">
+	<link rel="stylesheet" type="text/css" href="../css/agent/css/pager.css">
+	<link rel="stylesheet" type="text/css" href="../css/agent/css/business.css">
+	<script src="../css/agent/script/jquery-1.11.3.min.js"></script>
+	<!--[if lt IE 9]>
+	<script src="dist/js/html5.js"></script>
+	<script src="dist/js/respond.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="content_box">
+	<div class="breadcrumbs title">
+	 <span>商家账号管理</span>
+	</div>  <!--.title-->
+	<div class="query">
+    <form>
+  	 <select>
+  	 	<option>账号状态</option>
+  	 	<option>已冻结</option>
+  	 	<option>正常</option>
+  	 </select>
+  	 <input type="text" placeholder="公司名称">
+  	 <input type="text" placeholder="登录手机号">
+  	 <a href="#" class="sure" id="query">确认</a>
+    </form>
+	 <a href="business_site_accmangr_create_stepone.html" class="add_business" id="add_business">新增商家</a>
+	</div>  <!--.query-->
+	<div class="grid-view table_box">		 
+	 	<table border="1" class="items">
+	 	<thead>
+	 	 <tr>
+	 	  <th>登录手机号</th>
+	 	  <th>公司名称</th>
+	 	  <th>地址</th>
+	 	  <th>项目数</th>
+	 	  <th>订单量</th>
+	 	  <th>我的分成</th>
+	 	  <th>账号状态</th>
+	 	  <th>注册时间</th>
+	 	  <th>操作</th>
+	 	 </tr>
+	 	</thead>
+	 	<tbody>
+	 	 <tr class="odd">
+	 	 	<td>15814421487</td>
+	 	 	<td>飞鱼科技</td>
+	 	 	<td>深圳市南山区科技园4号411</td>
+	 	 	<td>5</td>
+	 	 	<td>10</td>
+	 	 	<td><a href="business_site_detail_tenths.html" class="sort-link">2998.00</a></td>
+	 	 	<td>已冻结</td>
+			<td>2015/7/14 10:58:12</td>
+			<td class="button-column">
+				<a class="account_detail" href="business_site_detail.html">账号详情</a>
+				<a class="start">启用</a>
+			</td>
+	 	 </tr>
+	 	 <tr>
+	 	 	<td>15814421487</td>
+	 	 	<td>飞鱼科技</td>
+	 	 	<td>深圳市南山区科技园4号411</td>
+	 	 	<td>5</td>
+	 	 	<td>10</td>
+	 	 	<td><a href="business_site_detail_tenths.html" class="sort-link">2998.00</a></td>
+	 	 	<td>已冻结</td>
+			<td>2015/7/14 10:58:12</td>
+			<td class="button-column">
+				<a class="account_detail" href="business_site_detail.html">账号详情</a>
+				<a class="start">启用</a>
+			</td>
+	 	 </tr>
+	 	 <tr class="even">
+	 	 	<td>15814421487</td>
+	 	 	<td>飞鱼科技</td>
+	 	 	<td>深圳市南山区科技园4号411</td>
+	 	 	<td>5</td>
+	 	 	<td>10</td>
+	 	 	<td><a href="business_site_detail_tenths.html" class="sort-link">2998.00</a></td>
+	 	 	<td>已冻结</td>
+			<td>2015/7/14 10:58:12</td>
+			<td class="button-column">
+				<a class="account_detail" href="business_site_detail.html">账号详情</a>
+				<a class="start">禁用</a>
+			</td>
+	 	 </tr>
+	 	</tbody>
+	 	</table>
+	 <div class="summary">
+	  <div class="text">
+		 	<span>当前显示 <span class="num_span">20</span> 条数据 ｜ 共 
+		 	<sapn class="num_span">3</sapn> 页</span>
+	  </div>
+	 </div>
+	<div class="pager">
+  	<ul id="yw1" class="yiiPager">
+    <li class="first">
+      <a href="#">
+        &lt;&lt; 首页
+      </a>
+    </li>
+    <li class="previous">
+      <a href="#">
+        &lt; 前页
+      </a>
+    </li>
+    <li class="page">
+      <a href="#">
+        1
+      </a>
+    </li>
+    <li class="page">
+      <a href="#">
+        2
+      </a>
+    </li>
+    <li class="page selected">
+      <a href="#">
+        3
+      </a>
+    </li>
+    <li class="page">
+      <a href="#">
+        4
+      </a>
+    </li>
+    <li class="page">
+      <a href="#">
+        5
+      </a>
+    </li>
+    <li class="page">
+      <a href="#">
+        6
+      </a>
+    </li>
+    <li class="next">
+      <a href="#">
+        后页 &gt;
+      </a>
+    </li>
+    <li class="last">
+      <a href="#">
+        末页 &gt;&gt;
+      </a>
+    </li>
+  	</ul>
+	</div>	<!-- .pager -->
+	</div>
+	<div class="copyright">
+	  <span>Copyright &copy; TMM365.com All Rights Reserved</span>
+	</div>  <!--.copyright-->
+
+<!-- 启用禁用的弹出层 -->
+	<div class="popup_div">
+	 <div class="start_div">
+	  <div class="popup_content">
+	  	<div class="popup_img"></div>
+	  	<div class="popup_text">
+	  		<div class="big">是否确认启用该账号？！</div>
+	  		<div class="small">账号启用后可正常登陆并使用功能</div>
+	  	</div>
+	  </div> 	<!-- .popup_content -->
+	  <div class="popup_btn">
+		 	<button class="confirm">确定</button>
+		  <button class="cancel">取消</button>
+		</div>
+	 </div>		<!-- .start -->
+	 <div class="stop_div">
+	 	<div class="popup_content">
+	  	<div class="popup_img"></div>
+	  	<div class="popup_text">
+	  		<div class="big">是否确认禁用该账号？！</div>
+	  		<div class="small">账号禁用后将不可正常登陆并使用功能</div>
+	  	</div>
+	  </div>		<!-- .popup_content -->
+	  <div class="popup_btn">
+		 	<button class="confirm">确定</button>
+		  <button class="cancel">取消</button>
+		</div>
+	 </div>		<!-- .stop -->	 
+	</div>		<!-- .popup_div -->
+</div>	<!--.content_box-->
+<script type="text/javascript">
+	$(function(){
+		/*alert("IE不支持find？？");*/
+		/*我的分成 的样式*/
+	  $("table").find("td").each(function(i){ 
+			if(i%9 == 5){  
+				$(this).attr("class","shared_revenue");
+			} 
+		});
+		/*账号状态 的样式*/
+		$("table").find("td").each(function(i){ 
+			if(i%9 == 6){  
+				$(this).attr("class","state");
+			} 
+		}); 
+		/*启用的按钮*/
+		$(".start").click(function(e){
+			var $text=$(this).html();
+			/*alert($text);*/
+			if($text=="启用"){
+				$(".popup_div").css("display","block");
+				$(".start_div").css("display","block");
+				$(".stop_div").css("display","none");
+			}else if($text=="禁用"){
+				$(".popup_div").css("display","block");
+				$(".stop_div").css("display","block");
+				$(".start_div").css("display","none");
+			}
+		})
+		/*账号详情的按钮*/
+		$("").click(function(){
+
+		})
+	})
+</script>
+</body>
+</html>

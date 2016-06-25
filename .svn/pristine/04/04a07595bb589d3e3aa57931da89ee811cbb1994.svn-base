@@ -1,0 +1,39 @@
+
+/**
+*
+*探索--》搜索
+*/
+.tmm-seek-searchbar{
+	background:transparent;
+}
+.tmm-seek-searchbar:after, .tmm-sou-list-block:before{
+	background-color:transparent;
+}
+.tmm-seek-searchbar-input{
+	background-color:#f0f1f2 !important;
+}
+.tmm-seek-search-page-content{
+	background-color:#fff;
+}
+.tmm-sou-tit{
+	color:#8f8585;
+	font-size:13px;
+}
+.tmm-sou-item-title{
+	font-size:14px;
+}
+.tmm-list-block{
+	margin:0px 0px 35px 0;
+}
+.tmm-sou-clear{
+	text-align:center;
+	font-size:13px;
+	color:#ff595f;
+	line-height:40px;
+}
+.tmm-sou-center{
+	width:100%
+}
+.tmm-sou-right{
+	margin-left:0px !important;
+}

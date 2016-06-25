@@ -1,0 +1,43 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="index.html" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">特产</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="localSpecialty" class="page tmm-local-specialty" id="localSpecialty">
+
+    <div class="tmm-local-specialty-cards">
+  {{#each farmList}}
+      <div class="card tmm-local-specialty-card" data-name="{{this.item_name}}" data-img="{{this.item_img}}" data-info="{{this.item_info}}" data-link="{{this.item_link}}">
+        <div class="card-content">
+          <div class="list-block media-list">
+            <ul>
+              <li class="item-content">
+                <div class="item-media tmm-local-specialty-item-media">
+                 <img src="{{this.item_img}}">
+                </div>
+                <div class="item-inner">
+                  <div class="item-title-row">
+                    <div class="item-title tmm-local-specialty-item-title">{{this.item_name}}</div>
+                  </div>
+                  <div class="tmm-local-specialty-item-subtitle">{{this.item_info}}
+                  </div>
+                  
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div> 
+  {{/each}}
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">觅趣详情</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="act-detail" class="page tmm-act-line" id="my-activity-detail-fail-page">
+    <div class="page-content">
+      <div class="act-fail-reason">
+        <div class="tit">审核未通过原因：</div>
+        <div class="txt">{{actStateFailObj.audit_info}}</div>
+      </div>
+      <div class="act-fail-tit">
+        <div class="info">
+          <div class="tit">{{actStateFailObj.name}}</div>
+          <div class="tmm-activity-state-item-fare">
+            <span class="activity-state-fail-item-fare">￥{{actStateFailObj.price}} 起/人</span>
+            <span class="activity-state-fail-item-fare">出游日期：{{actStateFailObj.actives_time.go_time}}</span>
+          </div>
+          {{#js_compare "this.actStateFailObj.audit_status.value =='0' || this.actStateFailObj.audit_status.value =='-3'"}}
+            <span class="flag">{{actStateFailObj.audit_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.actStateFailObj.audit_status.value =='-1' || this.actStateFailObj.audit_status.value == '-4'"}}
+            <span class="flag">{{actStateFailObj.audit_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.actStateFailObj.audit_status.value =='1' && this.actStateFailObj.actives_status.value == '0'"}}
+            <span class="flag">{{actStateFailObj.actives_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.actStateFailObj.audit_status.value =='1' && this.actStateFailObj.actives_status.value == ''"}}
+            <span class="flag">{{actStateFailObj.audit_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.actStateFailObj.audit_status.value =='1' && this.actStateFailObj.actives_status.value == '1'"}}
+            <span class="flag">{{actStateFailObj.actives_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.actStateFailObj.audit_status.value =='1' && this.actStateFailObj.actives_status.value == '2'"}}
+            <span class="flag">{{actStateFailObj.actives_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.actStateFailObj.audit_status.value =='1' && this.actStateFailObj.actives_status.value == '3'"}}
+            <span class="flag">{{actStateFailObj.actives_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.actStateFailObj.actives_status.value == '-1'"}}
+            <span class="flag">{{actStateFailObj.actives_status.name}}</span>
+          {{/js_compare}}
+        </div>
+      </div>
+    
+      <div class="item show-more-act">查看更多觅趣信息<i class="icon ticon-arrow-right"></i></div>
+      
+
+	  <div class="wrap">
+      <!-- 天 -->
+      {{#each actStateFailObj.items_fare}}
+      <div class="item-day">
+        {{#if @key%2}}
+        <div class="day-tit"><span class="tit">{{mergeDay @key}}</span></div>
+        {{/if}}
+        <!-- 项目列表 -->
+        {{#each this}}
+        {{#each this}}
+          <div class="day-item-list">
+            <div class="item-box">
+              <div class="item-tit">
+                <div data-link="{{link}}" data-type="{{classliy.value}}" class="name act-detail-item">{{name}}<i class="icon ticon-arrow-right"></i></div>
+                <!-- <div class="address">地址：河北省邢台平乡县福建省莆田市城厢区汉庭酒店爱丁堡酒店</div> -->
+              </div>
+              {{#each fare}}
+                <div class="item-detail">
+                  <span>{{name}}</span>
+                {{#js_compare "this.room_number == '0' "}}
+                <span>{{info}}</span>
+                {{/js_compare}}
+                {{#js_compare "this.room_number != '0' "}}
+                <span>{{room room_number}}</span>
+                {{/js_compare}}
+                  <span>￥{{price}}</span>
+                </div>
+              {{/each}}
+            </div>   
+           </div> 
+          {{/each}}
+          {{/each}}
+        </div>
+
+      {{/each}}
+      <!-- 天 -->
+    </div>
+  </div>
+  {{#js_compare "this.actStateFailObj.audit_status.value =='-1' || this.actStateFailObj.audit_status.value == '-4'"}}
+  <div class="go-item tmm-go-item tmm-act-edit" data-shop-type="" data-shop-id=""  data-link="{{editLink}}" data-type="{{actStateFailObj.tour_type.value}}">
+      <!-- <a class="tmm-activity-state-button" href="javascript:;">删除</a> -->
+      <a class="tmm-button" href="javascript:;" >编辑</a>
+  </div>
+  {{/js_compare}}
+
+  
+  {{#js_compare "this.actStateFailObj.set_go_time.link !='' && this.actStateFailObj.actives_status.value == '-1'"}}
+  <div class="tmm-activity-go-item-suc" data-shop-type="" data-shop-id="">
+      <a class="tmm-activity-state-suc-button_all tmm-my-activity-fail-cancel" href="javascript:;">取消</a>
+      <a class="tmm-activity-state-suc-button_all activityGoTimeSel" href="javascript:;" data-id="{{actStateFailObj.shops.value}}" data-link="{{actStateFailObj.set_go_time.link}}">确认出游日期</a>
+  </div>
+  {{/js_compare}}
+
+  {{#js_compare "(this.actStateFailObj.audit_status.value =='1' && this.actStateFailObj.actives_status.value == '0'&& this.actStateFailObj.actives_time.go_time_value == '1') || (this.actStateFailObj.audit_status.value =='1' && this.actStateFailObj.actives_status.value == '1' && this.actStateFailObj.actives_time.go_time_value == '1')|| (this.actStateFailObj.audit_status.value =='1' && this.actStateFailObj.actives_status.value == '' && this.actStateFailObj.actives_time.go_time_value == '0')"}} 
+  <div class="go-item tmm-go-item tmm-my-activity-fail-cancel" data-shop-type="" data-shop-id="">
+      <a class="tmm-button tmm-my-activity-fail-cancel" href="javascript:;">取消觅趣</a>
+  </div>
+  {{/js_compare}}
+
+
+  </div>
+</div>

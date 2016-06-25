@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>田觅觅</title>
+  <meta name="baidu-site-verification" content="H5sB6yh88E" />
+  <meta name="360-site-verification" content="3a269a4d0f78a7af62a970a7bae62a17" />
+  <meta name="sogou_site_verification" content="JJLR5mePvx"/>
+
+  <meta name="keywords" content="田觅觅 农旅一体化 O2O 农产品 旅游 美食 田园 甜蜜蜜 觅境 觅趣 觅鲜 觅友 觅食 寻觅" />
+  <meta name="description" content="田觅觅，农旅一体化互联网平台，把农产品送到城里来，把城里人带到农村去 田觅觅帮你解决周边玩的问题，让你享受轻松优雅的生活。" />
+  <link rel="stylesheet" href="styles/sprites.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-wrap">
+      <h1 class="logo">田觅觅<img src="images/logo.png" alt="田觅觅"></h1>
+      <ul class="navbar">
+        <li class="list" data-showSub="0"><a class="list-link" href="index.html">首页</a></li>
+        <li class="list" data-showSub="1">
+          <a class="list-link">产品介绍</a>
+          <div class="subnav">
+            <div class="sub-bg"></div>
+            <div class="sub-list product">
+              <a href="./user.html"><i class="icon-mobile"></i>用户端 APP</a>
+              <a href="./store.html"><i class="icon-mobile"></i>商家端 APP</a>
+              <a style="margin-right: 90px;" href="mon.html"><i class="icon-pc"></i>运营商平台</a>
+            </div>
+          </div>
+        </li>
+        <li class="list" data-showSub="2">
+          <a class="list-link">招商入驻</a>
+          <div class="subnav">
+            <div class="sub-bg"></div>
+            <div class="sub-list merchant">
+              <a href="supplier.html">供应商入驻</a>
+              <a style="margin-right: 180px;" href="operators.html">运营商入驻</a>
+            </div>
+          </div>
+        </li>
+        <li class="list selected" data-showSub="3"><a class="list-link" href="about.html">关于我们</a></li>
+        <span class="slider-box"></span>
+      </ul>
+    </div>
+  </div>
+  <div class="banner">
+    <div class="img-wrap">
+      <div class="icon-companyProfile"></div>
+      <div class="desc">
+        <p>深圳市田觅觅信息科技有限公司，深圳动态旗下子公司，专业为县域生态农业和乡村旅游提供农旅一体化O2O解决方案。</p>
+        <p>目前，集团业务已经落地浙江、河北，江西，江苏，黑龙江等近20个省，200个县域，农村网点近万个。</p>
+        <p style="font-weight: bold;margin-bottom: 0px;">公司5大服务：</p>
+        <p>系统建设、平台运营、人才培训、品牌营销、网络分销。</p>
+      </div>
+    </div>
+    <div class="big-img img7"></div>
+  </div>
+  <div class="content con-about">
+    <div class="item team">
+      <h2 class="item-title">我们的团队<span class="title-desc">Ours team</span></h2>
+      <div class="item-desc border-b">
+        <div class="img"><img src="images/head1.png" alt="冷万达"></div>
+        <dl class="info">
+          <dt class="info-tit">冷萬逹<span class="info-profession">动态科技联合创始人&田觅觅CEO</span></dt>
+          <dd class="info-txt">15年互联网从业经验，擅长商业规划、网络运营等领域，曾在顺丰速运、深圳华强等公司出任高级管理职位。2012年联合创办动态科技，投资农村电商淘实惠和田觅觅。致力于打造“生态农旅一体化”的电商平台。</dd>
+        </dl>
+      </div>
+      <div class="item-desc">
+        <div class="img"><img src="images/head2.png" alt="尹杰"></div>
+        <dl class="info">
+          <dt class="info-tit">尹杰<span class="info-profession">技术总监&运营总监</span></dt>
+          <dd class="info-txt">10年互联网行业产品管理、项目管理、团队管理经验。3年移动互联网产品设计、产品&项目管理、企业经营管理经验；曾担任动机科技总经理、 古谷科技产品总监&项目总监等职；组织和策划、研发动机市场、动机桌面、趣网吧等多款移动互联网产品，产品涉及工具、搜索、O2O等多个领域。</dd>
+        </dl>
+      </div>
+      <div class="item-pic">
+        <img src="images/about1.png">
+        <img src="images/about2.png">
+        <i class="justify_fix"></i>
+      </div>
+    </div>
+    <div class="item contact">
+      <h2 class="item-title">联系我们<span class="title-desc">Contact us</span></h2>
+      <ul class="item-list">
+        <li><i class="icon-contact1"></i><span class="txt">联系地址：深圳市南山区科丰路2号特发信息港B栋301</span></li>
+        <li><i class="icon-contact2"></i><span class="txt">联系电话：400-109-7090</span></li>
+        <li><i class="icon-contact4"></i><span class="txt">微信：tianmimi7090</span></li>
+      </ul>
+      <div class="item-address"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="link">友情链接： <a href="http://m.kuaidi100.com" target="_blank">快递查询</a></p>
+    <p class="copyright">Copyright © 2016 深圳市田觅觅信息科技有限公司&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备14093215号-2</a></p>
+  </div>
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

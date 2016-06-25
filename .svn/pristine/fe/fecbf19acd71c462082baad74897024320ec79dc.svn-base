@@ -1,0 +1,57 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner tmm-add-bank-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">提现</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div class="page tmm-add-bank-page tmm-withdraw-page" data-page="add-bank">
+    <div class="page-content tmm-add-retinue-page-contnet tmm-add-bank-page-contnet tmm-withdraw-page-contnet">
+      <form class="list-block tmm-myinfo-item-addform tmm-bank-item-addform">
+        <ul>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">开户行</div>
+              <div class="item-input">
+                <input type="text" name="bank" class="add_input" value="招商银行" disabled>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">开户名</div>
+              <div class="item-input">
+                <input type="text" name="bank_name" class="add_input" value="张三" disabled>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">卡号</div>
+              <div class="item-input">
+                <input type="text" name="code" class="add_input" value="6222 0241 1231 4748" disabled>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">金额(元)</div>
+              <div class="item-input">
+                <input type="text" name="money" placeholder="当前余额1000元" class="add_input">
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="f_bottom">
+          <button class="sub_active" type="submit">下一步</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

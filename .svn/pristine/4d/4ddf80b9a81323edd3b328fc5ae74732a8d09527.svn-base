@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>荔枝节</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body class="index-list">
+  <div class="list-item">
+    <div class="media">
+      <img src="images/culture.png">
+      <div class="intro-box">
+        <div class="title">天美品荔券·妃子笑</div>
+        <div class="price">￥38</div>
+        <div class="txt">入园门票1张</div>
+      </div>
+    </div>
+    <div class="intro">
+      <div class="txt">1人入园，妃子笑区域任摘任吃</div>
+      <div class="txt">使用日期：2016/6/10至2016/7/20</div>
+      <a class="button">购买</a>
+    </div>
+  </div>
+  <div class="list-item">
+    <div class="media">
+      <img src="images/culture.png">
+      <div class="intro-box">
+        <div class="title">天美品荔券·妃子笑</div>
+        <div class="price">￥38</div>
+        <div class="txt">入园门票1张</div>
+      </div>
+    </div>
+    <div class="intro">
+      <div class="txt">1人入园，妃子笑区域任摘任吃</div>
+      <div class="txt">使用日期：2016/6/10至2016/7/20</div>
+      <a class="button">购买</a>
+    </div>
+  </div>
+
+  <a href="./list2.html" class="checkinfo">查看多人超值套票</a>
+
+  <div class="prompt">
+    <div class="title"><span>温馨提示</span></div>
+    <ul class="txt">
+      <li>1. 入园需以手机号码验证电子门票，带果套票出园时可在指定地点提货</li>
+      <li>2. 门票一经兑票，即失效。再次入园，需重新购票</li>
+      <li>3. 可在指定区域不限时任摘任吃</li>
+      <li>4. 电子门票在指定日期内使用，逾期失效，不予退票</li>
+      <li>5. 电子门票一经售出，不予退票</li>
+      <li>6. 身高1.1米以下（含1.1米）的儿童，免费入园</li>
+      <li>7. 入园采摘地址：天美荔枝南科大／宝石路基地</li>
+      <li>8. 门票最终解释权归天美农业服务公司所有</li>
+      <li>9. 咨询电话：400-820-0628 </li>
+    </ul>
+  </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+

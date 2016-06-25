@@ -1,0 +1,49 @@
+<div class="navbar">
+  <div class="navbar-inner" id="my-wallet-navbar">
+  </div>
+</div> 
+<!-- 我的钱包 -->
+<div class="pages">
+  <div data-page="my-wallet" class="page no-navbar no-toolbar">
+    <div class="page-content tmm-my-wallet-page">
+      <div class="tmm-my-wallet-bg">
+        <div class="tmm-my-wallet-navbar">
+          <div class="left">
+            <a href="#" class="back" id="my-wallet-navbar-back">
+              <i class="icon ticon-arrow-back"></i>
+            </a>
+          </div>
+          <div class="center sliding">我的钱包</div>
+          <div class="right" id="tmm-my-trade">交易记录</div>
+        </div>
+        <div class="tmm-my-wallet-content">
+          <div class="left"></div>
+          <div class="center">余额(元)</div>
+          <div class="right"></div>
+          <div class="money">{{walletObj.money_format}}</div>
+        </div>
+        <!--未添加银行卡-->
+        {{#if noBank}}
+        <div class="tmm-my-wallet-bank" id="tmm-add-bank">
+          <a href="#"><i class="icon ticon-add"></i></a>
+          <div class="txt">添加银行卡</div>
+        </div>
+        {{else}}
+        <!--已添加银行卡-->
+        <div class="tmm-my-wallet-bank" id="tmm-manage-bank">
+          <a href="#"><img class="img" src="../../styles/images/bank.png"></a>
+          <div class="txt">银行卡管理</div>
+        </div>
+        {{/if}}
+      </div>
+      <div class="tmm-my-wallet-btn">
+        <!-- 可提现 -->
+        {{#js_compare "this.walletObj.money >= 100.00"}}
+        <a href="#" class="submit active" id="tmm-my-draw-menoy">提现</a> {{/js_compare}}
+        <!-- 不可提现 -->
+        {{#js_compare "this.walletObj.money < 100.00 "}}
+        <a href="#" class="submit">提现</a> {{/js_compare}}
+      </div>
+    </div>
+  </div>
+</div>

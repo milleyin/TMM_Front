@@ -1,0 +1,26 @@
+<!-- 验证手机号 -->
+<div id="password">
+  <header class="t_bar">
+    <h1>验证手机号<a href="javascript:history.back(-1);" class="iconfont h_left h_20 tmm_iconfont">&#xe61f;</a></h1>
+  </header>
+  <div class="content pt_45">
+    <div class="yanInfo">验证码将发送至手机: {{loginPhone}},请按提示操作。</div>
+    <form name="message_form" novalidate ng-submit="messageForm()" class="yanForm">
+      <div class="yan">
+        <div class="form_code">
+            <input type="txt" name="sms" 
+            ng-focus="clearMsg()" 
+            ng-model="regText.sms" 
+            required
+            placeholder="请输入短信验证码">
+            <a id="get_code" class="get_code" ng-class="{true: 'get_code', false: 'get_code_active'}[flag]" href="javascript:;" ng-click="getCode()">{{text}}</a>
+        </div>
+        <div  ng-show="showMsg" class="mob_form_tip">{{msg}}</div>
+      </div>
+      <div class="bg_btn set_pwd_btn">
+        <button class="sub_btn" type="submit">下一步</button>
+      </div>
+    </form>
+  </div>
+</div>
+

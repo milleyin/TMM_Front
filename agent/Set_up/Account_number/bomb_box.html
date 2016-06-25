@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>绑定银行账户（弹框）</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="../../css/agent/css/set_up.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/agent/css/details.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/agent/css/breadcrumbs.css">
+		<script src="../css/agent/script/jquery-1.11.3.min.js"></script>
+	</head>
+	<body>
+	<div class="content_box">
+ 	<div class="title breadcrumbs">
+  		<a href="financial.html">财务信息</a>
+  		&frasl;
+  		<span>绑定银行账户</span>
+  	</div>  <!--.title-->
+  	<div class="cantent">
+  		<form method="post" action="financial.html" class="messlogin_form">
+  				<div class="row-fluid">
+  					
+  					<div class="select">
+  					<label>开户行:</label>
+  					<select>
+	  	           	<option>中国建设银行</option>
+	  	           	<option>招商银行</option>
+	  	           	<option>广东浦发银行</option>
+	  	           	<option>中国邮政储蓄</option>
+	  	        	</select>
+	  	        	<div class="errorMessage">不可为空</div>
+	  	        	</div>
+	  	        	<div class="bark">
+	  	        	<input type="text" class="messcode" value="">
+	  	        	<div class="errorMessage">不可为空</div>
+	  	        	</div>
+	  	        	<div class="clear"></div>
+  				</div>
+  				<div class="row-fluid">
+  					<label>开户名:</label>
+  					<input type="text" class="messcode" value="">
+	  	        	<div class="errorMessage">不可为空</div>
+  				</div>
+  				<div class="row-fluid">
+  					<label style="margin-left: -10px;">银行账户:</label>
+  					<input type="text" class="messcode" value="">
+	  	        	<div class="errorMessage">不可为空</div>
+	  	        </div>
+  	    <div class="xia"><input type="submit" value="保存" onclick="show('popup_div')"/></div>
+  		<!--<div class="xia"><a href="javascript:void(0);" onclick="show('popup_div')">保存</a></div>-->
+  		</form>	
+  	</div><!--cantent-->
+  	
+  	
+  	<!-- 确定绑定的弹出层 -->
+	<div id="popup_div" class="popup_div" style="display:none">
+	  <div class="popup_content">
+	  		<div class="big">确定绑定此银行账户吗？</div>
+	  		<div class="small">保存后将不可更改</div>
+	  		<input type="submit" value="确定" onclick="window.location.href='financial.html'"/>
+	  		<input type="button" value="取消" onclick="window.location.href='bomb_box.html'" />
+	  </div><!--popup_content-->		
+	</div><!-- .popup_div -->
+	
+</div>  <!--.content_box-->
+
+
+<script type="text/javascript">
+	function show(o){
+		var o = document.getElementById(o);
+		o.style.display = "";
+	}
+</script>
+  	
+  	
+	</body>
+</html>

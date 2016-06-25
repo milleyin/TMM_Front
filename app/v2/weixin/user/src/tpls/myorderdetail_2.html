@@ -1,0 +1,75 @@
+	<div id="myorderdetail">
+		<header class="t_bar">
+			<h1>订单详情</h1>
+			<a ng-click="clearItem()" href="javascript:history.back(-1);" class="iconfont h_left h_20">&#xe61f;</a>
+		</header>
+		<div class="content pt_45">
+
+			<h2 class="h2_tit no_t_border">出发时间</h2>
+			<section class="list">
+				<p class="p_list"><span class="side_tit">{{orderinfo.go_time}}</span></p>
+			</section>
+
+
+			<h2 class="h2_tit">项目列表</h2>
+			<section class="list project" ng-if="orderinfo.status.order_type.value == 1">
+				<div class="b_border" ng-repeat="attr1 in orderinfo.items_fare" ng-class="$last?'no_b_border': ''">
+
+					<div class="list_title">{{attr1.name}}<i ng-if="attr1.barcode.is_barcode==1?true:false" ng-click="showCode(attr1.barcode.link)" class="iconfont h_right h_20">&#xe635;</i></div>
+	                <div class="list_info" ng-repeat="attr2 in attr1.fare" ng-class="$last?'no_b_border': ''">
+						<p ng-class="$last ? '':'b_border'"><span class="w_50">{{attr2.name}}</span><span class="w_20">{{attr1.classliy.value==2?attr2.room_number+'人间':attr2.info}}</span><span class="w_10">{{attr2.number}}</span><span class="w_20 r_txt">￥{{attr2.count}}</span></p>
+						
+					</div>
+				</div>	
+			</section>
+
+			<div class="line_list" ng-if="orderinfo.status.order_type.value == 2 || orderinfo.status.order_type.value == 3">
+				<div ng-repeat="(key,value) in orderinfo.items_fare">
+					<div ng-class="key == 1?'day_num no_t_border':'day_num'">{{dayNumer[key-1]}}</div>
+					<section class="list project" ng-repeat="attr in value" ng-class="$last?'':'b_border'">				
+					
+						<div class="b_border" ng-repeat="attr1 in attr" ng-class="$last?'no_b_border': ''">
+
+							<div class="list_title">{{attr1.name}}<i ng-if="attr1.barcode.is_barcode==1?true:false" ng-click="showCode(attr1.barcode.link)" class="iconfont h_right h_20">&#xe635;</i></div>
+			                <div class="list_info" ng-repeat="attr2 in attr1.fare" ng-class="$last?'no_b_border': ''">
+
+								<p ng-class="$last ? '':'b_border'"><span class="w_50">{{attr2.name}}</span><span class="w_20">{{attr1.classliy.value==2?attr2.room_number+'人间':attr2.info}}</span><span class="w_10">{{attr2.number}}</span><span class="w_20 r_txt">￥{{attr2.count}}</span></p>
+								
+							</div>
+						</div>
+							
+					</section>
+					
+				</div>
+				
+			</div>
+
+
+			<h2 class="h2_tit">主要联系人</h2>
+			<section class="list relation" ng-repeat="attr in orderinfo.retinue" ng-if="attr.is_main == 1?true:false">
+				<p class="p_list">{{attr.name}}</p>
+			</section>
+
+			<h2 ng-if="orderinfo.retinue.length!=1" class="h2_tit">随行人员</h2>
+			<section ng-if="orderinfo.retinue.length!=1" class="list members" style="margin-top: 0px;">
+				<p class="p_list"><span class="w_33" ng-repeat="attr in orderinfo.retinue" ng-if="attr.is_main == 0?true:false">{{attr.name}}</span></p>
+			</section>
+
+			<h2 class="h2_tit">合计价格</h2>
+			<section class="list">
+				<p class="p_list">订单总价<span style="margin-left:30px;color: #ff595f" class="side_tit w_33">￥{{orderinfo.order_price.value}}</span></p>
+			</section>
+
+			<h2 class="h2_tit">订单状态</h2>
+			<section class="list orderstate b_border">
+				<p>订单编号：{{orderinfo.order_no}}</p>
+			</section>
+
+			<p class="require" style="text-align:left;padding-left:16px;">索取发票请拨打电话：400-019-7090</p>
+
+		</div>
+		
+		<!-- 二维码图片 -->
+		
+		<div class="bg_mask" ng-click="deleteCode()" ng-show="isShowCode"></div>
+	</div>

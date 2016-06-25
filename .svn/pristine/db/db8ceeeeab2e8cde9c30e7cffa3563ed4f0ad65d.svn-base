@@ -1,0 +1,24 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner tmm-verify-phone-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">支付管理</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+
+<div class="pages">
+  <div data-page="pay-manage" class="page">
+    <div class="page-content">
+    <div class="table-group" style="margin-top:35px;">
+      <div class="table-cell set-pay-passwd"><span class="tit">{{type.value}}</span><i class="icon ticon-arrow-right"></i></div>
+    </div>
+
+
+    </div>
+  </div>
+</div>

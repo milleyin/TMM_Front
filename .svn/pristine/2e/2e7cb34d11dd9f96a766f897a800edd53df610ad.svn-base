@@ -1,0 +1,11 @@
+<ion-view view-title="{{info.name}}" cache-view="false" hide-tabs>
+  <ion-nav-buttons side="left">
+    <i class="icon-back" nav-back="back"></i>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <i class="icon-infor" ng-click="openPopover($event)"></i>
+  </ion-nav-buttons>
+  <ion-content class="tmm-eat-detail-content">
+    <div class="item-edit-content" data-ng-bind-html="contentHTML"></div>
+  </ion-content>
+</ion-view>

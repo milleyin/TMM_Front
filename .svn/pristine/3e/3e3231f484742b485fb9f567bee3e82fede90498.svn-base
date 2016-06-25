@@ -1,0 +1,27 @@
+<!-- 银行卡提现信息 -->
+<ion-view view-title="提示" cache-view="false" hide-tabs="true">
+  <ion-nav-buttons></ion-nav-buttons>
+  
+  <ion-content class="tmm-withdraw-info" scroll="false">
+    <div class="card-top"><img src="images/card2.png"/></div>
+
+    <div class="withdraw-info-list">
+      <div class="info-item">
+        <div class="item-title">提现金额</div>
+        <div class="item-con">{{withdrawMoney}}</div>
+      </div>
+      <div class="info-item">
+        <div class="item-title">到账日</div>
+        <div class="item-con">预计1-3个工作日内</div>
+      </div>
+    </div>
+
+    <div class="withdraw-info-label">实际到帐时间依据帐户托管方及提现银行而有所差异</div>
+    </div>
+    <div class="withdraw-info-button">
+      <button class="message-sub" type="submit" ui-sref="tab.mywallet">返回我的钱包</button>
+    </div>
+  </ion-content>
+</ion-view>
+
+

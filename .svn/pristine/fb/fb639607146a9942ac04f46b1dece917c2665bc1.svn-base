@@ -1,0 +1,75 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">修改手机号</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div class="page" data-page="modify-phone">
+  <div class="set-old-phone-wrap">
+    <form class="list-block tmm-setPhone-list-Form inset">
+      <ul>
+        <li class="item-content" id="setPhoneOewErrMsg" style="display:none;">
+          <div class="item-inner">
+            <div class="item-title label tmm-setPhone-errlabel">错误信息</div>
+          </div>
+        </li>
+        <li class="item-content">
+          <div class="item-inner tmm-setPhone-item-inner">
+            <input type="tel" name="name" id="oldPhoneNum" placeholder="请输入旧手机号" class="setPhoneInput">
+          </div>
+        </li>
+        <li class="item-content">
+          <div class="item-inner tmm-setPhone-item-inner">
+            <div class="item-input item-title-con">
+              <input type="text" name="name" id="oldPhoneNote" placeholder="请输入短信验证码" class="setPhoneInput">
+              <span  class="get_old_code get_code">获取验证码</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="bg_btn mob_btn">
+        <span class="sub_btn" id="oldPhoneSubmit">下一步</span>
+      </div>
+    </form>
+   </div>
+   <div class="set-new-phone-wrap">
+    <form class="list-block tmm-setPhone-list-Form inset tmm-new-phone-page">
+      <ul>
+        <li class="item-content" id="setPhoneNewErrMsg" style="display:none;">
+          <div class="item-inner">
+            <div class="item-title label tmm-setPhone-errlabel">错误信息</div>
+          </div>
+        </li>
+        <li class="item-content">
+          <div class="item-inner">
+            <input type="tel" name="name" id="newPhoneNum" placeholder="请输入新手机号" class="setPhoneInput">
+          </div>
+        </li>
+        <li class="item-content">
+          <div class="item-inner">
+            <div class="item-title item-title-con">
+              <input type="text" name="name" id="newPhoneNote" placeholder="请输入短信验证码" class="setPhoneInput">
+            </div>
+            <div class="item-after">
+              <a href="javascript:;" class="get_new_code get_code">获取验证码</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="bg_btn mob_btn">
+        <span class="sub_btn" id="newPhoneSubmit">提交</span>
+      </div>
+    </form>
+     
+   </div>
+ 
+  </div>
+
+</div>

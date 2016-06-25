@@ -1,0 +1,17 @@
+{{#each myPraiseList}}
+<li class="tmm-item-content">
+  <div class="pic">
+    <a href="javascript:;" data-type="{{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}" data-link="{{link}}" class="tmm-shops-detail"><img src="{{image}}"></a>
+    <div class="conColor">
+      <i class="icon ticon-praise"></i>
+    </div>
+  </div>
+  <div class="txt">
+    <div class="title">{{name}}</div>
+    <div class="intro">{{info}}</div>
+    <span class="type {{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}">
+       {{js " this.classliy.value==1 ? '景点' : this.classliy.value==2 ? '线路' : '活动' "}}
+    </span>
+  </div>
+</li>
+{{/each}}

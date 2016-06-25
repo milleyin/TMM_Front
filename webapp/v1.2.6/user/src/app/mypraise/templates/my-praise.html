@@ -1,0 +1,14 @@
+<ion-view title="我的赞" hide-tabs="true">
+  <ion-nav-buttons>
+    <i class="icon-back" nav-back="back"></i>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="false">
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="tmm-recommend-list">
+      <praise-item></praise-item>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="model.nextPage" distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

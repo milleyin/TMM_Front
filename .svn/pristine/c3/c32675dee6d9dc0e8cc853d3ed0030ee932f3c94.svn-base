@@ -1,0 +1,92 @@
+<div id="myorder">
+
+<header class="t_bar">
+	<h1 class="top-nav">我的订单 <a ng-href="#/search/{{showMj}}"><div class="tmm-saom-tu"><img src="images/search.png" ></div></a></h1>
+     <nav>
+        <ul>
+            <li class="active" ng-click="zzListShow()" id="zzList"><span>觅境</span></li>
+            <li ng-click="jbListShow()" id="jbList"><span>觅趣</span></li>
+        </ul>
+    </nav>
+</header>
+    
+    <div class="content" when-scrolled="showZzMore()" style="top: 85px;">
+       
+		<div class="module">
+
+        <!--
+        	作者：8090@163.com
+        	时间：2015-09-23
+        	描述：自助游订单
+        -->
+            <div ng-if="isMiJing" class="dingdan" ng-repeat="attr in zz_list_data">
+                <a ng-href="#/myzizhuorderdetail/{{attr.value}}">
+                    <section class="info">
+                        <div class="info_pic">
+                        	<img ng-src="{{attr.shops_list_img}}" alt="{{attr.shops_name}}"> 	 
+                        </div>
+                        <div class="info_txt jb_info_txt">
+                            <p class="info_title">{{attr.shops_name}}</p>
+                            <p class="info_time">出游时间：{{attr.go_time}}</p>
+                            <p class="info_con">
+                                <span class="info_count">数量：{{attr.items_count}}</span>
+                                <span class="info_shouru">收入 ￥{{attr.income}}</span>
+                            </p>
+                        </div>
+                    </section>
+                    <i class="media_tri {{attr.status.order_status.class}}"></i><i class="media_tip3">{{attr.status.order_status.name}}</i>   
+                </a>
+                <div class="conform"  id="zzBtn_{{attr.value}}" style="overflow: hidden; font-size: 14px;">
+                    <i class="phone" style="float: left;margin-top:15px;">下单用户 {{attr.order_user}}</i>
+                    <span ng-if="attr.status.order_status.value == 0" ng-click='zzAcceptOrder({{attr.value}})'>接受</span>
+                    <span ng-if="attr.status.order_status.value == 0" ng-click='zzRefuseOrder({{attr.value}})'>拒绝</span>
+                </div>
+            </div>
+        
+            <!--
+            	作者：8090@163.com
+            	时间：2015-09-23
+            	描述：结伴游订单
+            -->
+
+            <div ng-if="!isMiJing" class="dingdan" ng-repeat="attr in jb_list_data">
+                <a ng-click="goToTourOrder(attr.value, attr.link)">
+                    <section class="info">
+                        <div class="info_pic">
+                            <img ng-src="{{attr.shops_list_img}}" alt="{{attr.actives_name}}">     
+                        </div>
+                        <div class="info_txt jb_info_txt">
+                            <p class="info_title">{{attr.actives_name}}</p>
+                            <p class="info_time">出游时间：{{attr.go_time}}</p>
+                            <p class="info_con">
+                                <span class="info_count">数量：{{attr.items_count}}</span>
+                                <span class="info_shouru">收入 ￥{{attr.income}}</span>
+                            </p>
+                        </div>
+                    </section>
+                    <i class="media_tri {{attr.actives_status.class}}"></i><i class="media_tip3">{{attr.actives_status.name}}</i>   
+                </a>
+                <div class="conform"  id="zzBtn_{{attr.value}}" style="overflow: hidden; font-size: 14px;">
+                    <i class="phone" style="float: left;margin-top:15px;">下单用户 {{attr.order_user}}</i>
+                </div>
+               
+            </div>
+
+
+            <div class="load6">
+			  <div class="bounce1"></div>
+			  <div class="bounce2"></div>
+			  <div class="bounce3"></div>
+			</div>
+
+		</div>
+        
+	</div>
+    
+    <nav class="bar-tab">
+      <a class="active"><i class="iconfont">&#xe616;</i><span>我的订单</span></a>
+      <a ng-href="#/myxiangmu"><i class="iconfont">&#xe61b;</i><span>我的项目</span></a>
+      <a ng-href="#/wodeshouru"><i class="iconfont">&#xe613;</i><span>我的收入</span></a>
+      <a ng-href="#/my"><i class="iconfont">&#xe624;</i><span>我的</span></a>
+    </nav>
+</div>

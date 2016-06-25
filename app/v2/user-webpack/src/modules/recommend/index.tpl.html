@@ -1,0 +1,74 @@
+
+
+
+  <div class="index-content">
+
+    {{#if hotact.length}}
+    <h2 class="horiboxTit">热门觅趣</h2>
+    <div class="scrollView">
+      <div class="contentView sliderwrap">
+        {{#each hotact}}
+        <div class="horibox sliderItem">
+          <img class="img-link" src="{{image}}" data-title="{{name}}" data-type="{{classliy.value}}" data-link="{{link}}">
+          <div class="intro">
+            <div class="tit">{{name}}</div>
+            <div class="txt">报名人数{{js "this.actives.number.value - this.actives.order_number.value"}}</div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+    
+    {{#if hotsell.length}}
+    <h2 class="horiboxTit">当季热销</h2>
+    <div class="scrollView">
+      <div class="contentView sliderwrap">
+        {{#each hotsell}}
+        <div class="horibox sliderItem">
+          <img class="img-link" data-title="{{name}}" src="{{img}}" data-type="{{link_type.value}}" data-link="{{link}}">
+          <div class="intro" style="height: 55px;">
+            <div class="tit">{{name}}</div>
+            <!-- <div class="txt"></div> -->
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+    
+    {{#if choiceness.length}}
+    <h2 class="horiboxTit">小觅精选</h2>
+    <div class="scrollView">
+      <div class="contentView sliderwrap">
+        {{#each choiceness}}
+        <div class="horibox sliderItem">
+          <img class="img-link" data-title="{{name}}" src="{{image}}" data-type="{{classliy.value}}" data-link="{{link}}">
+          <div class="intro" style="height: 55px;">
+            <div class="tit">{{name}}</div>
+            <!-- <div class="txt"></div> -->
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+    {{#if circumtour.length}}
+    <h2 class="horiboxTit">周边热门景区</h2>
+    <div class="scrollView">
+      <div class="contentView sliderwrap">
+        {{#each circumtour}}
+        <div class="horibox sliderItem">
+          <img class="img-link" data-title="{{name}}" src="{{image}}" data-type="{{classliy.value}}" data-link="{{link}}">
+          <div class="intro" style="height: 55px;">
+            <div class="tit">{{name}}</div>
+            <!-- <div class="txt"></div> -->
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+  </div>
+</div>
+

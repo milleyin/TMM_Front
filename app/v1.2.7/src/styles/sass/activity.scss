@@ -1,0 +1,691 @@
+@charset "UTF-8";
+@import 'variables';
+@import 'mixin';
+
+/* 指示器 */
+
+.act-indicator {
+  position: absolute;
+  z-index: 2;
+  top: 40px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  font-size: 0;
+  span {
+    height: 2px;
+    display: inline-block;
+    width: 25%;
+    &.active {
+      background-color: $red;
+    }
+  }
+}
+
+
+/* 日历控件样式 */
+
+#calendar-inline-container {
+  .picker-calendar-day.picker-calendar-day-selected span {
+    // background-color: $red;
+  }
+  .calendar-custom-toolbar {
+    height: 44px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 17px;
+    position: relative;
+    margin: 0;
+  }
+  .picker-calendar-row {
+    height: 43px;
+  }
+}
+
+.editer-con {
+  background-color: #fff;
+  padding: 14px 12px;
+  color: $lightGray;
+}
+
+.skip-day {
+  background-color: #fff;
+  padding-left: 14px;
+  @include hairline(topBottom);
+  .tit {
+    position: relative;
+    line-height: 44px;
+    @include hairline(bottom);
+  }
+  .skip-btn {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    margin-top: -14px;
+    width: 60px;
+    height: 28px;
+    border-radius: 2px;
+    font-size: 13px;
+    line-height: 28px;
+    text-align: center;
+    background-color: $red;
+    color: #fff;
+  }
+  .txt {
+    font-size: 12px;
+    color: $gray;
+    padding: 10px 16px 10px 0;
+  }
+}
+
+
+/* 选择行程页面 */
+
+// 二级导航弹出层
+.journey-subnavbar-popover {
+  width: 50%;
+  .popover-angle:after {
+    background-color: #fff;
+  }
+  .list-block .item-link.list-button {
+    color: $gray;
+  }
+}
+
+.tmm-journey-subnavbar {
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  .subnav-item {
+    flex: 1;
+    width: 50%;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    span {
+      position: relative;
+    }
+    span:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -8px;
+      width: 6px;
+      height: 4px;
+      background: url(../images/button-sub-arrow.png) no-repeat center center;
+      background-size: contain;
+    }
+    &.active {
+      color: $red;
+      span:after {
+        background: url(../images/button-sub-arrow-red.png) no-repeat center center;
+        background-size: contain;
+      }
+    }
+    &:nth-child(1) {
+      position: relative;
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 6px;
+        right: 0;
+        width: 1px;
+        height: 26px;
+        background-color: $lightGray;
+      }
+    }
+  }
+}
+
+.journery-item {
+  margin-top: 10px;
+  @include hairline(topBottom);
+  background-color: #fff;
+  padding-bottom: 1px;
+  position: relative;
+  .con-inner {
+    position: relative;
+    min-height: 98px;
+    overflow: hidden;
+    padding-right: 14px;
+  }
+  .pic {
+    display: border-box;
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    width: 80px;
+    height: 70px;
+    border-radius: 2px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .describe {
+    margin-left: 104px;
+  }
+  .tit {
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 15px;
+  }
+  .price {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 13px;
+    color: $gray;
+  }
+  .tour-day {
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 13px;
+    color: $gray;
+  }
+  .status {
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 13px;
+    color: $lightGray;
+  }
+  .act-fail {
+    background-color: #f0f1f2;
+    margin: 0 16px 10px;
+    padding: 10px 5px;
+    border-radius: 5px;
+    position: relative;
+    .act-fail-title {
+      font-size: 14px;
+      color: $darkGray;
+    }
+    .act-fail-res {
+      font-size: 13px;
+      color: $gray;
+      word-break: break-all
+    }
+  }
+  .con-footer {
+    @include hairline(top);
+    text-align: right;
+    padding: 0 12px;
+    font-size: 0;
+    .outline-button {
+      color: $gray;
+      margin-top: 7px;
+      margin-bottom: 7px;
+      display: inline-block;
+      padding: 0 10px;
+      font-size: 12px;
+      line-height: 25px;
+      border-radius: 2px;
+      border: 1px solid $lightGray;
+      margin-left: 8px;
+    }
+  }
+}
+
+.item-select {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 98px;
+  width: 60px;
+  text-align: center;
+  line-height: 98px;
+}
+
+#tmm-my-activity-page {
+  .journery-item {
+    .tit {
+      margin-top: 12px;
+    }
+    .con-inner {
+      padding-right: 0;
+    }
+  }
+}
+
+
+/* 觅趣详情 */
+
+.seekfun-banner {
+  position: relative;
+  width: 100%;
+  padding-top: 66.6%;
+  & > img {
+    background-color: pink;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .seekfun-tabs {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    &>span {
+      color: #a8a7a6;
+      line-height: 40px;
+      text-align: center;
+      width: 32%;
+      display:inline-block;
+      &.active {
+        position: relative;
+        color: #fff;
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          display: block;
+          height: 2px;
+          width: 100%;
+          background-color: $red;
+        }
+      }
+    }
+  }
+}
+
+.bottom-bar {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #39ab53;
+  opacity: 0.9;
+  z-index: 1;
+  a {
+    color: #fff;
+  }
+}
+
+.seekfun-item {
+  background-color: #fff;
+ 
+  .day-tit {
+    position: relative;
+    height: 55px;
+    padding-left: 18px;
+    color: $red;
+    border-top: 1px solid transparent;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 27px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #000;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 29px;
+      width: 1px;
+      height: 10px;
+      background-color: #000;
+    }
+    .tit {
+      margin-top: 10px;
+      font-size: 15px;
+      line-height: 15px;
+    }
+    .address {
+      margin-top: 6px;
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+  &:last-of-type {
+    .day-item {
+      &:last-of-type {
+        .img {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .day-item {
+    position: relative;
+    height: 60px;
+    .img {
+      position: absolute;
+      width: 59px;
+      line-height: 50px;
+      text-align: center;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -16px;
+        ;
+        left: 29px;
+        width: 1px;
+        height: 21px;
+        background-color: #000;
+      }
+      &>.icon {
+        font-size: 24px;
+      }
+    }
+    .describe {
+      margin-left: 59px;
+      height: 60px;
+      box-sizing: border-box;
+      @include hairline(bottom);
+      .tit {
+        padding-top: 14px;
+        font-size: 14px;
+        line-height: 14px;
+        color: $darkGray;
+      }
+      .txt {
+        margin-top: 8px;
+        font-size: 12px;
+        line-height: 12px;
+        color: $gray;
+      }
+    }
+  }
+}
+
+.journery-block {
+  display: block;
+}
+
+.join-block {
+  display: none;
+}
+
+.intro-block {
+  display: none;
+}
+
+.join-first-item {
+  box-sizing: border-box;
+  position: relative;
+  height: 65px;
+  padding: 12px;
+  font-size: 14px;
+  color: $darkGray;
+  background-color: #fff;
+  @include hairline(bottom);
+  .txt {
+    line-height: 20px;
+    & > span {
+      color: $red;
+    }
+  }
+  .invite {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    margin-top: -18px;
+    padding: 0 12px;
+    height: 36px;
+    text-align: center;
+    line-height: 35px;
+    background-color: $orange;
+    border-radius: 2px;
+    color: #fff;
+  }
+}
+
+.join-item {
+  @include hairline(topBottom);
+  margin: 10px 0;
+  color: $gray;
+  background-color: #fff;
+  .item-top {
+    padding: 0 12px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    @include hairline(bottom);
+  }
+  .item-pepole {
+    @include hairline(bottom);
+  }
+  .item-pepole {
+    background: #f0f1f2;
+    /*height: 30px;*/
+    /*line-height: 30px;*/
+    padding-left: 10px;
+  }
+  .time {
+    margin-right: 10px;
+    vertical-align: -2px;
+  }
+  .status {
+    margin-left: 10px;
+  }
+  .item-inner {
+    height: 60px;
+    padding: 0 12px;
+    overflow: hidden;
+  }
+  .item-inner-pepole {
+    padding-left: 10px;
+    background-color: #fff;
+  }
+  .people-tit {
+    color: #000;
+  }
+  .people-type {
+    font-size: 13px;
+    right: 16px;
+    position: absolute;
+  }
+  .tit {
+    margin-top: 10px;
+  }
+  .people-tit {
+    line-height: 40px;
+    height:40px;
+  }
+  .name {
+    font-size: 14px;
+    color: $darkGray;
+    margin-right: 10px;
+  }
+  .phone {
+    font-size: 13px;
+  }
+  .describe {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  .join-num {
+    margin-right: 10px;
+  }
+}
+
+.green {
+  color: $green;
+}
+
+.orange {
+  color: $orange;
+}
+
+.gray {
+  color: $lightGray;
+}
+
+.red {
+  color: $red;
+}
+
+.normal-group {
+  margin: 10px 0;
+}
+
+.normal-cell {
+  height: 44px;
+  line-height: 44px;
+  padding: 0 12px;
+  background-color: #fff;
+  @include hairline(bottom);
+  &:nth-child(1) {
+    @include hairline(topBottom);
+  }
+
+  .arrow {
+    font-size: 14px;
+    right: 16px;
+    position: absolute;
+  }
+}
+
+// 下一步按钮
+.tmm-navbar .ticon-arrow-back.next-step {
+  transform: rotate(180deg);
+}
+
+
+/* 觅趣报名信息 */
+
+.block-sub-button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  box-sizing: border-box;
+  padding: 7px 23px;
+  height: 55px;
+  @include hairline(top);
+  background-color: #fff;
+  .sub-button {
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: $red;
+    color: #fff;
+  }
+}
+
+// 选择成人与儿童
+.payment-select-pepole {
+  .item-type {
+    height: 44px;
+    line-height: 44px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+  .num {
+    padding: 0 5px;
+  }
+  .adult {
+    @include hairline(topBottom);
+  }
+  .child {
+    @include hairline(bottom);
+  }
+}
+
+
+/* 添加成人与儿童 */
+
+.payment-add-pepole {
+  .normal-cell {
+    .tit {
+      display: inline-block;
+      width: 80px;
+    }
+  }
+  input {
+    border: none;
+    height: 26px;
+    width: 200px;
+    padding: 0 3px;
+    &.warn {
+      outline: 1px solid $red;
+    }
+  }
+}
+
+
+/* 填写验证码 */
+
+.payment-check-phone {
+  .normal-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include hairline(topBottom);
+  }
+  .phone-coder {
+    line-height: 30px;
+    border: none;
+  }
+  .send-coder {
+    width: 95px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 10px;
+    color: #fff;
+    background-color: $red;
+    text-align: center;
+  }
+  .gray {
+    background-color: $lightGray;
+  }
+}
+
+.payment-apply-success {
+  text-align: center;
+  .tit {
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 54px;
+  }
+  .txt {
+    margin-top: 14px;
+    font-size: 15px;
+    color: #727372;
+  }
+}
+
+.act-edit {
+  margin-top: 10px;
+  padding: 0 14px;
+  box-sizing: border-box;
+  .act-edit-content {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+  }
+}
+
+.tmm-order-detail.tmm-order.tmm-order-line {
+  padding-bottom: 50px;
+}
+
+.loadmore {
+  height: 35px;
+  line-height: 35px;
+  background-color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}

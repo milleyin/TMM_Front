@@ -1,0 +1,345 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-act {
+  background-image: url(../../images/sprite.png);
+  background-position: -30px -152px;
+  width: 30px;
+  height: 30px;
+}
+.icon-back-arrow {
+  background-image: url(../../images/sprite.png);
+  background-position: -184px -20px;
+  width: 20px;
+  height: 20px;
+}
+.icon-back {
+  background-image: url(../../images/sprite.png);
+  background-position: -162px -152px;
+  width: 20px;
+  height: 20px;
+}
+.icon-detailPhone {
+  background-image: url(../../images/sprite.png);
+  background-position: -184px -40px;
+  width: 15px;
+  height: 15px;
+}
+.icon-eat {
+  background-image: url(../../images/sprite.png);
+  background-position: 0px 0px;
+  width: 60px;
+  height: 60px;
+}
+.icon-expand {
+  background-image: url(../../images/sprite.png);
+  background-position: -184px -55px;
+  width: 14px;
+  height: 14px;
+}
+.icon-flag {
+  background-image: url(../../images/sprite.png);
+  background-position: 0px -152px;
+  width: 30px;
+  height: 30px;
+}
+.icon-fresh-click {
+  background-image: url(../../images/sprite.png);
+  background-position: -60px -92px;
+  width: 24px;
+  height: 24px;
+}
+.icon-fresh {
+  background-image: url(../../images/sprite.png);
+  background-position: -92px -60px;
+  width: 24px;
+  height: 24px;
+}
+.icon-infor {
+  background-image: url(../../images/sprite.png);
+  background-position: -184px 0px;
+  width: 20px;
+  height: 20px;
+}
+.icon-launch-act {
+  background-image: url(../../images/sprite.png);
+  background-position: -60px -60px;
+  width: 32px;
+  height: 32px;
+}
+.icon-live {
+  background-image: url(../../images/sprite.png);
+  background-position: 0px -60px;
+  width: 60px;
+  height: 60px;
+}
+.icon-more {
+  background-image: url(../../images/sprite.png);
+  background-position: -184px -69px;
+  width: 15px;
+  height: 13px;
+}
+.icon-msg {
+  background-image: url(../../images/sprite.png);
+  background-position: -152px -62px;
+  width: 30px;
+  height: 30px;
+}
+.icon-my-click {
+  background-image: url(../../images/sprite.png);
+  background-position: -120px -96px;
+  width: 24px;
+  height: 24px;
+}
+.icon-my-flag {
+  background-image: url(../../images/sprite.png);
+  background-position: -64px -120px;
+  width: 32px;
+  height: 32px;
+}
+.icon-my-msg {
+  background-image: url(../../images/sprite.png);
+  background-position: 0px -120px;
+  width: 32px;
+  height: 32px;
+}
+.icon-my-order {
+  background-image: url(../../images/sprite.png);
+  background-position: -152px 0px;
+  width: 32px;
+  height: 32px;
+}
+.icon-my-praise {
+  background-image: url(../../images/sprite.png);
+  background-position: -96px -120px;
+  width: 32px;
+  height: 32px;
+}
+.icon-my {
+  background-image: url(../../images/sprite.png);
+  background-position: -84px -92px;
+  width: 24px;
+  height: 24px;
+}
+.icon-order {
+  background-image: url(../../images/sprite.png);
+  background-position: -152px -92px;
+  width: 30px;
+  height: 30px;
+}
+.icon-parise-red {
+  background-image: url(../../images/sprite.png);
+  background-position: -32px -120px;
+  width: 32px;
+  height: 32px;
+}
+.icon-parise {
+  background-image: url(../../images/sprite.png);
+  background-position: -152px -122px;
+  width: 30px;
+  height: 30px;
+}
+.icon-participate-act {
+  background-image: url(../../images/sprite.png);
+  background-position: -120px -32px;
+  width: 32px;
+  height: 32px;
+}
+.icon-phone-big {
+  background-image: url(../../images/sprite.png);
+  background-position: -120px 0px;
+  width: 32px;
+  height: 32px;
+}
+.icon-play {
+  background-image: url(../../images/sprite.png);
+  background-position: -60px 0px;
+  width: 60px;
+  height: 60px;
+}
+.icon-prise {
+  background-image: url(../../images/sprite.png);
+  background-position: -152px -32px;
+  width: 30px;
+  height: 30px;
+}
+.icon-recommend-click {
+  background-image: url(../../images/sprite.png);
+  background-position: -90px -152px;
+  width: 24px;
+  height: 24px;
+}
+.icon-recommend {
+  background-image: url(../../images/sprite.png);
+  background-position: -114px -152px;
+  width: 24px;
+  height: 24px;
+}
+.icon-seek-click {
+  background-image: url(../../images/sprite.png);
+  background-position: -138px -152px;
+  width: 24px;
+  height: 24px;
+}
+.icon-seek {
+  background-image: url(../../images/sprite.png);
+  background-position: -128px -120px;
+  width: 24px;
+  height: 24px;
+}
+.icon-share-big {
+  background-image: url(../../images/sprite.png);
+  background-position: -120px -64px;
+  width: 32px;
+  height: 32px;
+}
+.icon-wallet {
+  background-image: url(../../images/sprite.png);
+  background-position: -60px -152px;
+  width: 30px;
+  height: 30px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+  .icon-act {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-back-arrow {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-back {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-detailPhone {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-eat {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-expand {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-flag {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-fresh-click {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-fresh {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-infor {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-launch-act {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-live {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-more {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-msg {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-my-click {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-my-flag {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-my-msg {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-my-order {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-my-praise {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-my {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-order {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-parise-red {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-parise {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-participate-act {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-phone-big {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-play {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-prise {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-recommend-click {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-recommend {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-seek-click {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-seek {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-share-big {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+  .icon-wallet {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 204px 182px;
+  }
+}

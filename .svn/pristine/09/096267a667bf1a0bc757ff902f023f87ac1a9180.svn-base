@@ -1,0 +1,109 @@
+@charset "UTF-8";
+.eleTicket {
+  background-color: #edf2ee;
+  .ticketCon {
+    margin-bottom: 20px;
+  }
+  .noTicket {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+  }
+  .ticketCard {
+    padding: 20px 10px 17px 10px;
+    box-sizing: border-box;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 20px !important;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px #ccc;
+    position: relative;
+    .content {
+      @include hairline(bottom);
+      padding-bottom: 10px;
+      .tit {
+        font-size: 18px;
+        line-height: 18px;
+        color: #000;
+        margin-bottom: 10px;
+      }
+      .txt {
+        font-size: 10px;
+        line-height: 10px;
+        margin-bottom: 15px;
+      }
+      .ticket {
+        margin-bottom: 15px;
+        .con {
+          color: #fff;
+          font-size: 15px;
+          background-color: #000;
+          padding: 3px 5px;
+          height: 23px;
+          line-height: 23px;
+        }
+      }
+      .date {
+        font-size: 10px;
+        line-height: 10px;
+        color: #666;
+      }
+      .img {
+        position: absolute;
+        right: 17px;
+        top: 15px;
+        width: 85px;
+        height: 58px;
+        border: 1px solid #cfcfcf;
+        border-radius: 3px;
+      }
+    }
+    .footer {
+      position: relative;
+      margin-top: 15px;
+      text-align: right;
+      .flag {
+        position: absolute;
+        top: -3px;
+        left: 0;
+        display: inline-block;
+        font-size: 12px;
+        color: #fff;
+        line-height: 17px;
+        background-color: #ea5336;
+        padding: 0 10px;
+        border-radius: 17px;
+        margin-right: 15px;
+      }
+      .flag-dark {
+        background-color: #000;
+      }
+      .flag-gray {
+        background-color: #a3a8a4;
+      }
+      .phone {
+        font-size: 12px;
+        line-height: 12px;
+        margin-bottom: 18px;
+      }
+      .mailing {
+        padding: 5px 28px;
+        color: #ea5336;
+        font-size: 13px;
+        line-height: 13px;
+        border: solid 1px #ea5336;
+      }
+    }
+  }
+  .info {
+    background-color: #edf2ee;
+    padding: 15px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #999;
+    /* position: fixed;
+    bottom: 0; */
+  }
+}

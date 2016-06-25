@@ -1,0 +1,32 @@
+angular.module('item.detail', [])
+
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.detail', {
+      url: '/detial',
+
+      views: {
+        'tab-item': {
+          templateUrl: 'app/item/templates/itemDetail.html',
+          controller: 'ItemDetailCtrl',
+          // resolve: {
+          //   data: function($ionicViewSwitcher, $ionicHistory) {
+          //     var currentView = $ionicHistory.currentView();
+          //     if (currentView && (currentView.stateName == 'tab.recommend' || currentView.stateName == 'tab.seek' || currentView.stateName == 'tab.my')) {
+          //       $ionicViewSwitcher.nextTransition("none");
+          //     }
+
+          //   }
+          // }
+
+        }
+
+      }
+
+    });
+
+}])
+
+.controller('ItemDetailCtrl', function ($scope) {
+
+});

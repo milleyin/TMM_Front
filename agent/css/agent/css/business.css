@@ -1,0 +1,262 @@
+body {
+  overflow-x: hidden;
+  overflow-y: auto
+}
+a{
+	text-decoration: none;
+}
+/* 布局 */
+.content_box{
+	width: 96%;
+	margin: 0 auto;
+	margin-top: 72px;
+	position: relative; /* 弹出层 */
+	z-index: 100;
+}
+.query{
+	width: 100%;
+	height: 44px;
+	margin-top: 39px;
+	position: relative;
+
+}
+.table_box{
+	width: 100%;
+	margin-top:44px;
+}
+
+/*  商家账号管理样式 */
+.query button{
+	margin-right: 32px;
+}
+.sure{
+	min-width: 40px;
+}
+.add_business{
+	/*float: right;*/
+  position: absolute;
+  right: 0;
+} 
+.shared_revenue,.shared_revenue a{
+	color: #04b200 !important;
+}
+.state_normal{
+	color: #159300 !important;
+}
+.state{
+	color: #ff0000 !important;
+}
+
+.info_table{
+	width: 100%;
+}
+.popup_div{
+	width: 500px;
+	height: 300px;
+	position: absolute;
+	top:20%;
+	left: 20%;
+	z-index: 1001;
+	border: 1px solid #d9bc92;
+	background: #fff7ec;
+}
+.popup_div .start_div,.popup_div .stop_div{
+	
+}
+.popup_content{
+	width: 90%; 
+	margin:0 auto;
+	margin-top: 50px;
+	position: relative;
+}
+.start_div .popup_img{
+	background:url(../images/popup_img.png) no-repeat 0px -105px;
+	height:105px;
+	padding-left:114px;
+	display: inline-block;
+	margin-left: 40px;
+}
+.stop_div .popup_img{
+	background:url(../images/popup_img.png) no-repeat 0px 0px;
+	height:105px;
+	padding-left:106px;
+	display: inline-block;
+	margin-left: 40px;
+}
+.popup_text{
+	display: inline-block;
+	position: absolute;
+	margin: 20px 30px;
+	height: 80px;
+	text-align: left;
+}
+.big{
+	font-size: 20px;
+	color: #403a39;
+	margin-bottom: 20px;
+
+}
+.small{
+	font-size: 14px;
+	color: #939393;
+}
+.popup_btn{
+	width: 50%;
+	margin-top: 50px;
+	margin-left: 40%;
+}
+button.confirm{
+	margin-right: 30px;
+}
+.popup_div{
+	display: none;
+}
+.popup_div .start_div{
+	display: none;
+}
+.popup_div .stop_div{
+	display: none;
+}
+
+
+/*  商家账号/我的分成样式 */
+.my_income input{
+	margin-right: 0px;
+}
+.my_income label{
+	font-size: 10px;
+	color: #403a39;
+
+}
+.consume_time{
+	display: inline-block;
+}
+.consume_time label{
+	margin-left: 2px !important;
+	font-size: 16px;
+}
+.order_num,.order_name{
+	margin-left: 20px;
+	display: inline-block;
+}
+button[name="query"]{
+	float: right; 
+	margin-right: 0px;
+}
+
+/*  商家账号/账号详情 样式 */
+.box_one{
+	height: 330px;
+}
+.box_one .box_left{
+	width: 15% ;
+	border-right:0px;
+}
+.head_img{
+	margin-left: 60%;
+	display: inline-block;
+	border-radius: 50%;
+
+}
+.box_one .box_right{
+	width: 65%;
+}
+.account_table{
+	width: 100%;
+	margin:0 auto;
+}
+.box_div table{
+	font-size: 8px;
+	color: #000;
+}
+.box_div table tr,.box_div table td{
+	vertical-align: top;
+}
+.box_div table tr{
+	height: 30px;
+}
+.box_div table td:first-child{
+	text-align: right;
+	padding-right: 15px;
+}
+.box_one .box_right .account_table table a,.box_one .box_right .account_table table a:hover,
+			.box_one .box_right .account_table table a:visited{
+		text-decoration: none;
+		color: #0912ff;
+}
+.tag_img{
+	position: relative;
+	z-index: 100;
+	display: inline-block;
+}
+.tag_img span{
+	position: absolute;
+	z-index: 103;
+	display: inline-block;
+}
+.one span,.two span,.three span{
+	top: 7px;
+	left: 15px;
+}
+.box_two table{
+	margin:0 auto;
+}
+.content_box .box_two .address{
+  width: 50%;
+}
+.content_box .box_two .box_right{
+	right: 0px;
+}
+.box_two .certificate_imgs{
+	width:350px;
+	margin:0 auto;
+	text-align: center;
+}
+.certificate_one,.certificate_two,.certificate_three,.certificate_four{
+	width: 150px;
+  height: 150px;
+  border: 1px solid #d0860e;
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+.box_two .certificate_imgs img{
+		width: 100%;
+		height: 100%
+		
+}
+.box_three .bank_info{
+	width: 90%;
+	margin:0 auto;
+}
+
+/* 保证金记录 */
+.deposit_leave_money{
+	margin-top: 44px;
+	font-size: 16px;
+	color: #403a39;
+	float: right;
+	margin-bottom: 5px;
+}
+#deposit_leave_money{
+	color: #36b000;
+}
+.deposit_table{
+	margin-top: 0px !important;
+}
+
+/* 新增商家 */
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+ 		 color: #000 !important;
+}
+.content form input[type="submit"]{
+   margin-left: 80px;
+}
+.enter.check {
+    text-align: left;
+    margin-left: 35%;
+}
+.content_five .box {
+    margin-left: 20%!important;
+}

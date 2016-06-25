@@ -1,0 +1,133 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link" id="dot-order-back" data-dotid="{{orderInfo.value}}">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">点订单预定</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="dot-order" class="page page-order tmm-my-order-detail-page tmm-create-dot-order" style="padding-bottom: 50px;">
+    <div class="page-content tmm-order-detail tmm-order" >
+      <div class="content-block-title tmm-content-title">出游日期</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status">
+          <div><input type="text" placeholder="请选择出游日期" readonly id="calendar-gotime" class="calendar-gotime-dott"></div>
+        </div>
+      </div>
+      <div class="content-block-title tmm-content-title">项目列表</div>
+      <!-- 点的列表 -->
+      <div class="list-block tmm-list-block tmm-retinue-top-border tmm-retinue-bottom-border">
+        <!-- 项目列表 -->
+        {{#each orderInfo.items_fare}}
+        <div class="b_border">
+        <ul class="tmm-order-ul-before">
+          <!-- 项目下面的商品列表 -->
+          <li class="tmm-item-li clearfix">
+            <div class="tmm-item-title" data-itemsort="{{@index}}">
+              {{#js_compare "this.classliy.name =='玩'"}}
+              <i class="icon tmm-type-icon ticon-play"></i>
+              {{/js_compare}}
+              {{#js_compare "this.classliy.name =='吃'"}}
+              <i class="icon tmm-type-icon ticon-eat"></i>
+              {{/js_compare}}
+              {{#js_compare "this.classliy.name =='住'"}}
+              <i class="icon tmm-type-icon ticon-live"></i>
+              {{/js_compare}}{{name}}
+              {{#js_compare "this.free_status.value =='0'"}}<span style="position:absolute;right:16px;top:50%;line-height:20px;margin-top:-10px;">此项目免费</span>{{/js_compare}}
+            </div>
+            <div class="tmm-order-item-content">
+            {{#js_compare "this.free_status.value !='0'"}}
+            {{#each fare}}
+              <div class="tmm-item-fare {{js "this.room_number !=0?'hotel':''"}}">
+                {{#js_compare "this.room_number !=0"}}
+                  <div class="row tmm-order-status">
+                    <div><input type="text" placeholder="请选择入住和退房日期 >" size="30" readonly
+                    data-dotsort="0"
+                    data-dotid="{{../../../../orderInfo.value}}"
+                    data-itemid="{{../../value}}"
+                    data-faresort="{{@index}}"
+                    data-fareid="{{value}}"
+                    data-type="start_date"
+                     class="calendar-gotime-dott calendar-hoteltime">
+                    </div>
+                  </div>
+                {{/js_compare}}
+                <div class="fare-item">{{name}}</div>
+                {{#js_compare "this.room_number ==0"}}
+                <div class="fare-item">{{info}}</div>
+                {{/js_compare}}
+                {{#js_compare "this.room_number !=0"}}
+                <div class="fare-item">{{room room_number}}</div>
+                {{/js_compare}}
+     
+                <div class="fare-item price">￥{{price}}</div>
+                <div class="fare-item item-num">
+                  <span class="sub-num"
+                  data-dotsort="0"
+                  data-dotid="{{../../../../orderInfo.value}}"
+                  data-itemid="{{../value}}"
+                  data-faresort="{{@index}}"
+                  data-fareid="{{value}}"
+                  data-price="{{price}}"
+                  data-number="0"
+                  data-count="0"
+                  data-hotelnumber="0"
+                  data-type="{{js "this.room_number !=0 ? '1' : '0'"}}"
+                  >
+                    
+                  </span>
+                  <span class="num">{{number}}</span>
+                  <span class="add-num" 
+                  data-dotsort="0"
+                  data-dotid="{{../../../../orderInfo.value}}"
+                  data-itemid="{{../value}}"
+                  data-faresort="{{@index}}"
+                  data-fareid="{{value}}"
+                  data-price="{{price}}"
+                  data-number="0"
+                  data-count="0"
+                  data-hotelnumber="0"
+                  data-type="{{js "this.room_number !=0 ? '1' : '0'"}}"
+                  >
+                  </span>
+                </div>
+           
+              </div>
+            {{/each}}
+            {{/js_compare}}
+            </div>
+          </li>
+        </ul>
+        </div>
+        {{/each}}
+      </div>
+      <!--项目列表-->
+      <div class="content-block-title tmm-content-title">主要联系人</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status" id="tmm-order-mainretinue-list">
+          {{#if userInfo.main_retinueInfo.list}}
+          <div>{{userInfo.main_retinueInfo.list[0].name}}</div>
+          {{else}}
+          <div id="orderAddMainRetinue" data-phone="{{userInfo.userInfo.phone}}" class="red">添加</div>
+          {{/if}}
+        </div>
+      </div>
+      <div class="content-block-title tmm-content-title">随行人员</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row  tmm-order-status" id="tmm-order-retinue-list">
+          <span id="orderDotAddRetinue" data-type="2" class="w_33 red">选择</span>
+        </div>
+      </div>
+
+    </div>
+      <div class="tmm-border-btn tmm-retinue-top-border tmm-retinue-bottom-border">
+        <span class="price">￥<span id="tmm-order-total-price">0.00</span></span>
+        <span class="tmm-order-detail-confirm-btn-active" id="submitDotOrder" data-dotid="{{orderInfo.value}}">提交订单</span>
+      </div>
+  </div>
+</div>

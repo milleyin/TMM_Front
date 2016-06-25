@@ -1,0 +1,73 @@
+            {{#each list_data}}
+            <div class="card tmm-my-order-card">
+              <a href="javascript:;" class="tmm-my-order-detail-show" data-type="{{status.order_type.value}}" data-link="{{link}}">
+                <div class="card-content">
+                  <div class="tmm-order-img">
+                    <img src="{{shops_img}}">
+                  </div>
+                  <div class="tmm-order-content">
+                    <div class="tmm-order-content-title">
+                      {{shops_name}}
+                    </div>
+                    <div class="tmm-order-content-info">
+                      出游日期：{{status.status_go.name}}
+                    </div>
+                    <div class="tmm-order-content-info">
+                      <span class="tmm-order-content-count">价格：{{order_price}}元</span>
+                    </div>
+                  </div>
+                  <div class="tmm-order-status">
+                    {{#js_compare "this.actives_status.value =='0'"}}
+                    <span class="tmm-icon-triangle tmm-tip-chuli" title="{{actives_status.name}}">{{actives_status.name}}</span> 
+                    {{/js_compare}} 
+                    {{#js_compare "this.actives_status.value =='1'"}}
+                    <span class="tmm-icon-triangle tmm-tip-fukuan" title="{{actives_status.name}}">{{actives_status.name}}</span> 
+                    {{/js_compare}} 
+                    {{#js_compare "this.actives_status.value =='2'"}}
+                    <span class="tmm-icon-triangle tmm-tip-xiaofei" title="{{actives_status.name}}">{{actives_status.name}}</span> 
+                    {{/js_compare}} 
+                    {{#js_compare "this.actives_status.value =='-1'"}}
+                    <span class="tmm-icon-triangle tmm-tip-gray" title="{{actives_status.name}}">{{actives_status.name}}</span> 
+                    {{/js_compare}} 
+                  </div>
+                </div>
+                
+
+                {{#js_compare "this.status.centre_status.value =='0'"}}
+                <div class="card-footer no-border">
+                  <div class="tmm-card-footer tmm-my-order-b-border">
+                    <a href="javascript:;" class="button tmm-button-pay" data-id="{{value}}">前去支付</a>
+                  </div>
+                </div>
+                {{/js_compare}} 
+                
+                {{#js_compare "this.status.centre_status.value =='-1'"}}
+
+                  {{#js_compare "this.status.status_go.value =='0'"}}
+                  <div class="card-footer no-border">
+                    <div class="tmm-card-footer tmm-my-order-b-border">
+                      <a href="javascript:;" class="button tmm-button-refund" data-id="{{value}}">取消报名</a>
+                    </div>
+                  </div>
+                  {{/js_compare}}
+                  {{#js_compare "this.status.status_go.value =='1'"}}
+                  <div class="card-footer no-border">
+                    <div class="tmm-card-footer tmm-my-order-b-border">
+                      <a href="javascript:;" class="button tmm-button-cancle" data-id="{{value}}">取消报名</a>
+                      <a href="javascript:;" class="button tmm-button-cancle" data-id="{{value}}">确认出游</a>
+                    </div>
+                  </div>
+                  {{/js_compare}}
+                  {{#js_compare "this.status.order_status.value =='2'"}}
+                  <div class="card-footer no-border">
+                    <div class="tmm-card-footer tmm-my-order-b-border">
+                      <a href="javascript:;" class="button tmm-button-cancle" data-id="{{value}}">申请退款</a>
+                    </div>
+                  </div>
+                  {{/js_compare}}
+                {{/js_compare}} 
+
+                
+              </a>
+            </div>
+            {{/each}}

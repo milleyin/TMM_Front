@@ -1,0 +1,212 @@
+.tmm-self-index {
+  background-color: #f2f2f2;
+
+  .banner {
+    font-size: 0;
+    margin: 0;
+    width: 100%;
+    height: 417px;
+    background: url("../images/rule-border-bottom.png") bottom center repeat-x;
+    background-size: 300px 3px;
+    background-color: #aee3dd;
+    .tmmSear {
+      padding-top: 10px;
+      text-align: center;
+      .sear {
+        background: url("../images/search.png") no-repeat;
+        background-size: 16px 16px;
+        background-position: 5px;
+        font-size: 14px;
+        color: #c3fff8;
+        height: 28px;
+        border: none;
+        border-radius: 3px;
+        width: 90%;
+        background-color: #688885;
+        padding-left: 35px;
+      }
+      input::-webkit-input-placeholder {
+        color: #c3fff8;
+        opacity: 0.5;
+      }
+      input:-moz-placeholder {
+        color: #c3fff8;
+        opacity: 0.5;
+      }
+      input::-moz-placeholder {
+        color: #c3fff8;
+        opacity: 0.5;
+      }
+      input:-ms-input-placeholder {
+        color: #c3fff8;
+        opacity: 0.5;
+      }  
+    }
+    img {
+      width: 100%;
+      height: 255px;
+      margin-top: 15px;
+    }
+    .participate {
+      margin-top: 25px;
+      display: block;  
+      .par {
+        height: 40px;
+        line-height: 40px;
+        width: 200px;
+        margin:0 auto;
+        background-color: #723d3d;
+        border-radius: 5px;
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+        display: block;
+      }
+      .parBg {
+        background-color: #8a8181 !important;
+      }
+    }
+    .rule {
+      margin-top: 20px;
+      color: #723d3d;
+      font-size: 13px;
+      line-height: 13px;
+      text-align: center;
+      a:link {
+        color: #723d3d;
+      }
+      a:visited {
+        color: #723d3d;
+      }
+      a:hover {
+        color: #723d3d;
+      }
+      a:active {
+        color: #723d3d;
+      }
+    }
+  }
+  .content {
+    .title {
+      display: flex;
+      border-bottom: 1px solid #ccc;
+      height: 54px;
+      line-height: 54px;
+      a {
+        width: 50%;
+        text-align: center;
+        color: #723d3d;
+        opacity: 0.5;
+        font-size: 15px;
+        display: block;
+        &.active {
+          opacity: 1;
+          border-bottom:2px solid #723d3d;
+        }
+      } 
+    }
+    .info {
+      vertical-align: baseline;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      zoom:1;
+      .con-item-size {
+        @extend .con;
+      }
+      .con {
+        display: inline-block;
+        width: 50%;
+        height: 240px; 
+        margin-bottom: 10px;
+        float: left;
+        box-sizing: border-box;
+        
+        .con-detail {
+          padding: 5px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          background-color: #fff;
+          margin-right: 5px;
+          margin-left: 5px;
+        }
+        img {
+          width: 100%;
+          height: 150px;
+          background-color: #e3e3e3;
+          border: 0;
+          display: block;
+        }
+        .no {
+          margin-top: 10px;
+          color: #000;
+          height: 15px;
+          line-height: 15px;
+          span {
+            &:first-child {
+              font-size: 15px;
+              padding-right: 5px;
+            }
+            &:last-child {
+              font-size: 12px;
+            }
+          }  
+        }
+        .num {
+          text-align: right;
+          font-size: 9px;
+          height: 15px;
+          line-height: 15px;
+          span {
+            font-size: 15px;
+            color: #ff213d;
+            padding-right: 4px;
+          }
+        }
+        .vote {
+          margin-top: 10px;
+          width: 100%;
+          color: #fff;
+          font-size: 14px;
+          background-color: #723d3d;
+          height: 28px;
+          line-height: 28px;
+          border-radius: 3px;
+          border: none;
+          text-align: center;
+          display: block;
+        }
+      }
+    }
+  }
+  @media screen and (min-device-width:320px) and (max-device-width:359px) { 
+    .topPos {
+      top: 280px;
+    }
+  }
+
+  @media screen and (min-device-width:360px) and (max-device-width:1024px) { 
+    .topPos {
+      top: 380px;
+    }
+  }
+
+  .top {
+    font-size: 12px;
+    color: #fff;
+    display: block;
+    height: 28px;
+    width: 62px;
+    background-color: #000;
+    opacity: 0.7;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    line-height: 28px;
+    border-radius: 14px 0 0 14px;
+    a {
+      right: 3px;
+      position: absolute;
+      color: #fff;
+    }
+  }
+}

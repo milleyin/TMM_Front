@@ -1,0 +1,28 @@
+<ion-view view-title="帐号密码登录" hide-nav-bar="true" cache-view="false" hide-tabs>
+  <ion-content scroll="false" class="tmm-acc-login-page">
+    <div class="tmm-acc-login-wrap">
+      <div class="list list-inset ">
+        <label class="item item-input">
+          <input type="text" placeholder="请输入手机号" ng-model="loginModel.phone">
+        </label>
+        <label class="item item-input">
+          <input type="password" placeholder="请输入密码" ng-model="loginModel.password">
+        </label>
+        <div class="item item-input-inset">
+          <label class="item-input-wrapper ">
+            <input type="text" placeholder="请输入验证码" ng-model="loginModel.verifycode">
+          </label>
+          <img class="tmm-verifycode-img" src="{{accLoginData.verifyCodeUrl}}" ng-click="showVerifyCode()">
+        </div>
+      </div>
+      <div class="list list-inset tmm-list-button">
+        <button class="button button-block tmm-acc-login-button" ng-click="accLogin()">
+          登录
+        </button>
+      </div>
+      <a href="javascript:;" class="tmm-login-back" ui-sref="tab.login" nav-direction="back">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml">
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-control" content="no-cache">
+  <meta http-equiv="Cache" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <!-- Your app title -->
+  <title>Tmm App</title>
+  <link rel="stylesheet" href="app.css" />
+  <script type="text/javascript">
+  /*IOS参数初始化*/
+  function connectWebViewJavascriptBridge(callback) {
+    if (window.WebViewJavascriptBridge) {
+      callback(WebViewJavascriptBridge)
+    } else {
+      document.addEventListener('WebViewJavascriptBridgeReady', function() {
+        callback(WebViewJavascriptBridge)
+      }, false)
+    }
+  }
+
+  connectWebViewJavascriptBridge(function(bridge) {
+    bridge.init(function(message, responseCallback) {
+
+    })
+  })
+
+  connectWebViewJavascriptBridge(function(bridge) {
+    bridge.callHandler('ObjcCallback', {
+      'setNetwork': 1
+    }, function(response) {})
+  });
+
+  connectWebViewJavascriptBridge(function(bridge) {
+    bridge.registerHandler('JSCallback', function(data, responseCallback) {
+      if (data == '') {
+
+        window.device.getAddress(data);
+      } else {
+        window.device.getAddress( data.longitude, data.latitude, data.city);
+      }
+      // return;
+      // log('ObjC called testJavascriptHandler with', data)
+      // var responseData = { 'Javascript Says':'Right back atcha!' }
+      // log('JS responding with', responseData)
+      // responseCallback(responseData)
+    });
+  });
+  </script>
+</head>
+
+<body>
+  <!-- Status bar overlay for full screen mode (PhoneGap) -->
+  <div class="statusbar-overlay"></div>
+  <!-- Panels overlay-->
+  <div class="panel-overlay"></div>
+  <!-- Left panel with reveal effect-->
+  <div class="panel panel-left panel-reveal">
+    <div class="content-block">
+      <p>Left panel content goes here</p>
+    </div>
+  </div>
+  <!-- Views -->
+  <div class="views tabs toolbar-through tabbar-through">
+    <!-- recommendView -->
+    <div id="recommendView" class="view view-main tab active">
+      <!-- Top Navbar-->
+      <div class="navbar tmm-navbar">
+        <div class="navbar-inner">
+          <div class="left">
+          </div>
+          <div class="center">精品推荐</div>
+          <div class="right">
+            <a href="javascript:;" class="link" id="tmm-seek-search">
+              <i class="icon ticon-search"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+      <div class="pages navbar-through">
+        <!-- Page, "data-page" contains page name -->
+        <div data-page="recommendView" class="page">
+          <div data-distance="20" class="page-content pull-to-refresh-content infinite-scroll">
+            <!-- 默认的下拉刷新层 -->
+            <div class="pull-to-refresh-layer">
+              <div class="preloader"></div>
+              <div class="pull-to-refresh-arrow"></div>
+            </div>
+            <div class="tmm-list-block">
+              <ul class="tmm-recommend-ul-list">
+              </ul>
+              <div id="no-more" style="display:none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- seekView -->
+    <div id="seekView" class="view tab">
+      <div class="navbar tmm-navbar">
+        <div class="navbar-inner">
+          <div class="left">
+          </div>
+          <div class="center">觅境</div>
+          <div class="right">
+          </div>
+        </div>
+      </div>
+      <div class="pages navbar-through">
+        <div data-page="seekView" class="page">
+          <div class="page-content tmm-seek-page-contnet">
+            <div class="tmm-list-block">
+              <ul>
+                <div class="noMore"></div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- seekFreshView -->
+    <div id="seekFreshView" class="view tab">
+      <div class="navbar tmm-navbar">
+        <div class="navbar-inner">
+          <div class="left">
+          </div>
+          <div class="center">觅鲜</div>
+          <div class="right">
+          </div>
+        </div>
+      </div>
+      <div class="pages navbar-through">
+        <div data-page="seekView" class="page">
+          <div class="page-content tmm-seek-page-contnet">
+            <div class="tmm-list-block">
+              <ul>
+                <div class="noMore"></div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- myView -->
+    <div id="myView" class="view tab">
+      <div class="navbar tmm-navbar">
+        <div class="navbar-inner" id="tmm-myview-navbar-inner">
+          <div class="left">
+          </div>
+          <div class="center">我的</div>
+          <div class="right">
+          </div>
+        </div>
+      </div>
+      <div class="pages navbar-through">
+        <div data-page="myView" class="page tmm-my-page">
+          <div class="page-content tmm-my-page-contnet" style="position:relative;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Toolbar-->
+    <div class="toolbar tabbar-labels tmm-toolbar tabbar toolbar-hidden">
+      <div class="toolbar-inner">
+        <a href="#recommendView" class="tab-link active">
+          <i class="icon ticon-recommend"></i>
+          <i class="icon ticon-recommend-outline"></i>
+          <span class="tabbar-label">推荐</span>
+        </a>
+        <a href="#seekView" class="tab-link">
+          <i class="icon ticon-seek"></i>
+          <i class="icon ticon-seek-outline"></i>
+          <span class="tabbar-label">觅境</span>
+        </a>
+        <a href="#seekFreshView" class="tab-link">
+          <i class="icon ticon-mixian"></i>
+          <i class="icon ticon-mixian-outline"></i>
+          <span class="tabbar-label">觅鲜</span>
+        </a>
+        <a href="#myView" class="tab-link">
+          <i class="icon ticon-my"></i>
+          <i class="icon ticon-my-outline"></i>
+          <span class="tabbar-label">我的</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+  <script src="http://localhost:3000/webpack-dev-server.js"></script>
+</body>
+
+</html>

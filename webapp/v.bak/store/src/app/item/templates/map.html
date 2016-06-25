@@ -1,0 +1,8 @@
+<ion-popover-view class="map-popover">
+  <ion-header-bar>
+    <div class="map-tit">{{ model.address}}</div>
+  </ion-header-bar>
+  <ion-scroll zooming="true" direction="xy" min-zoom="0.5" max-zoom="1" overflow-scroll="false" scrollbar-x="false" scrollbar-y="false">
+    <img ng-src="{{model.map}}">
+  </ion-scroll>
+</ion-popover-view>

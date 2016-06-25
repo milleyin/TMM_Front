@@ -1,0 +1,42 @@
+<div id="wodeshouru">
+  <h1 class="top-nav">我的收入
+        <!-- <span class="h_left h_text">筛选时间</span> -->
+        <i ng-click="getCode()" class="iconfont h_right_icon">&#xe625;</i>
+    </h1>
+  <div class="m_content">
+    <!-- 有数据 -->
+    <div ng-if="no_data" class="nodata">
+      当前没有相关数据！
+    </div>
+    <!-- 主账号登录 -->
+    <div ng-if="!no_data">
+      <div ng-if="is_main">
+        <section class="shouru j-color">
+          <h2 class="text-left">
+              <div class="zuijing">最近七天收入 ￥{{mainjson.money_count}}</div>
+              <!-- <a class="chakan" href="#/myincomedetail/{{mainjson.info.value}}" data-transition="slide-in">查看明细</a> -->
+          </h2>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <tr>
+                <td>日期</td>
+                <td ng-repeat="data in mainjson.list_data">{{data.add_time}}</td>
+              </tr>
+              <tr>
+                <td>营业额</td>
+                <td ng-repeat="data in mainjson.list_data">￥{{data.day_money}}</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <nav class="bar-tab">
+    <a ng-href="#/myorder"><i class="iconfont">&#xe616;</i><span>我的订单</span></a>
+    <a ng-href="#/myxiangmu"><i class="iconfont">&#xe61b;</i><span>我的项目</span></a>
+    <a class="active"><i class="iconfont">&#xe613;</i><span>我的收入</span></a>
+    <a ng-href="#/my"><i class="iconfont">&#xe624;</i><span>我的</span></a>
+  </nav>
+</div>
+

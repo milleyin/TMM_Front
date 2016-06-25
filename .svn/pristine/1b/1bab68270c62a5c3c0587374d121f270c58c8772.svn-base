@@ -1,0 +1,12 @@
+<!-- Slider container -->
+<div class="swiper-container">
+    <!-- Slides wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        {{#each adList}}
+        <div class="swiper-slide">
+            <img src="{{img}}" alt="{{name}}">
+        </div>
+        {{/each}}
+    </div>
+</div>

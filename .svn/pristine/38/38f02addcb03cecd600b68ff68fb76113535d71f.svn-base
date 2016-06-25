@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>荔枝节</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body class="tmm-index">
+  <div class="banner">
+    <img src="images/banner.png">
+  </div>
+  <div class="con">
+    <div class="item-row item-two-heigh">
+      <a href="#">
+        <div class="main-two">
+          <img src="images/tickets.png">
+          <div>购买门票</div>
+        </div>
+      </a>
+      <a href="#">
+        <div class="main-two">     
+          <img src="images/litchi.png">
+          <div>购买荔枝</div>
+        </div>
+      </a>  
+    </div>
+    <div class="item-row item-four-heigh">
+      <a href="#">
+        <div class="main-four cover">
+          <img src="images/interest.png">
+          <div>公益活动</div>
+        </div>
+      </a>
+      <a href="#">
+        <div class="main-four cover">
+          <img src="images/self.png">
+          <div>创意自拍</div>
+        </div>
+      </a>
+      <a href="#">
+        <div class="main-four">
+          <img src="images/park.png">
+          <div>入园导航</div>
+        </div>
+      </a>
+      <a href="#">
+        <div class="main-four">
+          <img src="images/buy.png">
+          <div>购买记录</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="culture">
+    <a href="#">
+      <div class="history">
+        <img src="images/culture.png">
+        <div class="intro">
+          <div class="tit">荔枝文化</div>
+          <div class="detail">深&nbsp;入&nbsp;探&nbsp;索&nbsp;荔&nbsp;枝&nbsp;的&nbsp;历&nbsp;史</div>
+        </div>
+      </div>
+    </a>
+  </div>
+</body>
+</html>

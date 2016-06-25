@@ -1,0 +1,27 @@
+<!-- 觅趣活动专题列表 -->
+<ion-view hide-tabs>
+  <navbar back title="{{name}}"></navbar>
+  
+  <ion-content class="index-list" overflow-scroll="false">
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()" spinner="ios">
+    </ion-refresher>
+    <load-icon ng-if="!model.list_data"></load-icon>
+
+    <div ng-repeat="item in model.list_data" class="media-card">
+      <draw-img class="img" src="{{item.image}}" ui-sref="tab.shop{{item.classliy.value}}({link:item.link, type:item.classliy.value})"></draw-img>
+
+      <div class="intro">
+        <div class="tit">{{item.name}}</div>
+        <div class="info">{{item.info}}</div>
+        <div class="txt"><span><i class="icon-people"></i>{{item.actives.number.value - item.actives.order_number.value}}人报名</span><span><i class="icon-car"></i>{{item.actives.actives_time.value ? item.actives.actives_time.go_time + '出游': item.actives.actives_time.go_time }}</span><span ng-if="item.distance"><i class="icon-distance"></i>距离{{item.distance.substring(0, item.distance.indexOf('.')) + 'km'}}</span></div>
+        <span class="state" ng-class="item.actives.actives_status.value == '1' ? 'orange':'brown'">{{item.actives.actives_status.name}}</span>
+      </div>
+    </div>
+
+
+
+    <div class="empty"></div>
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="model.nextPage" distance="1%" spinner="ios">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

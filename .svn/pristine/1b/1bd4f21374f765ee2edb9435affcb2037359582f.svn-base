@@ -1,0 +1,974 @@
+.pages {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.page{
+  height: 100%;
+  width: 100%;
+}
+.page-content {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  height: 100%;
+  position: relative;
+  /*padding-top: 40px;*/
+}
+.navbar.tmm-navbar, .navbar.tmm-navbar .subnavbar {
+    background-color: #FFFFFF;
+    height: 40px !important;
+    position: fixed;
+}
+.navbar, .toolbar {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 17px;
+    position: absolute;
+    margin: 0;
+    z-index: 500;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.navbar-inner, .toolbar-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.navbar.tmm-navbar .navbar-inner {
+    padding: 0 16px;
+}
+.navbar .left {
+    margin-right: 10px;
+}
+.navbar.tmm-navbar a {
+    color: #000000;
+    position: relative;
+}
+.navbar .center {
+    font-size: 17px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 44px;
+    -webkit-flex-shrink: 10;
+    -ms-flex: 0 10 auto;
+    flex-shrink: 10;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 20px;
+    /*left: 18px;*/
+    transform: translate3d(0px, 0px, 0px);
+}
+.navbar .center {
+    line-height: 40px !important;
+    color: #000 !important;
+}
+.navbar.tmm-navbar .iconfont{
+  font-size: 20px;
+}
+.tmm-trade-record-inner .right {
+    font-size: 14px;
+    color: #ff595f;
+    margin-left: 10px;
+}
+.navbar.tmm-navbar:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #000000;
+    display: block; 
+    opacity: 0.2;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+.list-block ul {
+    background: #ffffff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+	padding-top:0 !important;
+}
+
+.list-block li {
+    box-sizing: border-box;
+    position: relative;
+}
+.list-block ul:after {
+    background-color: #d7d9d7;
+    height: 1px;
+    position: static;
+    transform-origin: 0% 0%;
+}
+.list-block .item-content {
+    box-sizing: border-box;
+    padding-left: 15px;
+    min-height: 44px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.list-block .item-inner {
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 7px;
+    min-height: 44px;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -ms-flex-item-align: stretch;
+    -webkit-align-self: stretch;
+    align-self: stretch;
+}
+.list-block .item-title {
+    -webkit-flex-shrink: 1;
+    -ms-flex: 0 1 auto;
+    flex-shrink: 1;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+.list-block .item-after {
+    white-space: nowrap;
+    color: #8e8e93;
+    -webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    flex-shrink: 0;
+    margin-left: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    max-height: 28px;
+}
+.list-block .item-inner:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #c8c7cc;
+    display: block;
+    
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+html.pixel-ratio-2 .list-block .item-inner:after {
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+/****************************************************************************************
+我的钱包 首页*/
+.tmm-my-wallet-page .left .ticon-arrow-back {
+    font-size: 20px;
+    color: #fff;
+    position: relative;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg{
+  width: 100%;
+  background-color:#403a39;
+  /*height: 60%;
+  background: url(../images/bg-wallet.png) no-repeat 0 0;*/
+  background-size: 100% 100%;
+  /*z-index: -1;*/
+  position: relative;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-navbar{
+  width: 100%;
+  height: 44px;
+  font-size: 17px;
+  text-align: center;
+  position: relative;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-navbar .left{
+  display: inline-block;
+  position: absolute;
+  left: 16px;
+  top: 5px;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-navbar .left .ticon-arrow-back{
+  font-size: 20px;
+  color: #fff;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-navbar .right {
+  position: absolute;
+  right: 16px;
+  top: 10px;
+  font-size: 12px;
+  color:#ff595f;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-navbar .center {
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 5px;
+    color: #fff;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-content{
+  width: 100%;
+  height: 115px;
+  margin:0 auto;
+  margin-top:30px; 
+  text-align: center;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-content .left,
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-content .right{
+  width: 50px;
+  height: 22px;
+  border-bottom: 1px solid #fff;
+  display: inline-block;
+  vertical-align: top;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-content .center{
+  font-size: 14px;
+  color: #fff;
+  width:60px;
+  margin: 0 auto;
+  line-height: 45px; 
+  display: inline-block;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-content .money{
+  font-size: 40px;
+  color: #fff;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-bank{
+  position: absolute;
+  right: 2.5%;
+  bottom: 17%;
+  width: 60px;
+  height: 40px;
+  /* border: 1px solid red; */
+  text-align: center;
+  color: #f7cb8f;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-bank a{
+  color: #f7cb8f; 
+  width: 40px;
+  height: 30px;
+  display: inline-block;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-bank .ticon-add{
+  font-size: 20px;
+  width: 40px;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-bank .txt{
+  font-size: 8px;
+  line-height: 20px;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-bank .img{
+  width: 40px;
+  height:27px;
+  margin-left: 5px;
+}
+.tmm-my-wallet-page .tmm-my-wallet-btn:before{
+  border:1px solid #c8c7cc;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+}
+.tmm-my-wallet-page .tmm-my-wallet-btn{
+  padding: 15% 16px;
+  height:44px; 
+  text-align: center;
+} 
+.tmm-my-wallet-page .tmm-my-wallet-btn .submit{
+  border:1px solid #d1d1d1;
+  color: #cccccc;
+  font-size: 18px;
+  display: inline-block;
+  width: 100%;
+  height:44px;
+  line-height: 44px;
+  border-radius: 4px;
+}
+.tmm-my-wallet-page .tmm-my-wallet-btn .submit.active{
+  border-color: #4cb364;
+  color: #39ab53;
+}
+.tmm-my-wallet-bg .tmm-my-wallet-navbar .hede {display: inline-block;font-size: 18px;margin-top: 8px;color: #fff;}
+.tmm-my-wallet-content .tmm-conter-balance{color: #ffffff;font-size: 30px;}
+.tmm-my-wallet-content .tmm-balance-up{color:#888484;font-size: 12px;}
+.tmm-my-wallet-page .tmm-monye-mag{margin: 0;font-size: 15px;}
+.tmm-my-wallet-page .tmm-mag-but{padding-bottom: 8px;}
+.tmm-my-wallet-page .list-block ul:before{height: 0;}
+.tmm-monye-mag .tmm-xiao-tu img{width: 25px;}
+.tmm-monye-mag .tmm-xiao-tu{margin-right: 10px;margin-top: 4px;}
+.tmm-my-wallet-page .tmm-monye-mag .item-inner{position: initial;color: #000000;}
+.tmm-cc .item-inner{
+		padding-right: 35px;
+		background-image: url(../images/jiantou.png);
+    background-size: 7px 12px;
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    background-position: -webkit-calc(100% - 15px) center;
+    background-position: calc(100% - 15px) center;}
+/***********************************************************************************
+添加银行卡*/
+.tmm-add-bank-page{
+  background:#f0f2f0;
+} 
+.tmm-add-bank-inner .icon{
+  color: #000;
+}
+.list-block select.tmm-bank-select{
+  color: #576b95;
+  font-size: 15px;
+}
+.tmm-add-bank-page-contnet .tmm-bank-item-addform .item-title-con,
+.tmm-add-bank-page-contnet .list-block.tmm-bank-item-addform input[type=text]{
+  font-size: 15px;
+}
+.tmm-add-bank-page-contnet .list-block.tmm-bank-item-addform .f_bottom{
+  padding: 30px 16px;
+}
+/*.tmm-add-bank-page-contnet .list-block.tmm-bank-item-addform*/ .div_protocol{
+  margin-top: 20px;
+  margin-left: 16px;
+  color: #403a39;
+  font-size: 14px;
+}
+/*.tmm-add-bank-page-contnet .list-block.tmm-bank-item-addform .div_protocol*/ .bank_protocol{
+  color: #5089d1;
+}
+.tmm-add-bank-page-contnet .tmm-myinfo-item-addform .f_bottom .sub_active{
+  background: #4bb262;
+  font-size: 18px;
+}
+.tmm-add-bank-page-contnet .list-block.tmm-bank-item-addform .div_protocol .checkbox{
+  vertical-align: middle;
+}
+
+
+.list-block select.tmm-bank-select {
+    color: #576b95;
+    font-size: 15px;
+}
+.list-block select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  border-radius: 0 0 0 0;
+  box-shadow: none;
+  display: block;
+  padding: 0px;
+  margin: 0;
+  width: 100%;
+  height: 43px;
+  color: #000;
+  font-size: 17px;
+  font-family: inherit;
+  outline: 0;
+}
+.list-block .item-inner.last:after{
+  height: 0 !important;
+}
+.tmm-add-bank-page .list-block ul:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: auto;
+    right: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #d7d9d7;
+    display: block;
+    
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+}
+/***********************************************************************************
+验证手机号*/
+.tmm-modify-phone-page{
+  background: #f0f2f0;
+  height: auto;
+}
+.tmm-verifyPhone-list-Form .tmm-verifyPhone-item-inner .get_code{
+  background:#e6e6e6;
+  color: #b3b3b3;
+  font-size: 14px;
+}
+.tmm-verifyPhone-list-Form .tmm-verifyPhone-item-inner .activity.get_code{
+  background: #ff595f;
+  color: #fff;
+}
+.tmm-verify-phone-page .txt{
+  margin-top: 75px;
+  font-size: 13px;
+  color: #999999;
+  padding: 0 0 0 16px;
+}
+.tmm-verify-phone-page .tmm-verifyPhone-list-Form .setPhoneInput{
+  font-size: 15px;
+  color: #cccccc;
+}
+.tmm-verifyPhone-list-Form{
+  margin-top: 8px;
+}
+.tmm-verify-phone-inner .icon{
+  color: #000;
+}
+.tmm-verify-phone-page .tmm-verifyPhone-list-Form .bg_btn .sub_btn{
+  background: #4bb262;
+  font-size: 18px;
+}
+
+
+.list-block .item-inner.tmm-setPhone-item-inner {
+    height: 48px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.list-block input[type="text"],
+.list-block input[type="number"]{
+-webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    border-radius: 0 0 0 0;
+    box-shadow: none;
+    display: block;
+    padding: 0px;
+    margin: 0;
+    width: 100%;
+    height: 43px;
+    color: #000;
+    font-size: 17px;
+    font-family: inherit;
+    outline: 0;
+}
+
+.tmm-verify-phone-page .tmm-verifyPhone-list-Form .setPhoneInput {
+    font-size: 15px;
+    color: #cccccc;
+}
+.list-block .item-input {
+    width: 100%;
+    margin-top: -8px;
+    margin-bottom: -7px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-flex-shrink: 1;
+    -ms-flex: 0 1 auto;
+    flex-shrink: 1;
+}
+.tmm-setPhone-list-Form .get_code {
+    display: block;
+    width: 107px;
+    height: 30px;
+    background: #ff595f;
+    float: right;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+}
+
+
+/***********************************************************************************
+提现申请*/
+.tmm-withdraw-page .tmm-withdraw-page-contnet .disabled,
+.tmm-withdraw-page .tmm-withdraw-page-contnet [disabled]{
+  opacity: 1;
+}
+.tmm-withdraw-page .tmm-withdraw-page-contnet input[type=text].add_input{
+  color: #000;
+}
+.tmm-withdraw-page .tmm-myinfo-item-addform .item-title-con{
+  color: #000;
+}
+.tmm-withdraw-page .tmm-myinfo-item-addform .f_bottom{
+  padding: 30px 16px 20px 16px !important;
+  height: auto;
+}
+.tmm-withdraw-page .tmm-myinfo-item-addform .f_bottom .sub_active{
+  font-size: 18px;
+}
+.tmm-withdraw-page .tmm-myinfo-item-addform .tip{
+  color: #999999;
+  font-size: 12px;
+  margin:0 auto;
+  text-align: center;
+}
+
+.list-block {
+    margin: 35px 0;
+    font-size: 17px;
+}
+.list-block ul:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: auto;
+    right: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #d7d9d7;
+    display: block;
+    
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+}
+html.pixel-ratio-2 .list-block ul:before {
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+.tmm-add-retinue-page-contnet .tmm-myinfo-item-addform .item-content {
+    height: 58px;
+}
+.tmm-add-retinue-page-contnet .tmm-myinfo-item-addform .item-title-con {
+    display: inline-block;
+    width: 80px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    margin-right: 10px;
+}
+.tmm-add-bank-page-contnet .tmm-bank-item-addform .item-title-con,
+.tmm-add-bank-page-contnet .list-block.tmm-bank-item-addform input[type=text] {
+    font-size: 15px;
+}
+.tmm-add-retinue-page-contnet .list-block.tmm-myinfo-item-addform input[type=number]{
+  height: auto;
+  font-size: 13px;
+  color: #8f8585;
+}
+.tmm-withdraw-page .tmm-myinfo-item-addform .f_bottom {
+    padding: 30px 16px 20px 16px !important;
+    height: auto;
+}
+.tmm-add-retinue-page-contnet .tmm-myinfo-item-addform .f_bottom .sub_active {
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    width: 100%;
+    height: 35px;
+    border-radius: 4px;
+    background-color: #4bb262;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+}
+
+
+/***********************************************************************************
+交易记录*/
+.tmm-trade-record-page{
+  background:#f4f4f4;
+}
+.tmm-trade-record-page .tmm-trade-record-inner .icon{
+  color: #000;
+}
+.tmm-trade-record-page .tmm-trade-record-list-block{
+  margin: 0;
+}
+.tmm-trade-record-page .list-block ul:before{
+  height: 0px;
+}
+.tmm-trade-record-page .load{
+  margin-top: 25px;
+  text-align: center;
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.tmm-add-bank-inner .right{
+  font-size: 14px;
+  color: #ff595f !important;
+}
+.tmm-trade-record-page .tmm-trade-record-list-block .item-title .reason{
+  color: #000;
+  font-size: 16px;
+}
+.tmm-trade-record-page .tmm-trade-record-list-block .item-after{
+  display: inline-block;
+  text-align: right;
+}
+.tmm-trade-record-page .tmm-trade-record-list-block .item-after .detail{
+  font-size: 16px;
+  color: #000;
+}
+.tmm-trade-record-page .tmm-trade-record-list-block .item-after .money{
+  font-size: 12px;
+  color: #8e8e93;
+}
+.tmm-trade-record-page .tmm-trade-record-list-block .item-title .date{
+  font-size: 12px;
+  color: #666666;
+}
+.tmm-trade-record-inner .ticon-arrow-back{
+  color: #000;
+  font-size: 20px;
+}
+.tmm-trade-record-page .list-block ul.tmm-record-conNo-ul:after{
+  height:0px !important;
+}
+.tmm-trade-record-page .page-content{
+  padding-bottom: 0;
+  padding-top: 40px;
+}
+.tmm-trade-record-page .tmm-record-conNo {
+  text-align: center;
+  line-height: 48px;
+  color: #403a39;
+}
+.tmm-trade-record-page .tmm-record-content {
+  padding-top: 75px;
+}
+.tmm-trade-record-page .list-block ul.tmm-record-conNo-ul:after {
+  height: 0px !important;
+}
+
+.list-block .item-inner.last:after {
+    height: 0px !important;
+}
+
+/***********************************************************************************
+提现申请记录*/
+.tmm-withdrawal-application-record-page{
+  background: #fff;
+}
+.tmm-fin-con{
+  background: #fff;
+}
+.navbar-through .page-content.tmm-fin-con{
+  padding-top: 0;
+}
+.tmm-withdrawal-application-record-page .list-block.tmm-list-block {
+  margin: 0;
+}
+.tmm-withdrawal-application-record-page .tip{
+  color: #666666;
+  font-size: 14px;
+  margin-top: 25px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.tmm-withdrawal-application-record-page .list-block ul:before {
+  height: 0px;
+}
+.list-block ul.tmm-record-conNo-ul:after{
+  height:0px !important;
+}
+.tmm-withdrawal-application-record-page .page-content{
+  padding-bottom: 0;
+  padding-top: 40px;
+}
+.tmm-withdrawal-application-record-page .list-block.media-list .item-inner, .list-block li.media-item .item-inner {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 9px;
+    -ms-flex-item-align: stretch;
+    -webkit-align-self: stretch;
+    align-self: stretch;
+}
+.tmm-withdrawal-application-record-page .tmm-time-reason {
+    color: #8e8e93;
+    font-size: 12px;
+    white-space: normal;
+    margin-left: 0;
+    line-height: 25px;
+}
+.tmm-withdrawal-application-record-page .tmm-recor-canter .tmm-fin-con .item-after {
+    font-size: 18px;
+    line-height: 20px;
+}
+.tmm-withdrawal-application-record-page .tmm-recor-canter .tmm-pre-canter .list-block .item-after {
+    display: inline-block;
+    max-height: inherit;
+    color: black;
+    text-align: right;
+}
+.tmm-withdrawal-application-record-page .color-gre .fail {
+    color: #ff3333 !important;
+}
+.tmm-withdrawal-application-record-page .color-gre .suc {
+    color: #39ab53 !important;
+}
+.tmm-withdrawal-application-record-page .tmm-recor-canter .tmm-fin-con .item-after p {
+    font-size: 10px;
+}
+.tmm-withdrawal-application-record-page .list-block .item-text {
+    font-size: 15px;
+    color: #8e8e93;
+    line-height: 21px;
+    position: relative;
+    overflow: hidden;
+    height: 42px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+	word-break: break-all;
+	}
+.tmm-withdrawal-application-record-page .item-text.tmm-time-reason {
+    color: #8e8e93;
+    font-size: 12px;
+    white-space: normal;
+}
+.tmm-withdrawal-application-record-page .tmm-pre-canter .list-block .item-text {
+    height: auto;
+}
+.tmm-withdrawal-application-record-page .list-block.media-list .item-title-row, .list-block li.media-item .item-title-row {
+     display: -webkit-box; 
+    display: -ms-flexbox;
+     display: -webkit-flex; 
+     display: flex; 
+     -webkit-box-pack: justify; 
+    -ms-flex-pack: justify;
+     -webkit-justify-content: space-between; 
+     justify-content: space-between; 
+}
+.tmm-withdrawal-application-record-page .tmm-record-content {
+    padding-top: 35px;
+}
+.tmm-withdrawal-application-record-page .tmm-record-conNo {
+    text-align: center;
+    line-height: 48px;
+    color: #403a39;
+}
+
+.list-block .item-inner.last:after {
+    height: 0px !important;
+}
+
+/***********************************************************************************
+银行卡管理协议*/
+.tmm-bank-protocol{
+  background:#fff;
+}
+.tmm-bank-protocol .tmm-bank-protocol-content{
+  padding: 0 16px 30px 16px;
+  line-height: 24px;
+  font-size: 13px;
+  color: #666666;
+}
+.tmm-bank-protocol-inner .ticon-arrow-back{
+  color: #000;
+}
+.tmm-bank-protocol .tmm-bank-protocol-content div:first-child{
+  padding-top: 55px;
+  margin-top:0; 
+}
+.tmm-bank-protocol .tmm-bank-protocol-content div{
+  margin-top: 10px;
+}
+.tmm-bank-protocol .tmm-bank-protocol-content .bold{
+  font-weight: bold;
+}
+
+/***********************************************************************************
+银行卡管理*/
+.tmm_card_manage_page.page {
+    background: #f0f2f0;
+}
+.tmm_card_manage_page .page-content{
+  padding-top: 40px;
+}
+.tmm-card-top {
+    padding: 35px 0px;
+    text-align: center;
+}
+.tmm-card-top img {
+    width: 120px;
+}
+.tmm-card-but {
+    margin: 32px 0 25px;
+    padding: 0px 16px;
+}
+.tmm-card-but .sub_btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: #fe686d;
+    border-radius: 2px;
+    line-height: 44px;
+    color: #fff;
+    font-size: 16px;
+    border: 1px solid transparent;
+}
+.tmm_iconfont{ color:#000 !important;}
+.codeWidth{ width:180px !important;}
+.list-block-font {
+    font-size: 15px;
+}
+
+/**我的收入*/
+.baozhengjinTotal{
+	font-size:18px;
+	padding-left:16px;
+	color:#008800;
+	margin-top:35px;
+}
+.myIncomeTotal{
+	font-size:18px;
+	padding-left:16px;
+	color:#008800;
+	margin-top:-5px;
+}
+.incomeContent{
+    background-color: #fff;
+    height: 92%;
+}
+.myincome-list .myincome-list-content{
+	position: relative;
+    line-height: 25px;
+    height: 25px;
+	padding: 0px;
+    margin: 0px 16px;
+    font-weight: normal;
+	box-sizing: border-box;
+}
+.myincome-list .myincome-list-title{
+	position: relative;
+    line-height: 48px;
+    height: 48px;
+	padding: 0px 16px;
+    margin: 0px;
+    font-weight: normal;
+	box-sizing: border-box;
+	font-weight:bold; 
+}
+.myincome-list .myincome-list-content span,.myincome-list .myincome-list-title span{
+	display: inline-block;
+    font-size: 14px;
+    color: #565a5c;
+}
+.contentbg{ background-color:#FFF;}
+.income-content-font-right{word-break: break-all;}
+.income-content-font{font-size: 14px; color: #666666;  white-space: normal;}
+.item-title-left{ width:30%; text-align:left;}
+.item-title-middle{ width:36%; text-align:center;}
+.item-title-right{ width:33%; text-align:right;}
+.list-block-bottom{ padding-bottom:50px;}
+.item-inner-new{
+	  padding-right: 15px;
+    position: relative;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 7px;
+    min-height: 44px;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -ms-flex-item-align: stretch;
+    -webkit-align-self: stretch;
+    align-self: stretch;
+}
+.tmm-trade-record-page .tmm-zong{margin:0;}
+.tmm-trade-record-page .tmm-zongs{margin:0;}
+.tmm-zongs .tmm-jine{color: #ffffff;background-color: #4bb262;padding: 4px; font-size: 15px;border-radius: 4px;}
+.tmm-ge{padding: 10px 15px;font-size: 12px;color: #666666;}
+.tmm-saom-tu{position: absolute; top: 14%;right: 20px;}
+.tmm-saom-tu img{width: 23px;}
+.list-block-bottom .tmm-cl .item-after{display: inline-table;color: #000000;}
+.tmm-cl .tmm-mode{color: #c5c5c5;font-size: 12px;}
+.sub_btn_no{ display: block;text-align: center;width: 100%;border-radius: 2px;line-height: 44px;color: #fff;font-size: 16px;}
+.tmm-trade-record-list-block .tmm-record-conNo-ul{ background-color: #f4f4f4;}
+.tmm-trade-record-page .tmm-bon{margin: 45px 0 0 0;}
+.tmm-cl .tmm-fonsize{font-size: 12px;}
+.tmm-cl .bon-col-gre{color: #77c589;}
+.tmm-cl .bon-col-red{color: #ff2f2f;}
+.tmm-bon .tmm-jine{color: #000000;}
+.tmm-trade-record-list-block .tmm-zong .item-after{width: 60%;}
+.tmm-fonsize-normal{white-space: normal !important;}
+
+
+
+/**
+* 提现成功提示界面
+*/
+.tmm-car-canter{text-align: center;}
+.tmm-card-top{padding: 35px 0px;}
+.tmm-card-top img{width: 120px;}
+.tmm-card-canter{margin: 0;}
+.tmm-card-but{ margin: 32px 0 25px;padding: 0px 16px;}
+.tmm-card-but .sub_btn{display: block;text-align: center;width: 100%;background-color: #fe686d;border-radius: 2px;line-height: 44px;color: #fff;font-size: 16px;border: 1px solid transparent;}
+.tmm-list-label{text-align: left;margin: 10px 0 35px;padding: 0 15px;font-size: 12px;color: #8f8f94;}
+.tmm-prom-but{bottom: 0;width: 90%;position: absolute;background: #ffffff;padding: 10px 16px;}
+.tmm-prom-but .prom_btn{display: block;text-align: center; width: 100%;background-color: #fe686d;border-radius: 2px;line-height: 44px;color: #fff;font-size: 16px;border: 1px solid transparent;}
+.tmm-card-top p{margin-top: 10px;font-size: 20px; color: #4bb262;}

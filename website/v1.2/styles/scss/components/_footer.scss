@@ -1,0 +1,14 @@
+.footer {
+    height: $footHeight;
+    line-height: $footHeight;
+    background-color: $headerColor;
+    text-align: center;
+    overflow: hidden;
+    .copyright {
+        color: #bbb;
+        font-size: 14px;
+        a {
+            color: #bbb;
+        }
+    }
+}

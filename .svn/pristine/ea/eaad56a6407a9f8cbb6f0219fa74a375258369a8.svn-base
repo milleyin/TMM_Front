@@ -1,0 +1,31 @@
+<!-- 觅趣专题更多 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">十月瓜果专题</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="act-more" class="page">
+    <div class="page-content">
+      <ul class="hot-img-wrapper">
+        <li class="img-item">
+          <div class="img-wrapper">
+            <img src="../../styles/images/banners/banner01.png" alt="">
+          </div>
+        </li>
+        <li class="img-item">
+          <div class="img-wrapper">
+            <img src="../../styles/images/banners/banner06.png" alt="">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

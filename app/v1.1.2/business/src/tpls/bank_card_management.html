@@ -1,0 +1,47 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+			<a href="javascript:history.back(-1);">
+				<i class="iconfont ticon-arrow-back">&#xe61f;</i>
+			</a>
+		</div>
+		<div class="center">银行卡管理</div>
+		<div class="right tmm-financing-right"></div>
+	</div>
+</div>
+
+<!--银行卡管理-->
+<div class="pages">
+	<div data-page="bank_card_manage" class="page tmm_card_manage_page">
+		<div class="page-content tmm-car-canter">
+			
+			<div class="tmm-card-top"><img src="images/card1.png" /></div>
+			<div class="list-block tmm-card-canter">
+				<ul>
+        <li class="item-content">
+          <div class="item-inner">
+            <div class="item-after">真实姓名</div>
+            <div class="item-title">{{bankCardInfo.bank_name}}</div>
+          </div>
+        </li>
+        <li class="item-content">
+          <div class="item-inner">
+            <div class="item-after">开户银行</div>
+            <div class="item-title">{{bankCardInfo.bank_value}}{{bankCardInfo.bank_branch}}</div>
+          </div>
+        </li>
+        <li class="item-content">
+          <div class="item-inner">
+            <div class="item-after">银行卡号</div>
+            <div class="item-title">{{bankCardInfo.bank_code_format}}</div>
+          </div>
+        </li>
+      </ul>
+			</div>
+			<div class="tmm-card-but">
+        <a href="#/newbank/2" class="sub_btn">更换银行卡</a>
+      </div>
+			
+		</div>
+	</div>
+</div>

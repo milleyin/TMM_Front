@@ -1,0 +1,85 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">提交订单</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="act-order-A-detail" class="page page-order act-order-A-detail" id="tmm-order-line-detail">
+    <div class="page-content tmm-order-detail">
+      <div class="content-block-title tmm-content-title">出游日期</div>
+      <div class="list-block selectday" style="line-height:44px;background-color: #fff;padding-left: 16px;">
+        {{#if actives_time.go_time_value}}
+        <div class="row tmm-order-status">
+          <div>{{actives_time.go_time}}</div>
+        </div>
+        {{else}}
+        <div class="row tmm-order-status" style="height: 44px;">
+          <input style="margin-top: 12px;height: 20px;font-size: 16px;" type="text" class="selectday-input" value="{{actives_time.go_time}}">
+        </div>
+        {{/if}}
+      </div>
+      <!--项目列表-->
+      <div class="content-block-title tmm-content-title">项目列表</div>
+      <div class="list-block tmm-list-block tmm-retinue-top-border tmm-retinue-bottom-border">
+        {{#each items_fare}} {{#if @key%2}}
+        <div class="tmm-day-num" style="line-height: 44px;text-align: center;">{{mergeDay @key}}</div>
+        {{/if}} {{#each this}} {{#each this}}
+        <ul class="tmm-order-ul-before">
+          <li class="tmm-item-li clearfix b-border">
+            <div class="tmm-item-title">
+              {{name}}
+            </div>
+            <div class="tmm-order-item-content">
+              {{#each fare}} {{#js_compare "this.number != '0' "}}
+              <div class="tmm-item-fare">
+                <div class="tmm-fare-first w_40">{{name}}</div>
+                {{#js_compare "this.room_number == '0' "}}
+                <span class="w_20">{{info}}</span> {{/js_compare}} {{#js_compare "this.room_number != '0' "}}
+                <span class="w_20">{{room room_number}}</span> {{/js_compare}}
+                <span class="w_10">{{number}}</span>
+                <span class="w_25">￥{{price}}</span>
+              </div>
+              {{/js_compare}} {{/each}}
+            </div>
+          </li>
+        </ul>
+        {{/each}} {{/each}} {{/each}}
+      </div>
+
+      <div class="order-block">
+        <div class="content-block-title tmm-content-title">主要联系人</div>
+
+        <div class='order-cell {{#if canSetName}}arrow-cell set-main-name{{/if}}'>{{actives_info.attend.main.name}}</div>
+      </div>
+
+      <div class="order-block">
+        <div class="content-block-title tmm-content-title">出行人员信息</div>
+        <div class="order-cell arrow-cell show-people">成人{{actives_info.attend.people}}，儿童{{actives_info.attend.children}}</div>
+      </div>
+
+
+      {{#js_compare "this.userInfo.is_organizer == 1 && this.userInfo.organizer_status != 0"}}
+      <div class="order-block">
+        <div class="content-block-title tmm-content-title">
+          服务费（交通、导服及其他）
+        </div>
+        <div class="order-cell">
+          {{actives_info.tour_price.value}}元/人
+        </div>
+      </div>
+      {{/js_compare}}
+
+    </div>
+      <div class="sub-toolbar">
+        <span class="toolbar-item price">￥ {{total_price}}</span>
+        <span class="toolbar-item"><span class="submit-btn">确认支付</span></span>
+      </div>
+  </div>
+</div>

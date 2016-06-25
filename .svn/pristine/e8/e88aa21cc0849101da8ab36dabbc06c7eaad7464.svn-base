@@ -1,0 +1,19 @@
+<ion-tabs class="tabs-icon-top {{$root.hideTabs}}" >
+
+  <ion-tab title="我的订单" icon-off="icon icon-order-outline" icon-on="icon icon-order" href="#/tab/order">
+    <ion-nav-view name="tab-order"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="我的项目" icon-off="icon icon-item-outline" icon-on="icon icon-item" href="#/tab/item">
+    <ion-nav-view name="tab-item"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="我的收入" icon-off="icon icon-income-outline" icon-on="icon icon-income" href="#/tab/account">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="我的" icon-off="icon icon-my-outline" icon-on="icon icon-my" href="#/tab/my">
+    <ion-nav-view name="tab-my"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>

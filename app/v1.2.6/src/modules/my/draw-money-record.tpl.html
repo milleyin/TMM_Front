@@ -1,0 +1,64 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner tmm-trade-record-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">提现申请记录</div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="draw-money-record" class="page tmm-withdrawal-application-record-page" id="tmm-draw-money-record-page">
+    <div class="page-content pull-to-refresh-content infinite-scroll">
+      <!-- 默认的下拉刷新层 -->
+      <div class="pull-to-refresh-layer">
+        <div class="preloader"></div>
+        <div class="pull-to-refresh-arrow"></div>
+      </div>
+      <!--提现申请记录-->
+      <div class="tmm-recor-canter">
+        <div class="tmm-pre-canter tmm-fin-con">
+          <div class="list-block media-list tmm-list-block">
+            <ul id="tmm-draw-money-record-ul" class="tmm-record-conNo-ul">
+              {{#each cashRecordList}}
+              <li class="item-content">
+                <div class="item-inner">
+                  <div class="item-title-row">
+                    <div class="item-title list-block-font">
+                      <b>提现</b>
+                      <p class="tmm-time-reason">{{add_time}}</p>
+                    </div>
+                    <div class="item-after color-gre">{{price}} {{#js_compare "this.audit_status.value == 3"}}
+                      <p class="suc">提现成功</p>
+                      {{/js_compare}} {{#js_compare "this.audit_status.value == 2"}}
+                      <p class="fail">打款中...</p>
+                      {{/js_compare}} {{#js_compare "this.audit_status.value == 0 || this.audit_status.value == 1"}}
+                      <p class="fail">审核中...</p>
+                      {{/js_compare}} {{#js_compare "this.cash_status.value == -1 || this.cash_status.value == -2 || this.cash_status.value == -3"}}
+                      <p class="fail">提现失败</p>
+                      {{/js_compare}}
+                    </div>
+                  </div>
+                  {{#js_compare "this.audit_status.value == -1"}}
+                  <div class="item-text tmm-time-reason">原因：{{remark_first}}</div>
+                  {{/js_compare}} {{#js_compare "this.audit_status.value == -2"}}
+                  <div class="item-text tmm-time-reason">原因：{{remark_double}}</div>
+                  {{/js_compare}} {{#js_compare "this.audit_status.value == -3"}}
+                  <div class="item-text tmm-time-reason">原因：{{remark_submit}}</div>
+                  {{/js_compare}}
+                </div>
+              </li>
+              {{else}}
+              <li class="tmm-record-content tmm-record-conNo">
+                你暂时还没有提现申请记录哦！
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+        <div class="tip" style="display:none;">正在加载...</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<ion-view view-title="我的订单详情" hide-tabs cache-view="false">
+  <ion-nav-buttons side="left">
+    <i class="tmm-ion-left icon icon-arrow-back" nav-back></i>
+  </ion-nav-buttons>
+  <ion-content class="orderdetail">
+
+    <div class="main-title">出游日期</div>
+    <div class="cell">{{model.go_time}}</div>
+
+
+    <div class="main-title">项目列表</div>
+    <div class="order-wrap">
+      <div ng-repeat="(key,value) in model.items_fare">
+        <div class="day_num">{{dayNum[key-1]}}</div>
+
+        <div ng-repeat="attr in value">
+        <div class="det-list" ng-repeat="attr1 in attr">
+          <div class="title">
+            <span class="name">{{attr1.name}}</span>
+            <span ng-if="attr1.barcode.is_barcode!=1 && attr1.barcode.is_barcode!=-2" class="h_right gray">{{attr1.barcode.barcode_name}}</span>
+            <span ng-if="attr1.barcode.is_barcode==1" class="h_right red" ng-click="sendCode(attr1.barcode.barcode)">确认消费</span>
+          </div>
+          <div class="item-list" ng-repeat="attr2 in attr1.fare">
+            <span class="item-cell">{{attr2.name}}</span>
+            <span class="item-cell" ng-if="attr1.classliy.value != 2">{{attr2.info}}</span>
+            <span ng-if="attr1.classliy.value == 2">{{attr2.hotel_number}}人间</span>
+            <span class="item-cell">{{attr2.number}}</span>
+            <span class="item-cell">￥{{attr2.count}}</span>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-title">觅趣联系人</div>
+    <div class="people-cell">
+      <div class="people-item">
+        <p><span class="name">姓名：{{model.actives_organizer.name}}</span><span>性别：{{model.actives_organizer.gender}}</span></p>
+        <p><span class="no_mr">手机号：{{model.actives_organizer.phone}}</span></p>
+      </div>
+    </div>
+    <div class="main-title">订单状态</div>
+    <div class="people-cell">
+      <p>觅趣编号：{{model.actives_info.actives_no}}</p>
+      <p>实际出游人数：{{model.actives_info.user_go_count.value}}</p>
+    </div>
+    <div class="empty"></div>
+  </ion-content>
+
+</ion-view>

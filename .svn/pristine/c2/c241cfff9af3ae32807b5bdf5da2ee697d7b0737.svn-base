@@ -1,0 +1,109 @@
+.swiper-container {
+  .swiper-pagination-bullet {
+    height: 5px;
+    width: 5px;
+  }
+  .swiper-wrapper {
+    white-space: nowrap;
+
+    .swiper-slide {
+      
+    }
+  }
+}
+
+.index-page {
+
+  .swiper-container {
+    .swiper-slide {
+      height: 100%;
+    }
+  }
+  .index-content {
+    background-color: #fff;
+    position: relative;
+    padding-top: 20px;
+    .search-btn {
+      position: absolute;
+      left: 14px;
+      top: -35px;
+      background-image: url(../images/search.png);
+      background-size: 70px 70px;
+      width: 70px;
+      height: 70px;
+    }
+  }
+  .sliderItem {
+    vertical-align: top;
+  }
+  .horibox {
+    display: none;
+  }
+  .horiboxTit {
+    background-color: #fff;
+    height: 68px;
+    line-height: 68px;
+    font-size: 22px;
+    padding-left: 14px;
+  }
+  .coverHoriboxline {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.99);
+    margin-top: -6px;
+  }
+  .scrollView {
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    // overflow-x: auto;
+    // overflow-y: hidden;
+    overflow: hidden;
+    padding-bottom: 1px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-image: -webkit-linear-gradient(180deg, #d7d9d7, #d7d9d7 50%, transparent 50%), -webkit-linear-gradient(90deg, #d7d9d7, #d7d9d7 50%, transparent 50%);
+    background-image: linear-gradient(270deg, #d7d9d7, #d7d9d7 50%, transparent 50%), linear-gradient(0deg, #d7d9d7, #d7d9d7 50%, transparent 50%);
+    background-position: right, bottom;
+    background-size: 1px 100%, 100% 1px;
+    .contentView {
+      padding-left: 14px;
+      height: 100%;
+      white-space: nowrap;
+      font-size: 0;
+      .horibox {
+        display: inline-block;
+        margin-right: 8px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          display: block;
+        }
+        .intro {
+          padding-bottom: 10px;
+          .tit {
+            font-size: 16px;
+            line-height: 40px;
+            letter-spacing: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .txt {
+            font-size: 13px;
+            line-height: 20px;
+            color: #737373;
+            // letter-spacing: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            white-space:normal;
+            word-break:break-all;
+          }
+        }
+        &:last-child {
+          margin-right: 14px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.seek-content {
+  margin-top: 39px;
+}
+
+.sub-nav {
+  display: flex;
+  height: 40px;
+  line-height: 38px;
+  background-color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  @extend %border-bottom;
+  .subtit {
+    flex: 1;
+    text-align: center;
+    margin: 0 2px;
+    color: $darkGray;
+    font-size: 13px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAECAYAAAC3OK7NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAAAXElEQVQI123OsQ2CYBiE4edvdAaZ46uYA2ewYxjW0Dmobg6YQRttICGGK997L7mW5IEJF+d5Y2yQpMcLtz9pwb2q5raTJB2e6Dc0Y6iqFdpxnuS63fhirKrP3v0AH48Wz2isXFoAAAAASUVORK5CYII=) no-repeat center 30px;
+    background-size: 6px 3px;
+    &.active {
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAECAYAAAC3OK7NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAAAXklEQVQI123LoRGDQBRF0fMVPVAKdRCxamUcvUAHq1akD0pJakjMx8BMJpMn77s3stQ7Vgz+740lIEud8MD4Iz1xi972uEiWOp7ydKIdc/T2gvjOs9QBGxJL9Pa5vgOB9hYiACt3fwAAAABJRU5ErkJggg==);
+    }
+  }
+}
+
+.seekTitle {
+  position: relative;
+  display: inline-block;
+  height: 44px;
+  .tit {
+    line-height: 20px;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  .txt {
+    line-height: 12px;
+    font-size: 12px;
+    color: $gray;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 14px;
+    width: 16px;
+    height: 16px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo4ZWExMGU1MS1kMmJhLTFmNDQtOWRjNC1mOWUwNmM1YzQyOTkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RUM5NEM4QzE5NzQxMTFFNUFFOUVGMkZBOUZENTNDMEUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RUM5NEM4QzA5NzQxMTFFNUFFOUVGMkZBOUZENTNDMEUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODM0N2VjNTQtYzIyNy00YTRlLTk3YTItOWEwMGRjY2FhMDg1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjhlYTEwZTUxLWQyYmEtMWY0NC05ZGM0LWY5ZTA2YzVjNDI5OSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PtobobgAAAGFSURBVHja7Je/S8NQFIVbm6EI6iZuIo7FVVrcCipFna0u4ija/8Dfo6sdBFcRcXBxqDg4qRVXcVEk4KRuUgQHNX4PTiAExaaJdHkXPhKSvHtu8t65vKQ9z0u1MzpSbQ5bgC3AFpD2ZubsFPixCNuQ+Ue9jDQW/AuOjn2wBZ0wCNPQSFi8Bw5hDN7gCJ79L/AE4/ACJajDQILiJteFxI3GqBEPT8E55OEWcnAFhQTEC8qVU+68XvDHRejCCJxCL5xBOYb4rHKYXCfK7f7lgleYgB3Iwj6sGctGsTdswp5yVGFSuZuy4YdWagW+YF2FZJsQ94te0diK+GylD5jKp+SIcuBz/hbBaWtobDVuI6pp7h5DCyocQ3CtZ1wda0l1whsYDtjzUnb1oySb9esZ302JtmLj2yIcQDccw5Iw5126V5TXmwonoq3eZa17WFZbNWF2thsi0i7XacHbRmAV7mBX1+b19pHDidFkjMcfdF5vNYkTs83WY45nQ2J/TGwBtoA2x7cAAwB0ZlVu39cWagAAAABJRU5ErkJggg==);
+    background-size: 16px 16px;
+  }
+}
+
+.seekTop {
+  top: 102px !important;
+}
+.seekmask {
+  position: absolute;
+  top: 82px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-bottom: 49px;
+  overflow-y: auto;
+  .tagPos {
+    position: absolute;
+    width: 100%;
+    .tagWrap {
+      font-size: 0;
+      background-color: #fff;
+      padding: 8px;
+
+      .tag {
+        display: inline-block;
+        width: 33.3%;
+
+        span {
+          display: block;
+          margin: 8px;
+          font-size: 13px;
+          line-height: 30px;
+          border-radius: 4px;
+          border: 1px solid #d7d9d7;
+          text-align: center;
+          color: #858b8f;
+          &.active {
+            background-color: $red;
+            border-color: $red;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .closetag {
+    background-color:transparent;
+    height:100%;
+  }
+}

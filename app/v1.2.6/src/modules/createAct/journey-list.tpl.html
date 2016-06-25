@@ -1,0 +1,72 @@
+<!-- 行程列表 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">{{seekfunTitle}}</div>
+    <div class="right">
+      {{#js_compare "this.seekfunChangeLine == '0'"}}
+      <img src="../../styles/images/arrow.png" id="sel-pay-type">
+      {{/js_compare}}
+    </div>
+    
+  </div>
+</div>
+<div class="pages navbar-through">
+  <div data-page="journey-list" class="page journey-list-page" style="padding-top: 40px;">
+    <div class="tmm-journey-subnavbar">
+      
+      <div class="subnav-item distance active"><span>{{js "this.orientation.value ? this.orientation.value.address_info.name : (this.location.value ? this.location.value.address_info.name : '选择')"}}</span></div>
+      <div class="subnav-item popularity "><span>按人气</span></div>
+      
+    </div>
+
+    
+
+    <div class="page-content pull-to-refresh-content infinite-scroll" style="padding-top:40px;">
+
+      <div class="pull-to-refresh-layer">
+        <div class="preloader"></div>
+        <div class="pull-to-refresh-arrow"></div>
+      </div>
+  
+    <p style="position:absolute; top: 80px; left:0;width:100%;text-align:center;"> 没有更多数据了 </p>
+    <div class="journery-list">
+    {{#each list_data}}
+      <div class="journery-item">
+        <div class="con-inner select-journery-item" data-select="1" data-link="{{link}}" data-id="{{value}}" data-type="{{classliy.value}}">
+          <div class="pic">
+            <img src="{{image}}" alt="{{name}}">
+          </div>
+          <div class="describe">
+            <p class="tit">{{name}}</p>
+            <p class="price">￥{{price}} 起/人 {{day_num}}天行程</p>
+            <p class="price">{{#if this.isSortForDistance}}距离：{{distance}}{{else}} 人气：{{brow}}{{/if}}</p>
+          </div>
+        </div>
+        <!-- <label class="item-select">
+          <input type="radio" name="item-radio" value="{{value}}" >
+        </label> -->
+        <label class="label-checkbox item-content item-select">
+          <input type="radio" name="item-radio" value="{{value}}">
+          <div class="item-media">
+            <i class="icon icon-form-checkbox"></i>
+          </div>
+        </lable>
+      </div>
+    {{/each}}
+    </div>
+    </div>
+    {{#js_compare "this.seekfunChangeLine == '1'"}}
+      <div class="tmm-seekfun-btn">
+        <span class="outline-button tmm-journeylist-changeLine">确认更换行程</span>
+      </div>
+    {{/js_compare}}
+    {{#js_compare "this.seekfunChangeLine == '0'"}}
+    <div class="act-indicator"><span class="active"></span><span class="active"></span><span></span><span></span></div>
+    {{/js_compare}}
+  </div>
+</div>

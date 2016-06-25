@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>新增商家</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/breadcrumbs.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/step.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/form.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/box.css">  
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/business.css">
+  <script src="../css/agent/script/jquery-1.11.3.min.js"></script>
+  <!--[if lt IE 9]>
+  <script src="dist/js/html5.js"></script>
+  <script src="dist/js/respond.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="content_box">
+  <div class="breadcrumbs title">
+   <a href="business_site_accmangr.html">商家账号管理</a>
+   &frasl;
+   <span>新增商家</span>
+  </div>  <!--.title-->
+  <div class="create_nav create_business_nav">
+      <div class="create_steap_one">
+        <a class="done">1</a>
+        <span class="text_done">账号信息</span>
+        <div class="line line_first done"></div>
+      </div>
+      <div class="create_steap_two">
+        <a class="done">2</a>
+        <span class="text_done">公司信息</span>
+        <div class="line done"></div>
+      </div>
+      <div class="create_steap_three">
+        <a class="done">3</a>
+        <span class="text_done">证照上传</span>
+        <div class="line done"></div>
+      </div>
+      <div class="create_steap_four">
+        <a class="undone">4</a>
+        <span class="text_undone">添加标签</span>
+        <div class="line undone"></div>
+      </div>
+      <div class="create_steap_five">
+        <a class="undone">5</a>
+        <span class="text_undone">提交审核</span>
+        <div class="line line_last undone"></div>
+      </div>
+  </div>    <!-- .create_nav -->
+  <div class="content create_business_content">
+    <div class="content_three">
+      <div class="explain">
+        <div>/*上传图片大小请勿超过5MB</div>
+        <div>/*接受图片格式：PNG、JPGE、BMP</div>
+      </div>
+      <form>
+        <div class="card_box_div">
+          <div class="bg_box_div">
+            <div></div><div class="bg_box_one"></div>
+            <div class="bg_box_two"></div><div></div>
+          </div>
+          <div class="img_box_div">
+            <div class="upleft_box">
+              <img src="../css/agent/images/default_img.png">
+              <span>营业执照</span>
+            </div>
+            <div class="upright_box">
+              <img src="../css/agent/images/default_img.png">
+              <span>负责人手持身份证</span>
+            </div>
+          </div>
+          <div class="tag_form">
+            <div class="row-fluid upleft error">
+              <label>营业执照：</label>
+              <input type="file">
+              <div class="errorMessage">不可为空</div>
+            </div>
+            <div class="row-fluid upright error">
+              <label>负责人手持身份证:</label>
+              <input type="file">
+              <div class="errorMessage">不可为空</div>
+            </div>
+            <div class="row-fluid downleft error">
+              <label>负责人身份证正面:</label>
+              <input type="file">
+              <div class="errorMessage">不可为空</div>
+            </div>
+            <div class="row-fluid downright success">
+              <label>负责人身份证背面:</label>
+              <input type="file">
+              <div class="errorMessage">不可为空</div>
+            </div>  
+          </div>
+          <div class="img_box_div two">
+            <div class="downleft_box">
+              <img src="../css/agent/images/default_img.png">
+              <span>负责人身份证正面</span>
+            </div>
+            <div class="downright_box">
+              <img src="../css/agent/images/default_img.png">
+              <span>负责人身份证背面</span>
+            </div>
+          </div>
+        </div>  <!-- .box_div -->
+        <div class="row enter">
+            <a id="card_info"><span>下一步</span></a>
+        </div>
+      </form>
+    </div>   <!-- .content_three -->
+  </div>   <!--  .content -->
+  
+  <div class="copyright">
+    <span>Copyright &copy; TMM365.com All Rights Reserved</span>
+  </div>  <!--.copyright--> 
+</div>  <!--.content_box-->
+
+<script src="../css/agent/script/functions.js"></script>
+<script type="text/javascript">
+  $(function(){   
+    //证件照上传
+    $("#card_info").click(function(){
+      window.location.href="business_site_accmangr_create_stepfour.html";
+     window.event.returnValue=false;   
+    })
+  })
+</script>
+</body>
+</html>

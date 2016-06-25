@@ -1,0 +1,127 @@
+<div class="navbar tmm-navbar">
+	<div class="navbar-inner">
+		<div class="left">
+			<a href="#" class="back link">
+				<i class="icon ticon-arrow-back"></i>
+			</a>
+		</div>
+		<div class="center sliding">更多活动信息</div>
+		<div class="right">
+		</div>
+	</div>
+</div>
+
+<!--更多活动信息-->
+<div class="pages">
+	<div data-page="myinfo" class="page">
+		<div class="page-content tmm-add-retinue-page-contnet">
+
+			<div class="tmm-project-canter">
+				<div class="tmm-mor-con">
+					<div class="list-block tmm-canter-li tmm-mor-bacgcolor">
+						<ul>
+							<li class="item-content ">
+								<div class="item-inner">
+									<div class="item-title">活动参与人数</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">200人</div>
+								</div>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">服务费</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">50元/人</div>
+								</div>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">创建日期</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">2015/11/01</div>
+								</div>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">活动报名日期</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">2015/11/01至2015/11/30</div>
+								</div>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">出发日期</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">待定</div>
+								</div>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title">活动简介</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="brief-introduction">
+						<p>出游巨划算！游客休假时间10天以上可赠送赠送西双版纳4日游！精华景点：石林、丽江古城、束河古镇、大理古城、崇圣寺三塔、黑龙潭公园，洱海</p>
+						<p>行程简介第一天：各地——昆仑</p>
+						<p>第二天：昆仑——石林</p>
+						<p>第三天：大理—大理古城—崇圣寺三塔—洱海—南诏风情岛</p>
+						<p>第四天：大理—丽江—丽江古城（四方街）</p>
+						<p>第五天：丽江—束河古镇—黑龙潭公园—昆明</p>
+						<p>赠送第六天： 昆明—花市—普洱，或：昆明—花市—送机返回您温馨的家 </p>
+						<p>第七天：普洱—普洱国家森林公园—野象谷</p>
+						<p>第八天：西双版纳—打洛—中缅边境国门—景洪</p>
+						<p>第九天：傣族村寨—世界第一高桥—昆明</p>
+						<p>第十天：昆明—各地</p>
+						<p>【特别提示】：由于云南是旅游大省请各位游客预定之前请务必通多400电话咨询客服确认行程是否还有团位！</p><br /><br /><br /><br />
+
+
+						<p>预订须知</p><br />
+						<p>1、如遇天气原因、突发事件等不可抗力、不可预见因素导致无法按约定时间或行程游览，行程变更后增加的费用由游客承担，减少的费用由旅行社退还。 </p>
+						<p>2、团队行程所列费用中，儿童不含门票，届时请根据身高情况，在景区门口自行购买，敬请谅解。</p> 
+						<p>3、出于环保考虑，所有酒店均不提供一次性卫生用品，请您自行携带好相关用品。 </p>
+						<p>4、赠送项目因航班、天气等不可抗因素导致不能赠送的，费用不退。 </p>
+						<p>5、游泳、漂流、潜水等水上运动，均存在危险，参与前请根据自身条件，并充分参考当地海事部门及其它专业机构相关公告及建议后量力而行。</p>
+						<p>6、患有疾病的客人，参与此行程前请根据自身条件，请遵医嘱，安全第一，谨慎出行。</p>
+						<p>7、未满18周岁的旅游者请由家属陪同出游; 因服务能力所限，不接受18周岁以下旅游者单独报名出游，敬请谅解。</p>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

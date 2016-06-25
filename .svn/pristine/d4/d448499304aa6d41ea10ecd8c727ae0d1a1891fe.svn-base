@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>结伴游订单详情</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="../css/agent/css/details.css" />
+		<link rel="stylesheet" type="text/css" href="../css/agent/css/breadcrumbs.css">
+	</head>
+	<body>
+		<div class="content_box">
+			<div class="breadcrumbs title">
+				<a href="together_tour.html">结伴游</a>
+				&frasl;
+				<span>订单详情</span>
+			</div>
+			<div class="table_boxs">
+				<table border="0" class="de">
+					<tr>
+						<td>订单号：</td><td>56786131656</td>
+					</tr>
+					<tr>
+						<td>下单用户：</td><td>158******25</td>
+					</tr>
+					<tr>
+						<td>内容名称：</td><td>洱海三天雨夜游</td>
+					</tr>
+					<tr>
+						<td>类型：</td><td>点</td>
+					</tr>
+					<tr>
+						<td>项目费用：</td><td>1000.00元</td>
+					</tr>
+					<tr>
+						<td>保险费用：</td><td>200.00元</td>
+					</tr>
+					<tr>
+						<td>总价：</td><td>1200.00元</td>
+					</tr>
+					<tr>
+						<td>我的收益：</td><td>100.00元</td>
+					</tr>
+					<tr>
+						<td>订单状态：</td><td class="state_normal">已付款</td>
+					</tr>
+					<tr>
+						<td>出游时间：</td><td>2015.05.20</td>
+					</tr>
+					<tr>
+						<td>下单时间：</td><td>2015.02.10 08:30:15</td>
+					</tr>
+					<tr>
+						<td>支付时间：</td><td>2015.02.10 08:30:20</td>
+					</tr>
+				</table>
+			</div>
+			
+			<div class="de1">
+				<span>随行人员</span>
+				
+				<table border="0" width="100%">
+					
+					<tr>
+						<td>姓名</td>
+						<td>性别</td>
+						<td>身份证号码</td>
+						<td>手机号</td>
+						<td>邮箱</td>
+					</tr>
+					<tr>
+						<td><div id="zhu">主</div>郑金龙</td>
+						<td>男</td>
+						<td>451258622415684456</td>
+						<td>15872351564</td>
+						<td>4456213969@qq.com</td>
+					</tr>
+					<tr>
+						<td>郑金龙</td>
+						<td>女</td>
+						<td>451258622415684456</td>
+						<td>15872351564</td>
+						<td>4456213969@qq.com</td>
+					</tr>
+				</table>
+				
+			</div>	
+			<div class="clear"></div>
+			
+			<!--已购买项目内容-->
+			<div class="charts">		
+				<div class="gou">
+					 <div class="title">已购买的我的项目</div>
+					 <div class="line"></div>
+					 <div class="de2">
+					 	<p>山里吃</p><hr />
+					 	<div class="div">
+						<div class="gou_chi_1">
+							<div class="tutu">1</div>
+							<div class="gou_top">
+								<ul>
+									<li>潮汕手工面</li>
+									<li>所属商家：云谷科技有限公司</li>
+									<li>地址：广东省深圳市福田区市民中心</li>
+									<li>消费时间：2015-07-14 15:58:25</li>
+								</ul>
+							</div>
+						</div>
+						<div class="gou_chi_2">
+							<div class="good_info">
+				            <div class="box_div">
+					             <div style="visibility:hidden"><span>已选商品</span></div>
+						             <div class="title2"><span>已选商品</span></div>
+						             <div class="box box_one"> 
+						                <ul>
+						                	<li><spn>普通套餐</spn><span>成人价</span><span>120元</span><span>2份</span></li>
+						                </ul>
+						              </div> <!--  .box -->
+					             </div>   <!-- .box_div -->
+				            </div>    <!-- .good_info -->
+						</div><!--gou_chi_2-->
+						<div class="clear"></div>
+						</div>
+						<div class="div">
+						<div class="gou_chi_1">
+							<div class="tutu">1</div>
+							<div class="gou_top">
+								<ul>
+									<li>抓跑地区</li>
+									<li>所属商家：云谷科技有限公司</li>
+									<li>地址：广东省深圳市福田区市民中心</li>
+								</ul>
+							</div>
+						</div>
+						<div class="gou_chi_2">
+							<div class="good_info">
+				            <div class="box_div">
+					             <div style="visibility:hidden"><span>已选商品</span></div>
+						             <div class="title2"><span>已选商品</span></div>
+						             <div class="box box_one"> 
+						                <ul>
+						                	<li><spn>成人娱乐项目</spn><span>成人价</span><span>320元</span><span>1份</span></li>
+						                	<li><spn>儿童娱乐项目</spn><span>儿童价</span><span>150元</span><span>1份</span></li>
+						                </ul>
+						              </div> <!--  .box -->
+					             </div>   <!-- .box_div -->
+				            </div>    <!-- .good_info -->
+						</div><!--gou_chi_2-->
+						<div class="clear"></div>
+						</div>
+						<p>山里吃</p><hr />
+						<div class="div">
+						<div class="gou_chi_1">
+							<div class="tutu">1</div>
+							<div class="gou_top">
+								<ul>
+									<li>潮汕手工面</li>
+									<li>所属商家：云谷科技有限公司</li>
+									<li>地址：广东省深圳市福田区市民中心</li>
+								</ul>
+							</div>
+						</div>
+						<div class="gou_chi_2">
+							<div class="good_info">
+				            <div class="box_div">
+					             <div style="visibility:hidden"><span>已选商品</span></div>
+						             <div class="title2"><span>已选商品</span></div>
+						             <div class="box box_one"> 
+						                <ul>
+						                	<li><spn>普通套餐</spn><span>成人价</span><span>120元</span><span>1份</span></li>
+						                	<li><spn>儿童套餐</spn><span>儿童价</span><span>90元</span><span>1份</span></li>
+						                </ul>
+						              </div> <!--  .box -->
+					             </div>   <!-- .box_div -->
+				            </div>    <!-- .good_info -->
+						</div><!--gou_chi_2-->
+						<div class="clear"></div>
+						</div>
+						<p>山里住</p><hr />
+						<div class="div">
+						<div class="gou_chi_1">
+							<div class="tutu">1</div>
+							<div class="gou_top">
+								<ul>
+									<li>山竹茅屋</li>
+									<li>所属商家：云谷科技有限公司</li>
+									<li>地址：广东省深圳市福田区市民中心</li>
+								</ul>
+							</div>
+						</div>
+						<div class="gou_chi_2">
+							<div class="good_info">
+				            <div class="box_div">
+					             <div style="visibility:hidden"><span>已选商品</span></div>
+						             <div class="title2"><span>已选商品</span></div>
+						             <div class="box box_one"> 
+						                <ul>
+						                	<li><spn>豪华套餐</spn><span>两人间</span><span>120元</span><span>1份</span></li>
+						                </ul>
+						              </div> <!--  .box -->
+					             </div>   <!-- .box_div -->
+				             
+				            </div>    <!-- .good_info -->
+						</div><!--gou_chi_2-->
+						<div class="clear"></div>
+						</div>
+					</div>
+				</div>		<!--.login_record_chartone-->
+			</div><!--.charts-->
+			<!--版权 -->
+			<div style="text-align: center;">
+				<span>Copyright © TMM365.com All Rights Reserved</span>
+			</div>
+		</div><!--content_box-->    
+	</body>
+</html>

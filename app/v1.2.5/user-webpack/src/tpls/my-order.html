@@ -1,0 +1,68 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="index.html" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">我的订单</div>
+    <!--<div class="right tmm-right">刷新</div>-->
+  </div>
+</div>
+<div class="pages navbar-through">
+  <div data-page="my-order" class="page">
+    <div class="page-content">
+    {{#each order}}
+      <div class="card tmm-my-order-card">
+        <a href="pages/order-detail.html">
+          <div class="card-content">
+            <div class="tmm-order-img">
+              <img data-src="{{shops_img}}" class="lazy" alt="{{shops_name}}">
+            </div>
+            <div class="tmm-order-content">
+              <div class="tmm-order-content-title">
+                {{shops_name}}
+              </div>
+              <div class="tmm-order-content-info">
+                <span class="tmm-order-content-count">价格：{{order_price}}元</span>
+              </div>
+            </div>
+            <div class="tmm-order-status">
+              {{#js_compare "this.status.order_status.value =='0'"}}
+                <span class="tmm-icon-triangle tmm-tip-chuli" title="{{status.order_status.name}}">{{status.order_status.name}}</span>
+              {{/js_compare}}
+              {{#js_compare "this.status.order_status.value =='1'"}}
+                <span class="tmm-icon-triangle tmm-tip_fukuan" title="{{status.order_status.name}}">{{status.order_status.name}}</span>
+              {{/js_compare}}
+              {{#js_compare "this.status.order_status.value =='2'"}}
+                <span class="tmm-icon-triangle tmm-tip-fukuan" title="{{status.order_status.name}}">{{status.order_status.name}}</span>
+              {{/js_compare}}
+              {{#js_compare "this.status.order_status.value =='3'"}}
+                <span class="tmm-icon-triangle tmm-tip-xiaofei" title="{{status.order_status.name}}">{{status.order_status.name}}</span>
+              {{/js_compare}}
+              {{#js_compare "this.status.order_status.value =='-1'"}}
+                <span class="tmm-icon-triangle tmm-tip-gray" title="{{status.order_status.name}}">{{status.order_status.name}}</span>
+              {{/js_compare}}
+              {{#js_compare "this.status.order_status.value =='-2'"}}
+                <span class="tmm-icon-triangle tmm-tip-gray" title="{{status.order_status.name}}">{{status.order_status.name}}</span>
+              {{/js_compare}}
+              {{#js_compare "this.status.order_status.value =='-3'"}}
+                <span class="tmm-icon-triangle tmm-tip-gray" title="{{status.order_status.name}}">{{status.order_status.name}}</span>
+              {{/js_compare}}
+              
+            </div>
+          </div>
+          <div class="card-footer no-border">
+            <div class="tmm-card-footer tmm-my-order-b-border">
+              <a href="#" class="button">取消</a>
+            </div>
+          </div>
+        </a>
+      </div>
+    {{else}}
+      暂无数据...
+    {{/each}}
+    </div>
+  </div>
+  <!--添加内容 -->
+</div>

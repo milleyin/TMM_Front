@@ -1,0 +1,134 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">我的信息</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="myinfo" class="page">
+    <div class="page-content tmm-myinfo-page-contnet">
+      <div class="list-block tmm-myinfo-item-info">
+        <ul>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">昵称</div>
+              <div class="item-after">
+                <!-- <span class="side_txt">冰颜</span> -->
+                <input class="side_txt" id="nickname" value="{{userInfo.nickname}}">
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">性别</div>
+              <div class="item-after">
+                <span class="side_txt" id="gender">
+                {{js "this.userInfo.gender==1 ? '男' : '女'"}}
+                </span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <a class="item-inner" href="pages/set_phone.html" class="link">
+              <div class="item-title">手机号码</div>
+              <div class="item-after">
+                <span class="side_txt side_ok">{{userInfo.phone}}</span>
+                <i class="icon ion-ios-arrow-right"></i>
+              </div>
+            </a>
+          </li>
+          <li class="item-content">
+            <a class="item-inner" href="pages/set_pwd.html" class="link">
+              <div class="item-title">密码</div>
+              <div class="item-after">
+                <span class="side_txt">修改密码</span>
+                <i class="icon ion-ios-arrow-right"></i>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="content-block-title myinfo-block-title">主要联系人</div>
+      <div class="list-block tmm-myinfo-item-mainretinue">
+        <ul>
+          <li class="item-content">
+            <div class="item-inner">
+            {{#each main_retinueInfo}}
+              <div class="item-title item-title-name">{{name}}</div>
+            {{else}}
+            <div class="item-title item-title-name">添加</div>
+            {{/each}}
+            </div>
+          </li>
+        </ul>
+      </div>
+      {{/each}}
+      <div class="content-block-title myinfo-block-title">随行联系人</div>
+      <div class="content-block tmm-myinfo-content-otherretinue">
+        <div class="content-block-inner">
+        {{#each retinueInfo}}
+          <span class="txt">{{name}}</span>
+          
+        {{/each}}
+          <span class="red_txt">添加</span>
+        </div>
+      </div>
+      <!-- 设置性别 -->
+      <div class="set_gender" style="display:none">
+        <a href="#" class="male">男</a>
+        <a href="#" class="female">女</a>
+      </div>
+      <!-- 遮罩层 -->
+      <div class="bg_mask" style="display:none"></div>
+      <!-- 添加随行人员表单 -->
+      <form class="list-block tmm-myinfo-item-addform" style="display:none">
+        <div class="content-block-title tmm-add-block-title">添加随行人员</div>
+        <ul>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">姓名</div>
+              <div class="item-after">
+                <input type="text" name="name" placeholder="必填" class="add_input">
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">身份证</div>
+              <div class="item-after">
+                <input type="text" name="identity" placeholder="必填" class="add_input">
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">手机号码</div>
+              <div class="item-after">
+                <input type="tel" name="phone" placeholder="必填" class="add_input">
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">邮箱</div>
+              <div class="item-after">
+                <input type="email" name="email" placeholder="选填" class="add_input">
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="f_bottom">
+          <button class="sub_active" type="submit">确认</button>
+        </div>
+        <span class="icon_close"></span>
+      </form>
+    </div>
+  </div>
+</div>

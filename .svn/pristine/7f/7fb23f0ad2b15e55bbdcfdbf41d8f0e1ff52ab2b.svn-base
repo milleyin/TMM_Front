@@ -1,0 +1,35 @@
+body {
+  font-family: Helvetica, "华文细黑";
+    background-color: #f0f1f2;
+}
+
+i {
+  display: inline-block;
+}
+
+em {
+  display: block;
+}
+.scroll-content {
+  background-color: #f0f1f2;
+}
+.arrow-down {
+  height: 16px;
+  width: 16px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAbwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEmSURBVFiF7ZehTgNBFEVPCQ5H0CjqeAJJwg/0F1B8BjgEQREkH8APIHB1VeAqrkEjEJhWEhJYxC7JhMzMzhtIMHPkzOybk7677euk6zo8mNkOcJTYXkhaeeptum7v2QfuEnuHwKOn2EaFwJ/SBJpAE2gCTaAJNIF/F0gOJGa2BUwjW3uZelMze4usP0mKrWcnonfghn7KKeU2sjYHZqkHJrmZ0Mx2gSWw7ZAIeQEOJL2mDmQzIOkZOAF8k2vPB3Ccu3xUYJC4B64rBM4lLcYOlb4FZ8CD4/I5cFlyMJuBEEceRvseUvw9UJiHor5XCQwSY3ko6nu1wEAqD8V9DynOQEgkD66+h1T9FvzIg7vvIVWfwDdmdgWsJV3U1qj5dxxyCnz+psAX+K5pAQhCd4sAAAAASUVORK5CYII=);
+  background-size: 16px 16px;
+}
+
+.ionic-refresher-content {
+  text-align: center;
+}
+
+.icon-pulling {
+
+}
+
+.scroll-refresher .ionic-refresher-content .text-pulling {
+
+  font-size: 12px;
+  line-height: 32px;
+}

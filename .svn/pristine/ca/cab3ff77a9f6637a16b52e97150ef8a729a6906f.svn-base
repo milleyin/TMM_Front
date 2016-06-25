@@ -1,0 +1,25 @@
+{
+  "name": "TmmUserApp",
+  "version": "1.2.0",
+  "homepage": "",
+  "main": "src/",
+  "authors": [
+    "Moore Mo"
+  ],
+  "description": "A web app",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "gulpfile.js",
+    "node_modules",
+    "package.json",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    // 请用1.3.1，最新版本1.3.5的日历控件有问题
+    "framework7": "^1.2.0"
+  }
+}

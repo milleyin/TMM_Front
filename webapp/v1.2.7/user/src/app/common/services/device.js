@@ -1,0 +1,491 @@
+angular.module('device', [])
+
+
+.factory('device', function($ionicHistory, $ionicPopup,$rootScope, modify, appFunc, ENV, Resource) {
+
+  // var debugDiv = angular.element('<div id="debug"></div>');
+  // var count = 0;
+  // if (ENV.debug = true) {
+  //   debugDiv.css({
+  //     position: 'absolute',
+  //     top: '50px',
+  //     right: '20px',
+  //     zIndex: '10000',
+  //     lineHeight: '15px',
+  //     fontSize: '12px',
+  //     color: 'red',
+  //     padding: '0 10px',
+  //     border: '1px solid red'
+  //   })
+
+  //   document.body.appendChild(debugDiv[0]);
+    
+  // }
+
+
+  function getLocation(fn) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(fn);
+    }
+  }
+
+
+  /*IOS参数初始化*/
+  window.connectWebViewJavascriptBridge = function(callback) {
+    if (window.WebViewJavascriptBridge) {
+      callback(WebViewJavascriptBridge);
+    } else {
+      document.addEventListener('WebViewJavascriptBridgeReady', function() {
+        callback(WebViewJavascriptBridge);
+      }, false);
+    }
+  }
+
+  connectWebViewJavascriptBridge(function(bridge) {
+    bridge.init(function(message, responseCallback) {
+
+    });
+  });
+
+  connectWebViewJavascriptBridge(function(bridge) {
+    bridge.callHandler('ObjcCallback', {
+      'setNetwork': 1
+    }, function(response) {});
+  });
+
+  // iOS定位回掉
+  connectWebViewJavascriptBridge(function(bridge) {
+    bridge.registerHandler('JSCallback', function(data, responseCallback) {
+      if (data == '') {
+        window.device.getAddress(data);
+      } else {
+        window.device.getAddress(data.longitude, data.latitude, data.city);
+      }
+    });
+  });
+
+  // iOS微信/支付宝支付回掉
+  connectWebViewJavascriptBridge(function(bridge) {
+      bridge.registerHandler('PayCallback', function(data, responseCallback) {
+        if (data == '1') {
+          window.device.goOrderDetail();
+        }
+      });
+    });
+
+  connectWebViewJavascriptBridge(function(bridge) {
+    bridge.registerHandler('JSLogin_Callback', function(data, responseCallback) {
+      window.tmmSdk.JSLogin_Callback();
+    });
+  });
+  var device = {
+
+    // 首页跳到觅鲜页面
+    goFresh: function() {
+      var url = ENV.freshHomePage;
+      try {
+        if (ENV.iOS) { //ios
+          connectWebViewJavascriptBridge(function(bridge) {
+            bridge.callHandler('ObjcCallback', {
+              'youzan_1': url
+            }, function(response) {})
+          });
+        } else if (ENV.android) {
+          window.jsObj.jumpActivity(url, 0);
+        }
+
+      } catch (e) {
+
+      }
+    },
+    // 详情页面跳到觅鲜页面
+    goSeekFreshDetail2: function(title, description, thumb_url, webpageUrl) {
+      if (ENV.iOS) { //ios
+        connectWebViewJavascriptBridge(function(bridge) {
+          bridge.callHandler('ObjcCallback', {
+            "youzan_3": {
+              "title": title,
+              "description": description,
+              "thumb_url": thumb_url,
+              "webpageUrl": webpageUrl
+            }
+          }, function(response) {})
+        });
+      } else if (ENV.android) {
+        window.jsObj.jumpActivity(webpageUrl, 2, title, thumb_url, webpageUrl, description);
+      }
+    },
+    // 退出觅鲜页面
+    exitSeekFresh: function() {
+      try {
+        if (ENV.iOS) { //ios
+          connectWebViewJavascriptBridge(function(bridge) {
+            bridge.callHandler('ObjcCallback', {
+              'youzan_exit': ''
+            }, function(response) {})
+          });
+        } else if (ENV.android) {
+          window.jsObj.hindJumpActivity();
+        }
+      } catch (e) {
+
+      }
+    },
+
+    // 微信分享
+    share: function(title, link, imgUrl, desc) {
+
+
+      var url = window.location.href;
+      Resource.getWeixinToken(url).then(function(data) {
+
+        wx.config({
+          debug: false,
+          appId: data.appId,
+          timestamp: data.timestamp,
+          nonceStr: data.nonceStr,
+          signature: data.signature,
+          jsApiList: ["onMenuShareTimeline", "onMenuShareAppMessage", "onMenuShareQQ"]
+        });
+        wx.ready(function() {
+          wx.onMenuShareTimeline({
+            title: title, // 分享标题
+            link: link, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            success: function() {
+              // 用户确认分享后执行的回调函数
+            },
+            cancel: function() {
+              // 用户取消分享后执行的回调函数
+            }
+          });
+          wx.onMenuShareAppMessage({
+            title: title, // 分享标题
+            desc: desc, // 分享描述
+            link: link, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function() {
+              // 用户确认分享后执行的回调函数
+            },
+            cancel: function() {
+              // 用户取消分享后执行的回调函数
+            }
+          });
+          wx.onMenuShareQQ({
+            title: title, // 分享标题
+            desc: desc, // 分享描述
+            link: link, // 分享链接
+            imgUrl: imgUrl, // 分享图标
+            success: function() {
+              // 用户确认分享后执行的回调函数
+            },
+            cancel: function() {
+              // 用户取消分享后执行的回调函数
+            }
+          });
+        })
+
+
+
+      })
+
+    },
+
+    // app分享
+    shareMsg: function(title, description, thumb_url, webpageUrl) {
+      try {
+        if (ENV.iOS) { //ios
+          connectWebViewJavascriptBridge(function(bridge) {
+            bridge.callHandler('ObjcCallback', {
+              "wx_share": {
+                "title": title,
+                "description": description,
+                "thumb_url": thumb_url,
+                "webpageUrl": webpageUrl
+              }
+            }, function(response) {})
+          });
+        } else if (ENV.android) {
+          window.jsObj.showShare(title, '', description, thumb_url, webpageUrl, '', '');
+        }
+      } catch (e) {
+
+      }
+    },
+    
+    // 获取地理位置信息
+    getLocation: function(fn) {
+      // app
+      if (ENV.device === 'app') {
+        try {
+          if (ENV.iOS) { //ios
+
+            connectWebViewJavascriptBridge(function(bridge) {
+              bridge.callHandler('ObjcCallback', {
+                "getLoc": ''
+              }, function(response) {
+                if (response === false || response === "false") {
+
+                } else {
+                  var token = {
+                    "location": {
+                      "lng": response.longitude,
+                      "lat": response.latitude
+                    }
+                  };
+                  Resource.setLoactionGPS(token).then(function(data) {
+                    fn && fn();
+                  }, function(data) {
+
+                  });
+
+                }
+              })
+            });
+          } else if (ENV.android) {
+            window.jsObj.getAddress();
+
+          }
+        } catch (e) {
+
+        }
+
+      } else { // 网页
+        if (ENV.isWeixin) {
+          var url = window.location.href;
+
+          Resource.getWeixinToken(url).then(function(data) {
+
+            wx.config({
+              debug: false,
+              appId: data.appId,
+              timestamp: data.timestamp,
+              nonceStr: data.nonceStr,
+              signature: data.signature,
+              jsApiList: ['getLocation']
+            });
+            wx.ready(function() {
+              wx.getLocation({
+                type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+                success: function(res) {
+                  var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+                  var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+                  var speed = res.speed; // 速度，以米/每秒计
+                  var accuracy = res.accuracy; // 位置精度
+                  var token = {
+                    "location": {
+                      "lng": longitude,
+                      "lat": latitude
+                    }
+                  };
+                  Resource.setLoactionGPS(token).then(function(data) {
+
+                    fn && fn();
+                  }, function(data) {
+
+                  });
+                }
+              });
+            });
+          })
+        } else {
+          getLocation(function(position) {
+
+            var token = {
+              "location": {
+                "lng": position.coords.longitude,
+                "lat": position.coords.latitude
+              }
+            };
+            Resource.setLoactionGPS(token).then(function(data) {
+              fn && fn();
+            });
+
+          })
+
+        }
+      }
+
+    },
+
+    //显示地址导航
+    showMap: function(city, address, lng, lat) {
+      try {
+        if (ENV.iOS) { //ios
+          connectWebViewJavascriptBridge(function(bridge) {
+            bridge.callHandler('ObjcCallback', {
+                'navi': address
+            }, function(response) {})
+          });
+          connectWebViewJavascriptBridge(function(bridge) {
+            bridge.callHandler('ObjcCallback', {
+              'navi_loc': {
+                'lng': lng + '',
+                'lat': lat + '',
+                'address': address,
+                'city': city
+              }
+            }, function(response) {})
+          });
+        } else if (ENV.android) { // android
+          window.jsObj.jumpMap(city, address);
+          window.jsObj.jumpMaps(lng + '', lat + '', address, city);
+        }
+      } catch (e) {}
+    },
+    
+    //拨打电话
+    tmmWxCallPhone: function(callNum) {
+
+      if (ENV.device === 'weixin') {
+
+        var confirmPopup = $ionicPopup.alert({
+          title: '<a href="tel:' + callNum + '">点击拨打电话' + callNum + '</a>',
+          cssClass: 'tmm-ionic-alert',
+          okText: '取消'
+        });
+      } else {
+
+        var confirmPopup = $ionicPopup.confirm({
+          template: '请拨打电话' + callNum,
+          cssClass: 'tmm-ionic-confirm',
+          buttons: [{
+            text: '取消',
+            type: 'button-default',
+          }, {
+            text: '立即拨打',
+            type: 'button-default',
+            onTap: function(e) {
+              callNum = callNum.replace(/\-/g, '');
+              try {
+                if (ENV.iOS) { //ios
+                  connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler('ObjcCallback', {
+                      "phone": callNum
+                    }, function(response) {})
+                  });
+                } else if (ENV.android) { //Android
+
+
+                  window.jsObj.callPhone(callNum);
+                }
+              } catch (e) {
+
+              }
+            }
+          }]
+        });
+      }
+      return confirmPopup;
+    },
+
+    // 原生调用js获取地理位置信息(android直接调用，iOS通过JSCallback调用)
+    getAddress: function(str1, str2, str3) {
+      // alert(str1+str2+str3);
+      if (!str1) {} else {
+        device.location = {
+          "lng": str1,
+          "lat": str2,
+          "city": str3
+        }
+
+        device.setLocationCity(str1, str2);
+      }
+    },
+
+    // 设置gps定位城市
+    setLocationCity: function(str1, str2) {
+
+      var dataLoation = {
+        "location": {
+          "lng": str1, //维度 小数点后不超过6位
+          "lat": str2 //经度 小数点后不超过6位
+        }
+      }
+
+      Resource.setLoactionGPS(dataLoation).then(function(data) {
+
+        // $rootScope.$broadcast('refreshLocation');
+      }, function(data) {
+
+      });
+
+    },
+    // 安卓设备获取设备经纬度回调函数
+    getLocationCallBack: function(str1, str2, str3) {
+
+
+      if (!str1) {
+        appFunc.tipMsg('获取地理位置失败');
+      } else {
+        Resource.setLoactionGPS({
+          "location": {
+            "lng": str1,
+            "lat": str2
+          }
+        }).then(function(data) {
+          $ionicHistory.goBack(-1);
+          modify.ismodify = true;
+        });
+      }
+
+    },
+
+    // app微信支付
+    wxPay: function(data){
+
+      try {
+        if (ENV.iOS) {
+          console.log(data);
+          connectWebViewJavascriptBridge(function(bridge) {
+            bridge.callHandler('ObjcCallback', {
+              'WxPay': data
+            }, function(response) {})
+          });
+        } else if (ENV.android) {
+         
+          window.jsObj.weixinPay(angular.toJson(data), 'window.device.goOrderDetail');
+        }
+
+      } catch (e) {
+        
+      }
+    },
+
+    goOrderDetail: function() {
+
+      $rootScope.$broadcast('wxPay', 'success');
+    },
+
+    SET: function(key, value) {
+
+      if (typeof value !== 'string') {
+        value = JSON.stringify(value);
+      }
+      try {
+        localStorage.setItem(key, value);
+      } catch(e) {
+
+      }
+    },
+
+    GET: function(key) {
+      var value = null;
+
+      try {
+        value = localStorage.getItem(key);
+        value = JSON.parse(value);
+      } catch(e) {
+        
+      }
+      return value;
+    }
+
+  }
+
+
+  window.device = device;
+  return device;
+})

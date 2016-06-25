@@ -1,0 +1,22 @@
+<ion-view view-title="钱包" hide-tabs  bar-class="wallet-nav">
+  <ion-nav-buttons side="primary">
+    <i class="tmm-ion-left icon icon-back-arrow" nav-back></i>
+  </ion-nav-buttons>
+  <ion-content class="tmm-my-wallet" scroll="false">
+    <div class="wallet-content">
+      <div class="content-balance">5555</div>
+      <div class="balance-up">余额(元)</div>
+    </div>
+
+    <div class="wallet-list">
+      <img src="images/tx.png" class="wallet-img">提现
+    </div>
+
+    <div class="wallet-list wallet-top">
+      <img src="images/yhkgl.png" class="wallet-img">银行卡管理
+    </div>
+    <div class="wallet-list">
+      <img src="images/jyjl.png" class="wallet-img">交易记录
+    </div>
+  </ion-content>
+</ion-view>

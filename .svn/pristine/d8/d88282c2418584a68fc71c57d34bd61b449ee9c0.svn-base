@@ -1,0 +1,38 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.screen-qrcode .codeImg {
+  display: block;
+  width: 128px;
+  height: 128px;
+  margin: 0px auto 20px;
+}
+.screen-qrcode .finger {
+  margin: 20px auto 70px;
+  height: 30px;
+  text-align: center;
+}
+.screen-qrcode .finger img {
+  width: 25px;
+  height: 30px;
+}
+.screen-qrcode .finger span {
+  color: #000;
+  font-size: 15px;
+  line-height: 30px;
+  height: 30px;
+  vertical-align: top;
+}
+.screen-qrcode .title {
+  font-size: 18px;
+  text-align: center;
+  margin: 50px 0 80px 0;
+  color: #000;
+  font-weight: bolder;
+}
+.screen-qrcode .txt {
+  font-size: 13px;
+  line-height: 18px;
+  padding: 0 30px;
+}

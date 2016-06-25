@@ -1,0 +1,36 @@
+<ion-view view-title="{{model.name}}" hide-tabs="true">
+  <ion-nav-buttons side="left">
+    <i class="icon-back" nav-back="back"></i>
+  </ion-nav-buttons>
+  <ion-content on-scroll="getScrollPosition()">
+    <!--头部-->
+    <shop-banner></shop-banner>
+    <div class="shop-act-info">
+      <div class="box col-6">
+        <div class="box-tit">参与人数</div>
+        <div class="box-txt">{{model.actives_info.order_number.sign}} / {{model.actives_info.number.value}}</div>
+      </div>
+      <div class="box col-6">
+        <div class="box-tit">觅趣状态</div>
+        <div class="box-txt">{{model.actives_status.name}}</div>
+      </div>
+      <div class="box col-6">
+        <div class="box-tit">报名时间</div>
+        <div class="box-txt">{{model.actives_time.start_time}} / {{model.actives_time.end_time}}</div>
+      </div>
+      <div class="box col-6">
+        <div class="box-tit">出游日期</div>
+        <div class="box-txt">{{model.actives_time.go_time}}</div>
+      </div>
+      <div class="box col-12">
+        <div class="box-tit">觅趣简介</div>
+        <div class="active-intro" ng-bind-html="active_intro"></div>
+      </div>
+    </div>
+    <!--头部-->
+    <ng-include src="'app/shops/templates/shop-items.tpl.html'"></ng-include>
+  </ion-content>
+  
+  <shop-indicator type="act"></shop-indicator>
+
+</ion-view>

@@ -1,0 +1,58 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">添加随行人员</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="myinfo" class="page">
+    <div class="page-content tmm-add-retinue-page-contnet">
+      <!-- 添加随行人员表单 -->
+      <form class="list-block inset tmm-myinfo-item-addform">
+        <ul>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">姓名</div>
+              <div class="item-after">
+                <input type="text" name="name" placeholder="必填" class="add_input">
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">身份证</div>
+              <div class="item-after">
+                <input type="text" name="identity" placeholder="用于购买保险，平台不会泄漏(必填)" class="add_input">
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">手机号码</div>
+              <div class="item-after">
+                <input type="tel" name="phone" placeholder="方便商家联系(必填)" class="add_input">
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">邮箱</div>
+              <div class="item-after">
+                <input type="email" name="email" placeholder="选填" class="add_input">
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="f_bottom">
+          <button class="sub_active" type="submit">确认</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

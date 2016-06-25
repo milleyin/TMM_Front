@@ -1,0 +1,89 @@
+<div id="tansuo">
+    <header class="t_bar">
+        <h1>探索发现</h1>
+        <a href="#/sousuo" class="iconfont h_right h_20">&#xe618;</a>
+        
+        <nav class="sub_bar">
+            <ul class="subbarnav">
+                
+                <li class="subbarnav_list" ng-repeat="attr in subbarList">
+                    <span ng-click="show($event.target)" class="nav_tit">{{attr.name}}</span>
+                    <div class="xinqing span_list sub_bar_con">
+                        <div class="span_list_con">
+                            <span ng-repeat="attr2 in attr.son" ng-click="hide('{{attr2.link}}')"><a href="javascript:;">{{attr2.name}}</a></span>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+ <div class="content" style="padding-top: 38px;" when-scrolled="showMore()">
+ <div class="content_media">
+     <div ng-repeat="attr in json.list" class="img_sec {{ $first ? 'no_t_border' : '' }}">
+
+         <div class="sec_pic">
+             <img class="banner_pic" ng-click="goDetailPage(attr.classliy.value,attr.link,attr.value)" ng-src="{{attr.image}}" alt="{{attr.name}}">
+
+         </div>
+         
+          <div class="sec_txt">
+                <div class="left">
+                    <span class="title">{{attr.name}}</span>
+                    <div ng-class="attr.type.value==1 ? 'tip tip1' : 'tip tip2'">
+                        <span>{{attr.type.name}}</span>
+                    </div>
+                    <span class="state">{{attr.info}}</span>
+                </div>
+                <div class="praise">
+                    <div><img src="images/zan_black.png"></div>
+                    <span class="num">{{attr.collect_count}}</span>
+                </div> 
+            </div>
+
+     </div>
+	<div class="bg_mask_tansou" ng-click="navHide()" ng-show="showMap"></div>
+	
+	<div id="loading" ng-controller="Loading"></div>
+ </div>	
+ </div>
+
+    <footer class="f_bar">
+        <a ng-href="#/tuijian">
+            <i class="iconfont">&#xe619;</i>
+            <span>推荐</span>
+        </a>
+        <a class="active" ng-href="#/tansuo">
+            <i class="iconfont">&#xe615;</i>
+            <span>觅镜</span>
+        </a>
+        <a ng-href="#/mixian">
+            <i class="ticon icon-mixiantubiao"></i>
+            <span>觅鲜</span>
+        </a>
+        <a ng-href="#/my">
+            <i class="iconfont">&#xe624;</i>
+            <span>我的</span>
+        </a>
+    </footer>
+    
+</div>
+
+<!-- 职业页面 -->
+<div id="zhiye" class="zhiye">
+    <div class="zhiye_con">
+        
+        <span>联合创始人</span>
+        <span>管理</span>
+        <span>职业经理人</span>
+        <span>CFO</span>
+        <span>CEO</span>
+        <span>风控战略官</span>
+        <span>自由撰稿人</span>
+        <span>建筑师</span>
+        <span>CTO</span>
+        
+    </div>
+
+</div>

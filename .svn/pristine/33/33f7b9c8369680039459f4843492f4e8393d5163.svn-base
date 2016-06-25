@@ -1,0 +1,16 @@
+$darkGray: #333333;
+$gray : #666666;
+$red: #ff595f;
+
+$green: #5fb336;
+$orange: #faa64b;
+$bgColor: #f0f1f2;
+$btnGreen: #4bb262;
+$btnLightGrey: #ccc;
+$btnRed: #fe686d;
+$whiteColor: #fff;
+$blackColor: #000;
+$darkGray: #666;
+$orderleft: 15px;
+$orderCon: #565a5c;
+$btnGray: #d7d9d7;

@@ -1,0 +1,74 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link" id="act-dot-detail-back">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">{{dotObj.name}}</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<!--选择项目——景区-->
+<div class="pages">
+  <div data-page="act-dot-detail" class="page tmm-my-page" id="act-dot-detail-page">
+    <div class="page-content">
+      <div class="tmm-project-canter">
+        <div class="tmm-canter-top">
+          <div class="tmm-top-hed">
+            <div class="tmm-pro-img"><img class="lazy lazy-fadein lazy-loaded" data-src="{{dotObj.list_img}}"></div>
+            <div class="tmm-con-title">{{dotObj.name}}
+             <!--  <p><i></i>已售548份</p> -->
+            </div>
+          </div>
+          <div class="tmm-top-hed2">
+            <p>{{dotObj.page_info}}</p>
+            <div class="tmm-pol"><span>电话咨询：0755-25445881</span></div>
+          </div>
+        </div>
+        <div class="tmm-canter-con">
+          <div class="content-title">景区项目</div>
+          {{#each dotObj.list}} {{#if fare}}
+          <div class="list-block tmm-canter-li item-inner-font">
+            <ul class="tmm-pro-ul">
+              <li class="item-content">
+                <div class="item-inner">
+                  <div data-type="{{item_type.value}}" data-link="{{item_link}}" class="item-title pro-nono">
+                    <div class="pro-name">{{item_name}}<i class="icon ticon-arrow-right"></i></div>
+                    地址:{{address}}
+                  </div>
+                </div>
+              </li>
+              {{#each fare}}
+              <li class="item-content">
+                <div class="item-inner">
+                  <div class="item-title tmm-item-field">
+                    <label>
+                      <div class="item-field">{{name}}</div>
+                      {{#if number}}
+                      <span class="item-field">{{number}}</span>
+                      {{else}}
+                      <span class="item-field">{{info}}</span>
+                      {{/if}}
+                      <div class="item-field">￥{{price}}</div>
+                      <div class="item-field">
+                        <input type="checkbox" class="fare-checkbox" data-dotid="{{../../../this.dotObj.dot_id}}" data-itemid="{{../item_id}}" data-itemname="{{../item_name}}" data-address="{{../address}}" data-fareid="{{id}}" data-farename="{{name}}" data-fareinfo="{{info}}" data-fareprice="{{price}}" />
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+          {{/if}} {{/each}}
+        </div>
+      </div>
+    </div>
+    <div class="go-item tmm-go-item submit-select-item-color"  id="submit-select-item">
+      <!-- <a class="sub-input-box price" href="#"></a> -->
+      <a href="javascript:;">我已选好项目</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<!-- 添加银行卡 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner tmm-add-bank-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">更换银行卡</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="change-bank" class="page tmm-add-bank-page">
+    <div class="page-content tmm-add-retinue-page-contnet tmm-add-bank-page-contnet">
+      <form class="list-block tmm-myinfo-item-addform tmm-bank-item-addform">
+        <ul>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">开户行</div>
+              <div class="item-input">
+                <select class="tmm-bank-select" id="bank_id" name="bank_id">
+                  <option value="">请选择</option>
+                  {{#each bankList}}
+                  <option value="{{value}}">{{name}}</option>
+                  {{/each}}
+                </select>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">支行</div>
+              <div class="item-input">
+                <input id="bank_branch" type="text" name="bank_branch" placeholder="开户支行" class="add_input">
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">开户名</div>
+              <div class="item-input">
+                <input id="bank_name" type="text" name="bank_name" placeholder="开户姓名" class="add_input">
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">卡号</div>
+              <div class="item-input">
+                <input id="bank_code" type="number" name="bank_code" placeholder="卡号" class="add_input" pattern="[0-9]*">
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="div_protocol">
+          <input type="checkbox" class="checkbox" id="agree_create">我同意<a href="###" class="bank_protocol" id="bank_protocol">《银行卡管理协议》</a>
+        </div>
+        <div class="f_bottom">
+          <button class="sub_active" type="button" id="update_bank">完成</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

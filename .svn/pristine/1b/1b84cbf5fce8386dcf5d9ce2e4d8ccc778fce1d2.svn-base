@@ -1,0 +1,695 @@
+@charset "UTF-8";
+
+/* 首页 */
+
+.con-index {
+    margin-bottom: 130px;
+    .item-title {
+        padding-top: 60px;
+        margin-bottom: 60px;
+        font-size: $bigTitFont;
+        text-align: center;
+        .title-desc {
+            display: block;
+            margin-top: 10px;
+            font-size: $smaTitFont;
+            color: $lightGray;
+        }
+    }
+    .intro {
+        width: $commonWidth;
+        margin: 0 auto;
+        padding-bottom: 60px;
+        .intro-desc {
+            width: 920px;
+            margin: -10px auto 70px;
+            font-size: $bigTxtFont;
+            line-height: 2em;
+            text-align: center;
+        }
+        .intro-img {
+            text-align: center;
+            img {
+                vertical-align: top;
+                width: 740px;
+                height: 400px;
+            }
+        }
+    }
+    .service {
+        background-color: $lighterGray;
+        .service-desc {
+            width: $commonWidth;
+            margin: 0 auto;
+            padding-bottom: 64px;
+            font-size: 0;
+        }
+        .service-item {
+            width: 33.3%;
+            @include inline-block;
+            vertical-align: top;
+            text-align: center;
+            .img {
+                margin-bottom: 24px;
+            }
+            .tit {
+                font-size: $norTitFont;
+                color: $gray;
+                margin-bottom: $bigTxtFont;
+            }
+            .txt {
+                font-size: $bigTxtFont;
+                line-height: 1.5em;
+                padding: 0 9px;
+                color: $lightGray;
+            }
+        }
+    }
+
+    .news {
+        background: url('../images/horizontalLine.png') no-repeat bottom center;
+
+        .news-desc {
+            width: $commonWidth;
+            margin: 0 auto;
+            text-align: justify;
+        }
+        .news-item {
+            width: 530px;
+            height: 160px;
+            margin-bottom: 60px;
+            @include inline-block;
+            vertical-align: top;
+
+            img {
+                width: 200px;
+                height: 142px;
+                padding-bottom: 20px;
+                float: left;
+                margin-right: 16px;
+            }
+
+            .tit,.abstract,.date {
+                display: block;
+            }
+
+            .tit {
+                margin-top: 0;
+                margin-bottom: 14px;
+                font-size: 16px;
+                line-height: 1.5em;
+
+                a {
+                    color: #000;
+                }
+            }
+            .abstract {
+                line-height: 1.5em;
+                font-size: 14px;
+                color: $lightGray;
+                margin-bottom: 14px;
+            }
+            .date {
+                font-size: 12px;
+                color: #ccc;
+
+            }
+
+        }
+    }
+
+    .case {
+        .case-desc {
+            width: $commonWidth;
+            margin: 0 auto;
+            text-align: justify;
+        }
+        .case-item {
+            width: 256px;
+            @include inline-block;
+            .tit {
+                display: block;
+                margin-top: 15px;
+                text-align: center;
+                font-size: 18px;
+                color: $gray;
+            }
+        }
+    }
+}
+
+
+/* 产品页面 */
+
+.con-product {
+    $height: 500px;
+    $width: 1000px;
+    margin-bottom: 120px;
+    .item {
+        padding-bottom: 2px;
+        background: url('../images/horizontalLine.png') no-repeat bottom center;
+
+    }
+    .item-wrap {
+        position: relative;
+        margin: 0 auto;
+        width: $width;
+        height: $height;
+        overflow: hidden;
+    }
+    .desc {
+        width: 520px;
+        height: $height;
+        h2 {
+            margin-top: 160px;
+            margin-bottom: 36px;
+            font-size: 24px;
+            color: $gray;
+        }
+        p {
+            line-height: 1.8em;
+            font-size: 16px;
+            color: $lightGray;
+        }
+        .desc-icon {
+            margin-top: 50px;
+            li {
+                @include inline-block;
+                height: 86px;
+                text-align: center;
+                font-size: 14px;
+                em {
+                    margin-bottom: 20px;
+                }
+            }
+            li.icon-line {
+                margin: 0 34px;
+            }
+        }
+    }
+    .item.left {
+        .showImg {
+            position: absolute;
+            bottom: -80px;
+            left: 0;
+        }
+        .desc {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+    .item.right {
+        // background-color: $lighterGray;
+        .showImg {
+            position: absolute;
+            bottom: -80px;
+            right: 0;
+        }
+        .desc {
+            position: absolute;
+            top: 0;
+            left: 0;
+            .desc-icon {
+                text-align: left;
+            }
+        }
+    }
+}
+
+.con-mon {
+    margin-bottom: 0;
+    .desc {
+        width: 430px !important;
+    }
+    .showImg {
+        bottom: 50px !important;
+        width: 450px;
+    }
+}
+
+
+/* 关于我们页面 */
+
+.con-about {
+    .item.team {
+        padding-bottom: 2px;
+        background: url('../images/horizontalLine.png') no-repeat bottom center;
+    }
+    .item-title {
+        margin-top: 60px;
+        font-size: $bigTitFont;
+        text-align: center;
+        .title-desc {
+            display: block;
+            margin-top: 10px;
+            font-size: $smaTitFont;
+            color: $lightGray;
+        }
+    }
+    .item-desc {
+        width: $commonWidth;
+        margin: 0 auto;
+        padding: 60px 0;
+        overflow: hidden;
+        .img {
+            float: left;
+            width: 250px;
+            text-align: right;
+            img {
+                width: 200px;
+
+            }
+        }
+        .info {
+            float: right;
+            width: 780px;
+        }
+        .info-tit {
+            font-size: 24px;
+            margin: 35px 0 20px;
+        }
+        .info-profession {
+            font-size: 18px;
+            margin-left: 40px;
+        }
+        .info-txt {
+            font-size: 16px;
+            line-height: 2em;
+            color: $lightGray;
+            text-align: justify;
+        }
+    }
+    .item-pic {
+        width: $commonWidth;
+        margin: 30px auto 0;
+        padding-bottom: 60px;
+        text-align: justify;
+
+        img {
+            width: 520px;
+        }
+    }
+    .item-list {
+        width: 570px;
+        margin: 60px auto;
+        li {
+            font-size: 18px;
+            line-height: 2.5em;
+            color: $lightGray;
+            i {
+                margin: 0 20px 0 26px;
+                vertical-align: -6px;
+                *vertical-align: middle;
+            }
+        }
+    }
+    .item-address {
+        height: 460px;
+        background: url('../images/address.png') center center;
+    }
+}
+
+
+/* 招商页面 */
+
+.con-store {
+    .item-title {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        font-size: $bigTitFont;
+        text-align: center;
+        .title-desc {
+            display: block;
+            margin-top: 10px;
+            font-size: $smaTitFont;
+            color: $lightGray;
+        }
+    }
+    .item-num {
+        width: $commonWidth;
+        margin: 0 auto;
+        text-align: justify;
+        .num-box {
+            @include inline-block;
+            width: 330px;
+            margin-bottom: 60px;
+            text-align: center;
+            .tit {
+                display: block;
+                margin-top: 24px;
+                margin-bottom: 16px;
+                font-size: 18px;
+            }
+            .txt {
+                font-size: 14px;
+                color: $lightGray;
+            }
+        }
+    }
+    .item-recruiting {
+        background-color: #f5efeb;
+        overflow: hidden;
+        .item-desc {
+            width: 1000px;
+            margin: 0 auto;
+            color: #737373;
+            li {
+                @include inline-block;
+                font-size: 16px;
+                line-height: 32px;
+            }
+            .list1,
+            .list4,
+            .list7 {
+                width: 320px;
+            }
+            .list2,
+            .list5 {
+                width: 220px;
+                margin-left: 96px;
+            }
+            .list3,
+            .list6 {
+                margin-left: 96px;
+            }
+            .jion {
+                margin-top: 70px;
+                margin-bottom: 46px;
+            }
+            .contact {
+                font-size: 18px;
+                color: $gray;
+                margin-bottom: 60px;
+            }
+        }
+    }
+    .item-operators {
+        background-color: #ebeff5;
+        overflow: hidden;
+        color: $lightGray;
+        .item-desc {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        li {
+            font-size: 16px;
+            line-height: 42px;
+        }
+        .jion {
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+        .contact {
+            color: $gray;
+            margin-bottom: 84px;
+        }
+    }
+    .item-process {
+        .item-title {
+            margin-bottom: 34px;
+        }
+        .check {
+            text-align: center;
+            a {
+                color: #ff595f;
+                margin: 0 25px;
+            }
+        }
+        .item-desc {
+            width: 1024px;
+            margin: 76px auto 130px;
+            .standard {
+                font-size: 16px;
+                color: $lightGray;
+                margin-bottom: 50px;
+            }
+            .process {
+                .tit {
+                    font-size: 18px;
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+}
+
+.con-standard {
+    padding-top: $headerHeight;
+    padding-bottom: 112px;
+    .item {
+        width: 1008px;
+        margin: 0 auto;
+
+        .item-title {
+            margin-top: 60px;
+            margin-bottom: 60px;
+            font-size: $bigTitFont;
+            text-align: center;
+          
+            .title-desc {
+                display: block;
+                margin-top: 10px;
+                font-size: $smaTitFont;
+                color: $lightGray;
+            }
+        }
+
+        .desc-tit,
+        .table-tit {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .item-desc {
+            margin-bottom: 80px;
+            dd {
+                font-size: 16px;
+                line-height: 36px;
+                color: $lightGray;
+            }
+        }
+        .supplier-table {
+            border-collapse: collapse;
+            width: 100%;
+            td,
+            th {
+                text-align: center;
+                height: 60px;
+                border: 1px solid #cccccc;
+            }
+            th {
+                font-size: 18px;
+            }
+            td {
+                font-size: 16px;
+                color: $lightGray;
+            }
+        }
+    }
+}
+
+
+/* 加入我们页面 */
+
+.con-join {
+    width: $commonWidth - 80px;
+    padding: 120px 0 100px;
+    margin: 0 auto;
+    .intro {
+        p {
+            font-size: 16px;
+            line-height: 2em;
+            margin-bottom: 1em;
+            color: $gray;
+        }
+        .email {
+            font-size: 18px;
+            color: #000;
+            line-height: 38px;
+        }
+    }
+    .recruit-tag {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        margin-left: -10px;
+        a {
+            @include inline-block;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            padding: 14px 22px;
+            border-radius: 5px;
+            border: 1px solid #000;
+            font-size: 14px;
+            color: $gray;
+        }
+    }
+    .recruit-info {
+        .title {
+            position: relative;
+            font-size: 26px;
+            margin-bottom: 30px;
+            span {
+                position: absolute;
+                margin-top: -80px;
+            }
+        }
+        .info {
+            margin-bottom: 50px;
+            .tit {
+                font-size: 18px;
+                line-height: 1.5em;
+                color: #000;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 2em;
+            }
+        }
+    }
+}
+
+
+/* 新闻列表页 */
+
+.con-news {
+    width: $commonWidth - 80px;
+    margin: 0 auto;
+    .item {
+        position: relative;
+        height: 220px;
+        padding-top: 34px;
+        border-bottom: 1px solid #d6d6d6;
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+    h2 {
+        width: 720px;
+        height: 72px;
+        font-size: 20px;
+        line-height: 36px;
+        margin-bottom: 12px;
+        .tag {
+            width: 80px;
+            height: 100%;
+            @include inline-block;
+            margin-right: 32px;
+            vertical-align: top;
+            span {
+                @include inline-block;
+                padding: 6px 12px;
+                line-height: 12px;
+                font-size: 12px;
+                color: #fff;
+                border-radius: 5px;
+                background-color: $red;
+                vertical-align: middle;
+                
+            }
+        }
+        a {
+            width: 600px;
+            vertical-align: middle;
+            @include inline-block;
+            color: $gray;
+        }
+    }
+    .desc {
+        margin-bottom: 20px;
+        font-size: 12px;
+        color: $lightGray;
+        .author {
+            margin-right: 40px;
+        }
+    }
+    .abstract {
+        width: 720px;
+        font-size: 14px;
+        line-height: 2em;
+        color: $gray;
+    }
+    .img {
+        position: absolute;
+        top: 36px;
+        right: 0;
+        width: 240px;
+        height: 172px;
+        border-radius: 5px;
+        overflow: hidden;
+        border: none;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .paging {
+        margin: 80px auto 100px;
+        text-align: center;
+        .prev,
+        .next,
+        .first,
+        .end,
+        .num,
+        .current {
+            @include inline-block;
+            width: 40px;
+            height: 40px;
+            margin-left: 6px;
+            margin-right: 6px;
+            border-radius: 2px;
+            background-color: #e6e6e6;
+            line-height: 40px;
+            font-size: 20px;
+            color: #000;
+        }
+        .current {
+            background-color: $red;
+            color: #fff;
+        }
+
+        .prev,
+        .next {
+            text-indent: -99999px;
+        }
+
+        .prev {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAhFBMVEX///9AOjlBOzpCPDtDPTxFPz5HQUBJQ0JMRkVZVFNdWFheWVhiXVxjXl1nYmJoY2JqZWRqZmVtaWhuaWhzb25zb295dXV6dnWXlJSYlZWfnJygnZ2mo6OmpKSsqqqzsbC4t7e+vb3DwsLIx8fT0tLV1NTX1tba2trd3d3f39/h4eHj4+N1we9BAAAAAXRSTlMAQObYZgAAAHRJREFUGBntwcUVgwAUBMBdnBgQV9zpv7+U8PfMYwablWrSDoo6YgZBFTJuYSsD7nrYCp+HAbbc42mE7efyPMH2cXidYXuR9wWCJ/lYoHg7vM1QfF1eJihyj8kIReHzOEBRBtz3UFQh4xaKOmIGSZN22KzMH2q4BhChkTFmAAAAAElFTkSuQmCC');
+        }
+        .next {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAh1BMVEX///9AOjlBOzpCPDtDPTxFPz5HQUBJQ0JMRkVZVFNeWVhiXVxjXl1nYmJoY2JpZGRqZmVtaWhuaWhzb25zb295dXV6dnWYlZWfnJygnZ2mo6OmpKSsqqqtq6qzsbCzsbG4t7e5t7e/vr3Ew8PJyMfU09PV1NTX1tba2trd3d3f39/h4eHj4+PPFOfJAAAAAXRSTlMAQObYZgAAAHZJREFUGBntwccVggAUBMBdMhjAiBklp/7rs4S/Zx4zWC1Nm9aQZIwqKJqYYQlFlzD4QdFv6BdQDDt6byjGA90nFNOJzh2K+ULmEMxXModtOtO5wTYe6T5gG/b0XrD1W/of2LqEwRe2JmZYQpAxqqBo0xqrZfoDXPQGCX1nFdsAAAAASUVORK5CYII=');
+        }
+    }
+
+
+    .article {
+        width: $commonWidth - 140px;
+        padding-top: 77px;
+        padding-bottom: 110px;
+        h2 {
+            line-height: 1.5em;
+            width: 100%;
+
+            a {
+                width: 820px;
+            }
+        }
+    }
+    .article-content {
+        margin-top: 30px;
+            
+        img {
+            max-width: 66%;
+            height: auto;
+        }
+
+        strong, b {
+            font-weight: bold;
+        }
+        em,i {
+            font-style: italic;
+        }
+    }
+}

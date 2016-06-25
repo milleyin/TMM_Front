@@ -1,0 +1,262 @@
+/**************************************************************************/
+/**
+ * 我的 模块的样式
+ * TangYaMin
+ * 
+ */
+/*myinfo*/
+.tmm-navbar .ticon-arrow-back{
+  color: #ff595f;
+  font-size: 20px;
+}
+.tmm-myinfo-page-contnet .tmm-myinfo-item-info .item-title,
+.tmm-myinfo-page-contnet .tmm-myinfo-item-mainretinue .item-title{
+  font-size: 15px;
+  color: #111;
+}
+.tmm-myinfo-page-contnet .tmm-myinfo-item-info .item-after .side_txt,
+.tmm-myinfo-page-contnet .tmm-myinfo-item-mainretinue .item-after .side_txt{
+  font-size: 14px;
+  text-align: right;
+  margin-right: 10px;
+  outline: none;
+  border:none;
+}
+.tmm-myinfo-page-contnet .tmm-myinfo-item-info .item-after .side_ok {
+  color: #565a5c;
+}
+.tmm-myinfo-page-contnet .tmm-myinfo-item-info .ion-ios-arrow-right{
+  color: #d7d9d7;
+}
+.tmm-myinfo-page-contnet .tmm-myinfo-item-mainretinue .item-title-name{
+  font-size: 14px;
+  color: #565a5c;
+}
+.tmm-myinfo-page-contnet .tmm-myinfo-item-mainretinue span.red_txt{
+  font-size: 14px;
+  color: #fe595f;
+}
+.tmm-myinfo-page-contnet .myinfo-block-title{
+    font-size: 13px;
+    color: #858b8f;
+}
+.tmm-myinfo-page-contnet .tmm-myinfo-content-otherretinue .content-block-inner {
+  padding: 0 15px;
+}
+.tmm-myinfo-page-contnet .tmm-myinfo-content-otherretinue span{
+    display: inline-block;
+    width: 30%;
+    font-size: 14px;
+    line-height: 48px;
+}
+.tmm-myinfo-page-contnet .tmm-myinfo-content-otherretinue span.red_txt{
+  color: #fe595f;
+}
+.tmm-myinfo-page-contnet .tmm-myinfo-content-otherretinue span.txt{
+  color: #858b8f;
+}
+/*changeGender*/
+.tmm-myinfo-page-contnet .bg_mask{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.8;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+.tmm-myinfo-page-contnet .set_gender {
+    position: fixed;
+    width: 80%;
+    top: 100px;
+    left: 10%;
+    background-color: #fff;
+    border-radius: 4px;
+    z-index: 101;
+}
+.tmm-myinfo-page-contnet .set_gender .male {
+    background: #47a8ef;
+}
+.tmm-myinfo-page-contnet .set_gender a{
+    display: block;
+    margin: 20px 20px;
+    line-height: 40px;
+    border-radius: 4px;
+    font-size: 15px;
+    text-align: center;
+    color: #fff;
+}
+.tmm-myinfo-page-contnet.set_gender .female {
+    background: #fe595f;
+}
+/*add_retinue*/
+.tmm-add-retinue-page-contnet .tmm-myinfo-item-addform .tmm-add-block-title{
+  font-size: 13px;
+  color: #8f8585;
+  margin-top: 20px;
+}
+.tmm-add-retinue-page-contnet .tmm-myinfo-item-addform .item-content{
+  height: 58px;
+}
+.tmm-add-retinue-page-contnet .tmm-myinfo-item-addform .item-title-con{
+  display: inline-block;
+  width: 80px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #565a5c;
+  margin-right: 10px;
+}
+.tmm-add-retinue-page-contnet .list-block.tmm-myinfo-item-addform input[type=number], 
+.tmm-add-retinue-page-contnet .list-block.tmm-myinfo-item-addform input[type=text], 
+.tmm-add-retinue-page-contnet .list-block.tmm-myinfo-item-addform input[type=password], 
+.tmm-add-retinue-page-contnet .list-block.tmm-myinfo-item-addform input[type=email], 
+.tmm-add-retinue-page-contnet .list-block.tmm-myinfo-item-addform input[type=tel]{
+  height: auto;
+  font-size: 13px;
+  color: #8f8585;
+}
+.tmm-add-retinue-page-contnet .tmm-myinfo-item-addform .f_bottom {
+  height: 50px;
+  padding: 30px 0;
+}
+.tmm-add-retinue-page-contnet .tmm-myinfo-item-addform .f_bottom .sub_active {
+  display: inline-block;
+  text-align: center;
+  line-height: 35px;
+  width: 100%;
+  height: 35px;
+  border-radius: 4px;
+  background-color: #5fb336;
+  color: #fff;
+  border:none;
+}
+
+/*set_phone*/
+.tmm-setPhone-list-Form{
+  margin-top: 75px;
+}
+.list-block .item-inner.tmm-setPhone-item-inner{
+  height: 48px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.tmm-setPhone-bg_color{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background-color: #3f3936;
+}
+.list-block.tmm-setPhone-list-Form input{
+  font-size: 14px;
+}
+.tmm-setPhone-list-Form .get_code {
+    display: block;
+    width: 107px;
+    height: 30px;
+    background: #ff595f;
+    float: right;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+}
+.tmm-setPhone-list-Form .bg_btn {
+    margin: 32px 0 25px;
+}
+.tmm-setPhone-list-Form .sub_btn{
+    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: #ff595f;
+    border-radius: 2px;
+    line-height: 44px;
+    color: #fff;
+    font-size: 16px;
+    border:none;
+}
+.tmm-setPhone-list-Form-back .icon,
+.tmm-setPhone-list-Form-close .icon{
+  font-size: 20px;
+}
+.tmm-setPhone-list-Form-back{
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    color: #d7d9d7;
+    font-size: 20px;
+    line-height: 20px;
+}
+.tmm-setPhone-list-Form-close{
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  color: #d7d9d7;
+  font-size: 20px;
+  line-height: 20px;
+}
+.list-block .item-title.label.tmm-setPhone-errlabel{
+  color: #f00;
+  font-size: 13px;
+}
+/*set_pwd*/
+.tmm-setPwd-list-Form{
+  margin-top: 75px;
+}
+.list-block .item-inner.tmm-setPwd-item-inner{
+  height: 48px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.tmm-setPhone-bg_color{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background-color: #3f3936;
+}
+.list-block.tmm-setPwd-list-Form input[type=text],
+.list-block.tmm-setPwd-list-Form input[type=password]{
+  font-size: 14px;
+}
+.list-block.tmm-setPwd-list-Form .get_code {
+    display: block;
+    width: 107px;
+    height: 30px;
+    background: #ff595f;
+    float: right;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+
+}
+.tmm-setPwd-list-Form .bg_btn {
+    margin: 32px 0 25px;
+}
+.tmm-setPwd-list-Form .sub_btn{
+    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: #ff595f;
+    border-radius: 2px;
+    line-height: 44px;
+    color: #fff;
+    font-size: 16px;
+    border:none;
+}
+.list-block .item-title.label.tmm-setPwd-errlabel{
+  color: #f00;
+  font-size: 13px;
+}

@@ -1,0 +1,73 @@
+<!-- 我发起的活动 -->
+
+<ion-view view-title="{{info.name}}" hide-tabs>
+
+  <ion-nav-buttons>
+    <i class="tmm-ion-left ion-android-arrow-back" nav-back></i>
+  </ion-nav-buttons>
+  
+  <ion-content class="tmm-eat-detail-content">
+    <div class="tmm-edit-content" data-ng-bind-html="contentHTML"></div>
+
+    <div class="bg_mask" ng-click="showMap=false" ng-show="showMap"></div>
+
+    <!--弹出层 -->
+    <script id="my-popover.html" type="text/ng-template">
+      <div class="tmm-closeDeleteModal" ng-click="closePopover()"></div>
+      <ion-popover-view class="tmm-eat-detail-popover" >
+        
+        <ion-content class="tmm-eat-popover-top ">
+
+          <div class="tmm-images-header">
+            <slider>
+              <slider-item ng-repeat="imgdetail in info.img_arr" img-src="imgdetail" last="$last"></slider-item>
+            </slider>
+          </div>
+
+          <ion-list class="tmm-eat-detail-list">
+            <ion-item>
+              <div class="tmm-eat-detail-title">开放时间</div>
+              <div class="tmm-eat-list-content">{{info.start_work}} - {{info.end_work}}</div>
+            </ion-item>
+            <ion-item>
+              <div class="tmm-eat-detail-title">地址</div>
+              <div class="tmm-eat-list-content">{{info.address}}</div>
+            </ion-item>
+            <ion-item>
+              <div class="tmm-eat-detail-title">联系电话</div>
+              <div class="tmm-eat-list-content"><img src="images/detailPhone.png" class="tmm-detail-phone">{{info.phone}}</div>
+            </ion-item>
+            <ion-item>
+              <div class="tmm-eat-detail-title">微信</div>
+              <div class="tmm-eat-list-content">{{info.weixin}}</div>
+            </ion-item>
+
+            <!-- 免费 -->
+            <ion-item ng-if="info.free_status.value == 0">
+              <div class="tmm-eat-detail-title">费用</div>
+              <div class="tmm-eat-list-content">免费</div>
+            </ion-item>
+            <!-- 非免费 -->
+            <ion-item ng-if="info.free_status.value == 1">
+              <div class="tmm-eat-detail-title">费用</div>
+              <div class="tmm-fee">
+                <div class="tmm-fee-content" ng-repeat="infoContent in info.fare">
+                  <ul>
+                    <li>{{infoContent.name}}</li>
+                    <li>{{infoContent.info}}</li>
+                    <li>{{infoContent.price}} 元</li>
+                  </ul>
+                </div>
+              </div>
+            </ion-item>
+          </ion-list>
+
+
+        </ion-content>
+      </ion-popover-view>
+    </script>
+    <!--弹出层 -->
+  </ion-content>
+</ion-view>
+
+

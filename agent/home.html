@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enter Information</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="./css/agent/css/home.css">
+	<script src="./css/agent/script/jquery-1.11.3.min.js"></script>
+	<!-- highcharts控件-->
+	<script src="./css/agent/script/highcharts/highcharts.js"></script>
+  	<script src="./css/agent/script/highcharts/modules/exporting.js"></script>
+  	<script src="./css/agent/script/my_highcharts.js"></script>
+	<!--[if lt IE 9]>
+	<script src="dist/js/html5.js"></script>
+	<script src="dist/js/respond.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 10]>
+	<style>
+	.gradientElement {
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#403a39', endColorstr='#fcf1df');
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#403a39', endColorstr='#fcf1df')";
+	}
+	</style>
+	<![endif]-->
+<!-- highcharts控件画图 -->
+</head>
+<body>
+<div class="content_box">
+	<!--登录的信息数据-->
+	<div class="login_record_data">		
+	 <div class="business_check_pending" style="display:none">
+	 	<div class="title">商家待审核</div>
+	 	<div class="content" id="check_pending_num">8</div>
+	 </div>
+	 <div class="content_check_pending">
+	 	<div class="title">内容待审核</div>
+	 	<div class="content">
+	 	 <table class="content_table" id="content_check_table">
+	 	  <tr class="first_row">
+	 		<td>项目</td>
+	 		<td>5</td>		
+	 	  </tr>
+	 	  <tr class="second_row">
+	 		<td>点</td>
+	 		<td>0</td>		
+	 	  </tr>
+	 	  <tr class="lastRow">
+	 		<td>线</td>
+	 		<td>4</td>		
+	 	  </tr>
+	 	 </table>
+	 	</div>
+	 </div>
+	 <div class="total_income">
+	 	<div class="title">收益总额</div>
+	 	<div class="content" id="total_income">10206.50<span>元</span></div>
+	 </div>
+	 <div class="login_record">
+	 	<div class="title">登录记录</div>
+	 	<div class="content">
+	 	 <table class="content_table" id="login_record_table">
+	 	  <tr class="first_row">
+	 		<td >登录次数</td>
+	 		<td>102</td>		
+	 	  </tr>
+	 	  <tr class="lastRow">
+	 		<td>最后一次登录</td>
+	 		<td>2015/07/28<br/>10:23:12</td>		
+	 	  </tr>
+	 	 </table>
+	 	</div>
+	 </div>
+	</div>  <!--.login_record_data-->
+
+	<!-- 登录信息图表 -->
+	<div class="charts">		
+		<div class="login_record_chartone">
+		 <div class="title">登录记录</div>
+		 <div class="line"></div>
+		 <div class="day_income_chart" id="container">
+		 	
+		 </div>
+		</div>		<!--.login_record_chartone-->
+		<div class="login_record_charttwo">
+		 <div class="title">登录记录</div>
+		 <div class="line"></div>
+		 <div class="month_income_chart">		 	
+		 </div>
+		</div>		<!--.login_record_charttwo-->
+		</div>		<!--.charts-->	
+	<!--版权 -->
+	<div class="copyright">
+		<span>Copyright © TMM365.com All Rights Reserved</span>
+	</div>		<!--.copyright-->
+</div>			<!--.content_box-->
+</body>
+</html>

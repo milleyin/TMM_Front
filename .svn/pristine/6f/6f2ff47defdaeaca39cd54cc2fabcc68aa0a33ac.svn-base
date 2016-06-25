@@ -1,0 +1,82 @@
+<ion-view view-title="点的详情" hide-tabs>
+  <ion-nav-buttons>
+    <!-- <i class="tmm-ion-left ion-android-arrow-back" ui-sref="tab.recommend" nav-direction="back"></i> -->
+    <a class="tmm-ion-left ion-android-arrow-back" href="javascript:history.back(-1)"  nav-direction="back"></a>
+  </ion-nav-buttons>
+  <ion-content class="tmm-shop-dot-content">
+    <div class="tmm-act-detail-banner">
+      <div>
+        <img class="tmm-act-detail-img" ng-src="{{shopModel.shopObj.page_img}}">
+      </div>
+      <div class="tmm-act-detail-mask">
+        <div class="tmm-praise" ng-click="dotPraise()">
+          <div class="tmm-praise-pos-img" ng-class="shopModel.praise_status == 1 ? 'icon-parise-red' : 'icon-parise'"></div>
+          <span class="tmm-praise-tit">{{shopModel.shop_praise}}</span>
+        </div>
+        <div class="tmm-praise tmm-praise-pos-call" ng-click="dotCall('dot')">
+          <div class="icon-phone-big tmm-praise-pos-img"></div>
+          <span class="tmm-praise-tit">联系</span>
+        </div>
+        <div class="tmm-praise tmm-praise-pos-share">
+          <div class="icon-share-big tmm-praise-pos-img"></div>
+          <span class="tmm-praise-tit">分享</span>
+        </div>
+      </div>
+    </div>
+    <div class="tmm-dot-bg">
+      <div class="tmm-dot-info">
+        <div class="tmm-dot-title">
+          {{shopModel.shopObj.name}}
+          <span class="tmm-dot-sold">已售出{{shopModel.shopObj.down}}份</span>
+        </div>
+        <div class="tmm-dot-price">
+          ￥{{shopModel.shopObj.price}}/人起
+        </div>
+        <div class="tmm-dot-intro">
+          {{shopModel.shopObj.page_info}}
+        </div>
+        <div class="tmm-dot-more">
+          <span class="tmm-dot-notice" ng-click="showBookInfo('1', shopModel.shopObj.dot_id)">
+            <img src="images/more.png">
+            预订须知
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="tmm-items-info">
+      <div class="item item-divider tmm-item-divider"></div>
+      <div class="tmm-item-dot-list-title b-border">该景区项目</div>
+
+      <div ng-repeat="attr in shopModel.shopObj.list"  ng-if="attr.item_type.value != -1">
+        <div class="tmm-dot-items wrap">
+          <div class="tmm-content-pos-top">
+            <div class="tmm-img-pos" ng-class="attr.item_type.value == 1 ? 'icon-eat' : (attr.item_type.value == 2 ? 'icon-live' : 'icon-play') "></div>
+            <div class="tmm-schedule-detail-title">{{attr.item_name}}</div>
+            <div class="tmm-line-address" ng-click="showMore(attr.item_link,attr.item_type.value,attr.item_id )"> 
+             {{attr.item_info}}
+            </div>
+            <div class="tmm-showmore" ng-click="showMore(attr.item_link,attr.item_type.value,attr.item_id )">
+              <span>●</span><span>●</span><span>●</span>
+            </div>
+            <div>
+              <img ng-src="{{attr.item_img}}" class="img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+  
+  <div ng-if="shopModel.shopObj.is_sale.value == 1">
+    <div class="tmm-go-item tmm-dot-act-item" data-shop-type="{{shopModel.shopObj.c_id}}" data-shop-id="{{shopModel.shopObj.dot_id}}" ng-show="shopModel.noFree" ui-sref="tab.dot-order-book">
+      <a class="tmm-button" href="javascript:;">我也想去</a>
+    </div>
+    <div class="tmm-go-item tmm-dot-cannt-item" ng-show="shopModel.free">
+      <a class="tmm-button" href="javascript:;">景点免费</a>
+    </div>
+  </div>
+  <div class="tmm-go-item tmm-dot-cannt-item" ng-if="shopModel.shopObj.is_sale.value != 1">
+    <a class="tmm-button" href="javascript:;">此点正在开发中，敬请期待</a>
+  </div>
+</ion-view>

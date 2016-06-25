@@ -1,0 +1,30 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">觅趣参与人列表</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="participant" class="page participant">
+    <div class="page-content infinite-scroll">
+
+
+
+      <div class="participant-list">
+      {{#each list_data}}
+        <div class="add-time">{{add_time}}</div>
+        <div class="name">{{name}}　{{phone}}</div>
+        <div class="join-people">参与人数：{{people}}成人，{{children}}儿童</div>
+      {{/each}}
+      </div>
+
+     
+    </div>
+  </div>
+</div>

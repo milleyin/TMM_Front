@@ -1,0 +1,81 @@
+.font-line(@font: 18px;
+@line: @font) {
+    font-size: @font;
+    line-height: @line;
+}
+
+.box-sizing() {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.display-flex() {
+    display: -webkit-box;
+    display: box;
+}
+
+.flex(@num) {
+    -webkit-box-flex: @num;
+    box-flex: @num;
+    flex: @num;
+}
+
+.oneline() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.transform(@t) {
+    -webkit-transform: @t;
+    transform: @t;
+}
+.transform-origin(@to) {
+    -webkit-transform-origin: @to;
+    transform-origin: @to;
+}
+.hairline(@position, @color:#d7d9d7) when (@position = top) {
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: auto;
+        right: auto;
+        height: 1px;
+        width: 100%;
+        background-color: @color;
+        display: block;
+        z-index: 15;
+        .transform-origin(50% 0%);
+        html.pixel-ratio-2 & {
+            .transform(scaleY(0.5));
+        }
+        html.pixel-ratio-3 & {
+            .transform(scaleY(0.33));
+        }
+    }
+}
+.hairline(@position, @color:#d7d9d7) when (@position = bottom) {
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: auto;
+        top: auto;
+        height: 1px;
+        width: 100%;
+        background-color: @color;
+        display: block;
+        z-index: 15;
+        .transform-origin(50% 100%);
+        html.pixel-ratio-2 & {
+            .transform(scaleY(0.5));
+        }
+        html.pixel-ratio-3 & {
+            .transform(scaleY(0.33));
+        }
+    }
+}

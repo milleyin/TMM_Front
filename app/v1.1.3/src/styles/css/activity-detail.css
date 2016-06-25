@@ -1,0 +1,250 @@
+ /**************************************************************************/
+ /**
+ * 活动 --》订单详情
+ */
+.tmm-side-tit{
+	font-size:15px;
+	color:#111;
+}
+.tmm-activity-order-list{
+	line-height: 20px !important;
+    padding-top: 10px;
+}
+
+.tmm-activity-order-list {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 0px;
+  color: #858b8f;
+  white-space: nowrap;
+}
+.tmm-activity-li{
+	overflow:hidden;
+}
+
+.tmm-activity-order-list .activity-order-list{
+  font-size: 14px;
+  color: #858b8f;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom:10px;
+}
+.tmm-activity-order-list .activity-order-list:nth-child(1) {
+  width: 50%;
+}
+.tmm-activity-order-list .activity-order-list:nth-child(2) {
+  width: 50%;
+}
+
+.tmm-activity-order-status p{
+	font-size:13px;
+	padding:0px 6px;
+}
+.tmm-activity-main-retinue{    
+	background-color: #FFFFFF;
+    padding: 10px 10px;
+    font-size: 13px;
+    line-height: 25px;
+    color: #565a5c;
+	margin-bottom:75px;
+}
+h2{margin: 0px; padding: 0px;font-weight: normal;}
+.h2_tit {height: 20px;background-color: #f0f1f2;font-size: 13px;color: #858b8f;}
+.h2_tit,.h2_day {position: relative;padding-left:16px;}
+.h2_day {height: 39px;padding: 0px;}
+.icon_day {position: absolute;left: 50%;bottom: 10px;margin-left: -24px;padding: 4px 6px;background-color: #5fb336;color: #fff;font-size: 11px;line-height: 11px;}
+.icon_day:after {content:"";height: 10px;width: 1px;position: absolute;bottom: -10px;left: 50%;background-color: #5fb336;}
+.h2_day .icon_day:before {content:"";height: 10px;width: 1px;position: absolute;top: -10px;left: 50%;background-color: #5fb336;}
+
+.tmm-activity-li .tmm-order-status,
+.tmm-activity-li .tmm-order-status span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 36px;
+  width: 36px;
+}
+/*.tmm-activity-li .tmm-order-status */.tmm-icon-triangle{
+	position: absolute;
+    top: -4px;
+    right: -20px;
+    width: 60px;
+    height: 12px;
+    font-size: 9px;
+    text-align: center;
+    padding-top: 15px;
+    color: #fff;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+/*.tmm-activity-li .tmm-order-status */.tmm-tip-gray{background-color: #858b8f;}
+/*.tmm-activity-li .tmm-order-status */.tmm-tip-fukuan {background-color: #ff0054;}
+/*.tmm-activity-li .tmm-order-status */.tmm-tip-chuli {background-color: #00aaff;}
+/*.tmm-activity-li .tmm-order-status */.tmm-tip-xiaofei {background-color: #14cc14;}
+
+ /**************************************************************************/
+ /**
+ * 活动 --》详情
+ */
+.tmm-activity-main-order{    
+	background-color: #FFFFFF;
+    padding: 10px 10px;
+    font-size: 13px;
+    line-height: 25px;
+    color: #565a5c;
+}
+
+.tmm-activity-button{
+	display: inline-block;
+    width: 40%;
+    margin: 0 10px;
+    font-size: 15px;
+
+    padding: 8px 0px;
+    line-height: 15px;
+    border-radius: 2px;
+	
+
+    color: #ff595f;
+    border: 1px solid #ff595f;
+
+    border-radius: 0px;
+}
+
+ /**************************************************************************/
+ /**
+ * 活动 --》状态详情
+ */
+.tmm-activity-state-item-fare {
+	position: relative;
+	-webkit-box-sizing: border-box;
+	white-space: nowrap;
+}
+
+.tmm-activity-state-item-fare .activity-state-item-fare, .tmm-activity-state-item-fare .activity-state-fail-item-fare,.tmm-activity-state-item-fare .activity-state-item-fare-date {
+	font-size: 12px;
+	color: #858b8f;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 12px;
+}
+.tmm-activity-state-item-fare .activity-state-fail-item-fare:nth-child(1) {
+	width: 50%;
+}
+
+.tmm-activity-state-item-fare .activity-state-fail-item-fare:nth-child(2) {
+	width: 50%;
+}
+
+.tmm-activity-state-item-fare .activity-state-item-fare:nth-child(1) {
+	width: 50%;
+}
+
+.tmm-activity-state-item-fare .activity-state-item-fare:nth-child(2) {
+	width: 50%;
+}
+
+.tmm-activity-state-item-fare .activity-state-item-fare-date {
+	width: 100%;
+}
+
+.tmm-activity-state-list-block {
+	margin: 0px 0px 16px 0px !important;
+	font-size: 13px;
+	color: #0C6;
+}
+
+.tmm-activity-wrap-title {
+	text-align: left;
+	padding: 0px 0px 0px 16px;
+	line-height: 25px;
+}
+
+.tmm-activity-go-item {
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	bottom: 0px;
+	font-size: 16px;
+	line-height: 44px;
+	text-align: center;
+	background-color: rgba(95, 179, 54, 0.901961);
+	z-index: 1;
+	-webkit-box-sizing: border-box;
+	white-space: nowrap;
+}
+
+.tmm-activity-state-button {
+	color: #fff;
+	width: 50%;
+	display: inline-block;
+	/*border-right: 1px solid #fff;*/
+}
+.tmm-activity-state-button-col3 {
+	color: #fff !important;
+	width: 33%;
+	display: inline-block;
+	/*border-right: 1px solid #fff;*/
+}
+.tmm-activity-go-item a:nth-child(3) { border-left: 1px solid #fff; }
+.banner.tmm-item-content {
+  float: none;
+}
+.tmm-item-content .txt .type.red{
+	background-color:red;
+}
+.tmm-item-content .txt .type.gray{
+	background-color:#858b8f;
+}
+
+/*唐亚敏增加*/
+.tmm-activity-state-button_all{
+  color: #fff !important;
+}
+.show-activity-enroll-info{
+	font-size:14px;
+}
+.tmm-card .card-header-enrolll{
+	font-size:14px !important;
+}
+.tmm-item-title-color{
+	color:#858b8f;
+}
+.go-item a{ color:#FFF;}
+.tmm-go-item,.tmm-activity-go-item-suc, .tmm-activity-go-item-suc-col3{
+	font-size:16px !important;
+}
+
+.tmm-activity-go-item-suc, .tmm-activity-go-item-suc-col3{
+	position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    font-size: 18px;
+    line-height: 40px;
+    background-color: rgba(87, 163, 49, 0.9);
+    z-index: 1;
+	display:inline-block;
+}
+.tmm-activity-go-item-suc-col3 a{
+	width:32%;
+	text-align:center;
+	float:left;
+	color:#fff;
+}
+.tmm-activity-go-item-suc a{
+	width:49%;
+	text-align:center;
+	float:left;
+	color:#fff;
+}
+.tmm-activity-go-item-suc a:nth-child(1), .tmm-activity-go-item-suc-col3 a:nth-child(1),.tmm-activity-go-item-suc-col3 a:nth-child(2){ border-right: 1px solid #fff; }
+.go-item-suc-bg{background-color:transparent !important;}
+.tmm-activity-go-item-suc .price{color: #fff;background-color: #61cc13;border-right:none;}
+.tmm-activity-go-item-suc .submit-btn{color: #fff; background-color: #ff595f;float: right; width:50%;}
+.submit-select-item-color{color: #fff; background-color: #ff595f !important;}
+

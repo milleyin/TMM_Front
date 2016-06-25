@@ -1,0 +1,134 @@
+angular.module('order', [])
+
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.order', {
+      url: '/order',
+
+      views: {
+        'tab-order': {
+          templateUrl: 'app/order/templates/order.html',
+          controller: 'OrderCtrl'
+        }
+
+      }
+
+    });
+
+}])
+
+.controller('OrderCtrl', function($scope, $http, $rootScope, $ionicScrollDelegate, $ionicHistory, $timeout,modify, Resource, autoRefresh) {
+  var mirrorData = {},
+      funData = {};
+
+  $scope.model = {};
+  $scope.type = 1;
+
+  $scope.$on("$ionicView.loaded", function() {
+    autoRefresh.start('order-content');
+  });
+
+  $scope.$on("$ionicView.enter", function() {
+    if (modify.isModify) {
+      autoRefresh.start('order-content');
+      modify.isModify = false;
+    }
+    $ionicHistory.clearHistory();
+  });
+
+  // 登录成功
+  $scope.$on("loginSuccess", function(data, msg) {
+    autoRefresh.start('order-content');
+  });
+
+  $scope.doRefresh = function() {
+    if ($scope.type === 1) {
+      getMirrorData();
+    } else if ($scope.type === 2) {
+      getFunData();
+    }
+  };
+
+  $scope.loadMore = function() {
+    loadMoreData();
+  };
+
+  $scope.changeData = function(type) {
+    $scope.type = type;
+    if (type === 1) {
+      if (mirrorData.list_data !== undefined) {
+        $scope.model = mirrorData;
+
+      } else {
+        autoRefresh.start('order-content');
+      }
+    } else if (type === 2) {
+      if (funData.list_data !== undefined) {
+        $scope.model = funData;
+      } else {
+        autoRefresh.start('order-content');
+      }
+    }
+  };
+
+
+  //觅镜接受订单
+  $scope.mjAcceptOrder = function(shopId){
+    Resource.mjAcceptOrder(shopId).then(function(data) {
+      getMirrorData();
+    });
+  };
+  
+  //觅镜拒绝订单
+  $scope.mjRefuseOrder = function(shopId){
+    Resource.mjRefuseOrder(shopId).then(function(data) {
+      getMirrorData();
+    });
+  };
+
+
+  // 获取觅镜数据
+  function getMirrorData() {
+    Resource.getMirror().then(function(data) {
+      mirrorData.list_data = data.list_data;
+      mirrorData.nextPage = data.page.next;
+      $scope.model = mirrorData;
+      $scope.$broadcast('scroll.refreshComplete');
+    }, function(data) {
+      $scope.$broadcast('scroll.refreshComplete');
+    });
+  }
+
+  // 获取觅趣数据
+  function getFunData() {
+    Resource.getFun().then(function(data) {
+      funData.list_data = data.list_data;
+      funData.nextPage = data.page.next;
+      $scope.model = funData;
+      $scope.$broadcast('scroll.refreshComplete');
+    }, function(data) {
+      $scope.$broadcast('scroll.refreshComplete');
+
+    });
+  }
+
+  // 加载更多
+  function loadMoreData() {
+    if (!$scope.model.nextPage) return;
+    Resource.get($scope.model.nextPage).then(function(data) {
+      if ($scope.type === 1) {
+        mirrorData.list_data = mirrorData.list_data.concat(data.list_data);
+        mirrorData.nextPage = data.page.next;
+        $scope.model = mirrorData;
+      } else if ($scope.type === 2) {
+        funData.list_data = funData.list_data.concat(data.list_data);
+        funData.nextPage = data.page.next;
+        $scope.model = funData;
+      }
+      $scope.$broadcast("scroll.infiniteScrollComplete");
+    }, function(data) {
+      $scope.$broadcast("scroll.infiniteScrollComplete");
+    });
+  }
+
+});

@@ -1,0 +1,363 @@
+
+
+
+a{
+	color: #000000;
+}
+body{
+	font-size: 11px;
+ /*font-family:"Helvetica Neue",Helvetica,Arial,sans-serif !important;*/
+ }
+ .content_div{
+ 	margin: 50px 0px 0px 20px;/*上，右，下，左*/
+ 	
+ }
+ .main_div{
+ 	margin-top: 30px;
+ }
+ form select{
+ 	width: 130px;
+ 	height: 34px;
+ 	background: #877674;
+ 	color: #e7ded4;
+ 	border: 1px solid #322e2d;
+ }
+ .main_input{
+ 	width: 250px;
+ 	height: 30px;
+ 	border: 1px solid #c8a063;
+ 	margin-left: 10px;
+ }
+ .look{
+ 	margin-left: -35px;
+ 	background: url(../images/search_icon.png) no-repeat;
+    /*cursor: pointer;
+    position: absolute;*/
+    width: 30px;
+    height: 30px;
+    padding-bottom: 10px;
+    /*z-index: 1001;*/
+    outline: none;/*去掉button边框颜色*/
+    border: none;
+ }
+ /*虚线盒子*/
+ .main_content{
+ 	border: 1px dashed #d0860e;
+ 	width: 340px;
+ 	float: left;
+ 	margin: 0px 20px 30px 0px;/*上，右，下，左*/
+ }
+ .span{
+ 	font-size: 14px;
+ }
+ /*状态显示*/
+ .state{
+ 	font-size: 16px;
+ 	position: absolute;
+ 	right: 0;
+ 	top: 0;
+ 	text-align: center;
+ 	width: 100px;
+ 	height: 23px;
+ 	padding-top: 5px;
+ 	color: #fafaf9;
+ }
+ .con_div{
+ 	position: relative;
+ 	margin: 15px 8px 0px 8px;/*上，右，下，左*/
+ }
+ .dang{
+ 	width: 20px;
+    height: 18px;
+    background: #c8a063;
+    font-size: 8px;
+    text-align: center;
+    padding-top: 3px;
+    color: #fafaf9;
+    /*line-height: 22px;*/
+    float: left;
+    margin: 0px 4px 0px 0px;/*上，右，下，左*/
+ }
+ .con1{
+ 	margin-top: 12px;
+ 	margin-bottom: 20px;
+ }
+ .size{
+ 	font-size: 9px;
+ 	float: left;
+ 	margin: 4px 4px 0px 0px;/*上，右，下，左*/
+ }
+ .time{
+ 	float: right;
+ 	margin-top: 9px;
+ 	font-size: 9px;
+ }
+ hr{
+ 	border: 1px  solid #c89f62;
+ }
+ .up_div{
+ 	margin-top: 20px;
+ }
+ .up_left{
+ 	width: 25px;
+ 	float: left;
+ }
+ .up_right{
+	border-left: 1px solid #1b1818;  /*左侧长线*/
+ 	width: 88%;
+ 	float: left;
+ 	padding-left: 8px;
+ 	margin-bottom: 20px;
+ }
+ .up_right hr{
+ 	border: 1px dashed #c89f62;
+ }
+ .up_am{
+ 	/*position: absolute;*/
+ 	font-size: 16px;
+ 	height: 98px;
+ 	width: 25px;
+ 	padding-top: 10px;
+ 	text-align: center;
+ 	background: #2e2928;
+ 	color: #c8a063;
+ }
+ .tu{
+	border-radius:50%;/*边框为圆角*/
+	background: #2e2928;
+	padding: 10px;
+	line-height: 10px;
+	float: left;
+	color: #95784f;
+	font-size: 15px;
+	text-align: center;
+	width: 10px;
+	height: 10px;
+}
+.tu1{
+	border-radius:50%;/*边框为圆角*/
+	background: #2e2928;
+	padding: 10px;
+	line-height: 10px;
+	float: left;
+	color:  white;
+	font-size: 15px;
+	text-align: center;
+	width: 10px;
+	height: 10px;
+}
+.chi{
+	width: 18px;
+    height: 18px;
+    background: #ff9554;
+    font-size: 8px;
+    text-align: center;
+    padding-top: 0px;
+    color: #fafaf9;
+    line-height: 19px;
+    /*line-height: 22px;*/
+    float: left;
+    margin: 0px 0px 0px 20px;/*上，右，下，左*/
+}
+.ti{
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+.ti2{
+	float: left;
+}
+.up{
+	margin-top: 10px;
+	margin-bottom: 40px;
+}
+.ul{
+	float: right;
+	font-size: 9px;
+}
+ .ul ul li{
+ 	list-style-type: none;
+ 	line-height: 23px;
+ }
+ .ul span{
+ 	font-size: 18px;
+ }
+ 
+ 
+ /*div--详情--div*/
+.table_div{
+	margin: 50px 0px 0px 80px;/*上，右，下，左*/
+	font-size: 9px;
+	line-height: 22px;
+}
+.table_div table td:first-child{
+	text-align: right;
+}
+.biao{
+	background: url(../images/tag_bg.png) no-repeat;
+	height: 30px;
+	text-align: center;
+	width: 98px;
+	margin-top: 5px;
+	margin-right: 10px;
+	padding-top: 4px;
+	float: left;
+}
+.top span{
+	margin-bottom: 16px;
+	display: inline-block;/*元素在同一行，可以设置高和宽*/
+}
+.top1 span{
+	margin-bottom: 95px;
+	display: inline-block;/*元素在同一行，可以设置高和宽*/
+}
+.gou_canter{
+	width: 48%;
+	margin-top: 15px;
+	font-size: 14px;
+	float: left;
+}
+.gou_canter1{
+	width: 52%;
+	margin-top: 15px;
+	font-size: 9px;
+	float: right;
+}
+.con2{
+	margin-bottom: 55px;
+}
+.con{
+	margin-bottom: 20px;
+}
+/*右侧长线*/
+.gou_left{
+	float: left;
+	width: 27px;
+	height: 170px;
+	padding-top: 25px;
+	margin-top: 55px;
+	border-right: 1px solid #403a39;
+}
+.am{
+	font-size: 11px;
+	background: #403a39;
+	color: #ded2c0;
+	width: 27px;
+	height: 105px;
+	padding-top: 30px;
+	text-align: center;
+}
+.gou_right{
+	border-left: 1px dashed #d0860e;
+	float: left;
+}
+.to{
+	margin-top: 40px;
+}
+.size{
+	margin-top: 10px !important;
+}
+.gou_right1{
+	
+	height: 180px;
+	color: #6b6561;
+	margin: 50px 0px 40px 5px;/*上，右，下，左*/
+}
+.gou_right ul{
+	list-style-type: none;
+	line-height: 20px;
+}
+.div_con{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	width: 100%;
+}
+.de3{
+	float: left;
+	width: 69%;
+	font-size: 9px;
+	margin-left: 10px;
+	margin-bottom: 30px;
+}
+.de3 p{
+	font-size: 18px;
+}
+.de3 hr{
+	width: 98%;
+	border: 1px solid black;
+}
+.tu_div{
+	border-radius:50%;/*边框为圆角*/
+	background: #403a39;
+	padding: 10px;
+	line-height: 10px;
+	float: left;
+	color:  white;
+	font-size: 15px;
+	text-align: center;
+	width: 10px;
+	height: 10px;
+	margin-top: 20px;
+}
+.top_div{
+	font-size: 9px;
+	margin-left: 40px;
+	line-height:25px;/*字体之间的行距*/
+}
+.top_div ul{
+	list-style-type: none;
+}
+.top_div ul li:first-child{
+	font-size: 15px;
+}
+/*已选商品的虚线框*/
+.box1 {
+    width: 120%;
+    border: 1px dashed #d0860e;
+    padding-bottom: 15px;
+    position: relative;
+}
+.box1_div {
+    position: relative;
+    z-index: 100;
+    width: 80%;
+    margin-top: 5px;
+}
+.box1_div .title2{
+  position: absolute; /*绝对定位*/
+  top:0px;  
+  left:30px;/*已选商品框向左移动*/ 
+  z-index: 103;
+  width: 70px;
+  height: 18px;
+  font-size: 9px;
+  color: #403a39;
+  border: 1px dashed #d0860e;
+  background: #fcf1df;
+  text-align: center;
+  padding-top: 4px;/*调整里面的字*/
+}
+.box1_div ul li{
+	margin-left: 50px;
+	margin-top: 20px;
+	line-height: 10px;
+}
+.box1_div ul li span{
+	margin:0 15px;/*span与span之间的距离*/
+}
+.summary {
+    /*display: inline-block;*/
+    height: 30px;
+    /*vertical-align: middle;*/
+    /*width: 100%;*/
+    text-align: right;
+    /*clear: both;*/
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,143 @@
+.touchstyle {
+  @include transition(background-color 150ms ease-in-out);
+  &:active {
+    background-color: #ececec;
+  }
+}
+
+.calendar-backdrop.static {
+  height: auto;
+  position: relative;
+  @extend %border-bottom;
+  padding-bottom: 1px;
+
+  .calendar-wrapper {
+    position: static;
+  }
+  .calendar-toolbar {
+    border-top: none;
+  }
+}
+
+.calendar-backdrop {
+  @include transition(background-color 150ms ease-in-out);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-index-action-sheet;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  &.active {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.calendar-wrapper {
+  @include translate3d(0, 100%, 0);
+  @include transition(all cubic-bezier(.36, .66, .04, 1) 500ms);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.calendar-up {
+  @include translate3d(0, 0, 0);
+}
+
+.calendar-toolbar {
+  height: 44px;
+  line-height: 44px;
+  box-sizing: border-box;
+  font-size: 17px;
+  background-color: #f7f7f8;
+  border-top: 1px solid #999;
+  display: flex;
+  &>span {
+    flex: 1;
+    display: block;
+  }
+  .current-month,
+  .current-year {
+    flex: 1;
+    display: block;
+    text-align: center;
+  }
+  .icon {
+    display: block;
+    width: 44px;
+    text-align: center;
+    font-size: 24px;
+    color: $positive;
+    &.arrow-left {
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFDSURBVGhD7dhNzsFQFMbxezqXsBIztSwb8BULsC5DKyERJAbKwyE6aN32nuucyv1N3L6j5y/1VrgkSZL/NZoeJnyMJuNXcRifUbbmy2iiBGA8uWyO83C+6z/+GIl4wGs8kYs6/EU04NfjQSxAYzyIBGiNh+AAzfEQFKA9HloHWBgPxK+NYLzvQ6oorks+Btmsegs+ljQO0Hrnz3QZbJeDPV++NbqFrNw2n7wDLI4HrwCr4+FrgOXxUBtgfTxUBnRhPFQG3P+/9q2Ph8oAPDikHkIx1X4GuhBRGwDWI74GgOUIrwCwGuEdABYjWn2dzmenNbnC60crqWC8eXwsaRUA+fSwIHr+9lOn6muwlEa30Ccrt1PrALAQERQA2hHBAaAZIRIAWhFiAaARIRoAFj7YIvCwG8+OBV92EyL4mCRJ8pecuwF9OJeFxOnBBgAAAABJRU5ErkJggg==");
+      background-size: 24px 24px;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    &.arrow-right {
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE/SURBVGhD7dZBbsIwEIVhT9hVQqUnYVd6rHIAkoYcAK5Fdz0JSIiqbOLqVRMJREtsMraHyt8mOKv3RxGKybIs+9+eF/tX/hlEwddgCipWISOCB1hrdoiYLfZvfEtU8IAOUVGFiIgWACEiogaAdET0AJCMSBIAUhHJAkAiImkADI0gvl6QekcxkH9e1dp2/t6M13x0diXgsCUyEz5GYW1bb5qx14NL/gqduuV1UhUAvhHqAsAnQmUAuEaoDQCXCNUB0BehPuAHjR6n1fbXv3T1AdbQ+ouO9Uf9tONbZ1QH9I0HtQEu40FlgOt4UBfgMx5UBfiOBzWf0xi/WT7M+ejszwApLp/ltzz5TvJXaMh4SBowdDwkC5AYD0kCpMZD9ADJ8RA1QHo8RAsIMT6Kl/JgZ+Xnio/3567HZ1mW9TDmG2xPp4b+SpEsAAAAAElFTkSuQmCC");
+      background-size: 24px 24px;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    &.disabled {
+      opacity: 0.6;
+    }
+  }
+}
+
+.calendar-month {
+  width: 100%;
+  background-color: #fff;
+  .week {
+    background-color: #f7f7f8;
+  }
+  .week-day {
+    border-top: 1px solid $bar-default-border;
+    background-size: 0;
+    @media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      border: none;
+      background-image: linear-gradient(180deg, $bar-default-border, $bar-default-border 50%, transparent 50%);
+      background-position: top;
+      background-size: 100% 1px;
+      background-repeat: no-repeat;
+    }
+  }
+  th {
+    line-height: 20px;
+    font-size: 11px;
+    text-align: center;
+  }
+  td {
+    line-height: 40px;
+    font-size: 15px;
+    text-align: center;
+    position: relative;
+    span {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      line-height: 30px;
+      @include transition(background-color 400ms ease-in-out);
+      &.disabled {
+        color: #aaa;
+      }
+      &.today {
+        background-color: #e3e3e3;
+      }
+      &.selected {
+        background-color: $positive;
+        color: #fff;
+      }
+    }
+    &.otherMonth {
+      color: #666;
+    }
+  }
+}

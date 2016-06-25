@@ -1,0 +1,41 @@
+<ion-view view-title="提现申请" hide-tabs>
+  <ion-nav-buttons side="left">
+    <i class="icon-back" nav-back="back"></i>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <i class="tmm-withdraw-right" ui-sref="tab.withdrawRecord">提现记录</i>
+  </ion-nav-buttons>
+  <form novalidate ng-submit="withdrawForm()" name="withdraw_form">
+    <ion-content class="tmm-wallet-withdraw" scroll="false">
+      <div class="withdraw-list">
+        <div class="withdraw-item">
+          <div class="withdraw-title">开户行</div>
+          <div>{{json.bank_value}}</div>
+        </div>
+        <div class="withdraw-item">
+          <div class="withdraw-title">开户名</div>
+          <div>{{json.bank_name}}</div>
+        </div>
+        <div class="withdraw-item">
+          <div class="withdraw-title">卡号</div>
+          <div>{{json.bank_code_format}}</div>
+        </div>
+        <div class="withdraw-item">
+          <div class="withdraw-title">金额(元)</div>
+          <div>
+            <input type="text" name="drawMoney" placeholder="当前余额{{withdraw_format}}元" class="withdraw-input"
+              ng-model="regText.drawMoney"
+              required
+              autocomplete="off"
+              maxlength="12"
+              > 
+          </div>
+        </div>
+      </div>
+      <div class="tmm-message-button">
+        <button class="tmm-message-sub tmm-message-sub-act" type="submit">确认提现</button>
+      </div>
+      <div class="withdraw-tip">提现申请成功，预计1-3个工作日内到帐。</div>
+    </ion-content>
+  </form>
+</ion-view>

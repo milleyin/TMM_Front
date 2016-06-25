@@ -1,0 +1,246 @@
+angular.module('myLogin', [])
+
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.login', {
+      url: '/login',
+      views: {
+        'tab-my': {
+          templateUrl: 'app/my/templates/login.html',
+          controller: 'LoginCtrl',
+        }
+      }
+
+    });
+
+}])
+
+.controller('LoginCtrl', function($scope, $http, $timeout, $state, ENV, Resource, appFunc) {
+  //控制登录方式显示
+  $scope.accLogin = true;
+  $scope.mobileLogin = false;
+  $scope.LoginTitle = "帐号密码登录";
+  accLoginView();
+  $scope.showLogin = function(type){
+    if(type == 1) {
+      $scope.accLogin = true;
+      $scope.mobileLogin = false;
+      $scope.LoginTitle = "帐号密码登录";
+      accLoginView();
+    } else if(type == 2){
+      $scope.accLogin = false;
+      $scope.mobileLogin = true;
+      $scope.LoginTitle = "手机号快捷登录";
+      mobileLoginView();
+    }
+  };
+
+  function accLoginView() {
+    //账号密码登录
+    $scope.accLoginData = {
+      'verifyCodeUrl': '',
+      'g_hash': ''
+    };
+
+    $scope.loginModel = {
+      'phone': '',
+      'password': '',
+      'verifycode': ''
+    };
+    // 显示账号密码登录的验证码
+    $scope.showAccVerifyCode = function() {
+      Resource.showAccCode().then(function(dataRes) {
+        $http.get(ENV.apiEndpoint + dataRes.verifyCode).success(function(dataRes) {
+          $scope.accLoginData.g_hash = dataRes.hash1;
+          $scope.accLoginData.verifyCodeUrl = ENV.apiEndpoint + dataRes.url;
+        }, function(dataRes) {
+            
+        });
+        $scope.$broadcast('scroll.refreshComplete');
+      }, function(dataRes) {
+
+        $scope.$broadcast('scroll.refreshComplete');
+      });
+    };
+
+    // 手机密码登录
+    $scope.accLogin = function() {
+      var accData = {
+        "StoreLoginForm": {
+          "phone": $scope.loginModel.phone,
+          "password": $scope.loginModel.password,
+          "verifyCode": $scope.loginModel.verifycode
+        }
+      };
+
+      if (!appFunc.isPhone($scope.loginModel.phone)) {
+        appFunc.alert('手机号码格式不对');
+      } else if (!appFunc.validatePassword($scope.loginModel.password)) {
+        appFunc.alert('密码必须有数字和字母组合');
+      } else if ($scope.loginModel.verifycode === '') {
+        appFunc.alert('验证码不能为空');
+      } else if (!appFunc.validateVerifyCodeHash($scope.loginModel.verifycode, $scope.accLoginData.g_hash)) {
+        appFunc.alert('验证码不正确');
+        $scope.showAccVerifyCode();
+      } else {
+        Resource.accLogin(accData).then(function(dataRes) {
+          $state.go('tab.my');
+        }, function(dataRes) {
+          console.log(dataRes)
+          if (dataRes.code === '0') {
+            if (dataRes.data) {
+              for (var msgName in dataRes.data) {
+                console.log(msgName)
+                if (dataRes.data[msgName] instanceof Array) {
+                  $scope.showAccVerifyCode();
+                  appFunc.alert(dataRes.data[msgName][0]);
+                }
+              }
+            } else {
+              appFunc.alert('输入有误，请重试');
+            }      
+          } else {
+             alert(dataRes.msg); 
+          }
+
+        });
+      }
+    };
+
+    $scope.showAccVerifyCode();
+  }
+
+  function mobileLoginView() {
+    //快捷方式登录
+    $scope.mobLoginData = {
+      'csrf': '',
+      'verifyCodeUrl': '',
+      'g_hash': '',
+      'codeText': '获取验证码',
+      'isDisabled': false
+    };
+
+    $scope.mobLoginModel = {
+      'phone': '',
+      'verifycode': '',
+      'msgcode': ''
+    };
+
+    //获取图形验证码60秒不可以点
+    var waitTime = 60;
+    var getCodeTimeOut = function() {
+      if (waitTime === 0) {
+        $scope.mobLoginData.isDisabled = false;
+        $scope.mobLoginData.codeText = '获取验证码';
+        waitTime = 60;
+      } else {
+        $scope.mobLoginData.isDisabled = true;
+         $scope.mobLoginData.codeText = waitTime + '秒后重试';
+        waitTime--;
+        $timeout(function() {
+          getCodeTimeOut();
+        }, 1000);
+      }
+    };
+    // 控制锁定按钮
+    $scope.canSend = function() {
+      return $scope.mobLoginData.isDisabled;
+    };
+
+    // 显示快捷方式登录的验证码
+    $scope.showMobileVerifyCode = function() {
+      Resource.showMobCode().then(function(dataRes) {
+        $scope.mobLoginData.csrf = dataRes.csrf.TMM_CSRF;
+        $http.get(ENV.apiEndpoint + dataRes.verifyCode).success(function(dataRes) {
+          $scope.mobLoginData.g_hash = dataRes.hash1;
+          $scope.mobLoginData.verifyCodeUrl = ENV.apiEndpoint + dataRes.url;
+        }, function(dataRes) {
+            
+        });
+        $scope.$broadcast('scroll.refreshComplete');
+      }, function(dataRes) {
+
+        $scope.$broadcast('scroll.refreshComplete');
+      });
+    };
+
+    //快捷方式登录获取手机验证码
+    $scope.getMsgCode = function() {
+      if (!appFunc.isPhone($scope.mobLoginModel.phone)) {
+        appFunc.alert('手机号码格式不对');
+      } else if ($scope.mobLoginModel.verifycode === '') {
+        appFunc.alert('图形验证码不能为空');
+      } else {
+        var mobCodeData = {
+          "phone": $scope.mobLoginModel.phone,
+          "verifyCode": $scope.mobLoginModel.verifycode,
+          "TMM_CSRF" : $scope.mobLoginData.csrf
+        };
+        getCodeTimeOut();
+        Resource.getMobCode(mobCodeData).then(function(dataRes) {
+
+        }, function(dataRes) {
+          if (dataRes.code === '0') {
+            if (dataRes.data) {
+              for (var msgName in dataRes.data) {
+                console.log(msgName)
+                if (dataRes.data[msgName] instanceof Array) {
+                  $scope.showAccVerifyCode();
+                  appFunc.alert(dataRes.data[msgName][0]);
+                }
+              }
+            } else {
+              appFunc.alert('输入有误，请重试');
+            }      
+          } else {
+             alert(dataRes.msg); 
+          }
+
+        });
+      }
+    };
+
+    // 快捷方式登录
+    $scope.mobLogin = function() {
+      var mobData = {
+        "StoreSmsLoginForm": {
+          "phone": $scope.mobLoginModel.phone,
+          "sms": $scope.mobLoginModel.msgcode,
+          "verifyCode": $scope.mobLoginModel.verifycode
+        }
+      };
+
+      if (!appFunc.isPhone($scope.mobLoginModel.phone)) {
+        appFunc.alert('手机号码格式不对');
+      } else if ($scope.mobLoginModel.verifycode === '') {
+        appFunc.alert('图形验证码不能为空');
+      } else if ($scope.mobLoginModel.msgcode === '') {
+        appFunc.alert('短信验证码不正确');
+      } else {
+        Resource.mobLogin(mobData).then(function(dataRes) {
+          $state.go('tab.my');
+        }, function(dataRes) {
+          console.log(dataRes)
+          if (dataRes.code === '0') {
+            if (dataRes.data) {
+              for (var msgName in dataRes.data) {
+                console.log(msgName)
+                if (dataRes.data[msgName] instanceof Array) {
+                  $scope.showMobileVerifyCode();
+                  appFunc.alert(dataRes.data[msgName][0]);
+                }
+              }
+            } else {
+              appFunc.alert('输入有误，请重试');
+            }      
+          } else {
+             alert(dataRes.msg); 
+          }
+
+        });
+      }
+    };
+
+    $scope.showMobileVerifyCode();
+  }
+});

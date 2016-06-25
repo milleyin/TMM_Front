@@ -1,0 +1,194 @@
+/* 首页幻灯片 */
+
+.tmm-top-search {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65px;
+    height: 65px;
+    border-radius: 130px;
+    background: url('../../styles/images/index-search.png') no-repeat;
+    background-size: 65px;
+    z-index: 15000;
+}
+
+.tmm-recommend-ul-list {
+    position: relative;
+}
+
+.tmm-recommend-ul-list .tmm-top-banner {
+    width: 100%;
+    height: 240px;
+    background: #f2eee4;
+}
+
+.tmm-recommend-ul-list .tmm-top-banner .swiper-container {
+    height: 240px;
+}
+
+.tmm-recommend-ul-list .tmm-top-banner img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 当季热销 */
+
+.tmm-recommend-ul-list .tmm-hot,
+.tmm-recommend-ul-list .tmm-act,
+.tmm-recommend-ul-list .tmm-nearby {
+    background: #f2eee4;
+}
+
+.tmm-recommend-ul-list .tmm-title-wrapper {
+    position: relative;
+    padding: 27px 11px 13px 12px;
+}
+
+.tmm-recommend-ul-list .tmm-title-wrapper .title-flag {
+    display: inline-block;
+    width: 3px;
+    height: 14px;
+    background: #ff1a22;
+}
+
+.tmm-recommend-ul-list .tmm-title-wrapper .more {
+    position: absolute;
+    right: 12px;
+    bottom: 13px;
+    font-size: 15px;
+    color: #000000;
+}
+
+.tmm-recommend-ul-list .tmm-title-wrapper .title {
+    font-size: 19px;
+    color: #000000;
+}
+
+.tmm-recommend-ul-list .tmm-title-wrapper .subtitle {
+    margin-left: 5px;
+    font-size: 11px;
+    color: #666666;
+}
+
+.hot-img-wrapper {
+    padding: 0 5px;
+    letter-spacing: -4px;
+    word-spacing: -4px;
+    font-size: 0px;
+}
+
+.hot-img-wrapper .img-item {
+  letter-spacing: normal;
+  word-spacing: normal;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+  width: 50%;
+}
+
+.hot-img-wrapper .img-wrapper {
+    padding: 5px 5px;
+}
+
+.hot-img-wrapper.hot-img-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+/* 觅趣活动 */
+
+.tmm-act .tmm-title-wrapper,
+.tmm-nearby .tmm-title-wrapper,
+{
+    padding-top: 17px;
+}
+
+.tmm-act .title-flag.flag-orange {
+    background: #ff812d;
+}
+
+.tmm-act .act-ul {
+    padding: 0 10px;
+}
+
+.tmm-act .li-item {
+    position: relative;
+    margin-top: 5px;
+}
+/* .tmm-act .li-item:not(:last-child) {
+    margin-bottom: 5px;
+} */
+
+.tmm-act img.img-item {
+    display: block;
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+}
+
+.tmm-act .info-item {
+    position: absolute;
+    top: 38%;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+}
+
+.tmm-act .info-item .title {
+    font-size: 24px;
+}
+
+.tmm-act .info-item .desc {
+    font-size: 15px;
+}
+
+
+/* 周边景区 */
+
+.tmm-nearby img.img-item {
+    display: block;
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+}
+
+.tmm-nearby {
+    padding-bottom: 22px;
+}
+
+.tmm-nearby .title-flag.flag-green {
+    background: #39ab53;
+}
+
+.tmm-nearby .nearby-ul {
+    padding: 0 10px;
+}
+
+.tmm-nearby .li-item {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.tmm-nearby .li-item:last-child {
+    margin-bottom: 0;
+}
+
+.tmm-nearby .info-item {
+    position: absolute;
+    top: 38%;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+}
+
+.tmm-nearby .info-item .title {
+    font-size: 24px;
+}
+
+.tmm-nearby .info-item .desc {
+    font-size: 15px;
+}

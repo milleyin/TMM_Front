@@ -1,0 +1,66 @@
+<!-- 线的详情页面 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">{{lineObj.name}}</div>
+    <div class="right">
+      <a href="#" class="tmm-praise-shop" data-shop-id="{{lineObj.thrand_id}}">
+        {{#if isLinePraise}}
+          <i class="icon ticon-praise"></i>
+        {{else}}
+          <i class="icon ticon-praise gray"></i>
+        {{/if}}
+      </a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, "data-page" contains page name -->
+  <div data-page="line-detail" class="page tmm-dot-detail tmm-line-detail">
+    <div class="page-content">
+      <div class="banner">
+        <img class="lazy" data-src="{{lineObj.page_img}}">
+      </div>
+      <div class="wrap">
+        {{#each lineObj.list}}
+        <div class="line-day">
+          <!-- 日程亮点 -->
+          <div class="line-day-tit">
+            <div class="bright">{{day_content}}</div>
+            <div class="day">{{day}}</div>
+          </div>
+        {{#each dot_list}}
+          {{#each day_item}}
+          <!-- 项目类容 -->
+          <section class="info">
+            <h2 class="tit">{{item_name}}</h2>
+            <div class="state ">{{address}}</div>
+            <a href="javascript:;" data-type="{{js " this.item_type.value==1 ? 'eat' : (this.item_type.value==2 ? 'hotel' : (this.item_type.value==3 ? 'play' : 'farm')) "}}" data-link="{{item_link}}" class="showmore">查看更多</a>
+            <div class="img">
+              <a class="tmm-img-showmore" href="javascript:;" data-type="{{js " this.item_type.value==1 ? 'eat' : (this.item_type.value==2 ? 'hotel' : (this.item_type.value==3 ? 'play' : (this.item_type.value==3 ? 'farm' : 'farmOuter'))) "}}" data-link="{{item_link}}">
+            <img class="lazy lazy-fadein" data-src="{{item_img}}">
+          </a>
+            </div>
+          </section>
+          {{/each}}
+        {{/each}}
+        </div>
+        {{/each}}
+      </div>
+
+
+    </div>
+{{#js_compare "this.lineObj.is_sale.value ==1"}}
+    <!-- 可以下单 -->
+    <div class="go-item" data-shop-type="{{lineObj.c_id}}" data-shop-id="{{lineObj.thrand_id}}"><a class="tmm-button" href="javascript:;">我也想去</a></div>
+{{/js_compare}}
+{{#js_compare "this.lineObj.is_sale.value !=1"}}      
+    <!-- 不能下单 -->
+    <div class="cannt-item"><a class="tmm-button" href="javascript:;">此点正在开发中，敬请期待</a></div>
+{{/js_compare}}
+  </div>
+</div>

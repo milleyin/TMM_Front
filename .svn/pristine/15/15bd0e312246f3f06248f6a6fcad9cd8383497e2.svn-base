@@ -1,0 +1,126 @@
+.tmm-index {
+  background-color: #edf2ee;
+  .banner {
+    font-size: 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .con {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    .item-row {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      .main-two {
+        text-align: center;
+        flex: 50%;
+        font-size: 14px;
+        line-height: 14px;
+        color: #000;
+        padding: 16px 0;
+        img {
+          width: 70px;
+          height: 70px;
+        }
+      }
+      .main-four {
+        position: relative;
+        text-align: center;
+        flex: 25%;
+        font-size: 12px;
+        line-height: 12px;
+        color: #000;
+        padding: 18px 0;
+        img {
+          width: 42px;
+          height: 42px;
+        }
+        &.cover:before {
+          content: "";
+          position: absolute;
+          top: 1px;
+          left: 0;
+          right: 1px;
+          bottom: 1px;
+          background-color: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+    .item-two-heigh {
+      height: 122px;
+      a {
+        width: 50%;
+        &:first-child {
+          @include hairline(rightBottom);
+        }
+        &:last-child {
+          @include hairline(bottom);
+        }
+      }
+    }
+    .item-four-heigh {
+      height: 92px;
+      a {
+        width: 25%;
+        @include hairline(rightBottom);
+        &:last-child {
+          @include hairline(bottom);
+        }
+      }
+    }
+  }
+
+  .culture {
+    margin-top: 10px;
+    background-color: #fff;
+    height: 98px;
+    @include hairline(topBottom);
+    .history {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 96px;
+      padding-left: 20px;
+      padding-right: 20px;
+      img {
+        height: 92px;
+        width: 120px;
+      }
+      .intro {
+        text-align: right;
+        .tit {
+          font-size: 18px;
+          line-height: 18px;
+          color: #000;
+          margin-bottom: 10px;
+        }
+        .detail {
+          font-size: 11px;
+          color: #626262;
+        }
+      }
+    }
+    .addr {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 68px;
+      color: #000;
+      padding-left: 20px;
+      padding-right: 20px;
+      .addrDet {
+        font-size: 12px;
+      }
+      .guide {
+        font-size: 18px;
+        line-height: 18px;
+      }
+    }
+  }
+}

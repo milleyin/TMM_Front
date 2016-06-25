@@ -1,0 +1,55 @@
+<ion-view view-title="我的订单详情" hide-tabs cache-view="false">
+  <ion-nav-buttons side="left">
+    <i class="tmm-ion-left icon icon-arrow-back" nav-back></i>
+  </ion-nav-buttons>
+  <ion-content class="orderdetail">
+    <div class="main-title">出游日期</div>
+    <div class="cell">{{model.go_time}}</div>
+    <div class="main-title">项目列表</div>
+    <div class="order-wrap">
+      <div class="det-list" ng-repeat="attr1 in model.items_fare">
+        <div class="title">
+          <span class="name">{{attr1.name}}</span>
+          <span ng-if="attr1.barcode.is_barcode!=1 && attr1.barcode.is_barcode!=-2" class="h_right gray">{{attr1.barcode.barcode_name}}</span>
+          <span ng-if="attr1.barcode.is_barcode==1" class="h_right red" ng-click="sendCode(attr1.barcode.barcode)">确认消费</span>
+        </div>
+        <div class="item-list" ng-repeat="attr2 in attr1.fare" ng-if="attr2.number != 0">
+          <span class="item-cell">{{attr2.name}}</span>
+          <span class="item-cell" ng-if="attr1.classliy.value != 2">{{attr2.info}}</span>
+          <span ng-if="attr1.classliy.value == 2">{{attr2.hotel_number}}人间</span>
+          <span class="item-cell">{{attr2.number}}</span>
+          <span class="item-cell">￥{{attr2.count}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="main-title">主要联系人</div>
+    <div class="people-cell">
+      <div class="people-item" ng-repeat="attr in model.retinue" ng-if="attr.is_main == 1">
+        <p><span class="name">姓名：{{attr.name}}</span><span>性别：{{attr.gender == 0? '保密': attr.gender==1?'男':'女'}}</span></p>
+        <p><span class="no_mr">手机号：{{attr.phone}}</span></p>
+        <p>身份证：{{attr.identity}}</p>
+      </div>
+    </div>
+    <div class="main-title" ng-if="model.retinue.length!=1">随行人员</div>
+    <div class="people-cell" ng-if="model.retinue.length!=1">
+      <div class="people-item" ng-repeat="attr in model.retinue" ng-if="attr.is_main == 0">
+        <p><span class="name">姓名：{{attr.name}}</span><span>性别：{{attr.gender == 0? '保密': attr.gender==1?'男':'女'}}</span></p>
+        <p><span class="no_mr">手机号：{{attr.phone}}</span></p>
+        <p>身份证：{{attr.identity}}</p>
+      </div>
+    </div>
+    
+    <div class="main-title">订单状态</div>
+    <div class="people-cell">
+      <p>订单编号：{{model.order_no}}</p>
+      <p>创建时间：{{model.add_time}}</p>
+      <p>处理时间：{{model.up_time}}</p>
+      <p>付款时间：{{model.pay_time}}</p>
+    </div>
+    <div class="empty"></div>
+  </ion-content>
+  <div ng-if="flag" class="footer">
+    <div ng-click="refuse()" class="footer-btn">拒绝</div>
+    <div ng-click="receive()" class="footer-btn">接收</div>
+  </div>
+</ion-view>

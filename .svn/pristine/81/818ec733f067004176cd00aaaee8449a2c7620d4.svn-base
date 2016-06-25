@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>财务信息(绑定成功)</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="../../css/agent/css/set_up.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/agent/css/details.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/agent/css/breadcrumbs.css">
+	</head>
+	<body>
+	<div class="content_box">
+ 	<div class="title breadcrumbs">
+  		<span>账号信息</span>
+  	</div>  <!--.title-->
+  	<div class="content_top">
+  		<ul>
+  			<li><a href="Account_details.html">账号详情</a></li>
+  			<li class="top2"><a href="financial.html">财务信息</a><span></span></li>
+  			<li><a href="bond.html">保证金</a></li>
+  			<div class="clear"></div>
+  		</ul>
+  		<hr />
+  	</div>  <!-- .content_top -->
+  	<div class="content_up1">
+  		<div class="state_normal">注:如需要修改，请联系平台人员进行修改。</div>
+  		<table >
+  			<tr>
+  				<td>开户行:</td>
+  				<td>招商银行终于商务支行</td>
+  			</tr>
+  			<tr>
+  				<td>开户名:</td>
+  				<td>郑金龙</td>
+  			</tr>
+  			<tr>
+  				<td>银行账户:</td>
+  				<td>21354634341331313</td>
+  			</tr>
+  		</table>
+  	</div>
+	</div>  <!--.content_box-->
+
+	</body>
+</html>

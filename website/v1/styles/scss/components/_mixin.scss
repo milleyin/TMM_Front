@@ -1,0 +1,10 @@
+@mixin inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+@mixin opacity($num) {
+  opacity: $num;
+  filter: alpha(opacity=$num*100);
+}

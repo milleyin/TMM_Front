@@ -1,0 +1,137 @@
+<!-- 我发起的觅趣 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner tmm-my-activity-navbar">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">我发起的觅趣</div>
+    <div class="right tmm-act-right" id="add-actfunning">
+      <!-- 新增 -->
+      <i class="icon ticon-add" style="color:red;"></i>
+    </div>
+  </div>
+</div>
+<div class="pages navbar-through">
+  <div data-page="my-activity" class="page" id="tmm-my-activity-page">
+    <div data-distance="50" class="page-content pull-to-refresh-content infinite-scroll" style="padding-bottom:0px;">
+      <!-- 默认的下拉刷新层 -->
+      <div class="pull-to-refresh-layer">
+        <div class="preloader"></div>
+        <div class="pull-to-refresh-arrow"></div>
+      </div>
+      <div class="tmm-activity-card-list">
+
+
+        {{#each actList}}
+        <div class="journery-item">
+          <div class="con-inner go-seekfun-detail" data-link="{{link}}">
+            <div class="pic">
+            {{#if image}}
+              <img src="{{image}}">
+            {{else}}
+              <img src="../../styles/images/default.jpg">
+            {{/if}}
+            </div>
+            <div class="describe">
+              <p class="tit">{{name}}</p>
+              <p class="price">￥{{price}}起/人
+                {{#js_compare "this.audit_status.value =='1'"}}　参与人数：{{js "this.actives_info.number.value - this.actives_info.order_number.value"}}/{{actives_info.number.value}}
+                {{/js_compare}}
+              </p>
+              <p class="tour-day">出游日期：
+                {{#js_compare "this.go_time_value =='0'"}}
+                  待定
+                {{/js_compare}}
+                {{#js_compare "this.go_time_value =='1'"}}
+                  {{go_time}}
+                {{/js_compare}}
+              </p>
+
+              <!--显示觅趣状态 1上线-->
+              <p class="status">
+                {{#js_compare "(this.audit_status.value =='-2' && this.actives_status.value =='0' && this.shops_status.value =='0') || (this.audit_status.value =='-1' && this.actives_status.value =='0' && this.shops_status.value =='0') || (this.audit_status.value =='-1' && this.actives_status.value =='' && this.shops_status.value =='0')"}}
+                  审核未通过
+                {{/js_compare}}
+
+                {{#js_compare "(this.audit_status.value =='1' && this.actives_status.value =='0' && this.shops_status.value =='0') || (this.audit_status.value =='1' && this.actives_status.value =='1' && this.shops_status.value =='0') || (this.audit_status.value =='1' && this.actives_status.value =='2' && this.shops_status.value =='0')"}}
+                  待上线
+                {{/js_compare}}
+
+                {{#js_compare "(this.audit_status.value =='1' && this.actives_status.value =='0' && this.shops_status.value =='1') || (this.audit_status.value =='1' && this.actives_status.value =='0' && this.shops_status.value =='1')"}}
+                  未开始
+                {{/js_compare}}
+
+                {{#js_compare "this.audit_status.value =='1' && this.actives_status.value =='-1' && this.shops_status.value =='1'"}}
+                  已取消
+                {{/js_compare}}
+              </p>
+              
+              <p class="status orange">
+                {{#js_compare "this.audit_status.value =='0' && this.audit_status.value =='0' && this.shops_status.value =='0'"}}
+                  待审核
+                {{/js_compare}}
+              </p>
+
+              {{#js_compare "this.audit_status.value =='1' && this.actives_status.value =='1' && this.shops_status.value =='1'"}}
+                <p class="status green">报名中</p>
+              {{/js_compare}}
+
+              {{#js_compare "this.audit_status.value =='1' && this.actives_status.value =='2' && this.shops_status.value =='1'"}}
+                <p class="status red">报名结束</p>
+              {{/js_compare}}
+              <!--显示觅趣状态-->
+            </div>
+          </div>
+
+          {{#js_compare "this.audit_status.value =='-1' || this.audit_status.value == '-4'"}}
+          <div class="act-fail">
+            <div class="act-fail-title">审核未通过原因</div>
+            <div class="act-fail-res">{{audit_status.info}}</div>
+          </div>
+          {{/js_compare}}
+          
+
+          <!--根据条件显示按钮 -->
+          <div class="con-footer">
+          {{#js_compare "(this.audit_status.value =='-2' && this.actives_status.value =='0' && this.shops_status.value =='0') || (this.audit_status.value =='-1' && this.actives_status.value =='0' && this.shops_status.value =='0')"}}
+            
+              <span class="outline-button" style="display:none;">删除</span>
+              <span class="outline-button tmm-examine-status-list" data-link="{{link}}">提交审核</span>
+           
+          {{/js_compare}}
+
+          
+
+          {{#js_compare "(this.audit_status.value =='1' && this.actives_status.value =='0' && this.shops_status.value =='1') || (this.audit_status.value =='1' && this.actives_status.value =='1' && this.shops_status.value =='1')"}}
+           
+              <span class="outline-button tmm-my-activity-cancel">取消觅趣</span>
+              {{#js_compare "this.set_go_time.link !=''"}}
+                <span class="outline-button activityGoTimeSel" data-id="{{value}}" data-link="{{set_go_time.link}}">确认出游时间</span>
+              {{/js_compare}}
+           
+          {{/js_compare}}
+
+          {{#js_compare "this.audit_status.value =='1' && this.actives_status.value =='2' && this.shops_status.value =='1' && this.set_go_time.link !=''"}}
+            
+              <span class="outline-button activityGoTimeSel" data-id="{{value}}" data-link="{{set_go_time.link}}">确认出游时间</span>
+            
+          {{/js_compare}}
+
+          {{#js_compare "this.shops_status.value == 1&& this.audit_status.value == 1 && this.attend.number > 0 && (this.actives_status.value == 1 || this.actives_status.value == 2) && this.actives_info.order_count.value == 0 && this.pay_type.value == 1 && this.order.link"}}
+              <span class="outline-button payActivityMoney" data-link="{{link}}" data-orderlink="{{order.link}}" data-id="{{order.value}}" data-time="{{go_time_value}}" data-type="{{order.type}}">支付费用</span>
+          {{/js_compare}}
+          </div>
+          <!--根据条件显示按钮 -->
+        </div>
+        {{/each}}
+
+
+      </div>
+      
+      <div id="no-more"></div>
+    </div>
+  </div>
+  <!--添加内容 -->
+</div>

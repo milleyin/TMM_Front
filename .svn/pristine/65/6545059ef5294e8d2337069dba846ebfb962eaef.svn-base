@@ -1,0 +1,87 @@
+<!--增加活动设置-->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link" id="{{js " this.flag=='line' ? 'edit-act-setting-back' : '' "}}">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">编辑活动设置</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="act-setting" class="page page-order">
+    <div class="page-content tmm-add-retinue-page-contnet content">
+      <div class="list-block tmm-sett-canter">
+        <ul>
+          <li class="item-content item-link">
+            <div class="item-inner tmm-item-inner">
+              <div class="item-title tmm-activity-item-title">活动名称：</div>
+              <div class="item-after sett-canter-font tmm-item-after">
+                <input name="name" required id="name" class="zengjia_txt" type="text" value="{{actObj.name}}">
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-link">
+            <div class="item-inner  tmm-item-inner">
+              <div class="item-title tmm-activity-item-title">活动开始时间：</div>
+              <div class="item-after sett-canter-font tmm-item-after">
+                <input type="text" name="start_time" id="start_time" placeholder="请选择活动开始时间" readonly="" class="zengjia_txt" value="{{actObj.actives_time.start_time}}">
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-link">
+            <div class="item-inner  tmm-item-inner">
+              <div class="item-title tmm-activity-item-title">活动结束时间：</div>
+              <div class="item-after sett-canter-font tmm-item-after">
+                <input type="text" name="end_time" id="end_time" placeholder="请选择活动结束时间" readonly="" class="zengjia_txt" value="{{actObj.actives_time.end_time}}">
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-link">
+            <div class="item-inner  tmm-item-inner">
+              <div class="item-title tmm-activity-item-title">出游日期：</div>
+              <div class="item-after sett-canter-font tmm-item-after">
+              {{#js_compare "this.actObj.actives_time.go_time_value == 0"}}
+                <input type="text" name="go_time" id="go_time" placeholder="请选择出游日期" readonly="" class="zengjia_txt">
+              {{/js_compare}}
+              {{#js_compare "this.actObj.actives_time.go_time_value != 0"}}
+                <input type="text" name="go_time" id="go_time" placeholder="请选择出游日期" readonly="" class="zengjia_txt" value="{{actObj.actives_time.go_time}}">
+              {{/js_compare}}
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-link">
+            <div class="item-inner tmm-item-inner">
+              <div class="item-title tmm-activity-item-title">活动参与人数：</div>
+              <div class="item-after sett-canter-font tmm-item-after">
+                <input name="zengjia_name" name="number" id="number" required class="zengjia_txt" type="text" value="{{actObj.actives_info.number.value}}">人
+              </div>
+            </div>
+          </li>
+          {{#js_compare "this.actObj.is_organizer.value == 1"}}
+          <li class="item-content item-link">
+            <div class="item-inner tmm-item-inner">
+              <div class="item-title tmm-activity-item-title">服务费：</div>
+              <div class="item-after sett-canter-font tmm-item-after">
+                <input name="zengjia_name" name="tour_price" id="tour_price" required class="zengjia_txt" type="text" value="{{actObj.actives_info.tour_price.value}}">元/人
+              </div>
+            </div>
+          </li>
+          {{/js_compare}}
+        </ul>
+      </div>
+      <div class="tmm-beizhu tb_border tmm-retinue-top-border tmm-retinue-bottom-border">
+        <p class="tmm-beizhu-tit">备注：</p>
+        <p class="tmm-beizhu-txt">
+          <textarea id="remark" name="remark" required>{{actObj.actives_info.remark}}</textarea>
+        </p>
+      </div>
+      <div class="bg_btn">
+        <button class="sub_btn" type="submit" id="{{js " this.flag=='line' ? 'line_edit_act' : 'dot_edit_act' "}}" data-id="{{actObj.shops.value}}">编辑此线路活动</button>
+      </div>
+    </div>
+  </div>
+</div>

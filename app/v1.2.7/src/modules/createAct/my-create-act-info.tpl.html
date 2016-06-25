@@ -1,0 +1,75 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">填写觅趣信息</div>
+    <div class="right"></div>
+  </div>
+</div>
+
+<!--付款方式的选择-->
+<div class="pages">
+  <div data-page="create-act-info" class="page" id="create-act-info">
+    <div class="page-content tmm-launch-act-info" style="padding-bottom: 0px;">
+      
+      <div class="launch-act-info">
+        <div class="launch-info-title">觅趣名称：</div>
+        <div class="launch-info-content launch-info-time">
+          <input name="name" required id="name" class="conten-txt" type="text" style="text-align: right;">
+        </div>
+      </div>
+
+      <div class="launch-act-info">
+        <div class="launch-info-title">报名开始与结束：</div>
+        <div class="launch-info-time launch-info-content">
+          <input type="text" placeholder="年/月/日 >" readonly class="conten-txt calendar-infotime" style="text-align:right;">
+        </div>
+      </div>
+
+      <div class="launch-act-info">
+        <div class="launch-info-title">觅趣参与人数：</div>
+        <div class="launch-info-content">
+          <input name="number" id="number" required class="conten-txt" type="text" style="width: 130px;">人
+        </div>
+      </div>
+
+      {{#js_compare "this.userInfo.is_organizer == 1 && this.userInfo.organizer_status != 0"}}
+      <div class="launch-act-info">
+        <div class="launch-info-title">服务费：</div>
+        <div class="launch-info-content">
+           <input name="tour_price" id="tour_price" required class="conten-txt" type="text" >元/人
+        </div>
+      </div>
+      <div class="launch-intr">注：<span class="intr-cont">代理商创办此觅趣时所获得的服务费用</span></div>
+      {{/js_compare}}
+
+      <div class="launch-act-info">
+        <div class="launch-info-title">觅趣公开性：</div>
+        <div class="launch-info-content">
+          <label class="lab-check">
+            <input class="conten-txt" type="checkbox" id="launch-open"  style="height: 13px; display:none;"><i style="" class="launch-open-check"></i>&nbsp;私密
+          </label>
+        </div>
+      </div>
+      
+      <div class="launch-intr">注：<span class="intr-cont">私密觅趣需要发起人邀请参与人加入</span></div>
+
+      <div class="act-edit">
+        <p>觅趣简介：</p>
+        <textarea class="act-edit-content" rows="5"></textarea>
+      </div>
+
+    <div class="tmm-card-btn">
+      <span class="card-btn" id="line_create_act">完成</span>
+    </div>
+     
+    </div>
+
+    <div class="act-indicator">
+      <span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span>
+    </div>
+  </div>
+</div>

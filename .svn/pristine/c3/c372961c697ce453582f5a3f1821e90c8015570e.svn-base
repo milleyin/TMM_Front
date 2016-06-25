@@ -1,0 +1,128 @@
+<ion-view view-title="活动的详情" hide-tabs="true" >
+  <ion-nav-buttons>
+    <!-- <i class="tmm-ion-left ion-android-arrow-back" ui-sref="tab.recommend" nav-direction="back"></i> -->
+    <a class="tmm-ion-left ion-android-arrow-back" href="javascript:history.back(-1)"  nav-direction="back"></a>
+  </ion-nav-buttons>
+  <ion-content>
+    <!--头部-->
+      <div class="tmm-act-detail-banner">
+        <div>
+          <img class="tmm-act-detail-img" ng-src="{{shopModel.shopObj.page_img}}">
+        </div>
+        <div class="tmm-act-detail-mask">
+            <div class="tmm-praise" ng-click="dotPraise()">
+              <div class="tmm-praise-pos-img" ng-class="shopModel.praise_status == 1 ? 'icon-parise-red' : 'icon-parise'"></div>
+              <span class="tmm-praise-tit">{{shopModel.shop_praise}}</span>
+            </div>
+            <div class="tmm-praise tmm-praise-pos-call"  ng-click="dotCall('act')">
+              <div class="icon-phone-big tmm-praise-pos-img"></div>
+              <span class="tmm-praise-tit">联系</span>
+            </div>
+            <div class="tmm-praise tmm-praise-pos-share">
+              <div class="icon-share-big tmm-praise-pos-img"></div>
+              <span class="tmm-praise-tit">分享</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="tmm-act-info">
+        <div>
+          <div class="tmm-col-fish tmm-act-border-right">
+            <div class="tmm-col-fish-content">
+              <p class="title">参与人数</p>
+              <p class="txt">{{shopModel.shopObj.actives_info.order_number.sign}} / {{shopModel.shopObj.actives_info.number.value}}</p>
+            </div>
+          </div>
+          <div class="tmm-col-fish">
+            <div class="tmm-col-fish-content">
+              <p class="title">活动状态</p>
+              <p class="txt">{{shopModel.shopObj.actives_status.name}}</p>
+            </div>
+          </div>
+          <div class="clears"></div>
+          <div class="b-border"></div>
+
+          <div class="tmm-col-fish tmm-act-border-right">
+            <div class="tmm-col-fish-content">
+              <p class="title">报名时间</p>
+              <p class="txt">{{shopModel.shopObj.actives_time.start_time}} / {{shopModel.shopObj.actives_time.end_time}}</p>
+            </div>
+          </div>
+          <div class="tmm-col-fish">
+            <div class="tmm-col-fish-content">
+              <p class="title">出游日期</p>
+              <p class="txt">{{shopModel.shopObj.actives_time.go_time}}</p>
+            </div>
+          </div>
+          <div class="clears"></div>
+          <div class="b-border"></div>
+
+          <div class="tmm-act-detail-accordion b-border">
+            <p class="title tmm-act-detail-accordion-left">活动简介</p>
+            <div class="tmm-act-content-height tmm-accordion-item-content tmm-act-detail-accordion-left">
+              <p class="txt tmm-activity-txt-height">1212</p>
+            </div>
+            <div class="tmm-act-toggle icon-expand"></div>
+          </div>
+        </div>
+      </div>
+    <!--头部-->
+
+    <!-- <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ui-sref="tab.item">
+        <h2>看到大旗头村成片的岭南特色镬耳房，是否勾起你依稀的记忆？</h2>
+      </ion-item>
+    </ion-list> -->
+
+    <div class="wrap">
+      <section ng-repeat="attr in shopModel.shopObj.list" class="info">
+        <div class="schedule" style="color: #565a5c">
+          <i class="bracket">&lceil;</i> 
+          {{attr.day_content}}
+          <i class="bracket">&rfloor;</i>
+        </div>
+        <div class="schedule-detail">
+          <div class="bg">
+            <div class="bg_o"></div>
+            <div class="bg_l"></div>
+          </div>
+          <div class="day"><span class="day-content">{{attr.day}}</span></div>
+        </div>
+        <span class="tmm-ticon-point">&nbsp;</span>
+        <div class="tmm-content-pos-top" ng-repeat="attr2 in attr.dot_list">
+          <div class="tmm-img-pos" ng-repeat-start="attr3 in attr2.day_item" ng-class="attr3.item_type.value == 1 ? 'icon-eat' : (attr3.item_type.value == 2 ? 'icon-live' : 'icon-play') "></div>
+          <div class="tmm-schedule-detail-title">{{attr3.item_name}}</div>
+          <div class="tmm-line-address" ng-click="showMore(attr3.item_link,attr3.item_type.value,attr3.value)"> 
+           {{attr3.address}}
+          </div>
+          <div class="tmm-showmore" ng-click="showMore(attr3.item_link,attr3.item_type.value,attr3.value)">
+            <span>●</span><span>●</span><span>●</span>
+          </div>
+          <a ng-repeat-end ng-click="showMore(attr3.item_link,attr3.item_type.value,attr3.value)" class="img">
+            <img ng-src="{{attr3.item_img}}" class="img">
+          </a>
+        </div>
+      </section>
+    </div>
+
+  </ion-content>
+
+  <div ng-if="shopModel.shopObj.is_sale.value == 1">
+    <div class="tmm-go-item tmm-activity-act-item" data-shop-type="{{shopModel.shopObj.c_id}}" data-shop-id="{{shopModel.shopObj.actives_id}}" ng-if="shopModel.shopObj.order_actives.value == -1 && shopModel.shopObj.actives_time.value == 1">
+      <a class="tmm-button" href="javascript:;">我也想去</a>
+    </div>
+    <div class="tmm-go-item tmm-activity-act-item" data-shop-type="{{shopModel.shopObj.c_id}}" data-shop-id="{{shopModel.shopObj.actives_id}}" ng-if="shopModel.shopObj.order_actives.value == -1 && shopModel.shopObj.actives_time.value == 0">
+      <a class="tmm-button" href="javascript:;">我也要报名</a>
+    </div>
+    <div class="tmm-go-item tmm-dot-cannt-item" ng-if="shopModel.shopObj.order_actives.value != -1">
+      <a class="tmm-button" href="javascript:;">已报名</a>
+    </div>
+    <div class="tmm-go-item tmm-dot-cannt-item" ng-if="shopModel.shopObj.actives_status.value ==2">
+      <a class="tmm-button" href="javascript:;">报名结束</a>
+    </div>
+  </div>
+  <div class="tmm-go-item tmm-dot-cannt-item" ng-if="shopModel.shopObj.is_sale.value != 1">
+    <a class="tmm-button" href="javascript:;">此点正在开发中，敬请期待</a>
+  </div>
+
+</ion-view>

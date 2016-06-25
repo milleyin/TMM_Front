@@ -1,0 +1,29 @@
+<ion-view hide-tabs>
+  <navbar title="钱包" class="wallet-nav">
+    <div class="left">
+      
+      <i class="icon-back-arrow" ui-sref="tab.my"></i>
+    </div>
+  </navbar>
+
+  <ion-content class="tmm-my-wallet" scroll="false">
+    <div class="wallet-content">
+      <div class="content-balance">{{json.money_format}}</div>
+      <div class="balance-up">余额(元)</div>
+    </div>
+
+    <div class="wallet-list arrow-cell" ng-click="BankCardHasOrNot()">
+      <img src="images/tx.png" class="wallet-img">提现<span class="right-arrow"><i class="icon-right-arrow"></i></span>
+    </div>
+
+    <div class="wallet-list wallet-top" ng-click="BankCardManageLink()">
+      <img src="images/yhkgl.png" class="wallet-img">银行卡管理<span class="right-arrow"><i class="icon-right-arrow"></i></span>
+    </div>
+    <div class="wallet-list" ui-sref="tab.traderecord">
+      <img src="images/jyjl.png" class="wallet-img">交易记录<span class="right-arrow"><i class="icon-right-arrow"></i></span>
+    </div>
+    <div class="wallet-list" ui-sref="tab.payment">
+      <img src="images/zfgl.png" class="wallet-img">支付管理<span class="right-arrow"><i class="icon-right-arrow"></i></span>
+    </div>
+  </ion-content>
+</ion-view>

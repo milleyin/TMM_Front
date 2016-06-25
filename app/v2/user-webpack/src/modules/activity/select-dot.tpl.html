@@ -1,0 +1,70 @@
+<!-- 选择路线 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link" id="select-dot-back">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">选择景点</div>
+    <!--<div class="right tmm-right">刷新</div>-->
+
+    <div class="subnavbar tmm-seek-subbar tmm-select-dot-subber">
+     <!--  <div class="mian-navbar-line"></div> -->
+      <div class="buttons-row">
+      {{#each searchList}}
+        <a href="javascript:;" class="button">{{name}}</a>
+      {{/each}}
+      </div>
+
+      <!-- 二级导航选择列表 -->
+    {{#each searchList}}
+      <div class="tmm-sublist" style="display:none;">
+      {{#each son}}
+        <span class="item"><a data-link="{{link}}" href="javascript:;">{{name}}</a></span>
+      {{/each}}
+      </div>
+    {{/each}}
+    </div>
+    <!--头部-->
+  </div>
+</div>
+<div class="pages navbar-through">
+  <div data-page="select-dot" class="page" id="tmm-select-dot-page">
+    <div data-distance="50" class="page-content pull-to-refresh-content infinite-scroll" style="padding-bottom:0px;background-color: #F0F1F2;">
+      <!-- 默认的下拉刷新层 -->
+      <div class="pull-to-refresh-layer" style="display: absolute; top: 45px;">
+        <div class="preloader"></div>
+        <div class="pull-to-refresh-arrow"></div>
+      </div>
+      <div class="list-card tmm-select-dot-card-list">
+      {{#each dotList}}
+        <div class="card tmm-select-line-card">
+          <a href="javascript:;" data-link="{{link}}">
+            <div class="card-content">
+              <div class="tmm-select-line-img">
+                <img data-src="{{image}}" alt="{{name}}" class="lazy lazy-fadein">
+              </div>
+              <div class="tmm-select-line-content">
+                <div class="tmm-select-line-content-title tmm-select-line-title-height">
+                  {{name}}
+                </div>
+                <div class="tmm-select-line-content-info tmm-select-content-line-height">
+                  <span class="tmm-select-line-content-count">￥{{price}}起 &frasl;人</span>
+                  <span class="tmm-select-line-content-count">已售{{down}}份</span>
+                </div>
+                <div class="tmm-select-line-content-info tmm-select-content-line-height">
+                  <span class="tmm-select-line-content-count">{{info}}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      {{/each}}
+      </div>
+      <div id="no-more"></div>
+    </div>
+    <div class="bg-mask-seek infinite-scroll" style="display:none"></div>
+  </div>
+  <!--添加内容 -->
+</div>

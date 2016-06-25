@@ -1,0 +1,8 @@
+.tmm-bar {
+    height: 44px;
+    
+    .title {
+        font-size: 18px;
+        font-wegiht: normal;
+    }
+}

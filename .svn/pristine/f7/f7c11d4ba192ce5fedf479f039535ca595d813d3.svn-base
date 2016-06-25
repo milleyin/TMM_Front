@@ -1,0 +1,55 @@
+  <div id="fangyuan">
+    <header>
+      <h1 class="top-nav">{{data.name}}
+          <a href="javascript:history.back(-1);"><i class="iconfont h_left h_pic">&#xe61f;</i></a>
+
+        </h1>
+    </header>
+    <div class="m_content">
+      <div class="banner" id="canvas">
+        <ul ng-repeat="imgAttr in data.img_list">
+          <li><img ng-src="{{imgAttr.img}}" alt="{{imgAttr.alt}}"></li>
+        </ul>
+        <span class="ban_tip" style="display:none">1/22</span>
+      </div>
+      <div class="info">
+        <table>
+          <tr>
+            <td class="t_tit">联系电话</td>
+            <td>{{data.phone}}</td>
+          </tr>
+          <tr>
+            <td class="t_tit">微信号</td>
+            <td>{{data.weixin}}</td>
+          </tr>
+          <tr>
+            <td class="t_tit">地址</td>
+            <td class="t_address"><span class="address">{{data.address}}</span><span class="chakan" ng-click="showAddress(data.address)">查看</span></td>
+          </tr>
+          <tr>
+            <td class="t_tit">房间介绍</td>
+            <td>
+              <div ng-repeat="attr in data.fare">
+                <p class="p_fare"><span class="length">{{attr.name}}</span><span class="w_2">{{attr.number}}人间</span><span class="w_2">{{attr.info}}m<sup>2</sup></span><span>{{attr.price}}元</span></p>
+                <hr class="{{$last ? 'no_hr' : ''}}">
+              </div>
+            </td>
+          </tr>
+          <tr class="noborder">
+            <td class="t_tit">酒店服务</td>
+            <td>
+                <span class="tag" ng-repeat="attr in data.tags">{{attr}}</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="edit_content" data-ng-bind-html="contentHTML">
+      </div>
+    </div>
+
+    <div class="tuijianmore_map" ng-show="showMap">
+      <div class="tuijianmore_title">{{data.address}}</div>
+      <img ng-src="{{data.map}}">
+    </div>
+    <div class="bg_mask" ng-click="showMap=false" ng-show="showMap"></div>
+  </div>

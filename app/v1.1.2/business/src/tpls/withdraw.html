@@ -1,0 +1,65 @@
+<!-- 提现 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner tmm-add-bank-inner">
+    <div class="left">
+      <a href="javascript:history.back(-1);">
+        <i class="iconfont ticon-arrow-back">&#xe61f;</i>
+      </a>
+    </div>
+    <div class="center sliding">提现申请</div>
+    <a href="#/drawmoneyrecord" class="right">提现记录</a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div class="page tmm-add-bank-page tmm-withdraw-page" data-page="add-bank">
+    <div class="page-content tmm-add-retinue-page-contnet tmm-add-bank-page-contnet tmm-withdraw-page-contnet">
+      <form class="list-block tmm-myinfo-item-addform tmm-bank-item-addform" novalidate ng-submit="withdrawForm()" name="withdraw_form">
+        <div ng-show="showMsg" class="mob_form_tip">{{msg}}</div>
+        <ul>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">开户行</div>
+              <div class="item-input">
+                <input type="text" name="bank" class="add_input" value="{{json.bank_value}}" disabled>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">开户名</div>
+              <div class="item-input">
+                <input type="text" name="bank_name" class="add_input" value="{{json.bank_name}}" disabled>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">卡号</div>
+              <div class="item-input">
+                <input type="text" name="code" class="add_input" value="{{json.bank_code}}" disabled>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">金额(元)</div>
+              <div class="item-input">
+                <input type="text" name="drawMoney" placeholder="当前余额{{withdraw_format}}元" class="add_input"
+                ng-model="regText.drawMoney"
+                required
+                autocomplete="off"
+                maxlength="12"
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="f_bottom">
+          <button class="sub_active" type="submit">确认提现</button>
+        </div>
+        <div class="tip">提现申请成功，预计1-3个工作日内到帐。</div>
+      </form>
+    </div>
+  </div>
+</div>

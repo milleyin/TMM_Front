@@ -1,0 +1,65 @@
+<!-- 添加银行卡 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner tmm-add-bank-inner">
+    <div class="left">
+      <a href="javascript:history.back(-1);">
+        <i class="iconfont ticon-arrow-back">&#xe61f;</i>
+      </a>
+    </div>
+    <div class="center sliding">添加银行卡</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div class="page tmm-add-bank-page" data-page="add-bank">
+    <div class="page-content tmm-add-retinue-page-contnet tmm-add-bank-page-contnet">
+      <form class="list-block tmm-myinfo-item-addform tmm-bank-item-addform">
+        <ul>
+          <li></li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">开户行</div>
+              <div class="item-input">
+                <select class="tmm-bank-select">
+                  <option>请选择</option>
+                  <option>建设银行</option>
+                </select>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">支行</div>
+              <div class="item-input">
+                <input type="text" name="identity" placeholder="开户支行" class="add_input">
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">开户名</div>
+              <div class="item-input">
+                <input type="text" name="phone" placeholder="开户姓名" class="add_input">
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner last">
+              <div class="item-title item-title-con">卡号</div>
+              <div class="item-input">
+                <input type="number" name="email" placeholder="卡号" class="add_input">
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="div_protocol">
+          <input type="checkbox" class="checkbox">我同意<a href="#/bankprotocol" class="bank_protocol">《银行卡管理协议》</a>
+        </div>
+        <div class="f_bottom">
+          <a class="sub_active" type="submit" href="#/verifyphone">下一步</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

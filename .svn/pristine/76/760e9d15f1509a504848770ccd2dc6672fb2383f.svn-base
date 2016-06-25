@@ -1,0 +1,51 @@
+<div id="tuijianmore">
+  <header class="t_bar">
+    <h1>{{info.name}}</h1>
+    <a class="iconfont h_left h_20" href="javascript:history.back(-1);">&#xe61f;</a>
+  </header>
+  <div class="content">
+    <div id="banner" class="banner">
+      <ul>
+          <li><img ng-src="{{info.img}}"></li>
+      </ul>
+    </div>
+    <div class="info">
+      <table>
+        <tr>
+          <td class="t_tit">联系电话</td>
+          <td>{{info.phone}}</td>
+        </tr>
+        <tr>
+          <td class="t_tit">微信号</td>
+          <td>{{info.weixin}}</td>
+        </tr>
+        <tr>
+          <td class="t_tit">地址</td>
+          <td class="t_address"><span class="address">{{info.address}}</span><span ng-click="showAddress()" class="chakan">查看</span></td>
+        </tr>
+        <tr>
+          <td class="t_tit">房间介绍</td>
+          <td>
+            <div ng-repeat="attr in info.fare">
+              <p class="p_fare"><span class="length">{{attr.name}}</span><span class="w_2">{{attr.number}}人间</span><span class="w_2">{{attr.info}}m<sup>2</sup></span><span>{{attr.price}}元</span></p>
+              <hr class="{{$last ? 'no_hr' : ''}}">
+            </div>
+          </td>
+        </tr>
+        <tr class="noborder">
+          <td class="t_tit">酒店服务</td>
+          <td><!-- <img ng-repeat="attr in info.wifi" ng-src="{{attr.icon}}"> -->
+          <span class="fuwu_icon" ng-repeat="attr in info.wifi">{{attr.name}}</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="edit_content" data-ng-bind-html="contentHTML"></div>
+  </div>
+
+  <div class="tuijianmore_map" ng-show="showMap">
+    <div class="tuijianmore_title">{{info.address}}</div>
+    <img ng-src="{{info.map}}">
+  </div>
+  <div class="bg_mask" ng-click="showMap=false" ng-show="showMap"></div>
+</div>

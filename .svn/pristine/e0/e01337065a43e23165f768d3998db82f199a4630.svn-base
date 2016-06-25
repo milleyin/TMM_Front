@@ -1,0 +1,154 @@
+/**************************************************************************/
+/**
+ * 公共css文件，公共的样式定义在这
+ */
+/***************************************************************************/
+body {
+  font-family: Helvetica, "华文细黑";
+  background: #f0f1f2;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+.clearfix:after {
+  clear: both;
+}
+
+ul, ol {
+  list-style: none;
+
+}
+p,ul, ol {
+  padding: 0;
+  margin: 0;
+}
+
+/**
+ * 下面边框
+ */
+.b-border {
+  position: relative;
+}
+.b-border:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #d7d9d7;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+/**************************************************************************/
+/**
+ * 公共css文件，公共的样式定义在这
+ */
+/***************************************************************************/
+
+/* 重写框架样式 */
+.pages {
+  background: #fff;
+}
+.page-content {
+  padding-bottom: 50px !important;
+}
+.list-block ul:after {
+  background-color: #d7d9d7;
+}
+.list-block ul:before {
+  background-color: #d7d9d7;
+}
+.navbar:after {
+  background-color: #d7d9d7;
+}
+
+/***************************************************************************/
+/**
+ * navbar.tmm-navbar
+ */
+.navbar.tmm-navbar,
+.navbar.tmm-navbar .subnavbar {
+  background-color: #FFFFFF;
+}
+.navbar.tmm-navbar .ion-ios-arrow-thin-left,
+.navbar.tmm-navbar .ion-android-arrow-back,
+.navbar.tmm-navbar .ion-ios-close-empty {
+  color: #FF0000;
+  font-size: 35px;
+}
+.navbar.tmm-navbar .navbar-inner {
+  padding: 0 16px;
+}
+.navbar.tmm-navbar a{
+  color: #ff595f;
+  position: relative;
+}
+.navbar.tmm-navbar a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -16px;
+  right: -16px;
+}
+.navbar.tmm-navbar .icon {
+  font-size: 20px;
+}
+
+.page {
+  background: #f0f1f2;
+}
+/***************************************************************************/
+/**
+ * toolbar.tmm-toolbar
+ */
+.toolbar.tmm-toolbar {
+  height: 50px;
+  background-color: #3f3938;
+}
+.toolbar.tmm-toolbar:before {
+  display: none;
+}
+.toolbar.tmm-toolbar a.active {
+  color: #C8A063;
+}
+.toolbar.tmm-toolbar i.icon {
+  margin-top: 4px;
+  font-size: 24px;
+}
+
+.toolbar.tmm-toolbar i.icon {
+  display: none;
+}
+
+.toolbar.tmm-toolbar a [class$="-outline"]{
+  display: block;
+}
+
+.toolbar.tmm-toolbar a.active [class*="ticon-"]{
+  display: block;
+}
+.toolbar.tmm-toolbar a.active [class$="-outline"]{
+  display: none;
+}
+
+.toolbar.tmm-toolbar .tabbar-label {
+  font-size: 10px;
+}
+/*重要，不设置它，滚动时工具栏会重新提示*/
+.views {
+  overflow: hidden;
+}
+/***************************************************************************/
+
+

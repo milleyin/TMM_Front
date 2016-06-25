@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>田觅觅</title>
+  <meta name="baidu-site-verification" content="H5sB6yh88E" />
+  <meta name="360-site-verification" content="3a269a4d0f78a7af62a970a7bae62a17" />
+  <meta name="sogou_site_verification" content="JJLR5mePvx"/>
+
+  <meta name="keywords" content="田觅觅 农旅一体化 O2O 农产品 旅游 美食 田园 甜蜜蜜 觅境 觅趣 觅鲜 觅友 觅食 寻觅">
+  <meta name="description" content="田觅觅，农旅一体化互联网平台，把农产品送到城里来，把城里人带到农村去 田觅觅帮你解决周边玩的问题，让你享受轻松优雅的生活。">
+  
+  <link rel="stylesheet" href="styles/sprites.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-wrap">
+      <h1 class="logo">田觅觅<img src="images/logo.png" alt="田觅觅"></h1>
+      <ul class="navbar">
+        <li class="list" data-showSub="0"><a class="list-link" href="index.html">首页</a></li>
+        <li class="list" data-showSub="1">
+          <a class="list-link">产品介绍</a>
+          <div class="subnav">
+            <div class="sub-bg"></div>
+            <div class="sub-list product">
+              <a href="./user.html"><i class="icon-mobile"></i>用户端 APP</a>
+              <a href="./store.html"><i class="icon-mobile"></i>商家端 APP</a>
+              <a style="margin-right: 90px;" href="mon.html"><i class="icon-pc"></i>运营商平台</a>
+            </div>
+          </div>
+        </li>
+        <li class="list selected" data-showSub="2">
+          <a class="list-link">招商入驻</a>
+          <div class="subnav">
+            <div class="sub-bg"></div>
+            <div class="sub-list merchant">
+              <a href="supplier.html">供应商入驻</a>
+              <a style="margin-right: 180px;" href="operators.html">运营商入驻</a>
+            </div>
+          </div>
+        </li>
+        <li class="list" data-showSub="3"><a class="list-link" href="about.html">关于我们</a></li>
+        <span class="slider-box"></span>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content con-standard">
+    <div class="item">
+      <h2 class="item-title">供应商入驻标准<span class="title-desc">Supplier occupancy standards</span></h2>
+      <dl class="item-desc">
+        <dt class="desc-tit">选择供应商标准：</dt>
+        <dd>● 供应商有良好的合作意愿，能提供优质的农旅资源，保证提供良好的售后服务</dd>
+        <dd>● 供应商是依据中国法律合法成立并有效存续的企业法人</dd>
+        <dd>● 具备符合网络销售产品所需的《营业执照》《食品流通许可证》等资质</dd>
+      </dl>
+
+      <div class="item-table">
+        <div class="table-tit">供应商资质要求：</div>
+        <table class="supplier-table">
+          <tr><th width="300">证件名称</th><th width="708">资质要求</th></tr>
+          <tr><td>企业营业执照</td><td>需完成最新年报申报且所售商品属于经营范围内</td></tr>
+          <tr><td>税务登记证</td><td>税务登记证上要有国税章和地税章，且完成有限年检</td></tr>
+          <tr><td>组织机构代码证</td><td>有效期内</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer">
+    <p class="link">友情链接： <a href="http://m.kuaidi100.com" target="_blank">快递查询</a></p>
+    <p class="copyright">Copyright © 2016 深圳市田觅觅信息科技有限公司&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备14093215号-2</a></p>
+  </div>
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

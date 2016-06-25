@@ -1,0 +1,36 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+   <div class="center tmm-sou-center">
+     <form class="searchbar searchbar-init tmm-seek-searchbar">
+       <div class="searchbar-input tmm-seek-select-city-searchbar">
+         <i class="icon ticon-search tmm-searchbar-search"></i>
+         <input type="search" placeholder="搜索" autofocus="autofocus" class="tmm-seek-distination-input">
+       </div>
+     </form>
+   </div>
+   <div class="right tmm-sou-right">
+     <a class="tmm-select-distination-cancel">
+       <span>取消</span>
+     </a>
+   </div>
+</div>
+
+<div class="pages">
+  <div data-page="select-search-distination" class="page select-distination">
+
+    <div class="searchbar-overlay"></div>
+    <div class="page-content">
+      <div class="city-list">
+      {{#each this}}
+        <div class="city-list-tit">{{@key}}</div>
+
+        <div class="city-list-con">
+        {{#each this}}
+          <p class="select-city-confirm" data-spell={{this.spell}} data-id="{{this.value}}" data-link="{{this.link}}">{{this.name}}</p>
+        {{/each}}
+        </div>
+      {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

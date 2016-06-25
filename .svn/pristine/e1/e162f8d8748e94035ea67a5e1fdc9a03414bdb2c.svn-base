@@ -1,0 +1,18 @@
+{{#each tradeRecordList}}
+<li class="item-content">
+  <div class="item-inner">
+    <div class="item-title">
+      <span class="reason">{{name}}</span>
+      <div class="date">{{add_time}}</div>
+    </div>
+    <div class="item-after">
+      <div class="detail">{{use_money}}</div>
+      <div class="money">余额：{{money}}元</div>
+    </div>
+  </div>
+</li>
+{{else}}
+<li class="tmm-record-content tmm-record-conNo">
+  你暂时还没有交易记录哦！
+</li>
+{{/each}}

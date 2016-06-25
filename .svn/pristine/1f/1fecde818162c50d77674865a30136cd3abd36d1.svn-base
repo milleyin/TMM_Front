@@ -1,0 +1,29 @@
+
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">验证手机号</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+
+<div class="pages">
+  <!-- Page, "data-page" contains page name -->
+  <div data-page="payment-check-phone" class="page payment-check-phone">
+    <div class="page-content" style="padding-bottom:55px;">
+
+
+      <div class="content-block-title tmm-content-title">验证码将发到<span class="phone-num"></span></div>
+      <div class="normal-cell"><input class="phone-coder" type="text" placeholder="填写验证码"><div class="send-coder">获取验证码</div></div>
+      
+
+    </div>
+    <div class="block-sub-button"><span class="sub-button payment-next-step-check-phone">下一步</span></div>
+
+  </div>
+</div>

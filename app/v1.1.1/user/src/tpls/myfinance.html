@@ -1,0 +1,34 @@
+<!--我的财务-->
+<div id="myfinance">
+  <header class="t_bar">
+    <h1>我的财务
+      <a href="#/my"><i class="iconfont h_left h_20">&#xe61f;</i></a>
+     <a href="#/tixianjilu" class="h_right h_txt">提现记录</a>
+    </h1>
+  </header>
+  <div class="content">
+    <section class="list_info pl_16 tb_border">
+      <div ng-repeat="data1 in json.data1">
+        <a href="#/totalincome/{{data1.id}}">
+          <p class="p_list {{$first ? 'b_border' : ''}}">
+            <span class="side_tit">{{data1.name}}</span>
+            <span class="side_txt">￥{{data1.money}}</span>
+            <i class="iconfont h_right h_14">&#xe634;</i>
+          </p>
+        </a>
+      </div>
+    </section>
+    <section class="list_info pl_16 tb_border">
+      <div ng-repeat="data2 in json.data2">
+        <a href="{{data2.name=='剩余保证金'? '#/baozhengjin/':'#/totalincome/'}}{{data2.id}}">
+          <p class="p_list {{$last ? '' : 'b_border'}}">
+            <span class="side_tit">{{data2.name}}</span>
+            <span class="side_txt">￥{{data2.money}}</span>
+            <i class="iconfont h_right h_14">&#xe634;</i>
+          </p>
+        </a>
+      </div>
+
+    </section>
+  </div>
+</div>

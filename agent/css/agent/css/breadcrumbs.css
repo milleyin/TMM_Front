@@ -1,0 +1,15 @@
+.breadcrumbs{
+  margin: 0 0;
+}
+.breadcrumbs a,.breadcrumbs a:visited{
+    color: #06c;
+    font-size: 16px;
+}
+.breadcrumbs span{
+  color: #403a39;
+  font-weight: bold;
+  font-size: 16px;
+}
+.breadcrumbs a:hover{
+  color: #06c;
+}

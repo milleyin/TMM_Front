@@ -1,0 +1,139 @@
+<!-- 线的详情页面 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">线路详情</div>
+    <div class="right">
+      <!-- <a href="#" class="tmm-praise-shop" data-shop-id="{{lineObj.thrand_id}}">
+        {{#if isLinePraise}}
+          <i class="icon ticon-praise"></i>
+        {{else}}
+          <i class="icon ticon-praise gray"></i>
+        {{/if}}
+      </a> -->
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, "data-page" contains page name -->
+  <div data-page="line-detail" class="page tmm-dot-detail tmm-line-detail">
+    <div class="page-content line-detail-page-content">
+      <div class="banner">
+        <div>
+          <img class="lazy" data-src="{{lineObj.page_img}}">
+        </div>
+        <div class="mask">
+          <a href="#" class="tmm-praise-shop" data-shop-id="{{lineObj.thrand_id}}">
+            {{#if isLinePraise}}
+              <i class="icon ticon-praise"></i>
+              <span>{{lineObj.praise}}</span>
+            {{else}}
+              <i class="icon ticon-praise gray"></i>
+              <span class="gray">{{lineObj.praise}}</span>
+            {{/if}}
+          </a>
+          <a href="#" class="tmm-phone" data-manage-phone="{{lineObj.manage_phone}}" data-tmm-phone="{{lineObj.tmm_phone}}">
+            <div><img src="../../styles/images/phone.png" /></div>
+            <span>联系</span>
+          </a>
+          <a href="#" class="tmm-share">
+            <i class="icon ticon-share" data-tit="{{lineObj.name}}" data-con="{{lineObj.list_info}}"  data-link="{{#if lineObj.share_img}}{{lineObj.share_image}}{{else}}{{lineObj.share_image}}{{/if}}" data-id="{{lineObj.thrand_id}}"></i>
+            <span>分享</span>
+          </a>
+        </div>
+      </div>
+
+      <!--新添加内容-->
+      <div class="tmm-dot-bottom-bg">
+        <div class="list-block tmm-dot-info-list-block">
+          <ul>
+            <li class="item-content item-link show-act-enroll-info"  >
+              <div class="item-inner tmm-dot-item-inner">
+                <div class="item-title tmm-dot-item-title">
+             
+                  <div class="tmm-item-dot-list">
+                    <div class="tmm-item-dot-list-title">
+                      {{lineObj.name}}
+                  
+                      <span class="tmm-item-dot-sold">已售出{{lineObj.down}}份</span>
+                
+                    </div>
+                    <div class="tmm-item-dot-list-price">
+                        ￥{{lineObj.price}}/人起   
+                    </div>
+                    <div class="tmm-item-dot-list-intro">
+                      {{lineObj.page_info}}
+                    </div>
+                    <div class="tmm-item-more">
+                        <span class="tmm-item-dot-sold-more">
+                          <img src="../../styles/images/more.png" />预订须知
+                        </span>
+                    </div>
+                  </div>
+               
+                </div>
+              </div>
+            </li>
+
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="wrap-item tmm-item-dot-list-title tmm-retinue-top-border tmm-retinue-bottom-border">该线路项目</div>
+      <!--新添加内容-->
+
+      <div class="wrap">
+        {{#each lineObj.list}}
+        <div class="line-day">
+          <!-- 日程亮点 -->
+          <div class="line-day-tit">
+            <div class="bright"><i class="bracket">&lceil;</i>{{day_content}}<i class="bracket">&rfloor;</i></div>
+            <div class="day">{{day}}</div>
+          </div>
+          <span class="tmm-ticon-point">&nbsp;</span>
+        {{#each dot_list}}
+          {{#each day_item}}
+          <!-- 项目类容 -->
+          <section class="info detail-b-border">
+            <i class="icon tmm-type-icon {{js " this.item_type.value==1 ? 'ticon-eat' : (this.item_type.value==2 ? 'ticon-live' : 'ticon-play') "}}"></i>
+
+            <h2 class="tit tmm-img-showmore" data-type="{{js " this.item_type.value==1 ? 'eat' : (this.item_type.value==2 ? 'hotel' : (this.item_type.value==3 ? 'play' : (this.item_type.value==3 ? 'farm' : 'farmOuter'))) "}}" data-link="{{item_link}}">{{item_name}}</h2>
+            <div class="state tmm-img-showmore" data-type="{{js " this.item_type.value==1 ? 'eat' : (this.item_type.value==2 ? 'hotel' : (this.item_type.value==3 ? 'play' : (this.item_type.value==3 ? 'farm' : 'farmOuter'))) "}}" data-link="{{item_link}}">{{address}}</div>
+            <a href="javascript:;" data-type="{{js " this.item_type.value==1 ? 'eat' : (this.item_type.value==2 ? 'hotel' : (this.item_type.value==3 ? 'play' : 'farm')) "}}" data-link="{{item_link}}" class="showmore"><span>●</span><span>●</span><span>●</span></a>
+            <div class="img">
+              <a class="tmm-img-showmore" href="javascript:;" data-type="{{js " this.item_type.value==1 ? 'eat' : (this.item_type.value==2 ? 'hotel' : (this.item_type.value==3 ? 'play' : (this.item_type.value==3 ? 'farm' : 'farmOuter'))) "}}" data-link="{{item_link}}">
+            <img class="lazy lazy-fadein" data-src="{{item_img}}">
+          </a>
+            </div>
+          </section>
+          {{/each}}
+        {{/each}}
+        </div>
+        {{/each}}
+      </div>
+       <!-- 回到顶部 -->
+      <div class="go_top">
+        <a href="#" class="goTop" data-view="line-detail"><img src="../../styles/images/go_top.png" class="icon"></a>
+      </div>
+
+    </div>
+{{#js_compare "this.lineObj.is_sale.value ==1"}}
+
+    {{#if isFree}}
+    <div class="cannt-item"><a class="tmm-button" href="javascript:;">线路免费</a></div>
+    {{else}}
+    <!-- 可以下单 -->
+    <div class="go-item" data-shop-type="{{lineObj.c_id}}" data-shop-id="{{lineObj.thrand_id}}"><a class="tmm-button" href="javascript:;">我也想去</a></div>
+    {{/if}}
+{{/js_compare}}
+{{#js_compare "this.lineObj.is_sale.value !=1"}}      
+    <!-- 不能下单 -->
+    <div class="cannt-item"><a class="tmm-button" href="javascript:;">此点正在开发中，敬请期待</a></div>
+{{/js_compare}}
+  </div>
+</div>

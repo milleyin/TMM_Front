@@ -1,0 +1,70 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">{{lineObj.name}}</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="act-line-detail" class="page tmm-my-page tmm-act-line" id="tmm-act-line-detail">
+    <div class="page-content">
+
+      <div class="media">
+        <div class="media-box">
+          <img src="{{lineObj.list_img}}" alt="{{lineObj.name}}" class="lazy lazy-fadein">
+          <div class="detail">
+            <div class="tit">{{lineObj.name}}</div>
+          </div>
+          
+        </div>
+        <div class="media-txt">{{lineObj.page_info}}</div>
+      </div>
+
+      <!-- 天 -->
+    {{#each lineObj.list}}  
+      <div class="item-day">
+        <div class="day-tit"><span class="tit">{{day}}</span></div>
+        <!-- 项目列表 -->
+        
+        <div class="day-item-list">
+        {{#each dot_list}}
+          {{#each day_item}}
+          <div class="item-box">
+            <div data-link="{{item_link}}" data-type="{{item_type.value}}" class="item-tit act-line-link">
+              <div class="name">{{item_name}}<i class="icon ticon-arrow-right"></i></div>
+              <div class="address">{{address}}</div>
+            </div>
+
+            {{#each shop_fare}}
+            <div class="item-detail">
+              <span>{{name}}</span>
+              {{#if number}}
+               <span class="tmm-count-price" data-info="{{info}}" data-price="{{price}}">{{number}}</span>
+              {{else}}
+              <span class="tmm-count-price" data-info="{{info}}" data-price="{{price}}">{{info}}</span>
+              {{/if}}
+              <span>￥{{price}}</span>
+            </div>
+            {{/each}}
+
+          </div>
+          {{/each}}
+        {{/each}}
+        </div>
+        
+      </div>
+    {{/each }} 
+
+    </div>
+
+    <div class="go-item tmm-go-item submit-select-item-color"  id="submit-select-act">
+      <!-- <a class="price" href="#" id="total_price">￥0.00起/人</a> -->
+      <a class="submit-btn" href="javascript:;">我已经选择好路线</a>
+    </div>
+  </div>
+</div>

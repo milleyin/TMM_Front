@@ -1,0 +1,26 @@
+<!--提现申请记录-->
+<div id="tixianjilu">
+  <header class="t_bar">
+    <h1>提现申请记录
+    <a  href="javascript:history.back(-1)"> <i class="iconfont h_left h_20">&#xe61f;</i></a>
+    </h1>
+  </header>
+
+  <div class="content" when-scrolled="showMore()" ng-if="listNum != 0">
+    <section class="info order_list tb_border" >
+      <div ng-repeat="attr in list_data">
+        <div class="order_con">
+          <p><span class="side_tit">提现{{attr.price}}元</span></p>
+          <p><span class="side_explain">{{attr.add_time}}</span></p>
+          <p ng-if="attr.deposit_status.name =='驳回'"><span class="side_explain">原因：{{attr.remark_submit}}</span></p>
+          <span class="h_right red" ng-style="{ color: attr.deposit_status.name =='驳回' || attr.deposit_status.name =='审核中' ? '#ff0053' : '#14cc14' }">{{attr.deposit_status.name}}</span>
+        </div>
+        <div class="line"></div>
+      </div>
+    </section>
+  </div>
+
+  <div  class="content conNo" ng-if="listNum == 0">你暂时还没有提现申请记录哦！</div>
+
+  </div>
+</div>

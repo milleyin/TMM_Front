@@ -1,0 +1,23 @@
+<div id="mingxishouru">
+  <h1 class="top-nav">
+        我的收入明细
+        <a href="#/" data-transition="slide-out"><img class="h_left h_pic" src="images/jiantou.svg" width="20" height="20"></a>
+        <span class='h_right h_text' ng-if="state=='01'">筛选子帐号</span>
+    </h1>
+  <div class="content">
+    <section class="info" ng-repeat="attr in json">
+      <a href="#/orderlist/{{state}}">
+        <div class="info_pic">
+          <img ng-src="{{attr.imgUrl}}" alt="{{attr.imgAlt}}">
+        </div>
+        <div class="info_txt">
+          <p class="info_title">{{attr.name}}</p>
+          <p class="info_con">
+            <span class="info_count">数量：{{attr.num}}</span>
+            <span class="info_shouru">收入 ￥{{attr.money}}</span>
+          </p>
+        </div>
+      </a>
+    </section>
+  </div>
+</div>

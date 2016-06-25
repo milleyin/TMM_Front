@@ -1,0 +1,24 @@
+{
+  "name": "TmmUserApp",
+  "version": "1.1.2",
+  "homepage": "",
+  "main": "src/",
+  "authors": [
+    "Moore Mo"
+  ],
+  "description": "A web app",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "gulpfile.js",
+    "node_modules",
+    "package.json",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "framework7": "^1.2.0"
+  }
+}

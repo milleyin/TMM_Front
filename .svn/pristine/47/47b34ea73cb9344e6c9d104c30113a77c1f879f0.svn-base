@@ -1,0 +1,42 @@
+<form name="signup_form" novalidate ng-submit="signupForm()">
+    
+    <div class="mob_form">
+        <div ng-show="showMsg" class="mob_form_tip">{{msg}}</div>
+        <div class="form_mob b_border">
+            <input type="tel" name="username"
+                ng-focus="clearMsg()"
+                required 
+                ng-pattern="/^[0-9]{11}$/" 
+                ng-model="logText.name" 
+                placeholder="请输入手机号" 
+                autocomplete="off">
+        </div>
+        <div class="form_pwd">
+            <input name="password" type="password" 
+            ng-focus="clearMsg()"
+            required
+            ng-minlength="8"
+            ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]+$/"
+            ng-model="logText.pwd" 
+            placeholder="请输入密码" 
+            autocomplete="off">
+        </div>
+        <div class="line"></div>
+        <!-- <div class="form_code">
+            <input name="code" type="text" 
+                ng-focus="clearMsg()" 
+                required ng-model="logText.code" 
+                placeholder="请输入验证码" 
+                autocomplete="off">
+            <img ng-click="showCode()" ng-src="{{logText.imgUrl}}">
+        </div> -->
+    </div>
+
+    <div class="bg_btn mob_btn">
+        <button class="sub_btn" type="submit">确认</button>
+    </div>
+</form>
+
+<a ng-href="#/my" class="iconfont close">&#xe62c;</a>
+<a href="javascript:history.back(-1);" class="iconfont back">&#xe61f;</a>
+<div class="bg_color"></div>

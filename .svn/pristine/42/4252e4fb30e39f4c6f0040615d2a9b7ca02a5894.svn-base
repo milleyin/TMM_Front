@@ -1,0 +1,27 @@
+
+
+// color
+$headerColor        : #403a39;
+$selectedColor      : #ff595f;
+$gray               : #403a39;
+$lightGray          : #808080;
+$lighterGray        : #edf2f0;
+$red                : #ff595f;
+
+
+// width
+$commonWidth        : 1080px;
+
+// height
+$headerHeight       : 60px;
+$bannerHeight       : 394px;
+$footHeight         : 80px;
+
+
+// font 
+$bigTitFont         : 30px;
+$norTitFont         : 20px;
+$smaTitFont         : 16px;
+$bigTxtFont         : 16px;
+$norTxtFont         : 16px;
+$smaTxtFont         : 14px;

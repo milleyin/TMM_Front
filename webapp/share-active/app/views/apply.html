@@ -1,0 +1,67 @@
+<div class="page apply">
+  <div class="navbar">
+    <div class="left arrow-back" ng-click="apply.goIndex()"></div>
+    <div class="title">觅趣报名</div>
+    <div class="right"></div>
+  </div>
+  <div class="scroll-content">
+    <div class="title-block">
+      出游人数
+    </div>
+    <div class="group select-people" ng-click="apply.countPeople($event)">
+      <div class="cell">
+        <div class="type-tit">成人</div>
+        <div class="fare-item item-num"><span data-count="sub-adult" class="sub-num"></span><span class="num">{{apply.adultNum}}</span><span data-count="add-adult" class="add-num"></span></div>
+      </div>
+      <div class="cell">
+        <div class="type-tit">儿童</div>
+        <div class="fare-item item-num"><span data-count="sub-child" class="sub-num"></span><span class="num">{{apply.childNum}}</span><span data-count="add-child" class="add-num"></span></div>
+      </div> 
+    </div>
+
+    <div class="block-people">
+      <div class="title-block">
+        出行人员
+      </div>
+      <div class="group main-people">
+        <div class="cell">
+          <input type="text" data-type="name" ng-model="apply.mainRetinueInfo.name" placeholder="姓名">
+        </div>
+        <div class="cell code-cell">
+          <input type="tel" data-type="phone" ng-model="apply.mainRetinueInfo.phone" placeholder="手机号码">
+          <span ng-click="apply.getCode($event)" class="code" style="width: 100px;">获取验证码</span>
+        </div>
+        <div class="cell">
+          <input type="text" data-type="code" ng-model="apply.mainRetinueInfo.code" placeholder="短信验证码">
+        </div>
+      </div>
+    </div>
+
+    <div ng-repeat="attr in apply.adultRetinueInfo track by $index" class="block-people block-adult">
+      <div class="title-block">
+        随行人员（成人）
+      </div>
+      <div class="group main-people">
+        <div class="cell">
+          <input type="text" data-type="name" ng-model="attr.name" placeholder="姓名">
+        </div>
+        <div class="cell">
+          <input type="text" data-type="phone" ng-model="attr.phone" placeholder="手机号码">
+        </div>
+      </div>
+    </div>
+
+    <div ng-repeat="attr in apply.childRetinueInfo track by $index" class="block-people block-child">
+      <div class="title-block">
+        随行人员（儿童）
+      </div>
+      <div class="group suite-people">
+        <div class="cell">
+          <input type="text" data-type="name" ng-model="attr.name" placeholder="姓名">
+        </div>
+      </div>
+    </div>
+    <div class="submit" ng-click="apply.submit()">确认报名</div>
+
+  </div>
+</div>

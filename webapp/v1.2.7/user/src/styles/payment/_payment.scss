@@ -1,0 +1,13 @@
+.tmm-payment-ent {
+  background-color: $bgColor;
+  .set-pay-pwd {
+    @extend %border-top-bottom;
+    background-color: $whiteColor;
+    margin: 35px 0 20px;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 16px;
+    font-size: 14px;
+    color: #565a5c;
+  }
+}

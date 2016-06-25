@@ -1,0 +1,46 @@
+	<div id="myorder">
+		<header class="t_bar">
+			<h1>我的订单<a href="javascript:history.back(-1);"><i class="iconfont h_left h_20">&#xe61f;</i></a><i ng-click="shuaxing()" class="h_right h_txt">刷新</i></h1>
+			
+		</header>
+		
+		<div class="content" when-scrolled="getPageInfo()">
+			<div class="wrap">
+				
+			
+				<div class="sec_info" ng-repeat="attr in infoList">
+					<div class="sec_info_border">
+
+					    <div ng-click="goOrderDetail(attr.value,attr.status.order_status.value)" class="sec_con">
+					        <div class="info_pic">
+					            <img ng-src="{{attr.shops_img}}">
+					        </div>
+					        <div class="info_txt">
+					            <p class="info_title">{{attr.shops_name}}</p>
+					            <p class="info_con">
+					                <span class="info_danjia">价格：{{attr.order_price}}元</span>
+					            </p>
+					        </div>
+					    </div>
+
+					    <div ng-if="attr.status.order_status.value !='-1'&&attr.status.order_status.value !='3'" class="conform">
+					        <span class="span_btn" ng-click="removeOrder(attr.value)" ng-if="attr.status.order_status.value =='0'">取消</span>
+					        <span class="span_btn" ng-click="removeOrder(attr.value)" ng-if="attr.status.order_status.value =='1'">取消</span><span class="span_btn" ng-click="payOrder(attr.value)" ng-if="attr.status.order_status.value =='1'">支付</span>
+					        <a class="span_btn" ng-click="tuikuanOrder()" ng-if="attr.status.order_status.value =='2'">申请退款</a>
+					       
+					    </div>
+					</div>
+					<span class="icon_triangle tip_chuli" ng-if="attr.status.order_status.value =='0'">{{attr.status.order_status.name}}</span>
+					<span class="icon_triangle tip_dfukuan" ng-if="attr.status.order_status.value =='1'">{{attr.status.order_status.name}}</span>
+					<span class="icon_triangle tip_yfukuan" ng-if="attr.status.order_status.value =='2'">{{attr.status.order_status.name}}</span>
+					<span class="icon_triangle tip_yfukuan" ng-if="attr.status.order_status.value =='3'">{{attr.status.order_status.name}}</span>
+					<span class="icon_triangle tip_gray" ng-if="attr.status.order_status.value =='-2'">{{attr.status.order_status.name}}</span>
+					<span class="icon_triangle tip_gray" ng-if="attr.status.order_status.value =='-1'">{{attr.status.order_status.name}}</span>
+					<span class="icon_triangle tip_gray" ng-if="attr.status.order_status.value =='-3'">{{attr.status.order_status.name}}</span>
+				</div>
+					
+			</div>
+			
+		</div>
+
+	</div>

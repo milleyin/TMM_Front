@@ -1,0 +1,22 @@
+ <!-- 觅境的线路列表 -->
+<ion-view hide-tabs>
+
+  <navbar back title="{{name}}"></navbar>
+
+  <ion-content class="index-list" overflow-scroll='false'>
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()" spinner="ios">
+    </ion-refresher>
+    <load-icon ng-if="!model.list_data"></load-icon>
+    <div ng-repeat="item in model.list_data" class="media-card">
+      <draw-img class="img" ng-style="imgStyle" src="{{item.image}}" ui-sref="tab.shop{{item.classliy.value}}({link:item.link, type:item.classliy.value})"></draw-img>
+      <div class="intro">
+        <div class="tit">{{item.name}}</div>
+        <div class="info">{{item.info}}</div>
+        <div class="txt"><span ng-if="item.distance"><i class="icon-distance"></i>距离{{item.distance}}</span></div>
+      </div>
+    </div>
+    <div class="empty"></div>
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="model.nextPage" distance="1%" spinner="ios">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

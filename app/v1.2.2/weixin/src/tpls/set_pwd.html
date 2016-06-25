@@ -1,0 +1,58 @@
+<header class="t_bar">
+    <h1>设置密码<a href="javascript:history.back(-1);" class="iconfont h_left h_20">&#xe61f;</a></h1>
+</header>
+
+<div class="content pt_45">
+<form name="set_pwd" novalidate ng-submit="setPwd()">
+    <div class="mob_form set_con">
+        <div ng-show="showMsg" class="mob_form_tip">{{msg}}</div>
+        <div class="form_mob b_border">
+            <input name="phone"
+            ng-focus="clearMsg()"
+            type="tel" 
+            ng-model="user.userInfo.phone"
+            readonly="true" 
+            required
+            ng-pattern="/^[0-9]{11}$/" 
+            placeholder="请输入手机号"
+            autocomplete="off">
+        </div>
+        <div class="form_code b_border">
+            <input name="code" 
+            ng-focus="clearMsg()"
+            type="txt"
+            required
+            ng-model="info.code"
+            placeholder="请输入验证码"
+            autocomplete="off">
+            <a id="get_code" ng-class="{true: 'get_code', false: 'get_code_active'}[flag]" ng-click="sendCode()" href="javascript:;">{{text}}</a>
+        </div>
+        <div class="form_mob b_border">
+            <input name="pwd"
+            ng-focus="clearMsg()"
+            type="password"
+            ng-model="info.pwd"
+            required
+            ng-minlength="8"
+            ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]+$/"
+            placeholder="请输入密码"
+            autocomplete="off">
+        </div>
+        <div class="form_mob">
+            <input name="new_pwd"
+            ng-focus="clearMsg()"
+            type="password" 
+            ng-model="info.new_pwd"
+            required
+            ng-minlength="8"
+            ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]+$/"
+            placeholder="确认新密码"
+            autocomplete="off">
+        </div>
+    </div>
+    
+    <div class="bg_btn set_pwd_btn">
+        <button class="sub_btn" type="submit">确认</button>
+    </div>
+</form>
+</div>

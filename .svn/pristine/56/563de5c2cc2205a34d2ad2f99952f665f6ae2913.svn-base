@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>创意自拍</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body class="tmm-registration">
+  <div class="banner">
+    <img src="images/culture.png">
+    <div class="rule">
+      <a href="#">查看奖品及参赛规则</a>
+    </div>
+  </div>
+  <div class="content">
+    <div class="con">
+      <div class="nameInfo">
+        <span class="no">01</span>
+        <span class="name">费拉拉</span>
+      </div>
+      <div class="ticket">
+        <span class="num">187</span>票<br/>
+        排名<span class="num">1720</span>位<br/>
+        距上一名还差<span class="num">3</span>票
+      </div>
+    </div>
+    <div class="intro">
+      我站在鲜花中，放声高歌，随风的感觉就像拥有诗和远方！
+    </div>
+    <div class="regImg">
+      <img src="images/culture.png">
+    </div>
+    <div class="regImg">
+      <img src="images/culture.png">
+    </div>
+  </div>
+  <div class="regBtn">
+    <a class="voted">今天您已投票，请明天再来！</a>
+    <a class="act">我也来参加</a> 
+    <a class="more">查看更多</a>
+  </div>
+
+  <div class="bgFilter"></div>
+  <div class="coupon">
+    <img src="images/close.png" class="img">
+    <div class="infoSuc voteSuc">
+      <div class="state">投票成功</div>
+      <div class="txt">赠</div>
+      <div class="give-card">
+        <div class="left">
+          <div class="price">￥<span>10</span></div>
+          <div class="intro">
+            <p class="txt">获得现金券一张</p>
+          </div>
+        </div>
+        <div class="right"><a href="###">点击<br>领取</a></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

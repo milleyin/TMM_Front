@@ -1,0 +1,72 @@
+<ion-view view-title="活动详情" hide-tabs="true" >
+  <ion-nav-buttons>
+    <!-- <i class="tmm-ion-left ion-android-arrow-back" ui-sref="tab.recommend" nav-direction="back"></i> -->
+    <a class="tmm-ion-left ion-android-arrow-back" href="javascript:history.back(-1)"  nav-direction="back"></a>
+  </ion-nav-buttons>
+  <ion-content class="tmm-shop-dot-content">
+    <!--头部-->
+      <div class="tmm-act-detail-banner">
+        <div>
+          <img class="tmm-act-detail-img" ng-src="{{shopModel.shopObj.page_img}}" src="images/t3.png">
+        </div>
+      </div>    
+    </div>
+    <!--头部-->
+
+    <div class="tmm-activity-item-content">
+      <div class="txt">
+        <div class="title">22222</div>
+        <div class="title">
+          <div class="tmm-activity-state-item-fare">
+            <span class="activity-state-item-fare">￥2.3起/人</span>
+            <span class="activity-state-item-fare">参与人数：2/12人</span>    
+          </div>
+          <div class="tmm-activity-state-item-fare">
+            <span class="activity-state-item-fare-date">出游日期：2015-11-19</span>
+          </div>
+        </div>
+        <div class="intro">fddddddddddd</div>
+          <span class="type red">报名结束</span>
+        </div>
+        <div class="tmm-launch-act-end-more">
+          查看报名信息<i class="icon ticon-arrow-right"></i>
+        </div>
+        <div class="tmm-launch-act-end-more tmm-launch-top">
+          查看更多活动信息<i class="icon ticon-arrow-right"></i>
+        </div>
+      </div>
+
+    <div class="wrap">
+      <section class="info">
+        <div class="schedule" style="color: #565a5c">
+          <i class="bracket">&lceil;</i> 
+          舌尖上的烤全羊 官湖角的爱丁堡
+          <i class="bracket">&rfloor;</i>
+        </div>
+        <div class="schedule-detail">
+          <div class="bg">
+            <div class="bg_o"></div>
+            <div class="bg_l"></div>
+          </div>
+          <div class="day"><span class="day-content">第一天上午</span></div>
+        </div>
+        <span class="tmm-ticon-point">&nbsp;</span>
+        <div class="tmm-content-pos-top">
+          <div class="tmm-img-pos icon-eat"></div>
+          <div class="tmm-schedule-detail-title">马降龙村</div>
+          <div class="tmm-showmore">
+            <span>●</span><span>●</span><span>●</span>
+          </div>
+          <a class="img">
+            <img ng-src="{{attr3.item_img}}" class="img" src="images/t3.png">
+          </a>
+        </div>
+      </section>
+    </div>
+
+  </ion-content>
+
+  <div class="tmm-go-item tmm-line-act-item">
+    <a class="tmm-button" href="javascript:;">查看消费信息</a>
+  </div>
+</ion-view>

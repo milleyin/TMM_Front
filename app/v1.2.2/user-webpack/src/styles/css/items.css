@@ -1,0 +1,163 @@
+/*增加活动设置*/
+.bg_btn {margin: 32px 0 25px;padding: 0px 16px;background-color: #f0f1f2;}
+.bg_btn .sub_btn {display: block;text-align: center;width: 100%;background-color: #7cbf5a;border-radius: 2px;line-height: 44px;color: #fff;font-size: 16px; border:1px solid transparent}
+.tmm-sett-canter{font-size: 15px !important;/*border-top: 1px solid #c8c7cc;border-bottom: 1px solid #c8c7cc;*/}
+.tmm-sett-canter ul li ,.item-higth{min-height: 50px !important;}
+.sett-canter-font{font-size: 14px;}
+.sett-color{color: #565a5c;}
+.icon-color{color: #d7d9d7;}
+
+
+/*选择项目 select-items*/
+.tmm-select-canter{margin-bottom: 40px;}
+.conter-div{padding: 0px 16px 0 8px; color: #858b8f;}
+.tmm-canter-li{margin-top: auto; margin-bottom: auto;}
+.tmm-buton-create .but-select_num {font-size: 18px;color: #ff595f;}
+.tmm-buton-create .but-createjby {position: absolute;right: 16px;top: 50%;height: 33px;line-height: 33px;padding: 0 25px;background-color: #5fb336;color: #fff;border-radius: 4px;margin-top: -16px;}
+.tmm-buton-create {position: relative;padding-left: 16px;height: 50px;/*border-top: 1px solid #d7d9d7;*/background-color: #fff;margin-top: 35px;line-height: 50px;font-size: 15px;color: #858b8f;}
+.tmm-item-title {float: left;width: 100%;color: #565a5c;font-size: 15px;padding: 15px 0px;position: relative;}
+.tmm-item-content {float: left;width: 100%;}
+.tmm-list-block .tmm-item-li {padding-left: 16px;}
+.tmm-item-li {padding-left: 16px;}
+.fare-item {height: 45px;line-height: 45px;font-size: 14px;display: inline-block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.h2_tit {position: relative;margin: auto;height: 20px;padding: 40px 0px 0px 16px;background-color: #f0f1f2;font-size: 13px;color: #858b8f;}
+.tmm-canter-li .tmm-item-fare {box-sizing: border-box;-webkit-box-sizing: border-box;height: 45px;font-size: 0px;padding: 0px 16px 0 8px !important;color: #858b8f;white-space: nowrap;}
+.tmm-canter-li .tmm-item-fare .fare-item {height: 45px;line-height: 45px;font-size: 14px;display: inline-block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.tmm-canter-li .tmm-item-fare .fare-item:nth-child(1) {width: 40%;}
+.tmm-canter-li .tmm-item-fare .fare-item:nth-child(2) {text-align: left;width: 40%;}
+.icon_day {position: absolute;left: 50%;bottom: 10px;margin-left: -24px;padding: 4px 6px;background-color: #5fb336;color: #fff;font-size: 11px;line-height: 11px;}
+.icon_day:after {content: "";height: 10px;width: 1px;position: absolute;bottom: -10px;left: 50%;background-color: #5fb336;}
+
+
+
+
+/*选择项目 point-select-project*/
+.tmm-project-canter{/*padding-bottom: 50px;*/ }
+.tmm-canter-top{width: 100%;}
+.tmm-top-hed{padding: 20px 10px 10px 0px; position: relative;line-height: 80px;}
+.tmm-canter-top .tmm-top-hed .tmm-pro-img img{width: 75px;height: 60px;position: absolute;top: 15px;left: 15px;}
+.tmm-con-title{position: absolute;top: 10px;right: 10px;left: 100px;height: 60px;line-height: 28px;color: #565a5c;font-size: 14px;}
+.tmm-con-title p{font-size: 10px;}
+.item-inner-font{font-size: 13px;}
+.tmm-canter-con{background: #f1f1f1;}
+.tmm-pro-ul{padding-left: 10px !important;}
+.item-inner-font .pro-name{font-size: 16px;margin-bottom: 10px;}
+.content-title{font-size: 13px;padding:10px 0px 10px 7px;}
+.tmm-item-field{width: 100%;}
+.tmm-item-field .item-field{-webkit-box-sizing: border-box;white-space: nowrap;display: inline-block;text-overflow: ellipsis;}
+.tmm-item-field .item-field:nth-child(1) {width: 30%;}
+.tmm-item-field .item-field:nth-child(2) {width: 25%;}
+.tmm-item-field .item-field:nth-child(3) {width: 30%;}
+.tmm-item-field .item-field:nth-child(4) {width: 25%;}
+.tmm-canter-but span{font-size: 10px;margin-bottom:-15px ;margin-left: 10px;}
+.tmm-top-hed2 {margin-top: 60px;}
+.tmm-top-hed2 p{font-size: 10px; padding: 0px 10px 0px 15px;}
+.tmm-pol{margin:15px 0px 0px 0px;padding: 10px 0px 10px 0px;border: 1px solid black;}
+.tmm-pol span{margin-left: 10px;}
+.tmm-pro-ul .item-title .pro-name .ticon-arrow-right{position: absolute;right: 0;}
+.pro-nono{width: 100%;}
+
+
+
+
+/*增加活动设置页面 */
+.tmm-item-inner{background-image:none !important;}
+.zengjia_txt {line-height: 30px; height:30px !important; width:60% !important; margin-right:16px !important; font-size:14px !important; color:#8e8e93 !important;}
+.tmm-activity-item-title{text-align:right;width:40%;}
+.tmm-item-after{width:60%;}
+.tmm-beizhu {overflow:hidden;background-color: #fff;margin-top: 35px;font-size: 14px;line-height: 20px;padding: 10px 16px;}
+.tmm-beizhu .tmm-beizhu-tit {width: 40%;float: left; text-align:right; color:#565a5c;}
+.tmm-beizhu .tmm-beizhu-txt {width: 60%;float: right; color:#8e8e93;}
+.tmm-beizhu .tmm-beizhu-txt textarea {width: 95%;}
+
+
+
+/*更多活动信息 more-activity-information*/
+.tmm-mor-bacgcolor{background: #f0f1f2;}
+.tmm-mor-con .list-block{font-size: 14px;}
+.tmm-project-canter .tmm-mor-con .tmm-canter-li ul{margin-bottom: 10px;}
+.brief-introduction{margin:0px 15px 0px 15px ;}
+
+
+
+/*创建活动 create-success*/
+.tmm-create-canter{margin: 50px 10px 0px 30px;font-size: 14px;}
+.cre-con-title{font-size: 18px;}
+.cre-con-fon{margin: 10px 0px 10px 0px;}
+
+
+
+/*我的财务情况 my-financing*/
+.tmm-fin-con{background: #f1f1f1;}
+.list-block-font{ font-size: 15px;}
+.tmm-fin-con .item-after{font-size: 14px;}
+
+
+/*提现申请记录 present-record*/
+.tmm-pre-canter{line-height: 25px;}
+.tmm-record-conNo {text-align: center;line-height: 48px;color: #403a39;}
+.tmm-record-content {padding-top: 35px;}
+.tmm-time-reason{color: #8e8e93; font-size: 12px;}
+.color-gre p{color: #61cc13 !important;}   
+.color-reds p{color: #FF0000 !important;} 
+.tmm-recor-canter .tmm-pre-canter .list-block .item-after { display: inline-block; max-height: inherit;color: black; }
+.tmm-recor-canter .tmm-fin-con .item-after{font-size: 18px; line-height: 20px;}
+.tmm-recor-canter .tmm-fin-con .item-after p{font-size: 10px;}
+
+
+
+
+/*可提现金额 available-cash*/
+.tmm-bond-title {padding: 0 16px;line-height: 40px;border-bottom: 1px solid #d7d9d7;font-size: 15px;color: #565a5c;margin-bottom: 35px;font-weight: normal;}
+.tmm-cash-money .tmm-cash-tixian {position: absolute;right: 16px;top: 50%;height: 20px;line-height: 20px;font-size: 12px;padding: 0 12px;margin-top: -10px;border: 1px solid #ff595f;border-radius: 2px;color: #ff595f;}
+.tmm-cash-money {position: relative;}
+.tmm-ava-title {line-height: 30px;font-size: 14px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.tmm-ava-info{color: #565a5c;font-size: 8px;}
+.tmm-ava-info span{border: 1px solid #565a5c; margin-left: 7px; padding: 3px;}
+.tmm-ava-content {position: absolute;top: 10px;right: 10px;left: 95px;height: 60px;line-height: 28px;font-size: 14px;}
+.ava-card{box-shadow:none;}
+.tmm-bond-title {padding: 0 16px;line-height: 40px;border-bottom: 1px solid #d7d9d7;font-size: 15px;color: #565a5c;margin-bottom: 35px;font-weight: normal;background: #fff;}
+.tmm-bon-content table {width: 100%;border-collapse: collapse;background-color: #fff;text-align: left;font-size: 14px;color: #565a5c;}
+.tmm-bon-content table th {border: 1px solid #d7d9d7;border-top: none;padding: 20px 16px;font-weight: normal;}
+.tmm-bon-content table td {border: 1px solid #d7d9d7;padding: 20px 16px;}
+
+
+/*选择随行人员*/
+.tmm-retin-but{position: absolute;margin-top: ;left: 0;bottom: 0;z-index: 200; width: 100%;background: #FFFFFF;height: 40px;}
+
+/*点订单预定*/
+.tmm-order-status input{height: 23px !important;}
+
+/*吃、玩项目详情-item*/
+.tmm-deta-share{height: 35px;width: 100%;background: #5fb336;color: #FFFFFF;display: -webkit-box;position: absolute;z-index: 100;top: 40px;}
+.tmm-deta-share img{width: 22px;}
+.tmm-infor-top img{width: 20px;margin-top: 5px;}
+.share-img{line-height: 3.3;float: left;}
+.share-font{font-size: 16px;line-height: 2.6;}
+.tmm-item-can{margin: 0 auto;width: 86px;}
+.tmm-hide-ite{
+	-webkit-transition-duration: 400ms;
+    transition-duration: 400ms;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+}
+.tmm-show-ite{-webkit-transition-duration: 400ms;
+    transition-duration: 400ms;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+ 
+/*扫码*/
+.tmm-scan-code{margin: auto;width: 100%;border-radius: 10px 10px 10px 10px;}
+.tmm-eject-scan-code{border-radius: 10px 10px 12px 12px;padding: 20% 0%; background: #fff;}
+.tmm-eject-code{margin:auto;width: 150px; height: 150px;}
+.tmm-eject-hao{text-align: center;width: 100%;border-radius: 12px 12px 10px 10px;padding: 12% 0%; background: #fff;}
+.tmm-scan-code span{position: absolute;left: 3%;z-index: 100;width: 94%;border-top: 1px dashed red;}
+.tmm-eject-juan{height: 18px;}
+
+
+
+
+
+

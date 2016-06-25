@@ -1,0 +1,19 @@
+@charset "UTF-8";
+.tmm-wallet-change {
+  @extend .tmm-wallet-withdraw;
+
+  .bankcard-protocol {
+    margin-top: 20px;
+    margin-left: 15px;
+    color: #403a39;
+    font-size: 14px;
+
+    .chkleft {
+      margin-right: 5px;
+    }
+
+    .protocol-link {
+      color: #5089d1;
+    }
+  }
+}

@@ -1,0 +1,804 @@
+/**************************************************************************/
+
+
+/**
+ * 公共css文件，公共的样式定义在这
+ */
+
+
+/***************************************************************************/
+
+body {
+  font-family: Helvetica, "华文细黑";
+  background: #f0f1f2;
+  -webkit-overflow-scrolling: touch;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+p,
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+.gray {
+  color: #313131;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.red {
+  color: #ff595f;
+}
+
+.clear-before:before {
+  display: none !important;
+}
+
+.version {
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 60px;
+  z-index: 10;
+  font-size: 11px;
+  line-height: 11px;
+  text-align: center;
+  color: #999999;
+}
+
+
+/**
+ * 下面边框
+ */
+
+.b-border {
+  position: relative;
+}
+
+.b-border:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #d7d9d7;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+
+/**************************************************************************/
+
+
+/**
+ * 公共css文件，公共的样式定义在这
+ */
+
+
+/***************************************************************************/
+
+
+/* 重写框架样式 */
+
+html.with-statusbar-overlay body {
+  /*padding-top: 0;*/
+}
+
+.statusbar-overlay {
+  background: #ffffff;
+  /*opacity: 0;*/
+  /*height:0;*/
+}
+
+.pages {
+  background: #fff;
+}
+
+.page-content {
+  padding-bottom: 50px;
+}
+
+.list-block ul:after {
+  background-color: #d7d9d7;
+  height: 1px;
+  position: static;
+  transform-origin: 0% 0%;
+}
+
+.list-block ul:before {
+  background-color: #d7d9d7;
+}
+
+.navbar:after {
+  background-color: #d7d9d7;
+}
+
+
+/***************************************************************************/
+
+
+/**
+ * navbar.tmm-navbar
+ */
+
+.navbar.tmm-navbar,
+.navbar.tmm-navbar .subnavbar {
+  background-color: #FFFFFF;
+  height: 40px !important;
+}
+
+.navbar.tmm-navbar:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #000000;
+  display: block;
+  z-index: 15;
+  opacity: 0.2;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.navbar .center {
+  font-size: 20px !important;
+  font-weight: normal;
+}
+
+.pull-to-refresh-layer {
+  margin-top: -48px;
+}
+
+.navbar a.link,
+.toolbar a.link,
+.subnavbar a.link {
+  line-height: 40px !important;
+  height: 40px !important;
+}
+
+.navbar-through .page-content,
+.navbar-fixed .page-content {
+  padding-top: 40px;
+}
+
+.navbar .center {
+  line-height: 40px !important;
+  color: #000 !important;
+}
+
+.navbar.tmm-navbar .ion-ios-arrow-thin-left,
+.navbar.tmm-navbar .ion-android-arrow-back,
+.navbar.tmm-navbar .ion-ios-close-empty {
+  color: #FF0000;
+  font-size: 35px;
+}
+
+.navbar.tmm-navbar .navbar-inner {
+  padding: 0 16px;
+}
+
+.navbar.tmm-navbar a {
+  color: #000000;
+  position: relative;
+}
+
+.navbar.tmm-navbar a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -16px;
+  right: -16px;
+}
+
+.navbar.tmm-navbar .icon {
+  font-size: 20px;
+}
+
+.page {
+  background: #f0f2f0;
+}
+
+.tmm-my-page {
+  background: #FFF;
+}
+
+.mian-navbar-line:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #d7d9d7;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+
+/*.mian-navbar-line::before {
+  height: 0px;
+}*/
+
+
+/***************************************************************************/
+
+
+/**
+ * toolbar.tmm-toolbar
+ */
+
+.toolbar.tmm-toolbar {
+  height: 50px;
+  background-color: #403A39;
+  opacity: 0.97;
+}
+
+.toolbar.tmm-toolbar a {
+  color: #faecbd;
+  opacity: 0.5;
+}
+
+.toolbar.tmm-toolbar:before {
+  display: none;
+}
+
+.toolbar.tmm-toolbar a.active {
+  opacity: 1;
+}
+
+.toolbar.tmm-toolbar i.icon {
+  /*margin-top: 4px;*/
+  font-size: 24px;
+}
+
+.toolbar.tmm-toolbar i.icon {
+  display: none;
+}
+
+.toolbar.tmm-toolbar a [class$="-outline"] {
+  display: block;
+}
+
+.toolbar.tmm-toolbar a.active [class*="ticon-"] {
+  display: block;
+}
+
+.toolbar.tmm-toolbar a.active [class$="-outline"] {
+  display: none;
+}
+
+.toolbar.tmm-toolbar .tabbar-label {
+  font-size: 10px;
+  line-height: 10px;
+  /*margin-bottom: 4px;*/
+}
+
+.toolbar.tmm-toolbar.tabbar-labels a.tab-link {
+  padding-top: 2px;
+}
+
+
+/*重要，不设置它，滚动时工具栏会重新提示*/
+
+.views {
+  overflow: hidden;
+}
+
+
+/*加载地图的样式*/
+
+.tmm-more-map {
+  position: fixed;
+  width: 80%;
+  left: 10%;
+  top: 60px;
+  background: #fff;
+  border-radius: 4px 4px 0 0;
+  z-index: 101;
+}
+
+.tmm-more-title {
+  border-bottom: 1px solid #d7d9d7;
+  font-size: 13px;
+  padding: 10px 16px;
+}
+
+.tmm-more-map img {
+  width: 100%;
+}
+
+.tmm-bg-mask {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+.tmm-banner-detail {
+  position: fixed;
+  background: transparent;
+  border-radius: 5px;
+  z-index: 11000;
+  max-height: 80%;
+  overflow: auto;
+  top: 65px;
+  bottom: 65px;
+  margin: 0px 12px;
+  height: auto;
+}
+
+.tmm-hotel-lazy {
+  width: 100%;
+}
+
+
+/*选择随行人员  tym*/
+
+.popup .select-retinue {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+}
+
+.content-block.tmm-select-retinue-block {
+  padding: 0 1px 0 0;
+}
+
+.tmm-select-retinue-ul {
+  /*max-height: 300px;*/
+  overflow: auto;
+  max-height: 85%;
+  width: 100%;
+  position: absolute !important;
+}
+
+.list-block .tmm-select-retinue-ul .item-inner:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1.1px;
+  width: 100%;
+  background-color: #c8c7cc;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.tmm-select-retinue-p {
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  bottom: 10px;
+  z-index: 200;
+}
+
+.tmm-select-retinue-navbar {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 200;
+}
+
+
+/* Moore Mo增加  --选择酒店入住和退房日期时的日历控件样式*/
+
+.tmm-hoteldate-picker-calendar.picker-calendar {
+  height: 390px;
+}
+
+
+/* Moore Mo增加  --选择酒店入住和退房日期时的toast样式*/
+
+.toast-modal-bottom {
+  width: auto;
+  left: 50%;
+  top: 95%;
+  margin-left: -50px;
+  border-radius: 4px;
+  color: #fff;
+  z-index: 12000;
+}
+
+.toast-modal-bottom .modal-inner {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 6px 15px;
+  border-radius: 4px;
+}
+
+.toast-modal-bottom .modal-title {
+  font-size: 14px;
+}
+
+
+/* 临时样式 */
+
+.table-group {
+  margin-bottom: 20px;
+}
+
+.table-cell {
+  position: relative;
+  display: block;
+  height: 44px;
+  line-height: 44px;
+  background-color: #fff;
+  border-bottom: 1px solid #d7d9d7;
+  font-size: 14px;
+  color: #565a5c;
+}
+.table-cell:active, .table-cell.active-state {
+  -webkit-transition-duration: 0ms;
+  transition-duration: 0ms;
+  background-color: #d9d9d9;
+}
+.table-cell .ticon-arrow-right {
+  position: absolute;
+  right: 16px;
+  color: #d7d9d7;
+}
+
+.table-cell .tit {
+  margin-left: 16px;
+}
+
+.table-cell:first-of-type {
+  border-top: 1px solid #d7d9d7;
+}
+
+@media (min--moz-device-pixel-ratio: 1.5),
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi),
+(min-resolution: 1.5dppx) {
+  .table-cell {
+    border: none;
+    background-image: -webkit-linear-gradient(bottom, #d7d9d7, #d7d9d7 50%, transparent 50%);
+    background-image: linear-gradient(0deg, #d7d9d7, #d7d9d7 50%, transparent 50%);
+    background-position: bottom;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+  }
+  .table-cell:first-of-type {
+    border: none;
+    background-image: -webkit-linear-gradient(top, #d7d9d7, #d7d9d7 50%, transparent 50%), -webkit-linear-gradient(bottom, #d7d9d7, #d7d9d7 50%, transparent 50%);
+    background-image: linear-gradient(180deg, #d7d9d7, #d7d9d7 50%, transparent 50%, linear-gradient(0deg, #d7d9d7, #d7d9d7 50%, transparent 50%));
+    background-position: top, bottom;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+  }
+}
+
+.bgwhite {
+  background-color: #ffffff;
+}
+
+
+.passwd-msg {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.passwd-wrap {
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.passwd-wrap .passwd-item {
+  position: relative;
+  box-sizing: border-box;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  border: 1px solid #666;
+  background-color: #fff;
+  border-right: none;
+}
+.passwd-wrap .passwd-item.input:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -5px;
+  margin-top: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #000;
+}
+.passwd-wrap .passwd-item:last-of-type {
+  border-right: 1px solid #666;
+}
+
+.passwd-wrap .passwd-item:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.passwd-wrap .passwd-item .item-wrap {
+  vertical-align: middle;
+}
+
+.keyboard {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  font-size: 0;
+  transition: all .25s;
+  -webkit-transition: all .25s;
+  transform: translate3d(0, 100%, 0);
+  -webkit-transform: translate3d(0, 100%, 0);
+  z-index: 10001;
+  background-color: #fff;
+}
+
+.keyboard .keyboard-item {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 33.33%;
+  background-size: 100% 100%;
+}
+.keyboard .keyboard-item:active,.keyboard .keyboard-item.active-state {
+  -webkit-transition-duration: 0ms;
+  transition-duration: 0ms;
+  background-color: #d9d9d9;
+}
+
+.keyboard .keyboard-item:nth-child(1) {
+  background-image: url(../images/keyboard/num1.png);
+}
+
+.keyboard .keyboard-item:nth-child(2) {
+  background-image: url(../images/keyboard/num2.png);
+}
+
+.keyboard .keyboard-item:nth-child(3) {
+  background-image: url(../images/keyboard/num3.png);
+}
+
+.keyboard .keyboard-item:nth-child(4) {
+  background-image: url(../images/keyboard/num4.png);
+}
+
+.keyboard .keyboard-item:nth-child(5) {
+  background-image: url(../images/keyboard/num5.png);
+}
+
+.keyboard .keyboard-item:nth-child(6) {
+  background-image: url(../images/keyboard/num6.png);
+}
+
+.keyboard .keyboard-item:nth-child(7) {
+  background-image: url(../images/keyboard/num7.png);
+}
+
+.keyboard .keyboard-item:nth-child(8) {
+  background-image: url(../images/keyboard/num8.png);
+}
+
+.keyboard .keyboard-item:nth-child(9) {
+  background-image: url(../images/keyboard/num9.png);
+}
+
+.keyboard .keyboard-item:nth-child(10) {
+  background-image: url(../images/keyboard/null.png);
+}
+
+.keyboard .keyboard-item:nth-child(11) {
+  background-image: url(../images/keyboard/num0.png);
+}
+
+.keyboard .keyboard-item:nth-child(12) {
+  background-image: url(../images/keyboard/back.png);
+}
+
+.keyboard .keyboard-item:before {
+  content: '';
+  display: block;
+  padding-top: 43.7%;
+}
+
+.passwd-button {
+  display: block;
+  margin: 35px 16px 0;
+  background-color: #4cb364;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+}
+
+.modal-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  opacity: 0;
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
+}
+/* 选择支付类型窗口 */
+.pay-order-choice {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 150px;
+  z-index: 10001;
+  border-radius: 5px;
+  background-color: #fff;
+  translate: translate3d(0, 0, 0);
+  -webkit-translate: translate3d(0, 0, 0);
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  overflow: hidden;
+}
+.pay-order-choice.pay-wallet {
+  transform: translate3d(0, -60px, 0);
+  -webkit-transform: translate3d(0, -60px, 0);
+}
+.pay-order-choice .pay-tit {
+  position: relative;
+  height: 44px;
+  border-bottom: 1px solid #39ab53;
+  font-size: 15px;
+  line-height: 44px;
+  text-align: center;
+
+}
+
+.pay-order-choice .pay-tit .ticon-close {
+  position: absolute;
+  left: 16px;
+}
+.pay-order-choice .pay-tit .ticon-close:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -16px;
+  right: -16px;
+  bottom: 0;
+}
+
+.pay-order-choice .pay-wrap {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.pay-order-choice .pay-wrap>div {
+  border-bottom: 1px solid #d7d9d7;
+}
+.pay-order-choice .pay-wrap>div:last-of-type {
+  border-bottom: none;
+}
+.pay-order-choice .pay-item {
+  position: relative;
+  height: 49px;
+  font-size: 14px;
+  line-height: 49px;
+}
+.pay-order-choice .pay-item .ticon-qianbao {
+  font-size: 26px;
+  vertical-align: -2px;
+  margin-right: 8px;
+}
+.pay-order-choice .pay-item .zifubao {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('../images/zifubao.png');
+  background-size: 100% 100%;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-left: 2px;
+}
+
+.pay-order-choice .pay-item.first {
+  border-bottom: 1px solid #d7d9d7;
+}
+.pay-order-choice .pay-item .ticon-arrow-right {
+  position: absolute;
+  right: 0;
+  font-size: 14px;
+}
+.pay-order-choice .pay-price {
+  text-align: center;
+  padding: 12px 0;
+}
+.pay-order-choice .pay-price .pric-num {
+  font-size: 30px;
+}
+.pay-order-choice .passwd-wrap {
+  padding: 12px 0 15px;
+}
+.pay-order-choice .passwd-wrap .passwd-item:before {
+  padding-top: 66%;
+}
+@media screen and (max-height: 480px) {
+  .pay-order-choice {
+    top: 90px;
+  }
+  .pay-order-choice .pay-item {
+    height: 44px;
+    line-height: 44px;
+  }
+  .pay-order-choice .pay-tit {
+    height: 39px;
+    line-height: 39px;
+  }
+}
+@media screen and (min-height: 481px) and (max-height: 568px) {
+  .pay-order-choice {
+    top: 120px;
+  }
+}
+
+.zhifubao-button {
+  display: block;
+  margin: 15px 0 20px;
+  background-color: #4cb364;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+}

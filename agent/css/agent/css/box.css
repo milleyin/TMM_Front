@@ -1,0 +1,54 @@
+.box_div{
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  margin-top: 50px;
+  height: auto !important;
+}
+.box_div .title{
+  position: absolute; 
+  top:0px;  
+  left:35px; 
+  z-index: 103;
+  width: 80px;
+  height: 30px;
+  font-size: 8px;
+  color: #403a39;
+  border: 1px dashed #d0860e;
+  background: #fcf1df;
+  text-align: center;
+}
+.box_div .title span{
+  display: inline-block;
+  line-height: 30px;
+}
+.box{
+  width: 100%;
+  border: 1px dashed #d0860e;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  position: relative;
+  
+}
+.box_left{
+  width: 49%;
+  border-right: 1px dashed #d0860e;
+}
+.box_right{
+  position: absolute;
+  top:70px;
+  right: 4%;
+  width: 48%;
+  
+
+}
+.tag_img img{
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+.copyright{
+  text-align: center;
+  font-size: 8px;
+  color: #403a39;
+  margin: 40px 12px;
+}

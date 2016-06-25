@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="css/agent/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/agent/css/form.css">
+	<link rel="stylesheet" type="text/css" href="css/agent/css/signin.css">
+	<script src="./css/agent/script/jquery-1.11.3.min.js"></script>
+	<!--[if lt IE 9]>
+	<script src="dist/js/html5.js"></script>
+	<script src="dist/js/respond.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="login">
+<!--logo-->
+	<div class="login_logo">
+		<div class="row-fluid logo">
+			<img src="css/agent/images/logo.png">
+		</div>
+		<div class="row-fluid title">
+			<span>代理商管理平台</span> 
+		</div>
+	</div>
+<!--输入框-->
+	<div class="row-fluid login_content">
+		<div class="span1 content_left">
+			<div class="row-fluid">
+				<a href="#" role="button" class="active" id="password_login">密<br/>码<br/>登<br/>录<br/></a>
+			</div>
+			<div class="row-fluid">
+				<a href="#" class="noActive" id="mess_login">信<br/>息<br/>登<br/>录</a>
+			</div> <!--登录方式切换-->			
+		</div>
+
+		<div class="span1"></div>
+
+		<div class="span10 content_right">
+			<!--信息登录的表单-->
+			<form method="post" method="post" action="" class="messlogin_form">
+				<div class="row-fluid content_phone">
+				 <input type="text" class="phone" placeholder="手机号码" value=""> 
+				 <span class="check_icon success"></span>				
+				 <div class="errorMessage">手机不可为空</div>
+				 </div>
+				<div class="row-fluid content_checkcode">
+					<input type="text" class="code" placeholder="请右侧输入验证码" value="">
+					<img src="./css/agent/images/checkcode.jpg" class="checkcodeimg"/>
+					<div class="errorMessage">验证码不可为空</div>
+				</div>
+				<div class="row-fluid content_messcode">  
+					<input type="text" class="messcode" placeholder="短信验证码" value=""> 
+					<a href="#" class="getcheckcod">获取验证码</a>
+					<div class="errorMessage">短信验证码不可为空</div>
+				</div>
+				<div class="row-fluid enter">
+					<input type="submit" value="进入">
+				</div>
+			</form>	
+			<!--密码登录的表单-->
+			<form method="post" method="post" action="" class="passwordlogin_form">
+				<div class="row-fluid  content_phone">
+					<input type="text" class="phone"  placeholder="手机号码" value="">
+	 	 			<div class="check_icon success"></div>
+					<div class="errorMessage">不可为空</div>
+				</div>
+				<div class="row-fluid has-feedback content_password" >  
+					<input type="password" class="upassword" placeholder="密码" value="">
+					<span class="form-control-feedback" aria-hidden="true">
+	 	 			   <div class="check_icon success"></div>
+	  				 </span>
+					<div class="errorMessage">不可为空</div>
+				</div>
+				<div class="row-fluid content_checkcode">
+					<input type="text" class="code" placeholder="请输入验证码" value=""> 
+					<img src="css/agent/images/checkcode.jpg" class="checkcodeimg"/>
+					<div  class="errorMessage">不可为空</div>
+				</div>
+				<div class="row-fluid enter">
+					<input type="submit" value="进入">
+				</div>
+			</form>	
+
+		</div>  <!--.content_right-->
+	</div> <!--.login_content-->
+	<div class="row-fluid copyright">
+		<span>Copyright &copy; TMM365.com All Rights Reserved</span>
+	</div>
+</div>	<!--.login-->
+<script type="text/javascript">
+	$(function(){
+		//登录选择
+		//信息登录
+		$("#mess_login").click(function(){
+			$(".passwordlogin_form").css("display","none");
+			$(".messlogin_form").css("display","block");
+			
+			$("#mess_login").addClass("active").removeClass("noActive");
+			$("#password_login").removeClass("active").addClass("noActive");
+			return false;
+		})
+		//密码登录
+		$("#password_login").click(function(){	
+			$(".messlogin_form").css("display","none");
+			$(".passwordlogin_form").css("display","block");
+
+			$("#password_login").addClass("active").removeClass("noActive");
+			$("#mess_login").addClass("noActive").removeClass("active");
+			return false;
+		})
+
+		//测试提示错误信息
+		$(document).ready(function(){			
+			$(".phone").blur(function(){
+				var  value=$(".phone").val();
+				if(value==""){
+					$(".errorMessage").css("display","block");
+					$(".phone").addClass("change_input");
+					$(".check_icon").css("display","block");
+					$(".check_icon").removeClass("success");
+					$(".check_icon").addClass("error");
+					
+				}
+				return false;
+			})
+			$(".phone").focus(function(){
+				$(".errorMessage").css("display","none");
+				$(".phone").removeClass("change_input");
+				$(".check_icon").removeClass("error");
+				$(".check_icon").addClass("success");
+			})
+		})		
+	})
+</script>
+</body>
+</html>

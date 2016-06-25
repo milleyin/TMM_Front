@@ -1,0 +1,40 @@
+<div id="my">
+  <h1 class="top-nav">我的</h1>
+  <div class="m_content">
+    <div class="header">
+      
+        <div class="header_img"><a ng-click="toInfo()"><img ng-src="images/header.png" src="images/header.png" alt="..."></a></div>
+        <div class="header_txt">
+          <h3 ng-bind="name"></h3>
+          <p ng-bind="phone"></p>
+        </div>
+        <div ng-click="showBar()" class="h_right h_14" style="color: #565a5c">退出</div>
+    </div>
+    <div class="myinfo">
+      <a ng-href="#/mywallet">
+        <p>
+          <i class="iconfont h_left h_pic" style="color: #47A8EF;">&#xe628;</i>
+          <i class="iconfont h_right jiantou">&#xe634;</i>
+          <span>我的钱包</span>
+        </p>
+      </a>
+      <div ng-if="json.is_main">
+      <hr>
+      <!-- <a ng-href="#/mycaiwu"> -->
+      <a ng-href="#/baozhengjin/04">
+        <p>
+          <i class="iconfont h_left h_pic" style="color: #3FB88C;">&#xe637;</i>
+          <i class="iconfont h_right jiantou">&#xe634;</i>
+          <span>剩余保证金</span>
+        </p>
+      </a>
+      </div>
+    </div>
+  </div>
+  <nav class="bar-tab">
+    <a ng-href="#/myorder"><i class="iconfont">&#xe616;</i><span>我的订单</span></a>
+    <a ng-href="#/myxiangmu"><i class="iconfont">&#xe61b;</i><span>我的项目</span></a>
+    <a ng-href="#/wodeshouru"><i class="iconfont">&#xe613;</i><span>我的收入</span></a>
+    <a class="active"><i class="iconfont">&#xe624;</i><span>我的</span></a>
+  </nav>
+</div>

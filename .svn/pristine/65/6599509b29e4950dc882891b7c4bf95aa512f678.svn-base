@@ -1,0 +1,70 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+    </div>
+    <div class="center">觅境</div>
+    <div class="right">
+      <a href="javascript:;" class="link" id="tmm-seek-search">
+          <i class="icon ticon-search"></i>
+        </a>
+    </div>
+    <!-- 二级导航栏目 -->
+    <div class="subnavbar tmm-seek-subbar">
+      <div class="mian-navbar-line"></div>
+        <div class="buttons-row">
+{{#each seek.search}}
+            <a href="javascript:;" class="button {{#if @first}}active{{/if}}">{{name}}</a>
+{{/each}}
+        </div>
+
+        <!-- 二级导航选择列表 -->
+{{#each seek.search}}
+        <div class="tmm-sublist">
+        {{#each son}}        
+          <span class="item"><a data-link="{{link}}" href="javascript:;">{{name}}</a></span>
+        {{/each}}
+        </div>
+{{/each}}
+
+    </div>
+
+  </div>
+</div>
+<div class="pages">
+  <div data-page="seek" class="page seek-page">
+    <div class="page-content pull-to-refresh-content infinite-scroll tmm-seek-page-contnet">
+       <!-- 默认的下拉刷新层 -->
+      <div class="pull-to-refresh-layer">
+        <div class="preloader"></div>
+        <div class="pull-to-refresh-arrow"></div>
+      </div>
+       <div class="tmm-list-block">
+              <ul>
+
+    <!-- 内容列表 -->
+{{#each seek.list_data}}
+    <li class="tmm-item-content">
+      <div class="pic">
+        <a href="javascript:;" data-type="{{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}" data-link="{{link}}" class="tmm-recommend-detail"><img data-src="{{image}}" class="lazy lazy-fadein"></a>
+      </div>
+      <div class="txt">
+        <div class="title">{{name}}</div>
+        <div class="intro">{{info}}</div>
+        <span class="type {{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}">
+                    {{js " this.classliy.value==1 ? '景点' : this.classliy.value==2 ? '线路' : '活动' "}}
+                  </span>
+        <span class="praise"><i class="icon ticon-praise"></i><span class="num" id="seek_{{value}}">{{collect_count}}</span></span>
+      </div>
+    </li>
+{{/each}}
+
+              </ul>
+               <div id="no-more" style="display:none"></div>
+            </div>
+      
+    </div>
+
+    <div class="bg-mask-seek infinite-scroll" style="display:none"></div>
+
+  </div>
+</div>

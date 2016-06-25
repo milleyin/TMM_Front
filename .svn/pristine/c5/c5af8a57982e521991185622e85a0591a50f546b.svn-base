@@ -1,0 +1,35 @@
+@charset "UTF-8";
+.tmm-edit-act {
+  .edit-title {
+    margin-top: 34px; 
+    display: flex;
+    line-height: 45px;
+    .content-txt {
+      color: $gray;
+      height: 45px;
+      border: none;
+      text-align: center;
+      border-radius: 2px; 
+    }
+    .title-width {
+      width: 90%;
+      margin: auto; 
+    }
+    .num-width {
+      width: 60%; 
+      /* margin: auto; */ 
+      margin-left: 45px;
+    }
+  }
+  .card-btn {
+    display: block;
+    text-align: center;
+    background-color: #ff4c52;
+    border-radius: 2px;
+    line-height: 45px;
+    color: $whiteColor;
+    font-size: 16px;
+    border: 1px solid transparent;
+    margin: 42px; 
+  }
+}

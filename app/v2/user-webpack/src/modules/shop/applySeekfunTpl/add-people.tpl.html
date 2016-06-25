@@ -1,0 +1,49 @@
+
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">报名信息</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+
+<div class="pages">
+  <!-- Page, "data-page" contains page name -->
+  <div data-page="payment-add-pepole" class="page payment-add-pepole">
+    <div class="page-content" style="padding-bottom:65px;">
+
+      <div class="main-wrap">
+        <div class="content-block-title tmm-content-title">请填写出行人信息</div>
+        <div class="normal-cell"><label><span class="tit">姓名：</span><input type="text" class="main-input name"></label></div>
+        <div class="normal-cell"><label><span class="tit">手机号码：</span><input type="tel" class="main-input phone"></label></div>
+      </div>
+
+
+      <!-- <div style="height: 10px;background: #f2f2f2; text-align: center; margin-top:10px;font-size:12px;">请填写出行人信息</div> -->
+
+
+      {{#each adultRetinueInfo}}
+      <div class="adult-wrap">
+        <div class="content-block-title tmm-content-title">随行人信息{{index}}（成人）</div>
+        <div class="normal-cell"><label><span class="tit">姓名：</span><input type="text" class="adult-input name" data-key="{{@index}}"></label></div>
+        <div class="normal-cell"><label><span class="tit">手机号码：</span><input type="tel" class="adult-input phone" data-key="{{@index}}"></label></div>
+      </div>
+      {{/each}}
+  
+      {{#each childRetinueInfo}}
+      <div class="child-wrap">
+        <div class="content-block-title tmm-content-title">随行人信息{{index}}（儿童）</div>
+        <div class="normal-cell"><label><span class="tit">姓名：</span><input type="text" class="child-input name" data-key="{{@index}}"></label></div> 
+       </div>
+      {{/each}}
+
+    </div>
+    <div class="block-sub-button"><span class="sub-button payment-next-step-add-pepole">下一步</span></div>
+
+  </div>
+</div>

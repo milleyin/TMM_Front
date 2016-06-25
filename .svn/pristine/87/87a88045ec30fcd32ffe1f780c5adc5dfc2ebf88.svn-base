@@ -1,0 +1,317 @@
+/****************************************************************************************
+我的钱包 首页*/
+.tmm-my-wallet-page .tmm-my-wallet-bg{
+  width: 100%;
+  height: 60%;
+  background: url(../images/bg-wallet.png) no-repeat 0 0;
+  background-size: 100% 100%;
+  z-index: -1;
+  position: relative;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-navbar{
+  width: 100%;
+  height: 44px;
+  font-size: 17px;
+  text-align: center;
+  position: relative;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-navbar .left{
+  display: inline-block;
+  position: absolute;
+  left: 16px;
+  top: 5px;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-navbar .left .ticon-arrow-back{
+  font-size: 20px;
+  color: #fff;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-navbar .right {
+  position: absolute;
+  right: 16px;
+  top: 10px;
+  font-size: 12px;
+  color:#ff595f;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-navbar .center {
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 5px;
+    color: #fff;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-content{
+  width: 100%;
+  height: 100px;
+  margin:0 auto;
+  margin-top:30px; 
+  text-align: center;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-content .left,
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-content .right{
+  width: 50px;
+  height: 22px;
+  border-bottom: 1px solid #fff;
+  display: inline-block;
+  vertical-align: top;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-content .center{
+  font-size: 14px;
+  color: #fff;
+  width:60px;
+  margin: 0 auto;
+  line-height: 45px; 
+  display: inline-block;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-content .money{
+  font-size: 40px;
+  color: #fff;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-bank{
+  position: absolute;
+  right: 2.5%;
+  bottom: 17%;
+  width: 60px;
+  height: 40px;
+  /* border: 1px solid red; */
+  text-align: center;
+  color: #f7cb8f;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-bank a{color: #f7cb8f; }
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-bank .ticon-add{
+  font-size: 20px;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-bank .txt{
+  font-size: 8px;
+  line-height: 20px;
+}
+.tmm-my-wallet-page .tmm-my-wallet-bg .tmm-my-wallet-bank .img{
+  width: 40px;
+  height:27px;
+  margin-left: 5px;
+}
+.tmm-my-wallet-page .tmm-my-wallet-btn:before{
+  border:1px solid #c8c7cc;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+}
+.tmm-my-wallet-page .tmm-my-wallet-btn{
+  padding: 15% 16px;
+  height:44px; 
+  text-align: center;
+} 
+.tmm-my-wallet-page .tmm-my-wallet-btn .submit{
+  border:1px solid #d1d1d1;
+  color: #cccccc;
+  font-size: 18px;
+  display: inline-block;
+  width: 100%;
+  height:44px;
+  line-height: 44px;
+  border-radius: 4px;
+}
+.tmm-my-wallet-page .tmm-my-wallet-btn .submit.active{
+  border-color: #4cb364;
+  color: #39ab53;
+}
+/***********************************************************************************
+添加银行卡*/
+.tmm-add-bank-page{
+  background:#f0f2f0;
+} 
+.tmm-add-bank-inner .icon{
+  color: #000;
+}
+.list-block select.tmm-bank-select{
+  color: #576b95;
+  font-size: 15px;
+}
+.tmm-add-bank-page-contnet .tmm-bank-item-addform .item-title-con,
+.tmm-add-bank-page-contnet .list-block.tmm-bank-item-addform input[type=text]{
+  font-size: 15px;
+}
+.tmm-add-bank-page-contnet .list-block.tmm-bank-item-addform .f_bottom{
+  padding: 30px 16px;
+}
+.tmm-add-bank-page-contnet .list-block.tmm-bank-item-addform .div_protocol{
+  margin-top: 20px;
+  margin-left: 16px;
+  color: #403a39;
+  font-size: 14px;
+}
+.tmm-add-bank-page-contnet .list-block.tmm-bank-item-addform .div_protocol .bank_protocol{
+  color: #5089d1;
+}
+.tmm-add-bank-page-contnet .tmm-myinfo-item-addform .f_bottom .sub_active{
+  background: #4bb262;
+  font-size: 18px;
+}
+.tmm-add-bank-page-contnet .list-block.tmm-bank-item-addform .div_protocol .checkbox{
+  vertical-align: middle;
+}
+/***********************************************************************************
+验证手机号*/
+.tmm-modify-phone-page{
+  background: #f0f2f0;
+}
+.tmm-verifyPhone-list-Form .tmm-verifyPhone-item-inner .get_code{
+  background:#e6e6e6;
+  color: #b3b3b3;
+  font-size: 14px;
+}
+.tmm-verifyPhone-list-Form .tmm-verifyPhone-item-inner .activity.get_code{
+  background: #ff595f;
+  color: #fff;
+}
+.tmm-verify-phone-page .txt{
+  margin-top: 75px;
+  font-size: 13px;
+  color: #999999;
+  padding: 0 0 0 16px;
+}
+.tmm-verify-phone-page .tmm-verifyPhone-list-Form .setPhoneInput{
+  font-size: 15px;
+  color: #cccccc;
+}
+.tmm-verifyPhone-list-Form{
+  margin-top: 8px;
+}
+.tmm-verify-phone-inner .icon{
+  color: #000;
+}
+.tmm-verify-phone-page .tmm-verifyPhone-list-Form .bg_btn .sub_btn{
+  background: #4bb262;
+  font-size: 18px;
+}
+/***********************************************************************************
+提现申请*/
+.tmm-withdraw-page .tmm-withdraw-page-contnet .disabled,
+.tmm-withdraw-page .tmm-withdraw-page-contnet [disabled]{
+  opacity: 1;
+}
+.tmm-withdraw-page .tmm-withdraw-page-contnet input[type=text].add_input{
+  color: #000;
+}
+.tmm-withdraw-page .tmm-myinfo-item-addform .item-title-con{
+  color: #000;
+}
+.tmm-withdraw-page .tmm-myinfo-item-addform .f_bottom{
+  padding: 30px 16px 20px 16px !important;
+  height: auto;
+}
+.tmm-withdraw-page .tmm-myinfo-item-addform .f_bottom .sub_active{
+  font-size: 18px;
+}
+.tmm-withdraw-page .tmm-myinfo-item-addform .tip{
+  color: #999999;
+  font-size: 12px;
+  margin:0 auto;
+  text-align: center;
+}
+/***********************************************************************************
+交易记录*/
+.tmm-trade-record-page{
+  background:#fff;
+}
+.tmm-trade-record-page .tmm-trade-record-inner .icon{
+  color: #000;
+}
+.tmm-trade-record-page .tmm-trade-record-list-block{
+  margin: 0;
+}
+.tmm-trade-record-page .list-block ul:before{
+  height: 0px;
+}
+.tmm-trade-record-page .load{
+  margin-top: 25px;
+  text-align: center;
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.tmm-trade-record-inner .right{
+  font-size: 14px;
+  color: #ff595f;
+}
+.tmm-trade-record-page .tmm-trade-record-list-block .item-title .reason{
+  color: #000;
+  font-size: 16px;
+}
+.tmm-trade-record-page .tmm-trade-record-list-block .item-after{
+  display: inline-block;
+  text-align: right;
+  margin-top: -10px;
+}
+.tmm-trade-record-page .tmm-trade-record-list-block .item-after .detail{
+  font-size: 16px;
+  color: #000;
+}
+.tmm-trade-record-page .tmm-trade-record-list-block .item-after .money{
+  font-size: 12px;
+  color: #8e8e93;
+}
+.tmm-trade-record-page .tmm-trade-record-list-block .item-title .date{
+  font-size: 12px;
+  color: #666666;
+}
+.tmm-trade-record-inner .ticon-arrow-back{
+  color: #000;
+}
+.tmm-trade-record-page .list-block ul.tmm-record-conNo-ul:after{
+  height:0px !important;
+}
+.tmm-trade-record-page .page-content{
+  padding-bottom: 0;
+}
+/***********************************************************************************
+提现申请记录*/
+.tmm-withdrawal-application-record-page{
+  background: #fff;
+}
+.tmm-fin-con{
+  background: #fff;
+}
+.navbar-through .page-content.tmm-fin-con{
+  padding-top: 0;
+}
+.tmm-withdrawal-application-record-page .list-block.tmm-list-block {
+  margin: 0;
+}
+.tmm-withdrawal-application-record-page .tip{
+  color: #666666;
+  font-size: 14px;
+  margin-top: 25px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.tmm-withdrawal-application-record-page .list-block ul:before {
+  height: 0px;
+}
+.list-block ul.tmm-record-conNo-ul:after{
+  height:0px !important;
+}
+.tmm-withdrawal-application-record-page .page-content{
+  padding-bottom: 0;
+}
+/***********************************************************************************
+银行卡管理协议*/
+.tmm-bank-protocol{
+  background:#fff;
+}
+.tmm-bank-protocol .tmm-bank-protocol-content{
+  padding: 0 16px 30px 16px;
+  line-height: 24px;
+  font-size: 13px;
+  color: #666666;
+}
+.tmm-bank-protocol-inner .ticon-arrow-back{
+  color: #000;
+}
+.tmm-bank-protocol .tmm-bank-protocol-content div:first-child{
+  padding-top: 55px;
+  margin-top:0; 
+}
+.tmm-bank-protocol .tmm-bank-protocol-content div{
+  margin-top: 10px;
+}
+.tmm-bank-protocol .tmm-bank-protocol-content .bold{
+  font-weight: bold;
+}

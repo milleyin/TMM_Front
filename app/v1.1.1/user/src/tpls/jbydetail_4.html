@@ -1,0 +1,89 @@
+<div id="jbydetail">
+		<header class="t_bar">
+			<h1>我的结伴游详情页<a href="javascript:history.back(-1);"><i class="iconfont h_left h_20">&#xe61f;</i></a></h1>
+		</header>
+	
+		<div class="content">
+			
+			<div class="sec_info" style="margin: 16px;">
+				<div class="sec_info_border">
+			    <div class="sec_con">
+			        <div class="info_pic">
+			            <img ng-src="{{json.imgs}}" alt="...">
+			        </div>
+			        <div class="info_txt">
+			            <p class="info_title">{{json.zhuti}}</p>
+			            <p class="info_con">
+			                <span class="info_danjia">(出游时间：{{json.chuytime}})</span>
+			            </p>
+			        </div>
+			    </div>
+			    <div class="conform">
+			        <span style="border: none;"></span>
+			    </div>
+				</div>
+				<span class="media_tri green"></span>
+				<span class="media_tip3">{{json.zt}}</span>			    
+			</div>
+
+			<h2 class="h2_tit no_t_border">订单列表</h2>
+			<section class="info order_list " ng-repeat="jb in json.liebiao">
+				<a ng-href="#/quxiaodetail">
+					<div class="order_con">
+					<p><span class="side_tit">订单编号: {{jb.dhao}}</span></p>
+					<p><span class="linkman">主要联系人: {{jb.per}}</span><span class="contact">联系方式: {{jb.ple}}</span></p>
+					<i class="media_tri red"></i><i class="media_tip3">{{jb.zht}}</i>
+					</div>
+				</a>
+				<div class="line"></div>
+			</section>
+
+
+			<h2 class="h2_tit">项目列表<span class="icon_day">第一天</span></h2>
+			<section class="project list">
+				<div>
+					<div class="list_title">{{json.menpiao}}</div>
+					<div class="list_info" ng-repeat="jb in json.detail">
+						<p><span class="w_50">{{jb.name}}</span><span class="w_30">{{jb.price}}</span><span class="w_20 r_txt">{{jb.shu}}</span></span><i class="media_tri"></i><i class="media_tip3">{{jb.ztian}}</i></p>
+						<div class="line"></div>
+					</div>
+				</div>	
+				
+			</section>
+			
+			<div ng-repeat="jb in json.day">
+			<h2 class="h2_day"><span class="icon_day">{{jb.days}}</span></h2>
+			<section class="project list">
+				<div>
+					<div class="list_title">{{jb.piao}}</div>
+					<div class="list_info" ng-repeat="can in jb.tao">
+						<p><span class="w_50">{{can.name}}</span><span class="w_30">{{can.price}}</span><span class="w_20 r_txt">{{can.shu}}</span></span><i class="media_tri"></i><i class="media_tip3">{{can.ztian}}</i></p>
+						<div class="line"></div>
+					</div>
+				</div>
+			</section>
+			</div>
+
+			<h2 class="h2_tit">人数统计</h2>
+			<section class="list">
+				<p class="p_list"><span class="side_tit w_33">{{json.zongr}}</span></p>
+			</section>
+
+
+			<h2 class="h2_tit">合计价格</h2>
+			<section class="list">
+				<p class="p_list"><span class="side_tit w_33">{{json.price}}</span></p>
+			</section>
+
+			<h2 class="h2_tit">订单状态</h2>
+			<section class="list orderstate b_border">
+				<p>订单编号：{{json.dingdanh}}</p>
+				<p>创建时间：{{json.cjtime}}</p>
+				<p>处理时间：{{json.chulitime}}</p>
+				<p>付款时间：{{json.fuktime}}</p>
+			</section>
+		
+		</div>
+
+		
+	</div>

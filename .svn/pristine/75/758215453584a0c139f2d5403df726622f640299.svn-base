@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone = no">
+  <title>我的订单详情</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+  <div id="myorderdetail">
+    <h1 class="top-nav">我的订单详情
+      <a href="###" class="iconfont h_left h_pic">&#xe61f;</a>
+      <a href="###" class="iconfont h_right h_pic">&#xe62c;</a>
+  </h1>
+    <div class="m_content">
+      <section class="time">
+        <h2>出游时间</h2>
+        <div class="info">
+          2015-11-12
+        </div>
+      </section>
+      <section class="pep">
+        <h2>主要联系人</h2>
+        <div class="info">
+          <div class="info_n">
+            <p><span>姓名：小飞龙</span><span>性别：男</span><span class="no_mr">手机号：13333333333</span></p>
+            <p>身份证：4405101990101234</p>
+          </div>
+        </div>
+      </section>
+      <section class="pep">
+        <h2>随行人员</h2>
+        <div class="info">
+          <div class="info_n">
+            <p><span>姓名：小飞龙</span><span>性别：男</span><span class="no_mr">手机号：13333333333</span></p>
+            <p>身份证：4405101990101234</p>
+          </div>
+          <div class="line"></div>
+          <div class="info_n">
+            <p><span>姓名：小飞龙</span><span>性别：男</span><span class="no_mr">手机号：13333333333</span></p>
+            <p>身份证：4405101990101234</p>
+          </div>
+        </div>
+      </section>
+      <section class="liststate">
+        <h2>订单状态</h2>
+        <div class="info">
+          <p>订单编号：11111100011111</p>
+          <p>创建时间：2015-07-09 12:20:20</p>
+          <p>处理时间：2015-07-09 12:20:20</p>
+          <p>付款时间：2015-07-09 12:20:20</p>
+        </div>
+      </section>
+      <div class="tijiao">
+      <ul>
+        <li><span class="left_t">拒接</span></li>
+        <li><span class="right_t">接收</span></li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</body>
+
+</html>

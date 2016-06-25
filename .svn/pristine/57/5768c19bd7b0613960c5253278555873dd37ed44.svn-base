@@ -1,0 +1,57 @@
+angular.module('app', ['ionic', 'order', 'item', 'account', 'item.detail', 'my', 'myLogin', 'wallet', 'config', 'tmmTools', 'resources', 'appFunc', 'security'])
+
+
+.run(function($ionicPlatform) {
+
+})
+
+.config(function($httpProvider, $stateProvider, $urlRouterProvider, $ionicConfigProvider, $logProvider, ENV) {
+
+  $httpProvider.defaults.withCredentials = true;
+  $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+
+  $ionicConfigProvider.views.transition('ios');
+  $ionicConfigProvider.tabs.position('bottom');
+  $ionicConfigProvider.tabs.style('standard');
+  $ionicConfigProvider.navBar.alignTitle('center');
+  $ionicConfigProvider.scrolling.jsScrolling(false);
+  // $ionicConfigProvider.backButton.icon('icon-arrow-back');
+
+  if (ENV.debug) {
+    ENV.apiEndpoint = 'http://test2.365tmm.net';
+    $logProvider.debugEnabled(true);
+  }
+
+
+  $stateProvider
+    .state('tab', {
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'app/base/templates/tabs.html'
+    });
+
+
+
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/tab/order');
+
+})
+
+// .controller('NavBarCtrl', function($scope, $location, $ionicNavBarDelegate) {
+
+//   var path = $location.path();
+//   $scope.hideBackButton = false;
+//   if (path.indexOf('tab') !== -1)
+//     $scope.hideBackButton = true;
+//   else
+//     $scope.hideBackButton = false;
+// });
+// 
+.filter('room', function() {
+  return function(room_number) {
+    room_number = parseInt(room_number);
+    var arr = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+
+    return arr[room_number] + '人间';
+  }
+});

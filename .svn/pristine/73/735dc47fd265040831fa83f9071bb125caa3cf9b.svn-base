@@ -1,0 +1,28 @@
+<!-- 交易记录 -->
+<ion-view cache-view="false" hide-tabs="true">
+  <navbar back title="交易记录"></navbar>
+  
+  <ion-content class="tmm-withdraw-record" overflow-scroll="false">
+    <ion-refresher pulling-text="下拉刷新..."  on-refresh="doRefresh()">
+    </ion-refresher>
+    <div ng-repeat="record in list_data" class="tmm-record-list">
+      <div class="record-item">
+        <div>
+          <b>{{record.name}}</b>
+          <p class="record-time">{{record.add_time}}</p>
+        </div>
+        <div class="record-money">
+          {{record.use_money}}
+          <p class="record-time">余额：{{record.money}}元</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="record-conNo" ng-if="listNum == 0">你暂时还没有交易记录哦！</div>
+    <ion-infinite-scroll distance="0.1%" ng-if="hasMoreData()" on-infinite="loadMore()">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>
+
+

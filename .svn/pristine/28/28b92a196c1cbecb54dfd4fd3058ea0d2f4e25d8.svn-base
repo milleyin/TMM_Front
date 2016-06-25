@@ -1,0 +1,196 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	background: #fff;
+	color: #333;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 8px;
+  line-height: 1.42857;
+    
+}
+.content_box{
+	width: 96%;
+	margin: 0 auto;
+}
+/* top */
+.login_record_data{
+	width: 100%;
+	height: auto;
+	margin-top: 72px;
+  clear: both;
+  height: 130px;
+/*   overflow: auto; */
+}
+.charts{
+	clear: both;
+	margin-top:4%;
+}
+.login_record_chartone{
+	width: 99.5%;
+	margin-top:4%; 
+}
+.login_record_charttwo{
+	width: 100%;
+	margin-top:4%;
+}
+.business_check_pending,.content_check_pending,.total_income,.login_record{
+	width: 23%;
+	height: 140px; 
+	float: left;
+	margin-right:2.5%;
+}
+.login_record{
+	margin-right:0px;
+}
+.title {
+  margin: 0 0;
+  width: 70px;
+  background: #403a39;
+  text-align: center;
+  padding: 5px 4px;
+  color: #fefcf9;
+  font-size: 10px;
+}
+.content{
+	height: 110px;
+	width: 100%;
+	background: #9a7946;
+	text-align: center;
+	border: 1px solid #403a39; 
+}
+.business_check_pending .content{
+	color: #fff ;
+	font-size:52px;
+	line-height: 110px;
+  text-align: center;
+} 
+.content_check_pending .content{
+
+}
+.total_income .content{
+	color: #06ff00;
+	font-size:30px;
+	text-align: center;
+	line-height: 110px;
+}
+.total_income .content span{
+	color: #fff;
+	font-size:10px;
+}
+.login_record .content{
+
+}
+
+.content_table{ 
+	border-collapse: collapse; 
+	border: 0px solid #999; 
+	width: 100%;
+	height:100%;
+	text-align: center;
+} 
+/* 表格只有内边距 */
+.content_table tr { 
+ 	border-top: 1px solid #403a39;
+ } 
+.content_table tr:first-child{ 
+ 	border-top: none;
+ }
+.content_table td:first-child{
+ 	border-right: 1px solid #403a39;
+ }
+.content_table td{
+	width: 50%;
+}
+
+#content_check_table .first_row td{	
+	font-size: 24px;
+	color: #403a39;
+	background: #e7c99c;
+	height: 33.5%;
+}
+#content_check_table .first_row td:first-child{
+	font-size: 10px;
+	color: #24201f;
+	background: #c8a063;
+} 
+#content_check_table .second_row td{	
+	font-size: 24px;
+	color: #fff;
+	background: #9a7946;
+}
+#content_check_table .second_row td:first-child{
+	font-size: 10px;
+	background: #755e3b;
+}
+#content_check_table .lastRow td{	
+	font-size: 24px;
+	color: #fff;
+	background: #66553d;
+}
+#content_check_table .lastRow td:first-child{
+	font-size: 10px;
+	background: #3c352b;
+}
+
+#login_record_table .first_row td{	
+	font-size: 24px;
+	color: #403a39;
+	background: #e7c99c;
+}
+#login_record_table .first_row td:first-child{
+	font-size: 12px;
+	color: #272221;
+	background: #c8a063;
+} 
+#login_record_table .lastRow td{	
+	font-size: 8px;
+	color: #fff;
+	background: #6d6361;
+}
+#login_record_table .lastRow td:first-child{
+	font-size: 12px;
+	background: #403a39;
+}
+
+/* 图表 */
+.charts .line{
+	width: 100%;
+	height: 1px;
+	margin-top:0;
+	/* 底色 */
+	background-color: #403a39;
+	/* ie6 7  */
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr='#403a39',endcolorstr='#fcf1df',gradientType=1);
+	/* ie8 + */
+	-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#403a39',endColorstr='#fcf1df',grandientType=1);
+	/* ie9、10 */
+	background: -ms-linear-gradient(#403a39 0%,#fcf1df 100%);
+	/* 火狐 */
+	background: -moz-linear-gradient(left, #403a39, #fcf1df);
+	/* opera */
+	background: -o-linear-gradient(left,#403a39, #fcf1df);
+	/* chrome */
+	background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(#403a39), to(#fcf1df));
+	
+}
+.day_income_chart,.month_income_chart{
+	height: 340px;
+	width: 100%;
+	margin-top: 15px;
+	border: 2px solid #3c352b; 
+} 
+.copyright{
+	margin-top: 20px;
+	text-align: center;
+	font-size: 8px;
+	color:#403a39;
+}
+#mask{
+	background: #fff;
+	position: absolute;
+	top:0;
+	right:0;
+	background: red;
+	z-index: 10003;
+}

@@ -1,0 +1,13 @@
+{{#each hotActList}}
+<li class="li-item">
+    <img class="img-item" src="{{image}}" alt="{{name}}">
+    <div class="info-item">
+        <div class="title">
+            {{name}}
+        </div>
+        <div class="desc">
+            {{info}}
+        </div>
+    </div>
+</li>
+{{/each}}

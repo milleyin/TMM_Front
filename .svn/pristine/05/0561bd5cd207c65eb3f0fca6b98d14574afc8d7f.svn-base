@@ -1,0 +1,18 @@
+<ion-view view-title="我的项目">
+  <ion-content delegate-handle="item-content">
+    <ion-refresher pulling-text="下拉刷新数据" pulling-icon="arrow-down" on-refresh="doRefresh()" spinner="android">
+    </ion-refresher>
+    <div ng-repeat="item in model.list_data" class="media-cell">
+      <div class="cell-body" ui-sref="tab.detail">
+        <div class="media">
+          <img ng-src="{{ item.item_litimg }}">
+        </div>
+        <div class="describe">
+          <p class="tit">{{ item.name }}</p>
+        </div>
+      </div>
+    </div>
+    <ion-infinite-scroll ng-if="model.nextPage" on-infinite="loadMore()" distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

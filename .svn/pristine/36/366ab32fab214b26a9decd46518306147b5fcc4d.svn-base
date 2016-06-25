@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>编辑-3</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/breadcrumbs.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/step.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/form.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/box.css"> 
+
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/style.css"> 
+  <script src="../css/agent/script/jquery-1.11.3.min.js"></script>
+  <!--[if lt IE 9]>
+  <script src="dist/js/html5.js"></script>
+  <script src="dist/js/respond.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="content_box scenic_spot" id="spot_create">
+  <div class="breadcrumbs title">
+   <a href="my_spot.html">点</a>
+   &frasl;
+   <span>编辑</span>
+  </div>  <!--.title-->
+  <div class="create_nav create_sub_business_nav">
+      <div class="create_steap_one">       
+        <a class="done">1</a>
+        <span class="text_done">选择项目</span>
+        <div class="line line_first done"></div>
+      </div>
+      <div class="create_steap_two">
+        <a class="done">2</a>
+        <span class="text_done">添加标签</span>
+        <div class="line done"></div>
+      </div>
+      <div class="create_steap_five">
+        <a class="done last">3</a>
+        <span class="text_done">提交审核</span>
+        <div class="line line_last done last"></div>
+      </div>
+  </div>    <!-- .create_nav -->
+  <div class="content create_spot">
+    <div class="content_five">
+        <div class="box_div">
+          <div class="box box_one"> 
+              <img src="../css/agent/images/success.png" class="head_img">
+              <div class="right">
+                <div class="business_name">
+                  <span class="big">点编辑成功，已提交平台审核</span>
+                  <span class="small">审核进度请致电：400-000-0000咨询</span>
+                </div>
+              </div> <!-- .right -->
+          </div> <!--  .box -->
+        </div>
+        <div class="row enter">
+          <a id="back_business_site_accmangr" href="my_spot.html">
+              <span>返回</span>
+          </a>
+        </div>
+    </div>  <!-- .content_five -->
+  </div>   <!--  .content -->
+  
+  <div class="copyright">
+    <span>Copyright &copy; TMM365.com All Rights Reserved</span>
+  </div>  <!--.copyright--> 
+
+</div>  <!--.content_box-->
+
+<script src="../css/agent/script/functions.js"></script>
+<script type="text/javascript">
+  $(function(){
+    $(".btn_group a").click(function(){
+        return false;
+    })
+    //节点的复制追加
+    var isExist=$(".message");
+    $(".btn_group .choose").click(function(e){
+        var $content = $(this).parent().parent().find(".copy_div").clone();
+        /**
+         * <!-- 鼠标移动的遮罩层 -->
+          <div class="mask_div">
+            <div>
+              <a href="#"><img src="../images/spot/up.png" id="up"></a>
+              <a href="#"><img src="../images/spot/down.png" id="down"></a>
+              <a href="#"><img src="../images/spot/delete.png" id="delete"></a>
+            </div>
+          </div>
+         */
+        var $mask = $("<div class='mask_div'><div><a href='#'><img src='../images/spot/up.png' id='up'></a><a href='#'><img src='../images/spot/down.png' id='down'></a><a href='#'><img src='../images/spot/delete.png' id='delete'></a></div></div>");       
+        $content.append($mask);
+
+        var $div=$("<div class='row-fluid top_line new_top_line'></div>");
+        $div.append($content);
+        $(".left .spot_content").append($div);
+        if(isExist.length>0){
+          $(".message").remove();
+        }  
+    })
+   //未来节点的遮罩层
+    $("body").on("mouseenter",".new_top_line",function(e){
+      var $div = $(this),
+          $mask = $(".mask_div",this);
+      $mask.height($div.outerHeight());
+      $div.on('mouseenter', function(e) {
+          $mask.css("display","block");
+        });
+      //在遮罩层处理移除事件
+      $mask.on('mouseleave', function(e) {
+        $mask.css("display","none");
+      });
+    })
+      //节点的一些操作   
+     //节点的上移
+    $("body").on("click","#up",function(e){
+      var $index = index(this)-1,
+          $search_div = $(this).parents(".spot_content").find(".top_line"),
+          $html_old = $search_div.eq($index).html();
+          $html_new = $search_div.eq($index-1).html();
+      if($index == 0){
+        alert("当前已经是第一条了");
+      }else if($index > 0){
+        swap_html($search_div,$index,$html_old,$index-1,$html_new);
+      }
+      return false;
+      });
+    //节点的下移
+    $("body").on("click","#down",function(e){
+      var $index = index(this)-1,
+          $search_div = $(this).parents(".spot_content").find(".top_line"),
+          $html_old = $search_div.eq($index).html();
+          $html_new = $search_div.eq($index+1).html(),
+          child_num = $search_div.length;   //用有几条数据
+          //alert(child_num);
+      if($index == (child_num-1)){
+          alert("当前已经是最后一条啦");
+      }else{
+        swap_html($search_div,$index,$html_old,$index+1,$html_new);
+      } 
+      return false;
+    });
+    //节点的删除
+    $("body").on("click","#delete",function(e){
+      var $index = index(this)-1,
+          $search_div = $(this).parents(".spot_content").find(".top_line").eq($index);
+      var child_num = $(this).parents(".spot_content").find(".top_line").length;
+      $search_div.remove();     
+      if(child_num <= 1){
+          var $message = $("<div class='message'>待添加</div> ");
+          $(".left .spot_content").append($message);
+      }
+      return false;
+    });
+    //查看
+    $(".btn_group .detail").click(function(e){
+      //查看的处理
+      popupDiv();
+    })
+ })
+</script>
+</body>
+</html>

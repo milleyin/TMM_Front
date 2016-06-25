@@ -1,0 +1,67 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">查看消费信息</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="act-pay-info" class="page tmm-act-line act-pay-info" style="background-color: #fff;">
+    <div class="page-content">
+
+    <div class="act-pay-info-header">线路行程</div>
+
+    <!-- 天 -->
+    {{#each items_fare}}  
+      <div class="item-day">
+        <div class="day-tit"><span class="tit">{{showDay @key}}</span></div>
+        <!-- 项目列表 -->
+        
+        <div class="day-item-list">
+        {{#each this}}
+          {{#each this}}
+          <div class="item-box">
+            <div class="item-tit">
+              <div class="name">{{name}}<i class="icon ticon-qr-code {{#js_compare "this.barcode.is_barcode !='1' "}}gray{{/js_compare}}" data-sq="{{barcode.is_barcode}}" data-link="{{barcode.link}}"></i></div>
+              <div class="address">{{address}}</div>
+            </div>
+
+            {{#each fare}}
+            <div class="item-detail">
+              <span class="w_35">{{name}}</span>
+              <span class="w_20">{{info}}</span>
+              <span class="w_25">￥{{price}}</span>
+              <span class="w_20">共{{number}}份</span>
+            </div>
+            {{/each}}
+
+          </div>
+          {{/each}}
+        {{/each}}
+        </div>
+        
+      </div>
+    {{/each }} 
+
+
+    </div>
+    
+    <!--扫码弹出层-->
+  		<div class="spopupQRcode tmm-scan-code" id="spopupQRcode" style="display: none;">
+    		<div class="tmm-eject-scan-code">
+    			<div class="popupQRcode tmm-eject-code" id="popupQRcodeImage">
+    			</div>
+    		</div>
+    		<span></span>
+    		<div class="tmm-eject-hao">
+    			<p class="tmm-eject-juan"></p>
+    		</div>
+    	</div>
+    
+  </div>
+</div>

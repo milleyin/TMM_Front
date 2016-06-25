@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>homeleft</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="./css/agent/css/leftside.css">
+  <script src="./css/agent/script/jquery-1.11.3.min.js"></script>
+  <!--[if lt IE 9]>
+  <script src="dist/js/html5.js"></script>
+  <script src="dist/js/respond.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="left_box" style="width:100%;"> <!--左侧的内容-->
+   <div class="logo">
+    <a href="home.html"><img src="./css/agent/images/logo.png"></a>
+    <div class="title">人与自然的互联</div>
+    <div class="info">
+      <span class="person_phone">138*****3456</span>
+      <span class="exit"><a href="#">退出</a></span>
+    </div>
+  </div>
+  <div class="content">
+   <div class="model_one">
+    <div class="model_style">
+     <div class="model_name">商家</div>
+     <div class="line"></div>
+     <div class="model_icon">
+       <img src="./css/agent/images/business/business_icon.png">
+     </div>      
+    </div>
+    <div class="model_content">
+      <div><a href="business/business_site_accmangr.html"><span>账号管理</span></a></div>
+      <div><a href="business/sub_business_site_accmanger.html"><span>子账号管理</span></a></div>       
+    </div>
+   </div> <!--.model_one-->
+
+   <div class="model_two">
+    <div class="model_style">
+     <div class="model_name">内容</div>
+     <div class="line"></div>
+     <div class="model_icon">
+       <img src="./css/agent/images/business/content_icon.png">
+     </div>
+    </div>
+    <div class="model_content">
+      <div><a href="items/project_index.html"><span>项目管理</span></a></div>
+      <div><a href="scenic_spot/my_spot.html"><span>景点管理</span></a></div>
+      <div><a href="line/my_line.html"><span>线路管理</span></a></div>
+      <div><a href="together_tour/together_tour.html"><span>结伴游</span></a></div>
+    </div>    
+   </div>   <!--.model_two-->
+
+   <div class="model_three">
+     <div class="model_style">
+     <div class="model_name">订单</div>
+     <div class="line"></div>
+     <div class="model_icon">
+       <img src="./css/agent/images/business/order_icon.png">
+     </div>
+    </div>
+    <div class="model_content">
+     <div><a href="order/self_tour.html"><span>自助游订单</span></a></div>
+     <div><a href="order/together_tour.html"><span>结伴游订单</span></a></div>
+      
+    </div>    
+   </div> <!--.model_three-->
+
+   <div class="model_four">
+    <div class="model_style">
+     <div class="model_name">收益</div>
+     <div class="line"></div>
+     <div class="model_icon">
+       <img src="./css/agent/images/business/profit.png">
+     </div>
+    </div>
+    <div class="model_content">
+     <div><a href="Profit/my_profit.html"><span>我的收益</span></a></div>     
+    </div>    
+   </div> <!--.model_four-->
+
+   <div class="model_five">
+    <div class="model_style">
+     <div class="model_name">设置</div>
+     <div class="line"></div>
+     <div class="model_icon">
+       <img src="./css/agent/images/business/set_icon.png">
+     </div>
+    </div>
+    <div class="model_content">
+     <div><a href="Set_up/Account_number/Account_details.html"><span>账号信息</span></a></div>
+     <div><a href="Set_up/authentication.html"><span>公司认证</span></a></div>
+     <div><a href="Set_up/Safety/safety.html"><span>安全信息</span></a></div>
+      
+    </div>    
+   </div> <!--.model_five-->  
+  </div>  <!--.content_model-->
+
+  <div class="serve_model">
+    <div class="phone">
+      <img src="./css/agent/images/phone.png">
+      <span>0755 - 22831369</span>
+    </div>    
+    <div class="url">
+      <img src="./css/agent/images/url.png">
+       <span>Business@Tmm365.com</span>
+    </div>           
+  </div>  <!--.serve_model-->
+  </div>  <!--.left_box-->
+<script src="./css/agent/script/functions.js"></script>
+<script type="text/javascript">
+  //为a标签增加跳转目的地
+  $("a").attr("target","content");
+  /* 动态改变a便签的背景*/
+  $(document).ready(function(e){
+    $(".model_content a").hover(function(e){
+       $(this).css("background","#332E2D");
+    },function(){
+      $(this).css("background","#403A39");
+    }).click(function(e){       
+     $(".model_content a").css("background","#403A39");
+     $(this).unbind("mouseenter").unbind("mouseleave"); 
+     $(this).css("background","#332E2D"); 
+    })
+})
+</script> 
+</body>
+</html>

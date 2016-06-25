@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>公司认证</title>
+		<link rel="stylesheet" type="text/css" href="../css/agent/css/details.css" />
+		<link rel="stylesheet" type="text/css" href="../css/agent/css/set_up.css" />
+		<link rel="stylesheet" type="text/css" href="../css/agent/css/breadcrumbs.css" />
+	</head>
+	<body>
+		<div class="content_box">
+			<div class="title breadcrumbs"><span>公司认证</span></div>
+			<div class="box_div">
+				<div style="visibility:hidden"><span>已选商品</span></div>
+				<div class="title2"><span>公司信息</span></div>
+				<div class="box1 box_one">
+					<table border="0" class="de">
+						<tr>
+							<td>公司名称：</td>
+							<td>云谷科技有限公司</td>
+						</tr>
+						<tr>
+							<td>公司地址：</td>
+							<td>深圳市南山区科技园科发信息港B栋301</td>
+						</tr>
+						<tr>
+							<td>公司电话：</td>
+							<td>0755-33254655</td>
+						</tr>
+						<tr>
+							<td>公司邮编：</td>
+							<td>518000</td>
+						</tr>
+						<tr>
+							<td>营业执照编码：</td>
+							<td>216546541524542</td>
+						</tr>
+						<tr class="top">
+							<td ><span>营业执照扫描件：</span></td>
+							<td><div class="photo"><img src="../css/agent/images/business/business.png"/></div></td>
+						</tr>
+					</table> 
+				</div> <!--  .box -->
+			</div>   <!-- .box_div --><!--虚线框架-->
+			<div class="box_div">
+				<div style="visibility:hidden"><span>已选商品</span></div>
+				<div class="title2"><span>公司信息</span></div>
+				<div class="box1 box_one">
+					<table border="0" class="de">
+						<tr>
+							<td>公司法人：</td>
+							<td>郑金龙</td>
+						</tr>
+						<tr>
+							<td>证份证号码：</td>
+							<td>4121545645464645554</td>
+						</tr>
+						<tr>
+							<td>联系电话：</td>
+							<td>15874521564</td>
+						</tr>
+					</table> 
+				</div> <!--  .box -->
+			</div>   <!-- .box_div --><!--虚线框架-->
+			<div class="box_div">
+				<div style="visibility:hidden"><span>已选商品</span></div>
+				<div class="title2"><span>公司信息</span></div>
+				<div class="box1 box_one">
+					<table border="0" class="de">
+						<tr>
+							<td>公司法人：</td>
+							<td>郑金龙</td>
+						</tr>
+						<tr>
+							<td>联系电话：</td>
+							<td>15874521564</td>
+						</tr>
+						<tr>
+							<td>证份证号码：</td>
+							<td>4121545645464645554</td>
+						</tr>
+						<tr>
+							<td>公司邮编：</td>
+							<td>518000</td>
+						</tr>
+						<tr>
+							<td>营业执照编码：</td>
+							<td>216546541524542</td>
+						</tr>
+						<tr class="top">
+							<td><span>营业执照扫描件：</span></td>
+							<td><div class="photo"><img src="../css/agent/images/business/identity_card_1.png"/></div><span class="text">正面</span></td>
+							<td><div class="photo"><img src="../css/agent/images/business/identity_card_2.png"/></div><span class="text">反面</span></td>
+						</tr>
+						<tr class="top">
+							<td><span>营业执照扫描件：</span></td>
+							<td><div class="photo"><img src="../css/agent/images/business/person.png"/></div></td>
+						</tr>
+					</table> 
+				</div> <!--  .box -->
+			</div>   <!-- .box_div --><!--虚线框架-->
+		</div>
+	</body>
+</html>

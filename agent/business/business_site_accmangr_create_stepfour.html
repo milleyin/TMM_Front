@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>新增商家</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/breadcrumbs.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/step.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/form.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/box.css">  
+  <script src="../css/agent/script/jquery-1.11.3.min.js"></script>
+  <!--[if lt IE 9]>
+  <script src="dist/js/html5.js"></script>
+  <script src="dist/js/respond.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="content_box">
+  <div class="breadcrumbs title">
+   <a href="business_site_accmangr.html">商家账号管理</a>
+   &frasl;
+   <span>新增商家</span>
+  </div>  <!--.title-->
+  <div class="create_nav create_business_nav">
+      <div class="create_steap_one">
+        <a class="done">1</a>
+        <span class="text_done">账号信息</span>
+        <div class="line line_first done"></div>
+      </div>
+      <div class="create_steap_two">
+        <a class="done">2</a>
+        <span class="text_done">公司信息</span>
+        <div class="line done"></div>
+      </div>
+      <div class="create_steap_three">
+        <a class="done">3</a>
+        <span class="text_done">证照上传</span>
+        <div class="line done"></div>
+      </div>
+      <div class="create_steap_four">
+        <a class="done">4</a>
+        <span class="text_done">添加标签</span>
+        <div class="line done"></div>
+      </div>
+      <div class="create_steap_five">
+        <a class="undone">5</a>
+        <span class="text_undone">提交审核</span>
+        <div class="line line_last undone"></div>
+      </div>
+  </div>    <!-- .create_nav -->
+  <div class="content create_business_content">
+    <div class="content_four">
+      <div class="box_div">
+        <div class="box box_one"> 
+            <img src="../css/agent/images/business_logo.png" class="head_img">
+            <div class="right">
+              <div class="business_name">
+                <span class="big">深圳7090科技有限公司</span>
+                <span class="small">广东省深圳市南山区科丰路2号 特发信息港B座301</span>
+              </div>
+              <div class="already_tags">
+                <div class="tag_img">
+                 <img src="../css/agent/images/tag_bg_already.png"><span>历史</span>
+                </div>
+              </div>
+            </div> <!-- .right -->
+        </div> <!--  .box -->
+        </div>
+ 
+       <div class="box_div">
+        <div class="title"><span>选择标签</span></div>
+          <div class="box box_two">     
+            <div class="tag_img one">
+             <img src="../css/agent/images/tag_bg_already.png"><span>历史</span>
+            </div>
+            <div class="tag_img two">
+             <img src="../css/agent/images/tag_bg.png"><span>风月</span>
+            </div>
+            <div class="tag_img three">
+             <img src="../css/agent/images/tag_bg.png"><span>故道</span>
+            </div>
+             <div class="tag_img one">
+             <img src="../css/agent/images/tag_bg.png"><span>历史</span>
+            </div>
+            <div class="tag_img two">
+             <img src="../css/agent/images/tag_bg.png"><span>风月</span>
+            </div>
+            <div class="tag_img three">
+             <img src="../css/agent/images/tag_bg.png"><span>故道</span>
+            </div>
+             <div class="tag_img one">
+             <img src="../css/agent/images/tag_bg.png"><span>历史</span>
+            </div>
+        </div> <!--  .box -->
+      </div>   <!-- .box_div -->
+      <div class="row enter">
+          <a id="add_tag"><span>提交审核</span></a>
+      </div>
+    </div>  <!-- .content_four -->   
+  </div>   <!--  .content -->
+  
+  <div class="copyright">
+    <span>Copyright &copy; TMM365.com All Rights Reserved</span>
+  </div>  <!--.copyright--> 
+</div>  <!--.content_box-->
+
+<script src="../css/agent/script/functions.js"></script>
+<script type="text/javascript">
+  $(function(){   
+     //添加标签
+    $("#add_tag").click(function(){
+     window.location.href="business_site_accmangr_create_stepfive.html";
+     window.event.returnValue=false;    
+    })
+  });
+</script>
+</body>
+</html>

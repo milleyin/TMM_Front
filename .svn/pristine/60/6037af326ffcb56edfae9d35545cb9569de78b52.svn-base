@@ -1,0 +1,335 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-arrow {
+  background-image: url(../images/spritesheet.png);
+  background-position: -192px -141px;
+  width: 93px;
+  height: 8px;
+}
+.icon-companyProfile {
+  background-image: url(../images/spritesheet.png);
+  background-position: 0px 0px;
+  width: 192px;
+  height: 150px;
+}
+.icon-contact1 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -254px -178px;
+  width: 28px;
+  height: 28px;
+}
+.icon-contact2 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -254px -150px;
+  width: 28px;
+  height: 28px;
+}
+.icon-contact3 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -240px -93px;
+  width: 28px;
+  height: 28px;
+}
+.icon-contact4 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -285px -192px;
+  width: 28px;
+  height: 28px;
+}
+.icon-icon1 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -331px -144px;
+  width: 48px;
+  height: 48px;
+}
+.icon-icon10 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -331px -192px;
+  width: 48px;
+  height: 48px;
+}
+.icon-icon11 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -331px -240px;
+  width: 48px;
+  height: 48px;
+}
+.icon-icon12 {
+  background-image: url(../images/spritesheet.png);
+  background-position: 0px -307px;
+  width: 48px;
+  height: 48px;
+}
+.icon-icon13 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -48px -307px;
+  width: 48px;
+  height: 48px;
+}
+.icon-icon2 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -192px -93px;
+  width: 48px;
+  height: 48px;
+}
+.icon-icon3 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -138px -243px;
+  width: 48px;
+  height: 48px;
+}
+.icon-icon4 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -186px -243px;
+  width: 48px;
+  height: 48px;
+}
+.icon-icon5 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -234px -243px;
+  width: 48px;
+  height: 48px;
+}
+.icon-icon6 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -282px -243px;
+  width: 48px;
+  height: 48px;
+}
+.icon-icon7 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -331px 0px;
+  width: 48px;
+  height: 48px;
+}
+.icon-icon8 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -331px -48px;
+  width: 48px;
+  height: 48px;
+}
+.icon-icon9 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -331px -96px;
+  width: 48px;
+  height: 48px;
+}
+.icon-line {
+  background-image: url(../images/spritesheet.png);
+  background-position: -379px 0px;
+  width: 1px;
+  height: 88px;
+}
+.icon-mobile {
+  background-image: url(../images/spritesheet.png);
+  background-position: -313px -192px;
+  width: 16px;
+  height: 28px;
+}
+.icon-num1 {
+  background-image: url(../images/spritesheet.png);
+  background-position: 0px -243px;
+  width: 46px;
+  height: 64px;
+}
+.icon-num2 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -46px -243px;
+  width: 46px;
+  height: 64px;
+}
+.icon-num3 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -92px -243px;
+  width: 46px;
+  height: 64px;
+}
+.icon-num4 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -285px -128px;
+  width: 46px;
+  height: 64px;
+}
+.icon-num5 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -285px -64px;
+  width: 46px;
+  height: 64px;
+}
+.icon-num6 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -285px 0px;
+  width: 46px;
+  height: 64px;
+}
+.icon-pc {
+  background-image: url(../images/spritesheet.png);
+  background-position: -186px -218px;
+  width: 48px;
+  height: 23px;
+}
+.icon-service1 {
+  background-image: url(../images/spritesheet.png);
+  background-position: 0px -150px;
+  width: 93px;
+  height: 93px;
+}
+.icon-service2 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -192px 0px;
+  width: 93px;
+  height: 93px;
+}
+.icon-service3 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -93px -150px;
+  width: 93px;
+  height: 93px;
+}
+.icon-to-top {
+  background-image: url(../images/spritesheet.png);
+  background-position: -186px -150px;
+  width: 68px;
+  height: 68px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+  .icon-arrow {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-companyProfile {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-contact1 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-contact2 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-contact3 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-contact4 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-icon1 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-icon10 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-icon11 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-icon12 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-icon13 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-icon2 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-icon3 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-icon4 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-icon5 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-icon6 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-icon7 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-icon8 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-icon9 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-line {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-mobile {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-num1 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-num2 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-num3 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-num4 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-num5 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-num6 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-pc {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-service1 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-service2 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-service3 {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+  .icon-to-top {
+    background-image: url(../images/spritesheet@2x.png);
+    background-size: 380px 355px;
+  }
+}

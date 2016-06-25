@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>荔枝节</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body class="payInfo">
+  <div>
+    <div class="card">
+      <div class="content">
+        <div class="tit">天美品荔券·妃子笑<span class="give-ticket">赠</span></div>
+        <div class="txt">入园门票1张+3kg荔枝带走</div>
+        <div class="date">使用日期：2016/6/10至2016/7/20</div>
+        <div class="status"><span class="flag flag-dark">未入园</span></div>
+        <img class="img" src="images/formbgheader.png">
+      </div>
+      <div class="footer">
+        购票手机号码：13392854471
+      </div>
+      <div class="num">312</div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <div class="tit">天美品荔券·妃子笑</div>
+        <div class="txt">入园门票1张+3kg荔枝带走</div>
+        <div class="date">使用日期：2016/6/10至2016/7/20</div>
+        <div class="status"><span class="flag flag-gray">未入园</span></div>
+        <img class="img" src="images/formbgheader.png">
+      </div>
+      <div class="footer">
+        购票手机号码：13392854471
+      </div>
+      <div class="num">3</div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <div class="tit">天美品荔券·妃子笑</div>
+        <div class="txt">入园门票1张+3kg荔枝带走</div>
+        <div class="date">使用日期：2016/6/10至2016/7/20</div>
+        <div class="status"><span class="flag flag-dark">未入园</span></div>
+        <img class="img" src="images/formbgheader.png">
+      </div>
+      <div class="footer">
+        购票手机号码：13392854471
+      </div>
+      <div class="num">3</div>
+    </div>
+  </div>
+  <div class="noCard" style="display:none;">您还没有购买门票</div>
+</body>

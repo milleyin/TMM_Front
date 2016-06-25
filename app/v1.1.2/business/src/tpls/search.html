@@ -1,0 +1,77 @@
+<div id="sousuo">
+<form name='search_form' ng-submit='souSuoContent()'>
+    <header class="t_bar">
+        <div class="h_search">        
+            <input id="searchContent" type="search" ng-model="json.searchText">
+            <span class="icon_sousuo" ng-click="souSuoContent()"></span>
+        </div>
+        <a href="javascript:history.back(-1);" class="iconfont h_left h_20">&#xe61f;</a>
+
+    </header>	
+
+    <div class="content" ng-show="showHistory">
+        <div class="historyList">
+            <section class="history">
+                <div class="sou_tit" ng-click="getLocal()">搜索历史</div>
+                <p ng-repeat="attr in filterHistory track by $index" ng-click="souSuoInfoContent('{{attr}}')">{{attr}}</p>
+            </section>
+        </div>
+        <div class="clear"><a href="javascript:;" ng-click='clearLocal()'>清除搜索历史</a></div>
+
+    </div>
+
+    <div class="content" style="padding-top: 0px;" when-scrolled="showMore()" ng-show="showContent" id="myorder">
+        <div class="module">
+            <div ng-if="isMiJing" class="dingdan" ng-repeat="attr in json.list">
+                <a ng-href="#/myzizhuorderdetail/{{attr.value}}">
+                    <section class="info">
+                        <div class="info_pic">
+                            <img ng-src="{{attr.shops_list_img}}" alt="{{attr.shops_name}}">     
+                        </div>
+                        <div class="info_txt jb_info_txt">
+                            <p class="info_title">{{attr.shops_name}}</p>
+                            <p class="info_time">出游时间：{{attr.go_time}}</p>
+                            <p class="info_con">
+                                <span class="info_count">数量：{{attr.items_count}}</span>
+                                <span class="info_shouru">收入 ￥{{attr.income}}</span>
+                            </p>
+                        </div>
+                    </section>
+                    <i class="media_tri {{attr.status.order_status.class}}"></i><i class="media_tip3">{{attr.status.order_status.name}}</i>   
+                </a>
+                <div class="conform"  id="zzBtn_{{attr.value}}" style="overflow: hidden; font-size: 14px;">
+                    <i class="phone" style="float: left;margin-top:15px;">下单用户 {{attr.order_user}}</i>
+                    <span ng-if="attr.status.order_status.value == 0" ng-click='zzAcceptOrder({{attr.value}})'>接受</span>
+                    <span ng-if="attr.status.order_status.value == 0" ng-click='zzRefuseOrder({{attr.value}})'>拒绝</span>
+                </div>
+            </div>
+
+            <!--结伴游-->
+            <div ng-if="!isMiJing" class="dingdan" ng-repeat="attr in json.list">
+                <a ng-click="goToTourOrder(attr.value, attr.link)">
+                    <section class="info">
+                        <div class="info_pic">
+                            <img ng-src="{{attr.shops_list_img}}" alt="{{attr.actives_name}}">     
+                        </div>
+                        <div class="info_txt jb_info_txt">
+                            <p class="info_title">{{attr.actives_name}}</p>
+                            <p class="info_time">出游时间：{{attr.go_time}}</p>
+                            <p class="info_con">
+                                <span class="info_count">数量：{{attr.items_count}}</span>
+                                <span class="info_shouru">收入 ￥{{attr.income}}</span>
+                            </p>
+                        </div>
+                    </section>
+                    <i class="media_tri {{attr.actives_status.class}}"></i><i class="media_tip3">{{attr.actives_status.name}}</i>   
+                </a>
+                <div class="conform"  id="zzBtn_{{attr.value}}" style="overflow: hidden; font-size: 14px;">
+                    <i class="phone" style="float: left;margin-top:15px;">下单用户 {{attr.order_user}}</i>
+                </div>
+               
+            </div>
+            <div ng-if="listNum == 0" class="conNo">没有找到合适的结果！</div>
+        </div>
+    </div>
+     
+</form>
+</div>

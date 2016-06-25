@@ -1,0 +1,25 @@
+<ion-view view-title="保证金" hide-tabs >
+  <ion-nav-buttons side="left">
+    <i class="tmm-ion-left icon icon-arrow-back" nav-back></i>
+  </ion-nav-buttons>
+
+  <ion-content class="disposit">
+
+  <ion-refresher pulling-text="下拉刷新数据" pulling-icon="arrow-down" on-refresh="doRefresh()">
+  </ion-refresher>
+
+  <div class="cell main"><span class="title">剩余保证金</span><span class="info">{{deposit}} 元</span></div>  
+
+  <div class="list-tit">明细</div>
+  <div class="group">
+    <div ng-repeat="item in model.list_data" class="cell item-cell">
+      <div class="title">{{item.add_time}}</div>
+      <div class="info"><span class="num">{{item.format_deposit}} 元</span><span class="reason" ng-class="{ 'green': item.deposit_status.value=='1', 'red':item.deposit_status.value=='-1'}">{{item.reason}}</span></div>
+    </div>
+  </div>
+
+  <ion-infinite-scroll ng-if="model.nextPage" on-infinite="loadMore()" distance="1%">
+  </ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,71 @@
+<ion-view hide-tabs view-title="">
+  <ion-nav-buttons side="left">
+    <i class="tmm-ion-left icon icon-arrow-back" nav-back></i>
+    <form ng-submit="searchContent()" class="item-input-wrapper">
+      <i ng-click="searchContent()" class="search-text"></i>
+      <input type="search" class="bar-search" placeholder="{{placeValue}}" id="searchContent">
+      <i ng-click="clearContent()" class="search-clear"></i>
+    </form>
+  </ion-nav-buttons>
+  
+
+  <ion-content class="search">
+    <div class="historyWrap" ng-if="isHistory">
+      <div class="cell title">搜索历史</div>
+      <div class="group" ng-click="searchHistory($event)">
+        <div ng-repeat="attr in storage" class="cell">{{attr}}</div>
+      </div>
+      <div class="cancelHistory" ng-class="{'cancelHistory-border' : storage.length > 0 }" ng-click="clearHistory()">清空历史记录</div>
+    </div>
+    <div class="listWrap" ng-if="!isHistory">
+      <div ng-if="!model.list_data.length" class="noDataMsg">没有相关数据！</div>
+      <div ng-if="searchOpt == 1">
+        <div ng-repeat="item in model.list_data" class="media-cell">
+          <div class="cell-body" ui-sref="tab.order-detail{{item.shops_type.value}}({id: item.value, type: item.shops_type.value})">
+            <div class="media">
+              <img ng-src="{{ item.shops_list_img }}">
+            </div>
+            <div class="describe">
+              <p class="tit">{{ item.shops_name }}</p>
+              <p class="txt">出游时间：{{item.go_time}}</p>
+              <p class="txt">项目数量 {{ item.items_count }}　　收入：<span class="stress">￥{{ item.income }}</span></p>
+            </div>
+          </div>
+          <div class="cell-footer">
+            <div class="footer-con">
+              <span class="order-user">下单用户：{{ item.order_user }}</span>
+              <span class="btn-box">
+                <span class="btn" ng-if="item.status.order_status.value == '0'" ng-click='mjAcceptOrder(item.value)'>接受</span>
+              <span class="btn" ng-if="item.status.order_status.value == '0'" ng-click='mjRefuseOrder(item.value)'>拒绝</span>
+              </span>
+            </div>
+          </div>
+          <i class="media-tip {{statusClasses[item.status.order_status.value*1]}}" ng-init="statusClasses=['blue', 'red', 'purple', 'green', 'gray', 'yellow', 'orange']">{{item.status.order_status.name}}</i>
+        </div>
+      </div>
+
+      <div ng-if="searchOpt == 2">
+        <div ng-repeat="item in model.list_data" class="media-cell">
+          <div class="cell-body" ui-sref="tab.order-detail{{item.shops_type.value}}({id: item.value, link: item.link})">
+            <div class="media">
+              <img ng-src="{{ item.shops_list_img }}">
+            </div>
+            <div class="describe">
+              <p class="tit">{{ item.actives_name }}</p>
+              <p class="txt">出游时间：{{ item.go_time }}</p>
+              <p class="txt">项目数量 {{ item.items_count }}　　收入：<span class="stress">￥{{ item.income }}</span></p>
+            </div>
+          </div>
+          <div class="cell-footer">
+            <div class="footer-con">
+              <span class="order-user">下单用户：{{ item.order_user }}</span>
+            </div>
+          </div>
+          <i class="media-tip {{statusClasses[item.actives_status.value*1]}}" ng-init="statusClasses=['green', 'red', 'gray']">{{item.actives_status.name}}</i>
+        </div>
+      </div>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="nextPage" distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

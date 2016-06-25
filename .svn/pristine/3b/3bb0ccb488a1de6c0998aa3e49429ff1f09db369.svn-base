@@ -1,0 +1,99 @@
+  <div id="myorderdetail">
+    <h1 class="top-nav">我的订单详情
+      <a href="javascript:history.back(-1);" class="iconfont h_left h_pic">&#xe61f;</a>
+      <!--<a class="iconfont h_right h_pic">&#xe62c;</a>-->
+  	</h1>
+  	
+  	<div class="m_content">
+    
+      <section class="time">
+        <h2>出游时间</h2>
+        <div class="info">{{json.go_time}}</div>
+      </section>
+      <!-- <section class="list">
+        <h2>项目列表</h2>
+        <div class="info {{$first?'':'border'}}" ng-repeat="project in json.items_fare">
+          <div class="list_title">{{project.name}}</div>
+          <div class="list_info">
+            <p ng-class="{{$last?'':'chengren'}}" ng-repeat="projectcontent in project.fare">
+              <span>{{projectcontent.name}}</span>
+              <span>￥{{projectcontent.price}}</span>
+              <span class="last">×{{projectcontent.number}}</span>
+            </p>
+          </div>
+        </div>
+      </section> -->
+    <h2 class="h2_tit">项目列表</h2>
+     <section class="list project" ng-if="json.status.order_type.value == 1">
+        <div class="b_border" ng-repeat="attr1 in json.items_fare" ng-class="$last?'no_b_border': ''">
+
+          <div class="list_title">{{attr1.name}}<i ng-if="attr1.barcode.is_barcode==1?true:false" ng-click="showCode(attr1.barcode.link)" class="iconfont h_right h_20">&#xe635;</i></div>
+                  <div class="list_info" ng-repeat="attr2 in attr1.fare" ng-class="$last?'no_b_border': ''">
+            <p ng-class="$last ? '':'b_border'"><span class="w_50">{{attr2.name}}</span><span class="w_20">{{attr2.info}} <i ng-if="attr1.classliy.value==2">m<sup>2</sup></i></span><span class="w_10">{{attr2.number}}</span><span class="w_20 r_txt">￥{{attr2.count}}</span></p>
+            
+          </div>
+        </div>  
+      </section>
+
+      <div class="line_list" ng-if="json.status.order_type.value == 2 || json.status.order_type.value == 3">
+        <div ng-repeat="(key,value) in json.items_fare">
+          <div ng-class="key == 1?'day_num no_t_border':'day_num'">{{dayNumer[key-1]}}</div>
+          <section class="list project" ng-repeat="attr in value" ng-class="$last?'':'b_border'">       
+          
+            <div class="b_border" ng-repeat="attr1 in attr" ng-class="$last?'no_b_border': ''">
+
+              <div class="list_title">{{attr1.name}}<i ng-if="attr1.barcode.is_barcode==1?true:false" ng-click="showCode(attr1.barcode.link)" class="iconfont h_right h_20">&#xe635;</i></div>
+                      <div class="list_info" ng-repeat="attr2 in attr1.fare" ng-class="$last?'no_b_border': ''">
+                <p ng-class="$last ? '':'b_border'"><span class="w_50">{{attr2.name}}</span><span class="w_20">{{attr2.info}} <i ng-if="attr1.classliy.value==2">m<sup>2</sup></i></span><span class="w_10">{{attr2.number}}</span><span class="w_20 r_txt">￥{{attr2.count}}</span></p>
+                
+              </div>
+            </div>
+              
+          </section>
+          
+        </div>
+        
+      </div>
+
+      <section class="pep">
+        <h2>主要联系人</h2>
+        <div class="info" ng-repeat="attr in json.retinue" ng-if="attr.is_main == 1?true:false">
+          <div class="info_n">
+            <p>
+            <span>姓名：{{attr.name}}</span>
+            <span>性别：{{attr.gender == 0? '保密': attr.gender==1?'男':'女'}}</span>
+            <span class="no_mr">手机号：{{attr.phone}}</span></p>
+            <p>身份证：{{attr.identity}}</p>
+          </div>
+        </div>
+      </section>
+      <section class="pep" ng-if="json.retinue.length!=1">
+        <h2>随行人员</h2>
+        <div class="info" ng-if="attr.is_main == 0?true:false" ng-repeat="attr in json.retinue">
+          <div class="info_n">
+            <p><span>姓名：{{attr.name}}</span>
+            <span>性别：{{attr.gender == 0? '保密': attr.gender==1?'男':'女'}}</span>
+            <span class="no_mr">手机号：{{attr.phone}}</span></p>
+            <p>身份证：{{attr.identity}}</p>
+          </div>
+          <div class="line"></div>
+          
+        </div>
+      </section>
+      <section class="liststate">
+        <h2>订单状态</h2>
+        <div class="info">
+          <p>订单编号：{{json.order_no}}</p>
+          <p>创建时间：{{json.add_time}}</p>
+          <p ng-if="statusflag">处理时间：{{json.up_time}}</p>
+          <p ng-if="payflag">付款时间：{{json.pay_time}}</p>
+        </div>
+      </section>
+      <div class="tijiao" ng-if="flag">
+      <ul> 
+        <li><span class="left_t" ng-click="refuse()">拒接</span></li>
+        <li><span class="right_t" ng-click="receive()">接收</span></li>
+      </ul>
+    </div>
+    </div>
+  </div>

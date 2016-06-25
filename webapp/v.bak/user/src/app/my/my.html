@@ -1,0 +1,40 @@
+<ion-view view-title="我的">
+  <ion-content class="tmm-my-content" scroll="false">
+  
+    <div ng-if="! model.isLogin" class="tmm-login-item" ng-click="login()">
+      快速登录帐号
+    </div>
+     <div ng-if="model.isLogin" class="tmm-logined-item">
+      <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAACTFBMVEUAAABfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZfszZgszdhtDhhtDlitDpktTxktT1ltT1mtj9ot0Fpt0NquERquEVruEVvuktwukxzvFB0vFF2vVR3vVV4vlZ5vld6v1h9wF1+wF2Ew2WGxGiHxGmHxWqIxWuJxWuKxm2Mx3COyHOPyHSQyHWRyXaSyXeTynmVynuWy3ygz4qi0Iui0Iyj0Y6k0Y6m0pGn0pOo05Op05aq1Jat1Zqt1Zuw1p6x15+02KO12KS22aa42qi42qm626u726u726y83K6+3LC/3bHA3bLA3bPI4LzI4b3K4b/L4sHM4sHO48XQ5MbQ5MfR5MjT5cvU5szV5s3V5s7Y6NHZ6NLf69rh69zk7eHl7eHl7eLm7uTn7uTn7uXo7+bp7+fq7+jq8Onr8Ons8Ovt8ezu8e3u8e7v8u/w8vBWxb8LAAAAXnRSTlMAAgYHCAkKCwwNEhQVFh0fICEjJClFRkdISUpNUFFYWVpbXF1sbW9wdXZ3eI+Qk5SYmZucnaeot7i5u72+v8XGyNDR0tXW19rb3N3e3+Dh4uPk5enr7O3v8fLz9Pn+HX9HBgAAA7JJREFUGBmlwYlD02UcBvBnImPqEAkUCoQiiBYq1IQIS5HksNYkgSQmD3lRIXl1CFpZWZJlh1LZXZCVoXYg6cRqwvcfi6Hg3vfd8fttnw8SWLK8tLKusa2L2595oqGusnT5EiTPWbBqYzc13RtXFTiRBEdedYAxBKrzHLDHVe5jXL5yF6xLv7+dCbV70mFRkZ+W+ItgRdbDtKw2CwmVdNKGzhLEt3AtbVq7EHFkbqBtGzIRU/ZmJmFzNmLI3cqkbM1FVDmtTFLrHYjC3cKktbhhWFDPFNQvgM7LlDwETQlTdA8UWZ1MUWcWItVSs3skOPFlP6Pq/2oi+OMuamoRoYi6D2VGcIBRDAZlxhB1xZjn9FN3UcJCx2l4JyRhY9T5nZjjoe6FaZk1daqHip5T0zJr+nnqPLjF1U7dUZnz015G2Dsqcwao63DhpjIaPpB544c57/C4zHufhjLMcjxJw3dy29QnOzhrx6fTcts3NPgcCMujaUwiXTo5cOjQwMnfJdJ5mvIRVk3TFUlogqYazHAGaHhJLOinIZABoJCm42LB2zQVAqii6Rex4GeaqgA00/CeWPIuDc1AJg19f4slEy/SkIl8Gs6KRZ/TcCcqqDt4Qyy6cYC6Cnip+0Es+546L9ZRs39aLJvaR82jaKLmM7FhmJomtFG187LYcHknVW14lqqjYssgVV2g5ozYcpoabKdqTGz5lRp0UDUhtvxFVRd8VIk9Iara8DhVk2LLFaqasI6qS2LLRaoeg5eqs2LLF1R5UUHVW2LLMaoqkE9V779iwz+9VN2FTGq+FRu+piYTaKHqVbHhNaqaATxIzahYNkpNFYBCal6eEoumXqGmEEBGgJphsWiYmkAGZtRQs/tPseSPXdTUICyfuoNBsSB4gLp8hDl81L0ekoRCg9Q95cCsMhreDEkCoTdouA83uTpoGLgqcV0doKHDhVs8NO3/TeI4v48mD+Y4/TQ9NzQpMVwb6qHJ78S8YkbTd2ZSorh2uo/R3I0ItYyq98S5kCj+O3eil1E9gkjLOhnDniMfj1wYvy5yffzCyEdH9jCGzmwo7mWKSqDxMiVe6NLqmYL6NBjcLUxaixtR5DzNJLXmIKrcLUzKllzEsHQTk7BpKWJavJ62rV+MONLW0KY1aYhv5TbasG0lEsqqpWW1y2BFsZ+W+IthUbqnnQm1P5AO6xaV+xiXr3wR7HHkVQcYQ6A6z4EkOAtWN3RT092wusCJ5LlXlFbWNbYFyEBbY11l6Qo34vsfbLqurnkj1ckAAAAASUVORK5CYII=">
+      <span class="phone">{{model.userInfo.phone}}</span>
+      <span ng-click="logout()" class="exit">退出</span>
+    </div>
+    <div class="tmm-menu">
+      <div class="menu-item" ui-sref="tab.myorder">
+        <i class="icon-order"></i>
+        <p class="txt">我的订单</p>
+      </div>
+      <div class="menu-item" ui-sref="tab.mypraise">
+        <i class="icon-prise"></i>
+        <p class="txt">我的赞</p>
+      </div>
+      <div class="menu-item">
+        <i class="icon-act"></i>
+        <p class="txt">我参加的旅游活动</p>
+      </div>
+      <div class="menu-item" ui-sref="tab.mywallet">
+        <i class="icon-wallet"></i>
+        <p class="txt">我的钱包</p>
+      </div>
+      <div class="menu-item" ui-sref="tab.launch-act">
+        <i class="icon-flag"></i>
+        <p class="txt">我发起的活动</p>
+      </div>
+      <div class="menu-item">
+        <i class="icon-msg"></i>
+        <p class="txt">我的消息</p>
+      </div>
+    </div>
+   
+  </ion-content>
+</ion-view>

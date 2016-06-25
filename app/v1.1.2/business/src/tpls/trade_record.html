@@ -1,0 +1,39 @@
+<!-- 交易记录 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner tmm-trade-record-inner">
+    <div class="left">
+      <a href="javascript:history.back(-1);">
+        <i class="iconfont ticon-arrow-back">&#xe61f;</i>
+      </a>
+    </div>
+    <div class="center sliding">交易记录</div>
+    <a class="right"></a>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="trade-record" class="page tmm-trade-record-page" id="tmm-trade-record-page">
+    <div class="page-content"  when-scrolled="showMore()">
+      <div class="list-block  tmm-trade-record-list-block">
+        <ul id="tmm-trade-record-ul" class="tmm-record-conNo-ul">
+          <li class="item-content" ng-repeat="record in list_data">
+            <div class="item-inner">
+              <div class="item-title">
+                <span class="reason">{{record.name}}</span>
+                <div class="date">{{record.add_time}}</div>
+              </div>
+              <div class="item-after">
+                <div class="detail">{{record.use_money}}</div>
+                <div class="money">余额：{{record.money}}元</div>
+              </div>
+            </div>
+          </li>
+          <!-- 无交易记录 -->
+          <li class="tmm-record-content tmm-record-conNo" ng-if="listNum == 0">
+            你暂时还没有交易记录哦！
+          </li>
+        </ul>
+        <div class="load" style="display:none;">正在加载...</div>
+      </div>
+    </div>
+  </div>
+</div>

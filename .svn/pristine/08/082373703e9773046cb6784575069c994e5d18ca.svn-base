@@ -1,0 +1,127 @@
+.buylz {
+  background-color: #edf2ee;
+  .item-info {
+    position: relative;
+    display: flex;
+    padding: 30px 0 80px;
+    background: url("../images/iteminfobg.png");
+    background-size: 100% 100%;
+    background-color: #000;
+    color: #fff;
+    .title {
+      font-size: 15px;
+      line-height: 15px;
+      margin-bottom: 8px;
+      white-space: nowrap;
+    }
+    .price {
+      font-size: 24px;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+    dt,
+    dl {
+      font-size: 10px;
+      line-height: 18px;
+    }
+    .left {}
+    .right {
+      margin-left: 20px;
+    }
+    .img {
+      width: 214px;
+      height: 140px;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 374px) {
+      .left {
+        width: 170px;
+      }
+      .right {
+        margin-left: 10px;
+      }
+      .img {
+        width: 170px;
+        height: 112px;
+      }
+    }
+    .date {
+      font-size: 10px;
+      color: #999;
+      margin-left: 10px;
+    }
+    .button {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      margin-left: -25%;
+      width: 50%;
+      height: 32px;
+      text-align: center;
+      font-size: 18px;
+      line-height: 32px;
+      background-color: #ea5336;
+      color: #fff;
+    }
+  }
+  .item-wrap {
+    background-color: #fff;
+  }
+  .item {
+    box-sizing: border-box;
+    // height: 250px;
+    // padding-top: 40px;
+    margin-top: 1px;
+    // &.type1 {
+    //   background: url("../images/buyitembg1.jpg") center center;
+    //   background-size: auto 250px;
+    //   color: #d0775b;
+    //   .txt {
+    //     border-color: #d0775b;
+    //   }
+    // }
+    // &.type2 {
+    //   background: url("../images/buyitembg2.jpg") center center;
+    //   background-size: auto 250px;
+    //   color: #8d9e3a;
+    //   .txt {
+    //     border-color: #8d9e3a;
+    //   }
+    // }
+    // &.type3 {
+    //   background: url("../images/buyitembg3.jpg") center center;
+    //   background-size: auto 250px;
+    //   color: #d0615b;
+    //   .txt {
+    //     border-color: #d0615b;
+    //   }
+    // }
+    // @media (min-width: 375px) {
+    //   &.type1,
+    //   &.type2,
+    //   &.type3 {
+    //     background-size: 100% 100%;
+    //   }
+    // }
+    .item-box {
+      display: block;
+      img {
+        display: block;
+        width: 100%;
+      }
+      // box-sizing: border-box;
+      // margin: 0 auto;
+      // width: 185px;
+      // height: 50px;
+      // background-color: #fff;
+      // padding: 6px;
+    }
+    .txt {
+      display: block;
+      border: 1px solid #000;
+      text-align: center;
+      line-height: 36px;
+      font-size: 15px;
+    }
+  }
+}

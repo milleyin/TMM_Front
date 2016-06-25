@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>新增商家</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/breadcrumbs.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/step.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/form.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/box.css">  
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/business.css">
+  <script src="../css/agent/script/jquery-1.11.3.min.js"></script>
+  <!--[if lt IE 9]>
+  <script src="dist/js/html5.js"></script>
+  <script src="dist/js/respond.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="content_box" id="stepone">
+  <div class="breadcrumbs title">
+   <a href="business_site_accmangr.html">商家账号管理</a>
+   &frasl;
+   <span>新增商家</span>
+  </div>  <!--.title-->
+  <div class="create_nav create_business_nav">
+      <div class="create_steap_one">
+        <a class="done">1</a>
+        <span class="text_done">账号信息</span>
+        <div class="line line_first done"></div>
+      </div>
+      <div class="create_steap_two">
+        <a class="undone">2</a>
+        <span class="text_undone">公司信息</span>
+        <div class="line undone"></div>
+      </div>
+      <div class="create_steap_three">
+        <a class="undone">3</a>
+        <span class="text_undone">证照上传</span>
+        <div class="line undone"></div>
+      </div>
+      <div class="create_steap_four">
+        <a class="undone">4</a>
+        <span class="text_undone">添加标签</span>
+        <div class="line undone"></div>
+      </div>
+      <div class="create_steap_five">
+        <a class="undone">5</a>
+        <span class="text_undone">提交审核</span>
+        <div class="line line_last undone"></div>
+      </div>
+  </div>    <!-- .create_nav -->
+  <div class="content create_business_content">
+    <div class="content_one">
+      <form method="post" method="post" action="" class="accont_info_form">
+        <div class="row content_phone">
+         <label>登录手机号：</label>
+         <input type="text" class="phone" value=""> 
+         <div class="errorMessage">手机不可为空</div>
+         </div>
+        <div class="row content_messcode">
+          <label>手机验证码：</label>  
+          <input type="text" class="messcode" value=""> 
+          <a href="#" class="getcheckcod">获取验证码</a>
+          <div class="errorMessage">短信验证码不可为空</div>
+        </div>
+        <div class="row content_password" >
+          <label>密码：</label>  
+          <input type="password" class="upassword" value="">
+          <div class="errorMessage">不可为空</div>
+        </div>
+        <div class="row content_confirm_passw" >
+          <label>确认密码：</label>  
+          <input type="password" class="upassword" value="">
+          <div class="errorMessage">不可为空</div>
+        </div>
+        <div class="row enter">
+          <input type="submit" value="下一步" id="account_info">
+        </div>
+      </form> 
+    </div>  <!-- .content_one -->
+  </div>   <!--  .content -->
+  
+  <div class="copyright">
+    <span>Copyright &copy; TMM365.com All Rights Reserved</span>
+  </div>  <!--.copyright--> 
+</div>  <!--.content_box-->
+
+<script src="../css/agent/script/functions.js"></script>
+<script type="text/javascript">
+  $(function(){   
+    //账号信息
+    $("#account_info").click(function(){
+      window.location.href="business_site_accmangr_create_steptwo.html";
+      window.event.returnValue=false; 
+    })
+  });
+</script>
+</body>
+</html>

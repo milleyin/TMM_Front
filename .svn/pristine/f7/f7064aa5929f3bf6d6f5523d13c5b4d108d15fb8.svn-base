@@ -1,0 +1,90 @@
+<!-- 我的钱包 -->
+<div class="pages navbar-through">
+  <div class="page no-navbar no-toolbar tmm-my-wallet-page" data-type="my-wallet">
+  <div class="tmm-my-wallet-bg">
+    <div class="tmm-my-wallet-navbar">
+      <div class="left">
+        <a href="#/my">
+          <i class="iconfont ticon-arrow-back">&#xe61f;</i>
+        </a>
+      </div>
+      <div class="hede sliding">钱包</div>
+    </div>
+    <div class="tmm-my-wallet-content">
+    	<div class="tmm-conter-balance">{{withdraw_format}}</div>
+      <div class="tmm-balance-up">余额(元)</div>
+    </div>
+    <!--未添加银行卡-->
+    <!--<div class="tmm-my-wallet-bank" ng-if="bankCard == 0">
+     	<a href="#/addbank"><img src="images/add.png" class="ticon-add"></a> 
+      <a href="#/newbank/1"><img src="images/add.png" class="ticon-add"></a>
+      <div class="txt">添加银行卡</div>
+    </div>-->
+  </div>
+  
+  <div class="list-block tmm-monye-mag tmm-mag-but">
+	  <ul>
+	    <li>
+	    	<a href="" class="item-content" ng-click="BankCardHasOrNot()">
+		    	<div class="tmm-xiao-tu"><img src="images/tx.png" ></div>
+		      <div class="item-inner">
+		        <div class="item-title">提现</div>
+		      </div>
+	      </a>
+	    </li>
+	  </ul>
+	</div>
+	<div class="list-block tmm-monye-mag tmm-cc">
+	  <ul>
+	    <li>
+	      <a href="#/bank_card_management" class="item-link item-content"  ng-if="bankCard == 1">
+	      	<div class="tmm-xiao-tu"><img src="images/yhkgl.png" ></div>
+	        <div class="item-inner">
+	          <div class="item-title">银行卡管理</div>
+	        </div>
+	      </a>
+	    </li>
+	  </ul>
+    <ul>
+      <li>
+        <a href="#/newbank/1" class="item-link item-content"  ng-if="bankCard == 0">
+          <div class="tmm-xiao-tu"><img src="images/yhkgl.png" ></div>
+          <div class="item-inner">
+            <div class="item-title">银行卡管理</div>
+          </div>
+        </a>
+      </li>
+    </ul>
+	  <ul>
+	    <li>
+	      <a ng-href="#/traderecord" class="item-link item-content">
+	      	<div class="tmm-xiao-tu"><img src="images/jyjl.png" ></div>
+	        <div class="item-inner">
+	          <div class="item-title">交易记录</div>
+	        </div>
+	      </a>
+	    </li>
+	  </ul>
+	  <!-- <ul>
+	    <li>
+	      <a href="####" class="item-link item-content">
+	      	<div class="tmm-xiao-tu"><img src="images/zfgl.png" ></div>
+	        <div class="item-inner">
+	          <div class="item-title">支付管理</div>
+	        </div>
+	      </a>
+	    </li>
+	  </ul> -->
+	</div>
+  
+  
+  
+  <!--<div class="tmm-my-wallet-btn">-->
+    <!-- 可提现 -->
+    <!--<a href="javascript:void(0)" ng-click="BankCardHasOrNot()" class="submit active"  ng-if="json.money >= 100.00">提现</a>-->
+    <!-- <a href="#/tixiancaozuo" class="submit active"  ng-if="json.money >= 100.00">提现</a> -->
+    <!-- 不可提现 --> 
+    <!--<a href="javascript:void(0)" class="submit" ng-if="json.money < 100.00">提现</a>-->
+  <!--</div>-->
+  </div>
+</div>

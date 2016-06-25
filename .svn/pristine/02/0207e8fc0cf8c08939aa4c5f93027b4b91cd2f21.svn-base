@@ -1,0 +1,6 @@
+<div id="login">
+  <nav class="login">
+    <a class="acc_login" ng-href="#/acc_login">帐号密码登录</a><a class="mob_login" ng-href="#/mob_login">手机号快捷登录</a>
+  </nav>
+  <div class="bg_img"></div>
+</div>

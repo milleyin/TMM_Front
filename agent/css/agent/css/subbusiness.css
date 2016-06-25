@@ -1,0 +1,227 @@
+body {
+  overflow-x: hidden;
+  overflow-y: auto
+}
+a{
+  text-decoration: none;
+}
+/* 布局 */
+.content_box{
+  width: 96%;
+  margin: 0 auto;
+  margin-top: 72px;
+  position: relative; /* 弹出层 */
+  z-index: 100;
+}
+.query{
+  width: 100%;
+  height: 44px;
+  margin-top: 39px;
+  position: relative;
+
+}
+.table_box{
+  width: 100%;
+  margin-top:44px;
+}
+/* 内容 */
+.query select{
+  padding: 1px;
+}
+.add_business {
+  float: right;
+}
+.popup_div{
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top:20%;
+  left: 20%;
+  z-index: 1001;
+  border: 1px solid #d9bc92;
+  background: #fff7ec;
+}
+.popup_div .start_div,.popup_div .stop_div{
+  
+}
+.popup_content{
+  width: 90%; 
+  margin:0 auto;
+  margin-top: 50px;
+  position: relative;
+}
+.start_div .popup_img{
+  background:url(../images/popup_img.png) no-repeat 0px -105px;
+  height:105px;
+  padding-left:114px;
+  display: inline-block;
+  margin-left: 40px;
+}
+.stop_div .popup_img{
+  background:url(../images/popup_img.png) no-repeat 0px 0px;
+  height:105px;
+  padding-left:106px;
+  display: inline-block;
+  margin-left: 40px;
+}
+.popup_text{
+  display: inline-block;
+  position: absolute;
+  margin: 20px 30px;
+  height: 80px;
+  text-align: left;
+}
+.big{
+  font-size: 20px;
+  color: #403a39;
+  margin-bottom: 20px;
+
+}
+.small{
+  font-size: 8px;
+  color: #939393;
+}
+.popup_btn{
+  width: 50%;
+  margin-top: 50px;
+  margin-left: 40%;
+}
+button.confirm{
+  margin-right: 30px;
+}
+.popup_div{
+  display: none;
+}
+.popup_div .start_div{
+  display: none;
+}
+.popup_div .stop_div{
+  display: none;
+}
+/* 编辑 */
+.sub_business_edit{
+  width: 60%;
+  margin: 0 auto;
+}
+.sub_business_edit{ width: 80%; margin: 0 auto;    margin-left: 25%; padding-top: 60px; }
+.sub_business_edit .errorMessage{
+  margin-left: 21%;
+}
+.sub_business_edit input{ width: 40%;}
+.sub_business_edit .messcode{width: 20%;}
+.sub_business_edit .getcheckcod{width: 15%;
+    float: right;
+    margin-right: 38%;}
+.sub_business_edit label{ width: 20%;}
+.sub_business_edit .sub_id span,.affiliation span{ 
+    margin: 0 0 25px 10px;
+    display: inline-block;
+
+}
+.sub_business_edit form input[type="submit"] {
+    width:80px;
+    margin-left: 20%;
+}
+.enter a, .enter a:hover, .enter a:visited {
+    background: #655a58;
+    color: #fff;
+    display: inline-block;
+    margin-left: 70px;
+    width: 80px !important;
+    border:1px solid #322e2d;
+}
+.sub_business_edit .enter a,.sub_business_edit .enter a:hover,.sub_business_edit  .enter a:visited{
+  width: 100px;
+}
+/* 新增商家子賬號 */
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+     color: #000 !important;
+}
+.create_sub_business_nav .create_steap_one,.create_sub_business_nav .create_steap_two,
+          .create_sub_business_nav .create_steap_five{
+  width: 33.3%;
+}
+.box_div{
+  margin-top: 40px;
+}
+.content_one{
+  font-size: 14px;
+  color: #000;
+}
+.choose_business_table{
+text-align: left;
+}
+.choose_business_table .choose_business{
+  margin: 0 auto;
+}
+.choose_business_table .address{ width: 50%;}
+.choose_business_table td,.choose_business_table tr{
+  height: 35px;
+  vertical-align: top;
+}
+.choose_business_table td:first-child {
+    text-align: right;
+    padding-right: 5px;
+}
+.content_one .box{
+   width: 70%;
+   margin: 0 auto;
+   background: #feeaca;
+}
+.create_business_content .choose{
+   margin-left: 40%;
+   margin-bottom: 40px;
+   text-align: left;
+}
+.choose select{
+  width: 150px;
+  padding-left: 2px;
+}
+.content_one input[type="submit"]{
+  margin-top: 30px;
+}
+
+.content_two form .messcode,.content_two form .code{
+  width: 210px;  
+}
+.content_two form .getcheckcod,.content_two form .checkcodeimg{
+    width: 110px;
+    margin-left: 20px;
+    height: 30px;
+}
+.content_two form .checkcodeimg{
+  vertical-align: bottom;
+}
+.cancle{
+  margin-left: 50px;
+}
+.back_choose_business{
+  margin-left: 150px;
+}
+.create_nav span{
+  margin-left: 36%;
+}
+.create_steap_five span{ margin-left: 45%;}
+#back_business_site_accmangr{ width: 85px;}
+.query label{ font-size: 14px;}
+.query .time{ width: 60px} 
+.query input{  
+  width: 100px;
+  margin-left: 0;
+}
+.query a{ 
+  padding: 0 5px;
+  min-width: 40px;
+}
+.sub_business_edit .sub_id{
+  height: 40px !important;
+  min-height: 40px !important;
+}
+.content form input[type="submit"]{
+   margin-left: 80px;
+}
+
+/**补充**/
+.accont_info_form{
+  width: 100%;
+}

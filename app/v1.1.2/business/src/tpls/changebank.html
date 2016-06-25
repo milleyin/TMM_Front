@@ -1,0 +1,55 @@
+<div id="add_bank">
+  <header class="t_bar">
+    <h1>更换银行卡<a href="javascript:history.back(-1);" class="iconfont h_left h_20 tmm_iconfont">&#xe61f;</a>
+      </h1>
+  </header>
+  <div class="content">
+    <form name="signup_form" novalidate ng-submit="signupForm()">
+      <div class="info tb_border">
+        <div ng-show="showMsg" class="mob_form_tip">{{msg}}</div>
+        <p class="p_list b_border">
+          <span class="side_tit">开户行</span>
+          <select name="bankname" 
+                  ng-model="bankInfo" 
+                  ng-options="bankList.name for bankList in bankList" 
+                  required
+                  autocomplete="off"
+                  >
+            <option value="" name="isDefault">请选择</option>
+          </select>
+        </p>
+        <p class="p_list b_border">
+          <span class="side_tit">支行</span>
+          <input type="text" name="subbranch" 
+                  required 
+                  ng-model="regText.subbranch" 
+                  placeholder="开户支行" 
+                  autocomplete="off">
+        </p>
+        <p class="p_list b_border">
+          <span class="side_tit">开户名</span>
+          <input type="text" name="username" 
+                  required 
+                  ng-model="regText.username" 
+                  placeholder="开户姓名" 
+                  autocomplete="off">
+        </p>
+        <p class="p_list">
+          <span class="side_tit">卡号</span>
+          <input type="text" class="codeWidth" name="bank_code" id="bank_code" 
+                required 
+                ng-model="regText.bank_code" 
+                placeholder="卡号"
+                pattern="[0-9]*" 
+                autocomplete="off">
+        </p>
+      </div>
+      <div class="div_protocol">
+        <input type="checkbox" class="checkbox" name="bank_protocol" ng-model="chk" >我同意<a href="#/bankprotocol" class="bank_protocol">《银行卡管理协议》</a>
+      </div>
+      <div class="bg_btn">
+        <input class="sub_btn sub_btn" type="submit" value="下一步">
+      </div>
+    </form>
+  </div>
+</div>

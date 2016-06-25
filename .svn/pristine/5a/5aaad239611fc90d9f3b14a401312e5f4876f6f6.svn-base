@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>荔枝节</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body class="success">
+  <div class="title">购票成功！</div>
+  <div class="card2">
+    <div class="content">
+      <div class="tit">桂味·大宗提货券</div>
+      <div class="txt">桂味荔枝25kg</div>
+      <div class="date">使用日期：2016/6/10至2016/7/20</div>
+      <img class="img" src="images/card2.png">
+      <div class="num">5</div>
+    </div>
+    <div class="footer">
+      购票手机号码：13392854471
+    </div>
+  </div>
+  <div class="give">赠送</div>
+  <div class="card">
+    <div class="content">
+      <div class="tit">桂味荔枝25kg</div>
+      <div class="txt">入园门票1张</div>
+      <div class="date">使用日期：2016/6/10至2016/7/20</div>
+      <img class="img" src="images/formbgheader.png">
+      <div class="num">5</div>
+    </div>
+    <div class="footer">
+      购票手机号码：13392854471
+    </div>
+  </div>
+  
+  <a class="give-intro">赠送门票可进入“购买记录>门票”查看</a>
+
+  <div class="give-card">
+    <div class="left">
+      <div class="price">￥<span>5</span></div>
+      <div class="intro">
+        <p class="tit">天美优惠券</p>
+        <p class="txt">仅限购买天美系列产品</p>
+      </div>
+    </div>
+    <div class="right"><a href="###">点击<br>领取</a></div>
+  </div>
+
+</body>

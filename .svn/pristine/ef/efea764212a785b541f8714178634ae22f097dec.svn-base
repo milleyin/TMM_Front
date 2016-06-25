@@ -1,0 +1,43 @@
+{{#if isLogin}}
+<!-- 已登录 -->
+<div class="item-top-to list-block media-list tmm-logo-list-block no-border">
+  <ul class="tmm-my-login-ul">
+    <li>
+      <div class="item-content">
+        <a href="javascript:;" id="tmm-my-info">
+          <div class="item-media">
+            <img src="../../styles/images/header.png"/>
+            <span class="item-title">{{userInfo.phone}}</span>
+          </div>
+        </a>
+        <div class="item-after">
+          <a href="#" class="login-out">退出</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+{{else}}
+<!-- 未登录 -->
+<a href="javascript:;" id="tmm-my-login">
+  <div class="item-top">
+    <div class="item-canter-login">快速登录帐号</div>
+  </div>
+</a>
+{{/if}}
+
+<div class="tmm-con-icon">
+  <div class="col-33" id="tmm-my-order"><i class="icon ticon-order-outline"></i><p>我的订单</p></div>
+  <div class="col-33" id="tmm-my-wallet"><i class="icon ticon-qianbao"></i><p>我的钱包</p></div>
+  <div class="col-33" id="tmm-my-join-act"><i class="icon ticon-active"></i><p>我参加的活动</p></div>
+  <div class="col-33" id="tmm-my-praise"><i class="icon ticon-praise"></i><p>我的赞</p></div>
+  {{#js_compare "this.userInfo.is_organizer == 1"}}
+  <div class="col-33" id="tmm-my-activity"><i class="icon ticon-flag-outline"></i><p>我发起的活动</p></div>
+  {{/js_compare}}
+  <!-- <div class="col-33 tmm-my-msg"><i class="icon ticon-msg"></i><p>我的消息</p></div> -->
+  <!-- <div class="col-33 tmm-my-tour"><i class="icon ticon-dingzhi"></i><p>我的定制游</p></div> -->
+</div>
+
+<span class="version">版本号：V1.2.4</span>
+
+

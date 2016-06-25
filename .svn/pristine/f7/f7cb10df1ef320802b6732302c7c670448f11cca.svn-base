@@ -1,0 +1,58 @@
+.tmm-bar.wallet-nav .tmm-bar {
+  color: #fff;
+  background-color: #403a39;
+  border-bottom: none;
+}
+.tmm-bar.wallet-nav .tmm-bar:after {
+  display: none;
+}
+.tmm-bar.wallet-nav .tmm-bar .tmm-ion-left {
+  color: #fff;
+}
+.tmm-bar.wallet-nav .tmm-bar .title {
+  color: #fff;
+}
+
+.tmm-my-wallet {
+  .wallet-content {
+    width: 100%;
+    height: 145px;
+    background-color: #403a39;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-align: center;
+
+    .content-balance {
+      color: #ffffff;
+      font-size: 30px;
+    }
+    .balance-up {
+      color: #888484;
+      font-size: 12px;
+    }
+  }
+
+  .wallet-list {
+    @extend %border-bottom;
+    height: 46px;
+    line-height: 46px;
+    font-size: 15px;
+    color: #000;
+    background-color: #fff;
+    padding-left: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    .wallet-img {
+      width: 25px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+  }
+
+  .wallet-top{
+    margin-top: 10px;
+  }
+}

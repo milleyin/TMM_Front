@@ -1,0 +1,38 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">选择点</div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, "data-page" contains page name -->
+  <div data-page="select-dot" class="page">
+    <div class="page-content">
+      <div class="tmm-list-block">
+        <ul class="tmm-select-dot-list">
+          {{#each dotList}}
+          <li class="tmm-item-content">
+            <div class="pic">
+              <a href="javascript:;" data-type="{{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}" data-link="{{link}}" class="tmm-select-dot-detail"><img data-src="{{image}}" class="lazy lazy-fadein"></a>
+            </div>
+            <div class="txt">
+              <div class="title">{{name}}</div>
+              <div class="intro">{{info}}</div>
+              <span class="type {{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}">
+                {{js " this.classliy.value==1 ? '景点' : this.classliy.value==2 ? '线路' : '活动' "}}
+              </span>
+              <span class="praise"><i class="icon ticon-praise"></i>
+    <span class="num" id="recommend_{{value}}">{{collect_count}}</span>
+              </span>
+            </div>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

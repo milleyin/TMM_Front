@@ -1,0 +1,62 @@
+.sub-nav {
+    $height: 39px;
+    position: relative;
+    display: flex;
+    height: $height;
+    z-index: 1;
+
+    .sub-btn {
+        flex: 1;
+        text-align: center;
+        line-height: $height;
+        border-bottom: 2px solid #fff;
+        
+        &.active {
+            color: $red;
+            border-bottom-color: $red;
+        }
+    }
+
+
+}
+
+
+.subnav-padding {
+    top: 84px
+}
+
+.navbar-wrap {
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+  @extend %border-bottom;
+}
+
+.tmm-navbar {
+  overflow: hidden;
+  position: relative;
+  height: 44px;
+  line-height: 44px;
+
+  .title {
+    font-size: 18px;
+    margin: 0 44px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .left, .right {
+    position: absolute;
+    padding: 5px;
+    top: 0;
+    bottom: 0;
+  }
+  .left {
+    left: 0;
+  }
+  .right {
+    right: 0;
+  }
+}
+

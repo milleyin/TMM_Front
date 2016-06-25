@@ -1,0 +1,113 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">活动日程</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="act-day" class="page tmm-act-day">
+    <div class="page-content">
+      <!-- 天 -->
+      <div class="item-day">
+        <div class="day-tit"><span class="tit">第一天上午</span></div>
+        <!-- 项目列表 -->
+        <div class="day-item-list">
+          <span class="add-item">添加项目</span>
+          <div class="item-box">
+            <div class="item-tit">
+              <div class="name">营坪村</div>
+              <div class="address">河北省邢台平乡县福建省莆田市城厢区汉庭酒店爱丁堡酒店</div>
+            </div>
+            <div class="item-detail">
+              <span>门票</span>
+              <span>成人</span>
+              <span>￥100</span>
+              <span><i class="icon ticon-cyclo-minus"></i></span>
+            </div>
+            <div class="item-detail">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span><i class="icon ticon-cyclo-add"></i></span>
+            </div>
+          </div>
+         
+          <div class="item-box">
+            <div class="item-tit">
+              <div class="name">营坪村</div>
+              <div class="address">河北省邢台平乡县福建省莆田市城厢区汉庭酒店爱丁堡酒店</div>
+            </div>
+            <div class="item-detail">
+              <span>门票</span>
+              <span>成人</span>
+              <span>￥100</span>
+              <span><i class="icon ticon-cyclo-minus"></i></span>
+            </div>
+            <div class="item-detail">
+              <span>门票</span>
+              <span>成人</span>
+              <span>￥100</span>
+              <span><i class="icon ticon-cyclo-minus"></i></span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <!-- 天 -->
+      <div class="item-day">
+        <div class="day-tit"><span class="tit">第一天下午</span></div>
+        <!-- 项目列表 -->
+        <div class="day-item-list">
+          <span class="add-item">添加项目</span>
+          <div class="item-box">
+            <div class="item-tit">
+              <div class="name">营坪村</div>
+              <div class="address">河北省邢台平乡县福建省莆田市城厢区汉庭酒店爱丁堡酒店</div>
+            </div>
+            <div class="item-detail">
+              <span>门票</span>
+              <span>成人</span>
+              <span>￥100</span>
+              <span><i class="icon ticon-cyclo-minus"></i></span>
+            </div>
+            <div class="item-detail">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span><i class="icon ticon-cyclo-add"></i></span>
+            </div>
+          </div>
+         
+          <div class="item-box">
+            <div class="item-tit">
+              <div class="name">营坪村</div>
+              <div class="address">河北省邢台平乡县福建省莆田市城厢区汉庭酒店爱丁堡酒店</div>
+            </div>
+            <div class="item-detail">
+              <span>门票</span>
+              <span>成人</span>
+              <span>￥100</span>
+              <span><i class="icon ticon-cyclo-minus"></i></span>
+            </div>
+            <div class="item-detail">
+              <span>门票</span>
+              <span>成人</span>
+              <span>￥100</span>
+              <span><i class="icon ticon-cyclo-minus"></i></span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+      <div class="add-dot">添加项目</div>
+    </div>
+  </div>
+</div>

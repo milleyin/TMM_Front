@@ -1,0 +1,90 @@
+{{#each actList}}
+  
+    <div class="card tmm-my-activity-card">
+      <a href="javascript:;"  data-link="{{link}}" class="tmm-my-act-state-detail" data-type="{{js " this.type==1 ? 'actSuccess' : 'actFail' "}}" >
+        <div class="card-content">
+          <div class="tmm-activity-img">
+            <img src="{{image}}">
+          </div>
+          <div class="tmm-activity-content">
+            <div class="tmm-activity-content-title">
+              {{name}}
+            </div>
+            <div class="tmm-activity-content-info">
+
+            {{#js_compare "this.go_time_value =='0'"}}
+              <span class="tmm-activity-content-count">出游日期：待定</span>
+              <p>参与人数：{{js "this.actives_info.number.value - this.actives_info.order_number.value"}}/{{actives_info.number.value}}</p>
+            {{/js_compare}}
+
+            {{#js_compare "this.go_time_value =='1'"}}
+              <span class="tmm-activity-content-count">出游日期：{{go_time}}</span>
+              <p>下单人数：{{actives_info.order_count.value}}</p>
+            {{/js_compare}}
+
+            </div>
+          </div>
+          <div class="tmm-activity-status">
+
+          {{#js_compare "this.audit_status.value =='0' || this.audit_status.value =='-3'"}}
+            <span class="tmm-icon-triangle tmm-tip-chuli" title="{{audit_status.name}}">{{audit_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.audit_status.value =='-1' || this.audit_status.value == '-4'"}}
+            <span class="tmm-icon-triangle tmm-tip-audit-failure" title="{{audit_status.name}}">{{audit_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.audit_status.value =='1' && this.actives_status.value == '0'"}}
+            <span class="tmm-icon-triangle tmm-tip-gray" title="{{actives_status.name}}">{{actives_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.audit_status.value =='1' && this.actives_status.value == ''"}}
+            <span class="tmm-icon-triangle tmm-tip-apply" title="{{actives_status.name}}">{{audit_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.audit_status.value =='1' && this.actives_status.value == '1'"}}
+            <span class="tmm-icon-triangle tmm-tip-apply" title="{{actives_status.name}}">{{actives_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.audit_status.value =='1' && this.actives_status.value == '2'"}}
+            <span class="tmm-icon-triangle tmm-tip-gray" title="{{actives_status.name}}">{{actives_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.audit_status.value =='1' && this.actives_status.value == '3'"}}
+            <span class="tmm-icon-triangle tmm-tip-gray" title="{{actives_status.name}}">{{actives_status.name}}</span>
+          {{/js_compare}}
+
+          </div>
+        </div>
+        
+
+        {{#js_compare "this.audit_status.value =='-1' || this.audit_status.value == '-4'"}}
+        <div class="card-footer no-border">
+          <div class="tmm-card-footer tmm-my-activity-b-border">
+            <!-- <a href="#" class="button">删除</a> -->
+            <a href="javascript:;" class="button tmm-act-edit" data-link="{{link}}" data-type="{{tour_type.value}}">编辑</a>
+          </div>
+        </div>
+        {{/js_compare}}
+
+        {{#js_compare "this.set_go_time.link !='' "}}
+        <div class="card-footer no-border">
+          <div class="tmm-card-footer tmm-my-activity-b-border">
+            <a href="javascript:;" class="button tmm-my-activity-cancel">取消</a>
+            <a href="javascript:;" class="button activityGoTimeSel" data-id="{{value}}" data-type="activityGoTimeSel" style="width: 106px;" id="goTime_{{value}}" data-link="{{set_go_time.link}}">确认出游日期</a>
+
+          </div>
+        </div>  
+        {{/js_compare}}
+
+        {{#js_compare "(this.audit_status.value =='1' && this.actives_status.value == '0'  && this.go_time_value == '1' ) || (this.audit_status.value =='1' && this.actives_status.value == '1' && this.go_time_value == '1') || (this.audit_status.value =='1' && this.actives_status.value == '' && this.go_time_value == '0')"}}
+        <div class="card-footer no-border">
+          <div class="tmm-card-footer tmm-my-activity-b-border">
+            <a href="javascript:;" class="button tmm-my-activity-cancel" style="width: 90px;">取消活动</a>
+          </div>
+        </div>  
+        {{/js_compare}}
+      </a>
+    </div>
+
+{{/each}}

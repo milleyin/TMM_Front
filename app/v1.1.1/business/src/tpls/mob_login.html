@@ -1,0 +1,37 @@
+<form name="signup_form" novalidate ng-submit="signupForm()">
+    <div class="mob_form">
+        <div  ng-show="showMsg" class="mob_form_tip">{{msg}}</div>
+        <div class="form_mob b_border">
+            <input type="tel" name="username"
+                ng-focus="clearMsg()"
+                required 
+                ng-pattern="/^[0-9]{11}$/" 
+                ng-model="regText.name" 
+                placeholder="请输入手机号" 
+                autocomplete="off">
+        </div>
+        <div class="form_code b_border">
+            <input type="text" name="code" 
+            ng-focus="clearMsg()" 
+            ng-model="regText.code" 
+            required ng-model="regText.code" 
+            placeholder="请输入图形验证码" 
+            autocomplete="off">
+            <img ng-click="showCode()" ng-src="{{regText.imgUrl}}">
+        </div>
+        <div class="form_code">
+            <input type="txt" name="msgcode" 
+            ng-focus="clearMsg()" 
+            ng-model="regText.telcode" 
+            required
+            placeholder="请输入短信验证码">
+            <a id="get_code" class="get_code" ng-class="{true: 'get_code', false: 'get_code_active'}[flag]" href="javascript:;" ng-click="sendCode()">{{text}}</a>
+        </div>
+    </div>
+
+    <div class="bg_btn mob_btn">
+        <button class="sub_btn" type="submit">确认</button>
+    </div>
+</form>
+<a href="javascript:history.back(-1);" class="iconfont back">&#xe61f;</a>
+<div class="bg_color"></div>

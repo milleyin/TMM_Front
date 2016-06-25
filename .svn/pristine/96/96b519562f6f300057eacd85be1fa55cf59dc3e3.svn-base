@@ -1,0 +1,18 @@
+<ion-view title="选择出游日期" hide-tabs="true">
+ <navbar title="选择出游日期" back>
+  <div class="right">
+    <i class="icon-back-reverse" ng-click="nextStep(1)"></i>
+  </div>
+ </navbar>
+  <div class="act-indicator"><span class="active"></span><span></span><span></span><span></span></div>
+  <ion-content class="mysponsoract">
+    <div class="calendar"></div>
+    <div class="skip-day">
+      <div class="tit">还没决定出游日期
+        <div ng-click="skipStep()" class="btn">跳过</div>
+      </div>
+      <div class="txt">还没决定出游日期？无需担心，您可以先规划行程，后续可添加出游日期。
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

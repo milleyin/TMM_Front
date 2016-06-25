@@ -1,0 +1,161 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-arrow {
+  background-image: url(../images/spritesheet.png);
+  background-position: -240px -87px;
+  width: 93px;
+  height: 8px;
+}
+.icon-companyProfile {
+  background-image: url(../images/spritesheet.png);
+  background-position: 0px 0px;
+  width: 192px;
+  height: 150px;
+}
+.icon-contact1 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -460px -148px;
+  width: 28px;
+  height: 28px;
+}
+.icon-contact2 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -460px -120px;
+  width: 28px;
+  height: 28px;
+}
+.icon-contact3 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -460px -92px;
+  width: 28px;
+  height: 28px;
+}
+.icon-contact4 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -460px -64px;
+  width: 28px;
+  height: 28px;
+}
+.icon-mobile {
+  background-image: url(../images/spritesheet.png);
+  background-position: -488px -64px;
+  width: 16px;
+  height: 28px;
+}
+.icon-num1 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -271px -237px;
+  width: 46px;
+  height: 64px;
+}
+.icon-num2 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -317px -237px;
+  width: 46px;
+  height: 64px;
+}
+.icon-num3 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -363px -237px;
+  width: 46px;
+  height: 64px;
+}
+.icon-num4 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -409px -237px;
+  width: 46px;
+  height: 64px;
+}
+.icon-num5 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -460px 0px;
+  width: 46px;
+  height: 64px;
+}
+.icon-num6 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -225px -237px;
+  width: 46px;
+  height: 64px;
+}
+.icon-pc {
+  background-image: url(../images/spritesheet.png);
+  background-position: -192px -87px;
+  width: 48px;
+  height: 23px;
+}
+.icon-product1 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -266px -150px;
+  width: 157px;
+  height: 87px;
+}
+.icon-product2 {
+  background-image: url(../images/spritesheet.png);
+  background-position: 0px -237px;
+  width: 157px;
+  height: 87px;
+}
+.icon-product3 {
+  background-image: url(../images/spritesheet.png);
+  background-position: 0px -150px;
+  width: 266px;
+  height: 87px;
+}
+.icon-product4 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -192px 0px;
+  width: 268px;
+  height: 87px;
+}
+.icon-product5 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -396px -324px;
+  width: 48px;
+  height: 87px;
+}
+.icon-product6 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -348px -324px;
+  width: 48px;
+  height: 87px;
+}
+.icon-product7 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -300px -324px;
+  width: 48px;
+  height: 87px;
+}
+.icon-service1 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -100px -324px;
+  width: 100px;
+  height: 100px;
+}
+.icon-service2 {
+  background-image: url(../images/spritesheet.png);
+  background-position: 0px -324px;
+  width: 100px;
+  height: 100px;
+}
+.icon-service3 {
+  background-image: url(../images/spritesheet.png);
+  background-position: -200px -324px;
+  width: 100px;
+  height: 100px;
+}
+.icon-to-top {
+  background-image: url(../images/spritesheet.png);
+  background-position: -157px -237px;
+  width: 68px;
+  height: 68px;
+}

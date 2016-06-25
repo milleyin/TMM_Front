@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>我的分成</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="../css/agent/css/breadcrumbs.css">
+	<link rel="stylesheet" type="text/css" href="../css/agent/css/query.css">
+	<link rel="stylesheet" type="text/css" href="../css/agent/css/pager.css">
+	<link rel="stylesheet" type="text/css" href="../css/agent/css/business.css">
+	<script src="../css/agent/script/jquery-1.11.3.min.js"></script>
+	<!--[if lt IE 9]>
+	<script src="dist/js/html5.js"></script>
+	<script src="dist/js/respond.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="content_box">
+	<div class="breadcrumbs title">
+	 <a href="business_site_accmangr.html">商家账号</a>
+	 &frasl;
+	 <span>我的分成</span>
+	</div>  <!--.title-->
+	<div class="query my_income">
+	  <div class="consume_time">
+	  	<label>消费时间:</label>
+			<input type="time" placeholder="消费起始时间">
+			<label>-</label>
+			<input type="time" placeholder="结束时间">
+	  </div>
+	  <div class="order_num"> 
+		 <input type="text" placeholder="订单号">
+		</div>	
+		<div class="order_name">
+		 <input type="text" placeholder="名称">
+	 </div>
+	 <button name="query">确认</button>
+	</div>  <!--.query-->
+		<div class="grid-view table_box">		 
+	 	<table border="1" class="items">
+	 	<thead>
+	 	 <tr>
+	 	  <th>订单号</th>
+	 	  <th>名称</th>
+	 	  <th>类型</th>
+	 	  <th>消费时间</th>
+	 	  <th>我的分成</th>
+	 	 </tr>
+	 	</thead>
+	 	<tbody>
+	 	 <tr>
+	 	 	<td>5458878858</td>
+	 	 	<td>山水名城</td>
+	 	 	<td>自助遊</td>
+	 	 	<td>2015/07/24 17:18:41</td>
+	 	 	<td>54980.00</td>
+	 	 </tr>
+	 	 <tr>
+	 	 	<td>5458878858</td>
+	 	 	<td>山水名城</td>
+	 	 	<td>自助遊</td>
+	 	 	<td>2015/07/24 17:18:41</td>
+	 	 	<td>54980.00</td>
+	 	 </tr>
+	 	</tbody>
+	 	</table>
+
+
+	 <div class="summary">
+	  <div class="text">
+		 	<span>当前显示 <sapn class="num_span">20</sapn> 条数据 ｜ 共 
+		 	<sapn class="num_span">3</sapn> 页</span>
+	  </div>
+	 </div>
+		<div class="pager">
+  	<ul id="yw1" class="yiiPager">
+    <li class="first">
+      <a href="#">
+        &lt;&lt; 首页
+      </a>
+    </li>
+    <li class="previous">
+      <a href="#">
+        &lt; 前页
+      </a>
+    </li>
+    <li class="page">
+      <a href="#">
+        1
+      </a>
+    </li>
+    <li class="page">
+      <a href="#">
+        2
+      </a>
+    </li>
+    <li class="page selected">
+      <a href="#">
+        3
+      </a>
+    </li>
+    <li class="page">
+      <a href="#">
+        4
+      </a>
+    </li>
+    <li class="page">
+      <a href="#">
+        5
+      </a>
+    </li>
+    <li class="page">
+      <a href="#">
+        6
+      </a>
+    </li>
+    <li class="next">
+      <a href="#">
+        后页 &gt;
+      </a>
+    </li>
+    <li class="last">
+      <a href="#">
+        末页 &gt;&gt;
+      </a>
+    </li>
+  	</ul>
+	</div>	<!-- .pager -->
+</div>   <!-- .grid-view table_box -->
+	<div class="copyright">
+	  <span>Copyright &copy; TMM365.com All Rights Reserved</span>
+	</div>  <!--.copyright-->	
+</div>	<!--.content_box-->
+<script type="text/javascript">
+	$(function(){
+	/*我的分成 的样式*/
+	  $("table").find("td").each(function(i){ 
+			if(i%5 == 4){
+				$(this).attr("class","shared_revenue");
+			} 
+		});
+		/*将分页信息文字的浮动动态改变*/
+		var $offsetWidth=$(document).width();
+		/*alert($offsetWidth);*/
+		if($offsetWidth<1480){
+				$(".text").css("margin-right","50%");
+		}
+	})
+</script>
+</body>
+</html>

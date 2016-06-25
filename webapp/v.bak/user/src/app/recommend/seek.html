@@ -1,0 +1,11 @@
+<ion-view title="觅镜推荐">
+  <ion-content delegate-handle="seek-content">
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="tmm-recommend-list">
+      <recommend-item ng-repeat="item in model.list_data"></recommend-item>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="model.nextPage" distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

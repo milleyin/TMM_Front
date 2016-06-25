@@ -1,0 +1,24 @@
+
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+    </div>
+    <div class="center sliding">验证手机号</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+
+<div class="pages">
+  <!-- Page, "data-page" contains page name -->
+  <div data-page="payment-apply-success" class="page payment-apply-success">
+    <div class="page-content" style="padding-bottom:55px;">
+
+
+      <h3 class="tit">报名成功</h3>
+      <p class="txt">请进入"我参加的觅趣"查看报名信息</p>
+      <div class="block-sub-button"><span class="sub-button payment-next-step-apply-success">完成</span></div>
+
+    </div>
+  </div>
+</div>

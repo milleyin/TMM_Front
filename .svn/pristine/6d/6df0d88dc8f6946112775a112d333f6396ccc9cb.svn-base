@@ -1,0 +1,14 @@
+<ion-view view-title="精品推荐" animation="no-animation">
+  <ion-nav-buttons side="right">
+    <i class="icon-search" ui-sref="tab.search"></i>
+  </ion-nav-buttons>
+  <ion-content delegate-handle="recommend-content" overflow-scroll="false">
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="tmm-recommend-list">
+      <recommend-item ng-repeat="item in model.list_data"></recommend-item>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="model.nextPage" distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

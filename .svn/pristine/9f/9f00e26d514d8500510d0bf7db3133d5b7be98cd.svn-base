@@ -1,0 +1,10 @@
+<ion-modal-view>
+  <div class="tmm-login">
+    <div class="bg-img"></div>
+    <div class="select-item">
+      <a class="acc" ui-sref="tab.acc-login">帐号密码登录</a>
+      <a ui-sref="tab.mob-login">手机号快捷登录</a>
+    </div>  
+    <i class="icon ticon-close"></i>
+  </div>
+</ion-modal-view>

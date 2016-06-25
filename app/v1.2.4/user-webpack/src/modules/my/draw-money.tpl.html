@@ -1,0 +1,60 @@
+<!-- 提现 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner tmm-add-bank-inner" id="draw-money-navbar">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">提现申请</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="draw-money" class="page tmm-add-bank-page tmm-withdraw-page" id="tmm-draw-money-page">
+    <div class="page-content tmm-add-retinue-page-contnet tmm-add-bank-page-contnet tmm-withdraw-page-contnet">
+      <form class="list-block tmm-myinfo-item-addform tmm-bank-item-addform">
+        <ul>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">开户行</div>
+              <div class="item-input">
+                <input type="text" name="bank" class="add_input" value="{{bankCardInfo.bank_value}}" disabled>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">开户名</div>
+              <div class="item-input">
+                <input type="text" name="bank_name" class="add_input" value="{{bankCardInfo.bank_name}}" disabled>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">卡号</div>
+              <div class="item-input">
+                <input type="text" name="code" class="add_input" value="{{bankCardInfo.bank_code}}" disabled>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-con">金额(元)</div>
+              <div class="item-input">
+                <input type="number" name="money" id="money" placeholder="可提现余额{{burserInfo.money_format}}元" class="add_input">
+                <input type="hidden" id="cash_money" value="{{burserInfo.money}}">
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="f_bottom">
+          <button class="sub_active" type="button" id="draw-money-before">确认提现</button>
+        </div>
+        <div class="tip">提现申请成功，预计1-3个工作日内到帐。</div>
+      </form>
+    </div>
+  </div>
+</div>

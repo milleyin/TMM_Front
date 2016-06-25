@@ -1,0 +1,78 @@
+<!--保证金-->
+<div id="baozhengjin">
+  <header class="t_bar">
+    <h1>保证金
+      <a href="javascript:history.back(-1);"><i class="iconfont h_left h_20">&#xe61f;</i></a>
+      <a href="#/my"><i class="iconfont h_right h_20">&#xe62c;</i></a> 
+    </h1>
+  </header>
+  <div class="contentbg pages">
+    <div data-page="trade-record" class="tmm-trade-record-page page-content"   when-scrolled="showBZJMore()">
+      <!--<div class="baozhengjinTotal">剩余保证金：{{info.deposit}}元</div>-->
+      <div class="list-block  tmm-trade-record-list-block list-block-bottom" >
+      	
+      	<div class="list-block tmm-bon">
+				  <ul id="tmm-trade-record-ul">
+				    <li class="item-content">
+			        <div class="item-inner-new">
+				        <div class="item-title">剩余保证金</div>
+				        <div class="item-after tmm-jine">{{info.deposit}}元</div>
+				      </div>
+				    </li>
+					</ul>
+				</div>
+				
+				<div class="tmm-ge">明细</div>
+				<div class="list-block tmm-zong tmm-cl">
+				  <ul id="tmm-trade-record-ul">
+				    <li class="item-content" ng-repeat="attr in list_data">
+			        <div class="item-inner">
+				        <div class="item-title">{{attr.add_time}}</div>
+				        <div class="item-after tmm-fonsize-normal">{{attr.format_deposit}}元 
+				        	<p class="tmm-fonsize bon-col-gre" ng-if="attr.deposit_status.value == 1">{{attr.reason}}</p>
+				        	<p class="tmm-fonsize bon-col-red" ng-if="attr.deposit_status.value != 1">{{attr.reason}}</p>
+				        </div>
+				      </div>
+				    </li>
+					</ul>
+				</div>
+        <!--<ul id="tmm-trade-record-ul" class="tmm-record-conNo-ul">
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title item-title-left">
+                <span class="reason">时间</span>
+              </div>
+              <div class="item-title item-title-middle">
+                <div class="reason">金额</div>
+              </div>
+              <div class="item-title item-title-right">
+                <span class="reason">事由</span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content"  ng-repeat="attr in list_data">
+            <div class="item-inner">
+              <div class="item-title item-title-left">
+                <div class="income-content-font">{{attr.add_time}}</div>
+              </div>
+              <div class="item-title item-title-middle">
+                <div class="income-content-font">{{attr.format_deposit}}</div>
+              </div>
+              <div class="item-title item-title-right">
+                <div class="income-content-font income-content-font-right">{{attr.reason}}</div>
+              </div>
+            </div>
+          </li>
+        </ul>-->
+        <div class="load" style="display:none;">正在加载...</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+

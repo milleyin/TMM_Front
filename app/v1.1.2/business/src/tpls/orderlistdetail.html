@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone = no">
+  <title>订单详情</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+  <div id="orderdetail">
+    <header>
+      <h1 class="top-nav">订单详情
+          <a href="#/myfinance"><i class="iconfont h_left h_pic">&#xe61f;</i></a>
+          <a href="#/index"><i class="iconfont h_right h_pic">&#xe62c;</i></a> 
+        </h1>
+    </header>
+    <div class="d_content">
+      <section class="time">
+        <h2>出游时间</h2>
+        <div class="info">
+          {{json.date}}
+        </div>
+      </section>
+      <section class="list">
+        <h2>项目列表</h2>
+        <div class="info">
+          <div class="list_title">{{json.projectname}}</div>
+          <div class="list_info">
+            <p class="chengren" ng-repeat="projectcontent in json.projectcontent">
+              <span>{{projectcontent.name}}</span>
+              <span>￥{{projectcontent.price}}</span>
+              <span>×{{projectcontent.num}}</span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="member">
+        <h2>主要成员</h2>
+        <div class="info" ng-repeat="member in json.member">
+          <p>
+            <span class="member_title">姓名</span>
+            <span class="member_info">{{member.name}}</span>
+          </p>
+          <p>
+            <span class="member_title">身份证</span>
+            <span class="member_info">{{member.card}}</span>
+          </p>
+          <p>
+            <span class="member_title">手机号码</span>
+            <span class="member_info">{{member.phone}}</span>
+          </p>
+          <p class="noborder">
+            <span class="member_title">邮箱</span>
+            <span class="member_info">{{member.email}}</span>
+          </p>
+        </div>
+      </section>
+      <section class="accompany">
+        <h2>随行人员（6人）</h2>
+        <div class="info">
+          <p ng-repeat="entourage in json.entourage">
+            <span class="lname">{{entourage.name1}}</span>
+            <span class="mname">{{entourage.name2}}</span>
+            <span class="rname">{{entourage.name3}}</span>
+          </p>
+        </div>
+      </section>
+      <section class="liststate">
+        <h2>订单状态</h2>
+        <div class="info" ng-repeat="order in json.order">
+          <p>订单编号：{{order.id}}</p>
+          <p>创建时间：{{order.date}}</p>
+          <p>处理时间：{{order.deal}}</p>
+          <p>付款时间：{{order.paydate}}</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>

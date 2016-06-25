@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>index</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="./css/agent/css/leftside.css">
+  <script src="./css/agent/script/jquery-1.11.3.min.js"></script>
+  <!--[if lt IE 9]>
+  <script src="dist/js/html5.js"></script>
+  <script src="dist/js/respond.js"></script>
+  <![endif]-->
+<frameset cols="20%,*" scrolling="no" noresize="no" border="0">
+  <frame name="index" id="index" src="homeleft.html" scrolling="auto" noresize="no" border="0" style="overflow-x:hidden;overflow-y:hidden;">
+  <frame name="content" src="home.html">
+</frameset>
+<noframes>
+    <body>
+      <p>您的浏览器不支持框架,请更换相应的浏览器</p>
+    </body>
+</noframes>
+</html>

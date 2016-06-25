@@ -1,0 +1,88 @@
+	<div id="myorderdetail">
+		<header class="t_bar">
+			<h1>我的订单详情<a href="javascript:history.back(-1);"><i class="iconfont h_left h_20">&#xe61f;</i></a></h1>
+		</header>
+		<div class="content pt_45">
+			
+			<div class="sec_info" style="margin: 16px;">
+				<div class="sec_info_border">
+					<a ng-href="#/tuijiandetail_1/01">
+			    <div class="sec_con">
+			        <div class="info_pic">
+			            <img ng-src="{{json.imgs}}" alt="...">
+			        </div>
+			        <div class="info_txt">
+			            <p class="info_title">{{json.zhuti}}</p>
+			            <p class="info_con">
+			                <span class="info_danjia">单价：{{json.danj}}元</span>
+			                <span class="info_count">数量：{{json.shuliang}}</span>
+			            </p>
+			        </div>
+			    </div>
+					</a>
+			    <div class="conform">
+			        <span>{{json.butt}}</span>
+			    </div>
+				</div>
+				<span class="icon_triangle tip_chuli">{{json.zt}}</span>			    
+			</div>
+
+			<h2 class="h2_tit">出发时间</h2>
+			<section class="list">
+				<p class="p_list"><span class="side_tit">{{json.time}}</span><i class="iconfont h_right h_14">&#xe634;</i></p>
+			</section>
+
+
+			<h2 class="h2_tit">项目列表</h2>
+			<section class="list project">
+				<div class="b_border" ng-repeat="jb in json.detail">
+					<div class="list_title">{{jb.menpiao}}<i class="iconfont">&#xe635;</i></div>
+					<div class="list_info" ng-repeat="js in jb.piao">
+						<p><span class="w_50">{{js.name}}</span><span class="w_30">{{js.price}}</span><span class="w_20 r_txt">{{js.shu}}</span></span></p>
+						<div class="line"></div>
+					</div>
+				</div>	
+			</section>
+
+
+			<h2 class="h2_tit">主要联系人</h2>
+			<section class="list relation">
+				<p class="p_list b_border"><span class="side_tit">姓名</span>{{json.name}}</p>
+				<p class="p_list b_border"><span class="side_tit">身份证</span>{{json.shengfz}}</p>
+				<p class="p_list b_border"><span class="side_tit">手机号码</span>{{json.ple}}</p>
+				<p class="p_list"><span class="side_tit">邮箱</span>{{json.emila}}</p>
+			</section>
+
+			<h2 class="h2_tit">随行人员</h2>
+			<section class="list members">
+				<p class="p_list b_border" ng-repeat="cl in json.personnel"><span class="w_33" ng-repeat="cc in cl.ren">张伟</span></p>
+			</section>
+
+
+			<h2 class="h2_tit">出行保障</h2>
+			<section class="list safeguard">
+				<a href=""><p class="p_list"><span class="side_tit w_33">总价{{json.zongj}}</span><span class="unit_price">单价{{json.dj}}&nbsp;&nbsp;&nbsp;&nbsp;{{json.rshu}}</span><i class="iconfont h_right h_14">&#xe634;</i></p></a>
+			</section>
+
+
+			<h2 class="h2_tit">合计价格</h2>
+			<section class="list">
+				<p class="p_list"><span class="side_tit w_33">{{json.price}}</span></p>
+			</section>
+
+			<h2 class="h2_tit">订单状态</h2>
+			<section class="list orderstate b_border">
+				<p>订单编号：{{json.dingdanh}}</p>
+				<p>创建时间：{{json.cjtime}}</p>
+				<p>处理时间：{{json.chulitime}}</p>
+				<p>付款时间：{{json.fuktime}}</p>
+			</section>
+
+			<p class="require">支付</p>
+
+			<div class="border_btn">
+				<a href="javascript:;">取消</a>
+			</div>
+		</div>
+		
+	</div>

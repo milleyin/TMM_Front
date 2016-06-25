@@ -1,0 +1,40 @@
+<!-- 验证手机号 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner tmm-verify-phone-inner" id="draw-money-phone-navbar">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">验证手机号</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div  data-page="draw-money-phone" class="page tmm-modify-phone-page tmm-verify-phone-page">
+    <div class="set-old-phone-wrap">
+      <div class="txt">验证码将发送至手机: {{phone}},请按提示操作。</div>
+      <form class="list-block tmm-setPhone-list-Form tmm-verifyPhone-list-Form">
+        <ul>
+          <li class="item-content" style="display:none;">
+            <div class="item-inner">
+              <div class="item-title label tmm-setPhone-errlabel">错误信息</div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner tmm-setPhone-item-inner tmm-verifyPhone-item-inner">
+              <div class="item-input item-title-con">
+                <input type="text" name="sms_code" id="sms_code_money" placeholder="填写验证码" class="setPhoneInput">
+                <span class="activity get_code" id="get_sms_code_money">获取验证码</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="bg_btn mob_btn">
+          <button type="button" class="sub_btn disabled" id="draw-money-submit">完成</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

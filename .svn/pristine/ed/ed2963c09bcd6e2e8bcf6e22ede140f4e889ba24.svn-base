@@ -1,0 +1,51 @@
+<div id="myfinance">
+  <header>
+    <h1 class="top-nav">我的财务情况
+          <a href="javascript:history.back(-1);"><i class="iconfont h_left h_pic">&#xe61f;</i></a>
+          <a href="#/tixianjilu"><span class="h_right h_text">提现记录</span></a> 
+        </h1>
+  </header>
+  <div class="m_content">
+    <div class="shouru con_row">
+      <!-- <a href="#/totalincome/01"> -->
+        <p>收入总额
+          <span class="jinger">￥{{status==0?'0':json.total}}</span>
+          <!-- <i class="iconfont h_right jiantou">&#xe634;</i> -->
+        </p>
+     <!--  </a> -->
+    </div>
+    <div class="tixian con_row">
+      <div>
+        <a href="#/totalincome">
+          <p>
+            可提现现金
+            <span class="jinger">￥{{status==0?0:json.money}}</span>
+            <i class="iconfont h_right jiantou">&#xe633;</i>
+          </p>
+        </a>
+        <hr ng-if="!$last">
+      </div>
+      <div>
+        <p>
+          已提现现金
+          <span class="jinger">￥{{status==0?'0':json.cash_count}}</span>
+          <!--<a href="#/totalincome/03">
+            <i class="iconfont h_right jiantou">&#xe633;</i>
+          </a>-->
+        </p>
+        <hr ng-if="!$last">
+      </div>
+      <div>
+        <a href="#/baozhengjin/04">
+        <p>
+          剩余保证金
+          <span class="jinger">￥{{status==0?'0':json.deposit}}</span>
+          
+          <i class="iconfont h_right jiantou">&#xe633;</i>
+        </p>
+        </a>
+        <hr ng-if="!$last">
+      </div>
+    </div>
+  </div>
+</div>

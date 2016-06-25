@@ -1,0 +1,91 @@
+/**
+ * CSS styles for CLinkPager.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2010 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ * @since 1.0
+ */
+
+ul.yiiPager
+{
+	font-size:12px;
+	border:0;
+	margin:0;
+	padding:0;
+	line-height:100%;
+	display:inline;
+}
+
+ul.yiiPager li
+{
+	display:inline;
+	line-height:12px;
+	margin:0 0 !important;
+	margin-right: 0px!important;
+}
+
+ul.yiiPager a:link,
+ul.yiiPager a:visited
+{
+	border:1px solid #181515;
+	color:#fff;
+	padding: 5px 5px;
+	text-decoration:none;
+	background-color: #655a58;
+}
+
+ul.yiiPager .page a
+{
+	font-weight:normal;
+}
+
+ul.yiiPager a:hover
+{
+	background:#fff;
+	color:#655a58;
+
+}
+
+ul.yiiPager .selected a
+{
+	background:#fff;
+	color:#655a58;
+	font-weight:bold;
+}
+
+ul.yiiPager .hidden a
+{
+	border:solid 1px #DEDEDE;
+	color:#888888;
+}
+
+/**
+ * Hide first and last buttons by default.
+ */
+ul.yiiPager .first,
+ul.yiiPager .last
+{
+	display:none;
+}
+/* 清除一些bootstrap分页的样式 */
+.pager {
+    margin: 0 0;
+    display: inline-block;
+    float: right;
+}
+.pager .previous>a, .pager .previous>span {
+	float: none;
+}
+.pager li>a, .pager li>span{
+  display: inline;
+	border-radius: 1px;
+}
+.pager .next>a, .pager .next>span {
+    float: none;
+}
+.pager_box{
+	  float: right;
+    margin-right: 2%;
+}

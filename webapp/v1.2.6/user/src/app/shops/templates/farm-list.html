@@ -1,0 +1,17 @@
+<ion-view view-title="田觅觅" hide-tabs="true">
+  <ion-nav-buttons side="left">
+    <i class="icon-back" nav-back="back"></i>
+  </ion-nav-buttons>
+  <ion-nav-title>农产品特产</ion-nav-title>
+  <ion-content>
+    <div class="cellcard" ng-repeat="item in model" ui-sref="tab.fresh-item({link:item.item_link, name:item.item_name})">
+      <div class="innerbody">
+        <div class="img"><img ng-src="{{item.item_img}}"></div>
+        <div class="intro">
+          <div class="tit">{{item.item_name}}</div>
+          <div class="txt txt-clamp">{{item.item_info}}</div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

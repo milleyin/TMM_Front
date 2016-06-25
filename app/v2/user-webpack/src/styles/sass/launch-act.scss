@@ -1,0 +1,128 @@
+@charset "UTF-8";
+@import 'variables';
+@import 'mixin';
+
+.tmm-act-right {
+  color: $gray;
+  font-size: 14px;
+}
+.tmm-activity-card-list {
+  position: relative;
+}
+
+.tmm-my-act-card {
+  @include hairline(topBottom);
+  margin: 16px 0;
+  background: #fff;
+  position: relative;
+  border-radius: 2px;
+  font-size: 14px;  
+  
+  .card-content {
+    position: relative;
+    height: 106px;
+    padding-bottom: 6px;
+    overflow: hidden;
+    top: 16px;
+
+    .act-img {
+      width: 75px;
+      height: 75px;
+      position: absolute;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+      }
+    }
+
+    .act-content {
+      margin-left: 85px;
+      line-height: 20px;
+      color: #565a5c;
+      font-size: 14px;
+
+      .con-title {
+        line-height: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        color: $darkGray;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .con-info {
+        margin-top: 8px;
+
+        .info-line {
+          display:inline-flex;
+
+          .info-price {
+            margin-right: 10px;
+          }
+        }
+
+        span {
+          color: $gray;
+          font-size: 13px;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .act-cancel {color: $lightGray}
+        .act-end { color: #ff4c52;}
+        .act-in { color: #5fb336;}
+      }
+    }
+  }
+
+  .tmm-act-fail {
+    background-color: #f0f1f2;
+    padding: 10px 5px;
+    border-radius: 5px;
+    bottom: 11px;
+    position: relative;
+
+    .act-fail-title {
+      font-size: 14px;
+      color: $darkGray;
+      font-weight: bold;
+    }
+    .act-fail-res {
+      font-size: 13px;
+      color: $gray;
+      word-break: break-all
+    }
+  }
+
+  .tmm-my-activity-btn{
+    @include hairline(top);
+    .tmm-card-footer{
+      width: 100%;
+      padding: 10px 0;
+      text-align: right;
+      right: 16px;
+      position: relative;
+
+      a.button {
+        display: inline-block;
+        color: $gray;
+        border: 1px solid $lightGray;
+        min-width: 70px;
+        margin-left: 7px;
+        border-radius: 5px;
+      }
+
+      .btn-act-cancel {
+        color: #ff595f;
+        border: 1px solid #ff595f;
+      }
+    }
+  }
+
+}
+

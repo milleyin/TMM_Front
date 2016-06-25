@@ -1,0 +1,63 @@
+  <div id="myorderdetail">
+    <h1 class="top-nav">我的订单详情
+      <a href="javascript:history.back(-1);" class="iconfont h_left h_pic">&#xe61f;</a>
+
+    </h1>
+    
+    <div class="m_content">
+    
+      <section class="time">
+        <h2>出游时间</h2>
+        <div class="info">{{json.go_time}}</div>
+      </section>
+
+      <h2 class="h2_tit">项目列表</h2>
+
+      <div class="line_list">
+        <div ng-repeat="(key,value) in json.items_fare">
+          <div ng-class="key == 1?'day_num no_t_border':'day_num'">{{dayNumer[key-1]}}</div>
+          <section class="list project" ng-repeat="attr in value">       
+          
+            <div class="b_border" ng-repeat="attr1 in attr" class="list-content">
+
+              <div class="list_title">{{attr1.name}}<!-- <i ng-if="attr1.barcode.is_barcode==1?true:false" ng-click="showCode(attr1.barcode.link)" class="iconfont h_right h_20">&#xe635;</i> -->
+                <span class="consumption_already h_right" ng-if="attr1.barcode.is_barcode!=1">{{attr1.barcode.barcode_name}}</span>
+                <span ng-if="attr1.barcode.is_barcode==1?true:false" class="consumption h_right" ng-click="sendCode(attr1.barcode.barcode)">确认消费</span></div>
+                      <div class="list_info" ng-repeat="attr2 in attr1.fare" ng-if="attr2.number != 0">
+                <div>
+                  <span class="w_40">{{attr2.name}}</span>
+                  <span class="w_20" ng-if="attr1.classliy.value!=2">{{attr2.info}}</span>
+                  <span class="w_20" ng-if="attr1.classliy.value==2">{{attr2.room_number}}人间</span>
+                  <span class="w_10">{{attr2.number}}</span><span class="w_20 lastspan r_txt">￥{{attr2.count}}</span>
+                </div>
+                
+              </div>
+            </div>
+              
+          </section>
+          
+        </div>
+        
+      </div>
+
+      <section class="pep">
+        <h2>觅趣联系人</h2>
+        <div class="info">
+          <div class="info_n">
+            <p>
+            <span>姓名：{{json.actives_organizer.name}}</span>
+            <span>性别：{{json.actives_organizer.gender}}</span>
+            <span class="no_mr">手机号：{{json.actives_organizer.phone}}</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="liststate">
+        <h2>订单状态</h2>
+        <div class="info">
+          <p>觅趣编号：{{json.actives_info.actives_no}}</p>
+          <p>实际出游人数：{{json.actives_info.user_go_count.value}}</p>
+        </div>
+      </section>
+    </div>
+  </div>

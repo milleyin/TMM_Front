@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>荔枝节</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body class="index-list-more">
+  <div class="nav">
+    <div class="wrap-button">
+      <div class="nav-item">茄子笑</div>
+      <div class="nav-item active">桂味</div>
+    </div>
+  </div>
+  <div class="list-item">
+    <div class="media">
+      <img src="images/culture.png">
+      <div class="intro-box">
+        <div class="title">天美品荔券·妃子笑</div>
+        <div class="price">￥38</div>
+        <div class="txt">入园门票1张</div>
+      </div>
+    </div>
+    <div class="intro">
+      <div class="txt">1人入园，妃子笑区域任摘任吃</div>
+      <div class="txt">使用日期：2016/6/10至2016/7/20</div>
+      <a class="button">购买</a>
+    </div>
+  </div>
+  <div class="list-item">
+    <div class="media">
+      <img src="images/culture.png">
+      <div class="intro-box">
+        <div class="title">天美品荔券·妃子笑</div>
+        <div class="price">￥38</div>
+        <div class="txt">入园门票1张</div>
+      </div>
+    </div>
+    <div class="intro">
+      <div class="txt">1人入园，妃子笑区域任摘任吃</div>
+      <div class="txt">使用日期：2016/6/10至2016/7/20</div>
+      <a class="button">购买</a>
+    </div>
+  </div>
+  <div class="list-item">
+    <div class="media">
+      <img src="images/culture.png">
+      <div class="intro-box">
+        <div class="title">天美品荔券·妃子笑</div>
+        <div class="price">￥38</div>
+        <div class="txt">入园门票1张</div>
+      </div>
+    </div>
+    <div class="intro">
+      <div class="txt">1人入园，妃子笑区域任摘任吃</div>
+      <div class="txt">使用日期：2016/6/10至2016/7/20</div>
+      <a class="button">购买</a>
+    </div>
+  </div>
+</body>
+
+</html>

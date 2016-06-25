@@ -1,0 +1,487 @@
+ /**************************************************************************/
+ /**
+ * 活动 --》订单详情
+ */
+.tmm-side-tit{
+	font-size:15px;
+	color:#111;
+}
+.tmm-activity-order-list{
+	line-height: 20px !important;
+    padding-top: 10px;
+}
+
+.tmm-activity-order-list {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 0px;
+  color: #858b8f;
+  white-space: nowrap;
+}
+.tmm-activity-li{
+	overflow:hidden;
+}
+
+.tmm-activity-order-list .activity-order-list{
+  font-size: 14px;
+  color: #858b8f;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom:10px;
+}
+.tmm-activity-order-list .activity-order-list:nth-child(1) {
+  width: 50%;
+}
+.tmm-activity-order-list .activity-order-list:nth-child(2) {
+  width: 50%;
+}
+
+.tmm-activity-order-status p{
+	font-size:13px;
+	padding:0px 6px;
+}
+.tmm-activity-main-retinue{    
+	background-color: #FFFFFF;
+    padding: 10px 10px;
+    font-size: 13px;
+    line-height: 25px;
+    color: #565a5c;
+	margin-bottom:75px;
+}
+h2{margin: 0px; padding: 0px;font-weight: normal;}
+.h2_tit {height: 20px;background-color: #f0f1f2;font-size: 13px;color: #858b8f;}
+.h2_tit,.h2_day {position: relative;padding-left:16px;}
+.h2_day {height: 39px;padding: 0px;}
+.icon_day {position: absolute;left: 50%;bottom: 10px;margin-left: -24px;padding: 4px 6px;background-color: #5fb336;color: #fff;font-size: 11px;line-height: 11px;}
+.icon_day:after {content:"";height: 10px;width: 1px;position: absolute;bottom: -10px;left: 50%;background-color: #5fb336;}
+.h2_day .icon_day:before {content:"";height: 10px;width: 1px;position: absolute;top: -10px;left: 50%;background-color: #5fb336;}
+
+.tmm-activity-li .tmm-order-status,
+.tmm-activity-li .tmm-order-status span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 36px;
+  width: 36px;
+}
+/*.tmm-activity-li .tmm-order-status */.tmm-icon-triangle{
+	position: absolute;
+    top: -4px;
+    right: -20px;
+    width: 60px;
+    height: 12px;
+    font-size: 9px;
+    text-align: center;
+    padding-top: 15px;
+    color: #fff;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+/*.tmm-activity-li .tmm-order-status */.tmm-tip-gray{background-color: #858b8f;}
+/*.tmm-activity-li .tmm-order-status */.tmm-tip-fukuan {background-color: #ff0054;}
+/*.tmm-activity-li .tmm-order-status */.tmm-tip-chuli {background-color: #00aaff;}
+/*.tmm-activity-li .tmm-order-status */.tmm-tip-xiaofei {background-color: #14cc14;}
+
+ /**************************************************************************/
+ /**
+ * 活动 --》详情
+ */
+.tmm-activity-main-order{    
+	background-color: #FFFFFF;
+    padding: 10px 10px;
+    font-size: 13px;
+    line-height: 25px;
+    color: #565a5c;
+}
+
+.tmm-activity-button{
+	display: inline-block;
+    width: 40%;
+    margin: 0 10px;
+    font-size: 15px;
+
+    padding: 8px 0px;
+    line-height: 15px;
+    border-radius: 2px;
+	
+
+    color: #ff595f;
+    border: 1px solid #ff595f;
+
+    border-radius: 0px;
+}
+
+ /**************************************************************************/
+ /**
+ * 活动 --》状态详情
+ */
+.tmm-activity-state-item-fare {
+	position: relative;
+	-webkit-box-sizing: border-box;
+	white-space: nowrap;
+}
+
+.tmm-activity-state-item-fare .activity-state-item-fare, .tmm-activity-state-item-fare .activity-state-fail-item-fare,.tmm-activity-state-item-fare .activity-state-item-fare-date {
+	font-size: 12px;
+	color: #858b8f;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 12px;
+}
+.tmm-activity-state-item-fare .activity-state-fail-item-fare:nth-child(1) {
+	width: 50%;
+}
+
+.tmm-activity-state-item-fare .activity-state-fail-item-fare:nth-child(2) {
+	width: 50%;
+}
+
+.tmm-activity-state-item-fare .activity-state-item-fare:nth-child(1) {
+	width: 50%;
+}
+
+.tmm-activity-state-item-fare .activity-state-item-fare:nth-child(2) {
+	width: 50%;
+}
+
+.tmm-activity-state-item-fare .activity-state-item-fare-date {
+	width: 100%;
+}
+
+.tmm-activity-state-list-block {
+	margin: 0px 0px 16px 0px !important;
+	font-size: 13px;
+	color: #0C6;
+}
+
+.tmm-activity-wrap-title {
+	text-align: left;
+	padding: 0px 0px 0px 16px;
+	line-height: 25px;
+}
+
+.tmm-activity-go-item {
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	bottom: 0px;
+	font-size: 16px;
+	line-height: 44px;
+	text-align: center;
+	background-color: rgba(95, 179, 54, 0.901961);
+	z-index: 1;
+	-webkit-box-sizing: border-box;
+	white-space: nowrap;
+}
+
+.tmm-activity-state-button {
+	color: #fff;
+	width: 50%;
+	display: inline-block;
+	/*border-right: 1px solid #fff;*/
+}
+.tmm-activity-state-button-col3 {
+	color: #fff !important;
+	width: 33%;
+	display: inline-block;
+	/*border-right: 1px solid #fff;*/
+}
+.tmm-activity-go-item a:nth-child(3) { border-left: 1px solid #fff; }
+.banner.tmm-item-content {
+  float: none;
+}
+.tmm-item-content .txt .type.red{
+	background-color:red;
+}
+.tmm-item-content .txt .type.gray{
+	background-color:#858b8f;
+}
+
+/*唐亚敏增加*/
+.tmm-activity-state-button_all{
+  color: #fff !important;
+}
+.show-activity-enroll-info{
+	font-size:14px;
+}
+.tmm-card .card-header-enrolll{
+	font-size:14px !important;
+}
+.tmm-item-title-color{
+	color:#858b8f;
+}
+.go-item a{ color:#FFF;}
+.tmm-go-item,.tmm-activity-go-item-suc, .tmm-activity-go-item-suc-col3{
+	font-size:16px !important;
+}
+
+.tmm-activity-go-item-suc, .tmm-activity-go-item-suc-col3{
+	position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    font-size: 18px;
+    line-height: 40px;
+    background-color: rgba(87, 163, 49, 0.9);
+    z-index: 1;
+	display:inline-block;
+}
+.tmm-activity-go-item-suc-col3 a{
+	width:32%;
+	text-align:center;
+	float:left;
+	color:#fff;
+}
+.tmm-activity-go-item-suc a{
+	width:49%;
+	text-align:center;
+	float:left;
+	color:#fff;
+}
+.tmm-activity-go-item-suc a:nth-child(1), .tmm-activity-go-item-suc-col3 a:nth-child(1),.tmm-activity-go-item-suc-col3 a:nth-child(2){ border-right: 1px solid #fff; }
+.go-item-suc-bg{background-color:transparent !important;}
+.tmm-activity-go-item-suc .price{color: #fff;background-color: #61cc13;border-right:none;}
+.tmm-activity-go-item-suc .submit-btn{color: #fff; background-color: #ff595f;float: right; width:50%;}
+.submit-select-item-color{color: #fff; background-color: #ff595f !important;}
+
+/**
+活动详情
+*/
+.tmm-activity-item-content:before {
+  content: '';
+  position: absolute;
+  /*height: 1px;*/
+  width: 100%;
+  background-color: #d7d9d7;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  z-index: 15;
+}
+
+.tmm-activity-item-content .pic img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.tmm-activity-item-content .txt {
+  padding: 15px 16px 15px;
+  position: relative;
+}
+
+.tmm-activity-item-content .txt .title {
+  font-size: 17px;
+  line-height: 17px;
+  color: #313131;
+}
+
+.tmm-activity-item-content .txt .intro {
+  font-size: 12px;
+  line-height: 12px;
+  color: #858b8f;
+  margin-top: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 85%;
+  text-overflow: ellipsis;
+}
+
+.tmm-activity-item-content .txt .type {
+  font-size: 11px;
+  line-height: 11px;
+  position: absolute;
+  right: 16px;
+  top: -8px;
+  padding: 4px 9px;
+  color: #fff;
+  border-radius: 2px;
+}
+.tmm-activity-item-content .txt .red{
+	background-color:#ff595f;
+}
+.tmm-activity-dot-detail {
+  background-color: #fff;
+}
+
+.tmm-activity-dot-detail .banner {
+  width: 100%;
+  position: relative;
+  height: 55%;
+}
+
+.tmm-activity-dot-detail .banner img {
+  width: 100%;
+  vertical-align: middle;
+  height: 100%;
+  position: absolute;
+}
+
+.tmm-activity-dot-detail .wrap {
+  padding: 0 16px;
+  text-align: center;
+}
+
+.tmm-activity-dot-detail .wrap .info {
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+.tmm-activity-dot-detail .wrap h2 {
+  font-size: 20px;
+  /*margin: 25px 0px 10px;*/
+  font-weight: bold;
+  line-height: 20px;
+}
+
+.tmm-activity-dot-detail .wrap .state {
+  font-size: 13px;
+  color: #858b8f;
+}
+
+.tmm-activity-dot-detail .wrap .showmore {
+   	display: inline-block;
+    margin: 20px 0px 25px 0px;
+    font-size: 8px;
+    background-color: #fff;
+    color: #ff595f;
+    height: 8px;
+    line-height: 8px;
+}
+.tmm-activity-dot-detail .wrap .showmore span:nth-child(2){
+	padding:0px 5px;
+}
+
+.tmm-activity-dot-detail .wrap img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.tmm-activity-line-detail .line-day-tit {
+  margin-top: 30px;
+}
+
+.tmm-activity-line-detail .line-day-tit .bright {
+  position: relative;
+  font-size: 16px;
+  padding-bottom: 10px;
+  color: #000;
+  word-break: break-word;
+}
+
+.tmm-activity-line-detail .line-day-tit .bright:after {
+  content: "";
+  border: 1px solid #5fb336;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  border-radius: 100%;
+  top: 100%;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -4px;
+}
+
+.tmm-activity-line-detail .line-day-tit .day {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 11px;
+  padding: 4px 6px;
+  margin: 32px auto;
+  background-color: #5fb336;
+  color: #fff;
+  position: relative;
+  border-radius:4px;
+}
+
+.tmm-activity-line-detail .line-day-tit .day:before {
+  content: "";
+  height: 28px;
+  position: absolute;
+  width: 1px;
+  bottom: 100%;
+  left: 50%;
+  background-color: #5fb336;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+}
+
+.tmm-activity-line-detail .line-day-tit .day:after {
+  content: "";
+  height: 28px;
+  position: absolute;
+  width: 1px;
+  top: 100%;
+  left: 50%;
+  background-color: #61cc13;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+}
+
+.tmm-activity-line-detail .info .tit {
+  margin-top: 10px;
+}
+
+.tmm-activity-line-detail .info:last-of-type {
+  padding-bottom: 0px;
+}
+
+#my-activity-detail-fail-page{
+	background-color:#fff;
+}
+.tmm-accordion-item-content{
+	height:44px !important;
+	/*white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;*/
+}
+.tmm-item-content-height{
+	height:auto;
+}
+.tmm-item-dispense{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical
+}
+
+/**
+*二维码样式
+*/
+.tmm-popupQRcode{
+	position: fixed;
+    background: transparent;
+    border-radius: 5px;
+    z-index: 11000;
+    overflow: auto;
+    top: 65px;
+    bottom: 25px;
+	right:12px;
+	left:12px;
+    height: auto;
+}
+
+
+/* 活动简介样式 */
+.act-info-remark {
+  overflow: hidden;
+  padding: 0 16px;
+}
+.act-info-remark p {
+  line-height: 1.5em;
+  margin-bottom: 4px;
+}
+
+.icon.ticon-expand {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}

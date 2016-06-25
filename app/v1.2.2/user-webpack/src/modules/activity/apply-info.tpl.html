@@ -1,0 +1,88 @@
+<!-- 我发起的活动 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner tmm-my-activity-navbar">
+    <div class="left">
+      <a href="index.html" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">报名信息</div>
+    <div class="subnavbar tmm-seek-subbar tmm-select-line-subber">
+      <div class="buttons-row tmm-enroll-sublist">
+        <a date-type="1" data-link="{{enrollInfo.type_link.all}}" href="javascript:;" class="button active">全部</a>
+        <a date-type="2" data-link="{{enrollInfo.type_link.pay}}" href="javascript:;" class="button">已付款</a>
+        <a date-type="3" data-link="{{enrollInfo.type_link.go_yes}}" href="javascript:;" class="button">未付款</a>
+        <a date-type="4" data-link="{{enrollInfo.type_link.cancel}}" href="javascript:;" class="button">已取消</a>
+      </div>
+  </div>
+</div>
+<div class="pages navbar-through">
+  <div data-page="apply-info" class="page page-order" id="activity-enroll-info-page">
+    <div data-distance="50" class="page-content pull-to-refresh-content infinite-scroll" style="padding-top: 84px">
+      <div class="pull-to-refresh-layer" style="position: absolute;margin-top: 45px;">
+        <div class="preloader"></div>
+        <div class="pull-to-refresh-arrow"></div>
+      </div>
+
+      <div class="apply-tit tmm-apply-tit">
+        <div class="join">已参与人数：{{enrolTourCount}}人</div>
+        <div class="pay-content">已支付总额：{{enroltotal}}元</div>
+      </div>
+
+      <div class="activity-enroll-info-list">
+      {{#each enrollInfoList}}
+        <div class="card tmm-card">
+          <div class="card-header card-header-enroll">
+            <p>报名时间：<span class="time">{{add_time}}</span></p>
+          </div>
+          <div class="card-content">
+            <div class="card-content-inner tmm-enroll-detail-info" data-link = "{{link}}">
+              <span>主要联系人：{{main_retinue.name}}</span>
+              <span>手机：{{main_retinue.phone}}</span>
+              <span>订单金额：{{order_price}}元</span>
+              <span>参与人数：{{user_go_count}}人</span>
+            </div>
+          </div>
+          {{#js_compare "this.status.order_status.value =='0'"}}
+            <span class="tmm-icon-triangle tmm-tip-chuli" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span> 
+          {{/js_compare}} 
+          {{#js_compare "this.status.order_status.value =='1'"}}
+            <span class="tmm-icon-triangle tmm-tip-fukuan" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span> 
+          {{/js_compare}} 
+          {{#js_compare "this.status.order_status.value =='2'"}}
+            <span class="tmm-icon-triangle tmm-tip-xiaofei" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span> 
+          {{/js_compare}}
+          {{#js_compare "this.status.order_status.value =='3'"}}
+            <span class="tmm-icon-triangle tmm-tip-xiaofei" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span>
+          {{/js_compare}} 
+          {{#js_compare "this.status.order_status.value =='-1'"}}
+            <span class="tmm-icon-triangle tmm-tip-gray" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span>
+          {{/js_compare}}
+          {{#js_compare "this.status.order_status.value =='-2'"}}
+            <span class="tmm-icon-triangle tmm-tip-gray" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span>
+          {{/js_compare}}
+          {{#js_compare "this.status.order_status.value =='-3'"}}
+            <span class="tmm-icon-triangle tmm-tip-gray" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span>
+          {{/js_compare}}
+        </div>
+      {{/each}}
+      </div>
+
+      <div id="no-more"></div>
+    </div>    
+  </div>
+</div>

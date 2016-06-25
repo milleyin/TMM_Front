@@ -1,0 +1,164 @@
+<!-- 活动状态的详情页面 -->
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">活动详情</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, "data-page" contains page name -->
+  <div data-page="line-detail" class="page tmm-dot-detail tmm-line-detail" id="my-activity-detail-suc-page">
+    <div class="page-content">
+
+      <div class="banner tmm-item-content">
+
+        <div>
+          <img class="lazy" src="{{actStateSucObj.image}}" data-src="{{actStateSucObj.image}}">
+        </div>
+        <div class="txt">
+          <div class="title">{{actStateSucObj.name}}</div>
+          <div class="title">
+            <div class="tmm-activity-state-item-fare">
+              <span class="activity-state-item-fare">￥{{actStateSucObj.price}}起/人</span>
+              <span class="activity-state-item-fare">参与人数：{{js "this.actStateSucObj.actives_info.number.value - this.actStateSucObj.actives_info.order_number.value"}}/{{actStateSucObj.actives_info.number.value}}人</span>
+              
+            </div>
+            <div class="tmm-activity-state-item-fare">
+              <span class="activity-state-item-fare-date">出发日期：{{actStateSucObj.actives_time.go_time}}</span>
+            </div>
+          </div>
+          <div class="intro">{{actStateSucObj.list_info}}</div>
+          {{#js_compare "this.actStateSucObj.audit_status.value =='0' || this.actStateSucObj.audit_status.value =='-3'"}}
+            <span class="type red">{{actStateSucObj.audit_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.actStateSucObj.audit_status.value =='-1' || this.actStateSucObj.audit_status.value == '-4'"}}
+            <span class="type red">{{actStateSucObj.audit_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.actStateSucObj.audit_status.value =='1' && this.actStateSucObj.actives_status.value == '0'"}}
+            <span class="type red">{{actStateSucObj.actives_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.actStateSucObj.audit_status.value =='1' && this.actStateSucObj.actives_status.value == ''"}}
+             <span class="type red">{{actStateSucObj.audit_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.actStateSucObj.audit_status.value =='1' && this.actStateSucObj.actives_status.value == '1'"}}
+            <span class="type red">{{actStateSucObj.actives_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.actStateSucObj.audit_status.value =='1' && this.actStateSucObj.actives_status.value == '2'"}}
+            <span class="type red">{{actStateSucObj.actives_status.name}}</span>
+          {{/js_compare}}
+
+          {{#js_compare "this.actStateSucObj.audit_status.value =='1' && this.actStateSucObj.actives_status.value == '3'"}}
+            <span class="type red">{{actStateSucObj.actives_status.name}}</span>
+          {{/js_compare}}
+          <!-- <span class="type gray">
+            已结束
+          </span> -->
+        </div>
+        <div class="list-block tmm-activity-state-list-block">
+          <ul>
+            <li class="item-content item-link show-act-enroll-info"  data-link="{{actStateSucObj.actives_info.order_list}}" data-total="{{actStateSucObj.actives_info.total.value}}" data-tourCount='{{js "this.actStateSucObj.actives_info.number.value - this.actStateSucObj.actives_info.order_number.value"}}'>
+              <div class="item-inner">
+                <div class="item-title show-activity-enroll-info">查看报名信息</div>
+                <div class="item-after sett-canter-font"></div>
+              </div>
+            </li>
+            <li class="item-content item-link show-more-act">
+              <div class="item-inner">
+                <div class="item-title">查看更多活动信息</div>
+                <div class="item-after sett-canter-font"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      
+
+      <!-- 活动详情 -->
+      <div class="wrap">
+
+        {{#each actStateSucObj.items_fare}}
+          <div class="line-day">
+            <!-- 日程亮点 -->
+            <div class="line-day-tit">
+              <div class="bright">{{../this.actStateSucObj.day_info.@key}}</div>
+              <div class="day">{{showDay @key}}</div>
+            </div>
+            {{#each this}}
+              {{#each this}}
+              <!-- 项目类容 -->
+              <section class="info">
+                <h2 class="tit">{{name}}</h2>
+                <div class="img">
+                  <a class="tmm-img-showmore act-detail-item" data-link="{{link}}" data-type="{{classliy.value}}" href="javascript:;">
+                    <img class="lazy lazy-fadein" data-src="{{image}}">
+                  </a>
+                </div>
+                <a href="javascript:;" data-link="{{link}}" data-type="{{classliy.value}}" class="showmore act-detail-item">查看更多</a>
+              </section>
+              {{/each}}
+            {{/each}}
+          </div>
+        {{/each}}
+
+      </div>
+      <!-- 活动详情 -->
+
+    </div>
+
+    {{#js_compare "this.actStateSucObj.audit_status.value =='-1' || this.actStateSucObj.audit_status.value == '-4'"}}
+    <div class="go-item tmm-go-item tmm-act-edit" data-shop-type="" data-shop-id="" data-link="{{editLink}}" data-type="{{actStateSucObj.tour_type.value}}">
+        <!-- <a class="tmm-activity-state-button" href="javascript:;">删除</a> -->
+        <a class="tmm-button" href="javascript:;">编辑</a>
+    </div>
+    {{/js_compare}}
+
+    {{#js_compare "this.actStateSucObj.set_go_time.link !='' && this.actStateSucObj.actives_status.value =='2'"}}
+    <div class="tmm-activity-go-item-suc-col3" data-shop-type="" data-shop-id="">
+        <a class="tmm-my-activity-suc-cancel" href="javascript:;">取消</a>
+        <a class="activityGoTimeSel" href="javascript:;" data-id="{{actStateSucObj.shops.value}}" data-link="{{actStateSucObj.set_go_time.link}}">确认出游日期</a>
+        <a class="tmm-my-activity-check-info" href="javascript:;">查看消费信息</a>
+    </div>
+    {{/js_compare}}
+
+    {{#js_compare "this.actStateSucObj.set_go_time.link !='' && this.actStateSucObj.actives_status.value !='2'"}}
+    <div class="tmm-activity-go-item-suc" data-shop-type="" data-shop-id="">
+        <a class="tmm-my-activity-suc-cancel" href="javascript:;">取消</a>
+        <a class="activityGoTimeSel" href="javascript:;" data-id="{{actStateSucObj.shops.value}}" data-link="{{actStateSucObj.set_go_time.link}}">确认出游日期</a>
+    </div>
+    {{/js_compare}}
+
+    {{#js_compare "(this.actStateSucObj.audit_status.value =='1' && this.actStateSucObj.actives_status.value == '0'&& this.actStateSucObj.actives_time.go_time_value == '1') || (this.actStateSucObj.audit_status.value =='1' && this.actStateSucObj.actives_status.value == '1' && this.actStateSucObj.actives_time.go_time_value == '1') || (this.actStateSucObj.audit_status.value =='1' && this.actStateSucObj.actives_status.value == '' && this.actStateSucObj.actives_time.go_time_value == '0')"}} 
+    {{#js_compare "this.actStateSucObj.actives_status.value =='1'"}}
+      <div class="tmm-activity-go-item-suc" data-shop-type="" data-shop-id="">
+    {{/js_compare}}
+    {{#js_compare "this.actStateSucObj.actives_status.value !='1'"}}
+      <div class="go-item tmm-go-item" data-shop-type="" data-shop-id="">
+    {{/js_compare}}
+        <a class="tmm-my-activity-suc-cancel" href="javascript:;">取消活动</a>
+    {{#js_compare "this.actStateSucObj.actives_status.value =='1'"}}
+        <a class="tmm-my-activity-check-info" href="javascript:;">查看消费信息</a>
+    {{/js_compare}}
+
+  	</div>
+	  {{/js_compare}}
+	
+	  {{#js_compare "this.actStateSucObj.actives_status.value =='2' && this.actStateSucObj.set_go_time.link ==''"}}
+    <div class="go-item tmm-go-item" data-shop-type="" data-shop-id="">
+      <a class="tmm-button tmm-my-activity-check-info" href="javascript:;">查看消费信息</a>
+    </div>
+	  {{/js_compare}}
+	  
+  </div>
+</div>

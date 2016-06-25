@@ -1,0 +1,15 @@
+{{#each recommend}}
+<li class="tmm-item-content">
+  <div class="pic">
+    <a href="pages/dot-detail.html#{{link}}"><img data-src="{{image}}" class="lazy lazy-fadein"></a>
+  </div>
+  <div class="txt">
+    <div class="title">{{name}}</div>
+    <div class="intro">{{info}}</div>
+    <span class="type {{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}">
+                {{classliy.name}}
+              </span>
+    <span class="praise"><i class="icon ticon-praise"></i><span class="num">{{collect_count}}</span></span>
+  </div>
+</li>
+{{/each}}

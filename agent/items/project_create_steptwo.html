@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>项目创建</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/breadcrumbs.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/step.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/form.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/box.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/style.css">
+  <script src="../css/agent/script/jquery-1.11.3.min.js"></script>
+  <!--[if lt IE 9]>
+  <script src="dist/js/html5.js"></script>
+  <script src="dist/js/respond.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div class="content_box" id="page_project_create">
+    <div class="breadcrumbs title">
+      <a href="project_index.html">项目</a> &frasl;
+      <span>项目创建</span>
+    </div>
+    <!--.title-->
+    <div class="create_nav modify_project_info">
+      <div class="create_steap_one four_steaps_width">
+        <a class="done">1</a>
+        <span class="text_done">选择归属商家</span>
+        <div class="line line_first done"></div>
+      </div>
+      <div class="create_steap_two four_steaps_width">
+        <a class="done">2</a>
+        <span class="text_done">填写项目信息</span>
+        <div class="line done"></div>
+      </div>
+      <div class="create_steap_three four_steaps_width">
+        <a class="undone">3</a>
+        <span class="text_undone">选择标签</span>
+        <div class="line undone"></div>
+      </div>
+      <div class="create_steap_five four_steaps_width">
+        <a class="undone">4</a>
+        <span class="text_undone">提交审核</span>
+        <div class="line line_last undone"></div>
+      </div>
+    </div>
+    <!-- .create_nav -->
+    <div class="content">
+      <div class="content_two">
+        <form method="post" method="post" action="" class="modify_project_info_form">
+          <div class="row-fluid project_type_row-fluid">
+            <label>项目类型：</label>
+            <select class="project_type">
+              <option selected>请选择</option>
+              <option>吃</option>
+              <option>住</option>
+              <option>玩</option>
+            </select>
+          </div>
+          <div class="row-fluid">
+            <label>项目名称：</label>
+            <div class="col_proname">
+              <input type="text" class="p_name" value="">
+              <div class="errorMessage">不可为空</div>
+            </div>
+          </div>
+          <div class="row-fluid address_group">
+            <label>详细地址：</label>
+            <div class="col-province">
+              <select class="province">
+                <option selected>省</option>
+                <option>广东省</option>
+                <option>山西省</option>
+                <option>安徽省</option>
+              </select>
+              <div class="errorMessage">不可为空</div>
+            </div>
+            <div class="col-city">
+              <select class="city">
+                <option selected>市</option>
+                <option>深圳市</option>
+                <option>广州市</option>
+              </select>
+              <div class="errorMessage">不可为空</div>
+            </div>
+            <div class="col-area">
+              <select class="area">
+                <option selected>区/县</option>
+                <option>福田区</option>
+                <option>南山区</option>
+              </select>
+              <div class="errorMessage">不可为空</div>
+            </div>
+            <div class="col-address">
+              <input type="text" class="address" value="" placeholder="请输入详细地址">
+              <div class="errorMessage">不可为空</div>
+            </div>
+          </div>
+          <div class="row-fluid address_uploading_group">
+            <div class="address_img">
+               <img src="../css/agent/images/items/modify_map.png">
+            </div>
+            <div class="file_normal">
+              <input type="file" class="uploading" value="上传图片">
+            </div>
+          </div>
+          <div class="row-fluid controls controls-fluid info_group">
+            <label class="text_top">商品信息：</label>
+            <div class="good_info">
+              <table class="good_info_table">
+                <tr>
+                  <th>名称</th>
+                  <th>类型</th>
+                  <th colspan="2">价格(元)</th>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="row-fluid col_name">
+                      <input type="text" class="table_box one" value="普通套餐">
+                      <div class="errorMessage">不可为空</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="row-fluid col_type">
+                      <input type="text" class="table_box two" value="小孩">
+                      <div class="errorMessage">不可为空</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="row-fluid col_price">
+                      <input type="text" class="table_box last" value="120">
+                      <button class="add_and_sub">+</button>
+                      <div class="errorMessage">不可为空</div>
+                    </div>
+                  </td>
+                  <!-- <td><button class="add_and_sub">+</button></td> -->
+                </tr>
+                <tr>
+                  <td>
+                    <div class="row-fluid col_name">
+                      <input type="text" class="table_box one" value="商品名称">
+                      <div class="errorMessage">不可为空</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="row-fluid col_type">
+                      <input type="text" class="table_box two " value="大人">
+                      <div class="errorMessage">不可为空</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="row-fluid col_price">
+                      <input type="text" class="table_box last" value="价格">
+                      <button class="add_and_sub">-</button>
+                      <div class="errorMessage">不可为空</div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="row-fluid do_time">
+            <label>营业时间：</label>
+            <div class="col-start">
+              <input type="text"  value="">
+              <div class="errorMessage">不可为空</div>
+            </div>
+            <div class="division"></div>
+            <div class="col-stop">
+              <input type="text"  value="">
+              <div class="errorMessage">不可为空</div>
+            </div>
+          </div>
+          <div class="row-fluid contact_group general_group">
+            <label>概况图：</label>
+            <div class="span7 general_uploading">
+              <div class="general_btn">
+                <div class="success">
+                  <input type="file" class="btn" value="上传图片" id="general_btn">
+                  <span>请上传不超过5M的png、jpg、jpeg、bmp图片</span>
+                </div>
+              </div>
+              <!-- <div class="general_img">
+              <img src="../css/agent/images/items/general_bg_1.png">
+            </div>  -->
+            </div>
+          </div>
+          <div class="row-fluid intro_group">
+            <label>餐厅简介：</label>
+            <div class="rich_text_editor">富文本编辑器</div>
+          </div>
+          <div class="clear"></div>
+          <div class="row-fluid">
+            <label class="text_top">联系方式：</label>
+            <div class="contact_group">
+              <div class="row-fluid phone_icon">
+                <input type="text">
+                <div class="errorMessage">不可为空</div>
+              </div>
+              <div class="weixin_icon">
+                <input type="text">
+                <div class="errorMessage">不可为空</div>
+              </div>
+            </div>
+          </div>
+          <div class="row-fluid-fluid enter">
+            <div class="span1"></div>
+            <input type="submit" value="下一步" id="fill_project">
+          </div>
+        </form>
+      </div>
+      <!-- .content_two -->
+    </div><!--  .content -->
+    <div class="copyright">
+      <span>Copyright &copy; TMM365.com All Rights Reserved</span>
+    </div>
+    <!--.copyright-->
+  </div>
+  <!--.content_box-->
+  <script src="../css/agent/script/functions.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $(".add_and_sub").click(function() {
+        return false;
+      })
+      //填写账号信息
+    $("#fill_project").click(function() {
+      window.location.href = "project_create_stepthree.html";
+      window.event.returnValue = false;
+    })
+    $("#general_btn").click(function() {
+      var $img = $("<div class='general_img'><img src='../css/agent/images/items/general_bg_1.png'></div>");
+      $(".general_uploading").append($img);
+    })
+  })
+  </script>
+</body>
+
+</html>

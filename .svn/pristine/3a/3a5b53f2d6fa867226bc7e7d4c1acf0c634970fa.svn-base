@@ -1,0 +1,7 @@
+i {
+  display: inline-block;
+}
+
+em {
+  display: block;
+}

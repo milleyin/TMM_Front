@@ -1,0 +1,10 @@
+<ion-view animation="no-animation" hide-nav-bar="true" view-title="田觅觅">
+
+<ion-content class="iframe">
+
+<iframe allowfullscreen="allowfullscreen" src="http://wap.koudaitong.com/v2/showcase/feature?alias=129wsjuci" frameborder="0" class="ng-scope" style="height: 100%;width: 100%;">
+</iframe>
+<div class="empty"></div>
+</ion-content>
+
+</ion-view>

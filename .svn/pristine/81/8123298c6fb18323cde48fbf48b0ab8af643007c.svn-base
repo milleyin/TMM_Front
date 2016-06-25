@@ -1,0 +1,34 @@
+<ion-view hide-tabs="true" cache-view="false">
+  <navbar title="填写觅趣信息" back></navbar>
+  <div class="act-indicator"><span class="active"></span><span class="active"></span><span class="active"></span><span class="active"></span></div>
+  <ion-content class="mysponsoract">
+    <div class="input-cell">
+      <div class="tit">觅趣名称：</div>
+      <input class="input-txt" ng-model="model.name" type="text">
+    </div>
+    <div class="input-cell">
+      <div class="tit">报名开始与结束：</div>
+      <input class="input-txt" ng-click="selectedDate()" ng-model="model.time" readonly placeholder="年/月/日 >" type="text">
+    </div>
+    <div class="input-cell">
+      <div class="tit">觅趣参与人数：</div>
+      <input class="input-txt" ng-model="model.number" type="tel">人</div>
+    <div ng-if="model.userInfo.is_organizer === '1' && model.userInfo.organizer.status !== '0'" class="input-cell">
+      <div class="tit">服务费</div>
+      <input class="input-txt" ng-model="model.tour_price" type="tel">元/人</div>
+    <div class="input-cell">
+      <div class="tit">觅趣公开性：</div>
+      <label class="input-txt">
+        <input class="checkbox" ng-model="model.is_close" type="checkbox"><span>私密</span>
+      </label>
+    </div>
+    <div class="mark"><span>注：</span>私密觅趣需要发起人邀请参与人加入</div>
+    <div class="act-edit">
+      <p class="intro">觅趣简介：</p>
+      <textarea ng-model="model.remark" class="act-edit-content" rows="5"></textarea>
+    </div>
+    <div class="f_button">
+      <div class="submit" ng-click="submit()">完成</div>
+    </div>
+  </ion-content>
+</ion-view>

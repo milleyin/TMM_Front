@@ -1,0 +1,18 @@
+<!-- 我发起的活动 -->
+<ion-view view-title="创建活动" cache-view="false" hide-tabs>
+  <ion-nav-buttons>
+    <i class="tmm-ion-left ion-android-arrow-back" ui-sref="tab.launch-act-seldot-schedule" nav-direction="back"></i>
+  </ion-nav-buttons>
+
+  <form name="signup_form" novalidate ng-submit="signupForm()">
+  <ion-content class="tmm-my-wallet">
+    <div class="tmm-create-canter">
+      <div class="tmm-cre-con-title">xcv 活动创建成功</div>
+      <div class="tmm-cre-con-fon">已提交至平台审核，1-3个工作日内审核完成，审核通过后活动才能上线。</div>
+      <div>联系平台加快审核：400-019-7090</div>
+    </div>
+  </ion-content>
+  </form>
+</ion-view>
+
+

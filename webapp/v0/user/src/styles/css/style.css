@@ -1,0 +1,564 @@
+/**************************************************************************/
+
+
+/**
+ * 公共css文件，公共的样式定义在这
+ */
+
+
+/***************************************************************************/
+
+body {
+  font-family: Helvetica, "华文细黑";
+  font-size: 14px;
+  background: #fff;
+  color: #000;
+  -webkit-overflow-scrolling: touch;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+p,
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+.gray {
+  color: #313131;
+}
+
+
+/****************overide ionic*******************************/
+
+.bar.tmm-bar {
+  border: none;
+  background: #fff;
+}
+
+.bar.tmm-bar:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #c4c4c4;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+
+/**************************************************************************/
+
+
+/**
+ * tab 栏
+ */
+
+
+/***************************************************************************/
+
+.tab-nav.tabs {
+  height: 50px;
+  line-height: 50px;
+  background: transparent;
+  background-color: #403A39;
+  opacity: 0.97;
+}
+
+.tab-item .icon {
+  font-size: 24px;
+  line-height: 35px;
+  color: #faecbd;
+  height: 30px;
+}
+
+.tab-item span {
+  color: #faecbd;
+  font-size: 10px;
+  line-height: 17px;
+}
+
+.has-tabs,
+.bar-footer.has-tabs {
+  bottom: 0;
+}
+
+.bar.bar-header {
+  /*background: #000000;*/
+}
+
+
+/**************************************************************************/
+
+
+/**
+ * my login
+ */
+
+
+/***************************************************************************/
+
+.tmm-my-content .tmm-login-list {
+  padding: 0;
+  margin-top: 0;
+}
+
+.tmm-my-content .tmm-login-item {
+  margin: 0;
+  padding: 0;
+  height: 70px;
+  line-height: 70px;
+  background: #ff595f;
+  border: none;
+  text-align: center;
+  color: #fff;
+}
+
+.tmm-my-content .tmm-header-item {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: #f0f2f0;
+}
+
+.tmm-my-content .tmm-header-item .tmm-header-logo,
+.tmm-my-content .tmm-header-item .tmm-header-tel {
+  float: left;
+}
+
+.tmm-my-content .tmm-header-item .tmm-header-exit {
+  float: right;
+  padding: 22px 15px 12px 0;
+  color: #5fb336;
+  font-size: 14px;
+  height: 70px;
+}
+
+.tmm-my-content .tmm-header-item .tmm-header-tel {
+  margin: 25px 0 0 15px;
+}
+
+.tmm-my-content .tmm-header-item .tmm-header-logo {
+  margin: 15px 0 15px 15px;
+  width: 40px;
+  height: 40px;
+}
+
+.tmm-my-content .tmm-menu-item {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tmm-my-content .tmm-menu-item .tmm-menu-row {
+  margin: 0;
+  padding: 0;
+}
+
+.tmm-my-content .tmm-menu-item .tmm-menu-row .col {
+  padding: 15px 0;
+  text-align: center;
+  border-right: 1px solid #d7d9d7;
+  border-bottom: 1px solid #d7d9d7;
+}
+
+.tmm-my-content .tmm-menu-item .tmm-menu-row .col:nth-child(3n) {
+  border-right: none;
+}
+
+.tmm-my-content .tmm-menu-item .tmm-menu-row i {
+  font-size: 30px;
+}
+
+.tmm-my-content .tmm-menu-item .tmm-menu-row p {
+  font-size: 12px;
+  color: #585858;
+}
+
+
+/**
+ * login page
+ * 
+/***************************************************************************/
+
+.tmm-login-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #3f3936;
+}
+
+.tmm-login-page .tmm-bg-img {
+  width: 100%;
+  height: 100%;
+  background: #3f3936 url(../../images/logo1.png) no-repeat 0 center;
+  background-size: 100%;
+}
+
+.tmm-login-page .tmm-login {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 48px;
+  text-align: center;
+  line-height: 48px;
+  background-color: #c8a063;
+}
+
+.tmm-login-page .tmm-login a {
+  position: relative;
+  display: inline-block;
+  width: 49%;
+  color: #111;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.tmm-login-page .tmm-login a.tmm-acc-login:after {
+  position: absolute;
+  top: 11px;
+  right: 0;
+  content: '';
+  width: 1px;
+  height: 26px;
+  background: #403a39;
+}
+
+.tmm-login-page .tmm-close {
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.tmm-login-page .tmm-close .icon {
+  color: #d7d9d7;
+  font-size: 20px;
+  padding: 15px 15px;
+}
+
+
+/**
+ * acc-login
+ */
+
+.tmm-acc-login-page {
+  background: #3f3936;
+}
+
+.tmm-acc-login-page .tmm-acc-login-wrap {
+  position: relative;
+  margin-top: 60px;
+}
+
+.tmm-acc-login-page .tmm-acc-login-wrap .item-input-wrapper {
+  padding: 0;
+  background: #fff;
+}
+
+.tmm-acc-login-page .tmm-acc-login-wrap .tmm-login-back {
+  position: absolute;
+  top: -45px;
+  left: 16px;
+  display: block;
+}
+
+.tmm-acc-login-page .tmm-acc-login-wrap .tmm-login-back i {
+  font-size: 25px;
+  color: #d7d9d7;
+}
+
+.tmm-acc-login-page .tmm-acc-login-wrap .tmm-list-button {
+  background: #3f3936;
+}
+
+.tmm-acc-login-page .tmm-acc-login-wrap button.tmm-acc-login-button {
+  margin: 0;
+  background-color: #ff595f;
+  border: none;
+  color: #fff;
+}
+
+.tmm-acc-login-page .tmm-acc-login-wrap .tmm-login-code {
+  text-align: center;
+  background-color: #ff595f;
+  font-size: 14px;
+  line-height: 27px;
+  color: #fff;
+  width: 107px;
+  height: 30px;
+  border: none;
+}
+
+
+/**
+ * recommend
+ * 
+/***************************************************************************/
+
+.tmm-recommend-list .tmm-recommend-item {
+  margin: -1px 0 0 0;
+  padding: 0;
+  border: none;
+  font-size: 14px;
+  color: #000;
+}
+
+.tmm-recommend-list .tmm-pic {
+  margin: 0;
+  padding: 0;
+}
+
+.tmm-recommend-list .tmm-pic img {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 0;
+}
+
+.tmm-recommend-list .tmm-txt {
+  padding: 15px 16px 13px;
+  position: relative;
+  background-color: #fff;
+}
+
+.tmm-recommend-list .tmm-txt .tmm-title {
+  font-size: 17px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.tmm-recommend-list .tmm-txt .tmm-b-border {
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.tmm-recommend-list .tmm-txt .tmm-b-border:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #d7d9d7;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.tmm-recommend-list .tmm-txt .tmm-info {
+  font-size: 12px;
+  line-height: 12px;
+  color: #666666;
+  margin-top: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 85%;
+  text-overflow: ellipsis;
+}
+
+.tmm-recommend-list .tmm-txt .tmm-praise {
+  position: absolute;
+  bottom: 20px;
+  right: 16px;
+  vertical-align: bottom;
+}
+
+.tmm-recommend-list .tmm-txt .tmm-praise-distance {
+  font-size: 10px;
+  color: #666;
+}
+
+.tmm-recommend-list .tmm-txt .tmm-type {
+  position: absolute;
+  top: -8px;
+  right: 1pc;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  border-radius: 2px 0 0 2px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  display: inline-block;
+}
+
+.tmm-recommend-list .tmm-txt .tmm-type.dot {
+  background-color: #13b0cc;
+}
+
+.tmm-recommend-list .tmm-txt .tmm-type.act {
+  background-color: #43aff4;
+}
+
+.tmm-recommend-list .tmm-txt .tmm-type.line {
+  background-color: #39ab53;
+}
+
+
+/**
+ * Shop dot
+ * 
+/***************************************************************************/
+
+.tmm-shop-dot-content {}
+
+.tmm-shop-dot-content .tmm-banner {
+  position: relative;
+}
+
+.tmm-shop-dot-content .tmm-img img {
+  width: 100%;
+  vertical-align: middle;
+  height: auto;
+}
+
+.tmm-shop-dot-content .tmm-mask {
+  position: absolute;
+  bottom: 0px;
+  display: inline-block;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  height: 50px;
+}
+
+.tmm-shop-dot-content .tmm-mask .tmm-praise,
+.tmm-shop-dot-content .tmm-mask .tmm-phone,
+.tmm-shop-dot-content .tmm-mask .tmm-share {
+  float: left;
+  width: 33%;
+  color: #fff;
+  margin: 0 auto;
+  margin-top: -2px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.tmm-shop-dot-content .tmm-mask .ticon-praise,
+.tmm-shop-dot-content .tmm-mask .ticon-share {
+  font-size: 32px;
+  display: block;
+}
+
+.tmm-shop-dot-content .tmm-phone img {
+  display: block;
+  vertical-align: middle;
+  margin: 0 auto;
+  width: 30px;
+  height: 32px
+}
+.tmm-shop-dot-content .tmm-dot-bg {
+  background-color: #efeff4;
+}
+.tmm-shop-dot-content .tmm-dot-info {
+  padding: 24px 35px 16px 15px;
+  background-color: #fff;
+}
+
+.tmm-shop-dot-content .tmm-dot-info .tmm-dot-title {
+  position: relative;
+  color: #000;
+  font-weight: bold;
+  font-size: 15px;
+  /*padding: 15px 15px;*/
+}
+
+.tmm-shop-dot-content .tmm-dot-info .tmm-dot-sold {
+  right: 0px;
+  display: inline-block;
+  position: absolute;
+  font-size: 13px;
+  background-color: #fff;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  padding: 4px 6px;
+  color: #000000;
+  font-weight: normal;
+}
+
+.tmm-shop-dot-content .tmm-dot-info .tmm-dot-price {
+  color: #000;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+.tmm-shop-dot-content .tmm-dot-info .tmm-dot-intro {
+  color: #666666;
+  font-size: 13px;
+  white-space: normal
+}
+
+.tmm-shop-dot-content .tmm-dot-info .tmm-dot-more {
+  text-align: right;
+}
+
+.tmm-shop-dot-content .tmm-dot-info .tmm-dot-notice {
+  right: 0px;
+  display: inline-block;
+  margin: 15px 0px 18px;
+  font-size: 13px;
+  background-color: #fff;
+  color: #ff595f;
+}
+
+.tmm-shop-dot-content .tmm-dot-notice img {
+  height: 13px;
+  margin-right: 9px;
+  vertical-align: middle;
+}
+
+.tmm-shop-dot-content .tmm-dot-items {
+  text-align: center;
+}
+
+.tmm-shop-dot-content .tmm-type-icon {
+  font-size: 40px;
+  color: #000000;
+  height: 40px;
+  line-height: 40px;
+}
+
+.tmm-bar{
+  transition: background-color .4s;
+  height: 44px;
+}
+.tmm-bar.wallet-nav .tmm-bar {
+  color: #fff;
+  background-color: #403a39;
+  border-bottom: none;
+}
+.tmm-bar.wallet-nav .tmm-bar:after {
+  display: none;
+}
+.tmm-bar.wallet-nav .tmm-bar .tmm-ion-left {
+  color: #fff;
+}

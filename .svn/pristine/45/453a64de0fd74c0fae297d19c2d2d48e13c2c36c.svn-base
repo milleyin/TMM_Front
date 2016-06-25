@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>田觅觅</title>
+  <meta name="baidu-site-verification" content="H5sB6yh88E" />
+  <meta name="360-site-verification" content="3a269a4d0f78a7af62a970a7bae62a17" />
+  <meta name="sogou_site_verification" content="JJLR5mePvx"/>
+
+  <meta name="keywords" content="田觅觅 农旅一体化 O2O 农产品 旅游 美食 田园 甜蜜蜜 觅境 觅趣 觅鲜 觅友 觅食 寻觅">
+  <meta name="description" content="田觅觅，农旅一体化互联网平台，把农产品送到城里来，把城里人带到农村去 田觅觅帮你解决周边玩的问题，让你享受轻松优雅的生活。">
+  <link rel="stylesheet" href="styles/sprites.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-wrap">
+      <h1 class="logo">田觅觅<img src="images/logo.png" alt="田觅觅"></h1>
+      <ul class="navbar">
+        <li class="list" data-showSub="0"><a class="list-link" href="index.html">首页</a></li>
+        <li class="list selected" data-showSub="1">
+          <a class="list-link">产品介绍</a>
+          <div class="subnav">
+            <div class="sub-bg"></div>
+            <div class="sub-list product">
+              <a href="./user.html"><i class="icon-mobile"></i>用户端 APP</a>
+              <a href="./store.html"><i class="icon-mobile"></i>商家端 APP</a>
+              <a style="margin-right: 90px;" href="mon.html"><i class="icon-pc"></i>运营商平台</a>
+            </div>
+          </div>
+        </li>
+        <li class="list" data-showSub="2">
+          <a class="list-link">招商入驻</a>
+          <div class="subnav">
+            <div class="sub-bg"></div>
+            <div class="sub-list merchant">
+              <a href="supplier.html">供应商入驻</a>
+              <a style="margin-right: 180px;" href="operators.html">运营商入驻</a>
+            </div>
+          </div>
+        </li>
+        <li class="list" data-showSub="3"><a class="list-link" href="about.html">关于我们</a></li>
+        <span class="slider-box"></span>
+      </ul>
+    </div>
+  </div>
+  <div class="banner">
+    <div class="big-img img2"></div>
+  </div>
+  <div class="content con-product">
+    <div class="item left">
+      <div class="item-wrap">
+        <img src="images/store1.png" alt="" class="showImg">
+        <div class="desc">
+          <h2>灵活管理农旅资源</h2>
+          <p>可建立多个子账号对农旅资源进行分权管理，如一个子账号负责农旅资源的管理，另一子账号负责订单接收、扫码消费等功能，各子账号各施其职，提高供应商服务效率。</p>
+          <ul class="desc-icon icon-product1">
+            <!-- <li><em class="icon-saomiao"></em>扫描</li>
+            <li class="icon-line"></li>
+            <li><em class="icon-dingdan"></em>订单</li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="item right">
+      <div class="item-wrap">
+        <img src="images/store2.png" alt="" class="showImg">
+        <div class="desc">
+          <h2>即时处理用户订单</h2>
+          <p>当用户下单时，平台通过各种消息推送机制（如手机短信、站内通知、邮件通知等），立刻通知供应商处理用户订单。供应商随时随地登录APP，查询、处理我的订单，让订单不再等待。</p>
+          <ul class="desc-icon icon-product2">
+            <!-- <li><em class="icon-tongzhi"></em>通知</li>
+            <li class="icon-line"></li>
+            <li><em class="icon-pingtai"></em>平台</li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="item left">
+      <div class="item-wrap">
+        <img src="images/store3.png" alt="" class="showImg">
+        <div class="desc">
+          <h2>随时关注营收明细</h2>
+          <p>供应商接收订单时显示其所得收入，订单完成时即时将用户收入存入钱包；同时可通过我的钱包随时查询主、子账号的农旅资源营收详细情况。</p>
+          <ul class="desc-icon icon-product3">
+          <!--   <li><em class="icon-guanzhu"></em>关注</li>
+            <li class="icon-line"></li>
+            <li><em class="icon-shouyi"></em>收益</li>
+            <li class="icon-line"></li>
+            <li><em class="icon-baobiao"></em>报表</li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="link">友情链接： <a href="http://m.kuaidi100.com" target="_blank">快递查询</a></p>
+    <p class="copyright">Copyright © 2016 深圳市田觅觅信息科技有限公司&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备14093215号-2</a></p>
+  </div>
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

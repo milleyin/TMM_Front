@@ -1,0 +1,36 @@
+<div id="tuijian">
+    <header class="t_bar">
+        <h1>选择点</h1>
+        <a href="javascript:history.back(-1);" class="iconfont h_left h_20">&#xe61f;</a>
+    </header>
+
+    <div class="content" when-scrolled="showMore()">
+
+        <div class="content_media">
+        <div ng-repeat="attr in list_data" class="img_sec {{ $first ? 'no_t_border' : '' }}">
+
+            <div class="sec_pic">
+                <img ng-click="goDetailPage(attr.classliy.value,attr.link)" class="banner_pic" ng-src="{{attr.image}}" alt="{{attr.name}}">
+            </div>
+            
+            <div class="sec_txt">
+                <div class="left">
+                    <span class="title">{{attr.name}}</span>
+                    <div ng-class="attr.type.value==1 ? 'tip tip1' : 'tip tip2'">
+                        <span>{{attr.type.name}}</span>
+                    </div>
+                    <span class="state">{{attr.info}}</span>
+                </div>
+                <div class="praise">
+                    <div><img src="images/zan_black.png"></div>
+                    <span class="num">{{attr.collect_count}}</span>
+                </div> 
+            </div>
+
+        </div>
+        
+        <div id="loading" ng-controller="Loading"></div>
+    </div>
+    </div>
+    
+</div>

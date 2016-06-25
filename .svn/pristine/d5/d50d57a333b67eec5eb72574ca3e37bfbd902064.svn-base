@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@import 
+  "./components/common",
+  "./components/list",
+  // common
+  "common/mixins",
+  //首页
+  "index/index",
+  "./components/payForm",
+  "./components/success",
+  "./components/buylz",
+  "./components/electronicTicket",
+  "./components/mailing",
+  "./components/buyRecord",
+  "./components/orderlist",
+  "./components/qrcode"
+

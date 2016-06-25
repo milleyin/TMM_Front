@@ -1,0 +1,800 @@
+.tmm-con-icon div.col-33{
+	background: #fff;
+    text-align: center;
+    color: #000;
+    border-right: 1px solid #d7d9d7;
+    border-bottom: 1px solid #d7d9d7;
+    padding: 15px 0;
+    font-size: 12px;
+    width: 33%;
+    float: left;
+}
+
+.tmm-con-icon i {
+    font-size: 30px;
+}
+
+i.icon {
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-style: normal;
+    position: relative;
+}
+
+.icon {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.tmm-con-icon i img{
+	width:25px;
+}
+
+.tmm-login-out {
+    color: #5fb336;
+    font-size: 14px;
+}
+
+.b-border {
+  position: relative;
+}
+.b-border:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1.2px;
+  width: 100%;
+  background-color: #d7d9d7;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+/*
+** 线详情里面内容块
+*/
+.tmm-dot-bottom-bg{background:#efeff4;}
+.tmm-item-dot-list{
+}
+.tmm-item-dot-list-title{
+	color:#000;
+	font-weight:bold;
+	font-size:15px;
+}
+.tmm-item-dot-list-price{
+	color:#000;
+	font-size:12px;
+	margin-top:10px;
+	margin-bottom:18px;
+}
+.tmm-item-dot-list-intro{
+	color:#666666;
+	font-size:13px;
+	white-space:normal;
+}
+.tmm-dot-specialty-item{
+	padding-top:15px !important;
+}
+.tmm-item-dot-list-specialty{
+	width: 100%;
+    display: -webkit-box;
+}
+.tmm-item-dot-list-specialty-pic{
+	width: 10%;
+	font-size:13px;
+    -webkit-box-flex:1;
+    box-flex: 1;
+    flex: 1;	
+}
+.tmm-item-dot-list-specialty-pic img{
+	width: 24px;
+	height: 24px;
+}
+.tmm-item-dot-list-specialty-info{
+	padding-left:12px;
+	width:88%;
+}
+.tmm-item-dot-list-specialty-info-title{
+	color:#000;
+	font-weight:bold;
+	font-size:15px;
+}
+.tmm-item-dot-list-specialty-info-li span{
+	color: #4ebc5e;
+	font-size:13px;
+	margin-right:28px;
+}
+.tmm-item-dot-sold{
+	right: 0px;
+  display: inline-block;
+  position: absolute;
+  font-size: 13px;
+  background-color: #fff;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  padding: 4px 6px;
+  color: #000000;
+  font-weight: normal;
+}
+.tmm-item-dot-sold-more{
+	right: 0px;
+	display: inline-block;
+    margin: 15px 0px 18px;
+    font-size: 13px;
+    background-color: #fff;
+    color: #ff595f;
+}
+.tmm-item-dot-sold-more img{
+	height:13px;
+	margin-right:9px;
+  vertical-align: middle;
+}
+.tmm-item-more{ text-align:right;}
+.list-block ul {
+    background: #ffffff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+.tmm-dot-item-inner{
+	background-image:none !important;
+}
+.list-block .item-link .item-inner {
+    padding-right: 35px;
+    /*background-image:url(../images/expand.png);*/
+    background-size: 10px 20px;
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    background-position: -webkit-calc(100% - 15px) center;
+    background-position: calc(100% - 15px) center;
+}
+.list-block .item-inner {
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 7px;
+    min-height: 44px;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -ms-flex-item-align: stretch;
+    -webkit-align-self: stretch;
+    align-self: stretch;
+}
+.list-block .item-title {
+    -webkit-flex-shrink: 1;
+    -ms-flex: 0 1 auto;
+    flex-shrink: 1;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.list-block .item-content {
+    box-sizing: border-box;
+    padding-left: 15px;
+    min-height: 44px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.tmm-item-dot-list-title {
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+}
+.wrap-item {
+    text-align: left;
+    padding: 16px 15px;
+}
+.tmm-dot-bottom-bg {
+    background: #efeff4;
+}
+.tmm-dot-item-inner {
+    padding-top: 24px !important;
+	width:100%;
+	padding-right:15px;
+}
+.tmm-dot-info-list-block {
+    margin: 0px !important;
+    padding-bottom: 16px;
+}
+.tmm-retinue-top-border, .tmm-retinue-bottom-border{position: relative;}
+.tmm-retinue-top-border:before{ 
+	top:0;
+}
+.tmm-retinue-bottom-border:after{
+	bottom:0;
+}
+.tmm-retinue-top-border:before, .tmm-retinue-bottom-border:after{
+	position: absolute;
+    content: "";
+    height: 1px;
+    background-color:#d7d9d7;
+    left: 0;
+    right: 0;
+	-webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+	-webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;	
+}
+.detail-b-border {
+  position: relative;
+}
+.detail-b-border:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #d7d9d7;
+  display: block;
+  z-index: 15;
+}
+.tmm-ticon-point{
+  position: absolute;
+  margin-left:-3px;
+  margin-top:-24px;
+  left:50%;
+}
+.tmm-ticon-point:after, .tmm-ticon-point:before {
+  border: 3px solid transparent;
+  border-top: 3px solid #fff;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  bottom: -0px;
+  content: ' '
+}
+
+/* 预定须知 */
+.booking-information {
+  padding-top: 20px;
+}
+.tmm-booking {
+  margin-bottom: 10px;
+}
+.tmm-booking:before {
+  content: '';
+  height: 1px;
+  width: 100%;
+  background-color: #d7d9d7;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.tmm-booking:after {
+  content: '';
+  height: 1px;
+  width: 100%;
+  background-color: #d7d9d7;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.tmm-booking .booking-title {
+  padding: 0 16px;
+  background-color: #fff;
+  margin-bottom: 1px;
+  line-height: 45px;
+  color: #000;
+  font-size: 15px;
+}
+.tmm-booking .booking-con {
+  padding: 8px 16px;
+  background-color: #fff;
+  line-height: 24px;
+  font-size: 13px;
+  color: #666666;
+
+}
+ 
+.tmm-ticon-point:before {
+  border-top-color: #39ab53;
+  bottom: -1px;
+}
+.bracket {
+    font-size: 16px;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-width: 0.5px;
+    text-fill-color: white;
+    text-stroke-color: #000;
+    text-stroke-width: 0.5px;
+    font-style: initial;
+}
+.wrap {
+	padding: 0 16px;
+	text-align: center;
+}
+
+.tmm-line-address{
+	font-size: 14px;
+    color: #666666;
+    word-break: break-word;
+}
+.tmm-line-repeat-img{
+	padding-top:25px;
+	height:50px;
+	width:55px;
+}
+.tmm-mask{
+	position: absolute;
+    bottom: 0px;
+    display: inline-block;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    height: 50px;
+}
+.tmm-praise{
+	padding-top:3px;
+    width: 50%;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+}
+.tmm-praise-pos{
+	float:left;
+}
+
+.tmm-praise-pos-praise{
+	left: 15%;
+    position: relative;
+	width:auto;
+}
+.tmm-praise-pos-call{
+	left: 65%;
+    position: relative;
+	width:auto;
+}
+.tmm-praise-img{
+    position: relative;
+	vertical-align: middle;
+    width:26px !important;
+    height:32px;
+}
+.tmm-praise-tit{
+    font-size: 10px;
+    line-height: 1px;
+    margin-top: 2px;
+    display: block;
+    color: #fff;
+    text-align: center;
+}
+.banner {
+    width: 100%;
+    position: relative;
+}
+.tmmCall {background-color: #fff;text-align: center;font-size: 18px;}
+.tmmAPP-Call {border-bottom: 1px solid #d7d9d7; color:#000;}
+.tmmCall-cancel{color:#ff595f;}
+.tmmCall div {line-height: 50px;}
+
+/*
+** 线详情里面内容块
+*/
+
+
+/*
+** 活动里面内容块
+*/
+.tmm_bg_o_act{
+	border: 1px solid #3b9edb !important;
+}
+.tmm_bg_l_act{
+	background-color:#3b9edb !important;
+}
+.tmm-ticon-point-act:before{
+	border-top-color:#3b9edb !important;
+}
+
+.tmm_act_col_100{
+	min-height:151px;
+}
+
+.tmm-item-content-height{
+	height:auto;
+}
+.tmm-item-dispense{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical
+}
+
+.tmm-accordion-item-content{
+	/*height:44px !important;*/
+}
+.tmm-retract{
+	-moz-transform:rotate(-180deg);
+	-webkit-transform:rotate(-180deg);
+	filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.tmm-item-toggle{
+	text-align:center;
+	margin-left:-16px;
+}
+
+/**
+*首页样式
+*/
+.tmm-item-content .txt {
+    padding: 15px 16px 13px;
+    position: relative;
+    background-color: #fff;
+}
+.tmm-item-content .txt .title {
+    font-size: 17px !important;
+    line-height: 17px;
+    color: #000000;
+	font-weight:normal !important;
+}
+.tmm-item-content .txt .flag {
+    position: absolute;
+    right: 16px;
+    top: -8px;
+}
+.tmm-item-content .txt .intro {
+    font-size: 12px;
+    line-height: 12px;
+    color: #666666;
+    margin-top: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 85%;
+    text-overflow: ellipsis;
+}
+.tmm-item-content .txt .flag .type {
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    border-radius: 2px;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    display: inline-block;
+    float: left;
+}
+.tmm-item-content .txt .type.act {
+    background-color: #43aff4;
+}
+.tmm-item-content .txt .type.line {
+    background-color: #39ab53;
+}
+.tmm-item-content .txt .type.dot {
+    background-color: #13b0cc;
+}
+.tmm-item-content .txt .title span{
+	padding-bottom:6px;
+}
+
+.tmm-item-content .txt .dis {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    vertical-align: bottom;
+	font-size:14px;
+}
+.tmm-item-content .txt .dis .praise-distance {
+    font-size: 10px;
+    color: #666;
+}
+/**
+*点详情
+*/
+.tmm-item-dot-list-specialty {
+    width: 100%;
+    display: -webkit-box;
+}
+.tmm-item-dot-list-specialty-pic {
+    width: 10%;
+    font-size: 13px;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    flex: 1;
+}
+.tmm-item-dot-list-specialty-info-title {
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+/**
+*农产品样式
+*/
+/**特产 样式 唐亚敏*/
+.tmm-local-specialty-card .list-block .item-content{
+  padding-left:16px;
+}
+.tmm-local-specialty-card  .list-block .item-media + .item-inner{
+  margin-left: 0;
+}
+.tmm-local-specialty-card  .list-block.media-list .item-inner{
+  padding:15px 0 15px 0;
+  margin-right: 14px;
+}
+.tmm-local-specialty-cards .tmm-local-specialty-card:nth-child(1){
+  margin-top: 21px;
+}
+.tmm-local-specialty .tmm-local-specialty-card{
+  margin: 0 0 11px 0;
+}
+.tmm-local-specialty .tmm-local-specialty-item-media{
+  width: 80px;
+  height: 80px;
+  margin: 15px 0;
+  padding: 0;
+}
+.tmm-local-specialty .tmm-local-specialty-card .tmm-local-specialty-item-media img{
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+}
+.tmm-local-specialty .tmm-local-specialty-card .tmm-local-specialty-item-title{
+  font-size: 15px;
+  color: #000;
+  padding-top:15px;
+}
+.tmm-local-specialty .tmm-local-specialty-card .tmm-local-specialty-item-subtitle{
+  font-size: 13px;
+  color: #666666;
+  max-height: 50px;
+  line-height: 24px;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box; 
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; 
+  margin-top: 18px;
+}
+
+.tmm-order-detail-img{
+	position: relative;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    padding-right: 12px;
+}
+
+/**项目细节 样式 唐亚敏*/
+.tmm-common-detail-cards{
+	background-color:#fff;
+}
+.tmm-common-detail-cards .card-detail{
+  /*margin:65px 12px;*/
+  height: auto;
+  border-radius:5px;
+  margin-top:-1px;
+}
+.tmm-common-detail-cards .card-header{
+  padding: 0;
+  height: 194px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.tmm-common-detail-cards .card-header img{
+  position: absolute;
+	height: 194px;
+  width: 100%;
+}
+.delete{
+  position: fixed;
+  top: 48px;
+  right: 4px;
+}
+.tmm-common-detail-cards .card-header .delete img{
+  width: 24px;
+  height: 24px;
+}
+.tmm-common-detail-cards .card-header img.bg{
+  height: 200px;
+  width: 100%;
+  /*border-radius:5px 5px 0 0;*/
+}
+.tmm-common-detail-cards .card-content .list-block{
+	margin:0;
+}
+.tmm-common-detail-cards .card-content .list-block.media-list .item-inner{
+  padding: 0 !important;
+}
+.tmm-common-detail-cards .card-content .list-block.media-list .item-inner-addr{
+	display:block;
+}
+.tmm-common-detail-cards .card-content .list-block .item-content{
+  padding-left: 0;
+}
+.tmm-common-detail-cards .card-content .list-block .item-content .item-inner .div_name{
+  display: inline-block;
+  width: 25%;
+  height: 100%;
+  float:left;
+}
+.tmm-common-detail-cards .card-content .list-block .item-content .item-inner .div_content{
+  display: inline-block;
+  width: 75%;
+  height: 100%;
+  float: right;
+}
+.tmm-common-detail-cards .card-content .list-block .item-content .item-inner .name{
+  display: inline-block;
+  width: 60px;
+  text-align: left;
+  margin:16px 16px 15px 7px;
+  font-size: 13px;
+  color: #000;
+  font-weight: bold;
+}
+.tmm-common-detail-cards .card-content .list-block .item-content .item-inner .content-detail{
+  display: inline-block;
+  margin:17px 0px 17px 0;
+  text-align: left;
+  font-size: 14px;
+  color: #000;
+  width: 100%;
+}
+.tmm-common-detail-cards .card-content .list-block .item-content .item-inner .content-detail .location{
+  margin-top: 17px;
+}
+.tmm-common-detail-cards .card-content .list-block .item-content .item-inner .content-detail .location img, .tmm-detail-phone{
+  width: 15px;
+  height: 15px;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+.tmm-detail-phone-txt{
+	vertical-align: middle;
+}
+.tmm-common-detail-cards .card-content .list-block .item-content .item-inner .content-detail .location span{
+  font-size: 14px;
+  color: #007aff;
+  vertical-align: middle;
+  display: inline-block;
+}
+.tmm-common-detail-cards .div_content .content-detail .fee ul{
+  padding-left: 0;
+}
+.tmm-common-detail-cards .div_content .content-detail .fee{
+  border: 1px solid #000;
+  width: 90px;
+  height: auto;
+  padding-top: 5px;
+
+  padding-bottom: 5px;
+  padding-left: 5px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.closeDeleteModal{
+	background-image:url(../images/X1.png);
+	z-index:102;
+	width: 24px;
+  	height: 24px;
+	background-repeat:repeat-x;
+	background-size:24px;
+}
+.tmm-banner-detail-show-color{
+	background:rgba(0, 0, 0, 0.75) !important;
+}
+
+.tmm-dot-item-title{
+	width:100%;
+}
+.tmm-common-detail-cards .card-content .list-block .item-content .item-inner .hotel_content{
+  display: inline-block;
+  margin: 17px 25px 17px 0;
+  text-align: left;
+  font-size: 14px;
+  color: #000;
+}
+
+.tuijianmore_detail {
+    position: fixed;
+    left: 16px;
+    top: 60px;
+	bottom:60px;
+    background: #fff;
+    border-radius: 10px;
+    z-index: 101;
+    right: 16px;
+	height:auto;
+	border-radius:5px;
+	overflow:auto;
+	max-height:80%;
+}
+.bg_content_mask {width:100%;height:100%; background-color: #000;opacity: 0.8; position: fixed; z-index: 100; top: 0; left: 0;}
+.contentBg{
+	background-color:#fff;
+}
+.tmm-icon-img{
+	width:20px;
+}
+
+/**
+*图片滑动
+*/
+ul.es-pager{
+	position:absolute;
+	margin:-30px 0px!important;
+}
+ul.es-pager li:hover, ul.es-pager li.act{
+	opacity: 1;
+	background-color: #007aff !important;
+}
+.slider{
+	border:0 !important;
+	padding:0 !important;
+}
+ul.es-pager li {
+	display: inline-block;
+	margin: 5px;
+	padding: 0;
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	border: 1px solid #666;
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-khtml-border-radius: 30px;
+	background: #000;
+	opacity: 0.2;
+}
+
+.imgPos{
+	position:relative;
+	background-repeat:no-repeat;
+	margin:10px auto;
+}
+
+.order-detail-image{
+	float:left;
+	margin-right:12px;
+	margin-top: 6px;
+}
+.modal-mask .modal .confirm span{ color:#007aff;}
+.info_txt_ex {
+    margin-left: 16px;
+	position:absolute;
+}

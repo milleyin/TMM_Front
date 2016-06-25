@@ -1,0 +1,106 @@
+.order-item {
+  .top {
+    box-sizing: border-box;
+    height: 44px;
+    padding: 6px 15px 0 15px;
+    line-height: 32px;
+  }
+  .content {
+    
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+  }
+
+  .con-info {
+    position: relative;
+
+  }
+
+  .flag {
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+    padding: 0 8px;
+    border-radius: 17px;
+    font-size: 12px;
+    line-height: 17px;
+    background-color: #a3a8a4;
+    color: #fff;
+
+    &.flag-gray {
+      background-color: #a3a8a4;
+    }
+    &.flag-dark {
+      background-color: #000;
+    }
+  }
+  .tit {
+    position: relative;
+    line-height: 15px;
+    font-size: 15px;
+    .phone {
+      position: absolute;
+      right: 15px;
+      top: 0;
+    }
+  }
+  .num {
+    margin-top: 15px;
+    line-height: 13px;
+    font-size: 13px;
+  }
+  .address {
+    margin-top: 15px;
+
+    font-size: 13px;
+    line-height: 1.5em;
+    color: #999999;
+  }
+
+  .con-bottom {
+    margin-top: 10px;
+    padding-top: 15px;
+    font-size: 15px;
+    .oddnum {
+      margin-left: 30px;
+    }
+    @include hairline();
+
+  }
+}
+
+.orderlist {
+  .button {
+    display: block;
+    margin: 15px;
+    line-height: 35px;
+    background-color: #ea5336;
+    color: #fff;
+    text-align: center;
+  }
+  .modify {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .modify-people {
+    display: inline-block;
+    padding: 0 18px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    line-height: 27px;
+    font-size: 15px;
+  }
+
+  .totalprice {
+    margin-top: 30px;
+    padding: 0 15px;
+    font-size: 13px;
+
+    .price {
+      font-size: 30px;
+    }
+  }
+
+
+}

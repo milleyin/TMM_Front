@@ -1,0 +1,151 @@
+﻿* { 
+  margin: 0; 
+  padding: 0;
+}
+body{
+  background: #fff;
+}
+form{
+  display: inline-block;
+}
+a:link,a:hover,a:focus{
+  text-decoration:none; 
+  cursor: pointer;
+}
+img,button{
+  border: 0;
+}
+input:focus, textarea:focus,a{
+  outline: none !important;
+}
+input::-ms-clear {  /* 去除IE10+浏览器文本框后面的小叉叉 */
+  display: none;
+}
+select{
+  height: 30px;
+  background: #877674;
+  border: 1px solid #322e2d;
+  font-size: 10px;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+     color: #000;
+}
+input{
+  height: 30px;
+  border: 1px solid #322e2d;
+  padding-left:10px;
+  font-size: 10px;
+  color: #aba59c;
+  margin-left:5px;
+  border-radius: 1px;
+  border-radius: 4px;
+}
+button,.query a, input[type="submit"]{
+  height: 30px;
+  border: 1px solid #1b1818;
+  background: #655a58;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 1px;
+  display: inline-block;
+  text-align: center;
+  padding: 0 15px;
+  line-height: 30px;
+  margin-left: 5px;
+  border-radius: 2px;
+}
+button:hover,.query a:hover, input[type="submit"]:hover{
+  color: #005580;
+}
+.grid-view table.items{
+  width: 100%;
+  border: 1px solid #403a39 !important;
+  background: #fff;
+  text-align: center;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.grid-view table.items tr,.grid-view table.items td{
+    height: 40px;
+    font-size: 8px;
+    color: #403a39;
+    border: 1px solid #403a39 !important;
+}
+.grid-view table.items th{
+  height: 45px;
+  background: #d9bc92;
+  font-size: 12px;
+  color: #403a39;
+  text-align: center;
+  border: 1px solid #403a39 !important;
+}
+.grid-view .button-column a{
+  font-size: 8px;
+  border: 1px solid #1b1818;
+  background: #655a58;
+  color: #fff;
+  border-radius: 1px;
+  display: inline-block;
+  text-align: center;
+  padding: 5px 5px;
+  margin: 5px 5px;
+}
+ table button{
+  width: 85px;
+  height: 30px;
+  font-size: 8px;
+} 
+.grid-view .summary {
+  margin: 38px 0 0 0;
+  width: 100%;
+  height: 50px;
+  font-size: 8px;
+  text-align: right;
+}
+.grid-view .pager{
+  clear: both;
+  display: inline;
+  float: right;
+  margin-top: -55px;
+  font-size: 6px;
+}
+.num_span{
+  color: #3333ff;
+
+}
+.text{
+  display: inline;
+  float: right;
+  margin-right: 35%;
+  line-height: 30px;
+  line-height: 10px;
+}
+.copyright{
+  text-align: center;
+  font-size: 8px;
+  color: #403a39;
+   margin: 40px 12px; 
+}
+.button{
+	background: #655a58;
+	width: 120px;
+}.button1{
+	background: #655a58;
+	width: 160px;
+}
+.query span{
+	padding-right: 20px;
+	margin:0 auto;
+}
+.span1{
+	color: #DF8505;
+}
+.span2{
+	color: red;
+}
+.span3{
+	color: #04B200;
+}

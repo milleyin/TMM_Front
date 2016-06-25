@@ -1,0 +1,27 @@
+<ion-view view-title="我的收入">
+
+  <ion-content delegate-handle="account-content" overflow-scroll="false">
+    <ion-refresher pulling-text="下拉刷新数据" pulling-icon="arrow-down" on-refresh="doRefresh()">
+    </ion-refresher>
+     <div class="tmm-income">
+      <div class="income-list">
+        <div class="income-title">总收入</div>
+        <div class="income-detail">
+          <span class="income-allInome">{{model.format_money_count}}元</span>  
+        </div>
+      </div>
+    </div>
+    <div class="tmm-income" ng-repeat="account in model.list_data">
+      <div class="income-time">{{account.name}}</div>
+      <div class="income-list" ng-repeat="ls in account.value">
+        <div class="income-title">{{ls.add_time}}</div>
+        <div class="income-detail">
+          {{ls.format_money}}元
+          <p class="income-mode">营业额</p>
+        </div>
+      </div>
+    </div>
+    <ion-infinite-scroll ng-if="model.nextPage" on-infinite="loadMore()" distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

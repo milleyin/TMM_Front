@@ -1,0 +1,112 @@
+* { 
+	margin: 0; 
+	padding: 0;
+}
+body{ 
+	background: #403A39;
+}
+/*内容*/
+.login{ 
+	width: 40%; 
+	margin: 0 auto;
+}
+.login_logo{ 
+	margin-top: 40px;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+.login_logo img{ 
+	margin-top: 40px;
+	width: 85%; 
+	margin-left: 20px;
+}
+.title{
+	padding-top:10px;
+	padding-bottom:5px; 
+	color: #c8a063; 
+	font-size: 16px;
+}
+.title span{
+	float: right;
+}
+/* 内容 */
+.login_content{
+	clear:both;
+	width: 90%;
+	margin-left: 5%;
+}
+.content_left{
+	height: 300px;
+	width: 10%;
+	border-right: 1px solid #211d1c;
+	text-align: center;
+}
+#password_login{
+	margin-top:30px; 
+}
+#password_login,#mess_login{
+	width: 60%;
+	padding:16px 5px;
+	float: right;
+	display: block;
+}
+.content_right{
+	margin-top:30px;
+	width: 80%;
+}
+.messlogin_form .content_phone,.messlogin_form .content_phone{ margin-bottom: 0px;}
+.content_phone,.content_checkcode,.content_messcode,.content_password{
+	/* height: 90px; */
+	position: relative;
+	z-index: 100;
+}
+.phone,.upassword{
+	width:90%;
+}
+.code,.messcode{
+	width: 50%;
+}
+.checkcodeimg,.getcheckcod{
+	width: 30%;
+	float: right;
+	margin-right: 10%;
+  height: 30px;
+
+}
+.getcheckcod,.getcheckcod:hover,.getcheckcod:visited{	
+	width: 30%;
+}
+.getcheckcod{
+	background: #259f00;
+}
+input[type="submit"] {
+    width: 50%;
+    float: left;
+    background: #c8a063;
+    border:none;
+}
+.copyright{
+	margin-bottom: 20px;
+	font-size: 8px;
+	color:#c8a063;
+	text-align: center;
+}
+
+/*************一些效果切换的样式************/
+/*密码登录隐藏*/
+.messlogin_form{
+	display:none;
+}
+/*登录方式选择的样式切换*/
+.noActive,.noActive:hover,.noActive:visited{ /*背景色轮番换*/
+	background-color:#2e2928;
+	color:#c8a063;  /*黑*/
+	display: block;
+}
+a.active,.active:hover,.active:visited{
+	background-color:#c8a063; /*黄*/
+	color: #1d1919;
+	display: block;
+}
+

@@ -1,0 +1,27 @@
+.sub-nav {
+    $height: 39px;
+    position: relative;
+    display: flex;
+    height: $height;
+    z-index: 1;
+
+    .sub-btn {
+        flex: 1;
+        text-align: center;
+        line-height: $height;
+        border-bottom: 2px solid #fff;
+        
+        &.active {
+            color: $red;
+            border-bottom-color: $red;
+        }
+    }
+
+
+}
+
+
+.subnav-padding {
+    top: 84px
+}
+

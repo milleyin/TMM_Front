@@ -1,0 +1,46 @@
+<ion-view view-title="选择线路" cache-view="false" hide-tabs>
+  <ion-nav-buttons>
+    <i class="tmm-ion-left ion-android-arrow-back" ui-sref="tab.launch-act" nav-direction="back"></i>
+  </ion-nav-buttons>
+  <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light tmm-tab-hed">
+    <div class="tabs">
+      <a class="tab-item tmm-button-state infoactive">心情</a>
+      <a class="tab-item tmm-button-state">目的地</a>
+      <a class="tab-item tmm-button-state">出行季</a>
+      <a class="tab-item tmm-button-state">主题</a>
+    </div>
+  </div>
+  <ion-content class="tmm-mast" delegate-handle="ptr-content">
+		<ion-refresher pulling-text="{{orderModel.pullingText}}" on-pulling="doPulling()" on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="tmm-sel-line-list">
+    	<div>
+	      <div class="card tmm-sel-line-card">
+		    	<a href="" ui-sref="tab.launch-act-sellinedeta">
+		        <div class="tmm-selline-card-content" >
+		          <div class="tmm-selline-img">
+                <img ng-src="">
+              </div>
+		          <div class="tmm-selline-content">
+		            <div class="tmm-select-line-content-title">最美的自己</div>
+		            <div class="tmm-selline-info tmm-selline-content-info">
+                  <span>￥733.6起/人</span>
+                  <span>已售855份</span>
+                </div>
+                <div class="tmm-selline-content-info">
+                  看到大旗头村成片的岭南特色镬耳房，是否勾起你依稀的记忆？
+                </div>
+		          </div> 
+		        </div>
+		      </a>
+	    	</div>	
+    	</div>
+    </div>
+    <ion-infinite-scroll distance="0.1%" ng-if="hasMoreData()" on-infinite="loadMore()">
+    </ion-infinite-scroll>  
+  </ion-content>
+</ion-view>
+
+
+
+

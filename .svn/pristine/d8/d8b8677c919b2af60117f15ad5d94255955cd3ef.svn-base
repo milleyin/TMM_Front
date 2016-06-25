@@ -1,0 +1,89 @@
+var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
+var node_modules_dir = __dirname + '/node_modules';
+
+var config = {
+  addVendor: function(name, path) {
+    this.resolve.alias[name] = path;
+  },
+  entry: {
+    app: ['./src/modules/main.js']
+  },
+  resolve: {
+    alias: {}
+  },
+  output: {
+    path: path.join(__dirname, 'www'),
+    contentBase: 'www/',
+    filename: 'app.js'
+      //chunkFilename: '[chunkhash].build.js'
+  },
+  module: {
+    noParse: [],
+    loaders: [{
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+      }, {
+        test: /\.less$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader!autoprefixer-loader')
+      }, {
+        test: /\.html$/,
+        loader: 'html?minimize=false'
+      }, {
+        test: /\.png$/,
+        loader: 'url?name=styles/images/[hash:8].[name].[ext]&limit=8192&mimetype=image/png'
+      }, {
+        test: /\.jpe?g$/,
+        loader: 'url?name=styles/images/[hash:8].[name].[ext]&limit=8192&mimetype=image/jpg'
+      }, {
+        test: /\.gif$/,
+        loader: 'url?name=styles/images/[hash:8].[name].[ext]&limit=8192&mimetype=image/gif'
+      }, {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?name=styles/fonts/[hash:8].[name].[ext]&limit=8192&mimetype=image/svg+xml'
+      }, {
+        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?name=styles/fonts/[hash:8].[name].[ext]&limit=8192&mimetype=application/font-woff2'
+      }, {
+        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?name=styles/fonts/[hash:8].[name].[ext]&limit=8192&mimetype=application/font-woff'
+      }, {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?name=styles/fonts/[hash:8].[name].[ext]&limit=8192&mimetype=application/octet-stream'
+      }, {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file?name=styles/fonts/[hash:8].[name].[ext]'
+      },
+
+      // We just expose the global variable $ or jQuery, then file doesn't need to write require('jquery') every where
+      //{test: /i18next\.js$/, loader: 'expose?i18n'}
+    ]
+  },
+  plugins: [
+    // This plugin will extract the css into app.css
+    new ExtractTextPlugin('app.css', {
+      allChunks: true // This means extract all css files in app.css
+    }),
+
+    // webpack server build in livereload plugin
+
+    new webpack.HotModuleReplacementPlugin(),
+
+    // Get filenames from stats
+    function() {
+      this.plugin('done', function(stats) {
+        require('fs').writeFileSync(
+          path.join(__dirname, 'stats.json'),
+          JSON.stringify(stats.toJson())
+        );
+      });
+    }
+  ]
+};
+
+config.addVendor('framework7', node_modules_dir + '/framework7/dist/js/framework7.js');
+config.addVendor('framework7.ios.css', node_modules_dir + '/framework7/dist/css/framework7.ios.css');
+config.addVendor('framework7.ios.colors.css', node_modules_dir + '/framework7/dist/css/framework7.ios.colors.css');
+
+module.exports = config;

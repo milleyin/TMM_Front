@@ -1,0 +1,174 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="index.html" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">订单详情</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="order-detail" class="page tmm-my-order-detail-page">
+    <div class="page-content tmm-order-detail">
+
+      <div class="content-block-title tmm-content-title">出发时间</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status">
+          <div>2015-11-12</div>
+        </div>
+      </div>
+
+      <!--项目列表-->
+      <div class="content-block-title tmm-content-title">项目列表</div>
+
+      <div class="list-block tmm-list-block">
+        <div class="tmm-day-num">第一天上午</div>
+        <ul>
+          <li class="tmm-item-li clearfix b-border">
+            <div class="tmm-item-title">
+              广宁竹海
+            </div>
+            <div class="tmm-item-content">
+              <div class="tmm-item-fare">
+                <span class="tmm-fare-first w_40">观海</span>
+                <span class="w_20">成人</span>
+                <span class="w_10">200</span>
+                <span class="w_20">￥1000</span>
+              </div>
+              <div class="tmm-item-fare">
+                <span class="tmm-fare-first w_40">观海</span>
+                <span class="w_20">儿童</span>
+                <span class="w_10">1</span>
+                <span class="w_20">￥50</span>
+              </div>
+              <div class="tmm-item-fare">
+                <span class="tmm-fare-first w_40">观海</span>
+                <span class="w_20">儿童</span>
+                <span class="w_10">1</span>
+                <span class="w_20">￥50</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="tmm-day-num">第一天下午</div>
+        <ul>
+          <li class="tmm-item-li clearfix">
+            <div class="tmm-item-title">
+              广宁竹海
+            </div>
+            <div class="tmm-item-content">
+              <div class="tmm-item-fare">
+                <span class="tmm-fare-first  w_40">观海</span>
+                <span class="w_20">成人</span>
+                <span class="w_10">1</span>
+                <span class="w_20">￥100</span>
+              </div>
+              <div class="tmm-item-fare">
+                <span class="tmm-fare-first w_40">观海</span>
+                <span class="w_20">儿童</span>
+                <span class="w_10">1</span>
+                <span class="w_20">￥50</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="list-block tmm-list-block">
+        <ul>
+          <li class="tmm-item-li clearfix">
+            <div class="tmm-item-title">
+              广宁竹海
+            </div>
+            <div class="tmm-item-content">
+              <div class="tmm-item-fare">
+                <span class="tmm-fare-first w_40">观海</span>
+                <span class="w_20">成人</span>
+                <span class="w_10">1</span>
+                <span class="w_20">￥100</span>
+              </div>
+              <div class="tmm-item-fare">
+                <span class="tmm-fare-first w_40">观海</span>
+                <span class="w_20">儿童</span>
+                <span class="w_10">1</span>
+                <span class="w_20">￥50</span>
+              </div>
+            </div>
+          </li>
+          <li class="tmm-item-li clearfix">
+            <div class="tmm-item-title">
+              爱丁堡
+            </div>
+            <div class="tmm-item-content">
+              <div class="tmm-item-fare">
+                <span class="tmm-fare-first w_40">双人间（周1-4）</span>
+                <span class="w_20">双人间</span>
+                <span class="w_10">1</span>
+                <span class="w_20">￥200</span>
+              </div>
+            </div>
+          </li>
+          <li class="tmm-item-li clearfix">
+            <div class="tmm-item-title">
+              蜜柚
+            </div>
+            <div class="tmm-item-content">
+              <div class="tmm-item-fare">
+                <span class="tmm-fare-first w_40">蜜柚</span>
+                <span class="w_20">成人</span>
+                <span class="w_10">1</span>
+                <span class="w_20">￥100</span>
+              </div>
+              <div class="tmm-item-fare">
+                 <span class="tmm-fare-first w_40">蜜柚</span>
+                <span class="w_20">儿童</span>
+                <span class="w_10">1</span>
+                <span class="w_20">￥50</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!--项目列表-->
+      <div class="content-block-title tmm-content-title">主要联系人</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status">
+          <div>小沫沫</div>
+        </div>
+      </div>
+      <div class="content-block-title tmm-content-title">随行人员（6人）</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row  tmm-order-status">
+          <div class="w_33">小测试</div>
+          <div class="w_33 retinue-midden">小测试</div>
+          <div class="w_33 retinue-right">小测试</div>
+          <div class="w_33">小测试</div>
+        </div>
+      </div>
+      <div class="content-block-title tmm-content-title">合计价格</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status">
+          <div>订单总价<span class="tmm-total-price">￥470</span></div>
+        </div>
+      </div>
+      <div class="content-block-title tmm-content-title">订单状态</div>
+      <div class="list-block tmm-retinue tmm-main-retinue tmm-retinue-top-border tmm-retinue-bottom-border">
+        <div class="row tmm-order-status">
+          <div>订单编号：MJ222200011111</div>
+        </div>
+      </div>
+
+      <p class="require phone tmm-retinue-top-border tmm-retinue-bottom-border">索取发票请拨打电话：400-019-7090</p>
+      <!-- <div class="tmm-border-btn">
+        <span class="tmm-order-detail-confirm-btn">等待确认</span>
+      </div> -->
+      <div class="tmm-border-btn tmm-retinue-top-border tmm-retinue-bottom-border">
+        <span class="tmm-order-detail-confirm-btn-active">确认支付</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

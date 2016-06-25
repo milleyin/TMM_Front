@@ -1,0 +1,8 @@
+{{#each hotList}}
+
+<li class="img-item">
+    <div class="img-wrapper">
+        <img src="{{img}}" alt="{{name}}">
+    </div>
+</li>
+{{/each}}

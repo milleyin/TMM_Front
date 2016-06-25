@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>项目创建</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/breadcrumbs.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/step.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/form.css">
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/box.css"> 
+  <link rel="stylesheet" type="text/css" href="../css/agent/css/style.css"> 
+  <script src="../css/agent/script/jquery-1.11.3.min.js"></script>
+  <!--[if lt IE 9]>
+  <script src="dist/js/html5.js"></script>
+  <script src="dist/js/respond.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="content_box" id="page_project_create">
+  <div class="breadcrumbs title">
+   <a href="project_index.html">项目</a>
+   &frasl;
+   <span>项目创建</span>
+  </div>  <!--.title-->
+  <div class="create_nav modify_project_info">
+      <div class="create_steap_one four_steaps_width">       
+        <a class="done">1</a>
+        <span class="text_done">选择归属商家</span>
+        <div class="line line_first done"></div>
+      </div>
+      <div class="create_steap_two four_steaps_width">       
+        <a class="undone">2</a>
+        <span class="text_undone">填写项目信息</span>
+        <div class="line undone"></div>
+      </div>
+      <div class="create_steap_three four_steaps_width">
+        <a class="undone">3</a>
+        <span class="text_undone">选择标签</span>
+        <div class="line undone"></div>
+      </div>
+      <div class="create_steap_five four_steaps_width">
+        <a class="undone">4</a>
+        <span class="text_undone">提交审核</span>
+        <div class="line line_last undone"></div>
+      </div>
+  </div>    <!-- .create_nav -->
+  <div class="content">
+    <form>
+      <div class="content_one">
+        <div class="box_div">
+        <div class="choose">
+          <label>选择归属商家：</label>
+          <select>
+            <option>云谷有限公司</option>
+            <option>动态集团</option>
+          </select>
+        </div>
+        <div class="box">
+            <div class="choose_business_table">
+            <table border="0" class="choose_business">
+             <tbody>
+               <tr> 
+                 <td>登陆手机号：</td>
+                 <td>13922831369</td>
+               </tr>
+               <tr>
+                 <td>公司名称：</td>
+                 <td>云谷科技有限公司</td>
+               </tr>
+               <tr>
+                 <td>公司地址：</td>
+                 <td>深圳市南山区科技园特发信息港B栋301</td>
+               </tr>
+               <tr>
+                 <td>公司电话：</td>
+                 <td>0755 - 3321211</td>
+               </tr>
+               <tr>
+                 <td class="text_top">选择项目管理人：</td>                                      
+                 <td>
+                   <input type="radio" name=" manager" id="business" value="option1"><span class="distance">&nbsp;商家</span>
+                   <br/>
+                   <input type="radio" name=" manager" id="sub_business" value="option2">
+                      <span class="distance">子账号15814421488</span>
+                   <br/>
+                   <a href="../business/sub_business_site_create_stepone.html" class="blue distance">新增子账号</a>
+                 </td>
+               </tr>
+             </tbody>        
+             </table>
+              </div>
+            </div>
+         </div>   <!-- .box_div -->
+          <div class="row enter">
+            <input type="submit" value="下一步" id="choose_business">
+            <!-- <a href="#" class="save_draft">存为草稿</a> -->
+          </div>
+      </div>  <!-- .content_one -->
+    </form>
+  </div>   <!--  .content -->
+  
+  <div class="copyright">
+    <span>Copyright &copy; TMM365.com All Rights Reserved</span>
+  </div>  <!--.copyright--> 
+<script src="../css/agent/script/functions.js"></script>
+<script type="text/javascript">
+  $(function(){   
+    $(".save_draft").click(function(){
+        $(".popup_box").css("display","block");
+    })   
+    //选择归属商家
+    $("#choose_business").click(function(){
+     window.location.href="project_create_steptwo.html";
+     window.event.returnValue=false;
+    })
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!--总收入额-->
+<div id="totalmoney">
+  <header class="t_bar">
+    <h1>可提现金额
+      <a href="javascript:history.back(-1);"><i class="iconfont h_left h_20">&#xe61f;</i></a>
+    </h1>
+    <div class="money">
+      <span class="side_tit">可提现金额 ￥{{money}}</span>
+      <a ng-click="getMoney()" class="tixian">提现</a>
+    </div>
+  </header>
+  <div class="content">
+    <div class="media_box" ng-repeat="tour in json.tour">
+      <div class="media_top">出团时间: {{tour.date}}</div>
+      <section>
+        <div class="media">
+          <div class="media_pic">
+            <img ng-src="{{tour.imgSrc}}" alt="{{tour.imgAlt}}"></div>
+          <div class="media_txt">
+            <p class="media_tit">{{tour.name}}</p>
+            <p><span class="media_shouru">收入￥{{tour.earn}}</span></p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

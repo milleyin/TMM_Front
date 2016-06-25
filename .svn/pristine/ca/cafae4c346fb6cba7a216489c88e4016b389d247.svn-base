@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>荔枝节</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body class="payForm">
+  <div class="headerbg"></div>
+  <div class="pickCard">
+    <div class="title">桂味·大宗提货券</div>
+    <dl>
+      <dt>包含：</dt>
+      <dd>•桂味荔枝25kg</dd>
+      <dd>•随赠5kg桂味荔枝</dd>
+      <dd>•3张桂味园区门票</dd>
+      <dd>•1张10元优惠券</dd>
+    </dl>
+    <div class="price">￥611</div>
+  </div>
+
+
+  <div class="form">
+    <div class="paynum">
+      购买数量
+      <span class="computerbox"><span class="sub"></span><span class="num">2</span><span class="add"></span></span>
+    </div>
+    <div class="input">
+      <input type="tel" placeholder="联系手机号"><a class="getCode">获取验证码</a></div>
+    <div class="input"><input type="tel" placeholder="填写短信验证码"></div>
+
+    <div class="totalprice">
+      总额： ￥<span class="price">78</span>
+    </div>
+
+    <button class="submit" type="submit">确认支付</button>
+  </div>
+</body>

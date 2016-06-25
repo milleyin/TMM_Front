@@ -1,0 +1,48 @@
+.buyRecord {
+  background-color: #edf2ee;
+  padding-bottom: 20px;
+  .buycard, .buyticket {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 25px;
+    padding: 5px 0 10px;
+    background: url("../images/card.png");
+    background-size: 100% 100%;
+    .top {
+      line-height: 44px;
+      font-size: 18px;
+      text-align: center;
+      @include hairline(bottom);
+    }
+    .content {
+      padding: 10px 0;
+    }
+    .txt {
+      line-height: 30px;
+      font-size: 0;
+    }
+    .txt-item,{
+      width: 50%;
+      display: inline-block;
+      font-size: 15px;
+      text-align: center;
+      color: #999;
+    }
+
+    .txt-num {
+      color: #000;
+    }
+
+    .txt-look {
+      color: #ea5336;
+    }
+    .txt-ticket {
+      color: #787995;
+    }
+  }
+
+  .buycard {
+    background: url("../images/radiusbox.png");
+    background-size: 100% 100%;
+  }
+}

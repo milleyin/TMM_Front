@@ -1,0 +1,140 @@
+/*去除一些默认的样式*/
+* { 
+	margin: 0; 
+	padding: 0;
+}
+a:link{
+	text-decoration:none; 
+	color: #ded2c0;
+}
+a:hover,a:visited{
+	color: #ded2c0;
+}
+img{
+	border: 0;
+}
+input:focus, textarea:focus {
+	outline: none !important;
+}
+input::-ms-clear { 
+	display: none;
+}
+/* html,body{height: 120%} */
+/*增加样式*/
+.main_box{
+	width: 100%;	
+	height:auto;
+}
+.left_box{
+	margin:0px;
+	padding: 0px;
+	width: 20%; 
+	background: #403a39;
+	display: inline-block;
+	height: auto; 
+	position: relative;
+}
+.right_box{
+	width: 79%;
+	float: right;
+	background-color: #fff;
+}
+.logo{ 
+	display: block;
+	width: 80%;
+	margin:0 auto;
+}
+.logo img{
+  /* width: 68%;
+  	margin-left: 15%; */
+	margin-top: 70px;
+	width: 85%;
+	margin-left: 5%;
+}
+.logo .title{
+	float: right;
+	font-size: 12px;
+	color: #ded2c0;
+	font-family: "宋体",serif;	
+}
+.content{
+  margin-top: -80px;
+}
+.model_one,.model_two,.model_three,.model_four,.model_five{
+	margin-top: -20px;
+}
+.model_name{
+    clear: both;
+    color: #ded2c0;
+    float: right;
+    font-size: 12px;
+    width: 30%;
+    margin-top: -20px;
+    letter-spacing: 2px;
+    text-align: right;
+    margin-right: 10px;
+}
+.model_one .line{
+	margin-top: 120px;
+}
+.line{
+	width: 100%;
+	margin-top: 80px;
+	border-top: 1px solid #c8a063;
+}
+.model_icon{
+	 margin-top: -30px;
+	 margin-left: 10%;
+}
+.model_icon img{ width: 40px; max-width: 64px;}
+.model_content div{
+	clear: both;
+	width: 100%;
+}
+.model_content a{
+	display: block;
+	padding:6px 0;
+}
+.model_content a span{
+	margin-left:30%;
+	font-size: 16px;
+	color: #ded2c0;
+	text-align: left; 	
+}
+.serve_model {
+  width: 90%;
+  margin-left: 10%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.serve_icon{
+	width: 10%;
+	height: 32px;
+}
+.phone,.url{
+	height: 35px;
+	position: relative;
+}
+.phone span,.url span{
+	position: absolute;
+	margin: 2px 10px;
+	font-size:12px;
+	color: #fff;
+	text-align: left;
+}
+.serve_model img{
+	width: 20px;
+  margin: 0 auto;
+  max-width: 32px;
+}
+.info{
+  font-size: 12px;
+  color: #ded2c0;
+  clear:both;
+  margin-top: 30px;
+  text-align: right;
+}
+.info .exit a{
+  color: red;
+
+}

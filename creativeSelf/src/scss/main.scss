@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@import 
+  // common
+  "common/mixins",
+  "common/common",
+
+  "./components/registrationSuc",
+  "./components/rule",
+  "./components/index",
+  "./components/qrcode"
+

@@ -1,0 +1,83 @@
+<div class="navbar">
+  <div class="navbar-inner" id="my-wallet-navbar">
+  </div>
+</div>
+<!-- 我的钱包 -->
+<div class="pages navbar-through">
+  <div  data-page="my-wallet" class="page no-navbar no-toolbar tmm-my-wallet-page">
+    <div class="tmm-my-wallet-bg">
+      <div class="tmm-my-wallet-navbar">
+        <div class="left">
+          <a href="#" class="back link">
+            <i class="icon ticon-arrow-back"></i>
+          </a>
+        </div>
+        <div class="hede sliding">钱包</div>
+      </div>
+      <div class="tmm-my-wallet-content">
+        <div class="tmm-conter-balance">{{walletObj.money_format}}</div>
+        <div class="tmm-balance-up">余额(元)</div>
+      </div>
+    </div>
+    <div class="list-block tmm-monye-mag tmm-mag-but">
+      <ul>
+        <li>
+          <a href="#" class="item-content" id="tmm-my-draw-menoy">
+            <div class="tmm-xiao-tu"><img src="../../styles/images/tx.png"></div>
+            <div class="item-inner">
+              <div class="item-title">提现</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="list-block tmm-monye-mag">
+      <ul>
+        <li>
+          {{#if noBank}}
+          <a href="#" class="item-link item-content" id="tmm-add-bank">
+            <div class="tmm-xiao-tu"><img src="../../styles/images/yhkgl.png"></div>
+            <div class="item-inner">
+              <div class="item-title">银行卡管理</div>
+            </div>
+          </a>
+          {{else}}
+          <!--已添加银行卡-->
+          <a href="#" class="item-link item-content" id="tmm-manage-bank">
+            <div class="tmm-xiao-tu"><img src="../../styles/images/yhkgl.png"></div>
+            <div class="item-inner">
+              <div class="item-title">银行卡管理</div>
+            </div>
+          </a>
+          {{/if}}
+          <!-- <a href="#" class="item-link item-content" id="tmm-manage-bank">
+            <div class="tmm-xiao-tu"><img src="../../styles/images/yhkgl.png"></div>
+            <div class="item-inner">
+              <div class="item-title">银行卡管理</div>
+            </div>
+          </a> -->
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="#" class="item-link item-content" id="tmm-my-trade">
+            <div class="tmm-xiao-tu"><img src="../../styles/images/jyjl.png"></div>
+            <div class="item-inner">
+              <div class="item-title">交易记录</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="#" class="item-link item-content" id="tmm-my-wallet-pay">
+            <div class="tmm-xiao-tu"><img src="../../styles/images/zfgl.png"></div>
+            <div class="item-inner">
+              <div class="item-title">支付管理</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

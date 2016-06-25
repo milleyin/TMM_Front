@@ -1,0 +1,60 @@
+<ion-view view-title="我的订单">
+  <ion-nav-buttons side="right">
+    <i class="icon icon-search order-search" ng-click="goToSearch()"></i>
+  </ion-nav-buttons>
+  <div class="sub-nav" style="margin-top: 44px;">
+    <span class="sub-btn" ng-class="{'active':type === 1}" ng-click="changeData(1)">觅境</span>
+    <span class="sub-btn" ng-class="{'active':type === 2}" ng-click="changeData(2)">觅趣</span>
+  </div>
+  <ion-content class="subnav-padding" delegate-handle="order-content" overflow-scroll="false">
+    <ion-refresher pulling-text="下拉刷新数据" pulling-icon="arrow-down" on-refresh="doRefresh()">
+    </ion-refresher>
+    <div ng-if="type === 1">
+      <div ng-repeat="item in model.list_data" class="media-cell">
+        <div class="cell-body" ui-sref="tab.order-detail{{item.shops_type.value}}({id: item.value, type: item.shops_type.value})">
+          <div class="media">
+            <img ng-src="{{ item.shops_list_img }}">
+          </div>
+          <div class="describe">
+            <p class="tit">{{ item.shops_name }}</p>
+            <p class="txt">出游时间：{{item.go_time}}</p>
+            <p class="txt">项目数量 {{ item.items_count }}　　收入：<span class="stress">￥{{ item.income }}</span></p>
+          </div>
+        </div>
+        <div class="cell-footer">
+          <div class="footer-con">
+            <span class="order-user">下单用户：{{ item.order_user }}</span>
+            <span class="btn-box">
+              <span class="btn" ng-if="item.status.order_status.value == '0'" ng-click='mjAcceptOrder(item.value)'>接受</span>
+            <span class="btn" ng-if="item.status.order_status.value == '0'" ng-click='mjRefuseOrder(item.value)'>拒绝</span>
+            </span>
+          </div>
+        </div>
+        <i class="media-tip {{statusClasses[item.status.order_status.value*1]}}" ng-init="statusClasses=['blue', 'red', 'purple', 'green', 'gray', 'yellow', 'orange']">{{item.status.order_status.name}}</i>
+      </div>
+    </div>
+
+    <div ng-if="type === 2">
+      <div ng-repeat="item in model.list_data" class="media-cell">
+        <div class="cell-body" ui-sref="tab.order-detail{{item.shops_type.value}}({id: item.value, link: item.link})">
+          <div class="media">
+            <img ng-src="{{ item.shops_list_img }}">
+          </div>
+          <div class="describe">
+            <p class="tit">{{ item.actives_name }}</p>
+            <p class="txt">出游时间：{{ item.go_time }}</p>
+            <p class="txt">项目数量 {{ item.items_count }}　　收入：<span class="stress">￥{{ item.income }}</span></p>
+          </div>
+        </div>
+        <div class="cell-footer">
+          <div class="footer-con">
+            <span class="order-user">下单用户：{{ item.order_user }}</span>
+          </div>
+        </div>
+        <i class="media-tip {{statusClasses[item.actives_status.value*1]}}" ng-init="statusClasses=['green', 'red', 'gray']">{{item.actives_status.name}}</i>
+      </div>
+    </div>
+    <ion-infinite-scroll ng-if="model.nextPage" on-infinite="loadMore()" distance="10%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

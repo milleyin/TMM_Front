@@ -1,0 +1,57 @@
+	<div id="myorder">
+		<header class="t_bar">
+			<h1>我的订单<a href="javascript:history.back(-1);"><i class="iconfont h_left h_20">&#xe61f;</i></a><i ng-click="getTypeInfo(type)" class="h_right h_txt">刷新</i></h1>
+			<ul class="navs subnav">
+				<li ng-click="changeType(1)" class="nav-item"><span ng-class="type==1?'hover':''" class="tmm-subnav-btn hover">觅镜</span></li>
+				<li ng-click="changeType(2)" class="nav-item"><span ng-class="type==2?'hover':''" class="tmm-subnav-btn">觅趣</span></li>
+			</ul>
+		</header>
+		
+		<div class="content" when-scrolled="getPageInfo()" style="top: 85px;">
+			<div>
+				<div class="sec_info" ng-repeat="attr in infoList">
+					<div class="sec_info_border">
+
+					    <div ng-click="goOrderDetail(attr.value,attr.status.order_status.value)" class="sec_con">
+					        <div class="info_pic">
+					            <img ng-src="{{attr.shops_img}}">
+					        </div>
+					        <div class="info_txt">
+					            <p class="info_title">{{attr.shops_name}}</p>
+					            <p class="info_con">
+					                <span class="info_danjia">价格：{{attr.order_price}}元</span>
+					            </p>
+					        </div>
+					    </div>
+
+					    <div ng-if="attr.status.centre_status.value =='0'" class="conform">
+					    		<span ng-click="removeOrder(attr.value)" class="span_btn">取消</span>
+					    		<span ng-click="payOrder(attr.value)" class="span_btn">支付</span>
+					    </div>
+
+					    <div ng-if="attr.status.centre_status.value =='-1' && (attr.status.order_status.value =='0' || attr.status.order_status.value =='1' || attr.status.order_status.value =='2')" class="conform">
+					    		<span ng-if="attr.status.order_status.value =='0' || attr.status.order_status.value =='1'" ng-click="removeOrder(attr.value)" class="span_btn">取消</span>
+					    		<span ng-if="attr.status.order_status.value =='2'" ng-click="refundOrder(attr.value)" class="span_btn">申请退款</span>
+					    </div>
+
+					</div>
+					<span class="icon_triangle tip_chuli" ng-if="attr.status.order_status.value =='0'">{{attr.status.order_status.name}}</span>
+					<span class="icon_triangle tip_dfukuan" ng-if="attr.status.order_status.value =='1'">{{attr.status.order_status.name}}</span>
+					<span class="icon_triangle tip_yfukuan" ng-if="attr.status.order_status.value =='2'">{{attr.status.order_status.name}}</span>
+					<span class="icon_triangle tip_yfukuan" ng-if="attr.status.order_status.value =='3'">{{attr.status.order_status.name}}</span>
+					<span class="icon_triangle tip_gray" ng-if="attr.status.order_status.value =='-2'">{{attr.status.order_status.name}}</span>
+					<span class="icon_triangle tip_gray" ng-if="attr.status.order_status.value =='-1'">{{attr.status.order_status.name}}</span>
+					<span class="icon_triangle tip_gray" ng-if="attr.status.order_status.value =='-3'">{{attr.status.order_status.name}}</span>
+				</div>
+
+			</div>
+			
+		</div>
+    <div ng-if="modal.isShow" class="modal-mask">
+      <div class="modal">
+        <div class="tit">{{modal.title}}</div>
+        <div class="confirm"><span ng-click="modalOK(modal.type)">确认</span></div>
+      </div>
+      <i></i>
+    </div>
+	</div>

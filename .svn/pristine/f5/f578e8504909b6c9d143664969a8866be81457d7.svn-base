@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>关注公众号</title>
+    <link rel="stylesheet" type="text/css" href="css/qrcode.css">
+  </head>
+</head>
+
+<body>
+  <div class="screen-qrcode">
+    <p class="title">关注公众号后继续抽奖</p>
+    <img src="img/qrcode.png" class="codeImg">
+    <div class="finger">
+      <img src="img/fingerprint.png">
+      <span>长按识别二维码</span>
+    </div>
+    <p class="txt">1. 长按下方识别二维码图片，关注“田觅觅”公众号。</p>
+    <p class="txt">2. 关注成功后，即可自动获得抽奖机会。</p>
+  </div>
+</body>
+
+</html>

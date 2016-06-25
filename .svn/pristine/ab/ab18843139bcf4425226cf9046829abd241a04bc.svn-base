@@ -1,0 +1,50 @@
+{{#each enrollInfoList}}
+        <div class="card tmm-card">
+          <div class="card-header card-header-enroll">
+            <p>报名时间：<span class="time">{{add_time}}</span></p>
+          </div>
+          <div class="card-content">
+            <div class="card-content-inner tmm-enroll-detail-info" data-link = "{{link}}">
+              <span>主要联系人：{{main_retinue.name}}</span>
+              <span>手机：{{main_retinue.phone}}</span>
+              <span>订单金额：{{order_price}}元</span>
+              <span>参与人数：{{user_go_count}}人</span>
+            </div>
+          </div>
+          {{#js_compare "this.status.order_status.value =='0'"}}
+            <span class="tmm-icon-triangle tmm-tip-chuli" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span> 
+          {{/js_compare}} 
+          {{#js_compare "this.status.order_status.value =='1'"}}
+            <span class="tmm-icon-triangle tmm-tip-fukuan" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span> 
+          {{/js_compare}} 
+          {{#js_compare "this.status.order_status.value =='2'"}}
+            <span class="tmm-icon-triangle tmm-tip-xiaofei" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span> 
+          {{/js_compare}}
+          {{#js_compare "this.status.order_status.value =='3'"}}
+            <span class="tmm-icon-triangle tmm-tip-xiaofei" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span>
+          {{/js_compare}} 
+          {{#js_compare "this.status.order_status.value =='-1'"}}
+            <span class="tmm-icon-triangle tmm-tip-gray" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span>
+          {{/js_compare}}
+          {{#js_compare "this.status.order_status.value =='-2'"}}
+            <span class="tmm-icon-triangle tmm-tip-gray" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span>
+          {{/js_compare}}
+          {{#js_compare "this.status.order_status.value =='-3'"}}
+            <span class="tmm-icon-triangle tmm-tip-gray" title="{{status.order_status.name}}">
+              {{status.order_status.name}}
+            </span>
+          {{/js_compare}}
+        </div>
+      {{/each}}

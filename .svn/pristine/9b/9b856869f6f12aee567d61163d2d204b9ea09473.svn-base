@@ -1,0 +1,121 @@
+<div id="myinfo">
+    <header class="t_bar">
+        <h1>我的信息<a class="iconfont h_left h_20" href="javascript:history.back(-1);">&#xe61f;</a></h1>
+    </header>
+
+    <div class="content">
+
+        <div class="con_info tb_border">
+            <p class="p_list"><span class="side_tit">昵称</span><input class="set_nickname" type="text" ng-blur="changeNickname()" ng-model="data.userInfo.nickname"></p>
+            <div class="line"></div>
+            <p class="p_list"><span class="side_tit">性别</span><span ng-click="changeGender()" class="side_txt">{{data.userInfo.gender==0?'未设置':data.userInfo.gender==1?'男':'女'}}</span></p>
+            <div class="line"></div>
+            <p class="p_list" ng-click="setPhone()"><span class="side_tit">手机号</span><span class="side_txt side_ok">{{data.userInfo.phone}}</span><i class="iconfont h_right h_14">&#xe634;</i></p>
+            <div class="line"></div>
+            <p class="p_list" ng-click="setPwd()"><span class="side_tit">密码</span><span class="side_txt">{{data.userInfo.is_set ? '修改密码' : '设置密码'}}</span><i class="iconfont h_right h_14">&#xe634;</i></p>
+        </div>
+
+        <div class="con_list">
+    
+            <!-- 标签信息 -->
+       <!--      <h2 ng-repeat-start="attr in data.tagsInfo" ng-class="$first ? 'h2_tit no_t_border' : 'h2_tit'">{{attr.name}}</h2>
+
+            <div ng-repeat-end ng-click="goTagPage(attr)" class="con_list_info">
+                <span ng-repeat="attr2 in attr.son">{{attr2.name}}</span><span class="just_tag" ng-if="!attr2.length">　　</span>
+            </div>
+ -->
+
+
+            <!-- 联系人信息 -->
+            <h2 class="h2_tit no_t_border">主要联系人</h2>
+            <div class="retinue">
+                <p class="p_list">
+                    <span ng-click="updateRetinue(attr.value,3)" ng-repeat="attr in data.main_retinueInfo" ng-class="$index==0 ? 'l_txt':$index==1 ? 'c_txt' : 'r_txt'">{{attr.name}}</span>
+                    <span ng-click="addRetinue(1)" ng-if="!data.main_retinueInfo.length" class="tianjia_tag">添加</span>
+                </p>
+            </div>
+
+
+            <h2 class="h2_tit">随行联系人</h2>
+            <div class="retinue b_border">
+                <p class="p_list">
+                    <span ng-repeat="attr in data.retinueInfo" ng-click="updateRetinue(attr.value,2)" ng-class="$index%3==0 ? 'l_txt':$index%3==1 ? 'c_txt' : 'r_txt'">{{attr.name}}</span><span ng-click="addRetinue(0)" ng-class="data.retinueInfo.length%3==0 || !data.retinueInfo.length ? 'l_txt tianjia_tag':data.retinueInfo.length%3==1 ? 'c_txt tianjia_tag' : 'r_txt tianjia_tag'">添加</span>
+                    
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 添加随行人员表单 -->
+    <div class="tianjia_form" ng-show="showForm">
+
+        <form name="tianjiaRetinue" novalidate ng-submit="submitTianjia(tianjiaType)">
+            <div class="f_top">{{tianjiaTit}}<i ng-click="deleteRetinue()" ng-if="tianjiaType==2" class="iconfont delete">&#xe62d;</i></div>
+            <p class="tip_msg">{{msg}}</p>
+            <div class="f_con">
+                <p>
+                    <span>姓名</span>
+                    <input type="text" 
+                    name="name"
+                    ng-focus="clearMsg()"
+                    required
+                    ng-model="tianjia.name" 
+                    placeholder="必填">
+                </p>
+                <div class="line"></div>
+                <p>
+                    <span>身份证</span>
+                    <input type="text"
+                    name="identity"
+                    ng-focus="clearMsg()"
+                    required
+                    ng-model="tianjia.identity" 
+                    placeholder="必填">
+                </p>
+                <div class="line"></div>
+                <p>
+                    <span>手机号码</span>
+                    <input ng-readonly="(tianjiaType==1 || tianjiaType==3)?true:false" type="tel" 
+                    name="phone"
+                    ng-focus="clearMsg()"
+                    required
+                    ng-model="tianjia.phone" 
+                    placeholder="必填">
+                </p>
+                <div class="line"></div>
+<!--                 <p class="b_border" ng-if="showAddress">
+    <span>地址</span>
+    <select id="selectSheng" 
+        ng-model="sex" 
+        ng-change="selectAddress()">
+        <option value="m" ng-selected="sex=='m'">Male</option>
+        <option value="f" ng-selected="sex=='f'">Fmale</option>
+    </select>
+</p> -->
+                <p>
+                    <span>邮箱</span>
+                    <input type="email"
+                    name="email"
+                    ng-focus="clearMsg()"
+                    ng-model="tianjia.email" 
+                    placeholder="选填">
+                </p>
+            </div>
+            <div class="f_bottom">
+                <button class="sub_active" type="submit">确认</button>
+            </div>
+            <span class="icon_close" ng-click="showForm=false;showMask=false"></span>
+        </form>
+    </div>
+
+    <!-- 设置性别 -->
+    <div ng-show="showGender" class="set_gender">
+        <span class="male" ng-click="selectGender(1)">男</span>
+        <span class="female" ng-click="selectGender(2)">女</span>
+    </div>
+    <!-- 遮罩层 -->
+    <div class="bg_mask" ng-show="showMask"></div>
+
+</div>

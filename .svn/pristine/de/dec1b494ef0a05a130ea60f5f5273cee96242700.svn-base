@@ -1,0 +1,26 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.mailingSuc .sucImg {
+  display: block;
+  width: 128px;
+  height: 128px;
+  margin: 96px auto 20px;
+}
+
+.mailingSuc .title {
+  font-size: 18px;
+  text-align: center;
+  margin: 50px 0 80px 0;
+  color: #000;
+  font-weight: bolder;
+}
+.mailingSuc .txt {
+  margin-top: 84px;
+  text-align: center;
+  color: #636363;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 0 35px;
+}

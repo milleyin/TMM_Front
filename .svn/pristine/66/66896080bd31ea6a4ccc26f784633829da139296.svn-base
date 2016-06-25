@@ -1,0 +1,39 @@
+<div class="popup">
+  <div class="navbar tmm-navbar tmm-select-retinue-navbar">
+    <div class="navbar-inner">
+      <div class="left">
+        <span class="icon ticon-arrow-back retinueBackClose" id="retinueBackClose"></span>
+      </div>
+      <div class="center sliding"><span class="tmm-retinue-title">选择随行人员</span></div>
+      <div class="right">
+        <span id="order-add-retinue" class="red order-add-retinue">添加</span>
+      </div>
+    </div>
+  </div>
+  <div class="content-block tmm-select-retinue-block" style="margin-top:39px;">
+    <div class="list-block" style="margin-top:0px;">
+      <!-- <div class="tmm-retinue-nar-header">
+        <span class="icon ticon-arrow-back tmm-retinue-back retinueBackClose" id="retinueBackClose"></span>
+        <span class="tmm-retinue-title">选择随行人员</span><span id="order-add-retinue" class="red order-add-retinue tmm-retinue-add">添加</span>
+      </div> -->
+      <ul class="tmm-select-retinue-ul">
+        {{#each retinueInfo.list}}
+        <li>
+          <label class="label-checkbox item-content">
+            <!-- Checked by default -->
+            <input type="checkbox" class="select-retinue" name="my-checkbox" value="{{name}}" data-id="{{value}}">
+            <div class="item-media">
+              <i class="icon icon-form-checkbox"></i>
+            </div>
+            <div class="item-inner">
+              <div class="item-title">{{name}}</div>
+            </div>
+          </label>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div style="color:#999;font-size:12px; text-align:center; padding-top:60px; display:none;" id="noRetinue">你还没有添加随行人员，快去添加吧！</div>
+  <div class="tmm-retin-but"><p class="tmm-select-retinue-p"><a href="#" class="close-popup button color-red active">确认</a></p></div>
+</div>

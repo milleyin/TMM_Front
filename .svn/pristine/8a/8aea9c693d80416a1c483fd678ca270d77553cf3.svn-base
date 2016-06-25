@@ -1,0 +1,55 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="index.html" class="back link">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center">{{disTitle}}</div>
+    <div class="right"></div>
+    <div class="subnavbar tmm-select-distination-subbar">
+      <div class="subnavbar-center">
+        <i class="icon ticon-search"></i>
+        <input type="search" readonly placeholder="请输入城市名、拼音、首字母" class="tmm-seek-searchbar-input tmm-show-select-city">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="select-distination" class="page select-distination">
+    <div class="page-content infinite-scroll" style="padding-top: 80px;">
+      <div class="select-city">
+        {{#js_compare "this.disPos == '1'"}}
+        <div class="my-place">
+          <h3>我的位置</h3>
+          <span class="tmm-get-location-to-set-location">
+          {{#if location.value}}
+            {{location.value.address_info.name}} 
+          {{else}}
+            定位失败
+          {{/if}}
+          </span>
+        </div>
+        {{/js_compare}}
+        <div class="hot-city">
+          <h3>热门城市</h3> {{#each this.hot_city}}
+          <span class="select-city-confirm" data-id="{{this.value}}" data-link="{{this.link}}">{{this.name}}</span> {{/each}}
+        </div>
+      </div>
+      <div class="city-list">
+        {{#each this.list_data}}
+        <div class="city-list-tit">{{@key}}</div>
+        <div class="city-list-con">
+          {{#each this}}
+          <p class="select-city-confirm" data-id="{{this.value}}" data-link="{{this.link}}">{{this.name}}</p>
+          {{/each}}
+        </div>
+        {{else}}
+        <div class="city-list-con">
+          没有相关城市
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

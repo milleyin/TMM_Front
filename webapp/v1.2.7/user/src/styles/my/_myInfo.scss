@@ -1,0 +1,63 @@
+.myInfo {
+  .group {
+    margin-top: 30px;
+    padding-left: 14px;
+    background-color: #fff;
+    @extend %border-top-bottom;
+  }
+  .cell {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    padding-left: 0;
+    .txt {
+      color: #666;
+      display: flex;
+      align-items: center;
+      i {
+        margin-left: 10px;
+      }
+    }
+  }
+  .cell-list {
+    padding: 0 14px;
+    line-height: 44px;
+    background-color: #fff;
+    @extend %border-top-bottom;
+    font-size: 0;
+  }
+  
+  .cell-item {
+    display: inline-block;
+    width: 33.3%;
+    font-size: 15px;
+
+    &:nth-child(3n) {
+      text-align: right; 
+    }
+    &:nth-child(3n-1) {
+      text-align: center;
+    }
+
+    &.add {
+      color: $red;
+    }
+  }
+}
+
+.updatePhone {
+  .formwrap {
+    white-space: nowrap;
+    transform: translateX(0);
+    transition: .25s ease;
+    font-size: 0;
+    &.next {
+      transform: translateX(-100%);
+    }
+  }
+  .setPhoneWrap {
+    width: 100%;
+    display: inline-block;
+  }
+
+}

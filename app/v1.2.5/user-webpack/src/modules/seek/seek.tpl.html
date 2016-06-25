@@ -1,0 +1,78 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner tmm-seek-navbar">
+    <div class="left">
+    </div>
+    <div class="center tmm-seek-destination">
+      <div>
+        <p class="tit">{{js "this.seek.orientation.value ? this.seek.orientation.value.address_info.name : (this.seek.location.value ? this.seek.location.value.address_info.name : '选择')"}}</p>
+        <p class="sub-txt">目的地</p>
+      </div>
+      <div class="arrow"></div>
+    </div>
+    <div class="right">
+      <a href="javascript:;" class="link" id="tmm-seek-search">
+        <i class="icon ticon-search"></i>
+      </a>
+    </div>
+    <!-- 二级导航栏目 -->
+    <div class="subnavbar tmm-seek-subbar">
+      <div class="mian-navbar-line"></div>
+      <div class="buttons-row">
+        {{#each seek.search}}
+        <a href="javascript:;" class="button {{#if @first}}active{{/if}}">{{name}}</a> {{/each}}
+      </div>
+      <!-- 二级导航选择列表 -->
+      {{#each seek.search}}
+      <div class="tmm-sublist">
+        {{#each son}}
+        <span class="item"><a data-link="{{link}}" href="javascript:;">{{name}}</a></span> {{/each}}
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="seek" class="page seek-page" id="tmm-seek-page">
+    <div class="page-content pull-to-refresh-content infinite-scroll tmm-seek-page-contnet">
+      <!-- 默认的下拉刷新层 -->
+      <div class="pull-to-refresh-layer">
+        <div class="preloader"></div>
+        <div class="pull-to-refresh-arrow"></div>
+      </div>
+      <div class="tmm-list-block">
+        <ul>
+          <!-- 内容列表 -->
+          {{#each seek.list_data}}
+          <li class="tmm-item-content">
+            <div class="pic">
+              {{#js_compare "this.classliy.value !=3"}}
+              <a href="javascript:;" data-type="{{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}" data-link="{{link}}" class="tmm-recommend-detail"><img data-src="{{image}}" class="lazy lazy-fadein"></a>
+              {{/js_compare}} {{#js_compare "this.classliy.value ==3"}}
+              <a href="javascript:;" data-type="{{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}" data-link="{{link}}" data-acttype="{{this.actives.actives_type.value}}" class="tmm-recommend-detail"><img data-src="{{image}}" class="lazy lazy-fadein"></a>
+              {{/js_compare}}
+            </div>
+            <div class="txt">
+              <div class="title"><!-- <span class="tmm-rem"></span> --><span class="tit">{{name}}</span></div>
+              <div class="intro">{{info}}</div>
+              
+                <span class="flag type {{js " this.classliy.value==1 ? 'dot' : this.classliy.value==2 ? 'line' : 'act' "}}">
+                    {{this.type.name}}
+                  </span>
+
+              {{#if this.distance}}
+              <span class="praise"><span class="praise-distance">距离</span> {{this.distance}}</span>
+              {{/if}}
+            </div>
+          </li>
+          {{else}}
+          <li class="tmm-item-content">
+            <div style="margin:0 auto;padding-top:20px;text-align:center;">没有相关内容！</div>
+          </li>
+          {{/each}}
+        </ul>
+        <div id="no-more" style="display:none"></div>
+      </div>
+    </div>
+    <div class="bg-mask-seek infinite-scroll" style="display:none"></div>
+  </div>
+</div>

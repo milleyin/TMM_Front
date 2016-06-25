@@ -1,0 +1,136 @@
+<div id="tuijianmore">
+  <header class="t_bar">
+    <h1>{{info.name}}</h1>
+    <a class="iconfont h_left h_20" href="javascript:history.back(-1);">&#xe61f;</a>
+    <a href="javascript:void(0)" class="h_right h_20" ng-click="showContentDetail()"><img src="images/infor.png" class="tmm-icon-img"></a> 
+  </header>
+  <div class="content contentBg">
+
+    <!--添加的内容-->
+    
+
+
+        <!--添加的内容-->
+    <div class="edit_content" data-ng-bind-html="contentHTML"></div>
+  </div>
+
+  <div class="tuijianmore_map" ng-show="showMap">
+    <div class="tuijianmore_title">{{info.address}}</div>
+    <img ng-src="{{info.map}}">
+  </div>
+  <div class="tmm-common-detail-cards tuijianmore_detail" ng-show="showContent" ontouchstart="return true;">
+    <div class="card-detail demo-card-header-pic">
+      <div class="card-header color-white no-border">
+       <!--  <img ng-src="{{info.img}}"> -->
+       <slider>
+           <slider-item ng-repeat="imgdetail in info.img_arr" img-src="imgdetail" last="$last"></slider-item>
+         </slider>
+
+      </div>
+      <div class="card-content">
+        <div class="list-block media-list">
+          <ul>
+            <li class="item-content b-border">
+              <div class="item-inner item-inner-addr">
+                <div class="div_name">
+                  <div class="name">开放时间</div>
+                </div>
+                <div class="div_content">
+                  <div class="content-detail">{{info.start_work}} - {{info.end_work}}</div>
+                </div> 
+              </div>
+            </li>
+            <li class="item-content b-border">
+              <div class="item-inner item-inner-addr">
+                <div class="div_name">
+                  <div class="name">地址</div>
+                </div>
+                <div class="div_content" ng-click="showAddress(info.address)">
+                  <div class="content-detail">
+                    {{info.address}}
+                    <!-- <div class="location" ng-if="info.distance">
+                      <img src="images/location.png">
+                      <span>{{info.distance}}</span>
+                    </div> -->  
+                  </div>
+                </div> 
+              </div>
+            </li>
+            <li class="item-content b-border">
+              <div class="item-inner item-inner-addr">
+                <div class="div_name">
+                  <div class="name">联系电话</div>
+                </div>
+                <div class="div_content tmm-div-content-phone">
+                  <div class="content-detail">
+                    <img src="images/detailPhone.png" class="tmm-detail-phone">
+                    <span class="tmm-detail-phone-txt">{{info.phone}}</span>
+                  </div>
+                </div> 
+              </div>
+            </li>
+            <li class="item-content b-border">
+              <div class="item-inner item-inner-addr">
+                <div class="div_name">
+                  <div class="name">微信</div>
+                </div>
+                <div class="div_content">
+                  <div class="content-detail">{{info.weixin}}</div>
+                </div> 
+              </div>
+            </li>
+            <!-- 免费 -->
+            <li class="item-content b-border" ng-if="info.free_status.value ==0">
+              <div class="item-inner item-inner-addr">
+                <div class="div_name">
+                  <div class="name">费用</div>
+                </div>
+                <div class="div_content">
+                  <div class="content-detail">免费</div>
+                </div> 
+              </div>
+            </li>
+            <!-- 收费 -->
+            <li class="item-content b-border" ng-if="info.free_status.value ==1">
+              <div class="item-inner item-inner-addr">
+                <div class="div_name">
+                  <div class="name">费用</div>
+                </div>
+                <div class="div_content">
+                  <div class="content-detail">
+
+                    <div class="fee" ng-repeat="infoContent in info.fare">
+                      <ul>
+                        <li>{{infoContent.name}}</li>
+                        <li>{{infoContent.info}}</li>
+                        <li>{{infoContent.price}} 元</li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div> 
+              </div>
+            </li>
+
+            <li class="item-content">
+              <div class="item-inner item-inner-addr">
+                <div class="div_name">
+                  <div class="name">酒店服务</div>
+                </div>
+                <div class="div_content">
+                  <div class="hotel_content" ng-repeat="hotelInfo in info.wifi">{{hotelInfo.name}}</div>
+                </div> 
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg_mask" ng-click="showMap=false" ng-show="showMap"></div>
+  <div class="bg_content_mask" ng-click="hideContentDetail()" ng-show="showContent"></div>
+  <div class="delete closeDeleteModal" ng-show="showContent" ng-click="hideContentDetail()"></div>
+  <!-- <div class="bg_content_mask" ng-click="showContent=false" ng-show="showContent"></div> -->
+ 
+</div>

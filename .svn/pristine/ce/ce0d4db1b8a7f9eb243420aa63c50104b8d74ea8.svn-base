@@ -1,0 +1,31 @@
+<ion-view view-title="线路详情" hide-tabs="true">
+  <ion-nav-buttons>
+    <i class="icon-back" nav-back="back"></i>
+  </ion-nav-buttons>
+  <ion-content>
+    <!--头部-->
+    <shop-banner></shop-banner>
+    <div class="shop-info">
+      <div class="shop-title">
+        {{model.name}}
+        <span class="shop-sold" ng-if="model.is_sale.value == '1'">已售出{{model.down}}份</span>
+      </div>
+      <div class="shop-price">
+        ￥{{model.price}}/人起
+      </div>
+      <div class="shop-intro">
+        {{model.page_info}}
+      </div>
+      <div class="shop-more">
+        <span class="shop-notice" ui-sref="tab.book-info({type:2, id:model.thrand_id})">
+          <i class="icon-more"></i> 预订须知
+        </span>
+      </div>
+    </div>
+    <!--头部-->
+    <div class="shop-detail-title">该线路项目</div>
+    <ng-include src="'app/shops/templates/shop-items.tpl.html'"></ng-include>
+  </ion-content>
+  
+  <shop-indicator type="line"></shop-indicator>
+</ion-view>

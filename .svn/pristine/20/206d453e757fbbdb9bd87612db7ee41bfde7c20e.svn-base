@@ -1,0 +1,84 @@
+<div class="navbar tmm-navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link" id="itinerary-back">
+        <i class="icon ticon-arrow-back"></i>
+      </a>
+    </div>
+    <div class="center sliding">编辑觅趣日程</div>
+    <div class="right">
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="edit-itinerary" class="page tmm-act-day" id="itinerary-page">
+    <div class="page-content" >
+    <div id="itinerary-page-content">
+      <!-- 天 -->
+    {{#each actList}}
+      <div class="item-day">
+        <div class="day-tit"><span class="tit">{{showDay @key}}</span></div>
+        <!-- 项目列表 -->
+        
+        <div class="day-item-list">
+    
+          <span class="edit-item" data-key="{{@key}}">添加项目</span>
+          {{#each this}}
+        {{#each list}}
+        {{#js_compare "this.select_fare_count > 0"}}
+          <div class="item-box">
+            <div class="item-tit">
+              <div class="name">{{item_name}}</div>
+              <div class="address">{{address}}</div>
+            </div>
+            {{#each fare}}
+              
+              {{#if is_select}}
+                <div class="item-detail">
+                  <span>{{name}}</span>
+                  {{#if number}}
+                  <span class="tmm-count-price" data-info="{{info}}" data-price="{{price}}">{{number}}</span>
+                  {{else}}
+                  <span class="tmm-count-price" data-info="{{info}}" data-price="{{price}}">{{info}}</span>
+                  {{/if}}
+                  <span>￥{{price}}</span>
+                  <span class="tmm-act-fare-minus"
+                      data-dotid="{{../../../../dot_id}}"
+                      data-itemid="{{../../item_id}}"
+                      data-fareid="{{id}}"
+
+                  ><i class="icon ticon-cyclo-minus"></i></span>
+                </div>
+              {{/if}}
+            {{/each}}
+          {{#js_compare "this.select_fare_count < this.fare_count"}}
+            <div class="item-detail">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span class="tmm-act-fare-add"
+              data-dotid="{{../../../dot_id}}"
+              data-itemid="{{../item_id}}"
+              data-itemlink="{{../item_link}}"
+              ><i class="icon ticon-cyclo-add"></i></span>
+            </div>
+          {{/js_compare"}}  
+          </div>
+        {{/js_compare}}
+          {{/each}}
+        {{/each}}
+        </div>
+        
+      </div>
+    {{/each}}
+    </div>
+
+      <div class="add-dot" id="add-dot-day"><span class="add_day_schedule">添加日程</span></div>
+    </div>
+  <div class="sub-input">
+      <a class="sub-input-box price" href="#" id="total_price">￥0.00起/人</a>
+      <a class="sub-input-box submit-btn" href="javascript:;" id="submit-select-dot-act">我已串联好线路</a>
+    </div>
+  </div>
+</div>
+
