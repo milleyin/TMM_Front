@@ -1,4 +1,5 @@
 var api = 'http://pad.365tmm.net';
+// var api = 'https://pad.365tmm.com';
 var record_api = api + "/record/index.html"
 
 // 封装为函数

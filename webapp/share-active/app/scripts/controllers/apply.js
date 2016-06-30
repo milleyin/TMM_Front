@@ -148,11 +148,11 @@ angular.module('shareActiveApp')
       return;
     }
     ele.addClass('gray');
-    ele.html('获取验证码(' + i + ')')
+    ele.html('获取验证码(' + i + ')');
     var timer = setInterval(function() {
       i--;
       ele.html('获取验证码(' + i + ')');
-      if (i == 1) {
+      if (i === 1) {
         ele.removeClass('gray');
         ele.html('获取验证码');
 
@@ -164,7 +164,7 @@ angular.module('shareActiveApp')
 
     var token = {
       "phone": self.mainRetinueInfo.phone
-    }
+    };
     $http.get(api_code + '&csrf=csrf').success(function(data) {
 
       token.TMM_CSRF = data.data.csrf.TMM_CSRF;

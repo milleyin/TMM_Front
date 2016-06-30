@@ -23,7 +23,7 @@ html {
 
 body {
   background-image: url(../img/bg.png);
-  background-size: 100% 100%;
+  background-size: 1080px 1920px;
   overflow: hidden;
 }
 
@@ -36,7 +36,6 @@ body {
   float: left;
   width: 494px;
   height: 278px;
-  background-color: black;
   margin-left: 48px;
   margin-right: 20px;
 }
@@ -106,8 +105,8 @@ body {
 
 #lotteryBtn {
   position: absolute;
-  left: 54px;
-  top: 54px;
+  left: 55px;
+  top: 55px;
   width: 664px;
   height: 664px;
 }
@@ -240,9 +239,10 @@ body {
   margin-left: -335px;
   width: 668px;
   /*height: 400px;*/
-  background-color: rgba(26, 41, 43, 0.95);
+  background-color: rgba(26, 41, 43, 0.85);
   border: 1px solid #4fbfc7;
   padding-bottom: 20px;
+  border-radius: 16px;
 }
 
 .award-alert .close {

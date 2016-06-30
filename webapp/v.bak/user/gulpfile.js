@@ -70,7 +70,7 @@
   });
 
   gulp.task('images', function() {
-    return gulp.src(paths.src.images + '*.{png,jpg}')
+    return gulp.src(paths.src.images + 'imagemin/*.{png,jpg}')
       .pipe($.imagemin({
         optimizationLevel: 5,
         progressive: true,

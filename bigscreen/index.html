@@ -10,9 +10,20 @@
   <script type="text/javascript">
 
     $(function() {
+
       var api = 'http://pad.365tmm.net';
+      // var api = 'https://pad.365tmm.com';
       var tmmcsrf;
       var reg = /^1[34578][0-9]{9}$/;
+      
+
+      function alertFn(str) {
+        try{
+          jsObj.prompt(str);
+        } catch(e) {
+          alert(str)
+        }
+      }
       
       $.ajax({ 
         type : "get", 
@@ -42,15 +53,15 @@
         try {
           number = jsObj.getSerialNumber();
         } catch(e) {
-          number = '012345678912345';
+          number = '0123456789123456';
         }
 
         if($("#name").val() == null || $("#name").val() == ""){
-          alert("请输入用户名");
+          alertFn("请输入帐号");
         } else if(!reg.test($("#name").val())) {
-          alert("手机号码格式不对");
+          alertFn("手机号码格式不对");
         } else if($("#pwd").val() == null || $("#pwd").val() == ""){
-          alert("请输入密码");
+          alertFn("请输入密码");
         } else {
           $.ajax({
             type: "post",
@@ -75,7 +86,7 @@
               if(data.content.error){
                 if(data.content.error.LoginForm){
                   for(var msgName in data.content.error.LoginForm){
-                    alert(data.content.error.LoginForm[msgName][0]);
+                    alertFn(data.content.error.LoginForm[msgName][0]);
                   }
                 }
               } else if (data.content.result == 1) {
@@ -98,7 +109,7 @@
   </div>
   <form>
     <div class="login-form">
-      <input type="text" placeholder="帐号" class="info" id="name" value="18898795546">
+      <input type="text" placeholder="帐号" class="info" id="name">
       <input type="password" placeholder="密码"  class="info" id="pwd">
       <a href="#" class="login" id="user_login">登录</a>
     </div>

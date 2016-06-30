@@ -1,4 +1,5 @@
 var api = 'http://pad.365tmm.net';
+// var api = 'https://pad.365tmm.com';
 var image_api = api + "/ad/image.html";
 var video_api = api + "/ad/video.html";
 var shop_api = api + "/shop/index.html";
@@ -35,6 +36,13 @@ function http_get(url, successfn, errorfn) {
   });
 }
 
+function alertFn(str) {
+  try {
+    jsObj.prompt(str);
+  } catch (e) {
+    alert(str)
+  }
+}
 
 // 视频自动播放
 // var autoplay = function() {
@@ -111,19 +119,7 @@ $(function() {
 
 });
 
-// 视频
-$(function() {
-  http_get(video_api, function(data) {
-    var video = document.getElementById('video');
-    var src = api + data.content.path;
-    try {
-      jsObj.setVideo(494, 278, 30, 48, src);
 
-    } catch (e) {
-      video.src = src;
-    }
-  });
-});
 
 // 抽奖
 $(function() {
@@ -136,13 +132,14 @@ $(function() {
 
   // 获取转盘图片
   http_get(award_api, function(data) {
+
     $('.chou img').bind('tap', function() {
       if ($('#alert1').hasClass('award-enter') || $('#alert3').hasClass('award-enter')) {} else {
         $('#alert2').addClass('award-enter');
         $('#alert2 .rule').html(data.content.info)
       }
     });
-    $("#lotteryBtn").attr("src", api + data.content.path)
+    $("#lotteryBtn").attr("src", api + data.content.path);
     path = data.content.path;
   });
 
@@ -204,7 +201,7 @@ $(function() {
     var name = event.data.name;
     num = event.data.number;
 
-    if (num == 0) {
+    if (num == 0 || num === undefined) {
       if (hasChange) {
         $('.qr-code').show();
         $('.count-box').hide();
@@ -230,8 +227,9 @@ $(function() {
 
   var awards_type, awards_text, awards_url;
 
-  var rotateFunc = function(awards, angle, text, url) { //awards:奖项，angle:奖项对应的角度
+  var rotateFunc = function(awards, receive, angle, text, url) { //awards:奖项，angle:奖项对应的角度
     awards_type = awards;
+    receive_type = receive;
     awards_text = text;
     awards_url = url;
     setTimeout(function() {
@@ -245,7 +243,7 @@ $(function() {
     if (awards_type == -1) {
 
     } else {
-      if (awards_url) {
+      if (receive_type == 1 || receive_type == 3) {
         var oDiv = document.getElementById('qr-url');
         oDiv.innerHTML = "";
         var qrcode = new QRCode(oDiv, {
@@ -256,7 +254,7 @@ $(function() {
         qrcode.makeCode(awards_url);
         $('#alert3').addClass('award-enter');
         $('#alert3 .txt').html(awards_text);
-      } else {
+      } else if (receive_type == 2) {
         $('#alert1').addClass('award-enter');
         $('#alert1 .txt').html(awards_text);
       }
@@ -275,24 +273,33 @@ $(function() {
       flag = false;
       $('#lotteryBtn').css({ "-webkit-transform": "rotate(" + 0 + "deg)", "transition": "all 0s" });
       $('#lotteryBtn').addClass('auto-rotate')
-      http_get(prize_api, function(data) {
-        $('#lotteryBtn').removeClass('auto-rotate');
-        if (data.content.config.path == path) {
-          rotateFunc(data.content.status.value, data.content.angle, data.content.name, data.content.url);
-        } else {
-          path = data.content.config.path;
-          var img = $('#lotteryBtn').get(0);
-          img.src = api + data.content.config.path;
-          img.onload = function() {
-            rotateFunc(data.content.status.value, data.content.angle, data.content.name, data.content.url);
+      try {
+        http_get(prize_api, function(data) {
+      
+          $('#lotteryBtn').removeClass('auto-rotate');
+          if (data.content.config.path == path) {
+            rotateFunc(data.content.status.value, data.content.receive_type.value, data.content.angle, data.content.name, data.content.url);
+          } else {
+            path = data.content.config.path;
+            var img = $('#lotteryBtn').get(0);
+            img.src = api + data.content.config.path;
+            img.onload = function() {
+              rotateFunc(data.content.status.value, data.content.receive_type.value, data.content.angle, data.content.name, data.content.url);
+            }
+            $('#alert2 .rule').html(data.content.config.info)
           }
-          $('#alert2 .rule').html(data.content.config.info)
-        }
-      }, function() {
+        }, function() {
+
+          $('#lotteryBtn').removeClass('auto-rotate');
+          alertFn('网络错误，请重新抽奖');
+          flag = true;
+        })
+
+      } catch (e) {
         $('#lotteryBtn').removeClass('auto-rotate');
-        alert('网络错误，请重新抽奖');
+        alertFn('网络错误，请重新抽奖');
         flag = true;
-      })
+      }
     }
   })
 
@@ -303,36 +310,6 @@ $(function() {
     $(this).parent().removeClass('award-enter');
   });
 });
-
-
-// 底部广告
-$(function() {
-
-  http_get(shop_api, function(data) {
-    var imgSrces = [];
-    var imgs = '';
-    data.content.shop.forEach(function(item) {
-      imgSrces.push(api + item.path);
-    });
-    
-    try {
-      imgs = imgSrces.join(',');
-
-      jsObj.setImages(315, 606, 0, 10, 10, 10, imgs);
-    } catch (e) {
-      var html = '';
-      imgSrces.forEach(function(item) {
-        html += '<li class="item"><img src="' + item + '" /></li>';
-      });
-      $('.slider ul').css({"width": data.content.shop.length * (315+24)})
-      $('.slider ul').html(html);
-    }
-
-    // new IScroll('.footer .slider', { scrollX: true, scrollY: false});
-
-  });
-});
-
 
 // 获奖信息
 $(function() {
@@ -435,3 +412,107 @@ $(function() {
 
   // setInterval(get_record, 12000);
 });
+
+// // 底部广告
+// $(function() {
+
+//   http_get(shop_api, function(data) {
+//     var imgSrces = [];
+//     var imgs = '';
+//     data.content.shop.forEach(function(item) {
+//       imgSrces.push(api + item.path);
+//     });
+
+//     try {
+//       imgs = imgSrces.join(',');
+
+//       jsObj.setImages(315, 606, 0, 10, 10, 10, imgs);
+//     } catch (e) {
+//       var html = '';
+//       imgSrces.forEach(function(item) {
+//         html += '<li class="item"><img src="' + item + '" /></li>';
+//       });
+//       $('.slider ul').css({ "width": data.content.shop.length * (315 + 24) })
+//       $('.slider ul').html(html);
+//     }
+
+//     // new IScroll('.footer .slider', { scrollX: true, scrollY: false});
+
+//   });
+
+// });
+
+// // 视频
+// $(function() {
+//   http_get(video_api, function(data) {
+//     var video = document.getElementById('video');
+//     var src = api + data.content.path;
+//     try {
+//       jsObj.setVideo(494, 278, 30, 48, src);
+
+//     } catch (e) {
+//       video.src = src;
+//     }
+//   });
+// });
+
+// 底部广告和视频
+window.onload = function() {
+  var count = 0;
+  var imgs, src;
+
+  http_get(shop_api, function(data) {
+    var imgSrces = [];
+    data.content.shop.forEach(function(item) {
+      imgSrces.push(api + item.path);
+    });
+    imgs = imgSrces.join(',');
+    triggerNative();
+    // try {
+    //   imgs = imgSrces.join(',');
+
+    //   jsObj.setImages(315, 606, 0, 10, 10, 10, imgs);
+    // } catch (e) {
+    //   var html = '';
+    //   imgSrces.forEach(function(item) {
+    //     html += '<li class="item"><img src="' + item + '" /></li>';
+    //   });
+    //   $('.slider ul').css({ "width": data.content.shop.length * (315 + 24) })
+    //   $('.slider ul').html(html);
+    // }
+
+  });
+  http_get(video_api, function(data) {
+
+    src = api + data.content.path;
+    triggerNative();
+    // try {
+    //   jsObj.setVideo(494, 278, 30, 48, src);
+
+    // } catch (e) {
+
+    // }
+  });
+
+
+  function triggerNative() {
+    count++;
+    if (count == 2) {
+      setTimeout(function() {
+        try {
+          jsObj.setImages(315, 606, 0, 10, 10, 10, imgs);
+          jsObj.setVideo(494, 278, 30, 48, src);
+        } catch (e) {
+          var html = '';
+          var imgSrces = imgs.split(',');
+          imgSrces.forEach(function(item) {
+            html += '<li class="item"><img src="' + item + '" /></li>';
+          });
+          $('.slider ul').css({ "width": imgSrces.length * (315 + 24) })
+          $('.slider ul').html(html);
+        }
+
+      }, 500);
+    }
+  }
+}
