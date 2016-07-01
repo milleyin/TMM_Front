@@ -1,0 +1,21 @@
+<!-- 觅鲜专题 -->
+<ion-view hide-tabs>
+  <navbar back title="{{name}}"></navbar>
+
+  <ion-content class="index">
+  <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()" spinner="ios">
+  </ion-refresher>
+  <load-icon ng-if="!model.list_data"></load-icon>
+    <div class="hotsell hotselllist">
+      <div class="box-img">
+        <div class="box-item" ng-repeat="item in model.list_data">
+          <img ui-sref="tab.fresh-list({link: item.link, name: item.name})" class="hot-img" ng-src="{{item.img}}" ng-style="imgStyle">
+        </div>
+      </div>
+    </div>
+
+  <ion-infinite-scroll on-infinite="loadMore()" ng-if="model.nextPage" distance="1%" spinner="ios">
+  </ion-infinite-scroll>
+  </ion-content>
+
+</ion-view>

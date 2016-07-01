@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <title>田觅觅</title>
+  
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/ionic/release/css/ionic.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/sprite.css">
+  <!-- endbuild -->
+
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/ionic/release/js/ionic.js"></script>
+  <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+
+      <!-- build:js({.tmp,src}) scripts/scripts.js -->
+      <script src="app/app.js"></script>
+      <script src="app/base/configuration.js"></script>
+      <script src="app/index/index.js"></script>
+      <script src="app/recommend/recommend.js"></script>
+      <script src="app/fresh/fresh.js"></script>
+      <script src="app/search/search.js"></script>
+      <script src="app/search/destination.js"></script>
+      <script src="app/shops/shop-detail.js"></script>
+      <script src="app/items/item.js"></script>
+      <script src="app/order/order.js"></script>
+      <script src="app/my/my.js"></script>
+      <script src="app/my/myInfo.js"></script>
+      <script src="app/login/myLogin.js"></script>
+      <script src="app/wallet/myWallet.js"></script>
+      <script src="app/payment/payment.js"></script>
+      <script src="app/mypraise/myPraise.js"></script>
+      <script src="app/myorder/myOrder.js"></script>
+      <script src="app/myjoinact/myJoinAct.js"></script>
+      <script src="app/mycreateact/myCreateAct.js"></script>
+      <script src="app/mycreateact/myCreateActDetail.js"></script>
+      <script src="app/mycreateact/mySponsorAct.js"></script>
+      <script src="app/common/services/security.js"></script>
+      <script src="app/common/resources/resources.js"></script>
+      <script src="app/common/services/tools.js"></script>
+      <script src="app/common/services/qr-code.js"></script>
+      <script src="app/common/services/device.js"></script>
+      <script src="app/common/directives/tmmui.js"></script>
+      <script src="app/common/services/pay.js"></script>
+      <script src="app/common/services/calendar.js"></script>
+      <!-- endbuild -->
+</head>
+
+<body ng-app="app">
+
+  <ion-nav-bar class="tmm-nav-bar {{barClass}}">
+  </ion-nav-bar>
+
+  <ion-nav-view></ion-nav-view>
+</body>
+
+</html>

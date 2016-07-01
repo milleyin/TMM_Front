@@ -1,0 +1,23 @@
+<ion-view view-title="预订须知" hide-tabs>
+  <ion-nav-buttons>
+    <!-- <i class="tmm-ion-left ion-android-arrow-back" ui-sref="tab.dot-detail" nav-direction="back"></i> -->
+    <a class="tmm-ion-left ion-android-arrow-back" href="javascript:history.back(-1)"  nav-direction="back"></a>
+  </ion-nav-buttons>
+  <ion-content class="tmm-shop-book-info-content">
+
+    <div class="tmm-booking">
+      <div class="booking-title">预订须知</div>
+      <div class="booking-con" data-ng-bind-html="bookInfo">
+         
+      </div>
+    </div>
+
+    <div class="tmm-booking">
+      <div class="booking-title">费用包含</div>
+      <div class="booking-con" data-ng-bind-html="costInfo">
+         
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

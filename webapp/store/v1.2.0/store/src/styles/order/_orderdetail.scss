@@ -1,0 +1,120 @@
+@charset "UTF-8";
+.orderdetail {
+  .cell {
+    line-height: 44px;
+    background-color: #fff;
+    @extend %border-top-bottom;
+    padding: 0 14px;
+  }
+  .people-cell {
+    padding: 10px 14px;
+    background-color: #fff;
+    @extend %border-top-bottom;
+    p {
+      margin: 0;
+      font-size: 13px;
+      color: $gray;
+      line-height: 24px;
+    }
+    .name {
+      margin-right: 20px;
+    }
+  }
+
+  .empty {
+    height: 74px;
+  }
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  display: flex;
+  background-color: #fff;
+  @extend %border-top;
+
+  .footer-btn {
+    flex: 1;
+    display: flex;
+    border: 1px solid $red;
+    margin: 8px 16px;
+    border-radius: 2px;
+    align-items: center;
+    justify-content: center; 
+    color: $red;
+  }
+}
+
+.main-title {
+  font-size: 13px;
+  line-height: 13px;
+  position: relative;
+  color: #6d6d72;
+  padding: 35px 14px 10px;
+}
+
+.order-wrap {
+  background-color: #fff;
+  @extend %border-bottom;
+  .det-list {
+    padding-left: 14px;
+    @extend %border-top;
+  }
+  .day_num {
+    line-height: 44px;
+    text-align: center;
+    @extend %border-top;
+  }
+  .title {
+    line-height: 49px;
+    padding-right: 14px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    @extend %border-bottom;
+    span {
+      display: block;
+    }
+    .h_right {
+      font-size: 13px;
+    }
+    .gray {
+      color: $gray;
+    }
+    .red {
+      color: $red;
+    }
+  }
+  .item-list {
+    color: $gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend %border-bottom;
+    &:last-child {
+      background: none;
+    }
+  }
+  .item-cell {
+    display: block;
+    &:nth-child(1) {
+      margin: 12px 0;
+      width: 40%;
+    }
+    &:nth-child(2) {
+      width: 20%;
+      text-align: center;
+    }
+    &:nth-child(3) {
+      width: 8%;
+      text-align: center;
+    }
+    &:nth-child(4) {
+      width: 32%;
+      padding-right: 16px;
+      text-align: right;
+    }
+  }
+}

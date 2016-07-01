@@ -1,0 +1,591 @@
+angular.module('wallet', [])
+
+//钱包首页
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.mywallet', {
+      url: '/mywallet',
+      cache: false,
+      templateUrl: 'app/wallet/templates/my-wallet.html',
+      controller: 'WalletCtrl',
+      /*resolve: {
+        data: function(Resource, $stateParams, $ionicLoading, $ionicHistory) {
+          if ($ionicHistory.backView() === null || $ionicHistory.backView().stateName !== 'tab.mywallet') {
+            $ionicLoading.show({
+              template: '玩命加载中...',
+              hideOnStateChange: true
+            });
+            return Resource.getBurseInfo();
+          }
+        }
+      }*/
+    });
+}])
+
+//提现操作（填写金额页面）
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.mywithdraw', {
+      cache: false,
+      url: '/mywithdraw/:withdraw/:withdraw_format',
+      templateUrl: 'app/wallet/templates/my-wallet-withdraw.html',
+      controller: 'WithdrawWalletCtrl',
+    });
+}])
+
+//提现验证短信
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.mywithdrawmessage', {
+      cache: false,
+      url: '/mywithdrawmessage',
+      templateUrl: 'app/wallet/templates/my-withdraw-message.html',
+      controller: 'WithdrawWalletCtrl',
+    });
+}])
+
+//提现成功提示
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.mywithdrawinfo', {
+      url: '/mywithdrawinfo',
+      templateUrl: 'app/wallet/templates/my-withdraw-info.html',
+      controller: 'MyWithDrawInfoCtrl',
+    });
+}])
+
+//提现的交易记录
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.withdrawRecord', {
+      url: '/withdrawRecord',
+      templateUrl: 'app/wallet/templates/my-withdraw-record.html',
+      controller: 'WithDrawRecordCtrl',
+    });
+}])
+
+//银行管理---》更换银行卡---》得到银行卡信息
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.mybankcardmanagement', {
+      url: '/mybankcardmanagement',
+      templateUrl: 'app/wallet/templates/my-bankcard-management.html',
+      controller: 'MyBankCardManageCtrl',
+    });
+}])
+
+//银行管理---》更换银行卡---》填写更换银行卡的信息
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.mybankcardchange', {
+      url: '/mybankcardchange',
+      templateUrl: 'app/wallet/templates/my-bankcard-change.html',
+      controller: 'MyBankCardManageCtrl',
+    });
+}])
+
+//银行管理---》更换银行卡---》银行卡管理协议
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.mybankcardprotocal', {
+      url: '/mybankcardprotocal',
+      templateUrl: 'app/wallet/templates/my-bankcard-protocal.html',
+    });
+}])
+
+//银行管理---》更换银行卡---》短信验证
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.mybankcardmessage', {
+      cache: false,
+      url: '/mybankcardmessage',
+      templateUrl: 'app/wallet/templates/my-bankcard-message.html',
+      controller: 'MyBankCardManageCtrl',
+    });
+}])
+
+//银行管理---》添加银行卡（跟修改银行卡走一套流程）
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.newbank', {
+      url: '/newbank',
+      templateUrl: 'app/wallet/templates/my-bankcard-new.html',
+      controller: 'MyBankCardManageCtrl',
+    });
+}])
+
+//交易记录
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.traderecord', {
+      url: '/traderecord',
+      templateUrl: 'app/wallet/templates/my-trade-record.html',
+      controller: 'TradeRecordCtrl',
+    });
+}])
+
+
+//钱包首页
+.controller('WalletCtrl', function($scope, $http, $state, Resource, appFunc) {
+  $scope.withdraw = 0;
+  $scope.withdraw_format = 0;//可提金额
+  /*$scope.json = data;
+  $scope.withdraw = data.money;
+  $scope.withdraw_format = data.money_format;*/
+  Resource.getBurseInfo().then(function(dataRes) {
+    $scope.json = dataRes;
+    $scope.withdraw = dataRes.money;
+    $scope.withdraw_format = dataRes.money_format;
+  }, function(dataRes) {
+
+  });
+
+  //判断是否可以提现
+  $scope.BankCardHasOrNot = function() {
+    Resource.getCash().then(function(dataRes) {
+      if (dataRes.data.status != 0) { //有银行卡就进提现页面
+        $state.go('tab.mywithdraw', {
+          'withdraw': $scope.withdraw,
+          'withdraw_format': $scope.withdraw_format
+        });
+      } else {
+        appFunc.alert("请添加银行卡");
+      }
+    }, function(dataRes) {
+
+    });
+  }
+
+  //判断是否可以提现
+  $scope.BankCardManageLink = function() {
+    Resource.getCash().then(function(dataRes) {
+      if (dataRes.data.status != 0) { //有银行卡就进提现页面
+        $state.go("tab.mybankcardmanagement");
+      } else {
+        $state.go("tab.newbank");
+      }
+    }, function(dataRes) {
+
+    });
+  }
+
+})
+
+//输入提现金额页面
+.controller('WithdrawWalletCtrl', function($scope, $http, $stateParams, $interval, $state, Resource, appFunc, tmmCache, security) {
+  //得到钱的余额
+  $scope.withdraw = $stateParams.withdraw;
+  //在页面显示的余额
+  $scope.withdraw_format = $stateParams.withdraw_format;
+  //获取银行卡的相关信息,填充页面
+  Resource.getCash().then(function(dataRes) {
+    if (dataRes.data.status != 0) { 
+      $scope.json = dataRes.data.data[0];
+    } else {
+      appFunc.alert("获取相关银行卡信息出错");
+    }
+  }, function(dataRes) {
+
+  });
+
+  /*
+  *获取提现的手机验证码
+   */
+  
+  //显示登录的手机号
+  security.getUserInfo().then(function(data){
+    $scope.loginPhone = data.userInfo.phone;
+  });
+  
+  $scope.json = {};
+  $scope.regText = {
+    sms : '',
+    key : ''
+  };
+  $scope.text = '获取验证码';
+  $scope.flag = true;
+
+  //判断输入的金额是否正确
+  $scope.withdrawForm = function() {
+    if($scope.withdraw_form.drawMoney.$error.required){
+      appFunc.alert('提现金额不能为空');
+    } else if(isNaN($scope.regText.drawMoney)){
+      appFunc.alert('提现金额输入有误');
+    } else if($scope.regText.drawMoney < 100){
+      appFunc.alert('提现金额不能小于100元');
+    } else if($scope.regText.drawMoney.length > 12){
+      appFunc.alert('提现金额不能大于12位');
+    } else if(parseFloat($scope.regText.drawMoney) > parseFloat($scope.withdraw)){
+      var tixianMoney = "可提现金额不足" + $scope.regText.drawMoney + '元';
+      appFunc.alert(tixianMoney);
+    } else if($scope.withdraw_form.$valid){
+      tmmCache.set("withdrawMoney", parseFloat($scope.regText.drawMoney)); //保存提现金额
+      $scope.submitBank();         
+    }
+  };
+
+  /*先验证提现金额 */
+  $scope.submitBank = function() {
+    var data = {
+      "Cash": {
+        "price": tmmCache.get('withdrawMoney'),
+      }
+    };
+
+    Resource.withdrawCash(data).then(function(dataRes) {
+      if(dataRes.status == 1){
+        $state.go("tab.mywithdrawmessage");
+      }
+    }, function(dataRes) {
+      if(dataRes.msg) {
+        appFunc.alert(dataRes.msg);
+      } else {
+        appFunc.alert("输入有误，请重试");
+      }
+    });
+  };
+
+  /* 短信定时器 */
+  $scope.goTime = function() {
+    var iNow = 60;
+    $scope.text = iNow+'秒后重新获取';
+
+    timer = $interval(function(){
+      iNow--;
+      $scope.text = iNow+'秒后重新获取';
+      
+      if(iNow == 0){
+        $interval.cancel(timer);
+        $scope.text = '获取验证码';
+        $scope.flag = true;
+      } 
+    },1000);
+  };
+
+  /* 获取短信验证码 */
+  $scope.getCode = function() {
+    if($scope.flag == false){
+      return;
+    }
+    Resource.getWithDrawCode().then(function(dataRes) {
+      if (dataRes.status == 0) {
+        $scope.flag = true;
+      } else {
+        $scope.flag = false;
+        $scope.goTime();
+      }
+    }, function(dataRes) {
+      if(dataRes.msg) {
+        appFunc.alert(dataRes.msg);
+      } else {
+        appFunc.alert("提现失败");
+      }
+    });
+  };
+
+  /* 控制短信提交按钮是否可用 */
+  $scope.chkBtnShow = false;
+  $scope.chkBtnHide = true;
+  $scope.messageFormButton = function() {
+    if($scope.message_form.sms.$error.required){
+      $scope.chkBtnShow = false;
+      $scope.chkBtnHide = true;
+    } else {
+      $scope.chkBtnShow = true;
+      $scope.chkBtnHide = false;
+    }
+  };
+
+  /* 验证短信表单 */
+  $scope.messageForm = function() {
+    if ($scope.message_form.sms.$error.required) {
+      mobileMessage("验证码不能为空，请输入验证码");
+    }        
+    if ($scope.message_form.$valid) {
+      $scope.submit();
+    }
+  };
+
+  /* 发送提现短信验证表单 */
+  $scope.submit = function() {
+    var data = {
+      "Cash" : { 
+        "sms" :$scope.regText.sms,
+        "price" : tmmCache.get('withdrawMoney')
+      }
+    };
+    Resource.withdrawMessage(data).then(function(dataRes) {
+      if(dataRes.status == 1){
+        $state.go("tab.mywithdrawinfo");
+      }
+    }, function(dataRes) {
+      if(dataRes.msg) {
+        appFunc.alert(dataRes.msg);
+      } else {
+        appFunc.alert("提现失败");
+      }
+    });
+  }
+})
+
+//提现成功提示
+.controller('MyWithDrawInfoCtrl', function($scope, $http, Resource, tmmCache) {
+  $scope.withdrawMoney = tmmCache.get('withdrawMoney');
+})
+
+//提现的交易记录
+.controller('WithDrawRecordCtrl', function($scope, $http, Resource, tmmCache, autoRefresh) {
+  $scope.list_data = [];
+  $scope.listNum = 0;
+  var nextLink = null;
+
+  $scope.doRefresh = function() {
+    Resource.getWithDrawRecord().then(function(dataRes){
+      $scope.listNum = dataRes.list_data.length;
+      $scope.list_data = dataRes.list_data;
+      nextLink = dataRes.page.next;
+      $scope.$broadcast('scroll.refreshComplete');
+    }, function (dataRes) {
+      $scope.$broadcast('scroll.refreshComplete');
+    });
+  };
+
+  $scope.doRefresh();
+
+  $scope.loadMore = function() {
+    Resource.get(nextLink).then(function(dataRes){
+      $scope.list_data = $scope.list_data.concat(dataRes.list_data);
+      nextLink = dataRes.page.next;
+      $scope.$broadcast("scroll.infiniteScrollComplete");
+    }, function (dataRes) {
+      $scope.$broadcast("scroll.infiniteScrollComplete");
+    });
+  }
+  //是否还没更多数据
+  $scope.hasMoreData = function() {
+    if (nextLink) {
+      return true;
+    }
+    return false;
+  };
+})
+
+/**
+ * 银行卡管理模块
+ */
+.controller('MyBankCardManageCtrl', function($scope, $http,  $interval, $state, Resource, security, appFunc) {
+  $scope.regText = {
+    username : '',      
+    bank_code : '',
+    sms : '',
+    key : '',
+    chk : false
+  };
+  $scope.bankInfo = {
+    'bankname': ''
+  };
+  $scope.phone = '';
+
+  $scope.text = '获取验证码';
+  $scope.flag = true;
+  $scope.titleType = "";
+  security.getUserInfo().then(function(data){
+    $scope.loginPhone = data.userInfo.phone;
+  });
+
+  //获取银行卡的信息
+  Resource.getCash().then(function(dataRes) {
+    if (dataRes.data.status == 1) {
+      $scope.json = dataRes.data.data[0];
+    } else {
+      
+    }
+  }, function(dataRes) {
+
+  });
+  //填写更换银行卡的信息
+  Resource.getBankList().then(function(dataRes) {
+    if (dataRes.data.status == 1) { 
+      $scope.bankList = dataRes.data.data;
+    } else {
+      
+    }
+  }, function(dataRes) {
+
+  });
+
+  /* 提交表单 */
+  $scope.signupForm = function() {
+    if ($scope.bankInfo.bankname == null || $scope.bankInfo.bankname == "") {
+      appFunc.alert("开户行必须选择");
+    } else if ($scope.signup_form.subbranch.$error.required) {
+      appFunc.alert("开户支行不能为空");
+    } else if ($scope.signup_form.username.$error.required) {
+      appFunc.alert("开户名不能为空");
+    } else if ($scope.signup_form.bank_code.$error.required) {
+      appFunc.alert("卡号不能为空");
+    } else if (isNaN($scope.regText.bank_code)) {
+      appFunc.alert("卡号只能为数字");
+    } else if (!$scope.regText.chk) {
+      appFunc.alert('请先查看"银行卡管理协议"并同意');
+    } else if ($scope.signup_form.$valid) {
+      submitBank();       
+    }
+  }
+
+  /*当文本都为空时提交按钮为灰色*/
+  $scope.chkBtnShow = false;
+  $scope.chkBtnHide = true;
+  
+  $scope.signupFormButton = function() {
+    if($scope.bankInfo.bankname == null || $scope.bankInfo.bankname == "" || $scope.signup_form.subbranch.$error.required || $scope.signup_form.username.$error.required || $scope.signup_form.bank_code.$error.required || !$scope.regText.chk){
+      $scope.chkBtnShow = false;
+      $scope.chkBtnHide = true;
+    } else { //都不为空
+      $scope.chkBtnShow = true;
+      $scope.chkBtnHide = false;
+    }
+  }
+  /* 发送更换银行卡的信息 */
+  function submitBank() {
+    var data = {
+      "BankCard" : { 
+        "bank_id" : $scope.bankInfo.bankname,
+        "bank_name" : $scope.regText.username,
+        "bank_branch" : $scope.regText.subbranch,
+        /*"bank_info" : $scope.bankInfo.name,*/
+        "bank_code" : $scope.regText.bank_code,
+        "bank_type": '2', // 用户银行类型 1=信用卡 2=借记卡
+        "bank_identity": '', // 开户身份证
+        "is_default": "0", // 是否默认 0默认 -1 非默认 
+      }
+    }
+    Resource.createBankCard(data).then(function(dataRes) {
+      $state.go('tab.mybankcardmessage');
+    }, function(dataRes) {
+      appFunc.alert(dataRes.msg);
+    });
+  }
+
+  /* 短信定时器 */
+  function goTime() {
+    var iNow = 60;
+    $scope.text = iNow+'秒后重新获取';
+
+    timer = $interval(function(){
+      iNow--;
+      $scope.text = iNow+'秒后重新获取';
+      
+      if(iNow == 0){
+        $interval.cancel(timer);
+        $scope.text = '获取验证码';
+        $scope.flag = true;
+      }   
+    },1000);
+  }
+
+  /* 获取短信验证码 */
+  $scope.getCode = function() {
+    if($scope.flag == false){
+      return;
+    }
+    Resource.getBankcardCode().then(function(dataRes) {
+      if (dataRes.status == 0) {
+        $scope.flag = true;
+      } else {
+        $scope.flag = false;
+        goTime();
+      }
+    }, function(dataRes) {
+      if(dataRes.msg) {
+        appFunc.alert(dataRes.msg);
+      } else {
+        appFunc.alert("获取短信验证码失败");
+      }
+    });
+  }
+
+  /* 控制短信提交按钮是否可用 */
+  $scope.messageBtnShow = false;
+  $scope.messageBtnHide = true;
+  $scope.messageFormButton = function() {
+    if($scope.tmm_message_form.sms.$error.required){
+      $scope.messageBtnShow = false;
+      $scope.messageBtnHide = true;
+    } else {
+      $scope.messageBtnShow = true;
+      $scope.messageBtnHide = false;
+    }
+  }
+
+  /* 验证短信表单 */
+  $scope.messageForm = function() {
+    if ($scope.tmm_message_form.sms.$error.required) {
+      mobileMessage("验证码不能为空，请输入验证码")
+    }        
+    if ($scope.tmm_message_form.$valid) {
+      submitCardInfo();
+    }
+  }
+
+  function submitCardInfo() {
+    var data = {
+      "User": {
+        "sms": $scope.regText.sms // 短信验证码
+      }
+    };
+    Resource.validateBankCardCode(data).then(function(dataRes) {
+      if(dataRes.status == 1){
+        $state.go('tab.mywallet');
+      }
+    }, function(dataRes) {
+      if(dataRes.msg) {
+        appFunc.alert(dataRes.msg);
+      } else {
+        appFunc.alert("管理银行卡失败");
+      }
+    });
+  }
+})
+
+/**
+ * 银行卡管理模块结束
+ */
+
+//交易记录
+.controller('TradeRecordCtrl', function($scope, $http, Resource, tmmCache, autoRefresh) {
+  $scope.list_data = [];
+  $scope.listNum = 0;
+  var nextLink = '';
+
+  $scope.doRefresh = function() {
+    Resource.getTradeRecord().then(function(dataRes){
+      $scope.listNum = dataRes.list_data.length;
+      $scope.list_data = dataRes.list_data;
+      nextLink = dataRes.page.next;
+      $scope.$broadcast('scroll.refreshComplete');
+    }, function (dataRes) {
+      $scope.$broadcast('scroll.refreshComplete');
+    });
+  };
+
+  $scope.doRefresh();
+
+  $scope.loadMore = function() {
+    Resource.get(nextLink).then(function(dataRes){
+      $scope.listNum = dataRes.list_data.length;
+      $scope.list_data = $scope.list_data.concat(dataRes.list_data);
+      nextLink = dataRes.page.next;
+      $scope.$broadcast("scroll.infiniteScrollComplete");
+    }, function (dataRes) {
+      $scope.$broadcast("scroll.infiniteScrollComplete");
+    });
+  }
+  // 是否还没更多数据
+  $scope.hasMoreData = function() {
+    if (nextLink) {
+      return true;
+    }
+    return false;
+  };
+});

@@ -1,0 +1,13 @@
+<!-- 我发起的活动 -->
+<ion-view cache-view="false" hide-tabs>
+  <navbar back title="{{info.name}}">
+    <div class="right">
+      <i ng-if="!isWeixin" class="icon-redshare" ng-click="doShare()"></i>
+      <i class="icon-infor" ng-click="openPopover($event)"></i>
+    </div>
+    
+  </navbar>
+  <ion-content class="tmm-eat-detail-content">
+    <div class="item-edit-content" data-ng-bind-html="contentHTML"></div>
+  </ion-content>
+</ion-view>

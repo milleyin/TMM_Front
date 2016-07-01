@@ -1,0 +1,21 @@
+<ion-view view-title="{{title}}" hide-tabs>
+  <ion-nav-buttons side="left">
+    <i class="tmm-ion-left icon icon-back" nav-back></i>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <i class="icon-deleteman" ng-if="type == 3" ng-click="deleteman()"></i>
+  </ion-nav-buttons>
+
+  <ion-content class="linkman" over-scroll="false">
+    
+    <div class="form">
+      <div class="cell input"><div class="tit">姓名</div><input ng-model="model.name" type="text" placeholder="必填"></div>
+      <div class="cell input"><div class="tit">身份证</div><input ng-model="model.identity" type="text" placeholder="用于购买保险，平台不会泄漏(必填)"></div>
+      <div class="cell input"><div class="tit">手机号码</div><input ng-model="model.phone" type="tel" placeholder="方便商家联系(必填)"></div>
+      <div class="cell input"><div class="tit">邮箱</div><input type="text" ng-model="model.email" placeholder="{{(type == 0 || type == 1) ? '必填' : '选填'}}"></div>
+    </div>
+   
+    <div class="f_button"><button class="submit" ng-click="submit()">确认</button></div> 
+ 
+  </ion-content>
+</ion-view>

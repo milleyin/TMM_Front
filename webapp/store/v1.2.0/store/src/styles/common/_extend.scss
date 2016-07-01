@@ -1,0 +1,21 @@
+%border-top {
+  @include hairline();
+}
+%border-bottom {
+  @include hairline(bottom);
+}
+%border-left {
+  @include hairline(left);
+}
+%border-right {
+  @include hairline(right);
+}
+%border-top-bottom {
+  @include hairline(topBottom);
+}
+%border-left-right {
+  @include hairline(leftRight);
+}
+%border-wrap {
+  @include hairline(wrap);
+}

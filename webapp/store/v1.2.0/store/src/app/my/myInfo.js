@@ -1,0 +1,269 @@
+angular.module('myInfo', [])
+
+.config(['$stateProvider', function($stateProvider) {
+  $stateProvider
+    .state('tab.myInfo', {
+      url: '/myInfo',
+      views: {
+        'tab-my': {
+          templateUrl: 'app/my/templates/myInfo.html',
+          controller: 'myInfoCtrl',
+        }
+      }
+
+    })
+    .state('tab.modifypwd', {
+      url: '/modifypwd',
+      views: {
+        'tab-my': {
+          templateUrl: 'app/my/templates/modifypwd.html',
+          controller: 'modifypwdCtrl',
+        }
+      }
+    })
+    .state('tab.modifyPhone', {
+      url: '/modifyPhone',
+      views: {
+        'tab-my': {
+          templateUrl: 'app/my/templates/modifyPhone.html',
+          controller: 'modifyPhoneCtrl',
+        }
+      }
+    })
+
+}])
+
+// 我的资料
+.controller('myInfoCtrl', function($scope, modify, Resource, security) {
+
+  $scope.$on('$ionicView.enter', function() {
+    if (modify.ismodify) {
+      security.userInfo = null;
+      security.getUserInfo().then(function(data) {
+        $scope.user = data;
+
+      });
+    }
+  });
+
+  security.getUserInfo().then(function(data) {
+    $scope.user = data;
+
+    Resource.get(data.link).then(function(data) {
+      $scope.model = data;
+    })
+
+  });
+
+})
+
+// 修改密码
+.controller('modifypwdCtrl', function($scope, $interval, $ionicHistory, Resource, security, appFunc) {
+  $scope.model = {
+    phone: '',
+    code: '',
+    pwd: '',
+    confirm_pwd: ''
+  };
+  $scope.text = '获取验证码';
+  $scope.runTime = false;
+  security.getUserInfo().then(function(data) {
+    $scope.model.phone = data.phone;
+  });
+
+  // 获取短信验证码
+  $scope.sendCode = function() {
+    if ($scope.runTime) return;
+    var phoneNum = $scope.model.phone;
+    if (phoneNum === '') {
+      appFunc.alert('手机号不能为空');
+    } else if (!appFunc.isPhone(phoneNum)) {
+      appFunc.alert('手机号格式不正确');
+    } else {
+      Resource.sendModifyPwdCode(phoneNum).then(function(data) {
+        startTime();
+        $scope.runTime = true;
+
+      }, function(data) {
+        appFunc.alert(data.msg);
+      })
+    }
+  };
+
+  $scope.$on('$destroy', function(data) {
+    $interval.cancel(timer);
+  });
+
+  // 提交表单
+  $scope.submit = function() {
+
+    if ($scope.model.phone === '') {
+      appFunc.alert('手机号不能为空');
+    } else if (!appFunc.isPhone($scope.model.phone)) {
+      appFunc.alert('手机号格式不正确');
+    } else if ($scope.model.code === '') {
+      appFunc.alert('验证码不能为空');
+    } else if ($scope.model.pwd === '') {
+      appFunc.alert('密码不能为空');
+    } else if ($scope.model.pwd !== $scope.model.confirm_pwd) {
+      appFunc.alert('两次密码不一致');
+    } else {
+      submit();
+    }
+  };
+
+  var timer = null;
+
+  function startTime() {
+    if (timer !== null) return;
+    var num = 60;
+
+    timer = $interval(function() {
+      $scope.text = (num--) + '秒后重新获取';
+      if (num === 0) {
+        $interval.cancel(timer);
+        timer = null;
+        $scope.runTime = false;
+        $scope.text = '获取验证码';
+      }
+
+    }, 1000);
+
+  }
+
+  // 提交表单数据
+  function submit() {
+    var token = {
+      "StoreUser": {
+        "phone": $scope.model.phone,
+        "sms": $scope.model.code,
+        "_pwd": $scope.model.pwd,
+        "confirm_pwd": $scope.model.confirm_pwd
+      }
+    }
+
+    Resource.modifyPwd(token).then(function(data) {
+      appFunc.alert('修改成功').then(function() {
+        $ionicHistory.goBack();
+      });
+    }, function(data) {
+      appFunc.alert(data.msg);
+    });
+
+  }
+})
+
+/**
+ * 修改手机号
+ */
+.controller('modifyPhoneCtrl', function($scope, $interval, $ionicHistory, modify, appFunc, Resource) {
+  var timer = null;
+  $scope.isNext = false;
+  $scope.disable = false;
+  $scope.txt = "获取验证码";
+  $scope.old = {};
+  $scope.new = {};
+
+  $scope.$on('$destroy', function(data) {
+    $interval.cancel(timer);
+  });
+
+  $scope.getCode = function(type) {
+
+    if (!checkPhone($scope[type].phone)) return;
+    if (timer !== null) return;
+
+    var token = {
+      "phone": $scope[type].phone
+    };
+    Resource.getUpdatePhoneCode(token, type).then(function(data) {
+      setTime();
+
+    }, function(data) {
+      appFunc.alert(data.msg);
+    })
+  };
+
+
+  $scope.nextStep = function() {
+
+    if (checkPhone($scope.old.phone) && checkCode($scope.old.code)) {
+      var token = {
+        "StoreUser": {
+          "phone": $scope.old.phone,
+          "sms": $scope.old.code
+        }
+      };
+
+      Resource.updateOldPhone(token).then(function(data) {
+        $scope.isNext = true;
+        $interval.cancel(timer);
+        $scope.txt = "获取验证码";
+        $scope.disable = false;
+        timer = null;
+      }, function(data) {
+        appFunc.alert(data.msg);
+      });
+    }
+  };
+
+  $scope.submit = function() {
+
+    if (checkPhone($scope.new.phone) && checkCode($scope.new.code)) {
+      var token = {
+        "StoreUser": {
+          "phone": $scope.new.phone,
+          "sms": $scope.new.code
+        }
+      };
+      Resource.updateNewPhone(token).then(function(data) {
+        appFunc.alert('修改成功').then(function() {
+          $ionicHistory.goBack();
+          modify.ismodify = true;
+        });
+      }, function(data) {
+        appFunc.alert(data.msg);
+      });
+    }
+  };
+
+
+  function setTime() {
+    $interval.cancel(timer);
+    $scope.disable = true;
+    var i = 60;
+    $scope.txt = i + '秒后获取';
+
+    timer = $interval(function() {
+      $scope.txt = --i + '秒后获取';
+
+      if (i === 0) {
+        $interval.cancel(timer);
+        $scope.txt = "获取验证码";
+        $scope.disable = false;
+        timer = null;
+      }
+
+    }, 1000);
+  }
+
+  function checkPhone(phone) {
+    if (!phone) {
+      appFunc.alert('手机号码不能为空');
+      return false;
+    } else if (!appFunc.isPhone(phone)) {
+      appFunc.alert('手机号不是有效值');
+      return false;
+    }
+    return true;
+  }
+
+  function checkCode(code) {
+    if (!code) {
+      appFunc.alert('验证码不能为空');
+      return false;
+    }
+    return true;
+  }
+
+})

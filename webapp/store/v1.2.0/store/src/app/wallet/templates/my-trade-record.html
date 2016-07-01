@@ -1,0 +1,27 @@
+<ion-view view-title="交易记录" hide-tabs >
+  <ion-nav-buttons side="left">
+    <i class="tmm-ion-left icon icon-arrow-back" nav-back></i>
+  </ion-nav-buttons>
+
+  <ion-content class="tmm-record" overflow-scroll="false">
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()" spinner="ios">
+    </ion-refresher>
+
+    <div class="record-list" ng-repeat="record in list_data">
+      <div class="income">
+        <span>{{record.name}}</span>
+        <span>{{record.use_money}}</span>
+      </div>
+      <div class="balance">
+        <span>{{record.add_time}}</span>
+        <span>余额：{{record.money}}元</span>
+      </div>
+    </div>
+
+    <div class="record-conNo" ng-if="listNum == 0">你暂时还没有提现申请记录哦！</div>
+    <ion-infinite-scroll distance="0.1%" ng-if="hasMoreData()" on-infinite="loadMore()">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>
+
+

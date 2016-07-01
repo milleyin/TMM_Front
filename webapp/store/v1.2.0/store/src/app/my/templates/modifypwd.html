@@ -1,0 +1,14 @@
+<ion-view view-title="修改密码" cache-view="false" hide-tabs>
+  <ion-nav-buttons side="left">
+    <i class="tmm-ion-left icon icon-arrow-back" nav-back></i>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="form">
+      <div class="cell"><input type="tel" ng-model="model.phone" placeholder="请输入手机号"></div>
+      <div class="cell"><input type="text" ng-model="model.code" placeholder="请输入验证码"><span ng-click="sendCode()" class="code" ng-class="{'gray': runTime}">{{text}}</span></div>
+      <div class="cell"><input type="password" ng-model="model.pwd" placeholder="请输入密码"></div>
+      <div class="cell"><input type="password" ng-model="model.confirm_pwd" placeholder="确认新密码"></div>
+    </div>
+    <div ng-click="submit()" class="form-submit-btn">确认</div>
+  </ion-content>
+</ion-view>

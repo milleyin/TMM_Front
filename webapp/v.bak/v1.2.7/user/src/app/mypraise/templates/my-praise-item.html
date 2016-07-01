@@ -1,0 +1,12 @@
+<div class="tmm-recommend-item" ng-repeat="item in model.list_data">
+  <div class="pic" ui-sref="tab.shop{{item.classliy.value}}({link:item.link, type:item.classliy.value})">
+    <img ng-src="{{item.image}}">
+  </div>
+  
+  <div class="txt">
+    <div class="title">{{item.name}}</div>
+    <div class="info">{{item.info}}</div>
+    <span class="icon-parise-red praise-pos"></span>
+    <span class="type" ng-class="{'dot': item.classliy.value==1, 'line': item.classliy.value==2, 'act': item.classliy.value==3}">{{item.type.name}}</span>
+  </div>
+</div>

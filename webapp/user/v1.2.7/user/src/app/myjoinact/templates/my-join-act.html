@@ -1,0 +1,19 @@
+<ion-view hide-tabs="true">
+  <navbar back>
+    <div class="title act-title">
+      <span class="title-type">
+          <span ng-click="showTab(1)" ng-class="{'active':isPayType == 1}">自费</span>
+      <span ng-click="showTab(2)" ng-class="{'active':isPayType == 2}">代付</span>
+      </span>
+    </div>
+  </navbar>
+  <ion-content overflow-scroll="false">
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()" spinner="ios">
+    </ion-refresher>
+    <div class="tmm-order-list">
+      <joinact-item></joinact-item>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="model.nextPage" distance="1%" spinner="ios">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

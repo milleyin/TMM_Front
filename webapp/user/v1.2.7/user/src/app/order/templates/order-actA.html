@@ -1,0 +1,64 @@
+<ion-view hide-tabs="true" cache-view="false">
+  <navbar back title="觅趣报名"></navbar>
+
+  <ion-content class="order apply" overflow-scroll="false">
+    <div class="main-title">出游人数</div>
+    <div class="group numpeople">
+      <div class="cell tournum">
+        <div>成人</div>
+        <div><span ng-click="subNum('adult')" class="sub-num"></span><span class="num">{{c_num}}</span><span ng-click="addNum('adult')" class="add-num"></span></div>
+      </div>
+      <div class="cell tournum">
+        <div>儿童</div>
+        <div><span ng-click="subNum('child')" class="sub-num"></span><span class="num">{{e_num}}</span><span ng-click="addNum('child')" class="add-num"></span></div>
+      </div>
+    </div>
+
+    <div class="block-people">
+      <div class="main-title">
+        出行人员
+      </div>
+      <div class="group main-people">
+        <div class="cell">
+          <input type="text" data-type="name" ng-model="mainRetinueInfo.name" placeholder="姓名">
+        </div>
+        <div class="cell code-cell">
+          <input type="tel" data-type="phone" ng-model="mainRetinueInfo.phone" placeholder="手机号码">
+          <span ng-click="getCode($event)" class="code" style="width: 100px;">获取验证码</span>
+        </div>
+        <div class="cell">
+          <input type="text" data-type="code" ng-model="mainRetinueInfo.code" placeholder="短信验证码">
+        </div>
+      </div>
+    </div>
+
+
+    <div ng-repeat="attr in adultRetinueInfo track by $index" class="block-people block-adult">
+      <div class="main-title">
+        随行人员{{$index + 1}}（成人）
+      </div>
+      <div class="group main-people">
+        <div class="cell">
+          <input type="text" data-type="name" ng-model="attr.name" placeholder="姓名">
+        </div>
+        <div class="cell">
+          <input type="text" data-type="phone" ng-model="attr.phone" placeholder="手机号码">
+        </div>
+      </div>
+    </div>
+    <div ng-repeat="attr in childRetinueInfo track by $index" class="block-people block-child">
+      <div class="main-title">
+        随行人员{{adultRetinueInfo.length + $index + 1}}（儿童）
+      </div>
+      <div class="group main-people">
+        <div class="cell">
+          <input type="text" data-type="name" ng-model="attr.name" placeholder="姓名">
+        </div>
+      </div>
+    </div>
+    <div class="f_button" style="margin: 0;padding:14px;"><div class="submit" ng-click="submit()">确认报名</div></div>
+
+      
+
+  </ion-content>
+</ion-view>

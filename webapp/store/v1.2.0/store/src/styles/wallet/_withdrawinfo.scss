@@ -1,0 +1,72 @@
+@charset "UTF-8";
+.tmm-withdraw-info {
+  background-color: $bgColor;
+  .card-top {
+    padding: 35px 0px;
+    text-align: center;
+
+    &>img {
+      width: 120px;
+    }
+  }
+  
+  .withdraw-info-list {
+    padding-left: 15px;
+    background-color: $whiteColor;
+
+    & >:first-child {
+      @extend %border-bottom;
+    }
+    
+    .info-item {
+      background-color: $whiteColor;
+      display: -webkit-inline-box;
+      display: -webkit-inline-flex;
+      display: inline-flex;
+      padding-left: 0;
+      height: 43px;
+      line-height: 43px;
+      width: 100%;
+
+      .item-title {
+        font-size: 16px;
+        white-space: nowrap;
+        color: #8e8e93;
+        margin-right: 10px;
+      }
+
+      .item-con {
+        right: 16px;
+        position: absolute;
+      }
+    }
+  }
+
+  .withdraw-info-label {
+    text-align: left;
+    margin: 10px 0 35px;
+    padding: 0 15px;
+    font-size: 12px;
+    color: #8f8f94;
+  }
+
+  .withdraw-info-button {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    background: $whiteColor;
+    padding: 10px 16px;
+
+    .message-sub {
+      border: none;
+      text-align: center;
+      width: 100%;
+      border-radius: 2px;
+      line-height: 44px;
+      color: $whiteColor;
+      font-size: 16px;
+      display: block;
+      background-color: $btnRed;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+<ion-view hide-tabs>
+  <navbar back title="更换银行卡"></navbar>
+
+
+  <form name="signup_form" novalidate ng-submit="signupForm()">
+    <ion-content class="tmm-wallet-change" scroll="false">
+      <div class="withdraw-list">
+        <div class="withdraw-item">
+          <div class="withdraw-title">开户行</div>
+          <div>
+            <select 
+                ng-model="bankInfo.bankname" 
+                ng-options="bankList.value as bankList.name for bankList in bankList" 
+                required
+                ng-change="signupFormButton()"
+                autocomplete="off"
+                >
+              <option value="" name="isDefault">请选择</option>
+            </select>
+          </div>
+        </div>
+        <div class="withdraw-item">
+          <div class="withdraw-title">支行</div>
+          <div>
+            <input type="text" name="subbranch"
+            ng-change="signupFormButton()"
+            required 
+            ng-model="regText.subbranch" 
+            placeholder="开户支行" 
+            autocomplete="off">
+          </div>
+        </div>
+        <div class="withdraw-item">
+          <div class="withdraw-title">开户名</div>
+          <div>
+            <input type="text" name="username"
+            ng-change="signupFormButton()" 
+            required 
+            ng-model="regText.username" 
+            placeholder="开户姓名" 
+            autocomplete="off">
+          </div>
+        </div>
+        <div class="withdraw-item">
+          <div class="withdraw-title">卡号</div>
+          <div>
+            <input type="text" class="tmm-codeWidth" name="bank_code"  id="bank_code"
+            ng-change="signupFormButton()"
+            required 
+            ng-model="regText.bank_code" 
+            placeholder="卡号"
+            pattern="[0-9]*"
+            autocomplete="off">
+          </div>
+        </div>
+      </div>
+      <div class="bankcard-protocol">
+        <input type="checkbox" class="checkbox chkleft" name="bank_protocol" ng-model="regText.chk" ng-change="signupFormButton()">我同意
+        <a ui-sref="tab.mybankcardprotocal" href="javascript:void(0)" class="protocol-link">《银行卡管理协议》</a>
+      </div>
+      <div class="tmm-message-button" ng-show="chkBtnShow">
+        <button class="tmm-message-sub tmm-message-sub-act" type="submit">下一步</button>
+      </div>
+      <div class="tmm-message-button" ng-show="chkBtnHide">
+        <button class="tmm-message-sub" type="button">下一步</button>
+      </div>
+    </ion-content>
+  </form>
+</ion-view>

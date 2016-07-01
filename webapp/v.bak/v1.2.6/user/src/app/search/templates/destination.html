@@ -1,0 +1,31 @@
+<ion-view hide-tabs title="切换目的地">
+  <ion-nav-buttons side="left">
+    <i class="icon-back" nav-back></i>
+  </ion-nav-buttons>
+  <div class="destination-bar">
+    <form ng-submit="searchContent()" class="destination-input-wrapper">
+      <i class="search-text"></i>
+      <input ng-model="searchText" ng-change="changeText()" ng-focus="isSearch=true" type="search" class="bar-search" placeholder="请输入城市名、拼音、首字母">
+      <i ng-click="clearText()" class="search-clear"></i>
+    </form>
+  </div>
+  <ion-content class="destination">
+    <div class="select-city" ng-if="!isSearch">
+      <div class="my-place">
+        <h3>我的位置</h3>
+        <span ng-click="getLocation()" class="mylocation">{{model.location.value ? model.location.value.address_info.name : '定位失败'}}</span>
+      </div>
+      <div class="hot-city">
+        <h3>热门城市</h3>
+        <span ng-repeat="item in model.hot_city" ng-click="selectCity(item.link)">{{item.name}}</span>
+      </div>
+    </div>
+    <div class="city-list">
+      <div class="noDataMsg" ng-if="!hasData">没有相关城市</div>
+      <div class="tit" ng-repeat-start="(key , value) in model.list_data">{{key}}</div>
+      <div class="group" ng-repeat-end>
+        <div class="cell" ng-repeat="item in value" ng-click="selectCity(item.link)">{{item.name}}</div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

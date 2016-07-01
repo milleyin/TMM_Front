@@ -1,0 +1,902 @@
+***********************************************************************
+/*我发起的活动*/
+
+.card.tmm-my-activity-card {
+  margin:16px;
+}
+.card.tmm-my-activity-card .card-content {
+  position: relative;
+  height: 85px;
+  padding: 6px 0;
+  overflow:hidden;
+}
+.card.tmm-my-activity-card .card-content .tmm-activity-img {
+  width: 75px;
+  height: 70px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.card.tmm-my-activity-card .card-content .tmm-activity-img img {
+  width: 100%;
+  height: 100%;
+}
+.card.tmm-my-activity-card .card-content .tmm-activity-content {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  left: 95px;
+  height: 60px;
+  line-height: 20px;
+  color: #565a5c;
+  font-size: 14px;
+}
+.card.tmm-my-activity-card .card-content .tmm-activity-content .tmm-activity-content-title{
+  line-height: 30px;
+  font-size: 14px;
+  color: #565a5c;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.card.tmm-my-activity-card .card-content .tmm-activity-content .tmm-activity-content-info span {
+  color: #858b8f;
+  font-size: 13px;
+}
+
+.tmm-icon-triangle{
+  position: absolute;
+  top: -6px;
+  right: -20px;
+  width: 60px;
+  height: 30px;
+  font-size: 9px;
+  text-align: center;
+  padding-top: 15px;
+  color: #fff;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.tmm-tip-gray{background-color: #858b8f;}
+.tmm-tip-audit-failure {background-color: #ff0054;}
+.tmm-tip-chuli {background-color: #00aaff;}
+.tmm-tip-apply {background-color: #9f59ff; }
+.tmm-tip-xiaofei {background-color: #14cc14;}
+
+.card.tmm-my-activity-card .card-footer {
+  padding: 0 10px;
+  position: relative;
+}
+.card.tmm-my-activity-card .tmm-card-footer {
+  width: 100%;
+  padding: 10px 0;
+  text-align: right;
+}
+.card.tmm-my-activity-card .tmm-card-footer {
+    width: 100%;
+    padding: 10px 0;
+    text-align: right;
+}
+
+.tmm-mylaunch-act-content .card-footer a.button {
+  display: inline-block;
+  color: #ff595f;
+  border: 1px solid #ff595f;
+  width: 70px;
+  margin-left: 10px;
+  border-radius:0px;
+  background: #FFFFFF;
+  min-height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+/*动画加载时没有更多数据*/
+#tmm-my-activity-page #no-more{
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  background: #F0F1F2;
+  color:#313131;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+/*订单选项卡*/
+.tmm-activity-card-list{
+  position:relative;
+  /*margin-top:58px;*/
+}
+.subnavbar.tmm-order-subnavbar {
+  top: 102%;
+  background: #ffffff;
+}
+.subnavbar.tmm-order-subnavbar .buttons-row .button:first-child {
+  border-radius: 0;
+}
+.subnavbar.tmm-order-subnavbar .buttons-row .button:last-child {
+  border-radius: 0;
+}
+.subnavbar.tmm-order-subnavbar .button {
+  border: none;
+  height: 42px;
+  line-height: 42px;
+  font-size: 13px;
+  color: #333;
+}
+
+.subnavbar.tmm-order-subnavbar .button.active {
+  background-color: #FFFFFF;
+  color: #ff595f;
+  border-bottom: 2px solid #ff595f;
+}
+.tmm-mylaunch-act-content .tmm-my-activity-b-border:before{
+  content: '';
+  position: absolute;
+  left: 10px;
+  bottom: auto;
+  right: 10px;
+  top: 0;
+  height: 1px;
+  /*width: 100%;*/
+  background-color: #d7d9d7;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+/*弹出层*/
+.tmm-select-line-popover{
+    background-color: #403a39;
+    font-size: 15px;
+    color: #fff;
+    z-index: 2000;
+    width: 140px;
+    line-height: 30px;
+}
+.popover-angle:after{
+  background: #403a39;
+}
+.tmm-select-line-popover .content-block{
+  margin:5px 0;
+}
+.tmm-select-line-popover .b_border {
+    border-bottom: 1px solid #d7d9d7;
+}
+.tmm-select-line-popover .b_border {
+    border-color: #2e2a29;
+}
+.tmm-select-line-popover i.icon{
+    color: #fff;
+    margin-right: 10px;
+    display: inline-block;
+}
+.tmm-select-line-popover a{
+    color: #fff;
+}
+
+/************************************************************************
+/*选择线路*/
+.subnavbar.tmm-select-line-subnavbar {
+    top: 102%;
+    background: #ffffff;
+}
+.subnavbar.tmm-select-line-subnavbar .button {
+    border: none;
+    height: 42px;
+    line-height: 42px;
+    font-size: 13px;
+    color: #333;
+}
+.subnavbar.tmm-select-line-subnavbar .button.active {
+    background-color: #FFFFFF;
+    color: #ff595f;
+    border-bottom: 2px solid #ff595f;
+}
+.subnavbar.tmm-select-line-subnavbar .buttons-row .button:first-child {
+    border-radius: 0;
+}
+.tmm-select-line-list{
+  position:relative;
+  margin-top:58px;
+}
+.card.tmm-select-line-card {
+    margin: 16px;
+    margin-top:58px;
+
+}
+.card.tmm-select-line-card .card-content {
+    position: relative;
+    height: 70px;
+    padding: 6px 0;
+    overflow: hidden;
+}
+.card.tmm-select-line-card .card-content .tmm-select-line-img {
+    width: 75px;
+    height: 60px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.card.tmm-select-line-card .card-content .tmm-select-line-img img {
+  width: 100%;
+  height: 100%;
+}
+.card.tmm-select-line-card  .card-content .tmm-select-line-content {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  left: 95px;
+  height: 60px;
+  line-height: 28px;
+  color: #565a5c;
+  font-size: 14px;
+}
+.card.tmm-select-line-card  .card-content .tmm-select-line-content  .tmm-select-line-content-title {
+    line-height: 30px;
+    font-size: 14px;
+    color: #565a5c;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.card.tmm-select-line-card  .card-content .tmm-select-line-content .tmm-select-line-content-info span {
+    color: #858b8f;
+    font-size: 13px;
+}
+
+.tmm-act-popover {
+  height: 86px;
+  width: 140px !important;
+}
+.tmm-act-popover-con {
+  top: 0;
+  margin: -1px 0 !important;
+  border-radius:8px !important;
+}
+.tmm-act-popover-li {
+  line-height: 43px;
+  padding: 0 15px;
+}
+.tmm-act-popover .popover-arrow:after{
+  background-color: #403a39 !important;
+}
+
+/**
+ * 我发起的活动-->编辑活动
+ */
+.tmm-act-fail-reason {
+  background-color: #ff595f;
+  padding: 8px 16px;
+  color: #fff;
+}
+.tmm-fail-tit {
+  font-size: 14px;
+  padding-bottom: 8px;
+}
+.tmm-fail-txt {
+  font-size: 12px;
+}
+.tmm-act-fail-tit {
+  padding: 16px;
+  background-color: #F0F1F2;
+  position: relative;
+}
+.tmm-act-fail-title {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.tmm-act-state-item-fare {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  white-space: nowrap;
+}
+.tmm-act-state-fare {
+  font-size: 12px;
+  color: #858b8f;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 12px;
+  width: 50%;
+}
+.tmm-act-fail-flag {
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #ff595f;
+  background-color: transparent;
+  white-space: nowrap;
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 12px;
+  border-radius: 4px;
+  color: #ff595f;
+  position: absolute;
+  top: 0;
+  margin-top: 16px;
+  right: 16px;
+}
+.ticon-arrow-right {
+  font-size: 14px;
+  right: 0;
+  color: #585858;
+  position: absolute;
+  padding-right: 16px;
+}
+.tmm-launch-act-more {
+  font-size: 14px;
+  color: #61cc13;
+  padding: 16px;
+  position: relative;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+.tmm-day-tit {
+  position: relative;
+  text-align: center;
+}
+.tmm-day-tit .tmm-tit {
+  display: inline-block;
+  padding: 4px 6px;
+  background-color: #61cc13;
+  color: #fff;
+  font-size: 11px;
+  line-height: 11px;
+  position: relative;
+  margin: 20px 0 20px;
+  margin: 20px auto;
+}
+.tmm-day-tit .tmm-tit:before {
+  content: "";
+  height: 20px;
+  position: absolute;
+  width: 1px;
+  bottom: 100%;
+  left: 50%;
+  background-color: #61cc13;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+}
+
+.tmm-day-tit .tmm-tit:after {
+  content: "";
+  height: 20px;
+  position: absolute;
+  width: 1px;
+  top: 100%;
+  left: 50%;
+  background-color: #61cc13;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+}
+.tmm-launch-act-list .item {
+  padding-left: 0;
+  border-left: none;
+  border-right: none;
+}
+.tmm-launch-item-title {
+  color: #565a5c;
+  font-size: 15px;
+  text-align: center;
+}
+.tmm-launch-item-content {
+  font-size: 14px;
+  color: #858b8f;
+}
+.tmm-launch-item {
+  display: inline-flex;
+  width: 100%;
+}
+.tmm-launch-item .tmm-item-element:nth-child(1) {
+  word-break: break-all;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: inline-block;
+  text-align: left;
+}
+.tmm-launch-act-list  .item:first-child {
+  border-top: none;
+}
+.tmm-launch-act-list  .item:last-child {
+  border-bottom: none;
+}
+.tmm-launch-act-list .list {
+  padding-left: 15px;
+  background-color: #fff;
+}
+.tmm-launch-item .tmm-item-element:nth-child(2) {
+  text-align: center;
+}
+.tmm-launch-item .tmm-item-element:nth-child(3) {
+  text-align: right;
+}
+.tmm-launch-item .tmm-item-element {
+  width: 33%;
+  vertical-align: middle;
+}
+.tmm-launch-act-btnColor {
+  background-color: #39ab53;
+}
+/********************************************/
+/**
+ * 我发起的活动-->活动报名结束详情
+ */
+.tmm-activity-item-content:before {
+  content: '';
+  position: absolute;
+  /*height: 1px;*/
+  width: 100%;
+  background-color: #d7d9d7;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  z-index: 15;
+}
+
+.tmm-activity-item-content .pic img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.tmm-activity-item-content .txt {
+  padding: 15px 16px 15px;
+  position: relative;
+}
+
+.tmm-activity-item-content .txt .title {
+  font-size: 17px;
+  line-height: 17px;
+  color: #313131;
+}
+
+.tmm-activity-item-content .txt .intro {
+  font-size: 12px;
+  line-height: 12px;
+  color: #858b8f;
+  margin-top: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 85%;
+  text-overflow: ellipsis;
+}
+
+.tmm-activity-item-content .txt .type {
+  font-size: 11px;
+  line-height: 11px;
+  position: absolute;
+  right: 16px;
+  top: -8px;
+  padding: 4px 9px;
+  color: #fff;
+  border-radius: 2px;
+}
+.tmm-activity-item-content .txt .red{
+  background-color:#ff595f;
+}
+.tmm-activity-state-item-fare {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.tmm-activity-state-item-fare .activity-state-item-fare,.tmm-activity-state-item-fare .activity-state-item-fare, .tmm-activity-state-item-fare .activity-state-fail-item-fare, .tmm-activity-state-item-fare .activity-state-item-fare-date{
+  font-size: 12px;
+  color: #858b8f;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 12px;
+  width: 50%;
+}
+
+.tmm-activity-state-item-fare .activity-state-item-fare-date {
+  width: 100%;
+}
+.tmm-launch-act-end-more {
+  font-size: 14px;
+  color: #39ab53;
+  padding: 16px;
+  position: relative;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+.tmm-launch-top {
+  margin-top: -1px;
+}
+
+/*******************************************/
+
+/**
+ * 我发起的活动-->活动报名结束详情-->查看更多活动详情
+ */
+.tmm-actend-more-bg {
+  background-color: #f0f1f2;
+}
+.tmm-actend-more-list-bottom{
+  margin-bottom: 10px;
+}
+.tmm-actend-more-list .list {
+  padding-left: 15px;
+  background-color: #fff;
+}
+.tmm-actend-more-list .item:first-child {
+  border-top: none;
+}
+.tmm-actend-more-list .item:last-child {
+  border-bottom: none;
+}
+.tmm-actend-more-list .item {
+  padding-left: 0;
+  border-left: none;
+  border-right: none;
+  font-size: 14px !important;
+  padding: 10px 0 !important;
+}
+.tmm-actend-more-content {
+  color: #858b8f;
+}
+/*******************************************/
+
+/**
+ * 我发起的活动-->活动报名结束详情-->查看报名信息
+ */
+.tmm-apply-tit {
+  padding: 10px 16px;
+  background-color: #F0F1F2;
+  line-height: 24px;
+  font-size: 14px;
+  position: relative;
+  margin-top: 42px;
+}
+.tmm-apply-tit:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #d7d9d7;
+  display: block;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+.tmm-enrollinfo-card {
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  position: relative;
+  border-radius: 2px;
+  font-size: 14px;
+}
+.tmm-enrollinfo-card-header {
+  padding: 10px;
+  font-size: 16px;
+  position: relative;
+}
+.tmm-enrollinfo-card-header:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #d7d9d7;
+  display: block;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+.tmm-enrollinfotime {
+  font-size: 14px;
+}
+.tmm-enroll-detail-info {
+  padding: 10px;
+  font-size: 0px;
+}
+.tmm-enroll-detail-info span {
+  box-sizing: border-box;
+  color: #585858;
+  padding-right: 10px;
+  display: inline-block;
+  line-height: 24px;
+  font-size: 14px;
+  min-width: 50%;
+  white-space: nowrap;
+}
+.tmm-button-state {
+  font-size: 13px;
+  line-height: 40px;
+  color: #313131;
+  height: 40px;
+  width: 25%;
+  display: block;
+  text-align: center;
+}
+.tmm-button-state.infoactive {
+  background-color: transparent;
+}
+.tmm-button-state:before {
+  display: none;
+}
+.tmm-button-state:after {
+  content: "";
+  margin-top: -10px;
+  width: 100%;
+  height: 2px;
+  display: block;
+  background: url(../../images/button-sub-arrow.png) no-repeat center center;
+  background-size: contain;
+}
+.tmm-button-state.infoactive:after {
+	background:url(../../images/button-sub-arrow-red.png) no-repeat center center;
+  background-size: contain;
+}
+/*******************************************/
+/**
+ * 我发起的活动--》选择线路
+ */
+.tmm-sel-line-list{
+  position: relative;
+  margin-top: 60px;
+}
+.tmm-sel-line-card{
+  margin: 16px;
+}
+.tmm-selline-card-content{
+  position: relative;
+  height: 70px;
+  padding: 41px 0;
+  overflow: hidden;
+}
+.tmm-selline-img {
+  width: 75px;
+  height: 60px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.tmm-selline-img img {
+  width: 100%;
+  height: 100%;
+}
+.tmm-selline-content {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  left: 95px;
+  height: 60px;
+  line-height: 28px;
+  color: #565a5c;
+  font-size: 14px;
+}
+.tmm-select-line-content-title {
+  line-height: 20px;
+  font-size: 14px;
+  color: #565a5c;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.tmm-selline-info span{ 
+  padding-right: 16px;
+}
+.tmm-selline-content-info {
+  color: #858b8f;
+  font-size: 13px;
+  line-height: 15px;
+  padding-top: 3px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/*******************************************/
+/**
+ * 我发起的活动--》选择线路--》线路详情
+ */
+.tmm-media {
+  padding: 16px;
+  background-color: #fff;
+}
+.tmm-media-box {
+  height: 60px;
+}
+.tmm-media-box img {
+  width: 75px;
+  height: 60px;
+  position: absolute;
+}
+.tmm-media-detail {
+  margin-left: 85px;
+}
+.tmm-media-tit {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.tmm-media-txt {
+  margin-top: 10px;
+  color: #585858;
+}
+.tmm-selline-item-tit {
+  color: #565a5c;
+  font-size: 15px;
+  text-align: left;
+}
+.tmm-selline-item-addr {
+  color: #585858;
+  font-size: 12px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+/*******************************************/
+/**
+ * 我发起的活动--》选择点--》点详情
+ */
+.tmm-pol {
+  margin: 15px -16px -16px;
+  padding: 10px 0px 10px 16px;
+  border: 1px solid #d7d9d7;
+}
+.tmm-seldot-con-title {
+  font-size: 13px;
+  padding: 10px 0px 10px 16px;
+}
+.tmm-seldot-item {
+  display: inline-flex;
+  width: 100%;
+}
+.tmm-seldot-item .tmm-item-element:nth-child(1) {
+  word-break: break-all;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  width: 30%;
+}
+.tmm-seldot-item .tmm-item-element:nth-child(2) {
+  width: 25%;
+  text-align: center;
+}
+.tmm-seldot-item .tmm-item-element:nth-child(3) {
+  width: 30%;
+  text-align: center;
+}
+.tmm-seldot-item .tmm-item-element:nth-child(4) {
+  width: 15%;
+  text-align: right;
+}
+/*******************************************/
+
+/**
+ * 我发起的活动--》选择点--》创建活动日程
+ */
+.ticon-cyclo-minus{
+  color: red;
+}
+.tmm-day-item-list {
+  position: relative;
+}
+.tmm-add-item {
+  position: absolute;
+  right: 16px;
+  top: -40px;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid #ff595f;
+  background-color: #fff;
+  white-space: nowrap;
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 12px;
+  border-radius: 4px;
+}
+.tmm-add-dot {
+  position: relative;
+  line-height: 48px;
+  text-align: center;
+}
+.tmm-add-day-schedule {
+  border: 1px solid #61cc13;
+  display: inline;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.tmm-activity-go-item-suc {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  font-size: 16px;
+  line-height: 40px;
+  z-index: 1;
+  display: inline-flex;
+}
+.tmm-activity-go-item-suc a:nth-child(1){
+  border-right: 1px solid #fff;
+}
+.tmm-activity-go-item-suc a {
+  width: 50%;
+  text-align: center;
+  float: left;
+  color: #fff;
+}
+.tmm-activity-go-item-suc .tmm-price {
+  background-color: #61cc13;
+}
+.tmm-activity-go-item-suc .tmm-submit-btn {
+  background-color: #ff595f;
+}
+/*******************************************/
+/**
+ * 我发起的活动--》选择点--》增加活动设置
+ */
+.tmm-addact-title {
+  display: inline-block;
+  width: 40%;
+  font-size: 14px;
+  color: #000;
+  margin-right: 10px;
+  text-align: right;
+}
+.tmm-addact-top {
+  padding-top: 45px;
+}
+.tmm-addact-info {
+  display: inherit;
+  color: #8e8e93;
+  font-size: 14px;
+}
+.tmm-beizhu {
+  overflow: hidden;
+  background-color: #fff;
+  margin-top: 35px;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px 16px;
+}
+.tmm-beizhu-textarea {
+  border:1px solid rgb(169, 169, 169)
+}
+/*******************************************/
+/**
+ * 我发起的活动--》选择点--》创建活动
+ */
+.tmm-create-canter {
+  margin: 50px 10px 0px 30px;
+  font-size: 14px;
+}
+.tmm-cre-con-title {
+  font-size: 18px;
+}
+.tmm-cre-con-fon {
+  margin: 10px 0px 10px 0px;
+}
+/*******************************************/

@@ -1,0 +1,178 @@
+@charset "UTF-8";
+.order-tab {
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  margin-top: 43px;
+  
+  &>:first-child:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 6px;
+    right: 50%;
+    width: 1px;
+    height: 26px;
+    background-color: #c0c2c0;
+  }
+
+  .order-tab-item {
+    flex: 1;
+    width: 50%;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  .active {
+    color: $btnRed;
+    border-bottom: 2px solid $btnRed;
+  }
+}
+.tmm-my-order {
+  background-color: $bgColor;
+}
+.tmm-order-list { margin:14px 0; }
+.order-item {
+  @extend %border-top-bottom;
+  margin-top: 10px;
+  background-color: #fff;
+  padding-bottom: 1px;
+  position: relative;
+  .con-inner {
+    position: relative;
+    min-height: 98px;
+    overflow: hidden;
+    /* padding-right: 14px; */
+  }
+  .pic {
+    display: border-box;
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    width: 80px;
+    height: 70px;
+    border-radius: 2px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .describe {
+    margin-left: 104px;
+  }
+  .tit {
+    margin: 16px 0 0;
+    font-size: 15px;
+    line-height: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .price {
+    margin: 5px 0 0;
+    font-size: 13px;
+    line-height: 13px;
+    color: $gray;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .res {
+    @extend .price;
+    color: $lightGray;
+  }
+  .check {
+    @extend .price;
+    color: $orange;
+  }
+  .registration-in {
+    @extend .price;
+    color: $green;
+  }
+  .registration-end {
+    @extend .price;
+    color: $btnRed;
+  }
+  .tour-day {
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 13px;
+    color: $gray;
+  }
+  .act-fail {
+    background-color: #f0f1f2;
+    margin: 0 16px 10px;
+    padding: 10px 5px;
+    border-radius: 5px;
+    position: relative;
+    .act-fail-title {
+      font-size: 14px;
+      color: $darkGray;
+    }
+    .act-fail-res {
+      font-size: 13px;
+      color: $gray;
+      word-break: break-all;
+    }
+  }
+  .footer-pos {
+    padding: 0 14px;
+  }
+  .con-footer {
+    @extend %border-top;
+    text-align: right;
+    // padding: 0 0 0 12px;
+    font-size: 0;
+    .outline-button {
+      color: $red;
+      margin-top: 7px;
+      margin-bottom: 7px;
+      display: inline-block;
+      padding: 0 10px;
+      font-size: 12px;
+      line-height: 25px;
+      border-radius: 2px;
+      border: 1px solid $red;
+      margin-left: 8px;
+    }
+  }
+  
+  .order-status {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 40px;
+
+    span {
+      position: absolute;
+      top: -4px;
+      right: -20px;
+      width: 60px;
+      height: 28px;
+      font-size: 9px;
+      text-align: center;
+      padding-top: 10px;
+      color: #fff;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+    .cancel { //已取消 灰色
+      background-color: #858b8f;
+    }
+    .pending { //待处理
+      background-color: #00aaff;
+    }
+    .payment { //付款
+      background-color: #ff0054;
+    }
+    .consumption { //消费
+      background-color: #14cc14;
+    }
+  }
+}

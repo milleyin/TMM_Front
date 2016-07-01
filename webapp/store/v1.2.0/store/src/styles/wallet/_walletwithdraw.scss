@@ -1,0 +1,72 @@
+@charset "UTF-8";
+.tmm-withdraw-right {
+  font-size: 15px;
+  line-height: 36px;
+  right: 0px;
+  color: #ff595f;
+}
+.tmm-wallet-withdraw {
+  background-color: $bgColor;
+  .withdraw-list {
+    padding-left:15px;
+    background-color: #fff;
+    margin-top: 45px;
+    & >:last-child { background-image: none; }
+
+    .withdraw-item {
+      @extend %border-bottom;
+      background-color: $whiteColor;
+      display: inline-flex;
+      padding-left: 0;
+      height: 52px;
+      line-height: 52px;
+      width: 100%;
+      
+      .withdraw-title {
+        width: 80px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #000;
+        margin-right: 10px;
+      }
+
+      input {
+        vertical-align: inherit;
+        display: initial;
+        padding-top: 0px;
+      }
+    }
+  }
+  .withdraw-tip {
+    color: #999;
+    font-size: 12px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+//钱包按钮 可以公用
+.tmm-message-button {
+  margin: 32px 0 64px;
+  padding: 0px 16px;
+  
+  .tmm-message-sub {
+    border: none;
+    text-align: center;
+    width: 100%;
+    border-radius: 2px;
+    line-height: 44px;
+    color: $whiteColor;
+    font-size: 16px;
+    display: block;
+    background-color: $btnLightGrey;
+  }
+  .tmm-message-sub-act {
+    background-color: $btnGreen !important;
+  }
+}
+
+.withdraw-right {
+  line-height: 34px;
+  color: $red;
+}

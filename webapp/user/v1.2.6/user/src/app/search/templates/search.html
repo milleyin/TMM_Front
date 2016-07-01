@@ -1,0 +1,27 @@
+<ion-view animation="no-animation" hide-tabs bar-class="search-bar">
+  <ion-nav-buttons side="left">
+    <i class="icon-back" nav-back></i>
+  </ion-nav-buttons>
+  <ion-nav-title>
+    <form ng-submit="searchContent()" class="item-input-wrapper">
+      <i ng-click="searchContent()" class="search-text"></i>
+      <input type="search" class="bar-search" placeholder="搜索">
+      <i ng-click="clearContent()" class="search-clear"></i>
+    </form>
+  </ion-nav-title>
+  <ion-content class="search">
+    <div class="historyWrap" ng-if="isHistory">
+      <div class="cell title">搜索历史</div>
+      <div class="group" ng-click="searchHistory($event)">
+        <div ng-repeat="attr in storage" class="cell">{{attr}}</div>
+      </div>
+      <div class="cancelHistory" ng-click="clearHistory()">清空历史记录</div>
+    </div>
+    <div class="listWrap" ng-if="!isHistory">
+      <div ng-if="!model.list_data.length" class="noDataMsg">没有相关数据！</div>
+      <recommend-item ng-repeat="item in model.list_data"></recommend-item>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="nextPage" distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,32 @@
+<ion-view view-title="我的">
+  <ion-content class="tmm-my" scroll="false">
+    <div class="header">
+      <div class="divImg" ui-sref="tab.myInfo"><img class="img" src="../../images/header.png"></div>
+      <div class="info">
+        <div class="intro">
+          <p class="addr">{{model.name}}</p>
+          <p class="tel">{{model.phone}}</p>
+        </div>
+        <div class="out" ng-click="loginOut()">退出</div>
+      </div>
+    </div>
+    <div class="sel">
+      <div class="sel-list">
+        <i class="icon icon-info left-img"></i>
+        <div class="item-con item-border" ui-sref="tab.wallet">
+          <span class="txt">我的钱包</span>
+          <i class="icon img-right icon-arrow-right"></i>
+        </div>
+      </div>
+      <div class="sel-list">
+
+        <i class="icon icon-finance left-img"></i>
+        <div class="item-con" ui-sref="tab.disposit">
+
+          <span class="txt">剩余保证金</span>
+          <i class="icon img-right icon-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+.tabs {
+  background-color: rgba(65, 60, 57, 0.95);
+  transition: transform .25s;
+  @extend %border-top;
+  a {
+    color: #faecbd;
+    opacity: 0.5;
+  }
+  .tab-item {
+    .icon {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: normal;
+    }
+  }
+}
+
+.tabs-item-hide {
+  & > .tabs {
+    display: flex !important;
+    transform: translate3d(0, 100%, 0);
+  }
+}

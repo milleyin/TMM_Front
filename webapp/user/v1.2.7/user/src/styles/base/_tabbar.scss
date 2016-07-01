@@ -1,0 +1,22 @@
+.tabs {
+  transition: transform .25s;
+  height: 49px;
+  opacity: 0.97;
+  background-color: #fff;
+  @extend %border-top;
+  .tab-item {
+    color: #999;
+    &.active {
+      color: #000;
+    }
+  }
+  .icon {
+    height: 24px !important;
+    margin-top: 4px;
+    margin-bottom: 2px;
+  }
+  &.tabs-item-hide {
+    display: flex;
+    transform: translate3d(0, 100%, 0);
+  }
+}

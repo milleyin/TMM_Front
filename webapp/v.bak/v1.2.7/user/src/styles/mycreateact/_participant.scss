@@ -1,0 +1,28 @@
+@charset "UTF-8";
+.participant-item {
+  .time {
+    font-size: 13px;
+    line-height: 13px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #6d6d72;
+    padding: 35px 15px 10px;
+  }
+  .con {
+    @extend %border-top-bottom;
+    background-color: $whiteColor;
+    .title {
+      @extend %border-bottom;
+      margin-left: 15px;
+      color: $orderCon;
+      height: 40px;
+      line-height: 40px;
+
+      &:last-child {
+        background-image: none;
+      }
+    }
+  }
+}

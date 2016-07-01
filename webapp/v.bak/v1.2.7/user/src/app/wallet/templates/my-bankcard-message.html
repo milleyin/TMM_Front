@@ -1,0 +1,31 @@
+<ion-view view-title="短信验证" hide-tabs="true">
+  
+  <navbar back title="短信验证"></navbar>
+    
+  <form name="tmm_message_form" novalidate ng-submit="messageForm()">
+    <ion-content class="tmm-withdraw-message">
+      <div class="message-info">
+        验证码将发送至手机: {{loginPhone}},请按提示操作。
+      </div>  
+      <div class="message-content">
+        <div class="message-code">
+          <input type="txt" name="sms" 
+            ng-change="messageFormButton()" 
+            ng-model="regText.sms" 
+            required
+            placeholder="请输入短信验证码">
+            <a id="get_code" class="get-code-pos" ng-class="{true: 'get-code', false: 'get-code-active'}[flag]" href="javascript:;" ng-click="getCode()">{{text}}</a>
+        </div>
+      </div>
+
+      <div class="wall-message-button" ng-show="messageBtnShow">
+        <button class="message-sub message-sub-act" type="submit">确认</button>
+      </div>
+
+      <div class="wall-message-button" ng-show="messageBtnHide">
+        <button class="message-sub" type="button">确认</button>
+      </div>
+    </ion-content>
+  </form>
+ 
+</ion-view>

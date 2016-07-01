@@ -1,0 +1,13 @@
+<ion-view hide-tabs="true">
+  <navbar title="觅趣参与人列表" back></navbar>
+
+  <ion-content>
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()" spinner="ios">
+    </ion-refresher>
+    <div class="tmm-participant-list">
+      <participant-item></participant-item>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="model.nextPage" distance="1%" spinner="ios">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

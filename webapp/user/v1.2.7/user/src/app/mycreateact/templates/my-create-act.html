@@ -1,0 +1,19 @@
+<ion-view hide-tabs="true">
+
+  <navbar title="我发起的觅趣" back>
+    <div class="right">
+      <i class="icon-add-act add-act-pos" ui-sref="tab.mysponsoract_1"></i>
+    </div>
+  </navbar>
+
+
+  <ion-content overflow-scroll="false">
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()" spinner="ios">
+    </ion-refresher>
+    <div class="tmm-order-list">
+      <createact-item></createact-item>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="model.nextPage" distance="1%" spinner="ios">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>
