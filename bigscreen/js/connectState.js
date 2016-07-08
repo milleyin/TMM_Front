@@ -14,7 +14,7 @@ function Ajax(options) {
     error: function() {}
   };
 
-  // 用户参数覆盖默认参数    
+  // 用户参数覆盖默认参数
   for (var pro in options) {
     defaults[pro] = options[pro];
   }

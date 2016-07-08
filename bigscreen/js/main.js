@@ -8,11 +8,11 @@ var state_api = api + "/pad/state.html";
 var chance_api = api + "/chance/index.html";
 var prize_api = api + "/prize/index.html";
 var qr_api = api + "/pad/index.html";
-var record_api = api + "/record/index.html"
+var record_api = api + "/record/index.html";
 
 
 var connectStateWorker;
-var autoGetChanceWorker
+var autoGetChanceWorker;
 var recordWorker;
 
 // http_get
@@ -28,6 +28,7 @@ function http_get(url, successfn, errorfn) {
     },
     crossDomain: true,
     success: function(data) {
+      if (data.errorCode === 404) return;
       successfn && successfn(data);
     },
     error: function() {
@@ -40,9 +41,18 @@ function alertFn(str) {
   try {
     jsObj.prompt(str);
   } catch (e) {
-    alert(str)
+    alert(str);
   }
 }
+
+// 隐藏导航栏
+$(function() {
+  try{
+    window.jsObj.hideNavigationBar();
+  } catch(e) {
+
+  }
+});
 
 // 视频自动播放
 // var autoplay = function() {
@@ -90,6 +100,7 @@ $(function() {
   imgSrces = [];
 
   http_get(image_api, function(data) {
+
     if (data.content.list instanceof Array) {
       data.content.list.forEach(function(item) {
         imgSrces.push(api + item.path);
@@ -136,7 +147,7 @@ $(function() {
     $('.chou img').bind('tap', function() {
       if ($('#alert1').hasClass('award-enter') || $('#alert3').hasClass('award-enter')) {} else {
         $('#alert2').addClass('award-enter');
-        $('#alert2 .rule').html(data.content.info)
+        $('#alert2 .rule').html(data.content.info);
       }
     });
     $("#lotteryBtn").attr("src", api + data.content.path);
@@ -198,8 +209,18 @@ $(function() {
   }
 
   autoGetChanceWorker.onmessage = function(event) {
-    var name = event.data.name;
-    num = event.data.number;
+    if (event.data.errorCode === 302 && event.data.location === "/login/index.html") {
+      try {
+        window.jsObj.hideImages();
+        window.jsObj.hideVedio();
+      } catch(e) {
+
+      }
+      window.location.href = "index.html";
+    }
+
+    var name = event.data.content.name;
+    num = event.data.content.number;
 
     if (num == 0 || num === undefined) {
       if (hasChange) {
@@ -252,11 +273,11 @@ $(function() {
         });
 
         qrcode.makeCode(awards_url);
-        $('#alert3').addClass('award-enter');
         $('#alert3 .txt').html(awards_text);
+        $('#alert3').addClass('award-enter');
       } else if (receive_type == 2) {
-        $('#alert1').addClass('award-enter');
         $('#alert1 .txt').html(awards_text);
+        $('#alert1').addClass('award-enter');
       }
     }
     awards_type = '';
@@ -272,10 +293,10 @@ $(function() {
     if (flag && hasChange) {
       flag = false;
       $('#lotteryBtn').css({ "-webkit-transform": "rotate(" + 0 + "deg)", "transition": "all 0s" });
-      $('#lotteryBtn').addClass('auto-rotate')
+      $('#lotteryBtn').addClass('auto-rotate');
       try {
         http_get(prize_api, function(data) {
-      
+
           $('#lotteryBtn').removeClass('auto-rotate');
           if (data.content.config.path == path) {
             rotateFunc(data.content.status.value, data.content.receive_type.value, data.content.angle, data.content.name, data.content.url);
@@ -285,15 +306,15 @@ $(function() {
             img.src = api + data.content.config.path;
             img.onload = function() {
               rotateFunc(data.content.status.value, data.content.receive_type.value, data.content.angle, data.content.name, data.content.url);
-            }
-            $('#alert2 .rule').html(data.content.config.info)
+            };
+            $('#alert2 .rule').html(data.content.config.info);
           }
         }, function() {
 
           $('#lotteryBtn').removeClass('auto-rotate');
           alertFn('网络错误，请重新抽奖');
           flag = true;
-        })
+        });
 
       } catch (e) {
         $('#lotteryBtn').removeClass('auto-rotate');
@@ -301,7 +322,7 @@ $(function() {
         flag = true;
       }
     }
-  })
+  });
 
   $('.award-alert .close').bind('tap', function() {
     $(this).parent().removeClass('award-enter');
@@ -358,13 +379,13 @@ $(function() {
       if (len >= 20) {
         $ul.find('li').forEach(function(item, index) {
           if (index <= len - 5) {
-            item.remove()
+            item.remove();
           }
 
-        })
+        });
       }
       $ul.append('<li>' + contents[i++] + '</li>');
-    }, 1000)
+    }, 1000);
   }
 
   // get_record();
@@ -467,52 +488,35 @@ window.onload = function() {
       imgSrces.push(api + item.path);
     });
     imgs = imgSrces.join(',');
-    triggerNative();
-    // try {
-    //   imgs = imgSrces.join(',');
 
-    //   jsObj.setImages(315, 606, 0, 10, 10, 10, imgs);
-    // } catch (e) {
-    //   var html = '';
-    //   imgSrces.forEach(function(item) {
-    //     html += '<li class="item"><img src="' + item + '" /></li>';
-    //   });
-    //   $('.slider ul').css({ "width": data.content.shop.length * (315 + 24) })
-    //   $('.slider ul').html(html);
-    // }
+    setTimeout(function() {
+      try {
+        jsObj.setImages(315, 606, 0, 10, 10, 10, imgs);
+
+      }catch(e) {
+        var html = '';
+        var imgSrces = imgs.split(',');
+        imgSrces.forEach(function(item) {
+          html += '<li class="item"><img src="' + item + '" /></li>';
+        });
+        $('.slider ul').css({ "width": imgSrces.length * (315 + 24) });
+        $('.slider ul').html(html);
+      }
+    }, 500);
 
   });
+
   http_get(video_api, function(data) {
-
     src = api + data.content.path;
-    triggerNative();
-    // try {
-    //   jsObj.setVideo(494, 278, 30, 48, src);
+    setTimeout(function(){
+      try {
+        jsObj.setVideo(494, 278, 30, 48, src);
 
-    // } catch (e) {
+      } catch(e) {
 
-    // }
+      }
+    }, 500);
+
   });
 
-
-  function triggerNative() {
-    count++;
-    if (count == 2) {
-      setTimeout(function() {
-        try {
-          jsObj.setImages(315, 606, 0, 10, 10, 10, imgs);
-          jsObj.setVideo(494, 278, 30, 48, src);
-        } catch (e) {
-          var html = '';
-          var imgSrces = imgs.split(',');
-          imgSrces.forEach(function(item) {
-            html += '<li class="item"><img src="' + item + '" /></li>';
-          });
-          $('.slider ul').css({ "width": imgSrces.length * (315 + 24) })
-          $('.slider ul').html(html);
-        }
-
-      }, 500);
-    }
-  }
-}
+};

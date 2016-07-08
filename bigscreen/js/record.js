@@ -1,6 +1,6 @@
 var api = 'http://pad.365tmm.net';
 // var api = 'https://pad.365tmm.com';
-var record_api = api + "/record/index.html"
+var record_api = api + "/record/index.html";
 
 // 封装为函数
 function Ajax(options) {
@@ -14,7 +14,7 @@ function Ajax(options) {
     error: function() {}
   };
 
-  // 用户参数覆盖默认参数    
+  // 用户参数覆盖默认参数
   for (var pro in options) {
     defaults[pro] = options[pro];
   }

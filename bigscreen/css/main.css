@@ -131,6 +131,7 @@ body {
 
 .lottery-star .start {
   margin-top: 150px;
+  margin-bottom: 10px;
 }
 
 .lottery-star .surplus {
@@ -296,9 +297,9 @@ body {
 }
 
 .award-enter {
-  display: inline-block;
-  -webkit-animation: bounce-in .5s;
-  animation: bounce-in .5s;
+  display: block;
+  /*-webkit-animation: bounce-in .5s;*/
+  /*animation: bounce-in .5s;*/
 }
 
 #qr-code {

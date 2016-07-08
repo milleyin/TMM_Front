@@ -14,7 +14,7 @@ function Ajax(options) {
     error: function() {}
   };
 
-  // 用户参数覆盖默认参数    
+  // 用户参数覆盖默认参数
   for (var pro in options) {
     defaults[pro] = options[pro];
   }
@@ -103,8 +103,7 @@ function autoGetChance() {
     method: 'get', // 默认提交的方法,get post
     url: chance_api, // 请求的路径 required
     success: function(response) {
-
-      postMessage(response.content);
+      postMessage(response);
       setTimeout(autoGetChance, 3000);
 
     },
