@@ -60,9 +60,9 @@
       try {
         number = jsObj.getSerialNumber();
       } catch (e) {
-        number = '7c:c7:09:c9:7b:0d';
-        // 在console执行localStroge.setItem('number', '7c:c7:09:c9:7b:0d') 给number赋值进行调试
-        number = localStroge.getItem('number');
+        // number = '7c:c7:09:cb:1f:e7';
+        // 在console执行localStorage.setItem('number', '7c:c7:09:c9:7b:0d') 给number赋值进行调试
+        number = localStorage.getItem('number') || '7c:c7:09:cb:1f:e7';
       }
 
       if ($("#name").val() == null || $("#name").val() == "") {
@@ -129,7 +129,7 @@
     </div>
   </form>
   <div class="intro">
-    <div class="ver">V1.0.1</div>
+    <div class="ver">V1.0.2</div>
     <div class="company">Copyright © 2016 深圳市田觅觅信息科技有限公司</div>
   </div>
 </body>

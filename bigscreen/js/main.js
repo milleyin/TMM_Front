@@ -295,32 +295,49 @@ $(function() {
       $('#lotteryBtn').css({ "-webkit-transform": "rotate(" + 0 + "deg)", "transition": "all 0s" });
       $('#lotteryBtn').addClass('auto-rotate');
       try {
-        http_get(prize_api, function(data) {
-
-          $('#lotteryBtn').removeClass('auto-rotate');
-          if (data.content.config.path == path) {
-            rotateFunc(data.content.status.value, data.content.receive_type.value, data.content.angle, data.content.name, data.content.url);
-          } else {
-            path = data.content.config.path;
-            var img = $('#lotteryBtn').get(0);
-            img.src = api + data.content.config.path;
-            img.onload = function() {
+        $.ajax({
+          type: "get",
+          async: false,
+          url: prize_api,
+          dataType: "json",
+          xhrFields: {
+            withCredentials: true
+          },
+          crossDomain: true,
+          success: function(data) {
+            if (data.errorCode == 404){
+              $('#lotteryBtn').removeClass('auto-rotate');
+              alertFn('网络错误，请重新抽奖');
+              flag = true;
+              return;
+            }
+            $('#lotteryBtn').removeClass('auto-rotate');
+            if (data.content.config.path == path) {
               rotateFunc(data.content.status.value, data.content.receive_type.value, data.content.angle, data.content.name, data.content.url);
-            };
-            $('#alert2 .rule').html(data.content.config.info);
+            } else {
+              path = data.content.config.path;
+              var img = $('#lotteryBtn').get(0);
+              img.src = api + data.content.config.path;
+              img.onload = function() {
+                rotateFunc(data.content.status.value, data.content.receive_type.value, data.content.angle, data.content.name, data.content.url);
+              };
+              $('#alert2 .rule').html(data.content.config.info);
+            }
+          },
+          error: function() {
+            $('#lotteryBtn').removeClass('auto-rotate');
+            alertFn('网络错误，请重新抽奖');
+            flag = true;
           }
-        }, function() {
-
-          $('#lotteryBtn').removeClass('auto-rotate');
-          alertFn('网络错误，请重新抽奖');
-          flag = true;
         });
-
       } catch (e) {
+
         $('#lotteryBtn').removeClass('auto-rotate');
         alertFn('网络错误，请重新抽奖');
         flag = true;
       }
+
+
     }
   });
 
