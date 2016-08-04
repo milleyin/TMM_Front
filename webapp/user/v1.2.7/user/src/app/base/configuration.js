@@ -21,7 +21,7 @@ angular.module('app')
     journey_index: api + '/index.php?r=api/shops/index&select_dot_thrand=thrand&page=1',
     journey_popular: api + '/index.php?r=api/shops/index&select_dot_thrand=thrand&page=1&order_brow=order_brow&is_area=is_area',
     journey_distance: api + '/index.php?r=api/shops/index&select_dot_thrand=thrand&is_area=is_area',
-    
+
     create_mainretinue: api + '/index.php?r=api/retinue/create&type=1',
     create_retinue: api + '/index.php?r=api/retinue/create&type=0',
   };

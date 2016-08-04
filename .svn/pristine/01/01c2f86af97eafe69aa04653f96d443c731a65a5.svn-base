@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-control" content="no-cache">
+  <meta http-equiv="Cache" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>大屏</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css
+  ">
+  <script src="js/zepto.min.js"></script>
+  <script src="js/touch.js"></script>
+  <script src="js/qr-code.js"></script>
+  <script src="js/main.js"></script>
+  
+</head>
+
+<body>
+  <div class="header">
+    <div class="video">
+    </div>
+    <div class="banner">
+      <div class="banner-wrap"></div>
+    </div>
+  </div>
+  <!-- <div class="content">
+    <div class="ly-plate">
+      <img class="rotate-bg" id="lotteryBtn" src="img/ly-plate.png">
+      <div class="lottery-star">
+        <div class="count-box">
+          <img class="start" src="img/start.png">
+          <p class="name"></p>
+          <p class="surplus"></p>
+        </div>
+        <div class="qr-code">
+          <div id="qr-code"></div>
+          <div class="qr-txt">微信扫码，开始抽奖</div>
+        </div>
+      </div>
+    </div>
+    <div class="txt chou"><img src="img/choujiangtxt.png"></div>
+    <div class="winning">
+      <div class="top">中奖信息</div>
+      <div class="con-items">
+        <ul></ul>
+      </div>
+    </div>
+  </div> -->
+  <!-- 抽奖信息 -->
+  <div class="content">
+    <div class="txt chou"><img src="img/choujiangtxt.png"></div>
+    <div class="ly-plate">
+      <div class="winning">
+        <div class="top">中奖信息</div>
+        <div class="con-items">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+  
+      <div id="tbroundel">
+        <div class="tbroundel-tr">
+          <div name="roundelgoods" id="turn1" class="roundelgoods turn-round">
+            <img src="">
+          </div>
+          <div name="roundelgoods" id="turn2" class="roundelgoods">
+            <img src="">
+          </div>
+          <div name="roundelgoods" id="turn3" class="roundelgoods">
+            <img src="">
+          </div>
+        </div>
+        <div class="tbroundel-tr">
+          <div name="roundelgoods" id="turn8" class="roundelgoods">
+            <img src="">
+          </div>
+          <div id="RunDraw" class="roundelgoods-btn">
+            <!--开始抽奖-->
+            <div class="count-box">
+              <img class="start" src="img/start.png">
+              <p class="name"></p>
+              <p class="surplus"></p>
+            </div>
+            <!--开始抽奖-->
+            <div class="qr-code">
+              <div id="qr-code"></div>
+              <div class="qr-txt">微信扫码，开始抽奖</div>
+            </div>
+            <!-- <input id="btnrun" class="input" type="button" value="" onclick="startup()" /> -->
+          </div>
+          <div name="roundelgoods" id="turn4" class="roundelgoods">
+            <img src="">
+          </div>
+        </div>
+        <div class="tbroundel-tr">
+          <div name="roundelgoods" id="turn7" class="roundelgoods">
+            <img src="">
+          </div>
+          <div name="roundelgoods" id="turn6" class="roundelgoods">
+            <img src="">
+          </div>
+          <div name="roundelgoods" id="turn5" class="roundelgoods">
+            <img src="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 抽奖信息 -->
+  <div class="footer">
+    <div class="slider">
+      <ul></ul>
+    </div>
+  </div>
+   <!-- 遮罩层 -->
+  <div class="mask"></div>
+  <div class="award-alert" id="alert2">
+    <div class="tit">抽奖规则</div>
+    <div class="rule"></div>
+    <span class="close"></span>
+  </div>
+  <div class="award-alert award-enter" id="alert1">
+    <div class="tit">恭喜你抽中</div>
+    <div class="txt">店铺5元现金券</div>
+    <div class="btn">
+      <div class="btn-sel" id="give-up">放弃奖品，继续抽</div>
+      <div class="btn-sel" id="receive">领取奖品</div>
+    </div>
+    <div class="attention">注：领取奖品后，不可继续抽奖。</div>
+    <span class="close"></span>
+  </div>
+  <div class="award-alert" id="alert3">
+    <div class="tit">恭喜你抽中</div>
+    <div class="txt"></div>
+    <div id="qr-url"></div>
+    <div class="attention">微信扫码领取奖品</div>
+    <span class="close"></span>
+  </div>
+  <div class="award-alert" id="alert4">
+    <div class="tit">领取成功，请在下方取票</div>
+    <div class="receipt"><img src="img/receipt.png"></div>
+    <div class="attention">注：小票将作为兑奖凭证，请妥善保管。</div>
+    <span class="close"></span>
+  </div>
+
+
+</body>
+
+</html>
