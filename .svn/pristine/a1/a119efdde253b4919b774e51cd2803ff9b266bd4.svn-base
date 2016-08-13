@@ -1,0 +1,73 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.payment-img {
+  padding: 43px 0 50px 0;
+  text-align: center;
+}
+
+.payment-img img {
+  width: 120px;
+}
+
+.payment-amount {
+  color: #000;
+  font-size: 24px;
+  font-family: SimSun;
+  line-height: 24px;
+  height: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.payment-info-list {
+  margin: 0 15px;
+  background-color: #fff;
+  border-top: 1px solid #9f9f9f;
+  border-bottom: 1px solid #9f9f9f;
+  height: 64px;
+}
+
+.payment-info-list .info-item {
+  background-color: #fff;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  padding-left: 0;
+  height: 32px;
+  line-height: 32px;
+  width: 100%;
+}
+
+.payment-info-list .info-item .item-title {
+  font-size: 15px;
+  white-space: nowrap;
+  color: #000;
+}
+
+.payment-info-list .info-item .item-con {
+  color: #000;
+  font-size: 15px;
+  right: 15px;
+  position: absolute;
+}
+
+.payment-info-button {
+  bottom: 0;
+  background: #fff;
+  padding: 56px 15px 0 15px;
+}
+
+.message-sub {
+  text-decoration: none;
+  border: none;
+  text-align: center;
+  width: 100%;
+  line-height: 40px;
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  background-color: #1caf5e;
+}
