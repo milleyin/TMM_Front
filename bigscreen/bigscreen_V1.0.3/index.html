@@ -39,8 +39,9 @@
       },
       crossDomain: true,
       success: function(data) {
-
+        console.log();
         if (data.result == 1) {
+
           window.location.href = "home.html";
         } else if (data.content) {
           if (data.content.hidden) {
@@ -93,10 +94,9 @@
           crossDomain: true,
           success: function(data) {
 
-            if (data.result === 1) {
-
+            if (data.result == 1) {
               window.location.href = "home.html";
-            } else if (data.errorCode === 400) {
+            } else if (data.errorCode == 400) {
               window.location.href = "index.html"
             } else if (data.content.error) {
               if (data.content.error.LoginForm) {
